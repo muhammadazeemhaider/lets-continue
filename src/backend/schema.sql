@@ -50,3 +50,30 @@ CREATE TABLE IF NOT EXISTS notes (
     created_at     TEXT    NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_notes_book ON notes(book_id, created_at);
+
+-- Reminder notifications. One row per (book, milestone, activity timestamp), so each milestone is
+-- sent once per "absence"; any new reading activity changes books.last_activity and resets the ladder.
+CREATE TABLE IF NOT EXISTS notifications (
+    id             INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id        INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    book_id        INTEGER NOT NULL REFERENCES books(id) ON DELETE CASCADE,
+    milestone_days INTEGER NOT NULL,                    -- 2, 7, 14, 30, 180
+    activity_at    TEXT    NOT NULL,                    -- books.last_activity this reminder was for
+    title          TEXT    NOT NULL,
+    body           TEXT    NOT NULL,
+    created_at     TEXT    NOT NULL,
+    read_at        TEXT,
+    push_status    TEXT    NOT NULL DEFAULT 'none',     -- none | sent | failed | no_subscription
+    UNIQUE (book_id, milestone_days, activity_at)
+);
+CREATE INDEX IF NOT EXISTS idx_notifications_user ON notifications(user_id, created_at);
+
+-- Web Push subscriptions (one per browser/device that opted in).
+CREATE TABLE IF NOT EXISTS push_subscriptions (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id    INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    endpoint   TEXT    NOT NULL UNIQUE,
+    p256dh     TEXT    NOT NULL,
+    auth       TEXT    NOT NULL,
+    created_at TEXT    NOT NULL
+);

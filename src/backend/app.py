@@ -4,6 +4,9 @@ Run:  flask --app app run --debug --port 5000     (from src/backend)
 Seed: flask --app app seed
 """
 import os
+import sys
+import threading
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -11,6 +14,7 @@ import click
 from flask import Flask, abort, jsonify, request
 
 import db
+import notifications
 
 DEFAULT_DB = Path(__file__).parent / "data" / "toward_the_light.db"
 
@@ -19,10 +23,17 @@ def create_app(config: dict | None = None) -> Flask:
     app = Flask(__name__)
     app.config["DATABASE"] = os.environ.get("DATABASE_PATH", str(DEFAULT_DB))
     app.config["CORS_ORIGIN"] = os.environ.get("CORS_ORIGIN", "*")  # tighten when deploying
+    # Minutes between reminder checks. Auto-on only when serving (`flask run`); 0 disables.
+    app.config["NOTIFY_INTERVAL_MINUTES"] = float(
+        os.environ.get("NOTIFY_INTERVAL_MINUTES", 30 if "run" in sys.argv else 0)
+    )
     if config:
         app.config.update(config)
 
     db.init_db(app.config["DATABASE"])
+    app.config.setdefault("VAPID_KEYS_PATH", str(Path(app.config["DATABASE"]).parent / "vapid.json"))
+    # The push sender is injectable so tests never touch the network.
+    app.config.setdefault("PUSH_SENDER", notifications.make_web_push_sender(Path(app.config["VAPID_KEYS_PATH"])))
     app.teardown_appcontext(db.close_db)
 
     @app.after_request
@@ -39,7 +50,39 @@ def create_app(config: dict | None = None) -> Flask:
 
     register_routes(app)
     register_cli(app)
+    start_scheduler(app)
     return app
+
+
+def run_notification_check(app: Flask) -> list[dict]:
+    """One reminder pass outside a request (scheduler / CLI)."""
+    con = db.connect(app.config["DATABASE"])
+    try:
+        return notifications.check_and_notify(con, sender=app.config["PUSH_SENDER"])
+    finally:
+        con.close()
+
+
+def start_scheduler(app: Flask) -> None:
+    minutes = app.config["NOTIFY_INTERVAL_MINUTES"]
+    if minutes <= 0:
+        return
+    # With the debug reloader only the serving child process should run the loop.
+    if app.debug and os.environ.get("WERKZEUG_RUN_MAIN") != "true":
+        return
+
+    def loop():
+        while True:
+            try:
+                made = run_notification_check(app)
+                if made:
+                    app.logger.info("Created %d reminder(s)", len(made))
+            except Exception:  # never let the loop die
+                app.logger.exception("Reminder check failed")
+            time.sleep(minutes * 60)
+
+    threading.Thread(target=loop, name="reminder-scheduler", daemon=True).start()
+    app.logger.info("Reminder scheduler running every %s min", minutes)
 
 
 # ---------------------------------------------------------------- helpers
@@ -361,9 +404,112 @@ def register_routes(app: Flask) -> None:
             isPaused=done < len(chapters) and days_away >= u["paused_after_days"],
         )
 
+    # ---- notifications inbox
+    def notif_json(n) -> dict:
+        return {
+            "id": n["id"], "bookId": n["book_id"], "title": n["title"], "body": n["body"],
+            "milestoneDays": n["milestone_days"], "createdAt": n["created_at"],
+            "read": n["read_at"] is not None, "pushStatus": n["push_status"],
+        }
+
+    @app.get("/api/notifications")
+    def list_notifications():
+        con, uid = db.get_db(), current_user()["id"]
+        rows = con.execute(
+            "SELECT * FROM notifications WHERE user_id = ? ORDER BY created_at DESC, id DESC LIMIT 50", (uid,)
+        ).fetchall()
+        unread = con.execute(
+            "SELECT COUNT(*) FROM notifications WHERE user_id = ? AND read_at IS NULL", (uid,)
+        ).fetchone()[0]
+        return jsonify(unread=unread, items=[notif_json(r) for r in rows])
+
+    @app.post("/api/notifications/<int:nid>/read")
+    def mark_read(nid):
+        con = db.get_db()
+        cur = con.execute(
+            "UPDATE notifications SET read_at = COALESCE(read_at, ?) WHERE id = ? AND user_id = ?",
+            (db.utcnow(), nid, current_user()["id"]),
+        )
+        con.commit()
+        if cur.rowcount == 0:
+            abort(404, "Notification not found")
+        return "", 204
+
+    @app.post("/api/notifications/read-all")
+    def mark_all_read():
+        con = db.get_db()
+        con.execute("UPDATE notifications SET read_at = ? WHERE user_id = ? AND read_at IS NULL",
+                    (db.utcnow(), current_user()["id"]))
+        con.commit()
+        return "", 204
+
+    @app.post("/api/notifications/check")
+    def check_now():
+        """Run a reminder pass immediately (idempotent: only reminders that are due and unsent are created)."""
+        con = db.get_db()
+        made = notifications.check_and_notify(con, sender=app.config["PUSH_SENDER"])
+        return jsonify(created=made)
+
+    # ---- web push subscriptions
+    @app.get("/api/push/public-key")
+    def push_public_key():
+        try:
+            return jsonify(publicKey=notifications.vapid_keys(Path(app.config["VAPID_KEYS_PATH"]))["public_key"])
+        except ImportError:
+            abort(404, "Web Push is not available on this server (install pywebpush).")
+
+    @app.post("/api/push/subscribe")
+    def push_subscribe():
+        data = body()
+        keys = data.get("keys") or {}
+        endpoint = data.get("endpoint")
+        if not (isinstance(endpoint, str) and endpoint.startswith("https://")
+                and isinstance(keys.get("p256dh"), str) and isinstance(keys.get("auth"), str)):
+            abort(400, "Expected a PushSubscription JSON: {endpoint, keys: {p256dh, auth}}")
+        con = db.get_db()
+        con.execute(
+            """INSERT INTO push_subscriptions (user_id, endpoint, p256dh, auth, created_at) VALUES (?,?,?,?,?)
+               ON CONFLICT(endpoint) DO UPDATE SET user_id = excluded.user_id, p256dh = excluded.p256dh, auth = excluded.auth""",
+            (current_user()["id"], endpoint, keys["p256dh"], keys["auth"], db.utcnow()),
+        )
+        con.commit()
+        return jsonify(subscribed=True), 201
+
+    @app.post("/api/push/unsubscribe")
+    def push_unsubscribe():
+        endpoint = body().get("endpoint")
+        con = db.get_db()
+        con.execute("DELETE FROM push_subscriptions WHERE endpoint = ? AND user_id = ?",
+                    (endpoint, current_user()["id"]))
+        con.commit()
+        return "", 204
+
+    @app.post("/api/push/test")
+    def push_test():
+        """Send a test notification to this reader's subscribed devices."""
+        u = current_user()
+        payload = {"title": "Toward the Light", "body": f"{u['preferred_name']}, notifications are working. ✨",
+                   "url": "/#/", "tag": "test"}
+        status = notifications.deliver_push(db.get_db(), u["id"], payload, app.config["PUSH_SENDER"])
+        db.get_db().commit()
+        return jsonify(status=status)
+
 
 # ---------------------------------------------------------------- CLI
 def register_cli(app: Flask) -> None:
+    @app.cli.command("notify")
+    @click.option("--loop", "loop_minutes", type=float, default=0, help="Keep running, checking every N minutes.")
+    def notify_cmd(loop_minutes):
+        """Send any due reminders (2d, 1w, 2w, 1mo, 6mo after last activity). Cron / Task Scheduler friendly."""
+        while True:
+            made = run_notification_check(app)
+            click.echo(f"{datetime.now():%H:%M:%S} created {len(made)} reminder(s)")
+            for m in made:
+                click.echo(f"  [{m['milestone']}d] {m['title']}: {m['body']}  (push: {m['push']})")
+            if loop_minutes <= 0:
+                break
+            time.sleep(loop_minutes * 60)
+
     @app.cli.command("seed")
     @click.option("--reset", is_flag=True, help="Delete existing books first.")
     def seed_cmd(reset):
