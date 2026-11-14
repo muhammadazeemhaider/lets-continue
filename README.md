@@ -35,7 +35,7 @@ All data lives in the backend's SQLite database; the browser stores nothing. Use
 | File | Role |
 | --- | --- |
 | `js/journey.js` | Reusable SVG progress landscape: `Journey.render(el, {total, completed, selected, interactive, onSelect})`. Markers are placed by arc length on the curve, so any chapter count works. |
-| `js/data.js` | Sample books (`Seed.books()`). |
+| `js/config.js` | API base URL. |
 | `js/store.js` | API client + in-memory cache (`Store.*`): synchronous reads, async mutations. |
 | `js/services.js` | Offline fallback for the reminder text (the backend endpoint is the primary source). |
 | `js/app.js` | Hash router and views: dashboard, book detail, checkpoint sheet, reminder, completion. |
