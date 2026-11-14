@@ -216,6 +216,15 @@ def test_vapid_public_key_is_stable_and_valid(ctx):
     assert k1 == k2 and len(k1) == 87  # base64url of a 65-byte uncompressed P-256 point
 
 
+def test_backdate_cli_then_notify(ctx):
+    app, c, _ = ctx
+    bid = new_book(c)
+    runner = app.test_cli_runner()
+    assert runner.invoke(args=["backdate", str(bid), "8"]).exit_code == 0
+    assert runner.invoke(args=["backdate", "999", "8"]).exit_code != 0
+    assert "[7d]" in runner.invoke(args=["notify"]).output
+
+
 def test_scheduler_disabled_in_tests_and_cli_runs(ctx):
     app, c, _ = ctx
     assert app.config["NOTIFY_INTERVAL_MINUTES"] == 0

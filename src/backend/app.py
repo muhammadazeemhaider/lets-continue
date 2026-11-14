@@ -499,6 +499,20 @@ def register_routes(app: Flask) -> None:
 
 # ---------------------------------------------------------------- CLI
 def register_cli(app: Flask) -> None:
+    @app.cli.command("backdate")
+    @click.argument("book_id", type=int)
+    @click.argument("days", type=float)
+    def backdate_cmd(book_id, days):
+        """Dev helper: pretend BOOK_ID was last read DAYS ago (then run `notify` to see the reminder fire)."""
+        ts = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat(timespec="seconds")
+        con = db.connect(app.config["DATABASE"])
+        cur = con.execute("UPDATE books SET last_activity = ? WHERE id = ?", (ts, book_id))
+        con.commit()
+        con.close()
+        if cur.rowcount == 0:
+            raise click.ClickException(f"No book with id {book_id}")
+        click.echo(f"Book {book_id} now looks last read {days:g} day(s) ago.")
+
     @app.cli.command("notify")
     @click.option("--loop", "loop_minutes", type=float, default=0, help="Keep running, checking every N minutes.")
     def notify_cmd(loop_minutes):

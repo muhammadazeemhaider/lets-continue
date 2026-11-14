@@ -100,3 +100,26 @@ Server keys: a VAPID key pair is generated on first use at `src/backend/data/vap
 | GET | `/api/push/public-key` | VAPID public key for the browser to subscribe with |
 | POST | `/api/push/subscribe`, `/api/push/unsubscribe` | Register or remove this device |
 | POST | `/api/push/test` | Send a test push to the reader's devices |
+
+## Testing on a phone (HTTPS tunnel)
+
+`npm start` proxies `/api` to Flask, so the browser only talks to one origin and one tunnel covers both. Cloudflare's free "quick tunnel" needs no account:
+
+```
+winget install --id Cloudflare.cloudflared      # once
+# terminal 1 (use a throwaway database so the public URL never exposes real data)
+cd src/backend
+$env:DATABASE_PATH = "data/tunnel_test.db"      # PowerShell; bash: export DATABASE_PATH=data/tunnel_test.db
+python -m flask --app app seed                  # first time only
+python -m flask --app app run --port 5000
+# terminal 2
+cd src/frontend ; npm start
+# terminal 3
+cloudflared tunnel --url http://localhost:5173  # prints https://<random>.trycloudflare.com
+```
+
+Open that URL on the phone. On iPhone, Share, then Add to Home Screen, and open it from the Home Screen. Then tap the gear, then "Enable on this device", then "Send a test".
+
+To watch a real reminder arrive: `python -m flask --app app backdate <book id> 8` (pretend it was last read 8 days ago), then `python -m flask --app app notify` (or wait for the scheduler).
+
+The URL is public and the app has no login yet: share it with nobody, use test data only, and stop `cloudflared` when finished. The URL changes every time it restarts, and a changed URL needs the app re-added/re-enabled on the phone.
