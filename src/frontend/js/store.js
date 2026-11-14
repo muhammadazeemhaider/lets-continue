@@ -48,7 +48,7 @@
 
   /** Load everything the dashboard needs. Throws (err.network) if the backend is down. */
   async function init() {
-    [user] = await Promise.all([api('/api/user'), refreshList(), refreshStreak()]);
+    [user] = await Promise.all([api('/api/user'), refreshList(), refreshStreak(), refreshNotifications()]);
   }
   /** Load a book's notes + history (the list endpoint only carries summaries). */
   async function loadBook(id) {
@@ -123,11 +123,80 @@
     return user;
   }
 
+  /* ---------- notification inbox ---------- */
+  let inbox = { unread: 0, items: [] };
+  async function refreshNotifications() {
+    try {
+      inbox = await api('/api/notifications');
+    } catch (e) {
+      /* the inbox is non-essential; keep the last known state */
+    }
+    return inbox;
+  }
+  const notifications = () => inbox;
+  async function markNotificationRead(id) {
+    await api(`/api/notifications/${id}/read`, { method: 'POST' });
+    await refreshNotifications();
+  }
+  async function markAllNotificationsRead() {
+    await api('/api/notifications/read-all', { method: 'POST' });
+    await refreshNotifications();
+  }
+
+  /* ---------- Web Push (this device) ---------- */
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+
+  function pushSupport() {
+    if (!window.isSecureContext)
+      return { ok: false, reason: 'Phone notifications need a secure (HTTPS) address. They work on localhost, but not on a plain http:// network address.' };
+    if (isIOS && !isStandalone())
+      return { ok: false, reason: 'On iPhone and iPad, first add this app to your Home Screen (Share → Add to Home Screen), then open it from there to turn on notifications.' };
+    if (!('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window))
+      return { ok: false, reason: 'This browser does not support push notifications.' };
+    return { ok: true };
+  }
+
+  const swReady = () => navigator.serviceWorker.ready;
+  const toKey = (b64) => {
+    const pad = '='.repeat((4 - (b64.length % 4)) % 4);
+    const raw = atob((b64 + pad).replace(/-/g, '+').replace(/_/g, '/'));
+    return Uint8Array.from(raw, (c) => c.charCodeAt(0));
+  };
+
+  async function pushStatus() {
+    const s = pushSupport();
+    if (!s.ok) return { supported: false, reason: s.reason };
+    const sub = await (await swReady()).pushManager.getSubscription();
+    return { supported: true, permission: Notification.permission, subscribed: !!sub };
+  }
+
+  async function enablePush() {
+    const perm = await Notification.requestPermission(); // must be called from a user gesture
+    if (perm !== 'granted') throw new Error('Notifications are blocked. You can allow them in your browser or phone settings.');
+    const { publicKey } = await api('/api/push/public-key');
+    const reg = await swReady();
+    const sub = (await reg.pushManager.getSubscription()) ||
+      (await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: toKey(publicKey) }));
+    await api('/api/push/subscribe', { method: 'POST', body: sub.toJSON() });
+  }
+
+  async function disablePush() {
+    const sub = await (await swReady()).pushManager.getSubscription();
+    if (!sub) return;
+    await api('/api/push/unsubscribe', { method: 'POST', body: { endpoint: sub.endpoint } });
+    await sub.unsubscribe();
+  }
+
+  const testPush = () => api('/api/push/test', { method: 'POST' });
+
   /** Re-engagement text from the backend (the LLM seam); null if unavailable. */
   const fetchReminder = (bookId) => api(`/api/books/${bookId}/reminder`).catch(() => null);
 
   global.Store = {
     init, loadBook, books, getBook, getUser, derive, bookStreak, readerStreak, relativeTime,
     addNote, addCheckpoint, createBook, updateUser, fetchReminder,
+    notifications, refreshNotifications, markNotificationRead, markAllNotificationsRead,
+    pushStatus, enablePush, disablePush, testPush,
   };
 })(window);

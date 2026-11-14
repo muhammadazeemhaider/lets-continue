@@ -52,6 +52,7 @@
     $app.innerHTML = `
 <main class="page">
   <header class="masthead">
+    <button class="bell" id="bell" aria-label="Reminders${Store.notifications().unread ? ` (${Store.notifications().unread} unread)` : ''}">🔔<span class="badge-dot" ${Store.notifications().unread ? '' : 'hidden'}>${Store.notifications().unread}</span></button>
     <button class="gear" id="settings" aria-label="Profile and settings">⚙</button>
     <div class="eyebrow">${esc(greeting())}</div>
     <h1>Getting to the Light</h1>
@@ -87,6 +88,88 @@
     $app.querySelector('[data-remind]')?.addEventListener('click', (e) => showReminder(e.currentTarget.dataset.remind));
     $app.querySelector('#add-book').addEventListener('click', addBookSheet);
     $app.querySelector('#settings').addEventListener('click', settingsSheet);
+    $app.querySelector('#bell').addEventListener('click', notificationsSheet);
+  }
+
+  /* ---------- reminders inbox ---------- */
+  function updateBellBadge() {
+    const dot = document.querySelector('#bell .badge-dot');
+    if (!dot) return;
+    const n = Store.notifications().unread;
+    dot.textContent = n;
+    dot.hidden = !n;
+  }
+
+  function notificationsSheet() {
+    const render = () => {
+      const { items, unread } = Store.notifications();
+      return `
+<div class="sheet" role="dialog" aria-modal="true" aria-label="Reminders">
+  <h2>Reminders</h2>
+  <p class="sub">Gentle nudges, never pressure.</p>
+  ${items.length ? `<ul class="inbox">${items.map((n) => `
+    <li><button class="inbox-item${n.read ? '' : ' unread'}" data-nid="${n.id}" data-book="${n.bookId}">
+      <b>${esc(n.title)}</b><span>${esc(n.body)}</span><small>${Store.relativeTime(n.createdAt)}</small>
+    </button></li>`).join('')}</ul>`
+    : '<p class="empty">No reminders yet. If a book goes quiet, we’ll send a small hello.</p>'}
+  <div class="actions">
+    ${unread ? '<button class="btn" data-readall>Mark all read</button>' : ''}
+    <button class="btn primary" data-close>Close</button>
+  </div>
+</div>`;
+    };
+    const scrim = openOverlay(render());
+    const bind = () => {
+      scrim.querySelector('[data-close]').addEventListener('click', closeOverlay);
+      scrim.querySelector('[data-readall]')?.addEventListener('click', async () => {
+        await Store.markAllNotificationsRead();
+        scrim.innerHTML = render();
+        bind();
+        updateBellBadge();
+      });
+      scrim.querySelectorAll('[data-nid]').forEach((btn) =>
+        btn.addEventListener('click', async () => {
+          Store.markNotificationRead(btn.dataset.nid).then(updateBellBadge).catch(() => {});
+          closeOverlay();
+          location.hash = `#/book/${btn.dataset.book}`;
+        })
+      );
+    };
+    bind();
+  }
+
+  /** The "this device" block inside the settings sheet. */
+  async function paintPushSection(root) {
+    const box = root.querySelector('[data-push]');
+    const st = await Store.pushStatus().catch((e) => ({ supported: false, reason: e.message }));
+    if (!st.supported) {
+      box.innerHTML = `<p class="hint">${esc(st.reason)}</p>`;
+      return;
+    }
+    if (st.permission === 'denied') {
+      box.innerHTML = '<p class="hint">Notifications are blocked for this site. Allow them in your browser or phone settings, then reopen this sheet.</p>';
+      return;
+    }
+    box.innerHTML = st.subscribed
+      ? `<p class="hint ok">✓ Notifications are on for this device.</p>
+         <div class="row"><button type="button" class="btn small" data-push-test>Send a test</button>
+         <button type="button" class="btn small quiet" data-push-off>Turn off here</button></div>`
+      : `<p class="hint">Get a small reminder here when a book has been quiet for a while.</p>
+         <button type="button" class="btn small primary" data-push-on>Enable on this device</button>`;
+    const act = (sel, fn, msg) =>
+      box.querySelector(sel)?.addEventListener('click', async (e) => {
+        e.currentTarget.disabled = true;
+        try {
+          const r = await fn();
+          toast(typeof msg === 'function' ? msg(r) : msg);
+        } catch (err) {
+          toast(err.message);
+        }
+        paintPushSection(root);
+      });
+    act('[data-push-on]', Store.enablePush, 'Notifications enabled');
+    act('[data-push-off]', Store.disablePush, 'Notifications turned off here');
+    act('[data-push-test]', Store.testPush, (r) => (r.status === 'sent' ? 'Test sent, check your notifications' : `Test not delivered (${r.status})`));
   }
 
   function greeting() {
@@ -129,9 +212,12 @@
   <label class="field">Consider a book “waiting” after
     <span class="inline"><input name="pausedAfterDays" type="number" min="1" max="365" value="${u.pausedAfterDays}"> days</span></label>
   <label class="check"><input name="notificationsEnabled" type="checkbox" ${u.notificationsEnabled ? 'checked' : ''}> Gentle reminders for paused books</label>
+  <p class="hint">Reminders arrive after 2 days, then 1 week, 2 weeks, 1 month and 6 months without reading.</p>
+  <div class="push-box" data-push><p class="hint">Checking this device…</p></div>
   <div class="actions"><button type="button" class="btn" data-cancel>Cancel</button><button type="submit" class="btn primary">Save</button></div>
 </form>`);
     const form = scrim.querySelector('form');
+    paintPushSection(form);
     form.querySelector('[data-cancel]').addEventListener('click', closeOverlay);
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -500,6 +586,22 @@
     window.addEventListener('hashchange', route);
     await route();
     maybeWelcomeBack();
+    setupServiceWorker();
+  }
+
+  /* Service worker: required for push. Tapping a notification while the app is open lands here. */
+  function setupServiceWorker() {
+    if (!('serviceWorker' in navigator) || !window.isSecureContext) return;
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+    navigator.serviceWorker.addEventListener('message', (e) => {
+      if (e.data && e.data.type === 'navigate') {
+        if (location.hash === e.data.hash) route();
+        else location.hash = e.data.hash;
+      }
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') Store.refreshNotifications().then(updateBellBadge);
+    });
   }
   boot();
 })();
