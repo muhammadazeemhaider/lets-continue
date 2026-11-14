@@ -141,7 +141,10 @@
   /** The "this device" block inside the settings sheet. */
   async function paintPushSection(root) {
     const box = root.querySelector('[data-push]');
-    const st = await Store.pushStatus().catch((e) => ({ supported: false, reason: e.message }));
+    const timeout = new Promise((resolve) =>
+      setTimeout(() => resolve({ supported: false, reason: 'The notification service is still starting. Reload the page and try again.' }), 5000)
+    );
+    const st = await Promise.race([Store.pushStatus(), timeout]).catch((e) => ({ supported: false, reason: e.message }));
     if (!st.supported) {
       box.innerHTML = `<p class="hint">${esc(st.reason)}</p>`;
       return;

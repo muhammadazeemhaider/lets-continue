@@ -71,3 +71,32 @@ The database file is created at `src/backend/data/toward_the_light.db` (override
 | POST / DELETE | `/api/books/<id>/notes[/<noteId>]` | `{text, chapter?}` (omit `chapter` for a general note) |
 | GET | `/api/streak` | Overall streak (`?tz=` minutes east of UTC, e.g. `-new Date().getTimezoneOffset()`) |
 | GET | `/api/books/<id>/reminder` | Re-engagement text using the preferred name; the seam for LLM generation |
+
+## Reminder notifications
+
+When a book you have not finished goes quiet, the app sends a small, warm reminder. The ladder, measured from the book's last reading activity (a checkpoint or a note), is **2 days, 1 week, 2 weeks, 1 month, 6 months**. Rules:
+
+- Each step is sent once per absence. Any new activity resets the ladder, so the 2-day nudge can fire again next time.
+- If the server was off for a long time, only the latest step is sent (no burst of backlog reminders).
+- Finished books and readers who turned reminders off get nothing.
+- Every reminder lands in the in-app inbox (the bell on the dashboard). If the reader enabled notifications on a device, it is also delivered as a **Web Push** notification, which appears on the phone's lock screen even when the app is closed.
+
+**What runs it:** `flask run` starts a background check every 30 minutes (change with `NOTIFY_INTERVAL_MINUTES`, `0` disables). You can also run it by hand or from cron / Task Scheduler:
+
+```
+python -m flask --app app notify               # one pass
+python -m flask --app app notify --loop 30     # keep checking every 30 minutes
+```
+
+**Phones.** Web Push needs a secure origin (HTTPS, or `localhost`). Android Chrome works once the reader taps "Enable on this device". On iPhone/iPad (iOS 16.4+) the app must first be added to the Home Screen (Share, then Add to Home Screen), and notifications are enabled from the installed app. A plain `http://192.168.x.x` address cannot receive push; use an HTTPS tunnel (for example Cloudflare Tunnel or ngrok) for phone testing, or deploy.
+
+Server keys: a VAPID key pair is generated on first use at `src/backend/data/vapid.json` (git-ignored). Keep it stable in production, because changing it invalidates every device's subscription. Set `VAPID_SUBJECT` (a `mailto:` address) in production.
+
+| Method | Path | Purpose |
+| --- | --- | --- |
+| GET | `/api/notifications` | Inbox: `{unread, items[]}` |
+| POST | `/api/notifications/<id>/read`, `/api/notifications/read-all` | Mark read |
+| POST | `/api/notifications/check` | Run a reminder pass now (idempotent) |
+| GET | `/api/push/public-key` | VAPID public key for the browser to subscribe with |
+| POST | `/api/push/subscribe`, `/api/push/unsubscribe` | Register or remove this device |
+| POST | `/api/push/test` | Send a test push to the reader's devices |

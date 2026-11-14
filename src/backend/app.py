@@ -71,6 +71,8 @@ def start_scheduler(app: Flask) -> None:
     if app.debug and os.environ.get("WERKZEUG_RUN_MAIN") != "true":
         return
 
+    app.logger.setLevel("INFO")
+
     def loop():
         while True:
             try:
