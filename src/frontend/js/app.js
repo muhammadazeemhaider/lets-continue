@@ -52,7 +52,8 @@
     $app.innerHTML = `
 <main class="page">
   <header class="masthead">
-    <div class="eyebrow">Toward the Light</div>
+    <button class="gear" id="settings" aria-label="Profile and settings">⚙</button>
+    <div class="eyebrow">${esc(greeting())}</div>
     <h1>Getting to the Light</h1>
     <p>Every chapter brings the sunrise a little closer.</p>
     ${streakChip(Store.readerStreak())}
@@ -65,11 +66,13 @@
     <small>Remind me where I left off in “${esc(paused[0].title)}”</small></span>
   </button>` : ''}
 
-  <section class="grid">
-    ${books.map(card).join('')}
-  </section>
+  ${books.length ? `<section class="grid">${books.map(card).join('')}</section>` : `
+  <section class="empty-state">
+    <p>No books yet. Every journey starts with one.</p>
+    <p class="hint">Tip: <code>python -m flask --app app seed</code> in <code>src/backend</code> loads sample books.</p>
+  </section>`}
 
-  <div class="footer-actions"><button class="btn quiet small" id="reset">Reset sample data</button></div>
+  <div class="footer-actions"><button class="btn primary" id="add-book">+ Add a book</button></div>
 </main>`;
 
     books.forEach((b) => {
@@ -82,13 +85,99 @@
     });
 
     $app.querySelector('[data-remind]')?.addEventListener('click', (e) => showReminder(e.currentTarget.dataset.remind));
-    $app.querySelector('#reset').addEventListener('click', () => {
-      if (confirm('Reset to the original sample books? Your changes on this device will be lost.')) {
-        Store.reset();
+    $app.querySelector('#add-book').addEventListener('click', addBookSheet);
+    $app.querySelector('#settings').addEventListener('click', settingsSheet);
+  }
+
+  function greeting() {
+    const u = Store.getUser();
+    return u && u.preferredName && u.preferredName !== 'Reader' ? `Welcome back, ${u.preferredName}` : 'Toward the Light';
+  }
+
+  /* ---------- profile & add-book sheets ---------- */
+  function errorBox(form) {
+    let el = form.querySelector('.form-error');
+    if (!el) {
+      el = document.createElement('p');
+      el.className = 'form-error';
+      el.setAttribute('role', 'alert');
+      form.querySelector('.actions').before(el);
+    }
+    return el;
+  }
+  /** Run an async save; keep the sheet open and show the message on failure. */
+  async function submitWith(form, fn) {
+    const btn = form.querySelector('[type=submit]');
+    btn.disabled = true;
+    try {
+      await fn();
+    } catch (err) {
+      errorBox(form).textContent = err.message;
+      btn.disabled = false;
+    }
+  }
+
+  function settingsSheet() {
+    const u = Store.getUser();
+    const scrim = openOverlay(`
+<form class="sheet" role="dialog" aria-modal="true" aria-label="Profile and settings">
+  <h2>Your profile</h2>
+  <p class="sub">How the app and its reminders should address you.</p>
+  <label class="field">Name<input name="name" required maxlength="80" value="${esc(u.name)}"></label>
+  <label class="field">Preferred name<input name="preferredName" required maxlength="40" value="${esc(u.preferredName)}"></label>
+  <label class="field">Email (optional)<input name="email" type="email" value="${esc(u.email || '')}"></label>
+  <label class="field">Consider a book “waiting” after
+    <span class="inline"><input name="pausedAfterDays" type="number" min="1" max="365" value="${u.pausedAfterDays}"> days</span></label>
+  <label class="check"><input name="notificationsEnabled" type="checkbox" ${u.notificationsEnabled ? 'checked' : ''}> Gentle reminders for paused books</label>
+  <div class="actions"><button type="button" class="btn" data-cancel>Cancel</button><button type="submit" class="btn primary">Save</button></div>
+</form>`);
+    const form = scrim.querySelector('form');
+    form.querySelector('[data-cancel]').addEventListener('click', closeOverlay);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitWith(form, async () => {
+        await Store.updateUser({
+          name: form.name.value,
+          preferredName: form.preferredName.value,
+          email: form.email.value.trim() || null,
+          pausedAfterDays: Number(form.pausedAfterDays.value),
+          notificationsEnabled: form.notificationsEnabled.checked,
+        });
+        closeOverlay();
         dashboard();
-        toast('Sample data restored');
-      }
+        toast('Profile saved');
+      });
     });
+  }
+
+  function addBookSheet() {
+    const scrim = openOverlay(`
+<form class="sheet" role="dialog" aria-modal="true" aria-label="Add a book">
+  <h2>Add a book</h2>
+  <p class="sub">Each chapter becomes a point on its path toward the light.</p>
+  <label class="field">Title<input name="title" required maxlength="200"></label>
+  <label class="field">Author<input name="author" maxlength="200"></label>
+  <label class="field">Chapters
+    <textarea name="chapters" placeholder="Either a number (e.g. 24) or one chapter title per line"></textarea></label>
+  <label class="field">Short recap (optional)<textarea name="recap" placeholder="What is this book about? Used in your reminders."></textarea></label>
+  <div class="actions"><button type="button" class="btn" data-cancel>Cancel</button><button type="submit" class="btn primary">Add book</button></div>
+</form>`);
+    const form = scrim.querySelector('form');
+    form.querySelector('[data-cancel]').addEventListener('click', closeOverlay);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitWith(form, async () => {
+        const raw = form.chapters.value.trim();
+        const payload = { title: form.title.value, author: form.author.value, recap: form.recap.value };
+        if (/^\d+$/.test(raw)) payload.chapterCount = Number(raw);
+        else payload.chapters = raw.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+        const b = await Store.createBook(payload);
+        closeOverlay();
+        location.hash = `#/book/${b.id}`;
+        toast('Book added');
+      });
+    });
+    form.title.focus({ preventScroll: true });
   }
 
   function card(b) {
@@ -233,11 +322,14 @@
         const text = f.text.value;
         if (!text.trim()) return;
         const chap = f.dataset.chapter || (f.chapter && f.chapter.value) || null;
-        Store.addNote(id, chap ? Number(chap) : null, text);
-        const y = window.scrollY;
-        bookPage(id, selected);
-        window.scrollTo(0, y);
-        toast('Note saved');
+        Store.addNote(id, chap ? Number(chap) : null, text)
+          .then(() => {
+            const y = window.scrollY;
+            bookPage(id, selected);
+            window.scrollTo(0, y);
+            toast('Note saved');
+          })
+          .catch((err) => toast(err.message));
       })
     );
     $app.querySelector('#checkpoint').addEventListener('click', () => checkpointSheet(id));
@@ -280,32 +372,35 @@
     form.querySelector('[data-cancel]').addEventListener('click', closeOverlay);
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const res = Store.addCheckpoint(id, n, form.note.value);
-      closeOverlay();
-      bookPage(id);
-      if (res.justFinished) finale(id);
-      else {
-        const s = Store.readerStreak();
-        toast(s.count >= 2 ? `Checkpoint saved · ${s.count}-day streak` : 'Checkpoint saved. The sky brightens.');
-      }
+      submitWith(form, async () => {
+        const res = await Store.addCheckpoint(id, n, form.note.value);
+        closeOverlay();
+        bookPage(id);
+        if (res.justFinished) finale(id);
+        else {
+          const s = Store.readerStreak();
+          toast(s.count >= 2 ? `Checkpoint saved · ${s.count}-day streak` : 'Checkpoint saved. The sky brightens.');
+        }
+      });
     });
     form.querySelector('textarea').focus({ preventScroll: true });
   }
 
   /* ---------- re-engagement ---------- */
-  function showReminder(id) {
+  async function showReminder(id) {
     const b = Store.getBook(id);
     const d = Store.derive(b);
-    const r = Services.reminder(b);
+    if (!b.history.length) await Store.loadBook(id).catch(() => {}); // fallback needs notes
+    const r = (await Store.fetchReminder(id)) || Services.reminder(b);
     const scrim = openOverlay(`
 <div class="sheet" role="dialog" aria-modal="true" aria-label="Your journey is waiting">
   <div class="scene" id="rscene"></div>
   <div class="content">
-    <h2>${r.headline}</h2>
-    <p>${r.lastLeft}</p>
-    <p class="recap">${esc(r.recap)}</p>
+    <h2>${esc(r.headline)}</h2>
+    <p>${esc(r.lastLeft)}</p>
+    ${r.recap ? `<p class="recap">${esc(r.recap)}</p>` : ''}
     ${r.note ? `<div class="quote"><small>Your note${r.note.chapter ? ` · Chapter ${r.note.chapter}` : ''}</small>${esc(r.note.text)}</div>` : ''}
-    <p>${r.nudge}</p>
+    <p>${esc(r.nudge)}</p>
     <div class="actions">
       <button class="btn quiet" data-later>Not right now</button>
       <button class="btn primary" data-go>Continue Reading</button>
@@ -359,15 +454,52 @@
     if (paused.length && !location.hash.startsWith('#/book/')) setTimeout(() => showReminder(paused[0].id), 600);
   }
 
-  /* ---------- router ---------- */
-  function route() {
+  /* ---------- router & boot ---------- */
+  function fatal(err) {
+    $app.innerHTML = `
+<main class="page"><section class="empty-state">
+  <h2>${err.network ? 'The server isn’t answering' : 'Something went wrong'}</h2>
+  <p>${esc(err.message)}</p>
+  ${err.network ? `<p class="hint">Start the backend: <code>cd src/backend &amp;&amp; python -m flask --app app run --port 5000</code><br>Looking for it at <code>${esc(TTL_CONFIG.apiBase)}</code></p>` : ''}
+  <button class="btn primary" id="retry">Try again</button>
+</section></main>`;
+    document.getElementById('retry').addEventListener('click', boot);
+  }
+
+  let routeSeq = 0;
+  async function route() {
+    const seq = ++routeSeq;
     closeOverlay();
-    const m = location.hash.match(/^#\/book\/([\w-]+)/);
-    if (m && Store.getBook(m[1])) bookPage(m[1]);
-    else dashboard();
+    const m = location.hash.match(/^#\/book\/(\d+)/);
+    try {
+      if (m) {
+        await Store.loadBook(m[1]);
+        if (seq !== routeSeq) return; // a newer navigation won
+        bookPage(m[1]);
+      } else {
+        if (Store.getUser()) await Store.init(); // dashboard shows fresh data
+        if (seq !== routeSeq) return;
+        dashboard();
+      }
+    } catch (err) {
+      if (seq !== routeSeq) return;
+      if (m && !err.network) { location.hash = '#/'; return; } // unknown book
+      fatal(err);
+      return;
+    }
     window.scrollTo(0, 0);
   }
-  window.addEventListener('hashchange', route);
-  route();
-  maybeWelcomeBack();
+
+  async function boot() {
+    $app.innerHTML = '<main class="page"><p class="loading">Waking the sunrise…</p></main>';
+    try {
+      await Store.init();
+    } catch (err) {
+      return fatal(err);
+    }
+    window.addEventListener('hashchange', route);
+    await route();
+    maybeWelcomeBack();
+  }
+  boot();
 })();

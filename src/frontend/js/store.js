@@ -1,35 +1,67 @@
-/* Persistence + domain helpers. localStorage today; replace internals with API calls later. */
+/* API-backed store. Reads are synchronous from an in-memory cache; every mutation goes to the
+ * Flask backend first and then refreshes the cache, so the server is the single source of truth. */
 (function (global) {
-  const KEY = 'toward-the-light.v2';
-  const PAUSED_AFTER_DAYS = 14;
-  let state = null;
+  const BASE = (global.TTL_CONFIG && global.TTL_CONFIG.apiBase) || '';
+  const DEFAULT_PAUSED_AFTER = 14;
 
-  const uid = () => Math.random().toString(36).slice(2, 9) + Date.now().toString(36).slice(-4);
+  let user = null;
+  let streak = { count: 0, activeToday: false, alive: false };
+  const byId = new Map(); // id (string) -> book
 
-  function load() {
-    if (state) return state;
+  const tz = () => -new Date().getTimezoneOffset(); // minutes east of UTC
+
+  /* ---------- HTTP ---------- */
+  async function api(path, { method = 'GET', body } = {}) {
+    let res;
     try {
-      const raw = localStorage.getItem(KEY);
-      if (raw) state = JSON.parse(raw);
+      res = await fetch(BASE + path, {
+        method,
+        headers: body !== undefined ? { 'Content-Type': 'application/json' } : undefined,
+        body: body !== undefined ? JSON.stringify(body) : undefined,
+      });
     } catch (e) {
-      /* storage unavailable: fall through to seed */
+      const err = new Error('Cannot reach the Toward the Light server.');
+      err.network = true;
+      throw err;
     }
-    if (!state || !Array.isArray(state.books)) state = { books: Seed.books() };
-    return state;
+    if (res.status === 204) return null;
+    const data = await res.json().catch(() => null);
+    if (!res.ok) throw new Error((data && data.error) || `Request failed (${res.status})`);
+    return data;
   }
 
-  function save() {
-    try {
-      localStorage.setItem(KEY, JSON.stringify(state));
-    } catch (e) {
-      /* in-memory only */
-    }
+  /* ---------- cache ---------- */
+  function upsert(b) {
+    const key = String(b.id);
+    const prev = byId.get(key) || { notes: [], history: [] };
+    const merged = Object.assign(prev, b);
+    byId.set(key, merged);
+    return merged;
+  }
+  async function refreshList() {
+    const list = await api(`/api/books?tz=${tz()}`);
+    const seen = new Set(list.map((b) => String(b.id)));
+    [...byId.keys()].forEach((k) => !seen.has(k) && byId.delete(k));
+    list.forEach(upsert);
+  }
+  const refreshStreak = async () => { streak = await api(`/api/streak?tz=${tz()}`); };
+
+  /** Load everything the dashboard needs. Throws (err.network) if the backend is down. */
+  async function init() {
+    [user] = await Promise.all([api('/api/user'), refreshList(), refreshStreak()]);
+  }
+  /** Load a book's notes + history (the list endpoint only carries summaries). */
+  async function loadBook(id) {
+    return upsert(await api(`/api/books/${id}?tz=${tz()}`));
   }
 
-  const books = () => load().books;
-  const getBook = (id) => books().find((b) => b.id === id);
+  /* ---------- reads ---------- */
+  const books = () => [...byId.values()];
+  const getBook = (id) => byId.get(String(id));
+  const getUser = () => user;
+  const readerStreak = () => streak;
+  const bookStreak = (b) => b.streak || { count: 0, activeToday: false, alive: false };
 
-  /* ---- derived values (pure) ---- */
   function daysSince(iso) {
     return Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
   }
@@ -39,6 +71,7 @@
     const isComplete = done >= total;
     const currentIndex = isComplete ? total - 1 : done; // zero-based
     const days = daysSince(book.lastActivity);
+    const pausedAfter = (user && user.pausedAfterDays) || DEFAULT_PAUSED_AFTER;
     return {
       total,
       done,
@@ -47,27 +80,9 @@
       current: book.chapters[currentIndex],
       percent: Math.round((done / total) * 100),
       daysAway: days,
-      isPaused: !isComplete && days >= PAUSED_AFTER_DAYS,
+      isPaused: !isComplete && days >= pausedAfter,
     };
   }
-
-  /* ---- streaks: consecutive calendar days with any reading activity (checkpoint or note) ---- */
-  const dayKey = (d) => `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
-
-  function streakFromDates(isoDates) {
-    const days = new Set(isoDates.map((iso) => dayKey(new Date(iso))));
-    const cursor = new Date();
-    const activeToday = days.has(dayKey(cursor));
-    if (!activeToday) cursor.setDate(cursor.getDate() - 1); // a streak stays alive until the day is over
-    let count = 0;
-    while (days.has(dayKey(cursor))) {
-      count++;
-      cursor.setDate(cursor.getDate() - 1);
-    }
-    return { count, activeToday, alive: count > 0 };
-  }
-  const bookStreak = (book) => streakFromDates(book.history.map((h) => h.at));
-  const readerStreak = () => streakFromDates(books().flatMap((b) => b.history.map((h) => h.at)));
 
   function relativeTime(iso) {
     const mins = Math.floor((Date.now() - new Date(iso).getTime()) / 60000);
@@ -82,40 +97,37 @@
     return `${Math.round(d / 30)} months ago`;
   }
 
-  /* ---- mutations ---- */
-  function addNote(bookId, chapter, text) {
-    const b = getBook(bookId);
-    text = (text || '').trim();
-    if (!b || !text) return null;
-    const note = { id: uid(), at: new Date().toISOString(), chapter: chapter || null, text };
-    b.notes.push(note);
-    b.history.push({ id: uid(), at: note.at, type: 'note', chapter: note.chapter, text, completedAfter: b.completed });
-    b.lastActivity = note.at;
-    save();
-    return note;
+  /* ---------- mutations ---------- */
+  async function addNote(bookId, chapter, text) {
+    await api(`/api/books/${bookId}/notes`, { method: 'POST', body: { text, chapter: chapter || null } });
+    await Promise.all([loadBook(bookId), refreshStreak()]);
   }
 
   /** Save a checkpoint: the reader has finished `completed` chapters. */
-  function addCheckpoint(bookId, completed, noteText) {
-    const b = getBook(bookId);
-    if (!b) return null;
-    const total = b.chapters.length;
-    const was = b.completed;
-    completed = Math.max(0, Math.min(total, Math.round(completed)));
-    const at = new Date().toISOString();
-    b.completed = completed;
-    b.lastActivity = at;
-    const text = (noteText || '').trim();
-    b.history.push({ id: uid(), at, type: 'checkpoint', chapter: completed, completedAfter: completed, text });
-    if (text) b.notes.push({ id: uid(), at, chapter: completed || null, text });
-    save();
-    return { was, now: completed, justFinished: was < total && completed >= total };
+  async function addCheckpoint(bookId, completed, note) {
+    const was = getBook(bookId).completed;
+    const res = await api(`/api/books/${bookId}/checkpoints`, { method: 'POST', body: { completed, note: note || '' } });
+    upsert(res);
+    await refreshStreak();
+    return { was, now: res.completed, justFinished: res.justFinished };
   }
 
-  function reset() {
-    state = { books: Seed.books() };
-    save();
+  async function createBook(payload) {
+    const b = await api('/api/books', { method: 'POST', body: payload });
+    upsert(b);
+    return b;
   }
 
-  global.Store = { books, getBook, derive, bookStreak, readerStreak, relativeTime, addNote, addCheckpoint, reset, PAUSED_AFTER_DAYS };
+  async function updateUser(patch) {
+    user = await api('/api/user', { method: 'PUT', body: patch });
+    return user;
+  }
+
+  /** Re-engagement text from the backend (the LLM seam); null if unavailable. */
+  const fetchReminder = (bookId) => api(`/api/books/${bookId}/reminder`).catch(() => null);
+
+  global.Store = {
+    init, loadBook, books, getBook, getUser, derive, bookStreak, readerStreak, relativeTime,
+    addNote, addCheckpoint, createBook, updateUser, fetchReminder,
+  };
 })(window);
