@@ -1,7 +1,7 @@
-/* Where the API lives. Defaults to port 5000 on whatever host served this page, so it also
- * works from a phone via your computer's LAN IP. Override with ?api=http://host:port */
+/* Where the API lives. By default the same origin as the page: `npm start` (dev-server.js) proxies /api to
+ * the Flask backend, which also makes HTTPS tunnels and phones work with a single address.
+ * Override with ?api=http://host:port to talk to a backend directly (it must allow CORS). */
 (function (global) {
   const fromQuery = new URLSearchParams(location.search).get('api');
-  const apiBase = (fromQuery || `${location.protocol}//${location.hostname || 'localhost'}:5000`).replace(/\/$/, '');
-  global.TTL_CONFIG = { apiBase };
+  global.TTL_CONFIG = { apiBase: (fromQuery || '').replace(/\/$/, '') };
 })(window);

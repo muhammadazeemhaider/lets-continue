@@ -26,7 +26,11 @@
     }
     if (res.status === 204) return null;
     const data = await res.json().catch(() => null);
-    if (!res.ok) throw new Error((data && data.error) || `Request failed (${res.status})`);
+    if (!res.ok) {
+      const err = new Error((data && data.error) || `Request failed (${res.status})`);
+      if (res.status === 502 || res.status === 504) err.network = true; // dev proxy could not reach Flask
+      throw err;
+    }
     return data;
   }
 

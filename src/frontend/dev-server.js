@@ -7,8 +7,29 @@ const root = __dirname;
 const port = Number(process.argv[2] || process.env.PORT || 5173);
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.webmanifest': 'application/manifest+json', '.json': 'application/json' };
 
+// /api/* is forwarded to the Flask backend, so the browser only ever talks to ONE origin.
+// That is what lets a single HTTPS tunnel (for phone testing) cover both the app and the API.
+const backend = new URL(process.env.BACKEND_URL || 'http://127.0.0.1:5000');
+
+function proxyToBackend(req, res) {
+  const upstream = http.request(
+    { hostname: backend.hostname, port: backend.port, path: req.url, method: req.method,
+      headers: { ...req.headers, host: backend.host } },
+    (up) => {
+      res.writeHead(up.statusCode, up.headers);
+      up.pipe(res);
+    }
+  );
+  upstream.on('error', () => {
+    res.writeHead(502, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: `Backend not reachable at ${backend.origin}. Start it with: python -m flask --app app run --port ${backend.port}` }));
+  });
+  req.pipe(upstream);
+}
+
 const server = http
   .createServer((req, res) => {
+    if (req.url.startsWith('/api/')) return proxyToBackend(req, res);
     let rel = decodeURIComponent(req.url.split('?')[0]);
     if (rel.endsWith('/')) rel += 'index.html';
     const file = path.join(root, rel);

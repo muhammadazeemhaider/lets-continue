@@ -549,7 +549,7 @@
 <main class="page"><section class="empty-state">
   <h2>${err.network ? 'The server isn’t answering' : 'Something went wrong'}</h2>
   <p>${esc(err.message)}</p>
-  ${err.network ? `<p class="hint">Start the backend: <code>cd src/backend &amp;&amp; python -m flask --app app run --port 5000</code><br>Looking for it at <code>${esc(TTL_CONFIG.apiBase)}</code></p>` : ''}
+  ${err.network ? `<p class="hint">Start the backend: <code>cd src/backend &amp;&amp; python -m flask --app app run --port 5000</code><br>Looking for it at <code>${esc(TTL_CONFIG.apiBase || location.origin + '/api')}</code></p>` : ''}
   <button class="btn primary" id="retry">Try again</button>
 </section></main>`;
     document.getElementById('retry').addEventListener('click', boot);
