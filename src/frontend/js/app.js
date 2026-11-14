@@ -36,6 +36,14 @@
     if (e.key === 'Escape') closeOverlay();
   });
 
+  /* ---------- streaks (warm, never punishing: a lapsed streak just invites a fresh start) ---------- */
+  function streakChip(s) {
+    if (!s.alive)
+      return `<div class="streak idle"><span class="ember" aria-hidden="true">✶</span><span>Light a new streak today</span></div>`;
+    return `<div class="streak${s.activeToday ? ' lit' : ''}"><span class="ember" aria-hidden="true">🔥</span>
+      <span><b>${s.count}-day streak</b> · ${s.activeToday ? 'you read today' : 'read today to keep it glowing'}</span></div>`;
+  }
+
   /* ---------- dashboard ---------- */
   function dashboard() {
     const books = [...Store.books()].sort((a, b) => new Date(b.lastActivity) - new Date(a.lastActivity));
@@ -47,6 +55,7 @@
     <div class="eyebrow">Toward the Light</div>
     <h1>Getting to the Light</h1>
     <p>Every chapter brings the sunrise a little closer.</p>
+    ${streakChip(Store.readerStreak())}
   </header>
 
   ${paused.length ? `
@@ -95,6 +104,7 @@
     <div class="stats">
       <span><b>${d.done}</b> of <b>${d.total}</b> chapters</span>
       <span>${d.isComplete ? 'Finished' : `Now: <b>${esc(d.current.title)}</b>`}</span>
+      ${(() => { const s = Store.bookStreak(b); return s.count >= 2 ? `<span class="mini-streak">🔥 ${s.count} days</span>` : ''; })()}
       <span class="pct">${d.percent}%</span>
     </div>
     <div class="foot">
@@ -138,6 +148,7 @@
     <span><b>${d.done}</b> of <b>${d.total}</b> chapters</span>
     <span>${d.isComplete ? 'Finished' : `Now: <b>${esc(d.current.title)}</b>`}</span>
     <span>Last read ${Store.relativeTime(b.lastActivity)}</span>
+    ${(() => { const s = Store.bookStreak(b); return s.count >= 2 ? `<span class="mini-streak">🔥 ${s.count}-day streak</span>` : ''; })()}
     <span class="pct">${d.percent}%</span>
   </div>
 
@@ -273,7 +284,10 @@
       closeOverlay();
       bookPage(id);
       if (res.justFinished) finale(id);
-      else toast('Checkpoint saved. The sky brightens.');
+      else {
+        const s = Store.readerStreak();
+        toast(s.count >= 2 ? `Checkpoint saved · ${s.count}-day streak` : 'Checkpoint saved. The sky brightens.');
+      }
     });
     form.querySelector('textarea').focus({ preventScroll: true });
   }

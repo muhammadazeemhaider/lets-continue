@@ -14,7 +14,7 @@
     let d = lastDaysAgo;
     let id = 0;
     while (c > 0) {
-      out.push({ id: `h${id++}`, at: ago(d, id % 5), type: 'checkpoint', chapter: c, completedAfter: c, text: '' });
+      out.push({ id: `h${id++}`, at: ago(d), type: 'checkpoint', chapter: c, completedAfter: c, text: '' });
       c -= step;
       d += gap;
     }
@@ -64,12 +64,12 @@
         'Piranesi lives in a House of endless halls, tides and statues. He keeps careful journals — until signs appear that someone else is in the House.',
       chapters: numbered(14, 'Entry'),
       completed: 9,
-      lastActivity: ago(1, 4),
+      lastActivity: ago(1),
       notes: [
         { id: 'n3', at: ago(2), chapter: 5, text: 'The Other is not as kind as he seems. Note the dates in the journals.' },
-        { id: 'n4', at: ago(1, 4), chapter: 9, text: 'Who is 16? The numbering doesn’t add up.' },
+        { id: 'n4', at: ago(1), chapter: 9, text: 'Who is 16? The numbering doesn’t add up.' },
       ],
-      history: history(9, 1, 3, 2),
+      history: history(9, 1, 1, 1), // read every day for the last 9 days -> a live streak
     };
 
     const dune = {

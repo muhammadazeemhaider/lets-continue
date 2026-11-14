@@ -1,6 +1,6 @@
 /* Persistence + domain helpers. localStorage today; replace internals with API calls later. */
 (function (global) {
-  const KEY = 'toward-the-light.v1';
+  const KEY = 'toward-the-light.v2';
   const PAUSED_AFTER_DAYS = 14;
   let state = null;
 
@@ -51,6 +51,24 @@
     };
   }
 
+  /* ---- streaks: consecutive calendar days with any reading activity (checkpoint or note) ---- */
+  const dayKey = (d) => `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+
+  function streakFromDates(isoDates) {
+    const days = new Set(isoDates.map((iso) => dayKey(new Date(iso))));
+    const cursor = new Date();
+    const activeToday = days.has(dayKey(cursor));
+    if (!activeToday) cursor.setDate(cursor.getDate() - 1); // a streak stays alive until the day is over
+    let count = 0;
+    while (days.has(dayKey(cursor))) {
+      count++;
+      cursor.setDate(cursor.getDate() - 1);
+    }
+    return { count, activeToday, alive: count > 0 };
+  }
+  const bookStreak = (book) => streakFromDates(book.history.map((h) => h.at));
+  const readerStreak = () => streakFromDates(books().flatMap((b) => b.history.map((h) => h.at)));
+
   function relativeTime(iso) {
     const mins = Math.floor((Date.now() - new Date(iso).getTime()) / 60000);
     if (mins < 2) return 'just now';
@@ -99,5 +117,5 @@
     save();
   }
 
-  global.Store = { books, getBook, derive, relativeTime, addNote, addCheckpoint, reset, PAUSED_AFTER_DAYS };
+  global.Store = { books, getBook, derive, bookStreak, readerStreak, relativeTime, addNote, addCheckpoint, reset, PAUSED_AFTER_DAYS };
 })(window);
