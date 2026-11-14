@@ -105,10 +105,244 @@
 </article>`;
   }
 
-  /* ---------- stubs filled in by later commits ---------- */
-  function showReminder() {}
-  function bookPage(id) {
-    $app.innerHTML = `<main class="page"><a class="back" href="#/">← All books</a><p>${esc(id)}</p></main>`;
+  /* ---------- book detail ---------- */
+  const fmtDate = (iso) =>
+    new Date(iso).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+
+  function noteItem(n, book) {
+    const ch = n.chapter ? book.chapters[n.chapter - 1] : null;
+    return `<li class="note"><p>${esc(n.text)}</p><small>${ch ? `Chapter ${ch.n} · ${esc(ch.title)}` : 'General'} · ${fmtDate(n.at)}</small></li>`;
+  }
+
+  function bookPage(id, selected) {
+    const b = Store.getBook(id);
+    const d = Store.derive(b);
+    if (selected == null) selected = d.currentIndex;
+    const sel = b.chapters[selected];
+    const selState = selected < d.done ? 'done' : selected === d.currentIndex && !d.isComplete ? 'cur' : 'todo';
+    const selLabel = { done: 'Completed', cur: 'Current chapter', todo: 'Upcoming' }[selState];
+    const chNotes = b.notes.filter((n) => n.chapter === sel.n);
+    const general = b.notes.filter((n) => !n.chapter);
+    const allNotes = [...b.notes].sort((a, b2) => new Date(b2.at) - new Date(a.at));
+    const hist = [...b.history].sort((a, b2) => new Date(b2.at) - new Date(a.at));
+
+    $app.innerHTML = `
+<main class="page">
+  <div class="topbar">
+    <a class="back" href="#/">← All books</a>
+    ${d.isPaused ? `<button class="btn small" id="remind">Where was I?</button>` : ''}
+  </div>
+  <header class="book-head"><h1>${esc(b.title)}</h1><p>${esc(b.author)}</p></header>
+  <div class="hero" id="hero"></div>
+  <div class="summary">
+    <span><b>${d.done}</b> of <b>${d.total}</b> chapters</span>
+    <span>${d.isComplete ? 'Finished' : `Now: <b>${esc(d.current.title)}</b>`}</span>
+    <span>Last read ${Store.relativeTime(b.lastActivity)}</span>
+    <span class="pct">${d.percent}%</span>
+  </div>
+
+  <div class="columns">
+    <div>
+      <section class="panel chapter-focus" aria-live="polite">
+        <h3>Chapter ${sel.n}</h3>
+        <span class="badge ${selState}">${selLabel}</span>
+        <h2>${esc(sel.title)}</h2>
+        ${chNotes.length ? `<ul class="notes">${chNotes.map((n) => noteItem(n, b)).join('')}</ul>` : '<p class="empty">No notes for this chapter yet.</p>'}
+        <form class="note-form" data-chapter="${sel.n}">
+          <textarea name="text" placeholder="A thought or memory for this chapter…" aria-label="Note for chapter ${sel.n}"></textarea>
+          <div class="row"><button class="btn small" type="submit">Save chapter note</button></div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h3>Notes &amp; memories</h3>
+        ${allNotes.length ? `<ul class="notes">${allNotes.map((n) => noteItem(n, b)).join('')}</ul>` : '<p class="empty">Nothing saved yet.</p>'}
+        <form class="note-form" data-chapter="">
+          <textarea name="text" placeholder="Something to remember about this book…" aria-label="General note"></textarea>
+          <div class="row">
+            <select name="chapter" aria-label="Attach to">
+              <option value="">General</option>
+              ${b.chapters.map((c) => `<option value="${c.n}">Chapter ${c.n} · ${esc(c.title)}</option>`).join('')}
+            </select>
+            <button class="btn small" type="submit">Save note</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div>
+      <section class="panel">
+        <h3>The path</h3>
+        <ul class="chapters">
+          ${b.chapters.map((c, i) => {
+            const st = i < d.done ? 'done' : i === d.currentIndex && !d.isComplete ? 'cur' : 'todo';
+            return `<li><button class="${st}${i === selected ? ' sel' : ''}" data-ch="${i}"><span class="dot"></span><span class="num">${c.n}</span><span>${esc(c.title)}</span><span class="ico">${st === 'done' ? '✓' : st === 'cur' ? 'You are here' : ''}</span></button></li>`;
+          }).join('')}
+        </ul>
+      </section>
+      <section class="panel">
+        <h3>Reading history</h3>
+        ${hist.length ? `<ul class="timeline">${hist.map((h) => {
+          const ch = h.chapter ? b.chapters[h.chapter - 1] : null;
+          const title = h.type === 'checkpoint'
+            ? (h.completedAfter >= d.total ? 'Reached the light' : h.completedAfter === 0 ? 'Checkpoint: back to the start' : `Finished through ${esc(ch ? ch.title : 'chapter ' + h.chapter)}`)
+            : `Note${ch ? ` on ${esc(ch.title)}` : ''}`;
+          return `<li class="${h.type}"><b>${title}</b><small>${fmtDate(h.at)} · ${Store.relativeTime(h.at)}</small>${h.text ? `<p>${esc(h.text)}</p>` : ''}</li>`;
+        }).join('')}</ul>` : '<p class="empty">Your reading history will appear here.</p>'}
+      </section>
+    </div>
+  </div>
+
+  <div class="dock"><button class="btn primary" id="checkpoint">✶ Save a reading checkpoint</button></div>
+</main>`;
+
+    Journey.render(document.getElementById('hero'), {
+      total: d.total,
+      completed: d.done,
+      selected,
+      interactive: true,
+      label: `${b.title}: ${d.done} of ${d.total} chapters completed`,
+      onSelect: (i) => {
+        const y = window.scrollY;
+        bookPage(id, i);
+        window.scrollTo(0, y);
+      },
+    });
+
+    $app.querySelectorAll('[data-ch]').forEach((btn) =>
+      btn.addEventListener('click', () => {
+        const y = window.scrollY;
+        bookPage(id, Number(btn.dataset.ch));
+        window.scrollTo(0, y);
+      })
+    );
+    $app.querySelectorAll('.note-form').forEach((f) =>
+      f.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const text = f.text.value;
+        if (!text.trim()) return;
+        const chap = f.dataset.chapter || (f.chapter && f.chapter.value) || null;
+        Store.addNote(id, chap ? Number(chap) : null, text);
+        const y = window.scrollY;
+        bookPage(id, selected);
+        window.scrollTo(0, y);
+        toast('Note saved');
+      })
+    );
+    $app.querySelector('#checkpoint').addEventListener('click', () => checkpointSheet(id));
+    $app.querySelector('#remind')?.addEventListener('click', () => showReminder(id));
+  }
+
+  /* ---------- checkpoint sheet ---------- */
+  function checkpointSheet(id) {
+    const b = Store.getBook(id);
+    const d = Store.derive(b);
+    let n = Math.min(d.total, d.done + 1);
+    const scrim = openOverlay(`
+<form class="sheet" role="dialog" aria-modal="true" aria-label="Save a reading checkpoint">
+  <h2>Save a checkpoint</h2>
+  <p class="sub">Where are you in <em>${esc(b.title)}</em>?</p>
+  <div class="stepper">
+    <button type="button" data-step="-1" aria-label="One chapter fewer">−</button>
+    <div class="val" aria-live="polite"><b></b><span></span></div>
+    <button type="button" data-step="1" aria-label="One chapter more">+</button>
+  </div>
+  <textarea name="note" placeholder="A note for future you (optional) — what do you want to remember?"></textarea>
+  <div class="actions">
+    <button type="button" class="btn" data-cancel>Cancel</button>
+    <button type="submit" class="btn primary">Save checkpoint</button>
+  </div>
+</form>`);
+    const form = scrim.querySelector('form');
+    const paint = () => {
+      form.querySelector('.val b').textContent = n;
+      const c = n > 0 ? b.chapters[n - 1].title : 'Not started';
+      form.querySelector('.val span').textContent = n === 0 ? 'Not started' : `chapters finished · ${c}`;
+    };
+    paint();
+    form.querySelectorAll('[data-step]').forEach((btn) =>
+      btn.addEventListener('click', () => {
+        n = Math.max(0, Math.min(d.total, n + Number(btn.dataset.step)));
+        paint();
+      })
+    );
+    form.querySelector('[data-cancel]').addEventListener('click', closeOverlay);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const res = Store.addCheckpoint(id, n, form.note.value);
+      closeOverlay();
+      bookPage(id);
+      if (res.justFinished) finale(id);
+      else toast('Checkpoint saved. The sky brightens.');
+    });
+    form.querySelector('textarea').focus({ preventScroll: true });
+  }
+
+  /* ---------- re-engagement ---------- */
+  function showReminder(id) {
+    const b = Store.getBook(id);
+    const d = Store.derive(b);
+    const r = Services.reminder(b);
+    const scrim = openOverlay(`
+<div class="sheet" role="dialog" aria-modal="true" aria-label="Your journey is waiting">
+  <div class="scene" id="rscene"></div>
+  <div class="content">
+    <h2>${r.headline}</h2>
+    <p>${r.lastLeft}</p>
+    <p class="recap">${esc(r.recap)}</p>
+    ${r.note ? `<div class="quote"><small>Your note${r.note.chapter ? ` · Chapter ${r.note.chapter}` : ''}</small>${esc(r.note.text)}</div>` : ''}
+    <p>${r.nudge}</p>
+    <div class="actions">
+      <button class="btn quiet" data-later>Not right now</button>
+      <button class="btn primary" data-go>Continue Reading</button>
+    </div>
+  </div>
+</div>`, 'reminder');
+    Journey.render(scrim.querySelector('#rscene'), {
+      total: d.total,
+      completed: d.done,
+      label: `Your current position in ${b.title}`,
+    });
+    scrim.querySelector('[data-later]').addEventListener('click', closeOverlay);
+    scrim.querySelector('[data-go]').addEventListener('click', () => {
+      closeOverlay();
+      if (location.hash !== `#/book/${id}`) location.hash = `#/book/${id}`;
+      else bookPage(id);
+      toast(`Enjoy ${d.current ? d.current.title : 'your book'}.`);
+    });
+  }
+
+  /* ---------- completion ---------- */
+  function finale(id) {
+    const b = Store.getBook(id);
+    const d = Store.derive(b);
+    const scrim = openOverlay(`
+<div class="sheet" role="dialog" aria-modal="true" aria-label="Book complete">
+  <div class="scene" id="fscene"></div>
+  <div class="content">
+    <h2>You reached the light.</h2>
+    <p>You finished <em>${esc(b.title)}</em>. Every chapter along the way is still glowing.</p>
+    <div class="actions"><button class="btn primary" data-done>Beautiful</button></div>
+  </div>
+</div>`, 'finale');
+    Journey.render(scrim.querySelector('#fscene'), {
+      total: d.total, completed: d.total - 1, animateSun: false, label: 'Sunrise',
+    });
+    // Start at the last step and let the final chapter bring the sun fully up.
+    requestAnimationFrame(() =>
+      Journey.render(scrim.querySelector('#fscene'), { total: d.total, completed: d.total, animateSun: true, label: `${b.title} complete: the sun has risen` })
+    );
+    scrim.querySelector('[data-done]').addEventListener('click', closeOverlay);
+  }
+
+  /* first visit of a session: gently remind about the book that has waited longest */
+  function maybeWelcomeBack() {
+    let seen = false;
+    try { seen = sessionStorage.getItem('ttl.welcomed') === '1'; sessionStorage.setItem('ttl.welcomed', '1'); } catch (e) {}
+    if (seen) return;
+    const paused = Store.books().filter((b) => Store.derive(b).isPaused)
+      .sort((a, b) => new Date(a.lastActivity) - new Date(b.lastActivity));
+    if (paused.length && !location.hash.startsWith('#/book/')) setTimeout(() => showReminder(paused[0].id), 600);
   }
 
   /* ---------- router ---------- */
@@ -121,4 +355,5 @@
   }
   window.addEventListener('hashchange', route);
   route();
+  maybeWelcomeBack();
 })();
