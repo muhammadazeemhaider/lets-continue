@@ -7,7 +7,7 @@ const root = __dirname;
 const port = Number(process.argv[2] || process.env.PORT || 5173);
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json' };
 
-http
+const server = http
   .createServer((req, res) => {
     let rel = decodeURIComponent(req.url.split('?')[0]);
     if (rel.endsWith('/')) rel += 'index.html';
@@ -19,5 +19,18 @@ http
       res.setHeader('Cache-Control', 'no-store');
       res.end(data);
     });
-  })
-  .listen(port, () => console.log(`Toward the Light frontend: http://localhost:${port}`));
+  });
+
+// If the port is busy (e.g. another dev server is still running), try the next ones.
+function listen(p, triesLeft) {
+  server.once('error', (err) => {
+    if (err.code === 'EADDRINUSE' && triesLeft > 0) {
+      console.log(`Port ${p} is in use, trying ${p + 1}...`);
+      listen(p + 1, triesLeft - 1);
+    } else {
+      throw err;
+    }
+  });
+  server.listen(p, () => console.log(`Toward the Light frontend: http://localhost:${p}`));
+}
+listen(port, 10);
