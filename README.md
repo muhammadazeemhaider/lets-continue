@@ -10,20 +10,25 @@ src/
   ...         other services will live alongside
 ```
 
-## Run the frontend
+## Run the whole app
 
-No build step or dependencies (needs Node only for the optional dev server).
+Two terminals (the frontend talks to the backend over HTTP, so both must be running):
 
 ```
+# 1) backend  ->  http://localhost:5000
+cd src/backend
+pip install -r requirements.txt
+python -m flask --app app seed        # first time only: sample books (optional)
+python -m flask --app app run --port 5000
+
+# 2) frontend ->  http://localhost:5173
 cd src/frontend
-npm start            # or: node dev-server.js 5173   -> http://localhost:5173
+npm start
 ```
 
-Alternatives: `python -m http.server 5173` from `src/frontend`, or just open `src/frontend/index.html` in a browser.
+Open http://localhost:5173. The frontend looks for the API on port 5000 of the same host (so a phone on your Wi-Fi can use `http://<your-LAN-IP>:5173`; run Flask with `--host 0.0.0.0` for that). Override with `?api=http://host:port`. If the backend is down the app shows a "server isn't answering" screen with a retry button.
 
-To test on a phone, run the server and open `http://<your-computer-LAN-IP>:5173` on the same Wi-Fi.
-
-Data is stored in `localStorage` (use "Reset sample data" on the dashboard to restore the seed books).
+All data lives in the backend's SQLite database; the browser stores nothing. Use "+ Add a book" in the app, or seed sample books.
 
 ## Frontend structure (`src/frontend`)
 
@@ -31,8 +36,8 @@ Data is stored in `localStorage` (use "Reset sample data" on the dashboard to re
 | --- | --- |
 | `js/journey.js` | Reusable SVG progress landscape: `Journey.render(el, {total, completed, selected, interactive, onSelect})`. Markers are placed by arc length on the curve, so any chapter count works. |
 | `js/data.js` | Sample books (`Seed.books()`). |
-| `js/store.js` | Persistence, derived state and streaks (`Store.*`). Swap internals for API calls later. |
-| `js/services.js` | `Services.reminder(book)`: the re-engagement text. Template-based now; the intended seam for an LLM. |
+| `js/store.js` | API client + in-memory cache (`Store.*`): synchronous reads, async mutations. |
+| `js/services.js` | Offline fallback for the reminder text (the backend endpoint is the primary source). |
 | `js/app.js` | Hash router and views: dashboard, book detail, checkpoint sheet, reminder, completion. |
 
 ## Streaks
