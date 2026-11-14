@@ -169,7 +169,7 @@
     ];
     let out = '';
     layers.forEach((L, li) => {
-      const color = mix(mix(skyBottom, '#2a2250', 0.25), dark, L.mixDark);
+      const color = mix(mix(skyBottom, '#3a2058', 0.35), dark, L.mixDark * (1 - 0.18 * p));
       const lit = mix(color, skyBottom, L.tint * p);
       const r = rnd(31 + li * 11);
       out += `<g fill="${lit}">`;
