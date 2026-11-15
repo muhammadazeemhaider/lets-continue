@@ -94,6 +94,8 @@
 <main class="page bookshelf-page">
   <nav class="library-nav" aria-label="Bookshelf"><a href="#/" class="library-brand"><span aria-hidden="true">✦</span> toward the light</a><span class="library-note">A LITTLE READING. A LITTLE LIGHT.</span></nav>
   <header class="masthead">
+    <button class="bell" id="bell" aria-label="Reminders${Store.notifications().unread ? ` (${Store.notifications().unread} unread)` : ''}">🔔<span class="badge-dot" ${Store.notifications().unread ? '' : 'hidden'}>${Store.notifications().unread}</span></button>
+    <button class="gear" id="settings" aria-label="Profile and settings">⚙</button>
     <div class="eyebrow">YOUR OWN LITTLE WORLDS</div>
     <h1>Every story has a sunrise.</h1>
     <p>Pick up where you left off. The light is waiting.</p>
@@ -113,7 +115,9 @@
     ${books.map((book, index) => card(book, index === 0)).join('')}
   </section>
 
-  <div class="shelf-footer"><span aria-hidden="true">✧</span><p>There’s no rush. The sun rises one page at a time.</p><button class="btn quiet small" id="reset">Reset sample data</button></div>
+  <div class="shelf-footer"><span aria-hidden="true">✧</span><p>There’s no rush. The sun rises one page at a time.</p></div>
+
+  <div class="footer-actions"><button class="btn primary" id="add-book">+ Add a book</button></div>
 </main>`;
 
     bindCharacterPicker(dashboard);
@@ -128,13 +132,317 @@
     });
 
     $app.querySelector('[data-remind]')?.addEventListener('click', (e) => showReminder(e.currentTarget.dataset.remind));
-    $app.querySelector('#reset').addEventListener('click', () => {
-      if (confirm('Reset to the original sample books? Your changes on this device will be lost.')) {
-        Store.reset();
+    $app.querySelector('#add-book').addEventListener('click', addBookSheet);
+    $app.querySelector('#settings').addEventListener('click', settingsSheet);
+    $app.querySelector('#bell').addEventListener('click', notificationsSheet);
+  }
+
+  /* ---------- reminders inbox ---------- */
+  function updateBellBadge() {
+    const dot = document.querySelector('#bell .badge-dot');
+    if (!dot) return;
+    const n = Store.notifications().unread;
+    dot.textContent = n;
+    dot.hidden = !n;
+  }
+
+  function notificationsSheet() {
+    const render = () => {
+      const { items, unread } = Store.notifications();
+      return `
+<div class="sheet" role="dialog" aria-modal="true" aria-label="Reminders">
+  <h2>Reminders</h2>
+  <p class="sub">Gentle nudges, never pressure.</p>
+  ${items.length ? `<ul class="inbox">${items.map((n) => `
+    <li><button class="inbox-item${n.read ? '' : ' unread'}" data-nid="${n.id}" data-book="${n.bookId}">
+      <b>${esc(n.title)}</b><span>${esc(n.body)}</span><small>${Store.relativeTime(n.createdAt)}</small>
+    </button></li>`).join('')}</ul>`
+    : '<p class="empty">No reminders yet. If a book goes quiet, we’ll send a small hello.</p>'}
+  <div class="actions">
+    ${unread ? '<button class="btn" data-readall>Mark all read</button>' : ''}
+    <button class="btn primary" data-close>Close</button>
+  </div>
+</div>`;
+    };
+    const scrim = openOverlay(render());
+    const bind = () => {
+      scrim.querySelector('[data-close]').addEventListener('click', closeOverlay);
+      scrim.querySelector('[data-readall]')?.addEventListener('click', async () => {
+        await Store.markAllNotificationsRead();
+        scrim.innerHTML = render();
+        bind();
+        updateBellBadge();
+      });
+      scrim.querySelectorAll('[data-nid]').forEach((btn) =>
+        btn.addEventListener('click', async () => {
+          Store.markNotificationRead(btn.dataset.nid).then(updateBellBadge).catch(() => {});
+          closeOverlay();
+          location.hash = `#/book/${btn.dataset.book}`;
+        })
+      );
+    };
+    bind();
+  }
+
+  /** The "this device" block inside the settings sheet. */
+  async function paintPushSection(root) {
+    const box = root.querySelector('[data-push]');
+    const timeout = new Promise((resolve) =>
+      setTimeout(() => resolve({ supported: false, reason: 'The notification service is still starting. Reload the page and try again.' }), 5000)
+    );
+    const st = await Promise.race([Store.pushStatus(), timeout]).catch((e) => ({ supported: false, reason: e.message }));
+    if (!st.supported) {
+      box.innerHTML = `<p class="hint">${esc(st.reason)}</p>`;
+      return;
+    }
+    if (st.permission === 'denied') {
+      box.innerHTML = `<p class="hint">Notifications are blocked for this site, so the browser will not even ask. To allow them in Chrome:</p>
+        <ol class="hint steps">
+          <li>Open a new tab and paste: <code class="copy">chrome://settings/content/siteDetails?site=${esc(encodeURIComponent(location.origin))}</code></li>
+          <li>Set <b>Notifications</b> to <b>Allow</b>.</li>
+          <li>Come back here and reload the page.</li>
+        </ol>
+        <button type="button" class="btn small" data-copy>Copy that address</button>`;
+      box.querySelector('[data-copy]').addEventListener('click', async () => {
+        const text = `chrome://settings/content/siteDetails?site=${encodeURIComponent(location.origin)}`;
+        try {
+          await navigator.clipboard.writeText(text);
+          toast('Copied. Paste it into a new tab.');
+        } catch (e) {
+          toast(text);
+        }
+      });
+      return;
+    }
+    box.innerHTML = st.subscribed
+      ? `<p class="hint ok">✓ Notifications are on for this device.</p>
+         <div class="row"><button type="button" class="btn small" data-push-test>Send a test</button>
+         <button type="button" class="btn small quiet" data-push-off>Turn off here</button></div>`
+      : `<p class="hint">Get a small reminder here when a book has been quiet for a while.</p>
+         <button type="button" class="btn small primary" data-push-on>Enable on this device</button>`;
+    const act = (sel, fn, msg) =>
+      box.querySelector(sel)?.addEventListener('click', async (e) => {
+        e.currentTarget.disabled = true;
+        try {
+          const r = await fn();
+          toast(typeof msg === 'function' ? msg(r) : msg);
+        } catch (err) {
+          toast(err.message);
+        }
+        paintPushSection(root);
+      });
+    act('[data-push-on]', Store.enablePush, 'Notifications enabled');
+    act('[data-push-off]', Store.disablePush, 'Notifications turned off here');
+    act('[data-push-test]', Store.testPush, (r) => {
+      if (r.status === 'sent') return 'Test sent, check your notifications';
+      const reason = (r.devices || []).map((d) => d.reason).find(Boolean);
+      if (r.status === 'pending') return `Almost ready: ${reason}`;
+      return `Test not delivered${reason ? `: ${reason}` : ` (${r.status})`}`;
+    });
+  }
+
+  function greeting() {
+    const u = Store.getUser();
+    return u && u.preferredName && u.preferredName !== 'Reader' ? `Welcome back, ${u.preferredName}` : 'Toward the Light';
+  }
+
+  /* ---------- profile & add-book sheets ---------- */
+  function errorBox(form) {
+    let el = form.querySelector('.form-error');
+    if (!el) {
+      el = document.createElement('p');
+      el.className = 'form-error';
+      el.setAttribute('role', 'alert');
+      form.querySelector('.actions').before(el);
+    }
+    return el;
+  }
+  /** Run an async save; keep the sheet open and show the message on failure. */
+  async function submitWith(form, fn) {
+    const btn = form.querySelector('[type=submit]');
+    btn.disabled = true;
+    try {
+      await fn();
+    } catch (err) {
+      errorBox(form).textContent = err.message;
+      btn.disabled = false;
+    }
+  }
+
+  function settingsSheet() {
+    const u = Store.getUser();
+    const scrim = openOverlay(`
+<form class="sheet" role="dialog" aria-modal="true" aria-label="Profile and settings">
+  <h2>Your profile</h2>
+  <p class="sub">How the app and its reminders should address you.</p>
+  <label class="field">Name<input name="name" required maxlength="80" value="${esc(u.name)}"></label>
+  <label class="field">Preferred name<input name="preferredName" required maxlength="40" value="${esc(u.preferredName)}"></label>
+  <label class="field">Email (optional)<input name="email" type="email" value="${esc(u.email || '')}"></label>
+  <label class="field">Consider a book “waiting” after
+    <span class="inline"><input name="pausedAfterDays" type="number" min="1" max="365" value="${u.pausedAfterDays}"> days</span></label>
+  <label class="check"><input name="notificationsEnabled" type="checkbox" ${u.notificationsEnabled ? 'checked' : ''}> Gentle reminders for paused books</label>
+  <p class="hint">Reminders arrive after 2 days, then 1 week, 2 weeks, 1 month and 6 months without reading.</p>
+  <div class="push-box" data-push><p class="hint">Checking this device…</p></div>
+  <p class="hint diag" data-diag></p>
+  <div class="actions"><button type="button" class="btn" data-cancel>Cancel</button><button type="submit" class="btn primary">Save</button></div>
+</form>`);
+    const form = scrim.querySelector('form');
+    paintPushSection(form);
+    form.querySelector('[data-diag]').textContent = [
+      `address: ${location.origin}`,
+      `secure context: ${window.isSecureContext}`,
+      `service worker: ${'serviceWorker' in navigator}`,
+      `push: ${'PushManager' in window}`,
+      `permission: ${'Notification' in window ? Notification.permission : 'n/a'}`,
+      `installed app: ${window.matchMedia('(display-mode: standalone)').matches}`,
+      `browser: ${(navigator.userAgent.match(/(Chrome|Firefox|SamsungBrowser|EdgA?)\/[\d.]+/) || ['unknown'])[0]}`,
+    ].join(' · ');
+    form.querySelector('[data-cancel]').addEventListener('click', closeOverlay);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitWith(form, async () => {
+        await Store.updateUser({
+          name: form.name.value,
+          preferredName: form.preferredName.value,
+          email: form.email.value.trim() || null,
+          pausedAfterDays: Number(form.pausedAfterDays.value),
+          notificationsEnabled: form.notificationsEnabled.checked,
+        });
+        closeOverlay();
         dashboard();
-        toast('Sample data restored');
+        toast('Profile saved');
+      });
+    });
+  }
+
+  function addBookSheet() {
+    const scrim = openOverlay(`
+<form class="sheet" role="dialog" aria-modal="true" aria-label="Add a book" autocomplete="off">
+  <h2>Add a book</h2>
+  <p class="sub">Start typing the title. Pick it from the list and the rest fills itself in.</p>
+  <label class="field">Title
+    <input name="title" required maxlength="200" placeholder="e.g. The Hobbit" role="combobox"
+           aria-autocomplete="list" aria-controls="suggest" aria-expanded="false"></label>
+  <ul class="suggest" id="suggest" role="listbox" hidden></ul>
+  <p class="hint catalog-status" data-status aria-live="polite"></p>
+  <label class="field">Author<input name="author" maxlength="200"></label>
+  <label class="field">Chapters <span class="count" data-count></span>
+    <textarea name="chapters" placeholder="Either a number (e.g. 24) or one chapter title per line"></textarea></label>
+  <label class="field">Summary (optional)<textarea name="recap" placeholder="What is this book about? Used in your recaps and reminders."></textarea></label>
+  <div class="actions"><button type="button" class="btn" data-cancel>Cancel</button><button type="submit" class="btn primary">Add book</button></div>
+</form>`);
+    const form = scrim.querySelector('form');
+    const list = form.querySelector('#suggest');
+    const status = form.querySelector('[data-status]');
+    const countEl = form.querySelector('[data-count]');
+    let picked = null; // {id, title} of the catalogue entry the reader chose
+    let items = [];
+    let active = -1;
+    let seq = 0;
+    let timer;
+
+    const updateCount = () => {
+      const raw = form.chapters.value.trim();
+      const n = /^\d+$/.test(raw) ? Number(raw) : raw.split(/\r?\n/).filter((l) => l.trim()).length;
+      countEl.textContent = n ? `· ${n}` : '';
+    };
+    const close = () => { list.hidden = true; form.title.setAttribute('aria-expanded', 'false'); active = -1; };
+    const render = () => {
+      if (!items.length) return close();
+      list.innerHTML = items.map((it, i) => `
+        <li role="option" id="opt-${i}" aria-selected="${i === active}" data-i="${i}" class="${i === active ? 'active' : ''}">
+          ${it.coverUrl ? `<img src="${esc(it.coverUrl)}" alt="" loading="lazy">` : '<span class="nocover">\u{1F4D6}</span>'}
+          <span class="meta"><b>${esc(it.title)}</b><small>${esc([it.author, it.year].filter(Boolean).join(' · '))}</small></span>
+          ${it.chapterCount ? `<span class="pill">${it.chapterCount} ch.</span>` : ''}
+        </li>`).join('');
+      list.hidden = false;
+      form.title.setAttribute('aria-expanded', 'true');
+    };
+
+    async function pick(it) {
+      close();
+      picked = { id: it.id, title: it.title };
+      form.title.value = it.title;
+      form.author.value = it.author || '';
+      status.className = 'hint catalog-status loading';
+      status.textContent = 'Filling in the summary and chapters…';
+      const mine = ++seq;
+      const entry = await Store.catalogEntry(it.id);
+      if (mine !== seq || !picked || picked.id !== it.id) return; // the reader moved on
+      status.classList.remove('loading');
+      if (!entry) {
+        status.textContent = 'Could not load the details right now. You can fill them in yourself.';
+        return;
+      }
+      form.author.value = entry.author || form.author.value;
+      if (entry.summary) form.recap.value = entry.summary;
+      if (entry.chapters.length) form.chapters.value = entry.chapters.join('\n');
+      updateCount();
+      const chaptersFrom = {
+        curated: '✓ Chapters from our catalogue',
+        gutenberg: '✓ Chapters from the book’s text (Project Gutenberg)',
+        openlibrary: 'Chapters from Open Library (check against your copy)',
+        none: 'No chapter list found. Enter the number of chapters (or their titles)',
+      }[entry.chapterSource] || '';
+      const summaryFrom = { openlibrary: 'summary from Open Library', wikipedia: 'summary from Wikipedia' }[entry.summarySource];
+      status.textContent = chaptersFrom + (summaryFrom && entry.chapterSource !== 'curated' ? ` · ${summaryFrom}` : '') + '.';
+      if (!entry.chapters.length) form.chapters.focus();
+    }
+
+    form.title.addEventListener('input', () => {
+      if (picked && form.title.value !== picked.title) { picked = null; status.textContent = ''; }
+      clearTimeout(timer);
+      const q = form.title.value.trim();
+      if (q.length < 2) { items = []; return close(); }
+      timer = setTimeout(async () => {
+        const mine = ++seq;
+        const found = await Store.searchCatalog(q);
+        if (mine !== seq) return; // a newer keystroke already searched
+        items = found;
+        active = -1;
+        render();
+      }, 300);
+    });
+    form.title.addEventListener('keydown', (e) => {
+      if (list.hidden) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+        render();
+        form.title.setAttribute('aria-activedescendant', `opt-${active}`);
+      } else if (e.key === 'Enter' && active >= 0) {
+        e.preventDefault();
+        pick(items[active]);
+      } else if (e.key === 'Escape') {
+        e.stopPropagation();
+        close();
       }
     });
+    list.addEventListener('mousedown', (e) => e.preventDefault()); // keep focus in the input
+    list.addEventListener('click', (e) => {
+      const li = e.target.closest('[data-i]');
+      if (li) pick(items[Number(li.dataset.i)]);
+    });
+    form.title.addEventListener('blur', () => setTimeout(close, 150));
+    form.chapters.addEventListener('input', updateCount);
+
+    form.querySelector('[data-cancel]').addEventListener('click', closeOverlay);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitWith(form, async () => {
+        const raw = form.chapters.value.trim();
+        const payload = { title: form.title.value, author: form.author.value, recap: form.recap.value };
+        if (picked) payload.catalogId = picked.id;
+        if (/^\d+$/.test(raw)) payload.chapterCount = Number(raw);
+        else if (raw) payload.chapters = raw.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+        else if (!picked) throw new Error('Add the number of chapters, or pick the book from the list.');
+        const b = await Store.createBook(payload);
+        closeOverlay();
+        location.hash = `#/book/${b.id}`;
+        toast('Book added');
+      });
+    });
+    form.title.focus({ preventScroll: true });
   }
 
   function card(b, featured = false) {
@@ -179,8 +487,8 @@
     const accessible=Store.canAccessChapter(book,chapter.n),canFight=Store.canChallengeChapter(book,chapter.n),cleared=BossBattle.load(id,chapter.n)?.defeated;
     const scrim=openOverlay(`<section class="sheet chapter-actions" role="dialog" aria-modal="true" aria-label="Chapter actions"><span class="eyebrow">CHAPTER ${chapter.n} · ${accessible?'YOUR JOURNEY':'STILL AHEAD'}</span><h2>${esc(chapter.title)}</h2><p>${accessible?'Return to this part of the story or revisit its guardian.':'Read the earlier chapters to unlock this part of the trail.'}</p><button class="chapter-action" id="start-from-chapter" ${accessible?'':'disabled'}><span>↶</span><span><b>Start from here</b><small>Make chapter ${chapter.n} your current chapter. Keep notes and earned guardian seals.</small></span></button><button class="chapter-action" id="chapter-boss" ${canFight?'':'disabled'}><span>⚔</span><span><b>${cleared?'Replay boss battle':canFight?'Challenge or resume boss':'Boss unlocks after reading'}</b><small>${cleared?'Begin a fresh practice fight. Your seal stays earned.':'Your reading position stays where it is.'}</small></span></button><div class="actions"><button class="btn quiet" id="chapter-cancel">Back to the journey</button></div></section>`);
     scrim.querySelector('#chapter-cancel').onclick=closeOverlay;
-    scrim.querySelector('#start-from-chapter').onclick=()=>{
-      const result=Store.startFromChapter(id,chapter.n);
+    scrim.querySelector('#start-from-chapter').onclick=async()=>{
+      const result=await Store.startFromChapter(id,chapter.n);
       if(!result)return;
       closeOverlay();bookPage(id,index,result.was);toast(`Continuing from chapter ${chapter.n}. Notes and guardian seals kept.`);
     };
@@ -193,8 +501,8 @@
     const book=Store.getBook(id);
     const scrim=openOverlay(`<section class="sheet" role="dialog" aria-modal="true" aria-label="Reset book progress"><h2>Restart this journey?</h2><p class="sub">Reset reading progress and all boss encounters for <em>${esc(book.title)}</em>. Your notes, reading history, character choice, and other books are kept.</p><div class="actions"><button class="btn quiet" id="cancel-book-reset">Keep my progress</button><button class="btn primary" id="confirm-book-reset">Reset book progress</button></div></section>`);
     scrim.querySelector('#cancel-book-reset').onclick=closeOverlay;
-    scrim.querySelector('#confirm-book-reset').onclick=()=>{
-      const result=Store.resetBookProgress(id);
+    scrim.querySelector('#confirm-book-reset').onclick=async()=>{
+      const result=await Store.resetBookProgress(id);
       closeOverlay();bookPage(id,0,result.was);toast('Book progress reset. Your notes are still here.');
     };
   }
@@ -221,7 +529,7 @@
   <div class="topbar">
     <a class="back" href="#/">← All books</a>
     <button class="btn quiet small" id="reset-book">Reset book progress</button>
-    ${d.isPaused ? `<button class="btn small" id="remind">Where was I?</button>` : ''}
+        ${!d.isComplete && d.done > 0 ? `<button class="btn small${d.isPaused ? ' glow' : ''}" id="remind">Where was I?</button>` : ''}
   </div>
   <header class="book-head"><h1>${esc(b.title)}</h1><p>${esc(b.author)}</p></header>
   ${worldPicker(b)}
@@ -330,11 +638,14 @@
         const text = f.text.value;
         if (!text.trim()) return;
         const chap = f.dataset.chapter || (f.chapter && f.chapter.value) || null;
-        Store.addNote(id, chap ? Number(chap) : null, text);
-        const y = window.scrollY;
-        bookPage(id, selected);
-        window.scrollTo(0, y);
-        toast('Note saved');
+        Store.addNote(id, chap ? Number(chap) : null, text)
+          .then(() => {
+            const y = window.scrollY;
+            bookPage(id, selected);
+            window.scrollTo(0, y);
+            toast('Note saved');
+          })
+          .catch((err) => toast(err.message));
       })
     );
     $app.querySelector('#checkpoint').addEventListener('click', () => checkpointSheet(id));
@@ -377,7 +688,8 @@
     form.querySelector('[data-cancel]').addEventListener('click', closeOverlay);
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const res = Store.addCheckpoint(id, n, form.note.value);
+      submitWith(form, async () => {
+      const res = await Store.addCheckpoint(id, n, form.note.value);
       closeOverlay();
       const arrival = res.now > res.was ? () => {
         if(location.hash !== `#/book/${id}` || $overlay.firstElementChild)return;
@@ -391,24 +703,31 @@
         const s = Store.readerStreak();
         toast(s.count >= 2 ? `Checkpoint saved · ${s.count}-day streak` : 'Checkpoint saved. The sky brightens.');
       }
+      });
     });
     form.querySelector('textarea').focus({ preventScroll: true });
   }
 
   /* ---------- re-engagement ---------- */
-  function showReminder(id) {
+  async function showReminder(id) {
     const b = Store.getBook(id);
     const d = Store.derive(b);
-    const r = Services.reminder(b);
+    if (!b.history.length) await Store.loadBook(id).catch(() => {}); // fallback needs notes
+    const r = (await Store.fetchReminder(id)) || Services.reminder(b);
+    const story = (text, fromLLM) =>
+      !text ? '' : `<p class="recap${fromLLM ? ' ai' : ''}">${esc(text)}</p>` +
+        (fromLLM ? '<small class="ai-note">✨ Recap written by AI from your progress and notes · may be imperfect</small>' : '');
     const scrim = openOverlay(`
 <div class="sheet" role="dialog" aria-modal="true" aria-label="Your journey is waiting">
   <div class="scene" id="rscene"></div>
   <div class="content">
-    <h2>${r.headline}</h2>
-    <p>${r.lastLeft}</p>
-    <p class="recap">${esc(r.recap)}</p>
+    <h2>${esc(r.headline)}</h2>
+    <p>${esc(r.lastLeft)}</p>
+    <div class="story" data-story aria-live="polite">${
+      r.llmPending ? '<p class="recap loading">Remembering your story…</p>' : story(r.recap, r.source === 'llm')
+    }</div>
     ${r.note ? `<div class="quote"><small>Your note${r.note.chapter ? ` · Chapter ${r.note.chapter}` : ''}</small>${esc(r.note.text)}</div>` : ''}
-    <p>${r.nudge}</p>
+    <p data-nudge>${esc(r.nudge)}</p>
     <div class="actions">
       <button class="btn quiet" data-later>Not right now</button>
       <button class="btn primary" data-go>Continue Reading</button>
@@ -421,6 +740,16 @@
       world:b.world||'fantasy',character:Journey.characterForBook(b),
       label: `Your current position in ${b.title}`,
     });
+    if (r.llmPending) {
+      // Ask the backend to write a recap (a few seconds on free models), then swap it in if still open.
+      Store.writeRecap(id).then((w) => {
+        if (!scrim.isConnected) return;
+        const box = scrim.querySelector('[data-story]');
+        box.innerHTML = w && w.source === 'llm' ? story(w.recap, true) : story(r.recap, false);
+        box.classList.add('fade-in');
+        if (w && w.nudge) scrim.querySelector('[data-nudge]').textContent = w.nudge;
+      });
+    }
     scrim.querySelector('[data-later]').addEventListener('click', closeOverlay);
     scrim.querySelector('[data-go]').addEventListener('click', () => {
       closeOverlay();
@@ -464,15 +793,68 @@
     if (paused.length && !location.hash.startsWith('#/book/')) setTimeout(() => showReminder(paused[0].id), 600);
   }
 
-  /* ---------- router ---------- */
-  function route() {
+  /* ---------- router & boot ---------- */
+  function fatal(err) {
+    $app.innerHTML = `
+<main class="page"><section class="empty-state">
+  <h2>${err.network ? 'The server isn’t answering' : 'Something went wrong'}</h2>
+  <p>${esc(err.message)}</p>
+  ${err.network ? `<p class="hint">Start the backend: <code>cd src/backend &amp;&amp; python -m flask --app app run --port 5000</code><br>Looking for it at <code>${esc(TTL_CONFIG.apiBase || location.origin + '/api')}</code></p>` : ''}
+  <button class="btn primary" id="retry">Try again</button>
+</section></main>`;
+    document.getElementById('retry').addEventListener('click', boot);
+  }
+
+  let routeSeq = 0;
+  async function route() {
+    const seq = ++routeSeq;
     closeOverlay();
-    const m = location.hash.match(/^#\/book\/([\w-]+)/);
-    if (m && Store.getBook(m[1])) bookPage(m[1]);
-    else dashboard();
+    const m = location.hash.match(/^#\/book\/(\d+)/);
+    try {
+      if (m) {
+        await Store.loadBook(m[1]);
+        if (seq !== routeSeq) return; // a newer navigation won
+        bookPage(m[1]);
+      } else {
+        if (Store.getUser()) await Store.init(); // dashboard shows fresh data
+        if (seq !== routeSeq) return;
+        dashboard();
+      }
+    } catch (err) {
+      if (seq !== routeSeq) return;
+      if (m && !err.network) { location.hash = '#/'; return; } // unknown book
+      fatal(err);
+      return;
+    }
     window.scrollTo(0, 0);
   }
-  window.addEventListener('hashchange', route);
-  route();
-  // Reminders are available on demand; keep the bookshelf visible on arrival.
+
+  async function boot() {
+    $app.innerHTML = '<main class="page"><p class="loading">Waking the sunrise…</p></main>';
+    try {
+      await Store.init();
+    } catch (err) {
+      return fatal(err);
+    }
+    window.addEventListener('hashchange', route);
+    await route();
+    maybeWelcomeBack();
+    setupServiceWorker();
+  }
+
+  /* Service worker: required for push. Tapping a notification while the app is open lands here. */
+  function setupServiceWorker() {
+    if (!('serviceWorker' in navigator) || !window.isSecureContext) return;
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+    navigator.serviceWorker.addEventListener('message', (e) => {
+      if (e.data && e.data.type === 'navigate') {
+        if (location.hash === e.data.hash) route();
+        else location.hash = e.data.hash;
+      }
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') Store.refreshNotifications().then(updateBellBadge);
+    });
+  }
+  boot();
 })();

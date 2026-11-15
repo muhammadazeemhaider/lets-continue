@@ -219,3 +219,7 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 plan.md
+
+# Backend local database
+src/backend/data/
+*.db
