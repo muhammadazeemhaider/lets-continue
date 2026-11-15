@@ -53,7 +53,7 @@ def used_today(con) -> int:
 
 def _count_request(con) -> None:
     con.execute("""INSERT INTO llm_usage (day, requests) VALUES (?, 1)
-                   ON CONFLICT(day) DO UPDATE SET requests = requests + 1""", (_today(),))
+                   ON CONFLICT(day) DO UPDATE SET requests = llm_usage.requests + 1""", (_today(),))
     con.commit()
 
 
@@ -84,7 +84,7 @@ def _upgraded(con, slug: str) -> set[int]:
 
 def _failed(con, slug: str, n: int) -> None:
     con.execute("""INSERT INTO question_attempts (catalog_slug, chapter_number, failures, last_at) VALUES (?,?,1,?)
-                   ON CONFLICT(catalog_slug, chapter_number) DO UPDATE SET failures = failures + 1,
+                   ON CONFLICT(catalog_slug, chapter_number) DO UPDATE SET failures = question_attempts.failures + 1,
                    last_at = excluded.last_at""", (slug, n, datetime.now(timezone.utc).isoformat(timespec="seconds")))
 
 

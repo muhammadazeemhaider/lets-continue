@@ -37,7 +37,8 @@ def create_app(config: dict | None = None) -> Flask:
     if not testing:
         llm.load_dotenv(Path(__file__).with_name(".env"))  # Provider credentials; never committed
     app = Flask(__name__)
-    app.config["DATABASE"] = os.environ.get("DATABASE_PATH", str(DEFAULT_DB))
+    # DATABASE_URL (postgres://...) = hosted Postgres such as Tiger Data; otherwise a local SQLite file.
+    app.config["DATABASE"] = (os.environ.get("DATABASE_URL") or os.environ.get("DATABASE_PATH") or str(DEFAULT_DB)).strip()
     app.config["CORS_ORIGIN"] = os.environ.get("CORS_ORIGIN", "*")  # tighten when deploying
     # Minutes between reminder checks. Auto-on only when serving (`flask run`); 0 disables.
     app.config["NOTIFY_INTERVAL_MINUTES"] = float(
@@ -47,7 +48,8 @@ def create_app(config: dict | None = None) -> Flask:
         app.config.update(config)
 
     db.init_db(app.config["DATABASE"])
-    app.config.setdefault("VAPID_KEYS_PATH", str(Path(app.config["DATABASE"]).parent / "vapid.json"))
+    data_dir = DEFAULT_DB.parent if db.is_postgres(app.config["DATABASE"]) else Path(app.config["DATABASE"]).parent
+    app.config.setdefault("VAPID_KEYS_PATH", str(data_dir / "vapid.json"))
     # The push sender is injectable so tests never touch the network.
     app.config.setdefault("PUSH_SENDER", notifications.make_web_push_sender(Path(app.config["VAPID_KEYS_PATH"])))
     # Configured LLM provider. None = template text only; tests inject a fake client.
