@@ -109,7 +109,6 @@
     <small>Remind me where I left off in “${esc(paused[0].title)}”</small></span>
   </button>` : ''}
 
-  ${characterPicker()}
   <div class="shelf-heading"><h2>Your journeys</h2><span>${books.filter(b => !Store.derive(b).isComplete).length} in progress <i>·</i> ${books.filter(b => Store.derive(b).isComplete).length} sunrise reached</span></div>
   <section class="grid">
     ${books.map((book, index) => card(book, index === 0)).join('')}
@@ -120,7 +119,6 @@
   <div class="footer-actions"><button class="btn primary" id="add-book">+ Add a book</button></div>
 </main>`;
 
-    bindCharacterPicker(dashboard);
     books.forEach((b) => {
       const d = Store.derive(b);
       Journey.render($app.querySelector(`[data-scene="${b.id}"]`), {
