@@ -411,11 +411,15 @@ if (!window.TTL_CONFIG) {
   const fetchReminder = (bookId) => api(`/api/books/${bookId}/reminder`).catch(() => null);
   /** Have the backend write an LLM recap (slow on free models). Resolves {source, recap, nudge, model} or null. */
   const writeRecap = (bookId) => api(`/api/books/${bookId}/recap`, { method: 'POST' }).catch(() => null);
+  /** The catalogue's three boss questions for a chapter: {available, source, questions[]}; null when offline. */
+  const chapterQuestions = (bookId, n) =>
+    api(`/api/books/${bookId}/chapters/${n}/questions`).catch(() => null);
 
   global.Store = {
     init, loadBook, books, getBook, getUser, derive, bookStreak, readerStreak, relativeTime,
     setBookWorld, setBookCompanion, canAccessChapter, canChallengeChapter, startFromChapter, resetBookProgress,
     addNote, addCheckpoint, createBook, updateUser, fetchReminder, writeRecap, searchCatalog, catalogEntry,
+    chapterQuestions,
     notifications, refreshNotifications, markNotificationRead, markAllNotificationsRead,
     pushStatus, enablePush, disablePush, testPush,
   };

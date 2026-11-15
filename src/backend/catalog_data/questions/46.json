@@ -9,12 +9,12 @@
     "options": [
      "There's the window where I saw the wandering Spirits!",
      "I don't know how long I've been among the Spirits.",
-     "It has been done in your name, or at least in that of your family,\" said Scrooge.",
-     "If they would rather die,\" said Scrooge, \"they had better do it, and decrease the surplus population."
+     "Bob had but fifteen \"Bob\" a-week himself; he pocketed on Saturdays but fifteen copies of his Christian name; and yet the Ghost of Christmas Present…",
+     "Scrooge resumed his labours with an improved opinion of himself, and in a more facetious temper than was usual with him."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “If they would rather die,\" said Scrooge, \"they had better do it, and decrease the surplus population.”",
-    "evidence": "If they would rather die,\" said Scrooge, \"they had better do it, and decrease the surplus population."
+    "explanation": "This line is from this chapter: “Scrooge resumed his labours with an improved opinion of himself, and in a more facetious temper than was usual with him.”",
+    "evidence": "Scrooge resumed his labours with an improved opinion of himself, and in a more facetious temper than was usual with him."
    },
    {
     "prompt": "Fill in the missing name: “But he couldn't replenish it, for _____ kept the coal-box in his own room; and so surely as the clerk came in with the shovel, the master predicted that it would be necessary for them to part.”",
@@ -29,16 +29,16 @@
     "evidence": "But he couldn't replenish it, for Scrooge kept the coal-box in his own room; and so surely as the clerk came in with the shovel, the master predicted that it would be necessary for them to part."
    },
    {
-    "prompt": "Fill in the missing name: “the _____ returned, \"that the spirit within him should walk abroad among his fellowmen, and travel far and wide; and if that spirit goes not forth in life, it is condemned to do so after death.”",
+    "prompt": "Fill in the missing name: “Scrooge,\" said the gentleman, taking up a pen, \"it is more than usually desirable that we should make some slight provision for the _____ and destitute, who suffer greatly at the present time.”",
     "options": [
-     "Ghost",
-     "Scrooge",
-     "Joe",
-     "Cratchit"
+     "Present",
+     "Tank",
+     "Poor",
+     "Day"
     ],
-    "correct_index": 0,
-    "explanation": "The line reads: “the Ghost returned, \"that the spirit within him should walk abroad among his fellowmen, and travel far and wide; and if that spirit goes not forth in life, it is condemned to do so after death.”",
-    "evidence": "the Ghost returned, \"that the spirit within him should walk abroad among his fellowmen, and travel far and wide; and if that spirit goes not forth in life, it is condemned to do so after death."
+    "correct_index": 2,
+    "explanation": "The line reads: “Scrooge,\" said the gentleman, taking up a pen, \"it is more than usually desirable that we should make some slight provision for the Poor and destitute, who suffer greatly at the present time.”",
+    "evidence": "Scrooge,\" said the gentleman, taking up a pen, \"it is more than usually desirable that we should make some slight provision for the Poor and destitute, who suffer greatly at the present time."
    }
   ],
   "2": [
@@ -46,13 +46,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "I don't know how long I've been among the Spirits.",
-     "The school is not quite deserted,\" said the Ghost.",
-     "Well, I am the most disinterested among you, after all,\" said the first speaker, \"for I never wear black gloves, and I never eat lunch.",
-     "Why, it's impossible to carry that to Camden Town,\" said Scrooge."
+     "A solitary child, neglected by his friends, is left there still.",
+     "Scrooge knew the men, and looked towards the Spirit for an explanation.",
+     "Shaving was not an easy task, for his hand continued to shake very much; and shaving requires attention, even when you don't dance while you are at…"
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “The school is not quite deserted,\" said the Ghost.”",
-    "evidence": "The school is not quite deserted,\" said the Ghost."
+    "explanation": "This line is from this chapter: “A solitary child, neglected by his friends, is left there still.”",
+    "evidence": "A solitary child, neglected by his friends, is left there still."
    },
    {
     "prompt": "Fill in the missing name: “The panels shrunk, the windows cracked; fragments of plaster fell out of the ceiling, and the naked laths were shown instead; but how all this was brought about, _____ knew no more than you do.”",
@@ -83,14 +83,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Scrooge having no better answer ready on the spur of the moment, said, \"Bah!",
-     "Scrooge had a very small fire, but the clerk's fire was so very much smaller that it looked like one coal.",
-     "Everybody had something to say about it, but nobody said or thought it was at all a small pudding for a large family.",
-     "No eye at all is better than an evil eye, dark master!"
+     "keep Christmas in your own way, and let me keep it in mine.",
+     "But he couldn't replenish it, for Scrooge kept the coal-box in his own room; and so surely as the clerk came in with the shovel, the master…",
+     "Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs.",
+     "To edge his way along the crowded paths of life, warning all human sympathy to keep its distance, was what the knowing ones call \"nuts\" to Scrooge."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “Everybody had something to say about it, but nobody said or thought it was at all a small pudding for a large family.”",
-    "evidence": "Everybody had something to say about it, but nobody said or thought it was at all a small pudding for a large family."
+    "explanation": "This line is from this chapter: “Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs.”",
+    "evidence": "Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs."
    },
    {
     "prompt": "Fill in the missing name: “Likewise at the game of How, When, and Where, she was very great, and to the secret joy of Scrooge's nephew, beat her sisters hollow: though they were sharp girls too, as _____ could have told you.”",
@@ -121,14 +121,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Scrooge went to bed again, and thought, and thought, and thought it over and over and over, and could make nothing of it.",
+     "Scrooge lay in this state until the chime had gone three quarters more, when he remembered, on a sudden, that the Ghost had warned him of a…",
      "Scrooge and he were partners for I don't know how many years.",
-     "If he wanted to keep 'em after he was dead, a wicked old screw,\" pursued the woman, \"why wasn't he natural in his lifetime?",
-     "I am a mortal,\" Scrooge remonstrated, \"and liable to fall."
+     "Who's the worse for the loss of a few things like these?",
+     "said Scrooge, clasping his hands together, as he looked about him."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “If he wanted to keep 'em after he was dead, a wicked old screw,\" pursued the woman, \"why wasn't he natural in his lifetime?”",
-    "evidence": "If he wanted to keep 'em after he was dead, a wicked old screw,\" pursued the woman, \"why wasn't he natural in his lifetime?"
+    "explanation": "This line is from this chapter: “Who's the worse for the loss of a few things like these?”",
+    "evidence": "Who's the worse for the loss of a few things like these?"
    },
    {
     "prompt": "Fill in the missing name: “Although well used to ghostly company by this time, _____ feared the silent shape so much that his legs trembled beneath him, and he found that he could hardly stand when he prepared to follow it.”",
@@ -143,30 +143,30 @@
     "evidence": "Although well used to ghostly company by this time, Scrooge feared the silent shape so much that his legs trembled beneath him, and he found that he could hardly stand when he prepared to follow it."
    },
    {
-    "prompt": "Fill in the missing name: “At last she said, and in a steady, cheerful voice, that only faltered once: \"I have known him walk with--I have known him walk with _____ Tim upon his shoulder, very fast indeed.”",
+    "prompt": "Fill in the missing name: “The _____ conducted him through several streets familiar to his feet; and as they went along, Scrooge looked here and there to find himself, but nowhere was he to be seen.”",
     "options": [
-     "Cratchits",
-     "Phantom",
-     "Day",
-     "Tiny"
+     "Marley",
+     "Bob",
+     "Peter",
+     "Ghost"
     ],
     "correct_index": 3,
-    "explanation": "The line reads: “At last she said, and in a steady, cheerful voice, that only faltered once: \"I have known him walk with--I have known him walk with Tiny Tim upon his shoulder, very fast indeed.”",
-    "evidence": "At last she said, and in a steady, cheerful voice, that only faltered once: \"I have known him walk with--I have known him walk with Tiny Tim upon his shoulder, very fast indeed."
+    "explanation": "The line reads: “The Ghost conducted him through several streets familiar to his feet; and as they went along, Scrooge looked here and there to find himself, but nowhere was he to be seen.”",
+    "evidence": "The Ghost conducted him through several streets familiar to his feet; and as they went along, Scrooge looked here and there to find himself, but nowhere was he to be seen."
    }
   ],
   "5": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "There are many things from which I might have derived good, by which I have not profited, I dare say,\" returned the nephew.",
+     "Let me hear another sound from you,\" said Scrooge, \"and you'll keep your Christmas by losing your situation!",
      "He was not the dogged Scrooge he had been; and though the Spirit's eyes were clear and kind, he did not like to meet them.",
-     "He must have had a steady hand at a trigger who could have got a shot off half so fast.",
-     "Perhaps, Scrooge could not have told anybody why, if anybody could have asked him; but he had a special desire to see the Spirit in his cap; and…"
+     "Go and buy it, and tell 'em to bring it here, that I may give them the direction where to take it.",
+     "Scrooge reverently disclaimed all intention to offend or any knowledge of having wilfully \"bonneted\" the Spirit at any period of his life."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “He must have had a steady hand at a trigger who could have got a shot off half so fast.”",
-    "evidence": "He must have had a steady hand at a trigger who could have got a shot off half so fast."
+    "explanation": "This line is from this chapter: “Go and buy it, and tell 'em to bring it here, that I may give them the direction where to take it.”",
+    "evidence": "Go and buy it, and tell 'em to bring it here, that I may give them the direction where to take it."
    },
    {
     "prompt": "Fill in the missing name: “The people were by this time pouring forth, as he had seen them with the _____ of Christmas Present; and walking with his hands behind him, Scrooge regarded every one with a delighted smile.”",

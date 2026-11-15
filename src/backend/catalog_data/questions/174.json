@@ -7,14 +7,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "The story is simply this,” said the painter after some time.",
+     "Lord Henry felt as if he could hear Basil Hallward’s heart beating, and wondered what was coming.",
      "Hallward amused himself with watching the faces in the pit.",
-     "But really, if you all worship Madame de Ferrol in this ridiculous way, I shall have to marry again so as to be in the fashion.",
-     "He should have a pot of money waiting for him if Kelso did the right thing by him."
+     "If we women did not love you for your defects, where would you all be?",
+     "The Queen used to ask me about the English noble who was always quarrelling with the cabmen about their fares."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “The story is simply this,” said the painter after some time.”",
-    "evidence": "The story is simply this,” said the painter after some time."
+    "explanation": "This line is from this chapter: “Lord Henry felt as if he could hear Basil Hallward’s heart beating, and wondered what was coming.”",
+    "evidence": "Lord Henry felt as if he could hear Basil Hallward’s heart beating, and wondered what was coming."
    },
    {
     "prompt": "Fill in the missing name: “Then I feel, _____, that I have given away my whole soul to some one who treats it as if it were a flower to put in his coat, a bit of decoration to charm his vanity, an ornament for a summer’s day.”",
@@ -45,14 +45,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Suddenly I determined to leave her as flowerlike as I had found her.",
-     "In about seven or eight minutes he reached a small shabby house that was wedged in between two gaunt factories.",
-     "Just touch the bell, and when Parker comes I will tell him what you want.",
+     "She can live, like Perdita, in her garden of mint and marigold.",
+     "After a little time he heard steps in the passage and the chain being unhooked.",
+     "He came close to him and put his hand upon his shoulder.",
      "The man had to touch him twice on the shoulder before he woke, and as he opened his eyes a faint smile passed across his lips, as though he had been…"
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “Just touch the bell, and when Parker comes I will tell him what you want.”",
-    "evidence": "Just touch the bell, and when Parker comes I will tell him what you want."
+    "explanation": "This line is from this chapter: “He came close to him and put his hand upon his shoulder.”",
+    "evidence": "He came close to him and put his hand upon his shoulder."
    },
    {
     "prompt": "Fill in the missing name: “After about a quarter of an hour _____ stopped painting, looked for a long time at Dorian Gray, and then for a long time at the picture, biting the end of one of his huge brushes and frowning.”",
@@ -67,16 +67,16 @@
     "evidence": "After about a quarter of an hour Hallward stopped painting, looked for a long time at Dorian Gray, and then for a long time at the picture, biting the end of one of his huge brushes and frowning."
    },
    {
-    "prompt": "Fill in the missing name: “He was looking worried, and when he heard Lord Henry’s last remark, he glanced at him, hesitated for a moment, and then said, “_____, I want to finish this picture to-day.”",
+    "prompt": "Fill in the missing name: “Lord _____ went out to the garden and found Dorian Gray burying his face in the great cool lilac-blossoms, feverishly drinking in their perfume as if it had been wine.”",
     "options": [
-     "Duchess",
-     "Paris",
-     "James",
-     "Harry"
+     "Narborough",
+     "Sibyl",
+     "George",
+     "Henry"
     ],
     "correct_index": 3,
-    "explanation": "The line reads: “He was looking worried, and when he heard Lord Henry’s last remark, he glanced at him, hesitated for a moment, and then said, “Harry, I want to finish this picture to-day.”",
-    "evidence": "He was looking worried, and when he heard Lord Henry’s last remark, he glanced at him, hesitated for a moment, and then said, “Harry, I want to finish this picture to-day."
+    "explanation": "The line reads: “Lord Henry went out to the garden and found Dorian Gray burying his face in the great cool lilac-blossoms, feverishly drinking in their perfume as if it had been wine.”",
+    "evidence": "Lord Henry went out to the garden and found Dorian Gray burying his face in the great cool lilac-blossoms, feverishly drinking in their perfume as if it had been wine."
    }
   ],
   "3": [
@@ -84,13 +84,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "The dead man was still sitting there, too, and in the sunlight now.",
-     "That is the reason why, like Eve, they are so excessively anxious to get out of it,” said Lord Henry.",
+     "Why can’t these American women stay in their own country?",
      "His throat burned and his delicate hands twitched nervously together.",
      "He gave me everything I wanted, including your best gold-tipped cigarettes."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “That is the reason why, like Eve, they are so excessively anxious to get out of it,” said Lord Henry.”",
-    "evidence": "That is the reason why, like Eve, they are so excessively anxious to get out of it,” said Lord Henry."
+    "explanation": "This line is from this chapter: “Why can’t these American women stay in their own country?”",
+    "evidence": "Why can’t these American women stay in their own country?"
    },
    {
     "prompt": "Fill in the missing name: “They said _____ got some rascally adventurer, some Belgian brute, to insult his son-in-law in public—paid him, sir, to do it, paid him—and that the fellow spitted his man as if he had been a pigeon.”",
@@ -121,7 +121,7 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Not with women,” said the duchess, shaking her head; “and women rule the world.",
+     "And with fear in his eyes, Lord Henry rushed through the flapping palms to find Dorian Gray lying face downwards on the tiled floor in a deathlike…",
      "He was played by the low-comedian, who had introduced gags of his own and was on most friendly terms with the pit.",
      "He felt as if he had come to look for Miranda and had been met by Caliban.",
      "Each hideous detail came back to him with added horror."
@@ -159,14 +159,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Would you think it awfully rude of me if I asked you to go away?",
-     "In a thoughtless moment I asked one of the gardeners what it was called.",
-     "His good looks are really quite remarkable; everybody notices them.",
+     "Dorian’s whims are laws to everybody, except himself.",
+     "It is a sad truth, but we have lost the faculty of giving lovely names to things.",
+     "Good-bye, Mother; I will have my dinner at five o’clock.",
      "As soon as he was alone, he lit a cigarette and began sketching upon a piece of paper, drawing first flowers and bits of architecture, and then…"
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “His good looks are really quite remarkable; everybody notices them.”",
-    "evidence": "His good looks are really quite remarkable; everybody notices them."
+    "explanation": "This line is from this chapter: “Good-bye, Mother; I will have my dinner at five o’clock.”",
+    "evidence": "Good-bye, Mother; I will have my dinner at five o’clock."
    },
    {
     "prompt": "Fill in the missing name: “The whole thing is most inconvenient, and really, when _____ is going away to Australia, and I have so much to think of, I must say that you should have shown more consideration.”",
@@ -197,14 +197,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "As for a spoiled life, no life is spoiled but one whose growth is arrested.",
-     "He held the light up again to the canvas and examined it.",
-     "He brought his daughter back with him, I was told, and she never spoke to him again.",
+     "If you want to mar a nature, you have merely to reform it.",
+     "Then he flung himself into the rickety chair that was standing by the table and buried his face in his hands.",
+     "He should have a pot of money waiting for him if Kelso did the right thing by him.",
      "When his servant entered, he looked at him steadfastly and wondered if he had thought of peering behind the screen."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “As for a spoiled life, no life is spoiled but one whose growth is arrested.”",
-    "evidence": "As for a spoiled life, no life is spoiled but one whose growth is arrested."
+    "explanation": "This line is from this chapter: “If you want to mar a nature, you have merely to reform it.”",
+    "evidence": "If you want to mar a nature, you have merely to reform it."
    },
    {
     "prompt": "Fill in the missing name: “Yes,” echoed _____, leaning back in his chair and looking at Lord Henry over the heavy clusters of purple-lipped irises that stood in the centre of the table, “what do you mean by good, Harry?”",
@@ -235,14 +235,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "They are both simply forms of imitation,” remarked Lord Henry.",
+     "She is very lovely, and if she knows as little about life as she does about acting, she will be a delightful experience.",
      "A man who is master of himself can end a sorrow as easily as he can invent a pleasure.",
-     "He took it up, as he had done on that night of horror when he had first noted the change in the fatal picture, and with wild, tear-dimmed eyes…",
-     "It is about yourself,” answered Hallward in his grave deep voice, “and I must say it to you."
+     "The phrases came back to his memory, and he repeated them over and over to himself.",
+     "It is not much to ask of you, Dorian, and it is entirely for your own sake that I am speaking."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “They are both simply forms of imitation,” remarked Lord Henry.”",
-    "evidence": "They are both simply forms of imitation,” remarked Lord Henry."
+    "explanation": "This line is from this chapter: “She is very lovely, and if she knows as little about life as she does about acting, she will be a delightful experience.”",
+    "evidence": "She is very lovely, and if she knows as little about life as she does about acting, she will be a delightful experience."
    },
    {
     "prompt": "Fill in the missing name: “He would not see Lord _____ any more—would not, at any rate, listen to those subtle poisonous theories that in Basil Hallward’s garden had first stirred within him the passion for impossible things.”",
@@ -273,10 +273,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "If Dorian Gray’s life were spoiled, no one would be sorrier than yourself.",
+     "As for a spoiled life, no life is spoiled but one whose growth is arrested.",
      "There will have to be an inquest, of course, and you must not be mixed up in it.",
-     "Shut the door behind you,” he whispered, as he placed the lamp on the table.",
-     "When I was in the Diplomatic, things were much better."
+     "As Dorian Gray was lighting a half-burned candle that was standing on the mantelshelf, he saw that the whole place was covered with dust and that…",
+     "Examinations, sir, are pure humbug from beginning to end."
     ],
     "correct_index": 1,
     "explanation": "This line is from this chapter: “There will have to be an inquest, of course, and you must not be mixed up in it.”",
@@ -311,52 +311,52 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Dorian says she is beautiful, and he is not often wrong about things of that kind.",
+     "We are not sent into the world to air our moral prejudices.",
      "She tried to look picturesque, but only succeeded in being untidy.",
-     "There was so much in him that was good, so much in him that was noble.",
-     "Shut the door behind you,” he whispered, as he placed the lamp on the table."
+     "He could not bear the idea of reproaching him any more.",
+     "As Dorian Gray was lighting a half-burned candle that was standing on the mantelshelf, he saw that the whole place was covered with dust and that…"
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “There was so much in him that was good, so much in him that was noble.”",
-    "evidence": "There was so much in him that was good, so much in him that was noble."
-   },
-   {
-    "prompt": "Fill in the missing name: “He remembered that Lord _____ had said to him once, half seriously and half in jest, “If you want to have a strange quarter of an hour, get Basil to tell you why he won’t exhibit your picture.”",
-    "options": [
-     "Ruxton",
-     "Hallward",
-     "Henry",
-     "Geoffrey"
-    ],
-    "correct_index": 2,
-    "explanation": "The line reads: “He remembered that Lord Henry had said to him once, half seriously and half in jest, “If you want to have a strange quarter of an hour, get Basil to tell you why he won’t exhibit your picture.”",
-    "evidence": "He remembered that Lord Henry had said to him once, half seriously and half in jest, “If you want to have a strange quarter of an hour, get Basil to tell you why he won’t exhibit your picture."
+    "explanation": "This line is from this chapter: “He could not bear the idea of reproaching him any more.”",
+    "evidence": "He could not bear the idea of reproaching him any more."
    },
    {
     "prompt": "Fill in the missing name: “And besides, my dear old _____, if you really want to console me, teach me rather to forget what has happened, or to see it from a proper artistic point of view.”",
     "options": [
+     "Kelso",
+     "Gray",
      "Basil",
-     "Dorian",
-     "Geoffrey",
-     "Ruxton"
+     "Agatha"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "The line reads: “And besides, my dear old Basil, if you really want to console me, teach me rather to forget what has happened, or to see it from a proper artistic point of view.”",
     "evidence": "And besides, my dear old Basil, if you really want to console me, teach me rather to forget what has happened, or to see it from a proper artistic point of view."
+   },
+   {
+    "prompt": "Fill in the missing name: “You can talk to me of other women being charming, and of _____ singing divinely, before the girl you loved has even the quiet of a grave to sleep in?”",
+    "options": [
+     "Patti",
+     "Harry",
+     "James",
+     "Adrian"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “You can talk to me of other women being charming, and of Patti singing divinely, before the girl you loved has even the quiet of a grave to sleep in?”",
+    "evidence": "You can talk to me of other women being charming, and of Patti singing divinely, before the girl you loved has even the quiet of a grave to sleep in?"
    }
   ],
   "10": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He is not a gentleman, Mother, and I hate the way he talks to me,” said the girl, rising to her feet and going over to the window.",
-     "asked Lord Fermor, knitting his bushy white eyebrows.",
-     "Sitting down at the writing-table he scribbled a note to Lord Henry, asking him to send him round something to read and reminding him that they were…",
-     "She stepped back a few paces and her lips seemed to tremble."
+     "A rose shook in her blood and shadowed her cheeks.",
+     "You have known nearly everybody in your time, so you might have known her.",
+     "There was something sly about him, and he had thoughtful, treacherous eyes.",
+     "Motionless, and as one in a dream, sat Dorian Gray, gazing at her."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “Sitting down at the writing-table he scribbled a note to Lord Henry, asking him to send him round something to read and reminding him that they were to meet at eight-fifteen that evening.”",
-    "evidence": "Sitting down at the writing-table he scribbled a note to Lord Henry, asking him to send him round something to read and reminding him that they were to meet at eight-fifteen that evening."
+    "explanation": "This line is from this chapter: “There was something sly about him, and he had thoughtful, treacherous eyes.”",
+    "evidence": "There was something sly about him, and he had thoughtful, treacherous eyes."
    },
    {
     "prompt": "Fill in the missing name: “His eye fell on a large, purple satin coverlet heavily embroidered with gold, a splendid piece of late seventeenth-century _____ work that his grandfather had found in a convent near Bologna.”",
@@ -371,30 +371,30 @@
     "evidence": "His eye fell on a large, purple satin coverlet heavily embroidered with gold, a splendid piece of late seventeenth-century Venetian work that his grandfather had found in a convent near Bologna."
    },
    {
-    "prompt": "Fill in the missing name: “I am afraid it is rather heavy,” murmured _____ as he unlocked the door that opened into the room that was to keep for him the curious secret of his life and hide his soul from the eyes of men.”",
+    "prompt": "Fill in the missing name: “Sitting down at the writing-table he scribbled a note to Lord _____, asking him to send him round something to read and reminding him that they were to meet at eight-fifteen that evening.”",
     "options": [
      "George",
-     "Dorian",
+     "Henry",
      "Kelso",
      "Vane"
     ],
     "correct_index": 1,
-    "explanation": "The line reads: “I am afraid it is rather heavy,” murmured Dorian as he unlocked the door that opened into the room that was to keep for him the curious secret of his life and hide his soul from the eyes of men.”",
-    "evidence": "I am afraid it is rather heavy,” murmured Dorian as he unlocked the door that opened into the room that was to keep for him the curious secret of his life and hide his soul from the eyes of men."
+    "explanation": "The line reads: “Sitting down at the writing-table he scribbled a note to Lord Henry, asking him to send him round something to read and reminding him that they were to meet at eight-fifteen that evening.”",
+    "evidence": "Sitting down at the writing-table he scribbled a note to Lord Henry, asking him to send him round something to read and reminding him that they were to meet at eight-fifteen that evening."
    }
   ],
   "11": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "My child, you are far too young to think of falling in love.",
-     "There was a gem in the brain of the dragon, Philostratus told us, and “by the exhibition of golden letters and a scarlet robe” the monster could be…",
-     "Yesterday, when I heard that Sibyl Vane had killed herself—” “Killed herself!",
-     "You seem to forget that I am married, and the one charm of marriage is that it makes a life of deception absolutely necessary for both parties."
+     "Vane glanced at her, and with one of those false theatrical gestures that so often become a mode of second nature to a stage-player, clasped her in…",
+     "According to the great alchemist, Pierre de Boniface, the diamond rendered a man invisible, and the agate of India made him eloquent.",
+     "No,” said Dorian Gray, “there is nothing fearful about it.",
+     "My wife is very good at it—much better, in fact, than I am."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “There was a gem in the brain of the dragon, Philostratus told us, and “by the exhibition of golden letters and a scarlet robe” the monster could be thrown into a magical sleep and slain.”",
-    "evidence": "There was a gem in the brain of the dragon, Philostratus told us, and “by the exhibition of golden letters and a scarlet robe” the monster could be thrown into a magical sleep and slain."
+    "explanation": "This line is from this chapter: “According to the great alchemist, Pierre de Boniface, the diamond rendered a man invisible, and the agate of India made him eloquent.”",
+    "evidence": "According to the great alchemist, Pierre de Boniface, the diamond rendered a man invisible, and the agate of India made him eloquent."
    },
    {
     "prompt": "Fill in the missing name: “Yes: there was to be, as Lord _____ had prophesied, a new Hedonism that was to recreate life and to save it from that harsh uncomely puritanism that is having, in our own day, its curious revival.”",
@@ -425,9 +425,9 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "If they know nothing of victory, they are at least spared the knowledge of defeat.",
+     "Your rank and wealth, Harry; my brains, such as they are—my art, whatever it may be worth; Dorian Gray’s good looks—we shall all suffer for what the…",
      "She was usually in love with somebody, and, as her passion was never returned, she had kept all her illusions.",
-     "We are to see her to-night, if that boy doesn’t forget his appointment.",
+     "If a personality fascinates me, whatever mode of expression that personality selects is absolutely delightful to me.",
      "If a wretched man has a vice, it shows itself in the lines of his mouth, the droop of his eyelids, the moulding of his hands even."
     ],
     "correct_index": 3,
@@ -463,14 +463,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I understand what you mean, and I believe in this girl.",
-     "It must be a delightful city, and possess all the attractions of the next world.",
-     "A portrait like this would set you far above all the young men in England, and make the old men quite jealous, if old men are ever capable of any…",
-     "The paints I used had some wretched mineral poison in them."
+     "Any one you love must be marvellous, and any girl who has the effect you describe must be fine and noble.",
+     "Death and vulgarity are the only two facts in the nineteenth century that one cannot explain away.",
+     "Lord Henry stretched himself out on the divan and laughed.",
+     "If it is true,” he exclaimed, “and this is what you have done with your life, why, you must be worse even than those who talk against you fancy you…"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “The paints I used had some wretched mineral poison in them.”",
-    "evidence": "The paints I used had some wretched mineral poison in them."
+    "explanation": "This line is from this chapter: “If it is true,” he exclaimed, “and this is what you have done with your life, why, you must be worse even than those who talk against you fancy you to be!”",
+    "evidence": "If it is true,” he exclaimed, “and this is what you have done with your life, why, you must be worse even than those who talk against you fancy you to be!"
    },
    {
     "prompt": "Fill in the missing name: “As _____ Gray was lighting a half-burned candle that was standing on the mantelshelf, he saw that the whole place was covered with dust and that the carpet was in holes.”",
@@ -501,10 +501,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "It is your best work, Basil, the best thing you have ever done,” said Lord Henry languidly.",
+     "You must certainly send it next year to the Grosvenor.",
      "As the minutes went by he became horribly agitated.",
      "At last he heard a step outside, and the door opened.",
-     "And how pretty she had been in her cotton dresses and her large hats!"
+     "She knew nothing, but she had everything that he had lost."
     ],
     "correct_index": 1,
     "explanation": "This line is from this chapter: “As the minutes went by he became horribly agitated.”",
@@ -539,14 +539,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He knew that the senses, no less than the soul, have their spiritual mysteries to reveal.",
-     "She had sent her soul to search for him, and it had brought him back.",
-     "A look of pain came across him, and he flung the rich pall over the picture.",
-     "Everybody I know says you are very wicked,” cried the old lady, shaking her head."
+     "The fantastic character of these instruments fascinated him, and he felt a curious delight in the thought that art, like Nature, has her monsters,…",
+     "Against the shell of her ear broke the waves of worldly cunning.",
+     "He must not be allowed to know where the picture was being taken to.",
+     "It is perfectly monstrous,” he said, at last, “the way people go about nowadays saying things against one behind one’s back that are absolutely and…"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “Everybody I know says you are very wicked,” cried the old lady, shaking her head.”",
-    "evidence": "Everybody I know says you are very wicked,” cried the old lady, shaking her head."
+    "explanation": "This line is from this chapter: “It is perfectly monstrous,” he said, at last, “the way people go about nowadays saying things against one behind one’s back that are absolutely and entirely true.”",
+    "evidence": "It is perfectly monstrous,” he said, at last, “the way people go about nowadays saying things against one behind one’s back that are absolutely and entirely true."
    },
    {
     "prompt": "Fill in the missing name: “That evening, at eight-thirty, exquisitely dressed and wearing a large button-hole of Parma violets, _____ Gray was ushered into Lady Narborough’s drawing-room by bowing servants.”",
@@ -577,17 +577,17 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He was trying to gather up the scarlet threads of life and to weave them into a pattern; to find his way through the sanguine labyrinth of passion…",
-     "If one hears bad music, it is one’s duty to drown it in conversation.",
-     "When I was in the Diplomatic, things were much better.",
-     "In about seven or eight minutes he reached a small shabby house that was wedged in between two gaunt factories."
+     "He covered page after page with wild words of sorrow and wilder words of pain.",
+     "I have simply worshipped pianists—two at a time, sometimes, Harry tells me.",
+     "Examinations, sir, are pure humbug from beginning to end.",
+     "A red glare came from an outward-bound steamer that was coaling."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “In about seven or eight minutes he reached a small shabby house that was wedged in between two gaunt factories.”",
-    "evidence": "In about seven or eight minutes he reached a small shabby house that was wedged in between two gaunt factories."
+    "explanation": "This line is from this chapter: “A red glare came from an outward-bound steamer that was coaling.”",
+    "evidence": "A red glare came from an outward-bound steamer that was coaling."
    },
    {
-    "prompt": "Fill in the missing name: “You had better go home and put that pistol away, or you may get into trouble,” said _____, turning on his heel and going slowly down the street.”",
+    "prompt": "Fill in the missing name: “_____ winced and looked round at the grotesque things that lay in such fantastic postures on the ragged mattresses.”",
     "options": [
      "Dorian",
      "Thomas",
@@ -595,8 +595,8 @@
      "Vane"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “You had better go home and put that pistol away, or you may get into trouble,” said Dorian, turning on his heel and going slowly down the street.”",
-    "evidence": "You had better go home and put that pistol away, or you may get into trouble,” said Dorian, turning on his heel and going slowly down the street."
+    "explanation": "The line reads: “Dorian winced and looked round at the grotesque things that lay in such fantastic postures on the ragged mattresses.”",
+    "evidence": "Dorian winced and looked round at the grotesque things that lay in such fantastic postures on the ragged mattresses."
    },
    {
     "prompt": "Fill in the missing name: “He broke from her with an oath and rushed to the corner of the street, but Dorian _____ had disappeared.”",
@@ -615,14 +615,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "You disarm me, Gladys,” he cried, catching the wilfulness of her mood.",
-     "She looked charming as she came out in the moonlight.",
-     "The phrases came back to his memory, and he repeated them over and over to himself.",
-     "The waving of crooked, false-jewelled fingers gave grotesqueness to the words."
+     "It is a sad truth, but we have lost the faculty of giving lovely names to things.",
+     "This bud of love by summer’s ripening breath May prove a beauteous flower when next we meet— she spoke the words as though they conveyed no meaning…",
+     "It was his beauty that had ruined him, his beauty and the youth that he had prayed for.",
+     "When they opened, the mist of a dream had passed across them."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “You disarm me, Gladys,” he cried, catching the wilfulness of her mood.”",
-    "evidence": "You disarm me, Gladys,” he cried, catching the wilfulness of her mood."
+    "explanation": "This line is from this chapter: “It is a sad truth, but we have lost the faculty of giving lovely names to things.”",
+    "evidence": "It is a sad truth, but we have lost the faculty of giving lovely names to things."
    },
    {
     "prompt": "Fill in the missing name: “On a peach-coloured divan sat Lady _____, pretending to listen to the duke’s description of the last Brazilian beetle that he had added to his collection.”",
@@ -653,52 +653,52 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I hope that Dorian Gray will make this girl his wife, passionately adore her for six months, and then suddenly become fascinated by some one else.",
-     "Here,” answered Sir Geoffrey angrily, hurrying towards the thicket.",
-     "We are not sent into the world to air our moral prejudices.",
-     "I am not at home to any one, Victor,” he said with a sigh."
+     "We think that we are generous because we credit our neighbour with the possession of those virtues that are likely to be a benefit to us.",
+     "The head-keeper came running up with a stick in his hand.",
+     "If he wedded Messalina, he would be none the less interesting.",
+     "The screen was an old one, of gilt Spanish leather, stamped and wrought with a rather florid Louis-Quatorze pattern."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “Here,” answered Sir Geoffrey angrily, hurrying towards the thicket.”",
-    "evidence": "Here,” answered Sir Geoffrey angrily, hurrying towards the thicket."
-   },
-   {
-    "prompt": "Fill in the missing name: “Sir Geoffrey put his gun to his shoulder, but there was something in the animal’s grace of movement that strangely charmed _____ Gray, and he cried out at once, “Don’t shoot it, Geoffrey.”",
-    "options": [
-     "Dorian",
-     "Hallward",
-     "Henry",
-     "Agatha"
-    ],
-    "correct_index": 0,
-    "explanation": "The line reads: “Sir Geoffrey put his gun to his shoulder, but there was something in the animal’s grace of movement that strangely charmed Dorian Gray, and he cried out at once, “Don’t shoot it, Geoffrey.”",
-    "evidence": "Sir Geoffrey put his gun to his shoulder, but there was something in the animal’s grace of movement that strangely charmed Dorian Gray, and he cried out at once, “Don’t shoot it, Geoffrey."
+    "explanation": "This line is from this chapter: “The head-keeper came running up with a stick in his hand.”",
+    "evidence": "The head-keeper came running up with a stick in his hand."
    },
    {
     "prompt": "Fill in the missing name: “Then he wrote a note to Lord _____, telling him that he was going up to town to consult his doctor and asking him to entertain his guests in his absence.”",
     "options": [
-     "Vane",
-     "Campbell",
      "Henry",
-     "Narborough"
+     "Basil",
+     "Dorian",
+     "Campbell"
     ],
-    "correct_index": 2,
+    "correct_index": 0,
     "explanation": "The line reads: “Then he wrote a note to Lord Henry, telling him that he was going up to town to consult his doctor and asking him to entertain his guests in his absence.”",
     "evidence": "Then he wrote a note to Lord Henry, telling him that he was going up to town to consult his doctor and asking him to entertain his guests in his absence."
+   },
+   {
+    "prompt": "Fill in the missing name: “At the corner of the pine-wood he caught sight of Sir _____ Clouston, the duchess’s brother, jerking two spent cartridges out of his gun.”",
+    "options": [
+     "Sibyl",
+     "Narborough",
+     "Geoffrey",
+     "Vane"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “At the corner of the pine-wood he caught sight of Sir Geoffrey Clouston, the duchess’s brother, jerking two spent cartridges out of his gun.”",
+    "evidence": "At the corner of the pine-wood he caught sight of Sir Geoffrey Clouston, the duchess’s brother, jerking two spent cartridges out of his gun."
    }
   ],
   "19": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "No,” said Dorian Gray, “there is nothing fearful about it.",
-     "The man with whom my wife ran away played Chopin exquisitely.",
+     "They are good husbands, or faithful wives, or something tedious.",
+     "Death and vulgarity are the only two facts in the nineteenth century that one cannot explain away.",
      "Pure family affection, I assure you, Uncle George.",
-     "They become more highly organized, and to be highly organized is, I should fancy, the object of man’s existence."
+     "If Dorian Gray’s life were spoiled, no one would be sorrier than yourself."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “The man with whom my wife ran away played Chopin exquisitely.”",
-    "evidence": "The man with whom my wife ran away played Chopin exquisitely."
+    "explanation": "This line is from this chapter: “Death and vulgarity are the only two facts in the nineteenth century that one cannot explain away.”",
+    "evidence": "Death and vulgarity are the only two facts in the nineteenth century that one cannot explain away."
    },
    {
     "prompt": "Fill in the missing name: “My dear boy, they have only been talking about it for six weeks, and the _____ public are really not equal to the mental strain of having more than one topic every three months.”",
@@ -729,14 +729,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I recognize him in a flash,” exclaimed the duchess.",
+     "But on the other hand, no one is more ready than I am to acknowledge that it is better to be good than to be ugly.",
      "The consciousness of being hunted, snared, tracked down, had begun to dominate him.",
-     "It was the living death of his own soul that troubled him.",
-     "Her capacity for family affection is extraordinary."
+     "Basil had painted the portrait that had marred his life.",
+     "I asked her whether, like Marguerite de Navarre, she had their hearts embalmed and hung at her girdle."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “It was the living death of his own soul that troubled him.”",
-    "evidence": "It was the living death of his own soul that troubled him."
+    "explanation": "This line is from this chapter: “Basil had painted the portrait that had marred his life.”",
+    "evidence": "Basil had painted the portrait that had marred his life."
    },
    {
     "prompt": "Fill in the missing name: “The curiously carved mirror that Lord _____ had given to him, so many years ago now, was standing on the table, and the white-limbed Cupids laughed round it as of old.”",

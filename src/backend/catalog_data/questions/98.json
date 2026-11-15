@@ -7,10 +7,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "It was as late as seven o’clock when he awoke refreshed, and went out into the streets again.",
+     "Extermination is good doctrine, my wife,” said Defarge, rather troubled; “in general, I say nothing against it.",
      "It was the year of Our Lord one thousand seven hundred and seventy-five.",
-     "My friend, I told you so,” said the uncle, with a fine pulsation in the two marks.",
-     "It was a passionate, loving, thankful, womanly action, but the hand made no response--dropped cold and heavy, and took to its knitting again."
+     "I would not say happily, my friend,” returned the uncle, with refined politeness; “I would not be sure of that.",
+     "What is it that your husband says in that little letter?"
     ],
     "correct_index": 1,
     "explanation": "This line is from this chapter: “It was the year of Our Lord one thousand seven hundred and seventy-five.”",
@@ -45,14 +45,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "The horses stopped to breathe again, and the guard got down to skid the wheel for the descent, and open the coach-door to let the passengers in.",
-     "The strange thrill with which she heard him go back to that time, deepened as he dwelt upon it; but, there was nothing to shock her in the manner of…",
-     "And when he lifted his eyes from it to the horizon and looked around, he saw in his small fancy similar figures, stopped by no obstacle, tending to…",
-     "He whiffed the compound of scents away, as he put down his smoked-out pipe."
+     "The last burst carried the mail to the summit of the hill.",
+     "I have altogether perished from the remembrance of the living, and in the next generation my place was a blank.",
+     "Soon, from a score of the great windows, flames burst forth, and the stone faces awakened, stared out of fire.",
+     "She tied a knot with flashing eyes, as if it throttled a foe."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “The horses stopped to breathe again, and the guard got down to skid the wheel for the descent, and open the coach-door to let the passengers in.”",
-    "evidence": "The horses stopped to breathe again, and the guard got down to skid the wheel for the descent, and open the coach-door to let the passengers in."
+    "explanation": "This line is from this chapter: “The last burst carried the mail to the summit of the hill.”",
+    "evidence": "The last burst carried the mail to the summit of the hill."
    },
    {
     "prompt": "Fill in the missing name: “_____, getting down into the road--assisted from behind more swiftly than politely by the other two passengers, who immediately scrambled into the coach, shut the door, and pulled up the window.”",
@@ -67,30 +67,30 @@
     "evidence": "Lorry, getting down into the road--assisted from behind more swiftly than politely by the other two passengers, who immediately scrambled into the coach, shut the door, and pulled up the window."
    },
    {
-    "prompt": "Fill in the missing name: “After that there gallop from _____ Bar, old lady, I won’t trust your fore-legs till I get you on the level,” said this hoarse messenger, glancing at his mare.”",
+    "prompt": "Fill in the missing name: “Once more, the _____ mail struggled on, with the jack-boots of its passengers squashing along by its side.”",
     "options": [
-     "Temple",
+     "Dover",
      "Bastille",
      "King",
      "Tellson"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “After that there gallop from Temple Bar, old lady, I won’t trust your fore-legs till I get you on the level,” said this hoarse messenger, glancing at his mare.”",
-    "evidence": "After that there gallop from Temple Bar, old lady, I won’t trust your fore-legs till I get you on the level,” said this hoarse messenger, glancing at his mare."
+    "explanation": "The line reads: “Once more, the Dover mail struggled on, with the jack-boots of its passengers squashing along by its side.”",
+    "evidence": "Once more, the Dover mail struggled on, with the jack-boots of its passengers squashing along by its side."
    }
   ],
   "3": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "But her father cheered her, and said at last, gently disengaging himself from her enfolding arms, “Take her, Charles!",
+     "Lorry to look in at Tellson’s, than to look out of Tellson’s.",
      "Stryver might be daily seen, bursting out of the bed of wigs, like a great sunflower pushing its way at the sun from among a rank garden-full of…",
-     "Pray give your mind to it, and advise me well for his sake--and above all, for his daughter’s--his daughter’s, my dear Manette.",
-     "When he stopped for drink, he moved this muffler with his left hand, only while he poured his liquor in with his right; as soon as that was done, he…"
+     "Now, did you ever see him,” asked the Doctor, distinctly and collectedly, though in the same low voice, “engaged in that pursuit originally?",
+     "They had a sinister expression, under an old cocked-hat like a three-cornered spittoon, and over a great muffler for the chin and throat, which…"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “When he stopped for drink, he moved this muffler with his left hand, only while he poured his liquor in with his right; as soon as that was done, he muffled again.”",
-    "evidence": "When he stopped for drink, he moved this muffler with his left hand, only while he poured his liquor in with his right; as soon as that was done, he muffled again."
+    "explanation": "This line is from this chapter: “They had a sinister expression, under an old cocked-hat like a three-cornered spittoon, and over a great muffler for the chin and throat, which descended nearly to the wearer’s knees.”",
+    "evidence": "They had a sinister expression, under an old cocked-hat like a three-cornered spittoon, and over a great muffler for the chin and throat, which descended nearly to the wearer’s knees."
    },
    {
     "prompt": "Fill in the missing name: “As to this, his natural and not to be alienated inheritance, the messenger on horseback had exactly the same possessions as the _____, the first Minister of State, or the richest merchant in London.”",
@@ -121,14 +121,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Every day, in all weathers, from two to four, always signalling, sometimes with the little one, sometimes without.",
-     "He found the Doctor reading in his arm-chair at a window.",
-     "I was not present at the ceremony; but my opinion is you were,” said Carton.",
-     "A bottle of good claret after dinner does a digger in the red coals no harm, otherwise than as it has a tendency to throw him out of work."
+     "She will be in a state of mind to impeach the justice of the Republic.",
+     "He studied much, slept little, sustained a great deal of fatigue with ease, and was equably cheerful.",
+     "Jarvis Lorry walked along the sunny streets from Clerkenwell where he lived, on his way to dine with the Doctor.",
+     "As the day declined into the afternoon, and the air, which had been at intervals clear enough to allow the French coast to be seen, became again…"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “A bottle of good claret after dinner does a digger in the red coals no harm, otherwise than as it has a tendency to throw him out of work.”",
-    "evidence": "A bottle of good claret after dinner does a digger in the red coals no harm, otherwise than as it has a tendency to throw him out of work."
+    "explanation": "This line is from this chapter: “As the day declined into the afternoon, and the air, which had been at intervals clear enough to allow the French coast to be seen, became again charged with mist and vapour, Mr.”",
+    "evidence": "As the day declined into the afternoon, and the air, which had been at intervals clear enough to allow the French coast to be seen, became again charged with mist and vapour, Mr."
    },
    {
     "prompt": "Fill in the missing name: “Miss _____ had taken some refreshment on the road, and required none then, and was extremely anxious to see the gentleman from Tellson’s immediately, if it suited his pleasure and convenience.”",
@@ -159,9 +159,9 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "The wood-sawyer said he would be proud and flattered to attend the citizeness.",
-     "Out of the midst of them, the ghostly face would rise, and he would accost it again.",
-     "We know, now what you underwent when you suspected my descent, and when you knew it.",
+     "As the sombre wheels of the six carts go round, they seem to plough up a long crooked furrow among the populace in the streets.",
+     "Any one of these partners would have disinherited his son on the question of rebuilding Tellson’s.",
+     "Now that you have come, I think you will do something to help mamma, something to save papa!",
      "Thus engaged, with her right elbow supported by her left hand, Madame Defarge said nothing when her lord came in, but coughed just one grain of cough."
     ],
     "correct_index": 3,
@@ -197,14 +197,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Cruncher, touching him on the shoulder, hoarsely and unexpectedly interposed with the following singular question: “I say!",
-     "The mender of roads, blue cap in hand, wiped his swarthy forehead with it, and said, “Where shall I commence, monsieur?",
-     "They were overclouded again, they were fainter, they were gone; but they had been there.",
-     "Gradually, it subsided to a foot pace, swinging and lumbering upward among the many sweet scents of a summer night."
+     "If you have, don’t expect me to befriend you when you get back to England.",
+     "The Defarges, husband and wife, came lumbering under the starlight, in their public vehicle, to that gate of Paris whereunto their journey naturally…",
+     "Finally, with a deep long sigh, he took the shoe up, and resumed his work.",
+     "Monseigneur, the good God knows; but I don’t ask it."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “They were overclouded again, they were fainter, they were gone; but they had been there.”",
-    "evidence": "They were overclouded again, they were fainter, they were gone; but they had been there."
+    "explanation": "This line is from this chapter: “Finally, with a deep long sigh, he took the shoe up, and resumed his work.”",
+    "evidence": "Finally, with a deep long sigh, he took the shoe up, and resumed his work."
    },
    {
     "prompt": "Fill in the missing name: “She had laid her head upon my shoulder, that night when I was summoned out--she had a fear of my going, though I had none--and when I was brought to the _____ Tower they found these upon my sleeve.”",
@@ -235,14 +235,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "When the wine was gone, and the places where it had been most abundant were raked into a gridiron-pattern by fingers, these demonstrations ceased,…",
-     "Madame sternly retorted, “I tell you a good deal like.",
-     "The spy, who was pale, turned paler, and asked him how he dared-- “I’ll tell you,” said Sydney.",
-     "People understood that Tellson’s, in a stately way, tolerated the odd-job-man."
+     "The trade signs (and they were almost as many as the shops) were, all, grim illustrations of Want.",
+     "Both her hearers derived a horrible enjoyment from the deadly nature of her wrath--the listener could feel how white she was, without seeing…",
+     "He’d never have no good of it; he’d want all along to be out of the line, if he, could see his way out, being once in--even if it wos so.",
+     "Outside Tellson’s--never by any means in it, unless called in--was an odd-job-man, an occasional porter and messenger, who served as the live sign…"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “People understood that Tellson’s, in a stately way, tolerated the odd-job-man.”",
-    "evidence": "People understood that Tellson’s, in a stately way, tolerated the odd-job-man."
+    "explanation": "This line is from this chapter: “Outside Tellson’s--never by any means in it, unless called in--was an odd-job-man, an occasional porter and messenger, who served as the live sign of the house.”",
+    "evidence": "Outside Tellson’s--never by any means in it, unless called in--was an odd-job-man, an occasional porter and messenger, who served as the live sign of the house."
    },
    {
     "prompt": "Fill in the missing name: “His surname was _____, and on the youthful occasion of his renouncing by proxy the works of darkness, in the easterly parish church of Hounsditch, he had received the added appellation of Jerry.”",
@@ -273,14 +273,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He found the Doctor reading in his arm-chair at a window.",
-     "Six tumbrils carry the day’s wine to La Guillotine.",
-     "Whatever is is right;” an aphorism that would be as final as it is lazy, did it not include the troublesome consequence, that nothing that ever was,…",
-     "He had got somebody to scrawl it up for him, however, who had squeezed Death in with most inappropriate difficulty."
+     "Miss Manette--” “Is well,” said the Doctor, as he stopped short, “and your return will delight us all.",
+     "The horsemen abreast of that cart, frequently point out one man in it with their swords.",
+     "Cruncher’s attention was here diverted to the door-keeper, whom he saw making his way to Mr.",
+     "In seasons of pestilence, some of us will have a secret attraction to the disease--a terrible passing inclination to die of it."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “Whatever is is right;” an aphorism that would be as final as it is lazy, did it not include the troublesome consequence, that nothing that ever was, was wrong.”",
-    "evidence": "Whatever is is right;” an aphorism that would be as final as it is lazy, did it not include the troublesome consequence, that nothing that ever was, was wrong."
+    "explanation": "This line is from this chapter: “Cruncher’s attention was here diverted to the door-keeper, whom he saw making his way to Mr.”",
+    "evidence": "Cruncher’s attention was here diverted to the door-keeper, whom he saw making his way to Mr."
    },
    {
     "prompt": "Fill in the missing name: “_____, the messenger, who had made his own observations, in his own manner, and who had been sucking the rust off his fingers in his absorption, stretched his neck to hear who they were.”",
@@ -311,14 +311,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "But, unfortunately, there has been,” he paused and took a deep breath--“a slight relapse.",
-     "And it was from the gifts bestowed upon him towards the execution of this benevolent purpose, that he recruited his finances, as just now observed.",
-     "He was the only passenger who came on board in the dead of the night?",
-     "The carriage was then so far in advance of me that two gentlemen had time to open the door and alight before I came up with it."
+     "Indeed, when I say I wish we might be friends, I scarcely mean quite that, either.",
+     "Dead as mutton,” returned the other, “and can’t be too dead.",
+     "Have you seen him, to your certain knowledge, before?",
+     "The carriage left the streets behind, passed the North Barrier, and emerged upon the country road."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “He was the only passenger who came on board in the dead of the night?”",
-    "evidence": "He was the only passenger who came on board in the dead of the night?"
+    "explanation": "This line is from this chapter: “Have you seen him, to your certain knowledge, before?”",
+    "evidence": "Have you seen him, to your certain knowledge, before?"
    },
    {
     "prompt": "Fill in the missing name: “My mind is a blank, from some time--I cannot even say what time--when I employed myself, in my captivity, in making shoes, to the time when I found myself living in _____ with my dear daughter here.”",
@@ -349,10 +349,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He studied much, slept little, sustained a great deal of fatigue with ease, and was equably cheerful.",
-     "He had a good leg, and was a little vain of it, for his brown stockings fitted sleek and close, and were of a fine texture; his shoes and buckles,…",
+     "He complied as to the chair, but appeared to find the speaking on less easy.",
+     "Not much in the habit of such travelling yourself, I think, sir?",
      "Stryver had left them in the passages, to shoulder his way back to the robing-room.",
-     "Within a minute afterwards, he was, to all outward appearance, as unsubstantial as ever."
+     "Then, among the advancing echoes, there was the tread of her tiny feet and the sound of her prattling words."
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “Stryver had left them in the passages, to shoulder his way back to the robing-room.”",
@@ -387,14 +387,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Cruncher, sitting on a stool in a public place, but not being a poet, mused as little as possible, and looked about him.",
-     "All else was so quiet, that the flambeau carried up the steps, and the other flambeau held at the great door, burnt as if they were in a close room…",
-     "A kettle steamed upon the hob, and in the midst of the wreck of papers a table shone, with plenty of wine upon it, and brandy, and rum, and sugar,…",
-     "Carton, if it would make you happier, it would make me very glad!"
+     "Among the first of these volunteers was Jerry Cruncher himself, who modestly concealed his spiky head from the observation of Tellson’s, in the…",
+     "It is not probable he will arrive to-night; nevertheless, leave the table as it is.",
+     "They went into a dingy room lined with books and littered with papers, where there was a blazing fire.",
+     "Since the state of your mind that you describe, is, at all events, attributable to some influence of mine--this is what I mean, if I can make it…"
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “A kettle steamed upon the hob, and in the midst of the wreck of papers a table shone, with plenty of wine upon it, and brandy, and rum, and sugar, and lemons.”",
-    "evidence": "A kettle steamed upon the hob, and in the midst of the wreck of papers a table shone, with plenty of wine upon it, and brandy, and rum, and sugar, and lemons."
+    "explanation": "This line is from this chapter: “They went into a dingy room lined with books and littered with papers, where there was a blazing fire.”",
+    "evidence": "They went into a dingy room lined with books and littered with papers, where there was a blazing fire."
    },
    {
     "prompt": "Fill in the missing name: “_____, already fast shouldering his way to a large and lucrative practice, behind his compeers in this particular, any more than in the drier parts of the legal race.”",
@@ -425,52 +425,52 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "To return to business:--Is it not remarkable that Doctor Manette, unquestionably innocent of any crime as we are all well assured he is, should…",
-     "A shrill sound of laughter and of amused voices--voices of men, women, and children--resounded in the street while this wine game lasted.",
-     "Now, Ladybird, never you stir from that fire till I come back!",
-     "They kept him in a dark place, like a cheese, until he had the full Tellson flavour and blue-mould upon him."
+     "Believe me, Miss Pross, I don’t approach the topic with you, out of curiosity, but out of zealous interest.",
+     "Hunger was the inscription on the baker’s shelves, written in every small loaf of his scanty stock of bad bread; at the sausage-shop, in every…",
+     "This citizen,” pointing out the second who had entered, “is from Saint Antoine.",
+     "Cruncher’s private lodging in Hanging-sword-alley, Whitefriars: the time, half-past seven of the clock on a windy March morning, Anno Domini…"
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “To return to business:--Is it not remarkable that Doctor Manette, unquestionably innocent of any crime as we are all well assured he is, should never touch upon that question?”",
-    "evidence": "To return to business:--Is it not remarkable that Doctor Manette, unquestionably innocent of any crime as we are all well assured he is, should never touch upon that question?"
-   },
-   {
-    "prompt": "Fill in the missing name: “_____, as they sat under the plane-tree--and he said it in the natural pursuit of the topic in hand, which happened to be the old buildings of London--“have you seen much of the Tower?”",
-    "options": [
-     "Madame",
-     "Darnay",
-     "Stryver",
-     "Lucie"
-    ],
-    "correct_index": 1,
-    "explanation": "The line reads: “Darnay, as they sat under the plane-tree--and he said it in the natural pursuit of the topic in hand, which happened to be the old buildings of London--“have you seen much of the Tower?”",
-    "evidence": "Darnay, as they sat under the plane-tree--and he said it in the natural pursuit of the topic in hand, which happened to be the old buildings of London--“have you seen much of the Tower?"
+    "explanation": "This line is from this chapter: “Believe me, Miss Pross, I don’t approach the topic with you, out of curiosity, but out of zealous interest.”",
+    "evidence": "Believe me, Miss Pross, I don’t approach the topic with you, out of curiosity, but out of zealous interest."
    },
    {
     "prompt": "Fill in the missing name: “_____ stood looking about him, the very chairs and tables seemed to ask him, with something of that peculiar expression which he knew so well by this time, whether he approved?”",
     "options": [
+     "Carton",
      "Lorry",
-     "Madame",
-     "Darnay",
+     "Sydney",
+     "Darnay"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Lorry stood looking about him, the very chairs and tables seemed to ask him, with something of that peculiar expression which he knew so well by this time, whether he approved?”",
+    "evidence": "Lorry stood looking about him, the very chairs and tables seemed to ask him, with something of that peculiar expression which he knew so well by this time, whether he approved?"
+   },
+   {
+    "prompt": "Fill in the missing name: “To return to business:--Is it not remarkable that Doctor _____, unquestionably innocent of any crime as we are all well assured he is, should never touch upon that question?”",
+    "options": [
+     "Manette",
+     "Jerry",
+     "Lucie",
      "Pross"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “Lorry stood looking about him, the very chairs and tables seemed to ask him, with something of that peculiar expression which he knew so well by this time, whether he approved?”",
-    "evidence": "Lorry stood looking about him, the very chairs and tables seemed to ask him, with something of that peculiar expression which he knew so well by this time, whether he approved?"
+    "explanation": "The line reads: “To return to business:--Is it not remarkable that Doctor Manette, unquestionably innocent of any crime as we are all well assured he is, should never touch upon that question?”",
+    "evidence": "To return to business:--Is it not remarkable that Doctor Manette, unquestionably innocent of any crime as we are all well assured he is, should never touch upon that question?"
    }
   ],
   "13": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Everybody was dressed for a Fancy Ball that was never to leave off.",
-     "Cruncher knuckled his forehead, as Sydney Carton and the spy returned from the dark room.",
-     "There was spurring and splashing through the darkness, and bridle was drawn in the space by the village fountain, and the horse in a foam stood at…",
-     "The house had always tolerated some person in that capacity, and time and tide had drifted this person to the post."
+     "Dress was the one unfailing talisman and charm used for keeping all things in their places.",
+     "afterwards resident in Paris, write this melancholy paper in my doleful cell in the Bastille, during the last month of the year, 1767.",
+     "As was natural, the head-quarters and great gathering-place of Monseigneur, in London, was Tellson’s Bank.",
+     "After hailing the morn with this second salutation, he threw a boot at the woman as a third."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Everybody was dressed for a Fancy Ball that was never to leave off.”",
-    "evidence": "Everybody was dressed for a Fancy Ball that was never to leave off."
+    "explanation": "This line is from this chapter: “Dress was the one unfailing talisman and charm used for keeping all things in their places.”",
+    "evidence": "Dress was the one unfailing talisman and charm used for keeping all things in their places."
    },
    {
     "prompt": "Fill in the missing name: “Yet, _____ had slowly found that vulgar embarrassments crept into his affairs, both private and public; and he had, as to both classes of affairs, allied himself perforce with a Farmer-General.”",
@@ -485,26 +485,26 @@
     "evidence": "Yet, Monseigneur had slowly found that vulgar embarrassments crept into his affairs, both private and public; and he had, as to both classes of affairs, allied himself perforce with a Farmer-General."
    },
    {
-    "prompt": "Fill in the missing name: “said the _____, but smoothly, and with an unchanged front, except as to the spots on his nose: “I would ride over any of you very willingly, and exterminate you from the earth.”",
+    "prompt": "Fill in the missing name: “As the tall man suddenly got up from the ground, and came running at the carriage, _____ the Marquis clapped his hand for an instant on his sword-hilt.”",
     "options": [
-     "France",
-     "Monseigneur",
-     "Guillotine",
-     "Marquis"
+     "Darnay",
+     "Pross",
+     "Solomon",
+     "Monsieur"
     ],
     "correct_index": 3,
-    "explanation": "The line reads: “said the Marquis, but smoothly, and with an unchanged front, except as to the spots on his nose: “I would ride over any of you very willingly, and exterminate you from the earth.”",
-    "evidence": "said the Marquis, but smoothly, and with an unchanged front, except as to the spots on his nose: “I would ride over any of you very willingly, and exterminate you from the earth."
+    "explanation": "The line reads: “As the tall man suddenly got up from the ground, and came running at the carriage, Monsieur the Marquis clapped his hand for an instant on his sword-hilt.”",
+    "evidence": "As the tall man suddenly got up from the ground, and came running at the carriage, Monsieur the Marquis clapped his hand for an instant on his sword-hilt."
    }
   ],
   "14": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Stryver shouldered his way from the Temple, while the bloom of the Long Vacation’s infancy was still upon it.",
      "Lorry, rubbing his chin, and looking at his visitor dubiously.",
+     "But, as an old fellow, who has carried Miss Manette in his arms, who is the trusted friend of Miss Manette and of her father too, and who has a…",
      "Pardon, Monseigneur; he swung by the chain of the shoe--the drag.",
-     "And if you were, I won’t be took the liberty with."
+     "Much better,” said Jerry, not unlike a reluctant witness at the establishment in question, “than I, as a honest tradesman, wish to know the Bailey."
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “Pardon, Monseigneur; he swung by the chain of the shoe--the drag.”",
@@ -539,14 +539,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Stryver shouldered his way through the law, like some great engine forcing itself through turbid water, and dragged his useful friend in his wake,…",
-     "The mender of roads, blue cap in hand, wiped his swarthy forehead with it, and said, “Where shall I commence, monsieur?",
-     "For the honour of the family, I could even resolve to incommode you to that extent.",
-     "It thundered at the town, and thundered at the cliffs, and brought the coast down, madly."
+     "It was a hot, wild night, and they were all three reminded of the old Sunday night when they had looked at the lightning from the same place.",
+     "The Defarges, husband and wife, came lumbering under the starlight, in their public vehicle, to that gate of Paris whereunto their journey naturally…",
+     "They are sought by so many, and they are granted (comparatively) to so few!",
+     "Miss Manette had taken some refreshment on the road, and required none then, and was extremely anxious to see the gentleman from Tellson’s…"
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “For the honour of the family, I could even resolve to incommode you to that extent.”",
-    "evidence": "For the honour of the family, I could even resolve to incommode you to that extent."
+    "explanation": "This line is from this chapter: “They are sought by so many, and they are granted (comparatively) to so few!”",
+    "evidence": "They are sought by so many, and they are granted (comparatively) to so few!"
    },
    {
     "prompt": "Fill in the missing name: “It was a heavy mass of building, that chateau of _____ the Marquis, with a large stone courtyard before it, and two stone sweeps of staircase meeting in a stone terrace before the principal door.”",
@@ -577,14 +577,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Lorry; and through his absent manner of clasping his head and drearily wandering away into his own room when they got up-stairs, Mr.",
-     "What, in the name of the Father of Lies, own father to yourself, was you called at that time?",
-     "Sydney Carton paused in the street, not quite decided where to go.",
-     "He complied as to the chair, but appeared to find the speaking on less easy."
+     "He worked hard--impatiently--as if in some sense of having been interrupted.",
+     "After some cogitation, accompanied with an intent look at his patron, Mr.",
+     "For the first time in many years, he had no strong drink.",
+     "Stryver and Sydney Carton were both here yesterday, and both made you out to be more than due."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “He complied as to the chair, but appeared to find the speaking on less easy.”",
-    "evidence": "He complied as to the chair, but appeared to find the speaking on less easy."
+    "explanation": "This line is from this chapter: “Stryver and Sydney Carton were both here yesterday, and both made you out to be more than due.”",
+    "evidence": "Stryver and Sydney Carton were both here yesterday, and both made you out to be more than due."
    },
    {
     "prompt": "Fill in the missing name: “It was again a summer day when, lately arrived in London from his college occupation, he turned into the quiet corner in Soho, bent on seeking an opportunity of opening his mind to Doctor _____.”",
@@ -615,52 +615,52 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "We men of business, who serve a House, are not our own masters.",
-     "I am sure that the best part of it might still be; I am sure that you might be much, much worthier of yourself.",
-     "Your manners have been of that silent and sullen and hangdog kind, that, upon my life and soul, I have been ashamed of you, Sydney!",
-     "Some of the hacked swords were tied to the wrists of those who carried them, with strips of linen and fragments of dress: ligatures various in kind,…"
+     "I don’t wonder at it; it’s not so long since you were pretty far advanced on your way to another.",
+     "Since I knew you, I have been troubled by a remorse that I thought would never reproach me again, and have heard whispers from old voices impelling…",
+     "Why, I have been ashamed of your moroseness there!",
+     "Noon coming, and the Doctor not returning, and every minute’s delay tending to compromise Tellson’s, Mr."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “Your manners have been of that silent and sullen and hangdog kind, that, upon my life and soul, I have been ashamed of you, Sydney!”",
-    "evidence": "Your manners have been of that silent and sullen and hangdog kind, that, upon my life and soul, I have been ashamed of you, Sydney!"
-   },
-   {
-    "prompt": "Fill in the missing name: “_____, preparing him with ostentatious friendliness for the disclosure he was about to make, “because I know you don’t mean half you say; and if you meant it all, it would be of no importance.”",
-    "options": [
-     "Sydney",
-     "Stryver",
-     "Solomon",
-     "Darnay"
-    ],
-    "correct_index": 1,
-    "explanation": "The line reads: “Stryver, preparing him with ostentatious friendliness for the disclosure he was about to make, “because I know you don’t mean half you say; and if you meant it all, it would be of no importance.”",
-    "evidence": "Stryver, preparing him with ostentatious friendliness for the disclosure he was about to make, “because I know you don’t mean half you say; and if you meant it all, it would be of no importance."
+    "explanation": "This line is from this chapter: “Why, I have been ashamed of your moroseness there!”",
+    "evidence": "Why, I have been ashamed of your moroseness there!"
    },
    {
     "prompt": "Fill in the missing name: “If you had been a fellow of any sensitiveness or delicacy of feeling in that kind of way, _____, I might have been a little resentful of your employing such a designation; but you are not.”",
     "options": [
+     "Stryver",
      "Sydney",
+     "Solomon",
+     "Darnay"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “If you had been a fellow of any sensitiveness or delicacy of feeling in that kind of way, Sydney, I might have been a little resentful of your employing such a designation; but you are not.”",
+    "evidence": "If you had been a fellow of any sensitiveness or delicacy of feeling in that kind of way, Sydney, I might have been a little resentful of your employing such a designation; but you are not."
+   },
+   {
+    "prompt": "Fill in the missing name: “You don’t get on with your account of your matrimonial intentions,” answered _____, with a careless air; “I wish you would keep to that.”",
+    "options": [
+     "Carton",
      "Darnay",
-     "Charles",
+     "Jacques",
      "Lorry"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “If you had been a fellow of any sensitiveness or delicacy of feeling in that kind of way, Sydney, I might have been a little resentful of your employing such a designation; but you are not.”",
-    "evidence": "If you had been a fellow of any sensitiveness or delicacy of feeling in that kind of way, Sydney, I might have been a little resentful of your employing such a designation; but you are not."
+    "explanation": "The line reads: “You don’t get on with your account of your matrimonial intentions,” answered Carton, with a careless air; “I wish you would keep to that.”",
+    "evidence": "You don’t get on with your account of your matrimonial intentions,” answered Carton, with a careless air; “I wish you would keep to that."
    }
   ],
   "18": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "said Stryver, slapping the desk with his contentious hand, opening his eyes wider, and taking a long breath, “if I understand you, Mr.",
-     "I was conducted to this chamber straight, the cries growing louder as we ascended the stairs, and I found a patient in a high fever of the brain,…",
-     "Master Cruncher (who was in his shirt) took this very ill, and, turning to his mother, strongly deprecated any praying away of his personal board.",
-     "With a weary sound that was not a sigh, nor a groan, he bent to work again, until the silence was again broken."
+     "Lorry, bending down his ear, while his eye strayed to the House afar off.",
+     "’ For an instant, and no more, she would pause to listen, and then the piercing shrieks would begin again, and she would repeat the cry, ‘My…",
+     "Then what you have to do, is, to remain there until he wants you.",
+     "At first I thought it quite hopeless, but I have unquestionably seen, for a single moment, the face that I once knew so well."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “said Stryver, slapping the desk with his contentious hand, opening his eyes wider, and taking a long breath, “if I understand you, Mr.”",
-    "evidence": "said Stryver, slapping the desk with his contentious hand, opening his eyes wider, and taking a long breath, “if I understand you, Mr."
+    "explanation": "This line is from this chapter: “Lorry, bending down his ear, while his eye strayed to the House afar off.”",
+    "evidence": "Lorry, bending down his ear, while his eye strayed to the House afar off."
    },
    {
     "prompt": "Fill in the missing name: “_____ having made up his mind to that magnanimous bestowal of good fortune on the Doctor’s daughter, resolved to make her happiness known to her before he left town for the Long Vacation.”",
@@ -675,7 +675,7 @@
     "evidence": "Stryver having made up his mind to that magnanimous bestowal of good fortune on the Doctor’s daughter, resolved to make her happiness known to her before he left town for the Long Vacation."
    },
    {
-    "prompt": "Fill in the missing name: “_____ paused, and shook his head at him in the oddest manner, as if he were compelled against his will to add, internally, “you know there really is so much too much of you!”",
+    "prompt": "Fill in the missing name: “_____ sat at great books ruled for figures, with perpendicular iron bars to his window as if that were ruled for figures too, and everything under the clouds were a sum.”",
     "options": [
      "Pross",
      "Charles",
@@ -683,22 +683,22 @@
      "Sydney"
     ],
     "correct_index": 2,
-    "explanation": "The line reads: “Lorry paused, and shook his head at him in the oddest manner, as if he were compelled against his will to add, internally, “you know there really is so much too much of you!”",
-    "evidence": "Lorry paused, and shook his head at him in the oddest manner, as if he were compelled against his will to add, internally, “you know there really is so much too much of you!"
+    "explanation": "The line reads: “Lorry sat at great books ruled for figures, with perpendicular iron bars to his window as if that were ruled for figures too, and everything under the clouds were a sum.”",
+    "evidence": "Lorry sat at great books ruled for figures, with perpendicular iron bars to his window as if that were ruled for figures too, and everything under the clouds were a sum."
    }
   ],
   "19": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Take care of the dear husband you have recovered, and don’t move your pretty head from his shoulder as you have it now, till you see me again!",
-     "Carton, if it would make you happier, it would make me very glad!",
-     "All the devouring and insatiate Monsters imagined since imagination could record itself, are fused in the one realisation, Guillotine.",
-     "He had accomplished the task he had set himself, his promise was redeemed, he had saved Charles."
+     "Citizen Doctor,” said the first, with his former reluctance, “ask no more.",
+     "Say of you, Miss Manette, and although I know better--although in the mystery of my own wretched heart I know better--I shall never forget it!",
+     "The leading curiosity is, to know which is he; he stands at the back of the tumbril with his head bent down, to converse with a mere girl who sits…",
+     "Now, Ladybird, never you stir from that fire till I come back!"
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “Carton, if it would make you happier, it would make me very glad!”",
-    "evidence": "Carton, if it would make you happier, it would make me very glad!"
+    "explanation": "This line is from this chapter: “Say of you, Miss Manette, and although I know better--although in the mystery of my own wretched heart I know better--I shall never forget it!”",
+    "evidence": "Say of you, Miss Manette, and although I know better--although in the mystery of my own wretched heart I know better--I shall never forget it!"
    },
    {
     "prompt": "Fill in the missing name: “_____, to have made you more unhappy than you were before you knew me--” “Don’t say that, Miss Manette, for you would have reclaimed me, if anything could.”",
@@ -713,7 +713,7 @@
     "evidence": "Carton, to have made you more unhappy than you were before you knew me--” “Don’t say that, Miss Manette, for you would have reclaimed me, if anything could."
    },
    {
-    "prompt": "Fill in the missing name: “Say of you, Miss _____, and although I know better--although in the mystery of my own wretched heart I know better--I shall never forget it!”",
+    "prompt": "Fill in the missing name: “Be under no apprehension, Miss _____, of my ever resuming this conversation by so much as a passing word.”",
     "options": [
      "Manette",
      "Sydney",
@@ -721,32 +721,32 @@
      "Defarge"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “Say of you, Miss Manette, and although I know better--although in the mystery of my own wretched heart I know better--I shall never forget it!”",
-    "evidence": "Say of you, Miss Manette, and although I know better--although in the mystery of my own wretched heart I know better--I shall never forget it!"
+    "explanation": "The line reads: “Be under no apprehension, Miss Manette, of my ever resuming this conversation by so much as a passing word.”",
+    "evidence": "Be under no apprehension, Miss Manette, of my ever resuming this conversation by so much as a passing word."
    }
   ],
   "20": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "cries The Vengeance, stamping her foot in the chair, “and here are the tumbrils!",
-     "And when the relapse fell on him, was he in most respects--or in all respects--as he was then?",
-     "If, as a honest tradesman, my wenturs goes wrong to-night, I shall make sure that you’ve been praying again me, and I shall work you for it just the…",
-     "And he was, therefore, as little surprised as a man could be, to find himself awakened at the small inn to which he had been remitted until morning,…"
+     "But when they came to the town of Beauvais--which they did at eventide, when the streets were filled with people--he could not conceal from himself…",
+     "I remember a certain famous occasion when you forced me to confess that you had been drinking.",
+     "In the outermost room were half a dozen exceptional people who had had, for a few years, some vague misgiving in them that things in general were…",
+     "Cruncher had no particular meaning in these sulky corroborations, but made use of them, as people not unfrequently do, to express general ironical…"
     ],
-    "correct_index": 2,
-    "explanation": "This line is from this chapter: “If, as a honest tradesman, my wenturs goes wrong to-night, I shall make sure that you’ve been praying again me, and I shall work you for it just the same as if I seen you do it.”",
-    "evidence": "If, as a honest tradesman, my wenturs goes wrong to-night, I shall make sure that you’ve been praying again me, and I shall work you for it just the same as if I seen you do it."
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Cruncher had no particular meaning in these sulky corroborations, but made use of them, as people not unfrequently do, to express general ironical dissatisfaction.”",
+    "evidence": "Cruncher had no particular meaning in these sulky corroborations, but made use of them, as people not unfrequently do, to express general ironical dissatisfaction."
    },
    {
     "prompt": "Fill in the missing name: “His cunning was fresh with the day, and his qualms were gone with the night--in which particulars it is not improbable that he had compeers in Fleet-street and the _____ of London, that fine morning.”",
     "options": [
-     "Monseigneur",
-     "Tellson",
+     "Antoine",
      "City",
-     "King"
+     "Guillotine",
+     "Tellson"
     ],
-    "correct_index": 2,
+    "correct_index": 1,
     "explanation": "The line reads: “His cunning was fresh with the day, and his qualms were gone with the night--in which particulars it is not improbable that he had compeers in Fleet-street and the City of London, that fine morning.”",
     "evidence": "His cunning was fresh with the day, and his qualms were gone with the night--in which particulars it is not improbable that he had compeers in Fleet-street and the City of London, that fine morning."
    },
@@ -767,14 +767,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I have cast up the years of her age, year after year.",
-     "Lorry and her father, who were following, and said to the latter: “You had great influence but yesterday, Doctor Manette; let it at least be tried.",
-     "Cruncher, touching him on the shoulder, hoarsely and unexpectedly interposed with the following singular question: “I say!",
-     "He is well hidden, but at last he is unluckily found."
+     "I hear them moving in the next room, and Miss Pross and I, as two formal folks of business, are anxious not to lose the final opportunity of saying…",
+     "It was as late as seven o’clock when he awoke refreshed, and went out into the streets again.",
+     "If you have, don’t expect me to befriend you when you get back to England.",
+     "With the aid of his indispensable cap, he represented a man with his elbows bound fast at his hips, with cords that were knotted behind him."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “He is well hidden, but at last he is unluckily found.”",
-    "evidence": "He is well hidden, but at last he is unluckily found."
+    "explanation": "This line is from this chapter: “With the aid of his indispensable cap, he represented a man with his elbows bound fast at his hips, with cords that were knotted behind him.”",
+    "evidence": "With the aid of his indispensable cap, he represented a man with his elbows bound fast at his hips, with cords that were knotted behind him."
    },
    {
     "prompt": "Fill in the missing name: “Their arrival had lighted a kind of fire in the breast of _____ Antoine, fast spreading as they came along, which stirred and flickered in flames of faces at most doors and windows.”",
@@ -805,14 +805,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "But, although you are the youngest man that ever lived,” said Charles Darnay, rather hesitating, “I must still suggest to you--” “I understand.",
-     "Evrémonde then sees the Spy, and looks attentively at him, and goes his way.",
-     "I want,” said Defarge, who had not removed his gaze from the shoemaker, “to let in a little more light here.",
-     "When the time comes, let loose a tiger and a devil; but wait for the time with the tiger and the devil chained--not shown--yet always ready."
+     "I must say again that I heartily admire your gallantry and youthfulness.",
+     "So he sat, with a steadfastly vacant gaze, pausing in his work.",
+     "Cruncher, “even if it wos so, which I don’t say it is--” “Don’t prevaricate,” said Mr.",
+     "A rose lay beside her, and if she now and then glanced at the flower, it was with no infraction of her usual preoccupied air."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “When the time comes, let loose a tiger and a devil; but wait for the time with the tiger and the devil chained--not shown--yet always ready.”",
-    "evidence": "When the time comes, let loose a tiger and a devil; but wait for the time with the tiger and the devil chained--not shown--yet always ready."
+    "explanation": "This line is from this chapter: “A rose lay beside her, and if she now and then glanced at the flower, it was with no infraction of her usual preoccupied air.”",
+    "evidence": "A rose lay beside her, and if she now and then glanced at the flower, it was with no infraction of her usual preoccupied air."
    },
    {
     "prompt": "Fill in the missing name: “that, after all our sympathy for _____ her father, and herself, her husband’s name should be proscribed under your hand at this moment, by the side of that infernal dog’s who has just left us?”",
@@ -843,14 +843,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "You shall see the apartment that I told you you could occupy.",
-     "Charles Darnay--just released--congratulating him on his escape from death.",
-     "Lorry gave her of her husband, and clasped the hand that delivered his note--little thinking what it had been doing near him in the night, and…",
-     "It gave her a strange and new sensation while his words were in her ears; and she remembered it long afterwards."
+     "I am again at work upon the hill-side, and the sun is again about to go to bed.",
+     "Darnay; and my best is as good as another man’s, I believe.",
+     "What is it that your husband says in that little letter?",
+     "The strange thrill with which she heard him go back to that time, deepened as he dwelt upon it; but, there was nothing to shock her in the manner of…"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “It gave her a strange and new sensation while his words were in her ears; and she remembered it long afterwards.”",
-    "evidence": "It gave her a strange and new sensation while his words were in her ears; and she remembered it long afterwards."
+    "explanation": "This line is from this chapter: “The strange thrill with which she heard him go back to that time, deepened as he dwelt upon it; but, there was nothing to shock her in the manner of his reference.”",
+    "evidence": "The strange thrill with which she heard him go back to that time, deepened as he dwelt upon it; but, there was nothing to shock her in the manner of his reference."
    },
    {
     "prompt": "Fill in the missing name: “Never did the moon rise with a milder radiance over great _____, than on that night when it found them still seated under the tree, and shone upon their faces through its leaves.”",
@@ -881,14 +881,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "But, it was the old scared lost look that troubled Mr.",
-     "With a weary sound that was not a sigh, nor a groan, he bent to work again, until the silence was again broken.",
-     "Small tradesmen, who did no business whatever, sometimes unaccountably realised large fortunes, and it was remarkable that nobody in the…",
-     "If it should go ill with the prisoner, I have ensured access to him, once."
+     "Lorry; and through his absent manner of clasping his head and drearily wandering away into his own room when they got up-stairs, Mr.",
+     "At first I thought it quite hopeless, but I have unquestionably seen, for a single moment, the face that I once knew so well.",
+     "In a very clear and pleasant young voice; a little foreign in its accent, but a very little indeed.",
+     "Some pitying hand may find it there, when I and my sorrows are dust."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “But, it was the old scared lost look that troubled Mr.”",
-    "evidence": "But, it was the old scared lost look that troubled Mr."
+    "explanation": "This line is from this chapter: “Lorry; and through his absent manner of clasping his head and drearily wandering away into his own room when they got up-stairs, Mr.”",
+    "evidence": "Lorry; and through his absent manner of clasping his head and drearily wandering away into his own room when they got up-stairs, Mr."
    },
    {
     "prompt": "Fill in the missing name: “I hear them moving in the next room, and Miss _____ and I, as two formal folks of business, are anxious not to lose the final opportunity of saying something to you that you wish to hear.”",
@@ -903,30 +903,30 @@
     "evidence": "I hear them moving in the next room, and Miss Pross and I, as two formal folks of business, are anxious not to lose the final opportunity of saying something to you that you wish to hear."
    },
    {
-    "prompt": "Fill in the missing name: “_____ thought he saw, as he leaned forward on his bench in the dusk, with his elbows on his knees and his head in his hands, that he was in some misty way asking himself, “Why not?”",
+    "prompt": "Fill in the missing name: “The rest followed in another carriage, and soon, in a neighbouring church, where no strange eyes looked on, _____ Darnay and Lucie Manette were happily married.”",
     "options": [
-     "Monsieur",
-     "Lorry",
+     "Stryver",
+     "Charles",
      "Pross",
-     "Gabelle"
+     "Young"
     ],
     "correct_index": 1,
-    "explanation": "The line reads: “Lorry thought he saw, as he leaned forward on his bench in the dusk, with his elbows on his knees and his head in his hands, that he was in some misty way asking himself, “Why not?”",
-    "evidence": "Lorry thought he saw, as he leaned forward on his bench in the dusk, with his elbows on his knees and his head in his hands, that he was in some misty way asking himself, “Why not?"
+    "explanation": "The line reads: “The rest followed in another carriage, and soon, in a neighbouring church, where no strange eyes looked on, Charles Darnay and Lucie Manette were happily married.”",
+    "evidence": "The rest followed in another carriage, and soon, in a neighbouring church, where no strange eyes looked on, Charles Darnay and Lucie Manette were happily married."
    }
   ],
   "25": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Find the door where the witnesses go in, and show the door-keeper this note for Mr.",
-     "Can you tell me, this last time, that you feel quite, quite sure, no new affections of mine, and no new duties of mine, will ever interpose between…",
-     "A face of a transparent paleness; every feature in it clearly defined; one set expression on it.",
-     "It is the case of a shock from which the sufferer recovered, by a process that he cannot trace himself--as I once heard him publicly relate in a…"
+     "Some of us have damp ways, and some of us have dry ways.",
+     "Whether it had been born alive, or the poor mother’s shock had killed it.",
+     "At last, swooping at a street corner by a fountain, one of its wheels came to a sickening little jolt, and there was a loud cry from a number of…",
+     "My dear Manette, it is the case of an old and a prolonged shock, of great acuteness and severity to the affections, the feelings, the--the--as you…"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “It is the case of a shock from which the sufferer recovered, by a process that he cannot trace himself--as I once heard him publicly relate in a striking manner.”",
-    "evidence": "It is the case of a shock from which the sufferer recovered, by a process that he cannot trace himself--as I once heard him publicly relate in a striking manner."
+    "explanation": "This line is from this chapter: “My dear Manette, it is the case of an old and a prolonged shock, of great acuteness and severity to the affections, the feelings, the--the--as you express it--the mind.”",
+    "evidence": "My dear Manette, it is the case of an old and a prolonged shock, of great acuteness and severity to the affections, the feelings, the--the--as you express it--the mind."
    },
    {
     "prompt": "Fill in the missing name: “He felt it to be the most difficult of all; but, remembering his old Sunday morning conversation with Miss _____, and remembering what he had seen in the last nine days, he knew that he must face it.”",
@@ -958,9 +958,9 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "Earnestness in you, is anything but alarming to me.",
-     "When I have executed this little commission, I shall, perhaps, accept Tellson’s proposal to retire and live at my ease.",
-     "On the afternoon of a certain fine Sunday when the waves of four months had rolled over the trial for treason, and carried it, as to the public…",
-     "Among the many wild changes observable on familiar things which made this wild ride unreal, not the least was the seeming rarity of sleep."
+     "Emigrant,” said the functionary, “I am going to send you on to Paris, under an escort.",
+     "There were few buildings then, north of the Oxford-road, and forest-trees flourished, and wild flowers grew, and the hawthorn blossomed, in the now…",
+     "All such circumstances were indifferent to him, so that he did his duty."
     ],
     "correct_index": 0,
     "explanation": "This line is from this chapter: “Earnestness in you, is anything but alarming to me.”",
@@ -995,14 +995,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Some of us have damp ways, and some of us have dry ways.",
-     "Their arrival had lighted a kind of fire in the breast of Saint Antoine, fast spreading as they came along, which stirred and flickered in flames of…",
-     "His yellow rags of shirt lay open at the throat, and showed his body to be withered and worn.",
-     "Lorry, pushing his brown wig back, “that I should have to pass the night at Tellson’s."
+     "Presently, the dock became the central point of interest.",
+     "Commence,” was Monsieur Defarge’s not unreasonable reply, “at the commencement.",
+     "Here is monsieur, who knows a well-made shoe when he sees one.",
+     "Lorry came in late, from Tellson’s, and sat himself down by Lucie and her husband in the dark window."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “Lorry, pushing his brown wig back, “that I should have to pass the night at Tellson’s.”",
-    "evidence": "Lorry, pushing his brown wig back, “that I should have to pass the night at Tellson’s."
+    "explanation": "This line is from this chapter: “Lorry came in late, from Tellson’s, and sat himself down by Lucie and her husband in the dark window.”",
+    "evidence": "Lorry came in late, from Tellson’s, and sat himself down by Lucie and her husband in the dark window."
    },
    {
     "prompt": "Fill in the missing name: “_____ Antoine had been, that morning, a vast dusky mass of scarecrows heaving to and fro, with frequent gleams of light above the billowy heads, where steel blades and bayonets shone in the sun.”",
@@ -1033,14 +1033,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He feared us so much--and with reason--that he caused himself to be represented as dead, and had a grand mock-funeral.",
-     "That, he called with confidence on the jury to come and do likewise.",
-     "The patient was a woman of great beauty, and young; assuredly not much past twenty.",
-     "Above all, one hideous figure grew as familiar as if it had been before the general gaze from the foundations of the world--the figure of the sharp…"
+     "Does everybody here recall old Foulon, who told the famished people that they might eat grass, and who died, and went to Hell?",
+     "Decidedly not; once received a kick on the top of a staircase, and fell downstairs of his own accord.",
+     "O, good citizens, if you would have so much compassion for us!",
+     "She was truest to them in the season of trial, as all the quietly loyal and good will always be."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “He feared us so much--and with reason--that he caused himself to be represented as dead, and had a grand mock-funeral.”",
-    "evidence": "He feared us so much--and with reason--that he caused himself to be represented as dead, and had a grand mock-funeral."
+    "explanation": "This line is from this chapter: “Does everybody here recall old Foulon, who told the famished people that they might eat grass, and who died, and went to Hell?”",
+    "evidence": "Does everybody here recall old Foulon, who told the famished people that they might eat grass, and who died, and went to Hell?"
    },
    {
     "prompt": "Fill in the missing name: “There was a change in the appearance of _____ Antoine; the image had been hammering into this for hundreds of years, and the last finishing blows had told mightily on the expression.”",
@@ -1071,14 +1071,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I want,” said Defarge, who had not removed his gaze from the shoemaker, “to let in a little more light here.",
-     "It was enough that he could and did see her when the chances served, and on that possibility she would have waited out the day, seven days a week.",
-     "See you then, Jacques,” said Madame Defarge, wrathfully; “and see you, too, my little Vengeance; see you both!",
-     "About two leagues beyond the summit of that hill above the village."
+     "So he sat, with a steadfastly vacant gaze, pausing in his work.",
+     "The list was read, in the vaulted chamber where Darnay had seen the associated prisoners on the night of his arrival.",
+     "Being allowed to purchase the means of writing, and a light, he sat down to write until such time as the prison lamps should be extinguished.",
+     "The wayfarer smoked his pipe out, put it in his breast, slipped off his great wooden shoes, and lay down on his back on the heap of stones."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “About two leagues beyond the summit of that hill above the village.”",
-    "evidence": "About two leagues beyond the summit of that hill above the village."
+    "explanation": "This line is from this chapter: “The wayfarer smoked his pipe out, put it in his breast, slipped off his great wooden shoes, and lay down on his back on the heap of stones.”",
+    "evidence": "The wayfarer smoked his pipe out, put it in his breast, slipped off his great wooden shoes, and lay down on his back on the heap of stones."
    },
    {
     "prompt": "Fill in the missing name: “The change consisted in the appearance of strange faces of low caste, rather than in the disappearance of the high caste, chiselled, and otherwise beautified and beautifying features of _____.”",
@@ -1109,9 +1109,9 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "There’s not a fork or a spoon in the collection,” said Miss Pross, “that I didn’t cry over, last night after the box came, till I couldn’t see it.",
-     "Cruncher’s elbow as negligently as he might have stood at the Old Bailey itself.",
-     "When the repast was fully discussed, the lion put his hands in his waistband again, and lay down to meditate.",
+     "It was when they turned into the welcome shade of the cool old hall, that Mr.",
+     "Then, wot with undertakers, and wot with parish clerks, and wot with sextons, and wot with private watchmen (all awaricious and all in it), a man…",
+     "You were always in the front rank, and I was always behind.",
      "Nobody will suspect Jerry of being anything but an English bull-dog, or of having any design in his head but to fly at anybody who touches his master."
     ],
     "correct_index": 3,
@@ -1147,14 +1147,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "said Defarge, in a determined voice, “are we ready?",
-     "Four lights broke out there, and moved away in different directions, and all was black again.",
-     "He had asked the prisoner, aboard the Calais packet, if he wanted a handy fellow, and the prisoner had engaged him.",
-     "The barrier was closed and strongly guarded when they rode up to it."
+     "It was known directly, to the furthest confines of the crowd.",
+     "Lorry when business hours came round, was this:--that he had no right to imperil Tellson’s by sheltering the wife of an emigrant prisoner under the…",
+     "He had never been suspected of stealing a silver tea-pot; he had been maligned respecting a mustard-pot, but it turned out to be only a plated one.",
+     "Daylight at last found them before the wall of Paris."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “The barrier was closed and strongly guarded when they rode up to it.”",
-    "evidence": "The barrier was closed and strongly guarded when they rode up to it."
+    "explanation": "This line is from this chapter: “Daylight at last found them before the wall of Paris.”",
+    "evidence": "Daylight at last found them before the wall of Paris."
    },
    {
     "prompt": "Fill in the missing name: “Is it you,” said _____, in a low voice, as they went down the guardhouse steps and turned into Paris, “who married the daughter of Doctor Manette, once a prisoner in the Bastille that is no more?”",
@@ -1169,26 +1169,26 @@
     "evidence": "Is it you,” said Defarge, in a low voice, as they went down the guardhouse steps and turned into Paris, “who married the daughter of Doctor Manette, once a prisoner in the Bastille that is no more?"
    },
    {
-    "prompt": "Fill in the missing name: “The word “wife” seemed to serve as a gloomy reminder to Defarge, to say with sudden impatience, “In the name of that sharp female newly-born, and called La _____, why did you come to France?”",
+    "prompt": "Fill in the missing name: “Not a mean village closed upon him, not a common barrier dropped across the road behind him, but he knew it to be another iron door in the series that was barred between him and _____.”",
     "options": [
-     "Guillotine",
+     "England",
      "Death",
      "King",
      "Bastille"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “The word “wife” seemed to serve as a gloomy reminder to Defarge, to say with sudden impatience, “In the name of that sharp female newly-born, and called La Guillotine, why did you come to France?”",
-    "evidence": "The word “wife” seemed to serve as a gloomy reminder to Defarge, to say with sudden impatience, “In the name of that sharp female newly-born, and called La Guillotine, why did you come to France?"
+    "explanation": "The line reads: “Not a mean village closed upon him, not a common barrier dropped across the road behind him, but he knew it to be another iron door in the series that was barred between him and England.”",
+    "evidence": "Not a mean village closed upon him, not a common barrier dropped across the road behind him, but he knew it to be another iron door in the series that was barred between him and England."
    }
   ],
   "32": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "On the tenth morning of his suspense, he was startled by the shining of the sun into the room where a heavy slumber had overtaken him when it was…",
+     "Miss Pross, submitting herself to his judgment, the scheme was worked out with care.",
      "It was well guarded, and he got up to go among the trusty people who were watching it, when his door suddenly opened, and two figures rushed in, at…",
-     "Little Lucie she taught, as regularly, as if they had all been united in their English home.",
-     "Having abundance of time for his usual methodical toilette, Mr."
+     "It had been established voluntarily some time ago, among the more thorough patriots; but, was now law for everybody.",
+     "It is the case of a shock under which the sufferer was borne down, one cannot say for how long, because I believe he cannot calculate the time…"
     ],
     "correct_index": 1,
     "explanation": "This line is from this chapter: “It was well guarded, and he got up to go among the trusty people who were watching it, when his door suddenly opened, and two figures rushed in, at sight of which he fell back in amazement.”",
@@ -1223,10 +1223,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Then, among the advancing echoes, there was the tread of her tiny feet and the sound of her prattling words.",
-     "He could write of them, besides, in sound English, and render them into sound English.",
+     "As the boat so favoured is usually in a rough plight, and mostly under water, so, Sydney had a swamped life of it.",
+     "That he had his reasons for this, he knew full well.",
      "Scarcely noticing as yet, in what a curiously reserved and mechanical way Defarge spoke, Mr.",
-     "A bottle of good claret after dinner does a digger in the red coals no harm, otherwise than as it has a tendency to throw him out of work."
+     "All the people within reach had suspended their business, or their idleness, to run to the spot and drink the wine."
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “Scarcely noticing as yet, in what a curiously reserved and mechanical way Defarge spoke, Mr.”",
@@ -1261,9 +1261,9 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He only seemed to contrast his present cheerfulness and felicity with the dire endurance that was over.",
-     "Was he the only passenger who came on board at that untimely hour?",
-     "The penitential den once set apart for interviews with the House, was now the news-Exchange, and was filled to overflowing.",
+     "They were ready to go to church; the beautiful bride, Mr.",
+     "Darnay had kissed her hand fervently and gratefully, and had turned to Mr.",
+     "Jerry has been my bodyguard on Sunday nights for a long time past and I am used to him.",
      "For the first time he felt that in that sharp fire, he had slowly forged the iron which could break the prison door of his daughter’s husband, and…"
     ],
     "correct_index": 3,
@@ -1299,14 +1299,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I want,” said Defarge, who had not removed his gaze from the shoemaker, “to let in a little more light here.",
-     "This mode of address was now prescribed by decree.",
-     "There ought to have been a tranquil bark in such an anchorage, and there was.",
-     "Before I go,” he said, and paused--“I may kiss her?"
+     "So he sat, with a steadfastly vacant gaze, pausing in his work.",
+     "It had been established voluntarily some time ago, among the more thorough patriots; but, was now law for everybody.",
+     "Possibly at home, but of a certainty impossible for handmaid to anticipate intentions of Miss Pross, as to admission or denial of the fact.",
+     "Defarge had described himself, that day, as the keeper of a wine-shop in the Saint Antoine suburb."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “This mode of address was now prescribed by decree.”",
-    "evidence": "This mode of address was now prescribed by decree."
+    "explanation": "This line is from this chapter: “It had been established voluntarily some time ago, among the more thorough patriots; but, was now law for everybody.”",
+    "evidence": "It had been established voluntarily some time ago, among the more thorough patriots; but, was now law for everybody."
    },
    {
     "prompt": "Fill in the missing name: “As it passed, leaving _____ frightened and bewildered in the doorway of the wood-sawyer’s house, the feathery snow fell as quietly and lay as white and soft, as if it had never been.”",
@@ -1337,10 +1337,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "The barrier was closed and strongly guarded when they rode up to it.",
+     "Rising and looking out of window at these harmless objects, Mr.",
      "They seemed to be waiting for something with a dogged determination, and they looked at the Jury, but at nothing else.",
-     "He rubbed his eyes and roused himself; but he doubted, when he had done so, whether he was not still asleep.",
-     "In this age, he would have been a Professor; in that age, he was a Tutor."
+     "Having abundance of time for his usual methodical toilette, Mr.",
+     "He had expected labour, and he found it, and did it and made the best of it."
     ],
     "correct_index": 1,
     "explanation": "This line is from this chapter: “They seemed to be waiting for something with a dogged determination, and they looked at the Jury, but at nothing else.”",
@@ -1375,128 +1375,128 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Nice toasts these Redheads will be drinking, wherever we buy it.",
-     "And shall I hang back, when Tellson’s knows this and says this--Tellson’s, whose bread I have eaten these sixty years--because I am a little stiff…",
-     "He is a good child, this mender of roads, called Jacques.",
-     "He glanced at the shoe with some little passing touch of pride."
+     "Jerry hoarsely professed himself at Miss Pross’s service.",
+     "Darnay, unable to restrain himself any longer, touched Mr.",
+     "Under those circumstances even, I do not offer my testimony.",
+     "Finally, with a deep long sigh, he took the shoe up, and resumed his work."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Nice toasts these Redheads will be drinking, wherever we buy it.”",
-    "evidence": "Nice toasts these Redheads will be drinking, wherever we buy it."
+    "explanation": "This line is from this chapter: “Jerry hoarsely professed himself at Miss Pross’s service.”",
+    "evidence": "Jerry hoarsely professed himself at Miss Pross’s service."
    },
    {
-    "prompt": "Fill in the missing name: “said Miss _____, cheerfully repressing a sigh as she glanced at her darling’s golden hair in the light of the fire, “then we must have patience and wait: that’s all.”",
+    "prompt": "Fill in the missing name: “I thought, my father,” said _____, excusing herself, with a pale face and in a faltering voice, “that I heard strange feet upon the stairs.”",
     "options": [
      "Jacques",
      "Stryver",
-     "Pross",
+     "Lucie",
      "Monsieur"
     ],
     "correct_index": 2,
-    "explanation": "The line reads: “said Miss Pross, cheerfully repressing a sigh as she glanced at her darling’s golden hair in the light of the fire, “then we must have patience and wait: that’s all.”",
-    "evidence": "said Miss Pross, cheerfully repressing a sigh as she glanced at her darling’s golden hair in the light of the fire, “then we must have patience and wait: that’s all."
+    "explanation": "The line reads: “I thought, my father,” said Lucie, excusing herself, with a pale face and in a faltering voice, “that I heard strange feet upon the stairs.”",
+    "evidence": "I thought, my father,” said Lucie, excusing herself, with a pale face and in a faltering voice, “that I heard strange feet upon the stairs."
    },
    {
-    "prompt": "Fill in the missing name: “I am glad you have so much of the _____ in you, though I wish you had never taken that cold in your voice,” said Miss Pross, approvingly.”",
+    "prompt": "Fill in the missing name: “It will be much the same to your knowledge, miss, I should think,” retorted _____, “whether they drink your health or the Old Un’s.”",
     "options": [
-     "London",
-     "France",
-     "Englishman",
-     "Bastille"
+     "Stryver",
+     "Lucie",
+     "Jerry",
+     "Lorry"
     ],
     "correct_index": 2,
-    "explanation": "The line reads: “I am glad you have so much of the Englishman in you, though I wish you had never taken that cold in your voice,” said Miss Pross, approvingly.”",
-    "evidence": "I am glad you have so much of the Englishman in you, though I wish you had never taken that cold in your voice,” said Miss Pross, approvingly."
+    "explanation": "The line reads: “It will be much the same to your knowledge, miss, I should think,” retorted Jerry, “whether they drink your health or the Old Un’s.”",
+    "evidence": "It will be much the same to your knowledge, miss, I should think,” retorted Jerry, “whether they drink your health or the Old Un’s."
    }
   ],
   "38": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "You have a face to be remembered, and I remember faces well.",
-     "He could walk up and down, free from distracting fancies, praying for himself and for them.",
-     "All three were wrapped to the cheekbones and over the ears, and wore jack-boots.",
-     "Madame put her knife under her arm, and clapped her hands as at a play."
+     "Sheep was a cant word of the time for a spy, under the gaolers.",
+     "See you,” said madame, “I care nothing for this Doctor, I.",
+     "In those days, travellers were very shy of being confidential on a short notice, for anybody on the road might be a robber or in league with robbers.",
+     "But, this was not the change on the village, and on many a village like it."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “You have a face to be remembered, and I remember faces well.”",
-    "evidence": "You have a face to be remembered, and I remember faces well."
-   },
-   {
-    "prompt": "Fill in the missing name: “While he was at a loss, _____ said, resuming his former air of contemplating cards: “And indeed, now I think again, I have a strong impression that I have another good card here, not yet enumerated.”",
-    "options": [
-     "Manette",
-     "Darnay",
-     "Stryver",
-     "Carton"
-    ],
-    "correct_index": 3,
-    "explanation": "The line reads: “While he was at a loss, Carton said, resuming his former air of contemplating cards: “And indeed, now I think again, I have a strong impression that I have another good card here, not yet enumerated.”",
-    "evidence": "While he was at a loss, Carton said, resuming his former air of contemplating cards: “And indeed, now I think again, I have a strong impression that I have another good card here, not yet enumerated."
+    "explanation": "This line is from this chapter: “Sheep was a cant word of the time for a spy, under the gaolers.”",
+    "evidence": "Sheep was a cant word of the time for a spy, under the gaolers."
    },
    {
     "prompt": "Fill in the missing name: “Now, I trust,” said _____ to him, “that the name and influence of Doctor Manette may stand him in as good stead to-morrow--you said he would be before the Tribunal again to-morrow, Mr.”",
     "options": [
-     "Sydney",
+     "Darnay",
      "Lucie",
+     "Gabelle",
+     "Sydney"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Now, I trust,” said Sydney to him, “that the name and influence of Doctor Manette may stand him in as good stead to-morrow--you said he would be before the Tribunal again to-morrow, Mr.”",
+    "evidence": "Now, I trust,” said Sydney to him, “that the name and influence of Doctor Manette may stand him in as good stead to-morrow--you said he would be before the Tribunal again to-morrow, Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ into the discussion, “that your respect for my sister--” “I could not better testify my respect for your sister than by finally relieving her of her brother,” said Sydney Carton.”",
+    "options": [
+     "Lorry",
+     "Darnay",
      "Madame",
      "Gabelle"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “Now, I trust,” said Sydney to him, “that the name and influence of Doctor Manette may stand him in as good stead to-morrow--you said he would be before the Tribunal again to-morrow, Mr.”",
-    "evidence": "Now, I trust,” said Sydney to him, “that the name and influence of Doctor Manette may stand him in as good stead to-morrow--you said he would be before the Tribunal again to-morrow, Mr."
+    "explanation": "The line reads: “Lorry into the discussion, “that your respect for my sister--” “I could not better testify my respect for your sister than by finally relieving her of her brother,” said Sydney Carton.”",
+    "evidence": "Lorry into the discussion, “that your respect for my sister--” “I could not better testify my respect for your sister than by finally relieving her of her brother,” said Sydney Carton."
    }
   ],
   "39": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Lorry; his boot was still upon the hot embers of the flaming log, when it had broken under the weight of his foot.",
-     "He occupied rooms in the Bank, in his fidelity to the House of which he had grown to be a part, like strong root-ivy.",
-     "If it was a light answer,” returned Darnay, “I beg your forgiveness for it.",
-     "The clocks are on the stroke of three, and the furrow ploughed among the populace is turning round, to come on into the place of execution, and end."
+     "Indeed, I may say that I was a man of business when a boy.",
+     "When he was gone, and in the course of an evening passed with Miss Pross, the Doctor, and Mr.",
+     "My old pain has given me a power that has brought us through the barrier, and gained us news of Charles there, and brought us here.",
+     "It is the case of a shock under which the sufferer was borne down, one cannot say for how long, because I believe he cannot calculate the time…"
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Lorry; his boot was still upon the hot embers of the flaming log, when it had broken under the weight of his foot.”",
-    "evidence": "Lorry; his boot was still upon the hot embers of the flaming log, when it had broken under the weight of his foot."
-   },
-   {
-    "prompt": "Fill in the missing name: “_____, “that a gentleman like yourself wot I’ve had the honour of odd jobbing till I’m grey at it, would think twice about harming of me, even if it wos so--I don’t say it is, but even if it wos.”",
-    "options": [
-     "Lucie",
-     "Cruncher",
-     "Madame",
-     "Defarge"
-    ],
-    "correct_index": 1,
-    "explanation": "The line reads: “Cruncher, “that a gentleman like yourself wot I’ve had the honour of odd jobbing till I’m grey at it, would think twice about harming of me, even if it wos so--I don’t say it is, but even if it wos.”",
-    "evidence": "Cruncher, “that a gentleman like yourself wot I’ve had the honour of odd jobbing till I’m grey at it, would think twice about harming of me, even if it wos so--I don’t say it is, but even if it wos."
+    "explanation": "This line is from this chapter: “Indeed, I may say that I was a man of business when a boy.”",
+    "evidence": "Indeed, I may say that I was a man of business when a boy."
    },
    {
     "prompt": "Fill in the missing name: “As the grinning little man held out the pipe he was smoking, to explain how he timed the executioner, _____ was so sensible of a rising desire to strike the life out of him, that he turned away.”",
     "options": [
+     "Jacques",
      "Carton",
-     "Jerry",
-     "Lorry",
-     "Jacques"
+     "Defarge",
+     "Gabelle"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "The line reads: “As the grinning little man held out the pipe he was smoking, to explain how he timed the executioner, Carton was so sensible of a rising desire to strike the life out of him, that he turned away.”",
     "evidence": "As the grinning little man held out the pipe he was smoking, to explain how he timed the executioner, Carton was so sensible of a rising desire to strike the life out of him, that he turned away."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, or leastways wos in the Old England times, and would be to-morrow, if cause given, a floppin’ again the business to that degree as is ruinating--stark ruinating!”",
+    "options": [
+     "Cruncher",
+     "Madame",
+     "Gabelle",
+     "Charles"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Cruncher, or leastways wos in the Old England times, and would be to-morrow, if cause given, a floppin’ again the business to that degree as is ruinating--stark ruinating!”",
+    "evidence": "Cruncher, or leastways wos in the Old England times, and would be to-morrow, if cause given, a floppin’ again the business to that degree as is ruinating--stark ruinating!"
    }
   ],
   "40": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He was to be told (said Monseigneur) that supper awaited him then and there, and that he was prayed to come to it.",
-     "Upon which, every man looked at his neighbour, and then all cast down their eyes and sat silent.",
-     "I think you may take that liberty,” the Doctor answered, smiling.",
-     "It was under his hand, and I soothed him to let me move his hand away."
+     "I have come back, sir, as you anticipate, pursuing the object that took me away.",
+     "Jacques Three demanded how he afterwards recognised him then?",
+     "It is against rule,” answered the first; “but you can ask Him of Saint Antoine here.",
+     "The wound was a sword-thrust, received from twenty to twenty-four hours before, but no skill could have saved him if it had been looked to without…"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “It was under his hand, and I soothed him to let me move his hand away.”",
-    "evidence": "It was under his hand, and I soothed him to let me move his hand away."
+    "explanation": "This line is from this chapter: “The wound was a sword-thrust, received from twenty to twenty-four hours before, but no skill could have saved him if it had been looked to without delay.”",
+    "evidence": "The wound was a sword-thrust, received from twenty to twenty-four hours before, but no skill could have saved him if it had been looked to without delay."
    },
    {
     "prompt": "Fill in the missing name: “I decided, that day, to write privately to the _____, stating the nature of the two cases to which I had been summoned, and the place to which I had gone: in effect, stating all the circumstances.”",
@@ -1527,9 +1527,9 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "unfortunate King of France had been upon his throne in all his glory; but, the changed times were fraught with other obstacles than these.",
-     "Charles Darnay was established in England as a higher teacher of the French language who was conversant with French literature.",
-     "But, the comfort was, that all the company at the grand hotel of Monseigneur were perfectly dressed.",
+     "Here he paid a heavy price for his escort, and hence he started with it on the wet, wet roads at three o’clock in the morning.",
+     "In London, he had expected neither to walk on pavements of gold, nor to lie on beds of roses; if he had had any such exalted expectation, he would…",
+     "The show being over, the flutter in the air became quite a little storm, and the precious little bells went ringing downstairs.",
      "Then, issuing from the obscure corner from which he had never moved, Sydney Carton came and took her up."
     ],
     "correct_index": 3,
@@ -1537,80 +1537,80 @@
     "evidence": "Then, issuing from the obscure corner from which he had never moved, Sydney Carton came and took her up."
    },
    {
-    "prompt": "Fill in the missing name: “_____ and her father, who were following, and said to the latter: “You had great influence but yesterday, Doctor Manette; let it at least be tried.”",
+    "prompt": "Fill in the missing name: “I will go,” said Doctor _____, “to the Prosecutor and the President straight, and I will go to others whom it is better not to name.”",
     "options": [
      "Jerry",
-     "Lorry",
+     "Manette",
      "Charles",
      "Monsieur"
     ],
     "correct_index": 1,
-    "explanation": "The line reads: “Lorry and her father, who were following, and said to the latter: “You had great influence but yesterday, Doctor Manette; let it at least be tried.”",
-    "evidence": "Lorry and her father, who were following, and said to the latter: “You had great influence but yesterday, Doctor Manette; let it at least be tried."
+    "explanation": "The line reads: “I will go,” said Doctor Manette, “to the Prosecutor and the President straight, and I will go to others whom it is better not to name.”",
+    "evidence": "I will go,” said Doctor Manette, “to the Prosecutor and the President straight, and I will go to others whom it is better not to name."
    },
    {
-    "prompt": "Fill in the missing name: “Her father had followed her, and would have fallen on his knees to both of them, but that _____ put out a hand and seized him, crying: “No, no!”",
+    "prompt": "Fill in the missing name: “_____ followed Sydney to the outer door, and, touching him on the shoulder as he was going away, caused him to turn.”",
     "options": [
+     "Lorry",
+     "President",
      "Darnay",
-     "Solomon",
-     "Lucie",
-     "Carton"
+     "Lucie"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “Her father had followed her, and would have fallen on his knees to both of them, but that Darnay put out a hand and seized him, crying: “No, no!”",
-    "evidence": "Her father had followed her, and would have fallen on his knees to both of them, but that Darnay put out a hand and seized him, crying: “No, no!"
+    "explanation": "The line reads: “Lorry followed Sydney to the outer door, and, touching him on the shoulder as he was going away, caused him to turn.”",
+    "evidence": "Lorry followed Sydney to the outer door, and, touching him on the shoulder as he was going away, caused him to turn."
    }
   ],
   "42": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Then tell Wind and Fire where to stop,” returned madame; “but don’t tell me.",
-     "At length, a person better informed on the merits of the case, tumbled against him, and from this person he learned that the funeral was the funeral…",
-     "Cruncher’s domestic economy, that, whereas he often came home after banking hours with clean boots, he often got up next morning to find the same…",
-     "I don’t care about fortune: she is a charming creature, and I have made up my mind to please myself: on the whole, I think I can afford to please…"
+     "Madame Defarge took him to the door, and put her arm on his, in pointing out the road.",
+     "Cruncher, taking a bite out of his bread-and-butter, and seeming to help it down with a large invisible oyster out of his saucer.",
+     "If you must go flopping yourself down, flop in favour of your husband and child, and not in opposition to ’em.",
+     "Lorry as the intimate friend of the Manettes, it entered Mr."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Then tell Wind and Fire where to stop,” returned madame; “but don’t tell me.”",
-    "evidence": "Then tell Wind and Fire where to stop,” returned madame; “but don’t tell me."
-   },
-   {
-    "prompt": "Fill in the missing name: “_____ Defarge returned to her counter to get the wine, and, as he took up a Jacobin journal and feigned to pore over it puzzling out its meaning, he heard her say, “I swear to you, like Evrémonde!”",
-    "options": [
-     "Madame",
-     "Monsieur",
-     "Manette",
-     "Pross"
-    ],
-    "correct_index": 0,
-    "explanation": "The line reads: “Madame Defarge returned to her counter to get the wine, and, as he took up a Jacobin journal and feigned to pore over it puzzling out its meaning, he heard her say, “I swear to you, like Evrémonde!”",
-    "evidence": "Madame Defarge returned to her counter to get the wine, and, as he took up a Jacobin journal and feigned to pore over it puzzling out its meaning, he heard her say, “I swear to you, like Evrémonde!"
+    "explanation": "This line is from this chapter: “Madame Defarge took him to the door, and put her arm on his, in pointing out the road.”",
+    "evidence": "Madame Defarge took him to the door, and put her arm on his, in pointing out the road."
    },
    {
     "prompt": "Fill in the missing name: “_____, a weak minority, interposed a few words for the memory of the compassionate wife of the Marquis; but only elicited from his own wife a repetition of her last reply.”",
     "options": [
      "Defarge",
+     "Jerry",
+     "Manette",
+     "Pross"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Defarge, a weak minority, interposed a few words for the memory of the compassionate wife of the Marquis; but only elicited from his own wife a repetition of her last reply.”",
+    "evidence": "Defarge, a weak minority, interposed a few words for the memory of the compassionate wife of the Marquis; but only elicited from his own wife a repetition of her last reply."
+   },
+   {
+    "prompt": "Fill in the missing name: “Having ascertained its situation, _____ came out of those closer streets again, and dined at a place of refreshment and fell sound asleep after dinner.”",
+    "options": [
+     "Carton",
      "Monsieur",
      "Sydney",
      "Lorry"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “Defarge, a weak minority, interposed a few words for the memory of the compassionate wife of the Marquis; but only elicited from his own wife a repetition of her last reply.”",
-    "evidence": "Defarge, a weak minority, interposed a few words for the memory of the compassionate wife of the Marquis; but only elicited from his own wife a repetition of her last reply."
+    "explanation": "The line reads: “Having ascertained its situation, Carton came out of those closer streets again, and dined at a place of refreshment and fell sound asleep after dinner.”",
+    "evidence": "Having ascertained its situation, Carton came out of those closer streets again, and dined at a place of refreshment and fell sound asleep after dinner."
    }
   ],
   "43": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Carton, still drinking the punch, rejoined, “Why should I not approve?",
-     "his inner room, his sanctuary of sanctuaries, the Holiest of Holiests to the crowd of worshippers in the suite of rooms without.",
-     "It was but the inquiry of his first confusion and astonishment, the answer being obvious.",
-     "You are not”--the apprehension came suddenly into his mind--“a prisoner?"
+     "Lorry sat at great books ruled for figures, with perpendicular iron bars to his window as if that were ruled for figures too, and everything under…",
+     "Of his pleasures, general and particular, Monseigneur had the other truly noble idea, that the world was made for them.",
+     "An incidental allusion, purposely thrown out, to the day of the week, and the day of the month, set him thinking and counting, and evidently made…",
+     "Of all the people upon earth, you least expected to see me?"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “You are not”--the apprehension came suddenly into his mind--“a prisoner?”",
-    "evidence": "You are not”--the apprehension came suddenly into his mind--“a prisoner?"
+    "explanation": "This line is from this chapter: “Of all the people upon earth, you least expected to see me?”",
+    "evidence": "Of all the people upon earth, you least expected to see me?"
    },
    {
     "prompt": "Fill in the missing name: “The door was quickly opened and closed, and there stood before him face to face, quiet, intent upon him, with the light of a smile on his features, and a cautionary finger on his lip, _____ Carton.”",
@@ -1641,14 +1641,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "In this state they set forth with the sharp rain driving in their faces: clattering at a heavy dragoon trot over the uneven town pavement, and out…",
-     "The elder gentleman took the cry so ill, that he watched his opportunity, and smote the young gentleman on the ear.",
-     "Lying hidden at her waist, was a sharpened dagger.",
-     "The sights he had seen there, with brief snatches of food and sleep by intervals, shall remain untold."
+     "Where,” repeated the same personage, without taking any heed of him whatever, “are the papers of this prisoner?",
+     "The transition to the sport of window-breaking, and thence to the plundering of public-houses, was easy and natural.",
+     "Such a heart Madame Defarge carried under her rough robe.",
+     "The Doctor knew, that up to that time, his imprisonment had been associated in the minds of his daughter and his friend, with his personal…"
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “Lying hidden at her waist, was a sharpened dagger.”",
-    "evidence": "Lying hidden at her waist, was a sharpened dagger."
+    "explanation": "This line is from this chapter: “Such a heart Madame Defarge carried under her rough robe.”",
+    "evidence": "Such a heart Madame Defarge carried under her rough robe."
    },
    {
     "prompt": "Fill in the missing name: “He was signalling with her when I saw her,” argued _____ Defarge; “I cannot speak of one without the other; and I must not be silent, and trust the case wholly to him, this little citizen here.”",
@@ -1663,30 +1663,30 @@
     "evidence": "He was signalling with her when I saw her,” argued Madame Defarge; “I cannot speak of one without the other; and I must not be silent, and trust the case wholly to him, this little citizen here."
    },
    {
-    "prompt": "Fill in the missing name: “Madame _____ beckoned the Juryman and The Vengeance a little nearer to the door, and there expounded her further views to them thus: “She will now be at home, awaiting the moment of his death.”",
+    "prompt": "Fill in the missing name: “The two hands of Madame _____ buffeted and tore her face; but, Miss Pross, with her head down, held her round the waist, and clung to her with more than the hold of a drowning woman.”",
     "options": [
-     "Lorry",
-     "President",
-     "Jacques",
+     "Solomon",
+     "Young",
+     "Sydney",
      "Defarge"
     ],
     "correct_index": 3,
-    "explanation": "The line reads: “Madame Defarge beckoned the Juryman and The Vengeance a little nearer to the door, and there expounded her further views to them thus: “She will now be at home, awaiting the moment of his death.”",
-    "evidence": "Madame Defarge beckoned the Juryman and The Vengeance a little nearer to the door, and there expounded her further views to them thus: “She will now be at home, awaiting the moment of his death."
+    "explanation": "The line reads: “The two hands of Madame Defarge buffeted and tore her face; but, Miss Pross, with her head down, held her round the waist, and clung to her with more than the hold of a drowning woman.”",
+    "evidence": "The two hands of Madame Defarge buffeted and tore her face; but, Miss Pross, with her head down, held her round the waist, and clung to her with more than the hold of a drowning woman."
    }
   ],
   "45": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "There, he laid her down on a couch, where her child and Miss Pross wept over her.",
-     "If you have, don’t expect me to befriend you when you get back to England.",
-     "It was again a summer day when, lately arrived in London from his college occupation, he turned into the quiet corner in Soho, bent on seeking an…",
-     "He has no curiosity or care for the scene about him, and always speaks to the girl."
+     "Of little worth as life is when we misuse it, it is worth that effort.",
+     "If it should go ill with the prisoner, I have ensured access to him, once.",
+     "We have been counting on your return these three or four days past.",
+     "The leading curiosity is, to know which is he; he stands at the back of the tumbril with his head bent down, to converse with a mere girl who sits…"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “He has no curiosity or care for the scene about him, and always speaks to the girl.”",
-    "evidence": "He has no curiosity or care for the scene about him, and always speaks to the girl."
+    "explanation": "This line is from this chapter: “The leading curiosity is, to know which is he; he stands at the back of the tumbril with his head bent down, to converse with a mere girl who sits on the side of the cart, and holds his hand.”",
+    "evidence": "The leading curiosity is, to know which is he; he stands at the back of the tumbril with his head bent down, to converse with a mere girl who sits on the side of the cart, and holds his hand."
    },
    {
     "prompt": "Fill in the missing name: “I am the _____ and the Life, saith the Lord: he that believeth in me, though he were dead, yet shall he live: and whosoever liveth and believeth in me shall never die.”",

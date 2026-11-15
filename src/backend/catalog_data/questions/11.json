@@ -7,14 +7,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "And who is Dinah, if I might venture to ask the question?",
-     "They all sat down at once, in a large ring, with the Mouse in the middle.",
-     "There was nothing else to do, so Alice soon began talking again.",
-     "Is that the reason so many tea-things are put out here?"
+     "But I’d better take him his fan and gloves—that is, if I can find them.",
+     "‘William the Conqueror, whose cause was favoured by the pope, was soon submitted to by the English, who wanted leaders, and had been of late much…",
+     "How funny it’ll seem to come out among the people that walk with their heads downward!",
+     "My name is Alice, so please your Majesty,” said Alice very politely; but she added, to herself, “Why, they’re only a pack of cards, after all."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “There was nothing else to do, so Alice soon began talking again.”",
-    "evidence": "There was nothing else to do, so Alice soon began talking again."
+    "explanation": "This line is from this chapter: “How funny it’ll seem to come out among the people that walk with their heads downward!”",
+    "evidence": "How funny it’ll seem to come out among the people that walk with their heads downward!"
    },
    {
     "prompt": "Fill in the missing name: “She was close behind it when she turned the corner, but the _____ was no longer to be seen: she found herself in a long, low hall, which was lit up by a row of lamps hanging from the roof.”",
@@ -45,10 +45,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I shall sit here,” he said, “on and off, for days and days.",
+     "Even the Duchess sneezed occasionally; and as for the baby, it was sneezing and howling alternately without a moment’s pause.",
      "How cheerfully he seems to grin, How neatly spread his claws, And welcome little fishes in With gently smiling jaws!",
-     "then the Rabbit’s voice along—“Catch him, you by the hedge!",
-     "Alice heard it say to itself “Then I’ll go round and get in at the window."
+     "I’d nearly forgotten that I’ve got to grow up again!",
+     "—It was Bill, I fancy—Who’s to go down the chimney?"
     ],
     "correct_index": 1,
     "explanation": "This line is from this chapter: “How cheerfully he seems to grin, How neatly spread his claws, And welcome little fishes in With gently smiling jaws!”",
@@ -83,17 +83,17 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Why,” said the Dodo, “the best way to explain it is to do it.",
-     "Alice was very glad to find her in such a pleasant temper, and thought to herself that perhaps it was only the pepper that had made her so savage…",
-     "I’m afraid I can’t put it more clearly,” Alice replied very politely, “for I can’t understand it myself to begin with; and being so many different…",
-     "roared the Queen, and Alice joined the procession, wondering very much what would happen next."
+     "(And, as you might like to try the thing yourself, some winter day, I will tell you how the Dodo managed it.",
+     "And the moral of that is—‘Birds of a feather flock together.",
+     "In my youth,” said the sage, as he shook his grey locks, “I kept all my limbs very supple By the use of this ointment—one shilling the box— Allow me…",
+     "The Queen had only one way of settling all difficulties, great or small."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Why,” said the Dodo, “the best way to explain it is to do it.”",
-    "evidence": "Why,” said the Dodo, “the best way to explain it is to do it."
+    "explanation": "This line is from this chapter: “(And, as you might like to try the thing yourself, some winter day, I will tell you how the Dodo managed it.”",
+    "evidence": "(And, as you might like to try the thing yourself, some winter day, I will tell you how the Dodo managed it."
    },
    {
-    "prompt": "Fill in the missing name: “I am older than you, and must know better;” and this _____ would not allow without knowing how old it was, and, as the Lory positively refused to tell its age, there was no more to be said.”",
+    "prompt": "Fill in the missing name: “_____ had no idea what to do, and in despair she put her hand in her pocket, and pulled out a box of comfits, (luckily the salt water had not got into it), and handed them round as prizes.”",
     "options": [
      "Rabbit",
      "Hare",
@@ -101,8 +101,8 @@
      "Turtle"
     ],
     "correct_index": 2,
-    "explanation": "The line reads: “I am older than you, and must know better;” and this Alice would not allow without knowing how old it was, and, as the Lory positively refused to tell its age, there was no more to be said.”",
-    "evidence": "I am older than you, and must know better;” and this Alice would not allow without knowing how old it was, and, as the Lory positively refused to tell its age, there was no more to be said."
+    "explanation": "The line reads: “Alice had no idea what to do, and in despair she put her hand in her pocket, and pulled out a box of comfits, (luckily the salt water had not got into it), and handed them round as prizes.”",
+    "evidence": "Alice had no idea what to do, and in despair she put her hand in her pocket, and pulled out a box of comfits, (luckily the salt water had not got into it), and handed them round as prizes."
    },
    {
     "prompt": "Fill in the missing name: “‘_____ the Conqueror, whose cause was favoured by the pope, was soon submitted to by the English, who wanted leaders, and had been of late much accustomed to usurpation and conquest.”",
@@ -121,9 +121,9 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "That would be grand, certainly,” said Alice thoughtfully: “but then—I shouldn’t be hungry for it, you know.",
-     "said Alice, a good deal frightened at the sudden change, but very glad to find herself still in existence; “and now for the garden!",
-     "There was a general clapping of hands at this: it was the first really clever thing the King had said that day.",
+     "Would you tell me,” said Alice, a little timidly, “why you are painting those roses?",
+     "He came in with a teacup in one hand and a piece of bread-and-butter in the other.",
+     "cried Alice hastily, afraid that she had hurt the poor animal’s feelings.",
      "There ought to be a book written about me, that there ought!"
     ],
     "correct_index": 3,
@@ -131,7 +131,7 @@
     "evidence": "There ought to be a book written about me, that there ought!"
    },
    {
-    "prompt": "Fill in the missing name: “said _____, as she leant against a buttercup to rest herself, and fanned herself with one of the leaves: “I should have liked teaching it tricks very much, if—if I’d only been the right size to do it!”",
+    "prompt": "Fill in the missing name: “The first thing I’ve got to do,” said _____ to herself, as she wandered about in the wood, “is to grow to my right size again; and the second thing is to find my way into that lovely garden.”",
     "options": [
      "Hare",
      "King",
@@ -139,8 +139,8 @@
      "Alice"
     ],
     "correct_index": 3,
-    "explanation": "The line reads: “said Alice, as she leant against a buttercup to rest herself, and fanned herself with one of the leaves: “I should have liked teaching it tricks very much, if—if I’d only been the right size to do it!”",
-    "evidence": "said Alice, as she leant against a buttercup to rest herself, and fanned herself with one of the leaves: “I should have liked teaching it tricks very much, if—if I’d only been the right size to do it!"
+    "explanation": "The line reads: “The first thing I’ve got to do,” said Alice to herself, as she wandered about in the wood, “is to grow to my right size again; and the second thing is to find my way into that lovely garden.”",
+    "evidence": "The first thing I’ve got to do,” said Alice to herself, as she wandered about in the wood, “is to grow to my right size again; and the second thing is to find my way into that lovely garden."
    },
    {
     "prompt": "Fill in the missing name: “She went in without knocking, and hurried upstairs, in great fear lest she should meet the real Mary _____, and be turned out of the house before she had found the fan and gloves.”",
@@ -159,14 +159,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "In my youth,” said his father, “I took to the law, And argued each case with my wife; And the muscular strength, which it gave to my jaw, Has lasted…",
-     "I can’t help it,” said Alice very meekly: “I’m growing.",
-     "She was close behind it when she turned the corner, but the Rabbit was no longer to be seen: she found herself in a long, low hall, which was lit up…",
-     "She said it to the Knave of Hearts, who only bowed and smiled in reply."
+     "You are old,” said the youth, “and your jaws are too weak For anything tougher than suet; Yet you finished the goose, with the bones and the beak—…",
+     "It must have been that,” said the King, “unless it was written to nobody, which isn’t usual, you know.",
+     "And so it was indeed: she was now only ten inches high, and her face brightened up at the thought that she was now the right size for going through…",
+     "I don’t like the look of it at all,” said the King: “however, it may kiss my hand if it likes."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “In my youth,” said his father, “I took to the law, And argued each case with my wife; And the muscular strength, which it gave to my jaw, Has lasted the rest of my life.”",
-    "evidence": "In my youth,” said his father, “I took to the law, And argued each case with my wife; And the muscular strength, which it gave to my jaw, Has lasted the rest of my life."
+    "explanation": "This line is from this chapter: “You are old,” said the youth, “and your jaws are too weak For anything tougher than suet; Yet you finished the goose, with the bones and the beak— Pray, how did you manage to do it?”",
+    "evidence": "You are old,” said the youth, “and your jaws are too weak For anything tougher than suet; Yet you finished the goose, with the bones and the beak— Pray, how did you manage to do it?"
    },
    {
     "prompt": "Fill in the missing name: “_____ remained looking thoughtfully at the mushroom for a minute, trying to make out which were the two sides of it; and as it was perfectly round, she found this a very difficult question.”",
@@ -197,14 +197,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "They all can,” said the Duchess; “and most of ’em do.",
-     "I dare say you’re wondering why I don’t put my arm round your waist,” the Duchess said after a pause: “the reason is, that I’m doubtful about the…",
-     "I don’t know the meaning of half those long words, and, what’s more, I don’t believe you do either!",
-     "She said it to the Knave of Hearts, who only bowed and smiled in reply."
+     "It’s a Cheshire cat,” said the Duchess, “and that’s why.",
+     "So they went up to the Mock Turtle, who looked at them with large eyes full of tears, but said nothing.",
+     "said Alice, always ready to make herself useful, and looking anxiously about her.",
+     "I don’t like the look of it at all,” said the King: “however, it may kiss my hand if it likes."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “They all can,” said the Duchess; “and most of ’em do.”",
-    "evidence": "They all can,” said the Duchess; “and most of ’em do."
+    "explanation": "This line is from this chapter: “It’s a Cheshire cat,” said the Duchess, “and that’s why.”",
+    "evidence": "It’s a Cheshire cat,” said the Duchess, “and that’s why."
    },
    {
     "prompt": "Fill in the missing name: “I’ve seen hatters before,” she said to herself; “the March _____ will be much the most interesting, and perhaps as this is May it won’t be raving mad—at least not so mad as it was in March.”",
@@ -219,30 +219,30 @@
     "evidence": "I’ve seen hatters before,” she said to herself; “the March Hare will be much the most interesting, and perhaps as this is May it won’t be raving mad—at least not so mad as it was in March."
    },
    {
-    "prompt": "Fill in the missing name: “All right,” said the _____; and this time it vanished quite slowly, beginning with the end of the tail, and ending with the grin, which remained some time after the rest of it had gone.”",
+    "prompt": "Fill in the missing name: “_____ waited a little, half expecting to see it again, but it did not appear, and after a minute or two she walked on in the direction in which the March Hare was said to live.”",
     "options": [
-     "Bill",
-     "Caterpillar",
-     "Cat",
-     "Footman"
+     "Turtle",
+     "Hatter",
+     "Alice",
+     "Gryphon"
     ],
     "correct_index": 2,
-    "explanation": "The line reads: “All right,” said the Cat; and this time it vanished quite slowly, beginning with the end of the tail, and ending with the grin, which remained some time after the rest of it had gone.”",
-    "evidence": "All right,” said the Cat; and this time it vanished quite slowly, beginning with the end of the tail, and ending with the grin, which remained some time after the rest of it had gone."
+    "explanation": "The line reads: “Alice waited a little, half expecting to see it again, but it did not appear, and after a minute or two she walked on in the direction in which the March Hare was said to live.”",
+    "evidence": "Alice waited a little, half expecting to see it again, but it did not appear, and after a minute or two she walked on in the direction in which the March Hare was said to live."
    }
   ],
   "7": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Of course not,” Alice replied very readily: “but that’s because it stays the same year for such a long time together.",
-     "It’s the thing Mock Turtle Soup is made from,” said the Queen.",
-     "’ ‘I’ll be judge, I’ll be jury,’ Said cunning old Fury: ‘I’ll try the whole cause, and condemn you to death.",
-     "said the King triumphantly, pointing to the tarts on the table."
+     "It tells the day of the month, and doesn’t tell what o’clock it is!",
+     "Will you, won’t you, will you, won’t you, won’t you join the dance?",
+     "I keep them to sell,” the Hatter added as an explanation; “I’ve none of my own.",
+     "She went in without knocking, and hurried upstairs, in great fear lest she should meet the real Mary Ann, and be turned out of the house before she…"
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Of course not,” Alice replied very readily: “but that’s because it stays the same year for such a long time together.”",
-    "evidence": "Of course not,” Alice replied very readily: “but that’s because it stays the same year for such a long time together."
+    "explanation": "This line is from this chapter: “It tells the day of the month, and doesn’t tell what o’clock it is!”",
+    "evidence": "It tells the day of the month, and doesn’t tell what o’clock it is!"
    },
    {
     "prompt": "Fill in the missing name: “Once upon a time there were three little sisters,” the _____ began in a great hurry; “and their names were Elsie, Lacie, and Tillie; and they lived at the bottom of a well—” “What did they live on?”",
@@ -273,14 +273,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Her chin was pressed so closely against her foot, that there was hardly room to open her mouth; but she did it at last, and managed to swallow a…",
-     "It must be a very pretty dance,” said Alice timidly.",
-     "said the Queen, in a shrill, loud voice, and the three gardeners instantly jumped up, and began bowing to the King, the Queen, the royal children,…",
-     "Why, I haven’t had a wink of sleep these three weeks!"
+     "It was, no doubt: only Alice did not like to be told so.",
+     "I could tell you my adventures—beginning from this morning,” said Alice a little timidly: “but it’s no use going back to yesterday, because I was a…",
+     "The soldiers were silent, and looked at Alice, as the question was evidently meant for her.",
+     "The only things in the kitchen that did not sneeze, were the cook, and a large cat which was sitting on the hearth and grinning from ear to ear."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “said the Queen, in a shrill, loud voice, and the three gardeners instantly jumped up, and began bowing to the King, the Queen, the royal children, and everybody else.”",
-    "evidence": "said the Queen, in a shrill, loud voice, and the three gardeners instantly jumped up, and began bowing to the King, the Queen, the royal children, and everybody else."
+    "explanation": "This line is from this chapter: “The soldiers were silent, and looked at Alice, as the question was evidently meant for her.”",
+    "evidence": "The soldiers were silent, and looked at Alice, as the question was evidently meant for her."
    },
    {
     "prompt": "Fill in the missing name: “Not at all,” said _____: “she’s so extremely—” Just then she noticed that the Queen was close behind her, listening: so she went on, “—likely to win, that it’s hardly worth while finishing the game.”",
@@ -311,57 +311,57 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Alice looked at the jury-box, and saw that, in her haste, she had put the Lizard in head downwards, and the poor little thing was waving its tail…",
-     "You are old,” said the youth, “and your jaws are too weak For anything tougher than suet; Yet you finished the goose, with the bones and the beak—…",
+     "They’re putting down their names,” the Gryphon whispered in reply, “for fear they should forget them before the end of the trial.",
+     "I suppose you’ll be telling me next that you never tasted an egg!",
      "The Duchess took her choice, and was gone in a moment.",
-     "said the King triumphantly, pointing to the tarts on the table."
+     "So Alice got up and ran off, thinking while she ran, as well she might, what a wonderful dream it had been."
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “The Duchess took her choice, and was gone in a moment.”",
     "evidence": "The Duchess took her choice, and was gone in a moment."
    },
    {
-    "prompt": "Fill in the missing name: “You ought to be ashamed of yourself for asking such a simple question,” added the _____; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth.”",
-    "options": [
-     "Dodo",
-     "Hatter",
-     "Queen",
-     "Gryphon"
-    ],
-    "correct_index": 3,
-    "explanation": "The line reads: “You ought to be ashamed of yourself for asking such a simple question,” added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth.”",
-    "evidence": "You ought to be ashamed of yourself for asking such a simple question,” added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth."
-   },
-   {
     "prompt": "Fill in the missing name: “_____ was very glad to find her in such a pleasant temper, and thought to herself that perhaps it was only the pepper that had made her so savage when they met in the kitchen.”",
     "options": [
+     "Hare",
+     "Duchess",
+     "Queen",
+     "Alice"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Alice was very glad to find her in such a pleasant temper, and thought to herself that perhaps it was only the pepper that had made her so savage when they met in the kitchen.”",
+    "evidence": "Alice was very glad to find her in such a pleasant temper, and thought to herself that perhaps it was only the pepper that had made her so savage when they met in the kitchen."
+   },
+   {
+    "prompt": "Fill in the missing name: “Reeling and Writhing, of course, to begin with,” the Mock _____ replied; “and then the different branches of Arithmetic—Ambition, Distraction, Uglification, and Derision.”",
+    "options": [
      "Dodo",
+     "King",
      "Turtle",
-     "Alice",
      "Duchess"
     ],
     "correct_index": 2,
-    "explanation": "The line reads: “Alice was very glad to find her in such a pleasant temper, and thought to herself that perhaps it was only the pepper that had made her so savage when they met in the kitchen.”",
-    "evidence": "Alice was very glad to find her in such a pleasant temper, and thought to herself that perhaps it was only the pepper that had made her so savage when they met in the kitchen."
+    "explanation": "The line reads: “Reeling and Writhing, of course, to begin with,” the Mock Turtle replied; “and then the different branches of Arithmetic—Ambition, Distraction, Uglification, and Derision.”",
+    "evidence": "Reeling and Writhing, of course, to begin with,” the Mock Turtle replied; “and then the different branches of Arithmetic—Ambition, Distraction, Uglification, and Derision."
    }
   ],
   "10": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
+     "I couldn’t help it,” said Five, in a sulky tone; “Seven jogged my elbow.",
      "Would not, could not, would not, could not, could not join the dance.",
-     "I suppose Dinah’ll be sending me on messages next!",
-     "If there’s no meaning in it,” said the King, “that saves a world of trouble, you know, as we needn’t try to find any.",
-     "But she went on all the same, shedding gallons of tears, until there was a large pool all round her, about four inches deep and reaching half down…"
+     "Hold up his head—Brandy now—Don’t choke him—How was it, old fellow?",
+     "How cheerfully he seems to grin, How neatly spread his claws, And welcome little fishes in With gently smiling jaws!"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "This line is from this chapter: “Would not, could not, would not, could not, could not join the dance.”",
     "evidence": "Would not, could not, would not, could not, could not join the dance."
    },
    {
     "prompt": "Fill in the missing name: “said the Mock _____, suddenly dropping his voice; and the two creatures, who had been jumping about like mad things all this time, sat down again very sadly and quietly, and looked at Alice.”",
     "options": [
-     "Hatter",
+     "Rabbit",
      "Dodo",
      "Turtle",
      "Hare"
@@ -387,52 +387,52 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "said the King, going up to Alice, and looking at the Cat’s head with great curiosity.",
-     "I’m afraid I can’t put it more clearly,” Alice replied very politely, “for I can’t understand it myself to begin with; and being so many different…",
+     "Alice looked up, and there stood the Queen in front of them, with her arms folded, frowning like a thunderstorm.",
+     "In a minute or two the Caterpillar took the hookah out of its mouth and yawned once or twice, and shook itself.",
      "Call the first witness,” said the King; and the White Rabbit blew three blasts on the trumpet, and called out, “First witness!",
-     "said the Queen, tossing her head impatiently; and, turning to Alice, she went on, “What’s your name, child?"
+     "I’ve read that in some book, but I don’t remember where."
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “Call the first witness,” said the King; and the White Rabbit blew three blasts on the trumpet, and called out, “First witness!”",
     "evidence": "Call the first witness,” said the King; and the White Rabbit blew three blasts on the trumpet, and called out, “First witness!"
    },
    {
-    "prompt": "Fill in the missing name: “Write that down,” the _____ said to the jury, and the jury eagerly wrote down all three dates on their slates, and then added them up, and reduced the answer to shillings and pence.”",
+    "prompt": "Fill in the missing name: “_____ had never been in a court of justice before, but she had read about them in books, and she was quite pleased to find that she knew the name of nearly everything there.”",
     "options": [
      "Rabbit",
      "Turtle",
-     "King",
-     "Queen"
+     "Alice",
+     "King"
     ],
     "correct_index": 2,
-    "explanation": "The line reads: “Write that down,” the King said to the jury, and the jury eagerly wrote down all three dates on their slates, and then added them up, and reduced the answer to shillings and pence.”",
-    "evidence": "Write that down,” the King said to the jury, and the jury eagerly wrote down all three dates on their slates, and then added them up, and reduced the answer to shillings and pence."
-   },
-   {
-    "prompt": "Fill in the missing name: “_____ had never been in a court of justice before, but she had read about them in books, and she was quite pleased to find that she knew the name of nearly everything there.”",
-    "options": [
-     "King",
-     "Dodo",
-     "Gryphon",
-     "Alice"
-    ],
-    "correct_index": 3,
     "explanation": "The line reads: “Alice had never been in a court of justice before, but she had read about them in books, and she was quite pleased to find that she knew the name of nearly everything there.”",
     "evidence": "Alice had never been in a court of justice before, but she had read about them in books, and she was quite pleased to find that she knew the name of nearly everything there."
+   },
+   {
+    "prompt": "Fill in the missing name: “For some minutes the whole court was in confusion, getting the _____ turned out, and, by the time they had settled down again, the cook had disappeared.”",
+    "options": [
+     "White",
+     "Mouse",
+     "Dormouse",
+     "Lizard"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “For some minutes the whole court was in confusion, getting the Dormouse turned out, and, by the time they had settled down again, the cook had disappeared.”",
+    "evidence": "For some minutes the whole court was in confusion, getting the Dormouse turned out, and, by the time they had settled down again, the cook had disappeared."
    }
   ],
   "12": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I do hope it’ll make me grow large again, for really I’m quite tired of being such a tiny little thing!",
-     "It must have been that,” said the King, “unless it was written to nobody, which isn’t usual, you know.",
-     "thought poor Alice, “it would be of very little use without my shoulders.",
-     ") The Mouse looked at her rather inquisitively, and seemed to her to wink with one of its little eyes, but it said nothing."
+     "As soon as she was small enough to get through the door, she ran out of the house, and found quite a crowd of little animals and birds waiting…",
+     "Please your Majesty,” said the Knave, “I didn’t write it, and they can’t prove I did: there’s no name signed at the end.",
+     "After a while, finding that nothing more happened, she decided on going into the garden at once; but, alas for poor Alice!",
+     "Edwin and Morcar, the earls of Mercia and Northumbria—’” “Ugh!"
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “It must have been that,” said the King, “unless it was written to nobody, which isn’t usual, you know.”",
-    "evidence": "It must have been that,” said the King, “unless it was written to nobody, which isn’t usual, you know."
+    "explanation": "This line is from this chapter: “Please your Majesty,” said the Knave, “I didn’t write it, and they can’t prove I did: there’s no name signed at the end.”",
+    "evidence": "Please your Majesty,” said the Knave, “I didn’t write it, and they can’t prove I did: there’s no name signed at the end."
    },
    {
     "prompt": "Fill in the missing name: “_____ looked at the jury-box, and saw that, in her haste, she had put the Lizard in head downwards, and the poor little thing was waving its tail about in a melancholy way, being quite unable to move.”",
@@ -447,7 +447,7 @@
     "evidence": "Alice looked at the jury-box, and saw that, in her haste, she had put the Lizard in head downwards, and the poor little thing was waving its tail about in a melancholy way, being quite unable to move."
    },
    {
-    "prompt": "Fill in the missing name: “These were the verses the White _____ read:— “They told me you had been to her, And mentioned me to him: She gave me a good character, But said I could not swim.”",
+    "prompt": "Fill in the missing name: “There’s more evidence to come yet, please your Majesty,” said the White _____, jumping up in a great hurry; “this paper has just been picked up.”",
     "options": [
      "Rabbit",
      "Hare",
@@ -455,8 +455,8 @@
      "Gryphon"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “These were the verses the White Rabbit read:— “They told me you had been to her, And mentioned me to him: She gave me a good character, But said I could not swim.”",
-    "evidence": "These were the verses the White Rabbit read:— “They told me you had been to her, And mentioned me to him: She gave me a good character, But said I could not swim."
+    "explanation": "The line reads: “There’s more evidence to come yet, please your Majesty,” said the White Rabbit, jumping up in a great hurry; “this paper has just been picked up.”",
+    "evidence": "There’s more evidence to come yet, please your Majesty,” said the White Rabbit, jumping up in a great hurry; “this paper has just been picked up."
    }
   ]
  }

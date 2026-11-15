@@ -7,14 +7,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Gregor’s mother would tug at his sleeve, whisper endearments into his ear, Gregor’s sister would leave her work to help her mother, but nothing…",
-     "At the same time she became touchy in a way that was quite new for her and which everyone in the family understood—cleaning up Gregor’s room was for…",
-     "Gregor only needed to hear the visitor’s first words of greeting and he knew who it was—the chief clerk himself.",
-     "Gregor’s sister was exhausted from going out to work, and looking after Gregor as she had done before was even more work for her, but even so his…"
+     "Who, in this tired and overworked family, would have had time to give more attention to Gregor than was absolutely necessary?",
+     "Gregor, on the other hand, ought not to be neglected.",
+     "Why did Gregor have to be the only one condemned to work for a company where they immediately became highly suspicious at the slightest shortcoming?",
+     "This elderly widow, with a robust bone structure that made her able to withstand the hardest of things in her long life, wasn’t really repelled by…"
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “Gregor only needed to hear the visitor’s first words of greeting and he knew who it was—the chief clerk himself.”",
-    "evidence": "Gregor only needed to hear the visitor’s first words of greeting and he knew who it was—the chief clerk himself."
+    "explanation": "This line is from this chapter: “Why did Gregor have to be the only one condemned to work for a company where they immediately became highly suspicious at the slightest shortcoming?”",
+    "evidence": "Why did Gregor have to be the only one condemned to work for a company where they immediately became highly suspicious at the slightest shortcoming?"
    },
    {
     "prompt": "Fill in the missing word: “The _____ was hardly able to cover it and seemed ready to slide off any moment.”",
@@ -83,7 +83,7 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Only then would he consider what to do next, as he was well aware that he would not bring his thoughts to any sensible conclusions by lying in bed.",
+     "So then he tried to get the top part of his body out of the bed first, carefully turning his head to the side.",
      "Gregor did in fact, apart from excessive sleepiness after sleeping for so long, feel completely well and even felt much hungrier than usual.",
      "Oh, God”, he thought, “what a strenuous career it is that I’ve chosen!",
      "It seemed to him that he was being shown the way to the unknown nourishment he had been yearning for."

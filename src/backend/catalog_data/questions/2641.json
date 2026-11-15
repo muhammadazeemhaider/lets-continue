@@ -7,14 +7,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "The first fine afternoon drive up to Fiesole, and round by Settignano, or something of that sort.",
-     "Oh, now and then,” said Lucy, who had rather enjoyed herself.",
-     "But not the Parthenon, not the frieze of Phidias at any price; and here comes the victoria.",
-     "I do beg, no vulgar clinking in the plate with halfpennies; see that Minnie has a nice bright sixpence."
+     "And, indeed, a perfect torrent of information burst on them.",
+     "Honeychurch, who was trying to remember the hang of one of the dresses.",
+     "Freddy followed, nodding to the clergyman, whom he trusted not to be pulling one’s leg, really.",
+     "Paganism is infectious—more infectious than diphtheria or piety—and the Rector’s niece was taken to church protesting."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “The first fine afternoon drive up to Fiesole, and round by Settignano, or something of that sort.”",
-    "evidence": "The first fine afternoon drive up to Fiesole, and round by Settignano, or something of that sort."
+    "explanation": "This line is from this chapter: “And, indeed, a perfect torrent of information burst on them.”",
+    "evidence": "And, indeed, a perfect torrent of information burst on them."
    },
    {
     "prompt": "Fill in the missing name: “It was a real catastrophe, not a mere episode, that evening of hers at _____, when she had found in her bedroom something that is one worse than a flea, though one better than something else.”",
@@ -45,52 +45,52 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "She slipped her arm into her cousin’s, and they started off along the Lung’ Arno.",
-     "No, dear; your mother may take quite a long drive now that she is not hampered with me.",
-     "People will hear you”; for they had entered Mudie’s.",
-     "It tasted partly of the paper in which it was wrapped, partly of hair oil, partly of the great unknown."
+     "Miss Bartlett insisted on leaning over the parapet to look at it.",
+     "Miss Bartlett, who was poor at figures, became bewildered and rendered up the sovereign, amidst the suppressed gurgles of the other youths.",
+     "I might even share a flat for a little with some other girl.",
+     "Lucy thought she had never seen anything more beautiful; but Miss Lavish, with a shriek of dismay, dragged her forward, declaring that they were out…"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “It tasted partly of the paper in which it was wrapped, partly of hair oil, partly of the great unknown.”",
-    "evidence": "It tasted partly of the paper in which it was wrapped, partly of hair oil, partly of the great unknown."
-   },
-   {
-    "prompt": "Fill in the missing name: “In this exalted mood they reached the steps of the great church, and were about to enter it when Miss _____ stopped, squeaked, flung up her arms, and cried: “There goes my local-colour box!”",
-    "options": [
-     "Harry",
-     "Charlotte",
-     "Minnie",
-     "Lavish"
-    ],
-    "correct_index": 3,
-    "explanation": "The line reads: “In this exalted mood they reached the steps of the great church, and were about to enter it when Miss Lavish stopped, squeaked, flung up her arms, and cried: “There goes my local-colour box!”",
-    "evidence": "In this exalted mood they reached the steps of the great church, and were about to enter it when Miss Lavish stopped, squeaked, flung up her arms, and cried: “There goes my local-colour box!"
-   },
-   {
-    "prompt": "Fill in the missing name: “_____ thought she had never seen anything more beautiful; but Miss Lavish, with a shriek of dismay, dragged her forward, declaring that they were out of their path now by at least a mile.”",
-    "options": [
-     "Alans",
-     "Charlotte",
-     "Teresa",
-     "Lucy"
-    ],
-    "correct_index": 3,
-    "explanation": "The line reads: “Lucy thought she had never seen anything more beautiful; but Miss Lavish, with a shriek of dismay, dragged her forward, declaring that they were out of their path now by at least a mile.”",
+    "explanation": "This line is from this chapter: “Lucy thought she had never seen anything more beautiful; but Miss Lavish, with a shriek of dismay, dragged her forward, declaring that they were out of their path now by at least a mile.”",
     "evidence": "Lucy thought she had never seen anything more beautiful; but Miss Lavish, with a shriek of dismay, dragged her forward, declaring that they were out of their path now by at least a mile."
+   },
+   {
+    "prompt": "Fill in the missing name: “Remember,” he was saying, “the facts about this church of _____ Croce; how it was built by faith in the full fervour of medievalism, before any taint of the Renaissance had appeared.”",
+    "options": [
+     "Greece",
+     "London",
+     "Cissie",
+     "Santa"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Remember,” he was saying, “the facts about this church of Santa Croce; how it was built by faith in the full fervour of medievalism, before any taint of the Renaissance had appeared.”",
+    "evidence": "Remember,” he was saying, “the facts about this church of Santa Croce; how it was built by faith in the full fervour of medievalism, before any taint of the Renaissance had appeared."
+   },
+   {
+    "prompt": "Fill in the missing name: “It was a treat for the girl to be with any one so clever and so cheerful; and a blue military cloak, such as an _____ officer wears, only increased the sense of festivity.”",
+    "options": [
+     "Baedeker",
+     "Greece",
+     "Italian",
+     "Emersons"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “It was a treat for the girl to be with any one so clever and so cheerful; and a blue military cloak, such as an Italian officer wears, only increased the sense of festivity.”",
+    "evidence": "It was a treat for the girl to be with any one so clever and so cheerful; and a blue military cloak, such as an Italian officer wears, only increased the sense of festivity."
    }
   ],
   "3": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Let me refer you for an account to Miss Catharine Alan, who uses words herself more admirably than any one I know.",
-     "Honeychurch, with the air of one who has considered the subject, “I shall not keep quiet.",
-     "Life is easy to chronicle, but bewildering to practice, and we welcome “nerves” or any other shibboleth that will cloak our personal desire.",
-     "He carried her to the window, so that she, too, saw all the view."
+     "For that, and for other reasons, he held his peace.",
+     "I suppose it’s having him spoiling Lucy’s first week at home; and it’s also something that Mr.",
+     "But the external situation—she will face that bravely.",
+     "To think that evening at the rectory that she shouldn’t have heard your father was in the house."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Let me refer you for an account to Miss Catharine Alan, who uses words herself more admirably than any one I know.”",
-    "evidence": "Let me refer you for an account to Miss Catharine Alan, who uses words herself more admirably than any one I know."
+    "explanation": "This line is from this chapter: “For that, and for other reasons, he held his peace.”",
+    "evidence": "For that, and for other reasons, he held his peace."
    },
    {
     "prompt": "Fill in the missing name: “She told _____ and Miss Pole the other day that she had got up all the local colour—this novel is to be about modern Italy; the other was historical—but that she could not start till she had an idea.”",
@@ -122,13 +122,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "In the Weald, autumn approached, breaking up the green monotony of summer, touching the parks with the grey bloom of mist, the beech-trees with…",
-     "Not content with ‘permission’, which I did give—that is to say, I said, ‘I don’t mind’—well, not content with that, he wanted to know whether I…",
-     "And mess with typewriters and latch-keys,” exploded Mrs.",
-     "Nothing ever happens to me,” she reflected, as she entered the Piazza Signoria and looked nonchalantly at its marvels, now fairly familiar to her."
+     "You think you’re so holy and truthful, but really it’s only abominable conceit.",
+     "Rush up and down and round the world, and come back as thin as a lath with the bad food.",
+     "The great square was in shadow; the sunshine had come too late to strike it."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “Nothing ever happens to me,” she reflected, as she entered the Piazza Signoria and looked nonchalantly at its marvels, now fairly familiar to her.”",
-    "evidence": "Nothing ever happens to me,” she reflected, as she entered the Piazza Signoria and looked nonchalantly at its marvels, now fairly familiar to her."
+    "explanation": "This line is from this chapter: “The great square was in shadow; the sunshine had come too late to strike it.”",
+    "evidence": "The great square was in shadow; the sunshine had come too late to strike it."
    },
    {
     "prompt": "Fill in the missing name: “The _____ showed as the triple entrance of a cave, wherein many a deity, shadowy, but immortal, looking forth upon the arrivals and departures of mankind.”",
@@ -159,14 +159,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Fences are fences, especially when they are in the same place.",
-     "The last remark was made to a vender of panoramic photographs who was approaching with a courteous smile.",
-     "I knew you wouldn’t understand,” said Lucy quite crossly.",
+     "A parson fenceless would mean a parson defenceless.",
+     "Would you and Miss Honeychurch be disposed to join me in a drive some day this week—a drive in the hills?",
+     "Surely it was better not to speak until I felt certain.",
      "Quinine could now be obtained in tabloids; paper soap was a great help towards freshening up one’s face in the train."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “The last remark was made to a vender of panoramic photographs who was approaching with a courteous smile.”",
-    "evidence": "The last remark was made to a vender of panoramic photographs who was approaching with a courteous smile."
+    "explanation": "This line is from this chapter: “Would you and Miss Honeychurch be disposed to join me in a drive some day this week—a drive in the hills?”",
+    "evidence": "Would you and Miss Honeychurch be disposed to join me in a drive some day this week—a drive in the hills?"
    },
    {
     "prompt": "Fill in the missing name: “Eager who forgot when he told us, or whether they have decided to leave _____ out altogether—which they could scarcely do—but in any case we must be prepared.”",
@@ -197,14 +197,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Emerson was thrown against the chaplain with the regularity of a machine.",
-     "Honeychurch, who was trying to remember the hang of one of the dresses.",
+     "As the pace increased to a gallop the large, slumbering form of Mr.",
+     "It is so disgusting, the way an engagement is regarded as public property—a kind of waste place where every outsider may shoot his vulgar sentiment.",
      "Beebe, at leisure for life’s amenities, leant over his Rectory gate.",
      "The dragons have gone, and so have the knights, but still she lingers in our midst."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Emerson was thrown against the chaplain with the regularity of a machine.”",
-    "evidence": "Emerson was thrown against the chaplain with the regularity of a machine."
+    "explanation": "This line is from this chapter: “As the pace increased to a gallop the large, slumbering form of Mr.”",
+    "evidence": "As the pace increased to a gallop the large, slumbering form of Mr."
    },
    {
     "prompt": "Fill in the missing name: “And now celestial irony, working through her cousin and two clergymen, did not suffer her to leave _____ till she had made this expedition with him through the hills.”",
@@ -235,38 +235,38 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Once by the river—Oh, but he isn’t killed—he wouldn’t be killed, would he?",
+     "Miss Lavish calculated that, even if they had continued, they would not have been caught in the accident.",
      "She had bowed across the rubbish that cumbers the world.",
-     "Perhaps you would like to stay away from your home altogether?",
-     "As he took it, he said: “I’m so glad you only talked about books."
+     "I have seen so little of life; one ought to come up to London more—not a cheap ticket like to-day, but to stop.",
+     "And, after a little thought, he negotiated the slope into Windy Corner, light of heart."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Once by the river—Oh, but he isn’t killed—he wouldn’t be killed, would he?”",
-    "evidence": "Once by the river—Oh, but he isn’t killed—he wouldn’t be killed, would he?"
+    "explanation": "This line is from this chapter: “Miss Lavish calculated that, even if they had continued, they would not have been caught in the accident.”",
+    "evidence": "Miss Lavish calculated that, even if they had continued, they would not have been caught in the accident."
    },
    {
-    "prompt": "Fill in the missing name: “It was not till a late hour that Miss _____ had recovered her luggage and could say in her usual tone of gentle reproach: “Well, dear, I at all events am ready for Bedfordshire.”",
+    "prompt": "Fill in the missing name: “_____ was suffering from the most grievous wrong which this world has yet discovered: diplomatic advantage had been taken of her sincerity, of her craving for sympathy and love.”",
     "options": [
-     "Bartlett",
+     "Lucy",
      "Harry",
      "Charlotte",
      "Cecil"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “It was not till a late hour that Miss Bartlett had recovered her luggage and could say in her usual tone of gentle reproach: “Well, dear, I at all events am ready for Bedfordshire.”",
-    "evidence": "It was not till a late hour that Miss Bartlett had recovered her luggage and could say in her usual tone of gentle reproach: “Well, dear, I at all events am ready for Bedfordshire."
+    "explanation": "The line reads: “Lucy was suffering from the most grievous wrong which this world has yet discovered: diplomatic advantage had been taken of her sincerity, of her craving for sympathy and love.”",
+    "evidence": "Lucy was suffering from the most grievous wrong which this world has yet discovered: diplomatic advantage had been taken of her sincerity, of her craving for sympathy and love."
    },
    {
-    "prompt": "Fill in the missing name: “_____ was suffering from the most grievous wrong which this world has yet discovered: diplomatic advantage had been taken of her sincerity, of her craving for sympathy and love.”",
+    "prompt": "Fill in the missing name: “_____, who was practical without ability, knelt by the side of an empty trunk, vainly endeavouring to pave it with books of varying thickness and size.”",
     "options": [
      "Minnie",
-     "Lucy",
      "Charlotte",
+     "George",
      "Honeychurch"
     ],
     "correct_index": 1,
-    "explanation": "The line reads: “Lucy was suffering from the most grievous wrong which this world has yet discovered: diplomatic advantage had been taken of her sincerity, of her craving for sympathy and love.”",
-    "evidence": "Lucy was suffering from the most grievous wrong which this world has yet discovered: diplomatic advantage had been taken of her sincerity, of her craving for sympathy and love."
+    "explanation": "The line reads: “Charlotte, who was practical without ability, knelt by the side of an empty trunk, vainly endeavouring to pave it with books of varying thickness and size.”",
+    "evidence": "Charlotte, who was practical without ability, knelt by the side of an empty trunk, vainly endeavouring to pave it with books of varying thickness and size."
    }
   ],
   "8": [
@@ -275,7 +275,7 @@
     "options": [
      "Honeychurch, who had come up to town with her daughter, began to drum nervously upon her card-case.",
      "Honeychurch, while Freddy proffered a hand that was yellow with chemicals.",
-     "’ You knew that you had told Miss Lavish, and that she was not reliable.",
+     "She was a visitor, not a chaperon, and a discredited visitor at that.",
      "She and Miss Bartlett are full of the praises of your sermon."
     ],
     "correct_index": 1,
@@ -311,7 +311,7 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "And mess with typewriters and latch-keys,” exploded Mrs.",
+     "Rush up and down and round the world, and come back as thin as a lath with the bad food.",
      "The thoughts of a cab-driver, however just, seldom affect the lives of his employers.",
      "None of her friends had seen her, either in the Piazza or, later on, by the embankment.",
      "The country gentleman and the country labourer are each in their way the most depressing of companions."
@@ -349,14 +349,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Beebe picked it up, and said: “The name of this ball is Vittoria Corombona, please.",
-     "Do you suppose that a man like Cecil would take the slightest notice of anything you say?",
-     "Any nook does for me,” Miss Bartlett continued; “but it does seem hard that you shouldn’t have a view.",
-     "Lucy, who had not yet acquired decency, at once rose to her feet, exclaiming: “Oh, oh!"
+     "Freddy possessed to a high degree the power of lashing little girls to fury, and in half a minute he had transformed Minnie from a well-mannered…",
+     "I know his mother; he’s good, he’s clever, he’s rich, he’s well connected—Oh, you needn’t kick the piano!",
+     "Charlotte, you mustn’t spoil me: of course, you must look over the Arno, too.",
+     "He asked the girl whether she knew Florence well, and was informed at some length that she had never been there before."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Beebe picked it up, and said: “The name of this ball is Vittoria Corombona, please.”",
-    "evidence": "Beebe picked it up, and said: “The name of this ball is Vittoria Corombona, please."
+    "explanation": "This line is from this chapter: “Freddy possessed to a high degree the power of lashing little girls to fury, and in half a minute he had transformed Minnie from a well-mannered child into a howling wilderness.”",
+    "evidence": "Freddy possessed to a high degree the power of lashing little girls to fury, and in half a minute he had transformed Minnie from a well-mannered child into a howling wilderness."
    },
    {
     "prompt": "Fill in the missing name: “Like his sister and like most young people, he was naturally attracted by the idea of equality, and the undeniable fact that there are different kinds of _____ annoyed him beyond measure.”",
@@ -371,30 +371,30 @@
     "evidence": "Like his sister and like most young people, he was naturally attracted by the idea of equality, and the undeniable fact that there are different kinds of Emersons annoyed him beyond measure."
    },
    {
-    "prompt": "Fill in the missing name: “_____ possessed to a high degree the power of lashing little girls to fury, and in half a minute he had transformed Minnie from a well-mannered child into a howling wilderness.”",
+    "prompt": "Fill in the missing name: “Outside it were poverty and vulgarity for ever trying to enter, just as the _____ fog tries to enter the pine-woods pouring through the gaps in the northern hills.”",
     "options": [
-     "Freddy",
-     "Lucy",
-     "Emerson",
-     "Alan"
+     "London",
+     "Florence",
+     "Summer",
+     "Croce"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “Freddy possessed to a high degree the power of lashing little girls to fury, and in half a minute he had transformed Minnie from a well-mannered child into a howling wilderness.”",
-    "evidence": "Freddy possessed to a high degree the power of lashing little girls to fury, and in half a minute he had transformed Minnie from a well-mannered child into a howling wilderness."
+    "explanation": "The line reads: “Outside it were poverty and vulgarity for ever trying to enter, just as the London fog tries to enter the pine-woods pouring through the gaps in the northern hills.”",
+    "evidence": "Outside it were poverty and vulgarity for ever trying to enter, just as the London fog tries to enter the pine-woods pouring through the gaps in the northern hills."
    }
   ],
   "11": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Its brightness mesmerized her, still dancing before her eyes when she bent them to the ground and started towards home.",
-     "Of course, it isn’t the tennis—that was only the last straw to all I have been feeling for weeks.",
-     "An older person at such an hour and in such a place might think that sufficient was happening to him, and rest content.",
-     "Dear Lucy, I am much worried, and I advise you to make a clean breast of his past behaviour to your mother, Freddy, and Mr."
+     "He opened his lips to deliver it, and a stream of red came out between them and trickled down his unshaven chin.",
+     "There was always a lot against our engagement, Cecil, but all our relations seemed pleased, and we met so often, and it was no good mentioning it…",
+     "Two Italians by the Loggia had been bickering about a debt.",
+     "Miss Lavish has been bicycling in your parts, but was not sure whether a call would be welcome."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “Dear Lucy, I am much worried, and I advise you to make a clean breast of his past behaviour to your mother, Freddy, and Mr.”",
-    "evidence": "Dear Lucy, I am much worried, and I advise you to make a clean breast of his past behaviour to your mother, Freddy, and Mr."
+    "explanation": "This line is from this chapter: “Miss Lavish has been bicycling in your parts, but was not sure whether a call would be welcome.”",
+    "evidence": "Miss Lavish has been bicycling in your parts, but was not sure whether a call would be welcome."
    },
    {
     "prompt": "Fill in the missing name: “In this atmosphere the Pension Bertolini and Windy Corner appeared equally crude, and _____ saw that her London career would estrange her a little from all that she had loved in the past.”",
@@ -425,14 +425,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I quite agree,” said Miss Lavish, who had several times tried to interrupt his mordant wit.",
-     "I’m sorry—if you could manage without it, I think I would rather not.",
-     "Beebe felt bound to assist his young friend, and led the way out of the house and into the pine-woods.",
+     "The narrowness and superficiality of the Anglo-Saxon tourist is nothing less than a menace.",
+     "She marched cheerfully to the fountain and back, and did a few calculations in realism.",
+     "George bowed his head, dusty and sombre, exhaling the peculiar smell of one who has handled furniture.",
      "Soon after his marriage the social atmosphere began to alter."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “Beebe felt bound to assist his young friend, and led the way out of the house and into the pine-woods.”",
-    "evidence": "Beebe felt bound to assist his young friend, and led the way out of the house and into the pine-woods."
+    "explanation": "This line is from this chapter: “George bowed his head, dusty and sombre, exhaling the peculiar smell of one who has handled furniture.”",
+    "evidence": "George bowed his head, dusty and sombre, exhaling the peculiar smell of one who has handled furniture."
    },
    {
     "prompt": "Fill in the missing name: “As the motorcars passed through _____ Street they raised only a little dust, and their stench was soon dispersed by the wind and replaced by the scent of the wet birches or of the pines.”",
@@ -463,14 +463,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "They chose to regard it as a miraculous preservation, and the floods of love and sincerity, which fructify every hour of life, burst forth in tumult.",
-     "You can’t expect a really musical person to enjoy comic songs as we do.",
-     "Only this morning she had confused Francesco Francia with Piero della Francesca, and Cecil had said, “What!",
+     "For a moment they realized vast possibilities of good.",
+     "I—I see what you mean, and certainly Cecil oughtn’t to.",
+     "And this too had lent anxiety to her eyes when she saluted the dear view and the dear garden in the foreground, and above them, scarcely conceivable…",
      "So impertinent—and yet the house “did,” for it was the home of people who loved their surroundings honestly."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “You can’t expect a really musical person to enjoy comic songs as we do.”",
-    "evidence": "You can’t expect a really musical person to enjoy comic songs as we do."
+    "explanation": "This line is from this chapter: “I—I see what you mean, and certainly Cecil oughtn’t to.”",
+    "evidence": "I—I see what you mean, and certainly Cecil oughtn’t to."
    },
    {
     "prompt": "Fill in the missing name: “No doubt I am neither artistic nor literary nor intellectual nor musical, but I cannot help the drawing-room furniture; your father bought it and we must put up with it, will _____ kindly remember.”",
@@ -501,14 +501,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I was saying, if our poor little Cockney lives must have a background, let it be Italian.",
-     "Miss Bartlett accepted their moneys and then said: “But who am I to give the sovereign to?",
-     "Beebe was walking up to the Torre del Gallo with the Emersons and some American ladies.",
+     "There the contrast is just as much as I can realize.",
+     "Freddy had half a quid and his friend had four half-crowns.",
+     "Would Miss Bartlett and Miss Honeychurch join the party?",
      "Honeychurch, who hoped to cure her children of slang by taking it literally."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “Miss Bartlett accepted their moneys and then said: “But who am I to give the sovereign to?”",
-    "evidence": "Miss Bartlett accepted their moneys and then said: “But who am I to give the sovereign to?"
+    "explanation": "This line is from this chapter: “Freddy had half a quid and his friend had four half-crowns.”",
+    "evidence": "Freddy had half a quid and his friend had four half-crowns."
    },
    {
     "prompt": "Fill in the missing name: “A solution seemed in sight, and even _____, who had been ostentatiously drinking his tea at the view, felt the eternal attraction of Chance, and turned round.”",
@@ -540,13 +540,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "A dear friend of mine, Contessa Baroncelli, has two daughters, and when she cannot send a maid to school with them, she lets them go in sailor-hats…",
-     "There is a certain amount of kindness, just as there is a certain amount of light,” he continued in measured tones.",
-     "I am sorry, and ought to have refused you this last time, too.",
+     "Beebe, she turned the conversation to a less disturbing topic, and asked him how he liked his new house.",
+     "When we were only acquaintances, you let me be myself, but now you’re always protecting me.",
      "Beebe who started the stamping; it was all that one could do."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “There is a certain amount of kindness, just as there is a certain amount of light,” he continued in measured tones.”",
-    "evidence": "There is a certain amount of kindness, just as there is a certain amount of light,” he continued in measured tones."
+    "explanation": "This line is from this chapter: “Beebe, she turned the conversation to a less disturbing topic, and asked him how he liked his new house.”",
+    "evidence": "Beebe, she turned the conversation to a less disturbing topic, and asked him how he liked his new house."
    },
    {
     "prompt": "Fill in the missing name: “Honest orthodoxy _____ respected, but he always assumed that honesty is the result of a spiritual crisis; he could not imagine it as a natural birthright, that might grow heavenward like flowers.”",
@@ -577,38 +577,38 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "She thought a moment, and agreed that it did make a difference.",
+     "I tell you who has no ‘fences,’ as you call them,” she said, “and that’s Mr.",
      "Honeychurch had behaved with charity and restraint.",
-     "George Emerson is still down the garden there, and is he to be left unpunished, or isn’t he?",
-     "Vyse, Cecil has just asked my permission about it, and I should be delighted, if Lucy wishes it."
+     "Oh, bother the credit and who’s been right or wrong!",
+     "He has always gone in for unconventionality, and parents nowhere, and so forth."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “George Emerson is still down the garden there, and is he to be left unpunished, or isn’t he?”",
-    "evidence": "George Emerson is still down the garden there, and is he to be left unpunished, or isn’t he?"
-   },
-   {
-    "prompt": "Fill in the missing name: “I admire you—” They had gathered round _____, who beckoned, she felt, over the rubbish, the sloppy thoughts, the furtive yearnings that were beginning to cumber her soul.”",
-    "options": [
-     "Cecil",
-     "George",
-     "Honeychurch",
-     "Charlotte"
-    ],
-    "correct_index": 1,
-    "explanation": "The line reads: “I admire you—” They had gathered round George, who beckoned, she felt, over the rubbish, the sloppy thoughts, the furtive yearnings that were beginning to cumber her soul.”",
-    "evidence": "I admire you—” They had gathered round George, who beckoned, she felt, over the rubbish, the sloppy thoughts, the furtive yearnings that were beginning to cumber her soul."
+    "explanation": "This line is from this chapter: “Oh, bother the credit and who’s been right or wrong!”",
+    "evidence": "Oh, bother the credit and who’s been right or wrong!"
    },
    {
     "prompt": "Fill in the missing name: “It’s shocking enough to lose you in any case, but generally a man must deny himself joy, and I would have held back if your _____ had been a different person.”",
     "options": [
-     "Alans",
+     "Freddy",
      "Cecil",
-     "George",
-     "Lavish"
+     "Honeychurch",
+     "Charlotte"
     ],
     "correct_index": 1,
     "explanation": "The line reads: “It’s shocking enough to lose you in any case, but generally a man must deny himself joy, and I would have held back if your Cecil had been a different person.”",
     "evidence": "It’s shocking enough to lose you in any case, but generally a man must deny himself joy, and I would have held back if your Cecil had been a different person."
+   },
+   {
+    "prompt": "Fill in the missing name: “I did just happen—when I had tea with her at Rome—in the course of conversation—” “But _____—what about the promise you gave me when we were packing?”",
+    "options": [
+     "Alans",
+     "Charlotte",
+     "Lavish",
+     "Freddy"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I did just happen—when I had tea with her at Rome—in the course of conversation—” “But Charlotte—what about the promise you gave me when we were packing?”",
+    "evidence": "I did just happen—when I had tea with her at Rome—in the course of conversation—” “But Charlotte—what about the promise you gave me when we were packing?"
    }
   ],
   "17": [
@@ -617,12 +617,12 @@
     "options": [
      "Passion was there, but it could not be easily labelled; it slipped between love and hatred and jealousy, and all the furniture of the pictorial style.",
      "He was in suspense all through the introduction, for not until the pace quickens does one know what the performer intends.",
-     "From where she knelt, jangling her keys, she could see a slit of darkness, and, peering into it, as if it would tell him that “little more,” his…",
-     "For the five-franc note she should substitute a young lady, which would raise the tone of the tragedy, and at the same time furnish an excellent plot."
+     "There was always a lot against our engagement, Cecil, but all our relations seemed pleased, and we met so often, and it was no good mentioning it…",
+     "There will be a deal of local colouring, descriptions of Florence and the neighbourhood, and I shall also introduce some humorous characters."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “From where she knelt, jangling her keys, she could see a slit of darkness, and, peering into it, as if it would tell him that “little more,” his long, thoughtful face.”",
-    "evidence": "From where she knelt, jangling her keys, she could see a slit of darkness, and, peering into it, as if it would tell him that “little more,” his long, thoughtful face."
+    "explanation": "This line is from this chapter: “There was always a lot against our engagement, Cecil, but all our relations seemed pleased, and we met so often, and it was no good mentioning it until—well, until all things came to a point.”",
+    "evidence": "There was always a lot against our engagement, Cecil, but all our relations seemed pleased, and we met so often, and it was no good mentioning it until—well, until all things came to a point."
    },
    {
     "prompt": "Fill in the missing name: “conventional, _____, you’re that, for you may understand beautiful things, but you don’t know how to use them; and you wrap yourself up in art and books and music, and would try to wrap up me.”",
@@ -653,14 +653,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "If you’ll let me say so, I am very glad, and I am certain that you have done the right thing.",
-     "A solution seemed in sight, and even Cecil, who had been ostentatiously drinking his tea at the view, felt the eternal attraction of Chance, and…",
-     "Its brightness mesmerized her, still dancing before her eyes when she bent them to the ground and started towards home.",
+     "They’re angry with Miss Honeychurch because she was late for breakfast,” whispered Minnie, “and Floyd has gone, and Mr.",
+     "exclaimed Minnie Beebe who had narrowly watched the iniquitous transaction.",
+     "He opened his lips to deliver it, and a stream of red came out between them and trickled down his unshaven chin.",
      "Outside it were poverty and vulgarity for ever trying to enter, just as the London fog tries to enter the pine-woods pouring through the gaps in the…"
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “If you’ll let me say so, I am very glad, and I am certain that you have done the right thing.”",
-    "evidence": "If you’ll let me say so, I am very glad, and I am certain that you have done the right thing."
+    "explanation": "This line is from this chapter: “They’re angry with Miss Honeychurch because she was late for breakfast,” whispered Minnie, “and Floyd has gone, and Mr.”",
+    "evidence": "They’re angry with Miss Honeychurch because she was late for breakfast,” whispered Minnie, “and Floyd has gone, and Mr."
    },
    {
     "prompt": "Fill in the missing name: “Of course, _____ is a plunge, and the doctor has ordered her special digestive bread; but, after all, we can take that with us, and it is only getting first into a steamer and then into a train.”",
@@ -691,9 +691,9 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "She knew that the intruder was ill-bred, even before she glanced at him.",
-     "A coolness had sprung up between the two cousins, and they had not corresponded since they parted in August.",
-     "Charlotte, you mustn’t spoil me: of course, you must look over the Arno, too.",
+     "He was an old man, of heavy build, with a fair, shaven face and large eyes.",
+     "The coolness dated from what Charlotte would call “the flight to Rome,” and in Rome it had increased amazingly.",
+     "The ladies’ voices grew animated, and—if the sad truth be owned—a little peevish.",
      "We shall have to sit three a side, because the trees drop, and yet it isn’t raining."
     ],
     "correct_index": 3,
@@ -713,30 +713,30 @@
     "evidence": "That there are shops abroad, even in Athens, never occurred to them, for they regarded travel as a species of warfare, only to be undertaken by those who have been fully armed at the Haymarket Stores."
    },
    {
-    "prompt": "Fill in the missing name: “She bought _____, and then continued: “Of course I want to live at home; but as we are talking about it, I may as well say that I shall want to be away in the future more than I have been.”",
+    "prompt": "Fill in the missing name: “But now that the hood was down, she did see something that she would have missed—there were no lights in the windows of _____ Villa, and round the garden gate she fancied she saw a padlock.”",
     "options": [
      "Arno",
-     "Baedeker",
+     "Cissie",
      "Rome",
-     "Cissie"
+     "Baedeker"
     ],
     "correct_index": 1,
-    "explanation": "The line reads: “She bought Baedeker, and then continued: “Of course I want to live at home; but as we are talking about it, I may as well say that I shall want to be away in the future more than I have been.”",
-    "evidence": "She bought Baedeker, and then continued: “Of course I want to live at home; but as we are talking about it, I may as well say that I shall want to be away in the future more than I have been."
+    "explanation": "The line reads: “But now that the hood was down, she did see something that she would have missed—there were no lights in the windows of Cissie Villa, and round the garden gate she fancied she saw a padlock.”",
+    "evidence": "But now that the hood was down, she did see something that she would have missed—there were no lights in the windows of Cissie Villa, and round the garden gate she fancied she saw a padlock."
    }
   ],
   "20": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Signorino, domani faremo uno giro,” called the cabman, with engaging certainty.",
-     "Miss Bartlett burst into self-accusations and regrets.",
-     "This solitude oppressed her; she was accustomed to have her thoughts confirmed by others or, at all events, contradicted; it was too dreadful not to…",
+     "All the fighting that mattered had been done by others—by Italy, by his father, by his wife.",
+     "Oh, Lucy—I shall never forgive myself, never to my dying day.",
+     "At breakfast next morning she took decisive action.",
      "Charlotte, don’t you feel, too, that we might be in London?"
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Signorino, domani faremo uno giro,” called the cabman, with engaging certainty.”",
-    "evidence": "Signorino, domani faremo uno giro,” called the cabman, with engaging certainty."
+    "explanation": "This line is from this chapter: “All the fighting that mattered had been done by others—by Italy, by his father, by his wife.”",
+    "evidence": "All the fighting that mattered had been done by others—by Italy, by his father, by his wife."
    },
    {
     "prompt": "Fill in the missing name: “His own content was absolute, but hers held bitterness: the _____ had not forgiven them; they were disgusted at her past hypocrisy; she had alienated Windy Corner, perhaps for ever.”",

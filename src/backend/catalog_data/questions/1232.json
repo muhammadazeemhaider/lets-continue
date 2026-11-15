@@ -7,36 +7,36 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
+     "Thus one year after he had committed this parricide, he was strangled, together with Vitellozzo, whom he had made his leader in valour and wickedness.",
      "These opportunities, therefore, made those men fortunate, and their high ability enabled them to recognize the opportunity whereby their country was…",
-     "In conclusion, I say that these colonies are not costly, they are more faithful, they injure less, and the injured, as has been said, being poor and…",
-     "They have either been exposed to the mercy of wild beasts, or they have had so mean a parentage that in shame they have given themselves out to be…",
-     "Thus one year after he had committed this parricide, he was strangled, together with Vitellozzo, whom he had made his leader in valour and wickedness."
+     "From the school of this man sprang, among others, Braccio and Sforza, who in their time were the arbiters of Italy.",
+     "In conclusion, I say that these colonies are not costly, they are more faithful, they injure less, and the injured, as has been said, being poor and…"
     ],
-    "correct_index": 1,
+    "correct_index": 3,
     "explanation": "This line is from this chapter: “In conclusion, I say that these colonies are not costly, they are more faithful, they injure less, and the injured, as has been said, being poor and scattered, cannot hurt.”",
     "evidence": "In conclusion, I say that these colonies are not costly, they are more faithful, they injure less, and the injured, as has been said, being poor and scattered, cannot hurt."
    },
    {
     "prompt": "Fill in the missing name: “Then could the _____ realize the rashness of the course taken by them, which, in order that they might secure two towns in Lombardy, had made the king master of two-thirds of Italy.”",
     "options": [
+     "France",
      "Venetians",
-     "Pistoia",
-     "Rome",
-     "Florentines"
+     "Francesco",
+     "Rome"
     ],
-    "correct_index": 0,
+    "correct_index": 1,
     "explanation": "The line reads: “Then could the Venetians realize the rashness of the course taken by them, which, in order that they might secure two towns in Lombardy, had made the king master of two-thirds of Italy.”",
     "evidence": "Then could the Venetians realize the rashness of the course taken by them, which, in order that they might secure two towns in Lombardy, had made the king master of two-thirds of Italy."
    },
    {
     "prompt": "Fill in the missing name: “Thus _____ Louis lost Lombardy by not having followed any of the conditions observed by those who have taken possession of countries and wished to retain them.”",
     "options": [
-     "Milan",
      "Florentines",
      "Francesco",
-     "King"
+     "King",
+     "Pagolo"
     ],
-    "correct_index": 3,
+    "correct_index": 2,
     "explanation": "The line reads: “Thus King Louis lost Lombardy by not having followed any of the conditions observed by those who have taken possession of countries and wished to retain them.”",
     "evidence": "Thus King Louis lost Lombardy by not having followed any of the conditions observed by those who have taken possession of countries and wished to retain them."
    }
@@ -45,7 +45,7 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "It is noteworthy that these two phrases, “contro alla fede” and “tutto fede,” were omitted in the Testina edition, which was published with the…",
+     "It makes him hated above all things, as I have said, to be rapacious, and to be a violator of the property and women of his subjects, from both of…",
      "And as this point is worthy of notice, and to be imitated by others, I am not willing to leave it out.",
      "The examples of these two governments in our time are the Turk and the King of France.",
      "These methods are when, either by some wicked or nefarious ways, one ascends to the principality, or when by the favour of his fellow-citizens a…"
@@ -84,7 +84,7 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "Those whom he had injured, amongst others, were San Pietro ad Vincula, Colonna, San Giorgio, and Ascanio.",
-     "God is not willing to do everything, and thus take away our free will and that share of glory which belongs to us.",
+     "Owing to this, as has been and may again be seen, the Spaniards are unable to resist French cavalry, and the Switzers are overthrown by Spanish…",
      "I shall never hesitate to cite Cesare Borgia and his actions.",
      "The Romans, in order to hold Capua, Carthage, and Numantia, dismantled them, and did not lose them."
     ],
@@ -121,9 +121,9 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "But if a prince who is not inexperienced should take counsel from more than one he will never get united counsels, nor will he know how to unite them.",
+     "And if you will consider Italy, which is the seat of these changes, and which has given to them their impulse, you will see it to be an open country…",
      "It was necessary that Romulus should not remain in Alba, and that he should be abandoned at his birth, in order that he should become King of Rome…",
-     "Perhaps our words “sects” or “clans” would be most appropriate.",
+     "This arose because of his following a practice the opposite to the above; for the emperor is a secretive man—he does not communicate his designs to…",
      "He took part in many wars, and died in Florence in 1394."
     ],
     "correct_index": 1,
@@ -160,9 +160,9 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "From this sprung the rebellion at Urbino and the tumults in the Romagna, with endless dangers to the duke, all of which he overcame with the help of…",
-     "God is not willing to do everything, and thus take away our free will and that share of glory which belongs to us.",
+     "Owing to this, as has been and may again be seen, the Spaniards are unable to resist French cavalry, and the Switzers are overthrown by Spanish…",
      "I shall never hesitate to cite Cesare Borgia and his actions.",
-     "It makes him hated above all things, as I have said, to be rapacious, and to be a violator of the property and women of his subjects, from both of…"
+     "Endless examples could be given on this subject, but I will be content with one, brought to pass within the memory of our fathers."
     ],
     "correct_index": 0,
     "explanation": "This line is from this chapter: “From this sprung the rebellion at Urbino and the tumults in the Romagna, with endless dangers to the duke, all of which he overcame with the help of the French.”",
@@ -197,24 +197,24 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Such things when they are well founded and dignified will make him revered and admired, and in Italy there are not wanting opportunities to bring…",
-     "These three, therefore, came before the duke and saluted him respectfully, and were received by him with goodwill; they were at once placed between…",
-     "Yet it cannot be called talent to slay fellow-citizens, to deceive friends, to be without faith, without mercy, without religion; such methods may…",
-     "He ruled over Milan from 1494 to 1500, and died in 1510."
+     "So that in respect to those subject states he has not to take any trouble to gain them over to himself, for the whole of them quickly rally to the…",
+     "This opportunity, therefore, ought not to be allowed to pass for letting Italy at last see her liberator appear.",
+     "He ruled over Milan from 1494 to 1500, and died in 1510.",
+     "Yet it cannot be called talent to slay fellow-citizens, to deceive friends, to be without faith, without mercy, without religion; such methods may…"
     ],
-    "correct_index": 2,
+    "correct_index": 3,
     "explanation": "This line is from this chapter: “Yet it cannot be called talent to slay fellow-citizens, to deceive friends, to be without faith, without mercy, without religion; such methods may gain empire, but not glory.”",
     "evidence": "Yet it cannot be called talent to slay fellow-citizens, to deceive friends, to be without faith, without mercy, without religion; such methods may gain empire, but not glory."
    },
    {
     "prompt": "Fill in the missing name: “Nevertheless, he accompanied his infamies with so much ability of mind and body that, having devoted himself to the military profession, he rose through its ranks to be Praetor of _____.”",
     "options": [
-     "Pope",
-     "Pisa",
-     "Florentines",
-     "Syracuse"
+     "Italy",
+     "Syracuse",
+     "Pagolo",
+     "Florentines"
     ],
-    "correct_index": 3,
+    "correct_index": 1,
     "explanation": "The line reads: “Nevertheless, he accompanied his infamies with so much ability of mind and body that, having devoted himself to the military profession, he rose through its ranks to be Praetor of Syracuse.”",
     "evidence": "Nevertheless, he accompanied his infamies with so much ability of mind and body that, having devoted himself to the military profession, he rose through its ranks to be Praetor of Syracuse."
    },
@@ -236,9 +236,9 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "After which victory, Darius being killed, the state remained secure to Alexander, for the above reasons.",
-     "against my will, my fate A throne unsettled, and an infant state, Bid me defend my realms with all my pow’rs, And guard with these severities my…",
+     "Upon this a question arises: whether it be better to be loved than feared or feared than loved?",
      "Therefore, one who becomes a prince through the favour of the people ought to keep them friendly, and this he can easily do seeing they only ask not…",
-     "Owing to this, as has been and may again be seen, the Spaniards are unable to resist French cavalry, and the Switzers are overthrown by Spanish…"
+     "Notwithstanding this, his enemies drew near to him, and approached Fossombrone, where they encountered some men of the duke and, with the aid of the…"
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “Therefore, one who becomes a prince through the favour of the people ought to keep them friendly, and this he can easily do seeing they only ask not to be oppressed by him.”",
@@ -275,8 +275,8 @@
     "options": [
      "The first case has been discussed, but we will speak of it again should it recur.",
      "Therefore, above everything, the duke ought to have created a Spaniard Pope, and, failing him, he ought to have consented to Rouen and not San…",
-     "And short-sighted writers admire his deeds from one point of view and from another condemn the principal cause of them.",
-     "Endless examples could be given on this subject, but I will be content with one, brought to pass within the memory of our fathers."
+     "For this he was upbraided in the Senate by Fabius Maximus, and called the corrupter of the Roman soldiery.",
+     "And further, I consider that a prince ought to cherish the nobles, but not so as to make himself hated by the people."
     ],
     "correct_index": 0,
     "explanation": "This line is from this chapter: “The first case has been discussed, but we will speak of it again should it recur.”",
@@ -311,7 +311,7 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He became hated by the whole world, and also feared by those he had around him, to such an extent that he was murdered in the midst of his army by a…",
+     "But when you disarm them, you at once offend them by showing that you distrust them, either for cowardice or for want of loyalty, and either of…",
      "Those about whom there was the most anxiety were the Pope and the Venetians.",
      "And a prince should guard himself, above all things, against being despised and hated; and liberality leads you to both.",
      "In Rome, although but half alive, he remained secure; and whilst the Baglioni, the Vitelli, and the Orsini might come to Rome, they could not effect…"
@@ -349,10 +349,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Such things when they are well founded and dignified will make him revered and admired, and in Italy there are not wanting opportunities to bring…",
+     "This opportunity, therefore, ought not to be allowed to pass for letting Italy at last see her liberator appear.",
      "This was before they turned to enterprises on land, but when they began to fight on land they forsook this virtue and followed the custom of Italy.",
-     "Afterwards he sought him out in France, and took from him his government and life.",
-     "Tribu” were possibly gentile groups, united by common descent, and included individuals connected by marriage."
+     "He was a very warlike man, and the armies, being disgusted with the effeminacy of Alexander, of whom I have already spoken, killed him and elected…",
+     "I wish on this subject to adduce a modern example."
     ],
     "correct_index": 1,
     "explanation": "This line is from this chapter: “This was before they turned to enterprises on land, but when they began to fight on land they forsook this virtue and followed the custom of Italy.”",
@@ -389,7 +389,7 @@
     "options": [
      "place I have written of them at length, and will address myself only to principalities.",
      "Principalities are either hereditary, in which the family has been long established; or they are new.",
-     "Perhaps our words “sects” or “clans” would be most appropriate.",
+     "This arose because of his following a practice the opposite to the above; for the emperor is a secretive man—he does not communicate his designs to…",
      "The Florentines, being entirely without arms, sent ten thousand Frenchmen to take Pisa, whereby they ran more danger than at any other time of their…"
     ],
     "correct_index": 3,
@@ -427,7 +427,7 @@
     "options": [
      "He left the duke with the state of Romagna alone consolidated, with the rest in the air, between two most powerful hostile armies, and sick unto…",
      "Francesco Bussone, born at Carmagnola about 1390, executed at Venice, 5th May 1432.",
-     "I praise this system because it has been made use of formerly.",
+     "But fortresses were of little value to her afterwards when Cesare Borgia attacked her, and when the people, her enemy, were allied with foreigners.",
      "For among other evils which being unarmed brings you, it causes you to be despised, and this is one of those ignominies against which a prince ought…"
     ],
     "correct_index": 3,
@@ -463,12 +463,12 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He took part in many wars, and died in Florence in 1394.",
-     "Night having come and the tumult being silenced, the duke prepared to kill Vitellozzo and Oliverotto; he led them into a room and caused them to be…",
-     "For the Spaniards cannot resist cavalry, and the Switzers are afraid of infantry whenever they encounter them in close combat.",
-     "Hence it is necessary for a prince wishing to hold his own to know how to do wrong, and to make use of it or not according to necessity."
+     "This latter he obtained in two ways, by sending to the King of France for men and by enlisting men-at-arms and others whom he turned into cavalry of…",
+     "He was no sooner in Milan than the Pope had soldiers from him for the attempt on the Romagna, which yielded to him on the reputation of the king.",
+     "Hence it is necessary for a prince wishing to hold his own to know how to do wrong, and to make use of it or not according to necessity.",
+     "He took part in many wars, and died in Florence in 1394."
     ],
-    "correct_index": 3,
+    "correct_index": 2,
     "explanation": "This line is from this chapter: “Hence it is necessary for a prince wishing to hold his own to know how to do wrong, and to make use of it or not according to necessity.”",
     "evidence": "Hence it is necessary for a prince wishing to hold his own to know how to do wrong, and to make use of it or not according to necessity."
    },
@@ -476,9 +476,9 @@
     "prompt": "Fill in the missing word: “CONCERNING THINGS FOR WHICH MEN, AND ESPECIALLY PRINCES, ARE PRAISED OR BLAMED It _____ now to see what ought to be the rules of conduct for a prince towards subject and friends.”",
     "options": [
      "remains",
-     "contrary",
+     "declare",
      "assistance",
-     "disguise"
+     "contrary"
     ],
     "correct_index": 0,
     "explanation": "The line reads: “CONCERNING THINGS FOR WHICH MEN, AND ESPECIALLY PRINCES, ARE PRAISED OR BLAMED It remains now to see what ought to be the rules of conduct for a prince towards subject and friends.”",
@@ -487,10 +487,10 @@
    {
     "prompt": "Fill in the missing word: “And as I know that many have written on this point, I expect I shall be considered _____ in mentioning it again, especially as in discussing it I shall depart from the methods of other people.”",
     "options": [
-     "otherwise",
-     "followed",
+     "proceed",
+     "haughty",
      "presumptuous",
-     "haughty"
+     "cautious"
     ],
     "correct_index": 2,
     "explanation": "The line reads: “And as I know that many have written on this point, I expect I shall be considered presumptuous in mentioning it again, especially as in discussing it I shall depart from the methods of other people.”",
@@ -541,8 +541,8 @@
     "options": [
      "Rome and Sparta stood for many ages armed and free.",
      "against my will, my fate A throne unsettled, and an infant state, Bid me defend my realms with all my pow’rs, And guard with these severities my…",
-     "Notwithstanding this, his enemies drew near to him, and approached Fossombrone, where they encountered some men of the duke and, with the aid of the…",
-     "Hence it follows that those things he does one day he undoes the next, and no one ever understands what he wishes or intends to do, and no one can…"
+     "The city of Sinigalia is distant from the foot of the mountains a little more than a bow-shot and from the shore about a mile.",
+     "And they are not to be found otherwise, because men will always prove untrue to you unless they are kept honest by constraint."
     ],
     "correct_index": 1,
     "explanation": "This line is from this chapter: “against my will, my fate A throne unsettled, and an infant state, Bid me defend my realms with all my pow’rs, And guard with these severities my shores.”",
@@ -579,12 +579,12 @@
     "options": [
      "The Romans were brought into Greece by the Ætolians; and in every other country where they obtained a footing they were brought in by the inhabitants.",
      "And although there might arise sometimes a courageous pope, such as Sixtus, yet neither fortune nor wisdom could rid him of these annoyances.",
-     "If men were entirely good this precept would not hold, but because they are bad, and will not keep faith with you, you too are not bound to observe…",
-     "I believe also that he will be successful who directs his actions according to the spirit of the times, and that he whose actions do not accord with…"
+     "Therefore a wise lord cannot, nor ought he to, keep faith when such observance may be turned against him, and when the reasons that caused him to…",
+     "I conclude, therefore that, fortune being changeful and mankind steadfast in their ways, so long as the two are in agreement men are successful, but…"
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “If men were entirely good this precept would not hold, but because they are bad, and will not keep faith with you, you too are not bound to observe it with them.”",
-    "evidence": "If men were entirely good this precept would not hold, but because they are bad, and will not keep faith with you, you too are not bound to observe it with them."
+    "explanation": "This line is from this chapter: “Therefore a wise lord cannot, nor ought he to, keep faith when such observance may be turned against him, and when the reasons that caused him to pledge it exist no longer.”",
+    "evidence": "Therefore a wise lord cannot, nor ought he to, keep faith when such observance may be turned against him, and when the reasons that caused him to pledge it exist no longer."
    },
    {
     "prompt": "Fill in the missing name: “was suffered to stand in the text of the _____, being used to signify indifferently every shade of belief, as witness “the religion,” a phrase inevitably employed to designate the Huguenot heresy.”",
@@ -654,13 +654,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "But to come to those who, by their own ability and not through fortune, have risen to be princes, I say that Moses, Cyrus, Romulus, Theseus, and…",
-     "With us there is great justice, because that war is just which is necessary, and arms are hallowed when there is no other hope but in them.",
-     "Pandolfo Petrucci, Prince of Siena, ruled his state more by those who had been distrusted than by others.",
+     "And nothing honours a man more than to establish new laws and new ordinances when he himself was newly risen.",
+     "Princes, especially new ones, have found more fidelity and assistance in those men who in the beginning of their rule were distrusted than among…",
      "Such stand simply elevated upon the goodwill and the fortune of him who has elevated them—two most inconstant and unstable things."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “Pandolfo Petrucci, Prince of Siena, ruled his state more by those who had been distrusted than by others.”",
-    "evidence": "Pandolfo Petrucci, Prince of Siena, ruled his state more by those who had been distrusted than by others."
+    "explanation": "This line is from this chapter: “Princes, especially new ones, have found more fidelity and assistance in those men who in the beginning of their rule were distrusted than among those who in the beginning were trusted.”",
+    "evidence": "Princes, especially new ones, have found more fidelity and assistance in those men who in the beginning of their rule were distrusted than among those who in the beginning were trusted."
    },
    {
     "prompt": "Fill in the missing name: “The castle of _____, built by Francesco Sforza, has made, and will make, more trouble for the house of Sforza than any other disorder in the state.”",
@@ -691,38 +691,38 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "This question came to be discussed in the council of the Achaeans, where the legate of Antiochus urged them to stand neutral.",
-     "The kingdom of the Soldan is similar; being entirely in the hands of soldiers, it follows again that, without regard to the people, he must keep…",
+     "He sent envoys to the Achaeans, who were friends of the Romans, exhorting them to remain neutral; and on the other hand the Romans urged them to…",
+     "I wish on this subject to adduce a modern example.",
      "So that in respect to those subject states he has not to take any trouble to gain them over to himself, for the whole of them quickly rally to the…",
      "And one’s own forces are those which are composed either of subjects, citizens, or dependents; all others are mercenaries or auxiliaries."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “This question came to be discussed in the council of the Achaeans, where the legate of Antiochus urged them to stand neutral.”",
-    "evidence": "This question came to be discussed in the council of the Achaeans, where the legate of Antiochus urged them to stand neutral."
-   },
-   {
-    "prompt": "Fill in the missing name: “He sent envoys to the _____, who were friends of the Romans, exhorting them to remain neutral; and on the other hand the Romans urged them to take up arms.”",
-    "options": [
-     "Rome",
-     "Pagolo",
-     "Milan",
-     "Achaeans"
-    ],
-    "correct_index": 3,
-    "explanation": "The line reads: “He sent envoys to the Achaeans, who were friends of the Romans, exhorting them to remain neutral; and on the other hand the Romans urged them to take up arms.”",
+    "explanation": "This line is from this chapter: “He sent envoys to the Achaeans, who were friends of the Romans, exhorting them to remain neutral; and on the other hand the Romans urged them to take up arms.”",
     "evidence": "He sent envoys to the Achaeans, who were friends of the Romans, exhorting them to remain neutral; and on the other hand the Romans urged them to take up arms."
    },
    {
     "prompt": "Fill in the missing name: “The _____ joined with France against the Duke of Milan, and this alliance, which caused their ruin, could have been avoided.”",
     "options": [
-     "Venetians",
-     "Oliverotto",
+     "Pope",
      "Pistoia",
+     "Oliverotto",
+     "Venetians"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The Venetians joined with France against the Duke of Milan, and this alliance, which caused their ruin, could have been avoided.”",
+    "evidence": "The Venetians joined with France against the Duke of Milan, and this alliance, which caused their ruin, could have been avoided."
+   },
+   {
+    "prompt": "Fill in the missing name: “This question came to be discussed in the council of the _____, where the legate of Antiochus urged them to stand neutral.”",
+    "options": [
+     "Achaeans",
+     "Milan",
+     "Pagolo",
      "Florentines"
     ],
     "correct_index": 0,
-    "explanation": "The line reads: “The Venetians joined with France against the Duke of Milan, and this alliance, which caused their ruin, could have been avoided.”",
-    "evidence": "The Venetians joined with France against the Duke of Milan, and this alliance, which caused their ruin, could have been avoided."
+    "explanation": "The line reads: “This question came to be discussed in the council of the Achaeans, where the legate of Antiochus urged them to stand neutral.”",
+    "evidence": "This question came to be discussed in the council of the Achaeans, where the legate of Antiochus urged them to stand neutral."
    }
   ],
   "22": [
@@ -730,7 +730,7 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "This came to him soon and he used it well; for the Orsini, perceiving at length that the aggrandizement of the duke and the Church was ruin to them,…",
-     "Therefore, as I have said, a new prince in a new principality has always distributed arms.",
+     "Princes, especially new ones, have found more fidelity and assistance in those men who in the beginning of their rule were distrusted than among…",
      "These methods are when, either by some wicked or nefarious ways, one ascends to the principality, or when by the favour of his fellow-citizens a…",
      "There were none who knew Messer Antonio da Venafro as the servant of Pandolfo Petrucci, Prince of Siena, who would not consider Pandolfo to be a…"
     ],
@@ -769,7 +769,7 @@
     "options": [
      "Such stand simply elevated upon the goodwill and the fortune of him who has elevated them—two most inconstant and unstable things.",
      "And although one may not discuss Moses, he having been a mere executor of the will of God, yet he ought to be admired, if only for that favour which…",
-     "This question came to be discussed in the council of the Achaeans, where the legate of Antiochus urged them to stand neutral.",
+     "The Venetians joined with France against the Duke of Milan, and this alliance, which caused their ruin, could have been avoided.",
      "Hence it follows that those things he does one day he undoes the next, and no one ever understands what he wishes or intends to do, and no one can…"
     ],
     "correct_index": 3,
@@ -808,7 +808,7 @@
      "This, I believe, arises firstly from causes that have already been discussed at length, namely, that the prince who relies entirely on fortune is…",
      "The Romans, in order to hold Capua, Carthage, and Numantia, dismantled them, and did not lose them.",
      "Those who by valorous ways become princes, like these men, acquire a principality with difficulty, but they keep it with ease.",
-     "Every one admits how praiseworthy it is in a prince to keep faith, and to live with integrity and not with craft."
+     "Therefore it is necessary for a prince to understand how to avail himself of the beast and the man."
     ],
     "correct_index": 0,
     "explanation": "This line is from this chapter: “This, I believe, arises firstly from causes that have already been discussed at length, namely, that the prince who relies entirely on fortune is lost when it changes.”",
@@ -844,13 +844,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "But it is impossible to hold with such tranquillity states constituted like that of France.",
-     "Presently, deeming that the enemy was sufficiently emboldened, and having mastered their tactics, he decided to join battle with them.",
-     "Fortresses, therefore, are useful or not according to circumstances; if they do you good in one way they injure you in another.",
+     "Uguccione now took up a position near to Montecarlo, and within about two miles of the enemy, and slight skirmishes between the horse of both…",
+     "Therefore, it would have been safer for her, both then and before, not to have been hated by the people than to have had the fortresses.",
      "In conclusion, the arms of others either fall from your back, or they weigh you down, or they bind you fast."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “Presently, deeming that the enemy was sufficiently emboldened, and having mastered their tactics, he decided to join battle with them.”",
-    "evidence": "Presently, deeming that the enemy was sufficiently emboldened, and having mastered their tactics, he decided to join battle with them."
+    "explanation": "This line is from this chapter: “Uguccione now took up a position near to Montecarlo, and within about two miles of the enemy, and slight skirmishes between the horse of both parties were of daily occurrence.”",
+    "evidence": "Uguccione now took up a position near to Montecarlo, and within about two miles of the enemy, and slight skirmishes between the horse of both parties were of daily occurrence."
    },
    {
     "prompt": "Fill in the missing name: “There lived in the city of Lucca a gentleman of the _____ family, named Messer Francesco, whose profession was arms and who in riches, bodily strength, and valour excelled all other men in Lucca.”",

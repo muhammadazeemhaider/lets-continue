@@ -7,52 +7,52 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "You look and you listen, but you don’t seem to understand.",
-     "He had counted them once when he had been lost in dreams.",
-     "I’ve got a house-warming party to-night; it’s only a step from here.",
-     "That was Alexey Semyonovitch; he is in our office, too."
+     "Ah, Rodion Romanovitch,” he added suddenly, “what all men need is fresh air, fresh air.",
+     "For this business one should be as little conspicuous as possible.",
+     "All neighbours here, almost all new friends, except my old uncle, and he is new too--he only arrived in Petersburg yesterday to see to some business…",
+     "That’s the gentleman, Vahrushin, Afanasy Ivanovitch."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “He had counted them once when he had been lost in dreams.”",
-    "evidence": "He had counted them once when he had been lost in dreams."
-   },
-   {
-    "prompt": "Fill in the missing name: “And yet when a drunken man who, for some unknown reason, was being taken somewhere in a huge waggon dragged by a heavy dray horse, suddenly shouted at him as he drove past: “Hey there, _____ hatter!”",
-    "options": [
-     "Semyonovitch",
-     "Semyonovna",
-     "German",
-     "Petersburg"
-    ],
-    "correct_index": 2,
-    "explanation": "The line reads: “And yet when a drunken man who, for some unknown reason, was being taken somewhere in a huge waggon dragged by a heavy dray horse, suddenly shouted at him as he drove past: “Hey there, German hatter!”",
-    "evidence": "And yet when a drunken man who, for some unknown reason, was being taken somewhere in a huge waggon dragged by a heavy dray horse, suddenly shouted at him as he drove past: “Hey there, German hatter!"
+    "explanation": "This line is from this chapter: “For this business one should be as little conspicuous as possible.”",
+    "evidence": "For this business one should be as little conspicuous as possible."
    },
    {
     "prompt": "Fill in the missing name: “I may be bringing you something else in a day or two, _____ Ivanovna--a valuable thing--silver--a cigarette-box, as soon as I get it back from a friend.”",
     "options": [
+     "Fomitch",
      "Semyonovna",
-     "Marfa",
      "Alyona",
-     "Polenka"
+     "Petersburg"
     ],
     "correct_index": 2,
     "explanation": "The line reads: “I may be bringing you something else in a day or two, Alyona Ivanovna--a valuable thing--silver--a cigarette-box, as soon as I get it back from a friend.”",
     "evidence": "I may be bringing you something else in a day or two, Alyona Ivanovna--a valuable thing--silver--a cigarette-box, as soon as I get it back from a friend."
+   },
+   {
+    "prompt": "Fill in the missing name: “This _____ was moving out then, and so the fourth floor on this staircase would be untenanted except by the old woman.”",
+    "options": [
+     "Semyonovna",
+     "Marfa",
+     "German",
+     "Polenka"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “This German was moving out then, and so the fourth floor on this staircase would be untenanted except by the old woman.”",
+    "evidence": "This German was moving out then, and so the fourth floor on this staircase would be untenanted except by the old woman."
    }
   ],
   "2": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He soon overtook him, but for some time walked behind him.",
+     "At last, moving on to a level with him, he looked at his face.",
      "Everyone ought to be a gentleman and more than that.",
-     "In the house on the left he saw some open windows; on the window-sills were pots of sickly-looking geraniums.",
-     "You can judge the extremity of her calamities, that she, a woman of education and culture and distinguished family, should have consented to be my…"
+     "Yes, he felt once more that he would perhaps come to hate Sonia, now that he had made her more miserable.",
+     "This time it was through my own fault I lost it: for my weakness had come out."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “You can judge the extremity of her calamities, that she, a woman of education and culture and distinguished family, should have consented to be my wife.”",
-    "evidence": "You can judge the extremity of her calamities, that she, a woman of education and culture and distinguished family, should have consented to be my wife."
+    "explanation": "This line is from this chapter: “This time it was through my own fault I lost it: for my weakness had come out.”",
+    "evidence": "This time it was through my own fault I lost it: for my weakness had come out."
    },
    {
     "prompt": "Fill in the missing name: “At first he was for making up to _____ himself and then all of a sudden he stood on his dignity: ‘how,’ said he, ‘can a highly educated man like me live in the same rooms with a girl like that?”",
@@ -83,14 +83,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Drunken and horrible-looking figures were hanging about the tavern.",
+     "He used to cling close to his father, trembling all over when he met them.",
      "But Raskolnikov sat still in the same place, almost sullen and indifferent.",
-     "And, besides, I did not know the whole truth myself then.",
-     "The mother’s face lighted up with ecstatic happiness at the sight of this conclusive unspoken reconciliation."
+     "This sum (now I can explain it all to you, my precious Rodya) she took chiefly in order to send you sixty roubles, which you needed so terribly then…",
+     "Now that it’s all over and done with and we are quite happy again--I can tell you."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “And, besides, I did not know the whole truth myself then.”",
-    "evidence": "And, besides, I did not know the whole truth myself then."
+    "explanation": "This line is from this chapter: “This sum (now I can explain it all to you, my precious Rodya) she took chiefly in order to send you sixty roubles, which you needed so terribly then and which you received from us last year.”",
+    "evidence": "This sum (now I can explain it all to you, my precious Rodya) she took chiefly in order to send you sixty roubles, which you needed so terribly then and which you received from us last year."
    },
    {
     "prompt": "Fill in the missing name: “And beware, dear _____, when he comes to Petersburg, as he shortly will do, beware of judging him too hastily and severely, as your way is, if there is anything you do not like in him at first sight.”",
@@ -121,14 +121,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I knew it,” he muttered in confusion, “I thought so!",
+     "Why, a stupid thing like this, the most trivial detail might spoil the whole plan.",
      "A family who had come to the town and been reduced to poverty were selling their household goods and clothes, all women’s things.",
-     "The exquisite pair of lavender gloves, real Louvain, told the same tale, if only from the fact of his not wearing them, but carrying them in his…",
-     "In another ten years, mother will be blind with knitting shawls, maybe with weeping too."
+     "Luzhin unceremoniously, Raskolnikov smiled malignantly, sank back on the pillow and stared at the ceiling as before.",
+     "Now something must be done, now, do you understand that?"
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “In another ten years, mother will be blind with knitting shawls, maybe with weeping too.”",
-    "evidence": "In another ten years, mother will be blind with knitting shawls, maybe with weeping too."
+    "explanation": "This line is from this chapter: “Now something must be done, now, do you understand that?”",
+    "evidence": "Now something must be done, now, do you understand that?"
    },
    {
     "prompt": "Fill in the missing name: “_____, who propounds the theory of the superiority of wives raised from destitution and owing everything to their husband’s bounty--who propounds it, too, almost at the first interview.”",
@@ -160,13 +160,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "And yet as he dressed he examined his attire more carefully than usual.",
-     "They all clambered into Mikolka’s cart, laughing and making jokes.",
+     "The bay has gone with Matvey,” he shouted from the cart--“and this brute, mates, is just breaking my heart, I feel as if I could kill her.",
      "Sonia remembered how Svidrigaïlov had said to her the day before that Raskolnikov had two alternatives--Siberia or.",
-     "A crowd of women were thronging round the door; some were sitting on the steps, others on the pavement, others were standing talking."
+     "A drunken soldier, smoking a cigarette, was walking near them in the road, swearing; he seemed to be trying to find his way somewhere, but had…"
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “They all clambered into Mikolka’s cart, laughing and making jokes.”",
-    "evidence": "They all clambered into Mikolka’s cart, laughing and making jokes."
+    "explanation": "This line is from this chapter: “The bay has gone with Matvey,” he shouted from the cart--“and this brute, mates, is just breaking my heart, I feel as if I could kill her.”",
+    "evidence": "The bay has gone with Matvey,” he shouted from the cart--“and this brute, mates, is just breaking my heart, I feel as if I could kill her."
    },
    {
     "prompt": "Fill in the missing name: “The question why he was now going to _____ agitated him even more than he was himself aware; he kept uneasily seeking for some sinister significance in this apparently ordinary action.”",
@@ -198,13 +198,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "I’ve learned to chatter this last month, lying for days together in my den thinking.",
-     "***** On returning from the Hay Market he flung himself on the sofa and sat for a whole hour without stirring.",
+     "Meanwhile it got dark; he had no candle and, indeed, it did not occur to him to light up.",
      "When he had pulled out everything, and turned the pocket inside out to be sure there was nothing left, he carried the whole heap to the corner.",
      "He looked uneasily and suspiciously about him to see whether there was not some guard, some mysterious watch being kept on him to prevent his escape."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “***** On returning from the Hay Market he flung himself on the sofa and sat for a whole hour without stirring.”",
-    "evidence": "***** On returning from the Hay Market he flung himself on the sofa and sat for a whole hour without stirring."
+    "explanation": "This line is from this chapter: “Meanwhile it got dark; he had no candle and, indeed, it did not occur to him to light up.”",
+    "evidence": "Meanwhile it got dark; he had no candle and, indeed, it did not occur to him to light up."
    },
    {
     "prompt": "Fill in the missing name: “The student spoke about her with a peculiar relish and was continually laughing and the officer listened with great interest and asked him to send _____ to do some mending for him.”",
@@ -235,14 +235,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "the things are only worth five roubles, but I prize them particularly for the sake of those from whom they came to me, and I must confess that I was…",
-     "Maybe I am, but we will get him off anyway,” shouted Razumihin, bringing his fist down on the table.",
-     "Has she a secret conscience-prick at sacrificing her daughter to her son?",
-     "It’s red, and on red blood will be less noticeable,” the thought passed through his mind; then he suddenly came to himself."
+     "Porfiry Petrovitch addressed himself to Raskolnikov.",
+     "He used to buy unredeemed pledges from the old woman?",
+     "His bitterness grew more and more intense, and if he had happened to meet Mr.",
+     "The first thing he did was to wipe his blood-stained hands on the red brocade."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “It’s red, and on red blood will be less noticeable,” the thought passed through his mind; then he suddenly came to himself.”",
-    "evidence": "It’s red, and on red blood will be less noticeable,” the thought passed through his mind; then he suddenly came to himself."
+    "explanation": "This line is from this chapter: “The first thing he did was to wipe his blood-stained hands on the red brocade.”",
+    "evidence": "The first thing he did was to wipe his blood-stained hands on the red brocade."
    },
    {
     "prompt": "Fill in the missing name: “_____ gazed in horror at the hook shaking in its fastening, and in blank terror expected every minute that the fastening would be pulled out.”",
@@ -257,54 +257,54 @@
     "evidence": "Raskolnikov gazed in horror at the hook shaking in its fastening, and in blank terror expected every minute that the fastening would be pulled out."
    },
    {
-    "prompt": "Fill in the missing name: “Good evening, Alyona _____,” he began, trying to speak easily, but his voice would not obey him, it broke and shook.”",
+    "prompt": "Fill in the missing name: “In the middle of the room stood _____ with a big bundle in her arms.”",
     "options": [
-     "Avdotya",
-     "Sonia",
-     "Ivanovna",
-     "Katerina"
+     "Pyotr",
+     "Petrovitch",
+     "Lizaveta",
+     "Razumihin"
     ],
     "correct_index": 2,
-    "explanation": "The line reads: “Good evening, Alyona Ivanovna,” he began, trying to speak easily, but his voice would not obey him, it broke and shook.”",
-    "evidence": "Good evening, Alyona Ivanovna,” he began, trying to speak easily, but his voice would not obey him, it broke and shook."
+    "explanation": "The line reads: “In the middle of the room stood Lizaveta with a big bundle in her arms.”",
+    "evidence": "In the middle of the room stood Lizaveta with a big bundle in her arms."
    }
   ],
   "8": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Yes, indeed, I am quite surprised at him to-day,” began Zossimov, much delighted at the ladies’ entrance, for he had not succeeded in keeping up a…",
+     "Confess, now, that it has been perhaps your own fault?",
      "said Raskolnikov, extremely astonished, and he, too, was confused.",
-     "That’s all conventional, that’s all relative, merely a way of looking at it,” he thought in a flash, but only on the top surface of his mind, while…",
-     "He knows,” flashed through his mind like lightning."
+     "He pulled it off, but reflecting that he had no other socks, he picked it up and put it on again--and again he laughed.",
+     "Raskolnikov shuddered, but Porfiry did not seem to be looking at him, and was still concerned with Razumihin’s cigarette."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “That’s all conventional, that’s all relative, merely a way of looking at it,” he thought in a flash, but only on the top surface of his mind, while he was shuddering all over, “there, I’ve got it on!”",
-    "evidence": "That’s all conventional, that’s all relative, merely a way of looking at it,” he thought in a flash, but only on the top surface of his mind, while he was shuddering all over, “there, I’ve got it on!"
-   },
-   {
-    "prompt": "Fill in the missing name: “Luise _____, you can sit down,” he said casually to the gaily-dressed, purple-faced lady, who was still standing as though not venturing to sit down, though there was a chair beside her.”",
-    "options": [
-     "Raskolnikov",
-     "Pyotr",
-     "Romanovna",
-     "Ivanovna"
-    ],
-    "correct_index": 3,
-    "explanation": "The line reads: “Luise Ivanovna, you can sit down,” he said casually to the gaily-dressed, purple-faced lady, who was still standing as though not venturing to sit down, though there was a chair beside her.”",
-    "evidence": "Luise Ivanovna, you can sit down,” he said casually to the gaily-dressed, purple-faced lady, who was still standing as though not venturing to sit down, though there was a chair beside her."
+    "explanation": "This line is from this chapter: “He pulled it off, but reflecting that he had no other socks, he picked it up and put it on again--and again he laughed.”",
+    "evidence": "He pulled it off, but reflecting that he had no other socks, he picked it up and put it on again--and again he laughed."
    },
    {
     "prompt": "Fill in the missing name: “He looked askance and rather indignantly at _____; he was so very badly dressed, and in spite of his humiliating position, his bearing was by no means in keeping with his clothes.”",
     "options": [
-     "Porfiry",
-     "Razumihin",
-     "Zametov",
+     "Ivanovna",
+     "Pyotr",
+     "Romanovna",
      "Raskolnikov"
     ],
     "correct_index": 3,
     "explanation": "The line reads: “He looked askance and rather indignantly at Raskolnikov; he was so very badly dressed, and in spite of his humiliating position, his bearing was by no means in keeping with his clothes.”",
     "evidence": "He looked askance and rather indignantly at Raskolnikov; he was so very badly dressed, and in spite of his humiliating position, his bearing was by no means in keeping with his clothes."
+   },
+   {
+    "prompt": "Fill in the missing name: “That’s just it; the murderer must have been there and bolted himself in; and they’d have caught him for a certainty if _____ had not been an ass and gone to look for the porter too.”",
+    "options": [
+     "Katerina",
+     "Dounia",
+     "Pulcheria",
+     "Koch"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “That’s just it; the murderer must have been there and bolted himself in; and they’d have caught him for a certainty if Koch had not been an ass and gone to look for the porter too.”",
+    "evidence": "That’s just it; the murderer must have been there and bolted himself in; and they’d have caught him for a certainty if Koch had not been an ass and gone to look for the porter too."
    }
   ],
   "9": [
@@ -313,8 +313,8 @@
     "options": [
      "Yesterday and the day before yesterday and all this time I have been worrying myself.",
      "Recognising the place, he stopped, looked round and addressed a young fellow in a red shirt who stood gaping before a corn chandler’s shop.",
-     "muttered Pyotr Petrovitch with a hostile glance sidelong at Razumihin; then he scowled and was silent.",
-     "Think a moment, mademoiselle,” he began severely, but still, as it were, admonishing her."
+     "So at least I have excellent authority for believing.",
+     "Seeing that for such direct accusation before witnesses, if false or even mistaken, I should myself in a certain sense be made responsible, I am…"
     ],
     "correct_index": 0,
     "explanation": "This line is from this chapter: “Yesterday and the day before yesterday and all this time I have been worrying myself.”",
@@ -349,14 +349,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Luzhin has any orders of merit; I bet he has the Anna in his buttonhole and that he puts it on when he goes to dine with contractors or merchants.",
-     "But the new-comer gradually began to arouse his attention, then his wonder, then suspicion and even alarm.",
+     "You were nearly twenty when I saw you last: I understood you then.",
+     "But Raskolnikov, who had expected something quite different, gazed blankly and dreamily at him, making no reply, as though he heard the name of…",
      "Is it possible that he has nothing but cowardice and fear of death to make him live?",
-     "Cut along, Nastasya, and bring some tea, for tea we may venture on without the faculty."
+     "Yet he could not overcome his sense of repugnance."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “Cut along, Nastasya, and bring some tea, for tea we may venture on without the faculty.”",
-    "evidence": "Cut along, Nastasya, and bring some tea, for tea we may venture on without the faculty."
+    "explanation": "This line is from this chapter: “Yet he could not overcome his sense of repugnance.”",
+    "evidence": "Yet he could not overcome his sense of repugnance."
    },
    {
     "prompt": "Fill in the missing name: “He remembered _____ often at his bedside; he distinguished another person, too, whom he seemed to know very well, though he could not remember who he was, and this fretted him, even made him cry.”",
@@ -371,30 +371,30 @@
     "evidence": "He remembered Nastasya often at his bedside; he distinguished another person, too, whom he seemed to know very well, though he could not remember who he was, and this fretted him, even made him cry."
    },
    {
-    "prompt": "Fill in the missing name: “At your mamma’s request, through Afanasy Ivanovitch Vahrushin, of whom I presume you have heard more than once, a remittance is sent to you from our office,” the man began, addressing _____.”",
+    "prompt": "Fill in the missing name: “I know all the ins and outs of your affairs now, my dear boy--it’s not for nothing that you were so open with _____ when you were her prospective son-in-law, and I say all this as a friend.”",
     "options": [
-     "Luzhin",
-     "Avdotya",
-     "Petrovitch",
-     "Raskolnikov"
+     "Polenka",
+     "Dmitri",
+     "Rodion",
+     "Pashenka"
     ],
     "correct_index": 3,
-    "explanation": "The line reads: “At your mamma’s request, through Afanasy Ivanovitch Vahrushin, of whom I presume you have heard more than once, a remittance is sent to you from our office,” the man began, addressing Raskolnikov.”",
-    "evidence": "At your mamma’s request, through Afanasy Ivanovitch Vahrushin, of whom I presume you have heard more than once, a remittance is sent to you from our office,” the man began, addressing Raskolnikov."
+    "explanation": "The line reads: “I know all the ins and outs of your affairs now, my dear boy--it’s not for nothing that you were so open with Pashenka when you were her prospective son-in-law, and I say all this as a friend.”",
+    "evidence": "I know all the ins and outs of your affairs now, my dear boy--it’s not for nothing that you were so open with Pashenka when you were her prospective son-in-law, and I say all this as a friend."
    }
   ],
   "11": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He remembered afterwards that he had been particularly collected and careful, trying all the time not to get smeared with blood.",
-     "He used to buy unredeemed pledges from the old woman?",
-     "It struck you as extraordinary; I don’t mind betting it’s that.",
-     "It would be interesting for me to know how you would decide a certain ‘problem’ as Lebeziatnikov would say."
+     "He pulled out the keys at once, they were all, as before, in one bunch on a steel ring.",
+     "One can show from the psychological data alone how to get on the track of the real man.",
+     "Yes, I should have been surprised if you had let that pass after all that has happened.",
+     "Then it would be better for Luzhin to go on living and doing wicked things?"
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “He used to buy unredeemed pledges from the old woman?”",
-    "evidence": "He used to buy unredeemed pledges from the old woman?"
+    "explanation": "This line is from this chapter: “One can show from the psychological data alone how to get on the track of the real man.”",
+    "evidence": "One can show from the psychological data alone how to get on the track of the real man."
    },
    {
     "prompt": "Fill in the missing name: “And at eight o’clock this morning’--that was the third day, you understand--‘I saw _____ coming in, not sober, though not to say very drunk--he could understand what was said to him.”",
@@ -428,7 +428,7 @@
      "He returned home, twice as irritated and angry as before.",
      "But a sensible woman and a jealous woman are two very different things, and that’s where the trouble came in.",
      "Luzhin unceremoniously, Raskolnikov smiled malignantly, sank back on the pillow and stared at the ceiling as before.",
-     "Suddenly he shuddered all over with horror; “My God!"
+     "He sat down on the sofa in exhaustion and was at once shaken by another unbearable fit of shivering."
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “Luzhin unceremoniously, Raskolnikov smiled malignantly, sank back on the pillow and stared at the ceiling as before.”",
@@ -463,17 +463,17 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Zametov looked at him steadily, without moving or drawing his face away.",
+     "I’ll explain that afterwards, but now, my boy, I declare to you.",
      "He had become so completely absorbed in himself, and isolated from his fellows that he dreaded meeting, not only his landlady, but anyone at all.",
-     "Probably “taking his cue” from Luzhin, “that contemptible wretch Lebeziatnikov had not turned up either.",
-     "He recalled it on passing an eating-house or tavern, and felt that he was hungry."
+     "The fat colonel-major (he was really a discharged officer of low rank) was also absent, but it appeared that he had been “not himself” for the last…",
+     "Going into the tavern he drank a glass of vodka and ate a pie of some sort."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Zametov looked at him steadily, without moving or drawing his face away.”",
-    "evidence": "Zametov looked at him steadily, without moving or drawing his face away."
+    "explanation": "This line is from this chapter: “I’ll explain that afterwards, but now, my boy, I declare to you.”",
+    "evidence": "I’ll explain that afterwards, but now, my boy, I declare to you."
    },
    {
-    "prompt": "Fill in the missing name: “This is how I should behave,” _____ began, again bringing his face close to Zametov’s, again staring at him and speaking in a whisper, so that the latter positively shuddered.”",
+    "prompt": "Fill in the missing name: “The same old woman,” _____ went on in the same whisper, not heeding Zametov’s explanation, “about whom you were talking in the police-office, you remember, when I fainted.”",
     "options": [
      "Luzhin",
      "Razumihin",
@@ -481,8 +481,8 @@
      "Sonia"
     ],
     "correct_index": 2,
-    "explanation": "The line reads: “This is how I should behave,” Raskolnikov began, again bringing his face close to Zametov’s, again staring at him and speaking in a whisper, so that the latter positively shuddered.”",
-    "evidence": "This is how I should behave,” Raskolnikov began, again bringing his face close to Zametov’s, again staring at him and speaking in a whisper, so that the latter positively shuddered."
+    "explanation": "The line reads: “The same old woman,” Raskolnikov went on in the same whisper, not heeding Zametov’s explanation, “about whom you were talking in the police-office, you remember, when I fainted.”",
+    "evidence": "The same old woman,” Raskolnikov went on in the same whisper, not heeding Zametov’s explanation, “about whom you were talking in the police-office, you remember, when I fainted."
    },
    {
     "prompt": "Fill in the missing name: “He says you’ve been with him to _____ Ivanovna’s--you know, the woman you tried to befriend, for whom you winked to the Explosive Lieutenant and he would not understand.”",
@@ -501,9 +501,9 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I’ve come to you for the last time,” Raskolnikov went on gloomily, although this was the first time.",
+     "He raised his brooding eyes to her and suddenly noticed that he was sitting down while she was all the while standing before him.",
      "Perhaps he wanted to frighten me by pretending to know.",
-     "Darkness came over me,” he added suddenly, and was again silent.",
+     "He was apparently so taken up with Nikolay that for a moment he had forgotten Raskolnikov.",
      "Or I warn you the Governor-General, himself, shall be informed of your conduct to-morrow."
     ],
     "correct_index": 3,
@@ -540,13 +540,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "He had not thought till then of taking them out and hiding them!",
-     "It was the furthest limit of self-abnegation, at least so he interpreted it.",
-     "Yes, that is what I love him for,” Razumihin, exaggerating it all, muttered to himself, with a vigorous turn in his chair.",
-     "Fly upstairs and sit with him with a light; I’ll come in a quarter of an hour."
+     "It did not frighten him, but greatly annoyed him, so that he made haste to return to the town, to mingle with the crowd, to enter restaurants and…",
+     "Fancy, we ran here almost straight from the train to embrace you and that woman--ah, here she is!",
+     "Though Pulcheria Alexandrovna was not perfectly convinced, she made no further resistance."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “Fly upstairs and sit with him with a light; I’ll come in a quarter of an hour.”",
-    "evidence": "Fly upstairs and sit with him with a light; I’ll come in a quarter of an hour."
+    "explanation": "This line is from this chapter: “Though Pulcheria Alexandrovna was not perfectly convinced, she made no further resistance.”",
+    "evidence": "Though Pulcheria Alexandrovna was not perfectly convinced, she made no further resistance."
    },
    {
     "prompt": "Fill in the missing name: “Half an hour earlier, while he was bringing _____ home, he had indeed talked too freely, but he was aware of it himself, and his head was clear in spite of the vast quantities he had imbibed.”",
@@ -577,14 +577,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He entered looking as black as night, bowed awkwardly and was at once furious with himself for it.",
-     "The old woman recovered herself, and her visitor’s resolute tone evidently restored her confidence.",
-     "No, I’m talking of the way you keep sighing and groaning now.",
-     "It’s the symbol of my taking up the cross,” he laughed."
+     "A man with money and she doesn’t seem to dislike him.",
+     "The silver cigarette case; I spoke of it last time, you know.",
+     "The Schiller in you is in revolt every moment, and now you tell me not to listen at doors.",
+     "The wooden cross, that is the peasant one; the copper one, that is Lizaveta’s--you will wear yourself, show me!"
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “He entered looking as black as night, bowed awkwardly and was at once furious with himself for it.”",
-    "evidence": "He entered looking as black as night, bowed awkwardly and was at once furious with himself for it."
+    "explanation": "This line is from this chapter: “A man with money and she doesn’t seem to dislike him.”",
+    "evidence": "A man with money and she doesn’t seem to dislike him."
    },
    {
     "prompt": "Fill in the missing name: “When it came to the question whether to shave his stubbly chin or not (_____ Pavlovna had capital razors that had been left by her late husband), the question was angrily answered in the negative.”",
@@ -616,37 +616,37 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "I’ve made up my mind once for all: how could I understand your plans and expect you to give an account of them?",
-     "A constrained silence lasted for a couple of minutes, and then, as might be expected, some scene-shifting took place.",
-     "Avdotya Romanovna began impetuously, but immediately checked herself.",
-     "Perhaps it’s a good thing really that he should think me almost a madman,” thought Raskolnikov."
+     "Zossimov made a slight movement, and would have answered, had not Razumihin anticipated him.",
+     "Let me read it in the morning and that will be the end of it!",
+     "Raskolnikov muttered in reply, but with such a preoccupied and inattentive air that Dounia gazed at him in perplexity."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “Perhaps it’s a good thing really that he should think me almost a madman,” thought Raskolnikov.”",
-    "evidence": "Perhaps it’s a good thing really that he should think me almost a madman,” thought Raskolnikov."
-   },
-   {
-    "prompt": "Fill in the missing name: “interposed _____, “actions are sometimes performed in a masterly and most cunning way, while the direction of the actions is deranged and dependent on various morbid impressions--it’s like a dream.”",
-    "options": [
-     "Luzhin",
-     "Sonia",
-     "Zossimov",
-     "Razumihin"
-    ],
-    "correct_index": 2,
-    "explanation": "The line reads: “interposed Zossimov, “actions are sometimes performed in a masterly and most cunning way, while the direction of the actions is deranged and dependent on various morbid impressions--it’s like a dream.”",
-    "evidence": "interposed Zossimov, “actions are sometimes performed in a masterly and most cunning way, while the direction of the actions is deranged and dependent on various morbid impressions--it’s like a dream."
+    "explanation": "This line is from this chapter: “Raskolnikov muttered in reply, but with such a preoccupied and inattentive air that Dounia gazed at him in perplexity.”",
+    "evidence": "Raskolnikov muttered in reply, but with such a preoccupied and inattentive air that Dounia gazed at him in perplexity."
    },
    {
     "prompt": "Fill in the missing name: “Because we were alone, utterly alone,” she said plaintively and stopped short, suddenly, recollecting it was still somewhat dangerous to speak of _____ Petrovitch, although “we are quite happy again.”",
     "options": [
+     "Zametov",
+     "Dounia",
      "Pyotr",
-     "Romanovna",
-     "Alexandrovna",
-     "Porfiry"
+     "Katerina"
     ],
-    "correct_index": 0,
+    "correct_index": 2,
     "explanation": "The line reads: “Because we were alone, utterly alone,” she said plaintively and stopped short, suddenly, recollecting it was still somewhat dangerous to speak of Pyotr Petrovitch, although “we are quite happy again.”",
     "evidence": "Because we were alone, utterly alone,” she said plaintively and stopped short, suddenly, recollecting it was still somewhat dangerous to speak of Pyotr Petrovitch, although “we are quite happy again."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, who had begun his sage advice partly to make an effect before the ladies, was certainly somewhat mystified, when, glancing at his patient, he observed unmistakable mockery on his face.”",
+    "options": [
+     "Zossimov",
+     "Alexandrovna",
+     "Porfiry",
+     "Katerina"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Zossimov, who had begun his sage advice partly to make an effect before the ladies, was certainly somewhat mystified, when, glancing at his patient, he observed unmistakable mockery on his face.”",
+    "evidence": "Zossimov, who had begun his sage advice partly to make an effect before the ladies, was certainly somewhat mystified, when, glancing at his patient, he observed unmistakable mockery on his face."
    }
   ],
   "18": [
@@ -655,50 +655,50 @@
     "options": [
      "A dark-haired young man with a barrel organ was standing in the road in front of a little general shop and was grinding out a very sentimental song.",
      "He was crushed by poverty, but the anxieties of his position had of late ceased to weigh upon him.",
-     "She had been struck at once by Raskolnikov’s poor surroundings, and now these words broke out spontaneously.",
+     "and Katerina Ivanovna was very anxious it should be so.",
      "I have reason to have faith in your judgment rather than in anyone’s."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “She had been struck at once by Raskolnikov’s poor surroundings, and now these words broke out spontaneously.”",
-    "evidence": "She had been struck at once by Raskolnikov’s poor surroundings, and now these words broke out spontaneously."
-   },
-   {
-    "prompt": "Fill in the missing name: “At the moment when _____, Raskolnikov, and she stood still at parting on the pavement, this gentleman, who was just passing, started on hearing Sonia’s words: “and I asked where Mr.”",
-    "options": [
-     "Razumihin",
-     "Pyotr",
-     "Nastasya",
-     "Porfiry"
-    ],
-    "correct_index": 0,
-    "explanation": "The line reads: “At the moment when Razumihin, Raskolnikov, and she stood still at parting on the pavement, this gentleman, who was just passing, started on hearing Sonia’s words: “and I asked where Mr.”",
-    "evidence": "At the moment when Razumihin, Raskolnikov, and she stood still at parting on the pavement, this gentleman, who was just passing, started on hearing Sonia’s words: “and I asked where Mr."
+    "explanation": "This line is from this chapter: “and Katerina Ivanovna was very anxious it should be so.”",
+    "evidence": "and Katerina Ivanovna was very anxious it should be so."
    },
    {
     "prompt": "Fill in the missing name: “He turned a rapid but attentive look upon all three, especially upon _____, to whom Sonia was speaking; then looked back and noted the house.”",
     "options": [
-     "Porfiry",
      "Raskolnikov",
-     "Zametov",
+     "Romanovna",
+     "Zossimov",
+     "Katerina"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “He turned a rapid but attentive look upon all three, especially upon Raskolnikov, to whom Sonia was speaking; then looked back and noted the house.”",
+    "evidence": "He turned a rapid but attentive look upon all three, especially upon Raskolnikov, to whom Sonia was speaking; then looked back and noted the house."
+   },
+   {
+    "prompt": "Fill in the missing name: “Heavens, _____,” Pulcheria Alexandrovna began, as soon as they were in the street, “I really feel relieved myself at coming away--more at ease.”",
+    "options": [
+     "Katerina",
+     "Dounia",
+     "Zossimov",
      "Avdotya"
     ],
     "correct_index": 1,
-    "explanation": "The line reads: “He turned a rapid but attentive look upon all three, especially upon Raskolnikov, to whom Sonia was speaking; then looked back and noted the house.”",
-    "evidence": "He turned a rapid but attentive look upon all three, especially upon Raskolnikov, to whom Sonia was speaking; then looked back and noted the house."
+    "explanation": "The line reads: “Heavens, Dounia,” Pulcheria Alexandrovna began, as soon as they were in the street, “I really feel relieved myself at coming away--more at ease.”",
+    "evidence": "Heavens, Dounia,” Pulcheria Alexandrovna began, as soon as they were in the street, “I really feel relieved myself at coming away--more at ease."
    }
   ],
   "19": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "They got on to everlasting questions, floated off into space.",
-     "What does she expect to live upon in Petersburg afterwards?",
+     "Everything with them is ‘the influence of environment,’ and nothing else.",
+     "Is she counting on what is left of her hundred and twenty roubles of pension when Afanasy Ivanovitch’s debt is paid?",
      "There turned out to be in the purse three hundred and seventeen roubles and sixty copecks.",
      "In that quarter of the town, however, scarcely any shortcoming in dress would have created surprise."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “They got on to everlasting questions, floated off into space.”",
-    "evidence": "They got on to everlasting questions, floated off into space."
+    "explanation": "This line is from this chapter: “Everything with them is ‘the influence of environment,’ and nothing else.”",
+    "evidence": "Everything with them is ‘the influence of environment,’ and nothing else."
    },
    {
     "prompt": "Fill in the missing name: “Would you believe, _____, as soon as our backs were turned, he dressed, though he could hardly stand, and gave us the slip and went off on the spree somewhere till midnight, delirious all the time!”",
@@ -730,13 +730,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "Nastasya was standing with her back to him, blowing up the landlady’s samovar.",
-     "To my surprise one hundred-rouble note had disappeared.",
-     ", and to cook the dishes in her kitchen, and Katerina Ivanovna had left it all in her hands and gone herself to the cemetery.",
-     "Raskolnikov said at last, but in a curiously quiet voice."
+     "I have taken action and I will tell you why: solely, madam, solely owing to your black ingratitude!",
+     "Could she be stuck up, the stupid German, because she was mistress of the house, and had consented as a favour to help her poor lodgers!",
+     "The man noticed him at once, looked at him quickly, but dropped his eyes again; and so they walked for a minute side by side without uttering a word."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “Raskolnikov said at last, but in a curiously quiet voice.”",
-    "evidence": "Raskolnikov said at last, but in a curiously quiet voice."
+    "explanation": "This line is from this chapter: “The man noticed him at once, looked at him quickly, but dropped his eyes again; and so they walked for a minute side by side without uttering a word.”",
+    "evidence": "The man noticed him at once, looked at him quickly, but dropped his eyes again; and so they walked for a minute side by side without uttering a word."
    },
    {
     "prompt": "Fill in the missing name: “_____ walked along, mournful and anxious; he was distinctly aware of having come out with a purpose, of having to do something in a hurry, but what it was he had forgotten.”",
@@ -767,14 +767,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "What a grief it was to me when I heard that you had given up the university some months ago, for want of means to keep yourself and that you had…",
-     "cried Svidrigaïlov turning round, “I thought I said.",
-     "There was a regular set of us, men of the best society, eight years ago; we had a fine time.",
+     "He is a kind-hearted man and was a friend of your father’s too.",
+     "It means that I am not going to lose sight of you now.",
+     "Yes, there’s a great deal I didn’t notice when I was here eight years ago, kicking up my heels.",
      "He wants to make you a present of ten thousand roubles and he desires to see you once in my presence."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “There was a regular set of us, men of the best society, eight years ago; we had a fine time.”",
-    "evidence": "There was a regular set of us, men of the best society, eight years ago; we had a fine time."
+    "explanation": "This line is from this chapter: “Yes, there’s a great deal I didn’t notice when I was here eight years ago, kicking up my heels.”",
+    "evidence": "Yes, there’s a great deal I didn’t notice when I was here eight years ago, kicking up my heels."
    },
    {
     "prompt": "Fill in the missing name: “In proposing to the object of my passion to elope with me to _____ or Switzerland, I may have cherished the deepest respect for her and may have thought that I was promoting our mutual happiness!”",
@@ -806,13 +806,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "The conviction grew stronger in him that if that enigmatic man of yesterday, that phantom sprung out of the earth, had seen everything, they would…",
-     "He is the most depraved, and abjectly vicious specimen of that class of men.",
-     "But in this smile there was a flash of real unfeigned feeling.",
+     "Yes, indeed, and doubtless not without some design, having in view the rapidity of his departure, and all the circumstances preceding it.",
+     "But, good heavens, what a suit--how terribly he’s dressed!",
      "He had set down a good many points against him of late."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “He is the most depraved, and abjectly vicious specimen of that class of men.”",
-    "evidence": "He is the most depraved, and abjectly vicious specimen of that class of men."
+    "explanation": "This line is from this chapter: “Yes, indeed, and doubtless not without some design, having in view the rapidity of his departure, and all the circumstances preceding it.”",
+    "evidence": "Yes, indeed, and doubtless not without some design, having in view the rapidity of his departure, and all the circumstances preceding it."
    },
    {
     "prompt": "Fill in the missing name: “_____ smiled sarcastically, Razumihin fidgeted, but Pyotr Petrovitch did not accept the reproof; on the contrary, at every word he became more persistent and irritable, as though he relished it.”",
@@ -843,14 +843,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "You know it’s a loss to the Crown,” Porfiry Petrovitch quoted gaily.",
-     "The Pole brought with him, however, two other Poles who did not live at Amalia Ivanovna’s and whom no one had seen here before.",
-     "A hundred thousand good deeds could be done and helped, on that old woman’s money which will be buried in a monastery!",
-     "At first I said I would not take any message to you."
+     "Porfiry Petrovitch laughed and was ready to go on laughing, but obviously looked for explanations.",
+     "She stared at some of them with special severity, and loftily invited them to take their seats.",
+     "One death, and a hundred lives in exchange--it’s simple arithmetic!",
+     "He wants to make you a present of ten thousand roubles and he desires to see you once in my presence."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “At first I said I would not take any message to you.”",
-    "evidence": "At first I said I would not take any message to you."
+    "explanation": "This line is from this chapter: “He wants to make you a present of ten thousand roubles and he desires to see you once in my presence.”",
+    "evidence": "He wants to make you a present of ten thousand roubles and he desires to see you once in my presence."
    },
    {
     "prompt": "Fill in the missing name: “Then _____ repeated (rather dryly) his conversation with Svidrigaïlov, omitting his account of the ghostly visitations of Marfa Petrovna, wishing to avoid all unnecessary talk.”",
@@ -881,14 +881,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "What matters is that people would remember it, and that would give them a clue.",
-     "And all of a sudden those two switches fell from heaven!",
-     "Could she be stuck up, the stupid German, because she was mistress of the house, and had consented as a favour to help her poor lodgers!",
-     "And, what, if even now, while Katerina Ivanovna is alive, you get ill and are taken to the hospital, what will happen then?"
+     "For this business one should be as little conspicuous as possible.",
+     "Her first act was to order the carriage to be got out.",
+     "He was only asked out of kindness and because he was sharing the same room with Pyotr Petrovitch and was a friend of his, so that it would have been…",
+     "They will be in the street, all of them, she will cough and beg and knock her head against some wall, as she did to-day, and the children will cry."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “And, what, if even now, while Katerina Ivanovna is alive, you get ill and are taken to the hospital, what will happen then?”",
-    "evidence": "And, what, if even now, while Katerina Ivanovna is alive, you get ill and are taken to the hospital, what will happen then?"
+    "explanation": "This line is from this chapter: “They will be in the street, all of them, she will cough and beg and knock her head against some wall, as she did to-day, and the children will cry.”",
+    "evidence": "They will be in the street, all of them, she will cough and beg and knock her head against some wall, as she did to-day, and the children will cry."
    },
    {
     "prompt": "Fill in the missing name: “A minute later _____, too, came in with the candle, set down the candlestick and, completely disconcerted, stood before him inexpressibly agitated and apparently frightened by his unexpected visit.”",
@@ -921,12 +921,12 @@
     "options": [
      "She was struck too by the businesslike, dry and even contemptuously menacing tone of Pyotr Petrovitch.",
      "And he would not have denied that he knew all that at the time.",
-     "In one case I may be bound, for instance, to arrest a man at once, but another may be in quite a different position, you know, so why shouldn’t I…",
-     "Raskolnikov asked himself in amazement, raising his head and looking with open eyes on Porfiry."
+     "By giving him, so to speak, a definite position, I shall put him out of suspense and set his mind at rest, so that he will retreat into his shell.",
+     "Nikolay put a stop to it, or I don’t know what we might not have come to."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “In one case I may be bound, for instance, to arrest a man at once, but another may be in quite a different position, you know, so why shouldn’t I let him walk about the town a bit?”",
-    "evidence": "In one case I may be bound, for instance, to arrest a man at once, but another may be in quite a different position, you know, so why shouldn’t I let him walk about the town a bit?"
+    "explanation": "This line is from this chapter: “By giving him, so to speak, a definite position, I shall put him out of suspense and set his mind at rest, so that he will retreat into his shell.”",
+    "evidence": "By giving him, so to speak, a definite position, I shall put him out of suspense and set his mind at rest, so that he will retreat into his shell."
    },
    {
     "prompt": "Fill in the missing name: “Briefly,” he said loudly and imperiously, rising to his feet and in so doing pushing _____ back a little, “briefly, I want to know, do you acknowledge me perfectly free from suspicion or not?”",
@@ -957,14 +957,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "That’s the gentleman, Vahrushin, Afanasy Ivanovitch.",
+     "But that’s pretty common with him at all times though.",
      "All the windows were wide open; judging from the figures moving at the windows, the rooms were full to overflowing.",
      "But there seemed to be nothing, no trace, except in one place, where some thick drops of congealed blood were clinging to the frayed edge of his…",
-     "Turning round, he saw the latter running after him, out of breath."
+     "He seemed to want to say something more, but could not speak out."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “Turning round, he saw the latter running after him, out of breath.”",
-    "evidence": "Turning round, he saw the latter running after him, out of breath."
+    "explanation": "This line is from this chapter: “He seemed to want to say something more, but could not speak out.”",
+    "evidence": "He seemed to want to say something more, but could not speak out."
    },
    {
     "prompt": "Fill in the missing name: “_____ had shown almost all his cards--of course, he had risked something in showing them--and if he had really had anything up his sleeve (Raskolnikov reflected), he would have shown that, too.”",
@@ -997,7 +997,7 @@
     "options": [
      "Incidentally the murder of Lizaveta served indeed to confirm the last hypothesis: a man commits two murders and forgets that the door is open!",
      "You are right, there was something about him--but why?",
-     "Razumihin seated himself on the other side of the table.",
+     "For the last four days you have scarcely eaten or drunk anything.",
      "cried Lebeziatnikov, who was always afraid of allusions to the subject."
     ],
     "correct_index": 3,
@@ -1035,12 +1035,12 @@
     "options": [
      "They exchanged a few words and made no reference to the vital subject, as though they were tacitly agreed not to speak of it for a time.",
      "He wore a full coat and a horribly greasy black satin waistcoat, with no cravat, and his whole face seemed smeared with oil like an iron lock.",
-     "She is tearing up all the clothes, and making them little caps like actors; she means to carry a tin basin and make it tinkle, instead of music.",
-     "She stared at some of them with special severity, and loftily invited them to take their seats."
+     "Lebeziatnikov would have gone on, but Sonia, who had heard him almost breathless, snatched up her cloak and hat, and ran out of the room, putting on…",
+     "Katerina Ivanovna, in fact, could hardly help meeting her guests with increased dignity, and even haughtiness."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “She stared at some of them with special severity, and loftily invited them to take their seats.”",
-    "evidence": "She stared at some of them with special severity, and loftily invited them to take their seats."
+    "explanation": "This line is from this chapter: “Katerina Ivanovna, in fact, could hardly help meeting her guests with increased dignity, and even haughtiness.”",
+    "evidence": "Katerina Ivanovna, in fact, could hardly help meeting her guests with increased dignity, and even haughtiness."
    },
    {
     "prompt": "Fill in the missing name: “Sonia ran to restrain Katerina Ivanovna, but when _____ Ivanovna shouted something about “the yellow ticket,” Katerina Ivanovna pushed Sonia away, and rushed at the landlady to carry out her threat.”",
@@ -1071,14 +1071,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Pyotr Petrovitch held up the note showing it to everyone.",
+     "You are fools, fools,” she cried, addressing the whole room, “you don’t know, you don’t know what a heart she has, what a girl she is!",
      "With a sick feeling he could not help recalling Razumihin too, but, he soon reassured himself on that score; as though a fellow like that could be…",
-     "The old woman glanced for a moment at the pledge, but at once stared in the eyes of her uninvited visitor.",
+     "She looked intently, maliciously and mistrustfully.",
      "He saw later that almost every word of the following conversation seemed to touch on some sore place and irritate it."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Pyotr Petrovitch held up the note showing it to everyone.”",
-    "evidence": "Pyotr Petrovitch held up the note showing it to everyone."
+    "explanation": "This line is from this chapter: “You are fools, fools,” she cried, addressing the whole room, “you don’t know, you don’t know what a heart she has, what a girl she is!”",
+    "evidence": "You are fools, fools,” she cried, addressing the whole room, “you don’t know, you don’t know what a heart she has, what a girl she is!"
    },
    {
     "prompt": "Fill in the missing name: “He at once wrote a note to my mother and informed her that I had given away all my money, not to _____ Ivanovna but to Sofya Semyonovna, and referred in a most contemptible way to the.”",
@@ -1093,30 +1093,30 @@
     "evidence": "He at once wrote a note to my mother and informed her that I had given away all my money, not to Katerina Ivanovna but to Sofya Semyonovna, and referred in a most contemptible way to the."
    },
    {
-    "prompt": "Fill in the missing name: “I know nothing about it,” she cried with a heartrending wail, and she ran to Katerina _____, who clasped her tightly in her arms, as though she would shelter her from all the world.”",
+    "prompt": "Fill in the missing name: “A minute later _____, too, appeared in the doorway; he did not come in, but stood still, listening with marked interest, almost wonder, and seemed for a time perplexed.”",
     "options": [
      "Raskolnikov",
-     "Zametov",
-     "Ivanovna",
-     "Dounia"
+     "Luzhin",
+     "Lebeziatnikov",
+     "Sonia"
     ],
     "correct_index": 2,
-    "explanation": "The line reads: “I know nothing about it,” she cried with a heartrending wail, and she ran to Katerina Ivanovna, who clasped her tightly in her arms, as though she would shelter her from all the world.”",
-    "evidence": "I know nothing about it,” she cried with a heartrending wail, and she ran to Katerina Ivanovna, who clasped her tightly in her arms, as though she would shelter her from all the world."
+    "explanation": "The line reads: “A minute later Lebeziatnikov, too, appeared in the doorway; he did not come in, but stood still, listening with marked interest, almost wonder, and seemed for a time perplexed.”",
+    "evidence": "A minute later Lebeziatnikov, too, appeared in the doorway; he did not come in, but stood still, listening with marked interest, almost wonder, and seemed for a time perplexed."
    }
   ],
   "30": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "She could not have said, for instance, that she had foreseen something of the sort--and yet now, as soon as he told her, she suddenly fancied that…",
-     "’ (You must mend that tear, you must take your needle and darn it as I showed you, or to-morrow--cough, cough, cough--he will make the hole bigger,”…",
+     "You are a strange girl, Sonia--you kiss me and hug me when I tell you about that.",
+     "I’d do it all together, so as not to have to work two nights running!",
      "It was you told me to go to the cross-roads; why is it you are frightened now it’s come to that?",
      "particulars of how Marfa Petrovna bought me out; do you know to what a point of insanity a woman can sometimes love?"
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “She could not have said, for instance, that she had foreseen something of the sort--and yet now, as soon as he told her, she suddenly fancied that she had really foreseen this very thing.”",
-    "evidence": "She could not have said, for instance, that she had foreseen something of the sort--and yet now, as soon as he told her, she suddenly fancied that she had really foreseen this very thing."
+    "explanation": "This line is from this chapter: “You are a strange girl, Sonia--you kiss me and hug me when I tell you about that.”",
+    "evidence": "You are a strange girl, Sonia--you kiss me and hug me when I tell you about that."
    },
    {
     "prompt": "Fill in the missing name: “Well, if suddenly it all depended on your decision whether he or they should go on living, that is whether _____ should go on living and doing wicked things, or Katerina Ivanovna should die?”",
@@ -1147,9 +1147,9 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I don’t know what to wish you,” said Raskolnikov, who had begun to descend the stairs, but looked back again.",
+     "Remembering, sketchily, the main outlines of his recent scene with Porfiry, he could not help shuddering again with horror.",
      "Sofya Semyonovna and I have had a job to find them.",
-     "Even as it was, everyone he met seemed to stare and look round, as if they had nothing to do but to watch him.",
+     "At last the thought struck him that it might be better to go to the Neva.",
      "Strange to say, none would have believed it perhaps, but he only felt a faint vague anxiety about his immediate future."
     ],
     "correct_index": 1,
@@ -1185,14 +1185,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Yes, there’s no denying, the Svidrigaïlovs are a bitter pill!",
-     "I make bold to inquire--have you been in the service?",
-     "Why, it was at your rooms we met yesterday,” he said easily.",
-     "He went out of the tavern and rushed away almost at a run."
+     "It’s clear enough: for herself, for her comfort, to save her life she would not sell herself, but for someone else she is doing it!",
+     "You’ve been a student or have attended some learned institution!",
+     "He wore his hair cut short and had a large round head, particularly prominent at the back.",
+     "The thought of Dounia and his mother suddenly reduced him almost to a panic."
     ],
     "correct_index": 3,
-    "explanation": "This line is from this chapter: “He went out of the tavern and rushed away almost at a run.”",
-    "evidence": "He went out of the tavern and rushed away almost at a run."
+    "explanation": "This line is from this chapter: “The thought of Dounia and his mother suddenly reduced him almost to a panic.”",
+    "evidence": "The thought of Dounia and his mother suddenly reduced him almost to a panic."
    },
    {
     "prompt": "Fill in the missing name: “As soon as _____ went out, Raskolnikov got up, turned to the window, walked into one corner and then into another, as though forgetting the smallness of his room, and sat down again on the sofa.”",
@@ -1207,30 +1207,30 @@
     "evidence": "As soon as Razumihin went out, Raskolnikov got up, turned to the window, walked into one corner and then into another, as though forgetting the smallness of his room, and sat down again on the sofa."
    },
    {
-    "prompt": "Fill in the missing name: “He said something too about _____ and promised to come himself in a day or two to see Raskolnikov, mentioning that “he would like to consult with him, that there were things they must talk over.”",
+    "prompt": "Fill in the missing name: “From the time of Svidrigaïlov’s too menacing and unmistakable words in Sonia’s room at the moment of _____ Ivanovna’s death, the normal working of his mind seemed to break down.”",
     "options": [
-     "Alexandrovna",
-     "Avdotya",
-     "Zametov",
-     "Sonia"
+     "Romanovna",
+     "Luzhin",
+     "Zossimov",
+     "Katerina"
     ],
     "correct_index": 3,
-    "explanation": "The line reads: “He said something too about Sonia and promised to come himself in a day or two to see Raskolnikov, mentioning that “he would like to consult with him, that there were things they must talk over.”",
-    "evidence": "He said something too about Sonia and promised to come himself in a day or two to see Raskolnikov, mentioning that “he would like to consult with him, that there were things they must talk over."
+    "explanation": "The line reads: “From the time of Svidrigaïlov’s too menacing and unmistakable words in Sonia’s room at the moment of Katerina Ivanovna’s death, the normal working of his mind seemed to break down.”",
+    "evidence": "From the time of Svidrigaïlov’s too menacing and unmistakable words in Sonia’s room at the moment of Katerina Ivanovna’s death, the normal working of his mind seemed to break down."
    }
   ],
   "33": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Razumihin then--ah, that stone, that stone under which the things were hidden!",
-     "The prisoner Nikolay has been brought,” someone answered.",
+     "Your laughter, too, as you came in, do you remember?",
+     "Two seconds, not more, were spent in actual struggle, then someone gave a violent shove, and then a man, very pale, strode into the room.",
      "You were noticing nothing as usual, but I was weighing every word.",
      "In the prison the second-class convict Rodion Raskolnikov has been confined for nine months."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Razumihin then--ah, that stone, that stone under which the things were hidden!”",
-    "evidence": "Razumihin then--ah, that stone, that stone under which the things were hidden!"
+    "explanation": "This line is from this chapter: “Your laughter, too, as you came in, do you remember?”",
+    "evidence": "Your laughter, too, as you came in, do you remember?"
    },
    {
     "prompt": "Fill in the missing name: “You are nervously irritable, _____ Romanovitch, by temperament; it’s out of proportion with other qualities of your heart and character, which I flatter myself I have to some extent divined.”",
@@ -1261,14 +1261,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Svidrigaïlov was silently watching and scrutinising him and, what struck Raskolnikov at once, seemed to be meaning to get up and slip away unobserved.",
-     "Well, I’ve just come from one and it’s the fifth night I’ve slept so.",
+     "He was about to turn back wondering why he had come to the X.",
+     "This habit develops into a necessity in some drunkards, and especially in those who are looked after sharply and kept in order at home.",
      "Nearly ten of the twenty roubles, given by Raskolnikov for Marmeladov’s funeral, were wasted upon it.",
-     "In fact hundreds of questions presented themselves."
+     "Andrey Semyonovitch was an anæmic, scrofulous little man, with strangely flaxen mutton-chop whiskers of which he was very proud."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Svidrigaïlov was silently watching and scrutinising him and, what struck Raskolnikov at once, seemed to be meaning to get up and slip away unobserved.”",
-    "evidence": "Svidrigaïlov was silently watching and scrutinising him and, what struck Raskolnikov at once, seemed to be meaning to get up and slip away unobserved."
+    "explanation": "This line is from this chapter: “He was about to turn back wondering why he had come to the X.”",
+    "evidence": "He was about to turn back wondering why he had come to the X."
    },
    {
     "prompt": "Fill in the missing name: “Svidrigaïlov had not been a week in _____, but everything about him was already, so to speak, on a patriarchal footing; the waiter, Philip, was by now an old friend and very obsequious.”",
@@ -1299,10 +1299,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Then he dealt her another and another blow with the blunt side and on the same spot.",
+     "The blood gushed as from an overturned glass, the body fell back.",
      "Though she had invented it herself, she believed in it firmly by this time.",
      "Think what the passion for propaganda will bring some girls to!",
-     "There’s a phenomenon for you,” cried the student and he laughed."
+     "The student spoke about her with a peculiar relish and was continually laughing and the officer listened with great interest and asked him to send…"
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “Think what the passion for propaganda will bring some girls to!”",
@@ -1321,26 +1321,26 @@
     "evidence": "Raskolnikov saw clearly that the glass or glass and a half of champagne that he had sipped almost unconsciously was affecting him--and he resolved to take advantage of the opportunity."
    },
    {
-    "prompt": "Fill in the missing name: “Well, after what you have said, I am fully convinced that you have come to _____ with designs on my sister,” he said directly to Svidrigaïlov, in order to irritate him further.”",
+    "prompt": "Fill in the missing name: “I fell to jeering in the coarsest way at all such propaganda and efforts to convert me; _____ came on to the scene again, and not she alone; in fact there was a tremendous to-do.”",
     "options": [
      "Amalia",
-     "Petersburg",
+     "Parasha",
      "Semyonovna",
      "Rodya"
     ],
     "correct_index": 1,
-    "explanation": "The line reads: “Well, after what you have said, I am fully convinced that you have come to Petersburg with designs on my sister,” he said directly to Svidrigaïlov, in order to irritate him further.”",
-    "evidence": "Well, after what you have said, I am fully convinced that you have come to Petersburg with designs on my sister,” he said directly to Svidrigaïlov, in order to irritate him further."
+    "explanation": "The line reads: “I fell to jeering in the coarsest way at all such propaganda and efforts to convert me; Parasha came on to the scene again, and not she alone; in fact there was a tremendous to-do.”",
+    "evidence": "I fell to jeering in the coarsest way at all such propaganda and efforts to convert me; Parasha came on to the scene again, and not she alone; in fact there was a tremendous to-do."
    }
   ],
   "36": [
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "But I should like to know why mother has written to me about ‘our most rising generation’?",
+     "I should like to know one thing more: how far they were open with one another that day and night and all this time since?",
      "I’ve been meddling and making arrangements for them.",
-     "On the way home I talked a lot of drunken nonsense to him.",
-     "I don’t know how to thank him either,” Raskolnikov went on, suddenly frowning and looking down."
+     "That’s nonsense, I tell you, how could I think it seriously?",
+     "Why, you are in a sentimental mood to-day, are you?"
     ],
     "correct_index": 1,
     "explanation": "This line is from this chapter: “I’ve been meddling and making arrangements for them.”",
@@ -1375,14 +1375,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "The latter, scanning Svidrigaïlov, pulled himself together and led him at once to a close and tiny room in the distance, at the end of the corridor,…",
-     "And as he said this Porfiry Petrovitch screwed up his eyes and winked; a good-humoured, crafty look passed over his face.",
-     "How could it happen that it should depend on my decision--who has made me a judge to decide who is to live and who is not to live?",
+     "It was a long, blackened wooden building, and in spite of the late hour there were lights in the windows and signs of life within.",
+     "cackled Porfiry Petrovitch with a change of tone, instantly leaving off laughing.",
+     "And suddenly a strange, surprising sensation of a sort of bitter hatred for Sonia passed through his heart.",
      "And there was something respectable and like an official about his manner too."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “The latter, scanning Svidrigaïlov, pulled himself together and led him at once to a close and tiny room in the distance, at the end of the corridor, under the stairs.”",
-    "evidence": "The latter, scanning Svidrigaïlov, pulled himself together and led him at once to a close and tiny room in the distance, at the end of the corridor, under the stairs."
+    "explanation": "This line is from this chapter: “It was a long, blackened wooden building, and in spite of the late hour there were lights in the windows and signs of life within.”",
+    "evidence": "It was a long, blackened wooden building, and in spite of the late hour there were lights in the windows and signs of life within."
    },
    {
     "prompt": "Fill in the missing name: “The only fact that seemed certain was that one of them had stolen something and had even succeeded in selling it on the spot to a _____, but would not share the spoil with his companion.”",
@@ -1414,8 +1414,8 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "It was a very ordinary matter and there was nothing exceptional about it.",
-     "It’s not a province, your excellency, but a district.",
-     "A minute later when he was talking of something else he took it from the table and put it on his bureau.",
+     "Yes, it’s an eating-house and there’s a billiard-room and you’ll find princesses there too.",
+     "His fat round little figure looked very strange, like a ball rolling from one side to the other and rebounding back.",
      "Well, that’s enough: I thought I must do this and begin with this."
     ],
     "correct_index": 3,
@@ -1454,7 +1454,7 @@
      "asked Razumihin, as soon as they were in the street.",
      "On Raskolnikov’s entrance Porfiry Petrovitch had at once closed the door by which he had come in and they remained alone.",
      "He looked eagerly to right and left, gazed intently at every object and could not fix his attention on anything; everything slipped away.",
-     "After It,” he shouted, jumping up from the seat, “but is It really going to happen?"
+     "His nervous shudder had passed into a fever that made him feel shivering; in spite of the heat he felt cold."
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “He looked eagerly to right and left, gazed intently at every object and could not fix his attention on anything; everything slipped away.”",
@@ -1489,14 +1489,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "After a fatiguing day spent in continual fancies, in joyful day-dreams and tears, Pulcheria Alexandrovna was taken ill in the night and by morning…",
-     "Raskolnikov decided that his suspicions were at least for that moment unjust.",
-     "And there was something else here as well, too awful and disturbing.",
-     "Why, he’s playing his professional tricks again,” Raskolnikov thought with disgust."
+     "Dounia was anxious, but said nothing and helped her to arrange the room.",
+     "If he had only turned round on his way he might have seen Svidrigaïlov get out not a hundred paces off, dismiss the cab and walk along the pavement.",
+     "Behind them Sonia prayed, softly and, as it were, timidly weeping.",
+     "All the circumstances of their last interview suddenly came back to him, and he felt a rush of the feeling that had come upon him then."
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “After a fatiguing day spent in continual fancies, in joyful day-dreams and tears, Pulcheria Alexandrovna was taken ill in the night and by morning she was feverish and delirious.”",
-    "evidence": "After a fatiguing day spent in continual fancies, in joyful day-dreams and tears, Pulcheria Alexandrovna was taken ill in the night and by morning she was feverish and delirious."
+    "explanation": "This line is from this chapter: “Dounia was anxious, but said nothing and helped her to arrange the room.”",
+    "evidence": "Dounia was anxious, but said nothing and helped her to arrange the room."
    },
    {
     "prompt": "Fill in the missing name: “_____ chose a town on the railway not far from Petersburg, so as to be able to follow every step of the trial and at the same time to see Avdotya Romanovna as often as possible.”",

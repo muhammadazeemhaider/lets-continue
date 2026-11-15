@@ -7,14 +7,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "I fear that I have brought some traces of the storm and rain into your snug chamber.",
-     "From under this great panoply she peeped up in a nervous, hesitating fashion at our windows, while her body oscillated backward and forward, and her…",
-     "Your Majesty has indeed committed an indiscretion.",
-     "It was dated from Montague Place upon the preceding evening, and ran thus: “DEAR MR."
+     "They may rest here on the hook and will be dry presently.",
+     "She would like advice, but is not sure that the matter is not too delicate for communication.",
+     "If this young person should produce her letters for blackmailing or other purposes, how is she to prove their authenticity?",
+     "I shall call at half-past ten to-morrow if I do not inconvenience you."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “Your Majesty has indeed committed an indiscretion.”",
-    "evidence": "Your Majesty has indeed committed an indiscretion."
+    "explanation": "This line is from this chapter: “If this young person should produce her letters for blackmailing or other purposes, how is she to prove their authenticity?”",
+    "evidence": "If this young person should produce her letters for blackmailing or other purposes, how is she to prove their authenticity?"
    },
    {
     "prompt": "Fill in the missing name: “Our visitor glanced with some apparent surprise at the languid, lounging figure of the man who had been no doubt depicted to him as the most incisive reasoner and most energetic agent in _____.”",
@@ -45,14 +45,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "He was in a pitiable state of reaction, with every nerve in a twitter.",
-     "She raised her veil as she spoke, and we could see that she was indeed in a pitiable state of agitation, her face all drawn and grey, with restless…",
-     "It is exceedingly unfortunate that you should be a bachelor.",
-     "HOLMES,—I am very anxious to consult you as to whether I should or should not accept a situation which has been offered to me as governess."
+     "He sank his face onto his arms and began to sob in a high treble key.",
+     "Her features and figure were those of a woman of thirty, but her hair was shot with premature grey, and her expression was weary and haggard.",
+     "The fund was, of course, for the propagation and spread of the red-heads as well as for their maintenance.",
+     "It may turn out to be of more interest than you think."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “It is exceedingly unfortunate that you should be a bachelor.”",
-    "evidence": "It is exceedingly unfortunate that you should be a bachelor."
+    "explanation": "This line is from this chapter: “The fund was, of course, for the propagation and spread of the red-heads as well as for their maintenance.”",
+    "evidence": "The fund was, of course, for the propagation and spread of the red-heads as well as for their maintenance."
    },
    {
     "prompt": "Fill in the missing name: “Merryweather is the chairman of directors, and he will explain to you that there are reasons why the more daring criminals of _____ should take a considerable interest in this cellar at present.”",
@@ -84,7 +84,7 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "It arrived upon Christmas morning, in company with a good fat goose, which is, I have no doubt, roasting at this moment in front of Peterson’s fire.",
-     "As he spoke the door opened and a young lady entered the room.",
+     "but I have had a very strange experience, and as I have no parents or relations of any sort from whom I could ask advice, I thought that perhaps you…",
      "We were engaged after the first walk that we took.",
      "Obviously they have been caused by someone who has very carelessly scraped round the edges of the sole in order to remove crusted mud from it."
     ],
@@ -121,10 +121,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "There he was to be found, she was sure of it, at the Bar of Gold, in Upper Swandam Lane.",
-     "He does not say so, but I can read it from his soothing answers and averted eyes.",
+     "How could she, a young and timid woman, make her way into such a place and pluck her husband out from among the ruffians who surrounded him?",
+     "The family was at one time among the richest in England, and the estates extended over the borders into Berkshire in the north, and Hampshire in the…",
      "Holmes laughed softly to himself and stretched himself out upon the cushioned seat.",
-     "Ah, here it is: ‘There will soon be a call for protection in the marriage market, for the present free-trade principle appears to tell heavily…"
+     "George’s, Hanover Square, that only half a dozen intimate friends would be invited, and that the party would return to the furnished house at…"
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “Holmes laughed softly to himself and stretched himself out upon the cushioned seat.”",
@@ -159,14 +159,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "A few moments later he was in our room, still puffing, still gesticulating, but with so fixed a look of grief and despair in his eyes that our…",
-     "You must have started early, and yet you had a good drive in a dog-cart, along heavy roads, before you reached the station.",
-     "On the inside of the cover was a paper label, with the initials of K.",
-     "If I claim full justice for my art, it is because it is an impersonal thing—a thing beyond myself."
+     "For a while he could not get his words out, but swayed his body and plucked at his hair like one who has been driven to the extreme limits of his…",
+     "The left arm of your jacket is spattered with mud in no less than seven places.",
+     "When my father took over the Horsham property, he, at my request, made a careful examination of the attic, which had been always locked up.",
+     "Therefore it is upon the logic rather than upon the crime that you should dwell."
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “On the inside of the cover was a paper label, with the initials of K.”",
-    "evidence": "On the inside of the cover was a paper label, with the initials of K."
+    "explanation": "This line is from this chapter: “When my father took over the Horsham property, he, at my request, made a careful examination of the attic, which had been always locked up.”",
+    "evidence": "When my father took over the Horsham property, he, at my request, made a careful examination of the attic, which had been always locked up."
    },
    {
     "prompt": "Fill in the missing name: “He had made a very considerable fortune in the _____, and his reason for leaving them was his aversion to the negroes, and his dislike of the Republican policy in extending the franchise to them.”",
@@ -198,9 +198,9 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "Between the wharf and the bedroom window is a narrow strip, which is dry at low tide but is covered at high tide with at least four and a half feet…",
-     "The game-keeper adds that within a few minutes of his seeing Mr.",
+     "He thought no more of the matter until he heard in the evening of the tragedy that had occurred.",
      "I could not help laughing at the ease with which he explained his process of deduction.",
-     "John Turner, who made his money in Australia and returned some years ago to the old country."
+     "Turner was apparently the richer man, so McCarthy became his tenant but still remained, it seems, upon terms of perfect equality, as they were…"
     ],
     "correct_index": 0,
     "explanation": "This line is from this chapter: “Between the wharf and the bedroom window is a narrow strip, which is dry at low tide but is covered at high tide with at least four and a half feet of water.”",
@@ -235,14 +235,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "My experience of camp life in Afghanistan had at least had the effect of making me a prompt and ready traveller.",
+     "Sherlock Holmes was pacing up and down the platform, his tall, gaunt figure made even gaunter and taller by his long grey travelling-cloak and…",
      "The man who entered was young, some two-and-twenty at the outside, well-groomed and trimly clad, with something of refinement and delicacy in his…",
-     "In the larger and older jewels every facet may stand for a bloody deed.",
-     "Pray give me the results of your newspaper selections."
+     "Here you are, Peterson, run down to the advertising agency and have this put in the evening papers.",
+     "Ah, here it is: ‘There will soon be a call for protection in the marriage market, for the present free-trade principle appears to tell heavily…"
     ],
     "correct_index": 2,
-    "explanation": "This line is from this chapter: “In the larger and older jewels every facet may stand for a bloody deed.”",
-    "evidence": "In the larger and older jewels every facet may stand for a bloody deed."
+    "explanation": "This line is from this chapter: “Here you are, Peterson, run down to the advertising agency and have this put in the evening papers.”",
+    "evidence": "Here you are, Peterson, run down to the advertising agency and have this put in the evening papers."
    },
    {
     "prompt": "Fill in the missing name: “It is, I think, much more likely that _____ Baker is an absolutely innocent man, who had no idea that the bird which he was carrying was of considerably more value than if it were made of solid gold.”",
@@ -273,10 +273,10 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "As a rule, when I have heard some slight indication of the course of events, I am able to guide myself by the thousands of other similar cases which…",
-     "He had made a very considerable fortune in the States, and his reason for leaving them was his aversion to the negroes, and his dislike of the…",
+     "I did not gain very much, however, by my inspection.",
+     "He was a singular man, fierce and quick-tempered, very foul-mouthed when he was angry, and of a most retiring disposition.",
      "What do you think that this unfortunate lady died of, then?",
-     "When Lee laid down his arms my uncle returned to his plantation, where he remained for three or four years."
+     "About 1869 or 1870 he came back to Europe and took a small estate in Sussex, near Horsham."
     ],
     "correct_index": 2,
     "explanation": "This line is from this chapter: “What do you think that this unfortunate lady died of, then?”",
@@ -312,8 +312,8 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "You are probably aware that fuller’s-earth is a valuable product, and that it is only found in one or two places in England?",
-     "For example, how did you deduce that this man was intellectual?",
-     "At last the little money which I had saved began to run short, and I was at my wit’s end as to what I should do.",
+     "Look at the band of ribbed silk and the excellent lining.",
+     "Westaway was the name of the founder of the business, but it is really managed by Miss Stoper.",
      "You allude to my attempt to recover the Irene Adler papers, to the singular case of Miss Mary Sutherland, and to the adventure of the man with the…"
     ],
     "correct_index": 0,
@@ -349,14 +349,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "Then he closed the locket and handed it back to Lord St.",
-     "How, in the name of good-fortune, did you know all that, Mr.",
-     "We had the carriage to ourselves save for an immense litter of papers which Holmes had brought with him.",
-     "The note was undated, and without either signature or address."
+     "The young lady came to London, then, and you renewed your acquaintance?",
+     "Your right hand is quite a size larger than your left.",
+     "I have just been looking through all the recent papers in order to master the particulars.",
+     "There will call upon you to-night, at a quarter to eight o’clock,” it said, “a gentleman who desires to consult you upon a matter of the very…"
     ],
     "correct_index": 0,
-    "explanation": "This line is from this chapter: “Then he closed the locket and handed it back to Lord St.”",
-    "evidence": "Then he closed the locket and handed it back to Lord St."
+    "explanation": "This line is from this chapter: “The young lady came to London, then, and you renewed your acquaintance?”",
+    "evidence": "The young lady came to London, then, and you renewed your acquaintance?"
    },
    {
     "prompt": "Fill in the missing name: “Ah, _____,” said Holmes, smiling, “perhaps you would not be very gracious either, if, after all the trouble of wooing and wedding, you found yourself deprived in an instant of wife and of fortune.”",
@@ -387,14 +387,14 @@
    {
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
-     "The portly client puffed out his chest with an appearance of some little pride and pulled a dirty and wrinkled newspaper from the inside pocket of…",
-     "Holmes, which may have any bearing upon the case, but I beg that you will question me upon any point which I do not make clear.",
+     "A frayed top-hat and a faded brown overcoat with a wrinkled velvet collar lay upon a chair beside him.",
+     "’ I kissed her and went up to my bedroom again, where I was soon asleep.",
      "He was quietly dressed in a suit of heather tweed with a soft cloth cap which he had laid down upon my books.",
      "What can you gather yourself as to the individuality of the man who has worn this article?"
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “Holmes, which may have any bearing upon the case, but I beg that you will question me upon any point which I do not make clear.”",
-    "evidence": "Holmes, which may have any bearing upon the case, but I beg that you will question me upon any point which I do not make clear."
+    "explanation": "This line is from this chapter: “’ I kissed her and went up to my bedroom again, where I was soon asleep.”",
+    "evidence": "’ I kissed her and went up to my bedroom again, where I was soon asleep."
    },
    {
     "prompt": "Fill in the missing name: “Down the centre of _____ Street it had been ploughed into a brown crumbly band by the traffic, but at either side and on the heaped-up edges of the footpaths it still lay as white as when it fell.”",
@@ -426,13 +426,13 @@
     "prompt": "Which of these moments happens in this chapter?",
     "options": [
      "The man who entered was young, some two-and-twenty at the outside, well-groomed and trimly clad, with something of refinement and delicacy in his…",
-     "It was an ideal spring day, a light blue sky, flecked with little fleecy white clouds drifting across from west to east.",
+     "Who would associate crime with these dear old homesteads?",
      "I rapidly threw on my clothes and was ready in a few minutes to accompany my friend down to the sitting-room.",
-     "Have just been wired for from the west of England in connection with Boscombe Valley tragedy."
+     "I think that the change would do you good, and you are always so interested in Mr."
     ],
     "correct_index": 1,
-    "explanation": "This line is from this chapter: “It was an ideal spring day, a light blue sky, flecked with little fleecy white clouds drifting across from west to east.”",
-    "evidence": "It was an ideal spring day, a light blue sky, flecked with little fleecy white clouds drifting across from west to east."
+    "explanation": "This line is from this chapter: “Who would associate crime with these dear old homesteads?”",
+    "evidence": "Who would associate crime with these dear old homesteads?"
    },
    {
     "prompt": "Fill in the missing name: “It is my belief, _____, founded upon my experience, that the lowest and vilest alleys in London do not present a more dreadful record of sin than does the smiling and beautiful countryside.”",

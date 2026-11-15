@@ -45,7 +45,9 @@ def sentences(text: str) -> list[str]:
     out = []
     for m in _SENTENCE.finditer(flat):
         s = m.group(0).strip(" \"'“”")
-        if 50 <= len(s) <= 200 and "_" not in s and "[" not in s and not s.isupper():
+        # Balanced quotation marks only: no 'At least—” He fumbled...' fragments cut out of dialogue.
+        balanced = s.count("“") == s.count("”") and s.count('"') % 2 == 0
+        if 50 <= len(s) <= 200 and balanced and "_" not in s and "[" not in s and not s.isupper():
             out.append(s)
     return out
 
