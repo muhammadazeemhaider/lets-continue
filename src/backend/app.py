@@ -372,6 +372,7 @@ def register_routes(app: Flask) -> None:
         )
         if entry is not None:
             catalog.mark_used(con, entry["id"])  # popular books rank higher in search
+            con.execute("UPDATE books SET catalog_slug = ? WHERE id = ?", (entry.get("slug"), cur.lastrowid))
         con.commit()
         return jsonify(book_json(own_book(cur.lastrowid))), 201
 
