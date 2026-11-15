@@ -217,10 +217,20 @@
   <label class="check"><input name="notificationsEnabled" type="checkbox" ${u.notificationsEnabled ? 'checked' : ''}> Gentle reminders for paused books</label>
   <p class="hint">Reminders arrive after 2 days, then 1 week, 2 weeks, 1 month and 6 months without reading.</p>
   <div class="push-box" data-push><p class="hint">Checking this device…</p></div>
+  <p class="hint diag" data-diag></p>
   <div class="actions"><button type="button" class="btn" data-cancel>Cancel</button><button type="submit" class="btn primary">Save</button></div>
 </form>`);
     const form = scrim.querySelector('form');
     paintPushSection(form);
+    form.querySelector('[data-diag]').textContent = [
+      `address: ${location.origin}`,
+      `secure context: ${window.isSecureContext}`,
+      `service worker: ${'serviceWorker' in navigator}`,
+      `push: ${'PushManager' in window}`,
+      `permission: ${'Notification' in window ? Notification.permission : 'n/a'}`,
+      `installed app: ${window.matchMedia('(display-mode: standalone)').matches}`,
+      `browser: ${(navigator.userAgent.match(/(Chrome|Firefox|SamsungBrowser|EdgA?)\/[\d.]+/) || ['unknown'])[0]}`,
+    ].join(' · ');
     form.querySelector('[data-cancel]').addEventListener('click', closeOverlay);
     form.addEventListener('submit', (e) => {
       e.preventDefault();
