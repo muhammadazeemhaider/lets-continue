@@ -1,11 +1,14 @@
 """Re-engagement reminders: which are due, what they say, and how they are delivered."""
 import base64
 import json
+import logging
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from db import utcnow
+
+log = logging.getLogger("notifications")
 
 # Days since last reading activity at which a reminder is sent (2 days, 1 week, 2 weeks, 1 month, 6 months).
 MILESTONES = [2, 7, 14, 30, 180]
@@ -91,19 +94,41 @@ def check_and_notify(con, now: datetime | None = None, sender=None) -> list[dict
 
 
 # --------------------------------------------------------------------------- web push
-def deliver_push(con, user_id: int, payload: dict, sender=None) -> str:
+# Push services (FCM in particular) can answer 410 "expired" for a few moments right after a browser
+# re-subscribes, e.g. when notifications are turned off and on again. Within this window a 410 is
+# treated as temporary, so a brand-new, valid subscription is never thrown away.
+NEW_SUBSCRIPTION_GRACE = timedelta(minutes=10)
+
+
+def deliver_push(con, user_id: int, payload: dict, sender, details: list | None = None,
+                 now: datetime | None = None) -> str:
+    """Push to every device of the user. `sender(info, payload)` returns a status string, or
+    (status, reason). If `details` is given, one {status, reason, host} entry per device is appended."""
+    now = now or datetime.now(timezone.utc)
     subs = con.execute("SELECT * FROM push_subscriptions WHERE user_id = ?", (user_id,)).fetchall()
     if not subs:
         return "no_subscription"
-    sender = sender or send_web_push
-    ok = False
+    statuses = []
     for s in subs:
         info = {"endpoint": s["endpoint"], "keys": {"p256dh": s["p256dh"], "auth": s["auth"]}}
         result = sender(info, payload)
-        if result == "gone":  # the browser says this subscription no longer exists
-            con.execute("DELETE FROM push_subscriptions WHERE id = ?", (s["id"],))
-        ok = ok or result == "sent"
-    return "sent" if ok else "failed"
+        status, reason = result if isinstance(result, tuple) else (result, "")
+        if status == "gone":  # the push service says this subscription no longer exists
+            if now - datetime.fromisoformat(s["created_at"]) < NEW_SUBSCRIPTION_GRACE:
+                status = "pending"
+                reason = "the push service is still activating this device; try again in a minute"
+            else:
+                con.execute("DELETE FROM push_subscriptions WHERE id = ?", (s["id"],))
+        if details is not None:
+            details.append({"status": status, "reason": reason, "host": _host(s["endpoint"])})
+        statuses.append(status)
+    if "sent" in statuses:
+        return "sent"
+    return "pending" if "pending" in statuses else "failed"
+
+
+def _host(endpoint: str) -> str:
+    return endpoint.split("/")[2] if "//" in endpoint else "?"
 
 
 def vapid_keys(path: Path) -> dict:
@@ -126,14 +151,16 @@ def vapid_keys(path: Path) -> dict:
 
 
 def make_web_push_sender(keys_path: Path):
-    """Build the real sender. Returns 'sent', 'gone' (subscription expired) or 'failed'."""
+    """Build the real sender. Returns (status, reason): status is 'sent', 'gone' (expired) or 'failed'."""
 
-    def send(subscription_info: dict, payload: dict) -> str:
+    def send(subscription_info: dict, payload: dict) -> tuple[str, str]:
         try:
             from py_vapid import Vapid
             from pywebpush import WebPushException, webpush
-        except ImportError:
-            return "failed"
+        except ImportError as e:
+            log.error("Web Push unavailable (%s). Run: pip install -r requirements.txt", e)
+            return "failed", f"server is missing a library: {e}"
+        host = _host(subscription_info.get("endpoint", ""))
         try:
             webpush(
                 subscription_info=subscription_info,
@@ -141,12 +168,19 @@ def make_web_push_sender(keys_path: Path):
                 vapid_private_key=Vapid.from_pem(vapid_keys(keys_path)["private_pem"].encode()),
                 vapid_claims={"sub": os.environ.get("VAPID_SUBJECT", "mailto:noreply@towardthelight.app")},
                 ttl=86400,
+                timeout=15,
             )
-            return "sent"
+            return "sent", ""
         except WebPushException as e:
             code = getattr(e.response, "status_code", None)
-            return "gone" if code in (404, 410) else "failed"
-        except Exception:
-            return "failed"
+            body = (getattr(e.response, "text", "") or str(e)).strip()[:300]
+            if code in (404, 410):
+                log.warning("Push subscription at %s is gone (%s): %s; removing it", host, code, body)
+                return "gone", f"{code}: {body}"
+            log.warning("Push to %s rejected (%s): %s", host, code, body)
+            return "failed", f"{code}: {body}"
+        except Exception as e:  # network errors, bad keys, ...
+            log.warning("Push to %s failed: %s: %s", host, type(e).__name__, e)
+            return "failed", f"{type(e).__name__}: {e}"
 
     return send

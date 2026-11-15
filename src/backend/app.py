@@ -18,6 +18,14 @@ import notifications
 
 DEFAULT_DB = Path(__file__).parent / "data" / "toward_the_light.db"
 
+if os.name == "nt":
+    # On Windows, SO_REUSEADDR lets a second server bind a port that is already taken, without any error,
+    # and requests are then split between the two at random (e.g. "Enable" hits one server, "Send a test"
+    # the other). Make a second `flask run` on a busy port fail with "address already in use" instead.
+    from werkzeug.serving import BaseWSGIServer
+
+    BaseWSGIServer.allow_reuse_address = False
+
 
 def create_app(config: dict | None = None) -> Flask:
     app = Flask(__name__)
@@ -492,9 +500,10 @@ def register_routes(app: Flask) -> None:
         u = current_user()
         payload = {"title": "Toward the Light", "body": f"{u['preferred_name']}, notifications are working. ✨",
                    "url": "/#/", "tag": "test"}
-        status = notifications.deliver_push(db.get_db(), u["id"], payload, app.config["PUSH_SENDER"])
+        details: list[dict] = []
+        status = notifications.deliver_push(db.get_db(), u["id"], payload, app.config["PUSH_SENDER"], details)
         db.get_db().commit()
-        return jsonify(status=status)
+        return jsonify(status=status, devices=details)
 
 
 # ---------------------------------------------------------------- CLI

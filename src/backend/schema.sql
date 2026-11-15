@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS notifications (
     body           TEXT    NOT NULL,
     created_at     TEXT    NOT NULL,
     read_at        TEXT,
-    push_status    TEXT    NOT NULL DEFAULT 'none',     -- none | sent | failed | no_subscription
+    push_status    TEXT    NOT NULL DEFAULT 'none',     -- none | sent | pending | failed | no_subscription
     UNIQUE (book_id, milestone_days, activity_at)
 );
 CREATE INDEX IF NOT EXISTS idx_notifications_user ON notifications(user_id, created_at);

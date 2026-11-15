@@ -150,7 +150,22 @@
       return;
     }
     if (st.permission === 'denied') {
-      box.innerHTML = '<p class="hint">Notifications are blocked for this site. Allow them in your browser or phone settings, then reopen this sheet.</p>';
+      box.innerHTML = `<p class="hint">Notifications are blocked for this site, so the browser will not even ask. To allow them in Chrome:</p>
+        <ol class="hint steps">
+          <li>Open a new tab and paste: <code class="copy">chrome://settings/content/siteDetails?site=${esc(encodeURIComponent(location.origin))}</code></li>
+          <li>Set <b>Notifications</b> to <b>Allow</b>.</li>
+          <li>Come back here and reload the page.</li>
+        </ol>
+        <button type="button" class="btn small" data-copy>Copy that address</button>`;
+      box.querySelector('[data-copy]').addEventListener('click', async () => {
+        const text = `chrome://settings/content/siteDetails?site=${encodeURIComponent(location.origin)}`;
+        try {
+          await navigator.clipboard.writeText(text);
+          toast('Copied. Paste it into a new tab.');
+        } catch (e) {
+          toast(text);
+        }
+      });
       return;
     }
     box.innerHTML = st.subscribed
@@ -172,7 +187,12 @@
       });
     act('[data-push-on]', Store.enablePush, 'Notifications enabled');
     act('[data-push-off]', Store.disablePush, 'Notifications turned off here');
-    act('[data-push-test]', Store.testPush, (r) => (r.status === 'sent' ? 'Test sent, check your notifications' : `Test not delivered (${r.status})`));
+    act('[data-push-test]', Store.testPush, (r) => {
+      if (r.status === 'sent') return 'Test sent, check your notifications';
+      const reason = (r.devices || []).map((d) => d.reason).find(Boolean);
+      if (r.status === 'pending') return `Almost ready: ${reason}`;
+      return `Test not delivered${reason ? `: ${reason}` : ` (${r.status})`}`;
+    });
   }
 
   function greeting() {

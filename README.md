@@ -134,3 +134,10 @@ If a tunnel domain is blocked on your network, Android Chrome can treat your PC'
 4. Open `http://10.0.0.244:5173`, tap the gear, then "Enable on this device".
 
 If the page does not load, Windows Firewall may be blocking inbound port 5173 (allow Node.js on your network profile), or the router may isolate Wi-Fi clients from each other. iPhones cannot do this and need real HTTPS.
+
+### Troubleshooting notifications
+
+- **"Send a test" says why.** The toast shows the push service's own answer (for example `410: ...`), and the settings sheet shows a diagnostics line.
+- **"Notifications are blocked for this site".** Chrome is set to block notifications (or you once clicked Block), so it will not ask. Open `chrome://settings/content/siteDetails?site=http%3A%2F%2Flocalhost%3A5173` and set Notifications to Allow. The settings sheet has a button that copies this address.
+- **"Almost ready: ... try again in a minute".** Right after notifications are turned off and on again, Google's push service briefly reports the new subscription as expired. The server keeps it for 10 minutes instead of deleting it, and pushes work again within seconds.
+- **Run only one backend.** On Windows, two Flask servers could previously share port 5000 silently, splitting requests between them at random. A second `flask run` on a busy port now fails with "Port 5000 is in use by another program". Stop the old one first.

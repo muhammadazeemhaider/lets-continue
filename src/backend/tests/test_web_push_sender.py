@@ -45,12 +45,14 @@ def push_service():
 def test_real_sender_encrypts_signs_and_maps_statuses(tmp_path, push_service):
     sub, seen, status = push_service
     send = N.make_web_push_sender(tmp_path / "vapid.json")
-    assert send(sub, {"title": "t", "body": "b", "url": "/#/book/1"}) == "sent"
+    assert send(sub, {"title": "t", "body": "b", "url": "/#/book/1"}) == ("sent", "")
     assert seen["authorization"].lower().startswith("vapid ") and seen["encoding"] == "aes128gcm" and seen["bytes"] > 0
     status["code"] = 410
-    assert send(sub, {"title": "t"}) == "gone"  # expired subscriptions get cleaned up
+    st, reason = send(sub, {"title": "t"})
+    assert st == "gone" and reason.startswith("410")  # expired subscriptions get cleaned up
     status["code"] = 500
-    assert send(sub, {"title": "t"}) == "failed"
+    st, reason = send(sub, {"title": "t"})
+    assert st == "failed" and reason.startswith("500")
 
 
 def test_vapid_keys_are_created_once(tmp_path):

@@ -189,22 +189,55 @@ def test_no_subscription_still_creates_inbox_item(ctx):
     assert check(c)[0]["push"] == "no_subscription" and sender.sent == []
 
 
+def sub_count(app):
+    con = dbmod.connect(app.config["DATABASE"])
+    n = con.execute("SELECT COUNT(*) FROM push_subscriptions").fetchone()[0]
+    con.close()
+    return n
+
+
+def backdate_subscriptions(app, minutes):
+    ts = (datetime.now(timezone.utc) - timedelta(minutes=minutes)).isoformat(timespec="seconds")
+    con = dbmod.connect(app.config["DATABASE"])
+    con.execute("UPDATE push_subscriptions SET created_at = ?", (ts,))
+    con.commit()
+    con.close()
+
+
 def test_expired_subscription_is_removed(ctx):
     app, c, sender = ctx
     c.post("/api/push/subscribe", json=SUB)
-    sender.result = "gone"
+    backdate_subscriptions(app, 60)  # an old device that has since unsubscribed
+    sender.result = ("gone", "410: push subscription has unsubscribed or expired.")
     bid = new_book(c)
     age(app, bid, 3)
     assert check(c)[0]["push"] == "failed"
-    con = dbmod.connect(app.config["DATABASE"])
-    assert con.execute("SELECT COUNT(*) FROM push_subscriptions").fetchone()[0] == 0
+    assert sub_count(app) == 0
+
+
+def test_brand_new_subscription_survives_a_transient_410(ctx):
+    """FCM briefly answers 410 right after a browser re-subscribes (notifications toggled off and on).
+    That must not delete the new, valid subscription."""
+    app, c, sender = ctx
+    c.post("/api/push/subscribe", json=SUB)
+    sender.result = ("gone", "410: push subscription has unsubscribed or expired.")
+    r = c.post("/api/push/test").get_json()
+    assert r["status"] == "pending" and "try again" in r["devices"][0]["reason"]
+    assert sub_count(app) == 1  # kept
+    sender.result = "sent"  # a minute later the push service has caught up
+    assert c.post("/api/push/test").get_json()["status"] == "sent"
 
 
 def test_unsubscribe_and_test_endpoint(ctx):
     _, c, sender = ctx
     assert c.post("/api/push/test").get_json()["status"] == "no_subscription"
     c.post("/api/push/subscribe", json=SUB)
-    assert c.post("/api/push/test").get_json()["status"] == "sent" and sender.sent
+    r = c.post("/api/push/test").get_json()
+    assert r["status"] == "sent" and sender.sent and r["devices"] == [{"status": "sent", "reason": "", "host": "push.example"}]
+    sender.result = ("failed", "403: bad key")
+    r = c.post("/api/push/test").get_json()
+    assert r["status"] == "failed" and r["devices"][0]["reason"] == "403: bad key"
+    sender.result = "sent"
     assert c.post("/api/push/unsubscribe", json={"endpoint": SUB["endpoint"]}).status_code == 204
     assert c.post("/api/push/test").get_json()["status"] == "no_subscription"
 

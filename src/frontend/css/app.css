@@ -209,3 +209,6 @@ textarea { resize: vertical; min-height: 80px; font-family: var(--font-serif); }
 .push-box { margin: 12px 0 4px; padding: 12px 14px; border-radius: 12px; border: 1px dashed var(--line); display: grid; gap: 10px; }
 .hint { color: var(--muted); font-size: .86rem; margin: 6px 0; }
 .hint.ok { color: var(--gold); margin: 0; }
+.steps { margin: 4px 0 8px; padding-left: 20px; display: grid; gap: 4px; }
+.copy { display: inline-block; max-width: 100%; overflow-wrap: anywhere; background: rgba(255, 255, 255, .08); padding: 2px 6px; border-radius: 6px; font-size: .78rem; }
+.diag { font-size: .72rem; opacity: .7; overflow-wrap: anywhere; }
