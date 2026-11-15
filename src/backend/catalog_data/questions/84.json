@@ -1,0 +1,1071 @@
+{
+ "slug": "gutenberg:84",
+ "title": "Frankenstein",
+ "source": "text",
+ "chapters": {
+  "1": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Margaret, if you had seen the man who thus capitulated for his safety, your surprise would have been boundless.",
+     "Upon hearing this he appeared satisfied and consented to come on board.",
+     "This expedition has been the favourite dream of my early years.",
+     "These questions continually recurred, but I was unable to solve them."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “This expedition has been the favourite dream of my early years.”",
+    "evidence": "This expedition has been the favourite dream of my early years."
+   },
+   {
+    "prompt": "Fill in the missing name: “I am already far north of _____, and as I walk in the streets of Petersburgh, I feel a cold northern breeze play upon my cheeks, which braces my nerves and fills me with delight.”",
+    "options": [
+     "Switzerland",
+     "Geneva",
+     "London",
+     "Safie"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “I am already far north of London, and as I walk in the streets of Petersburgh, I feel a cold northern breeze play upon my cheeks, which braces my nerves and fills me with delight.”",
+    "evidence": "I am already far north of London, and as I walk in the streets of Petersburgh, I feel a cold northern breeze play upon my cheeks, which braces my nerves and fills me with delight."
+   },
+   {
+    "prompt": "Fill in the missing name: “There, _____, the sun is for ever visible, its broad disk just skirting the horizon and diffusing a perpetual splendour.”",
+    "options": [
+     "Switzerland",
+     "Mont",
+     "Margaret",
+     "Geneva"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “There, Margaret, the sun is for ever visible, its broad disk just skirting the horizon and diffusing a perpetual splendour.”",
+    "evidence": "There, Margaret, the sun is for ever visible, its broad disk just skirting the horizon and diffusing a perpetual splendour."
+   }
+  ],
+  "2": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The pines are not tall or luxuriant, but they are sombre and add an air of severity to the scene.",
+     "We were affectionate playfellows during childhood, and, I believe, dear and valued friends to one another as we grew older.",
+     "You are younger; yet I do not suppose, possessed as you are of a competent fortune, that an early marriage would at all interfere with any future…",
+     "He is an Englishman, and in the midst of national and professional prejudices, unsoftened by cultivation, retains some of the noblest endowments of…"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “He is an Englishman, and in the midst of national and professional prejudices, unsoftened by cultivation, retains some of the noblest endowments of humanity.”",
+    "evidence": "He is an Englishman, and in the midst of national and professional prejudices, unsoftened by cultivation, retains some of the noblest endowments of humanity."
+   },
+   {
+    "prompt": "Fill in the missing name: “Well, these are useless complaints; I shall certainly find no friend on the wide ocean, nor even here in _____, among merchants and seamen.”",
+    "options": [
+     "Arabian",
+     "Safie",
+     "Agatha",
+     "Archangel"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Well, these are useless complaints; I shall certainly find no friend on the wide ocean, nor even here in Archangel, among merchants and seamen.”",
+    "evidence": "Well, these are useless complaints; I shall certainly find no friend on the wide ocean, nor even here in Archangel, among merchants and seamen."
+   },
+   {
+    "prompt": "Fill in the missing name: “Shall I meet you again, after having traversed immense seas, and returned by the most southern cape of Africa or _____?”",
+    "options": [
+     "England",
+     "America",
+     "Frankenstein",
+     "Justine"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Shall I meet you again, after having traversed immense seas, and returned by the most southern cape of Africa or America?”",
+    "evidence": "Shall I meet you again, after having traversed immense seas, and returned by the most southern cape of Africa or America?"
+   }
+  ],
+  "3": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Their icy and glittering peaks shone in the sunlight over the clouds.",
+     "Oh, that some encouraging voice would answer in the affirmative!",
+     "One of the phenomena which had peculiarly attracted my attention was the structure of the human frame, and, indeed, any animal endued with life.",
+     "One or two stiff gales and the springing of a leak are accidents which experienced navigators scarcely remember to record, and I shall be well…"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “One or two stiff gales and the springing of a leak are accidents which experienced navigators scarcely remember to record, and I shall be well content if nothing worse happen to us during our voyage.”",
+    "evidence": "One or two stiff gales and the springing of a leak are accidents which experienced navigators scarcely remember to record, and I shall be well content if nothing worse happen to us during our voyage."
+   },
+   {
+    "prompt": "Fill in the missing name: “This letter will reach _____ by a merchantman now on its homeward voyage from Archangel; more fortunate than I, who may not see my native land, perhaps, for many years.”",
+    "options": [
+     "Geneva",
+     "William",
+     "Agatha",
+     "England"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “This letter will reach England by a merchantman now on its homeward voyage from Archangel; more fortunate than I, who may not see my native land, perhaps, for many years.”",
+    "evidence": "This letter will reach England by a merchantman now on its homeward voyage from Archangel; more fortunate than I, who may not see my native land, perhaps, for many years."
+   },
+   {
+    "prompt": "Fill in the missing word: “I write a few lines in haste to say that I am safe—and well _____ on my voyage.”",
+    "options": [
+     "attended",
+     "degradation",
+     "advanced",
+     "overcome"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “I write a few lines in haste to say that I am safe—and well advanced on my voyage.”",
+    "evidence": "I write a few lines in haste to say that I am safe—and well advanced on my voyage."
+   }
+  ],
+  "4": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "We accordingly brought him back to the deck and restored him to animation by rubbing him with brandy and forcing him to swallow a small quantity.",
+     "A considerable period elapsed before I discovered one of the causes of the uneasiness of this amiable family: it was poverty, and they suffered that…",
+     "It was a lady on horseback, accompanied by a country-man as a guide.",
+     "By the by, I mean to lecture you a little upon their account myself."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “We accordingly brought him back to the deck and restored him to animation by rubbing him with brandy and forcing him to swallow a small quantity.”",
+    "evidence": "We accordingly brought him back to the deck and restored him to animation by rubbing him with brandy and forcing him to swallow a small quantity."
+   },
+   {
+    "prompt": "Fill in the missing name: “Yesterday the stranger said to me, “You may easily perceive, Captain _____, that I have suffered great and unparalleled misfortunes.”",
+    "options": [
+     "Switzerland",
+     "Turk",
+     "Ingolstadt",
+     "Walton"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Yesterday the stranger said to me, “You may easily perceive, Captain Walton, that I have suffered great and unparalleled misfortunes.”",
+    "evidence": "Yesterday the stranger said to me, “You may easily perceive, Captain Walton, that I have suffered great and unparalleled misfortunes."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, if you had seen the man who thus capitulated for his safety, your surprise would have been boundless.”",
+    "options": [
+     "Safie",
+     "Margaret",
+     "William",
+     "Henry"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Margaret, if you had seen the man who thus capitulated for his safety, your surprise would have been boundless.”",
+    "evidence": "Margaret, if you had seen the man who thus capitulated for his safety, your surprise would have been boundless."
+   }
+  ],
+  "5": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I remember, the first time that I did this, the young woman, when she opened the door in the morning, appeared greatly astonished on seeing a great…",
+     "Perhaps during former years he had suffered from the late-discovered unworthiness of one beloved and so was disposed to set a greater value on tried…",
+     "Hence there is less distinction between the several classes of its inhabitants; and the lower orders, being neither so poor nor so despised, their…",
+     "I shall satiate my ardent curiosity with the sight of a part of the world never before visited, and may tread a land never before imprinted by the…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Perhaps during former years he had suffered from the late-discovered unworthiness of one beloved and so was disposed to set a greater value on tried worth.”",
+    "evidence": "Perhaps during former years he had suffered from the late-discovered unworthiness of one beloved and so was disposed to set a greater value on tried worth."
+   },
+   {
+    "prompt": "Fill in the missing name: “On the evening previous to her being brought to my home, my mother had said playfully, “I have a pretty present for my _____—tomorrow he shall have it.”",
+    "options": [
+     "Arabian",
+     "Victor",
+     "Geneva",
+     "England"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “On the evening previous to her being brought to my home, my mother had said playfully, “I have a pretty present for my Victor—tomorrow he shall have it.”",
+    "evidence": "On the evening previous to her being brought to my home, my mother had said playfully, “I have a pretty present for my Victor—tomorrow he shall have it."
+   },
+   {
+    "prompt": "Fill in the missing name: “When I was about five years old, while making an excursion beyond the frontiers of _____, they passed a week on the shores of the Lake of Como.”",
+    "options": [
+     "Victor",
+     "Italy",
+     "Switzerland",
+     "Arabian"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “When I was about five years old, while making an excursion beyond the frontiers of Italy, they passed a week on the shores of the Lake of Como.”",
+    "evidence": "When I was about five years old, while making an excursion beyond the frontiers of Italy, they passed a week on the shores of the Lake of Como."
+   }
+  ],
+  "6": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I saw no cause for their unhappiness, but I was deeply affected by it.",
+     "As it drew nearer I observed that it was the Swiss diligence; it stopped just where I was standing, and on the door being opened, I perceived Henry…",
+     "The lady was dressed in a dark suit and covered with a thick black veil.",
+     "The saintly soul of Elizabeth shone like a shrine-dedicated lamp in our peaceful home."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “The saintly soul of Elizabeth shone like a shrine-dedicated lamp in our peaceful home.”",
+    "evidence": "The saintly soul of Elizabeth shone like a shrine-dedicated lamp in our peaceful home."
+   },
+   {
+    "prompt": "Fill in the missing name: “It advanced from behind the mountains of _____, and the thunder burst at once with frightful loudness from various quarters of the heavens.”",
+    "options": [
+     "Jura",
+     "William",
+     "Frankenstein",
+     "Arabian"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “It advanced from behind the mountains of Jura, and the thunder burst at once with frightful loudness from various quarters of the heavens.”",
+    "evidence": "It advanced from behind the mountains of Jura, and the thunder burst at once with frightful loudness from various quarters of the heavens."
+   },
+   {
+    "prompt": "Fill in the missing name: “When I was about fifteen years old we had retired to our house near _____, when we witnessed a most violent and terrible thunderstorm.”",
+    "options": [
+     "Henry",
+     "Turk",
+     "Belrive",
+     "Arabian"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “When I was about fifteen years old we had retired to our house near Belrive, when we witnessed a most violent and terrible thunderstorm.”",
+    "evidence": "When I was about fifteen years old we had retired to our house near Belrive, when we witnessed a most violent and terrible thunderstorm."
+   }
+  ],
+  "7": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I go; but remember, I shall be with you on your wedding-night.",
+     "I determined to go without a guide, for I was well acquainted with the path, and the presence of another would destroy the solitary grandeur of the…",
+     "The sight of the awful and majestic in nature had indeed always the effect of solemnising my mind and causing me to forget the passing cares of life.",
+     "Henry deeply felt the misfortune of being debarred from a liberal education."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Henry deeply felt the misfortune of being debarred from a liberal education.”",
+    "evidence": "Henry deeply felt the misfortune of being debarred from a liberal education."
+   },
+   {
+    "prompt": "Fill in the missing name: “She attended her sickbed; her watchful attentions triumphed over the malignity of the distemper—_____ was saved, but the consequences of this imprudence were fatal to her preserver.”",
+    "options": [
+     "Moritz",
+     "Ernest",
+     "Elizabeth",
+     "Felix"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “She attended her sickbed; her watchful attentions triumphed over the malignity of the distemper—Elizabeth was saved, but the consequences of this imprudence were fatal to her preserver.”",
+    "evidence": "She attended her sickbed; her watchful attentions triumphed over the malignity of the distemper—Elizabeth was saved, but the consequences of this imprudence were fatal to her preserver."
+   },
+   {
+    "prompt": "Fill in the missing name: “He heard with attention the little narration concerning my studies and smiled at the names of _____ Agrippa and Paracelsus, but without the contempt that M.”",
+    "options": [
+     "Victor",
+     "Justine",
+     "Geneva",
+     "Cornelius"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He heard with attention the little narration concerning my studies and smiled at the names of Cornelius Agrippa and Paracelsus, but without the contempt that M.”",
+    "evidence": "He heard with attention the little narration concerning my studies and smiled at the names of Cornelius Agrippa and Paracelsus, but without the contempt that M."
+   }
+  ],
+  "8": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I hired men to row and took an oar myself, for I had always experienced relief from mental torment in bodily exercise.",
+     "You are younger; yet I do not suppose, possessed as you are of a competent fortune, that an early marriage would at all interfere with any future…",
+     "I followed, when I could, the courses of the rivers; but the dæmon generally avoided these, as it was here that the population of the country…",
+     "Darkness had no effect upon my fancy, and a churchyard was to me merely the receptacle of bodies deprived of life, which, from being the seat of…"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Darkness had no effect upon my fancy, and a churchyard was to me merely the receptacle of bodies deprived of life, which, from being the seat of beauty and strength, had become food for the worm.”",
+    "evidence": "Darkness had no effect upon my fancy, and a churchyard was to me merely the receptacle of bodies deprived of life, which, from being the seat of beauty and strength, had become food for the worm."
+   },
+   {
+    "prompt": "Fill in the missing name: “Two years passed in this manner, during which I paid no visit to _____, but was engaged, heart and soul, in the pursuit of some discoveries which I hoped to make.”",
+    "options": [
+     "Geneva",
+     "Lacey",
+     "Mont",
+     "Turk"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Two years passed in this manner, during which I paid no visit to Geneva, but was engaged, heart and soul, in the pursuit of some discoveries which I hoped to make.”",
+    "evidence": "Two years passed in this manner, during which I paid no visit to Geneva, but was engaged, heart and soul, in the pursuit of some discoveries which I hoped to make."
+   },
+   {
+    "prompt": "Fill in the missing name: “I was like the _____ who had been buried with the dead and found a passage to life, aided only by one glimmering and seemingly ineffectual light.”",
+    "options": [
+     "William",
+     "Arabian",
+     "Mont",
+     "Switzerland"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I was like the Arabian who had been buried with the dead and found a passage to life, aided only by one glimmering and seemingly ineffectual light.”",
+    "evidence": "I was like the Arabian who had been buried with the dead and found a passage to life, aided only by one glimmering and seemingly ineffectual light."
+   }
+  ],
+  "9": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "How did I cling to their dear forms, as sometimes they haunted even my waking hours, and persuade myself that they still lived!",
+     "To go instantly to Geneva: come with me, Henry, to order the horses.",
+     "It was your journal of the four months that preceded my creation.",
+     "] Continuing thus, I came at length opposite to the inn at which the various diligences and carriages usually stopped."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “] Continuing thus, I came at length opposite to the inn at which the various diligences and carriages usually stopped.”",
+    "evidence": "] Continuing thus, I came at length opposite to the inn at which the various diligences and carriages usually stopped."
+   },
+   {
+    "prompt": "Fill in the missing name: “As it drew nearer I observed that it was the _____ diligence; it stopped just where I was standing, and on the door being opened, I perceived Henry Clerval, who, on seeing me, instantly sprung out.”",
+    "options": [
+     "Arabian",
+     "William",
+     "Safie",
+     "Swiss"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “As it drew nearer I observed that it was the Swiss diligence; it stopped just where I was standing, and on the door being opened, I perceived Henry Clerval, who, on seeing me, instantly sprung out.”",
+    "evidence": "As it drew nearer I observed that it was the Swiss diligence; it stopped just where I was standing, and on the door being opened, I perceived Henry Clerval, who, on seeing me, instantly sprung out."
+   },
+   {
+    "prompt": "Fill in the missing name: “I could hardly believe that so great a good fortune could have befallen me, but when I became assured that my enemy had indeed fled, I clapped my hands for joy and ran down to _____.”",
+    "options": [
+     "Geneva",
+     "Agatha",
+     "Mont",
+     "Clerval"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I could hardly believe that so great a good fortune could have befallen me, but when I became assured that my enemy had indeed fled, I clapped my hands for joy and ran down to Clerval.”",
+    "evidence": "I could hardly believe that so great a good fortune could have befallen me, but when I became assured that my enemy had indeed fled, I clapped my hands for joy and ran down to Clerval."
+   }
+  ],
+  "10": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Felix had procured passports in the name of his father, sister, and himself.",
+     "I passed whole days on the lake alone in a little boat, watching the clouds and listening to the rippling of the waves, silent and listless.",
+     "He lost no time in endeavouring to seek him out, with the hope of persuading him to begin the world again through his credit and assistance.",
+     "When my dearest aunt died every one was too much occupied in their own grief to notice poor Justine, who had attended her during her illness with…"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “When my dearest aunt died every one was too much occupied in their own grief to notice poor Justine, who had attended her during her illness with the most anxious affection.”",
+    "evidence": "When my dearest aunt died every one was too much occupied in their own grief to notice poor Justine, who had attended her during her illness with the most anxious affection."
+   },
+   {
+    "prompt": "Fill in the missing name: “My return had only been delayed so long, from an unwillingness to leave _____ in a strange place, before he had become acquainted with any of its inhabitants.”",
+    "options": [
+     "William",
+     "Mont",
+     "Ingolstadt",
+     "Clerval"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “My return had only been delayed so long, from an unwillingness to leave Clerval in a strange place, before he had become acquainted with any of its inhabitants.”",
+    "evidence": "My return had only been delayed so long, from an unwillingness to leave Clerval in a strange place, before he had become acquainted with any of its inhabitants."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ rejoiced in my gaiety, and sincerely sympathised in my feelings: he exerted himself to amuse me, while he expressed the sensations that filled his soul.”",
+    "options": [
+     "Mont",
+     "Lacey",
+     "Henry",
+     "Safie"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Henry rejoiced in my gaiety, and sincerely sympathised in my feelings: he exerted himself to amuse me, while he expressed the sensations that filled his soul.”",
+    "evidence": "Henry rejoiced in my gaiety, and sincerely sympathised in my feelings: he exerted himself to amuse me, while he expressed the sensations that filled his soul."
+   }
+  ],
+  "11": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Clerval spoke thus as we hurried through the streets; the words impressed themselves on my mind and I remembered them afterwards in solitude.",
+     "Everybody believed that poor girl to be guilty; and if she could have committed the crime for which she suffered, assuredly she would have been the…",
+     "I had an obscure feeling that all was not over and that he would still commit some signal crime, which by its enormity should almost efface the…",
+     "His gentleness was never tinged by dogmatism, and his instructions were given with an air of frankness and good nature that banished every idea of…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Clerval spoke thus as we hurried through the streets; the words impressed themselves on my mind and I remembered them afterwards in solitude.”",
+    "evidence": "Clerval spoke thus as we hurried through the streets; the words impressed themselves on my mind and I remembered them afterwards in solitude."
+   },
+   {
+    "prompt": "Fill in the missing name: “We returned again, with torches; for I could not rest, when I thought that my sweet boy had lost himself, and was exposed to all the damps and dews of night; _____ also suffered extreme anguish.”",
+    "options": [
+     "Felix",
+     "Elizabeth",
+     "Ernest",
+     "Moritz"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “We returned again, with torches; for I could not rest, when I thought that my sweet boy had lost himself, and was exposed to all the damps and dews of night; Elizabeth also suffered extreme anguish.”",
+    "evidence": "We returned again, with torches; for I could not rest, when I thought that my sweet boy had lost himself, and was exposed to all the damps and dews of night; Elizabeth also suffered extreme anguish."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, who had watched my countenance as I read this letter, was surprised to observe the despair that succeeded the joy I at first expressed on receiving news from my friends.”",
+    "options": [
+     "Geneva",
+     "Justine",
+     "Clerval",
+     "William"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Clerval, who had watched my countenance as I read this letter, was surprised to observe the despair that succeeded the joy I at first expressed on receiving news from my friends.”",
+    "evidence": "Clerval, who had watched my countenance as I read this letter, was surprised to observe the despair that succeeded the joy I at first expressed on receiving news from my friends."
+   }
+  ],
+  "12": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "She had no temptation for such an action; as to the bauble on which the chief proof rests, if she had earnestly desired it, I should have willingly…",
+     "Soon a gentle light stole over the heavens and gave me a sensation of pleasure.",
+     "It moved every feeling of wonder and awe that the picture of an omnipotent God warring with his creatures was capable of exciting.",
+     "The wet wood which I had placed near the heat dried and itself became inflamed."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “She had no temptation for such an action; as to the bauble on which the chief proof rests, if she had earnestly desired it, I should have willingly given it to her, so much do I esteem and value her.”",
+    "evidence": "She had no temptation for such an action; as to the bauble on which the chief proof rests, if she had earnestly desired it, I should have willingly given it to her, so much do I esteem and value her."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ saw even this last resource, her excellent dispositions and irreproachable conduct, about to fail the accused, when, although violently agitated, she desired permission to address the court.”",
+    "options": [
+     "Ernest",
+     "Moritz",
+     "Elizabeth",
+     "Felix"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Elizabeth saw even this last resource, her excellent dispositions and irreproachable conduct, about to fail the accused, when, although violently agitated, she desired permission to address the court.”",
+    "evidence": "Elizabeth saw even this last resource, her excellent dispositions and irreproachable conduct, about to fail the accused, when, although violently agitated, she desired permission to address the court."
+   },
+   {
+    "prompt": "Fill in the missing name: “That she had been bewildered when questioned by the market-woman was not surprising, since she had passed a sleepless night and the fate of poor _____ was yet uncertain.”",
+    "options": [
+     "Geneva",
+     "William",
+     "Clerval",
+     "Henry"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “That she had been bewildered when questioned by the market-woman was not surprising, since she had passed a sleepless night and the fate of poor William was yet uncertain.”",
+    "evidence": "That she had been bewildered when questioned by the market-woman was not surprising, since she had passed a sleepless night and the fate of poor William was yet uncertain."
+   }
+  ],
+  "13": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "My father’s health was deeply shaken by the horror of the recent events.",
+     "One or two stiff gales and the springing of a leak are accidents which experienced navigators scarcely remember to record, and I shall be well…",
+     "The spirit of elder days found a dwelling here, and we delighted to trace its footsteps.",
+     "The prospect of marrying a Christian and remaining in a country where women were allowed to take a rank in society was enchanting to her."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “My father’s health was deeply shaken by the horror of the recent events.”",
+    "evidence": "My father’s health was deeply shaken by the horror of the recent events."
+   },
+   {
+    "prompt": "Fill in the missing name: “But it was augmented and rendered sublime by the mighty _____, whose white and shining pyramids and domes towered above all, as belonging to another earth, the habitations of another race of beings.”",
+    "options": [
+     "Victor",
+     "Agatha",
+     "Alps",
+     "England"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “But it was augmented and rendered sublime by the mighty Alps, whose white and shining pyramids and domes towered above all, as belonging to another earth, the habitations of another race of beings.”",
+    "evidence": "But it was augmented and rendered sublime by the mighty Alps, whose white and shining pyramids and domes towered above all, as belonging to another earth, the habitations of another race of beings."
+   },
+   {
+    "prompt": "Fill in the missing name: “For a short space of time I remained at the window watching the pallid lightnings that played above _____ Blanc and listening to the rushing of the Arve, which pursued its noisy way beneath.”",
+    "options": [
+     "Victor",
+     "Arabian",
+     "Geneva",
+     "Mont"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “For a short space of time I remained at the window watching the pallid lightnings that played above Mont Blanc and listening to the rushing of the Arve, which pursued its noisy way beneath.”",
+    "evidence": "For a short space of time I remained at the window watching the pallid lightnings that played above Mont Blanc and listening to the rushing of the Arve, which pursued its noisy way beneath."
+   }
+  ],
+  "14": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "He bitterly deplored the false pride which led his friend to a conduct so little worthy of the affection that united them.",
+     "From the side where I now stood Montanvert was exactly opposite, at the distance of a league; and above it rose Mont Blanc, in awful majesty.",
+     "I grasped his hand, and in a moment forgot my horror and misfortune; I felt suddenly, and for the first time during many months, calm and serene joy.",
+     "Our situation was somewhat dangerous, especially as we were compassed round by a very thick fog."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “From the side where I now stood Montanvert was exactly opposite, at the distance of a league; and above it rose Mont Blanc, in awful majesty.”",
+    "evidence": "From the side where I now stood Montanvert was exactly opposite, at the distance of a league; and above it rose Mont Blanc, in awful majesty."
+   },
+   {
+    "prompt": "Fill in the missing name: “Oh, _____, be not equitable to every other and trample upon me alone, to whom thy justice, and even thy clemency and affection, is most due.”",
+    "options": [
+     "Ingolstadt",
+     "Victor",
+     "Geneva",
+     "Frankenstein"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Oh, Frankenstein, be not equitable to every other and trample upon me alone, to whom thy justice, and even thy clemency and affection, is most due.”",
+    "evidence": "Oh, Frankenstein, be not equitable to every other and trample upon me alone, to whom thy justice, and even thy clemency and affection, is most due."
+   },
+   {
+    "prompt": "Fill in the missing name: “Remember that I am thy creature; I ought to be thy _____, but I am rather the fallen angel, whom thou drivest from joy for no misdeed.”",
+    "options": [
+     "Arabian",
+     "Adam",
+     "Victor",
+     "Switzerland"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Remember that I am thy creature; I ought to be thy Adam, but I am rather the fallen angel, whom thou drivest from joy for no misdeed.”",
+    "evidence": "Remember that I am thy creature; I ought to be thy Adam, but I am rather the fallen angel, whom thou drivest from joy for no misdeed."
+   }
+  ],
+  "15": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "In this house I chanced to find a volume of the works of Cornelius Agrippa.",
+     "The wet wood which I had placed near the heat dried and itself became inflamed.",
+     "God knows,” she said, “how entirely I am innocent.",
+     "I was alone; none were near me to dissipate the gloom and relieve me from the sickening oppression of the most terrible reveries."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “The wet wood which I had placed near the heat dried and itself became inflamed.”",
+    "evidence": "The wet wood which I had placed near the heat dried and itself became inflamed."
+   },
+   {
+    "prompt": "Fill in the missing name: “This was the forest near _____; and here I lay by the side of a brook resting from my fatigue, until I felt tormented by hunger and thirst.”",
+    "options": [
+     "Safie",
+     "Ingolstadt",
+     "Justine",
+     "Lacey"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “This was the forest near Ingolstadt; and here I lay by the side of a brook resting from my fatigue, until I felt tormented by hunger and thirst.”",
+    "evidence": "This was the forest near Ingolstadt; and here I lay by the side of a brook resting from my fatigue, until I felt tormented by hunger and thirst."
+   },
+   {
+    "prompt": "Fill in the missing word: “It is with _____ difficulty that I remember the original era of my being; all the events of that period appear confused and indistinct.”",
+    "options": [
+     "subdued",
+     "stretched",
+     "considerable",
+     "turkish"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “It is with considerable difficulty that I remember the original era of my being; all the events of that period appear confused and indistinct.”",
+    "evidence": "It is with considerable difficulty that I remember the original era of my being; all the events of that period appear confused and indistinct."
+   }
+  ],
+  "16": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "He came, therefore, sometimes to see that I was not neglected, but his visits were short and with long intervals.",
+     "This was indeed a godlike science, and I ardently desired to become acquainted with it.",
+     "Their icy and glittering peaks shone in the sunlight over the clouds.",
+     "She weeps continually, and accuses herself unjustly as the cause of his death; her words pierce my heart."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “This was indeed a godlike science, and I ardently desired to become acquainted with it.”",
+    "evidence": "This was indeed a godlike science, and I ardently desired to become acquainted with it."
+   },
+   {
+    "prompt": "Fill in the missing name: “My thoughts now became more active, and I longed to discover the motives and feelings of these lovely creatures; I was inquisitive to know why _____ appeared so miserable and Agatha so sad.”",
+    "options": [
+     "Ernest",
+     "Moritz",
+     "Elizabeth",
+     "Felix"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “My thoughts now became more active, and I longed to discover the motives and feelings of these lovely creatures; I was inquisitive to know why Felix appeared so miserable and Agatha so sad.”",
+    "evidence": "My thoughts now became more active, and I longed to discover the motives and feelings of these lovely creatures; I was inquisitive to know why Felix appeared so miserable and Agatha so sad."
+   },
+   {
+    "prompt": "Fill in the missing name: “When I slept or was absent, the forms of the venerable blind father, the gentle _____, and the excellent Felix flitted before me.”",
+    "options": [
+     "Victor",
+     "Clerval",
+     "England",
+     "Agatha"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “When I slept or was absent, the forms of the venerable blind father, the gentle Agatha, and the excellent Felix flitted before me.”",
+    "evidence": "When I slept or was absent, the forms of the venerable blind father, the gentle Agatha, and the excellent Felix flitted before me."
+   }
+  ],
+  "17": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Some hours passed thus, while they, by their countenances, expressed joy, the cause of which I did not comprehend.",
+     "Then I fancy we have seen him, for the day before we picked you up we saw some dogs drawing a sledge, with a man in it, across the ice.",
+     "We returned again, with torches; for I could not rest, when I thought that my sweet boy had lost himself, and was exposed to all the damps and dews…",
+     "I learned, from the views of social life which it developed, to admire their virtues and to deprecate the vices of mankind."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Some hours passed thus, while they, by their countenances, expressed joy, the cause of which I did not comprehend.”",
+    "evidence": "Some hours passed thus, while they, by their countenances, expressed joy, the cause of which I did not comprehend."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ was always gay and happy; she and I improved rapidly in the knowledge of language, so that in two months I began to comprehend most of the words uttered by my protectors.”",
+    "options": [
+     "Turk",
+     "Safie",
+     "Geneva",
+     "Henry"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Safie was always gay and happy; she and I improved rapidly in the knowledge of language, so that in two months I began to comprehend most of the words uttered by my protectors.”",
+    "evidence": "Safie was always gay and happy; she and I improved rapidly in the knowledge of language, so that in two months I began to comprehend most of the words uttered by my protectors."
+   },
+   {
+    "prompt": "Fill in the missing name: “On hearing this word, _____ came up hastily to the lady, who, when she saw him, threw up her veil, and I beheld a countenance of angelic beauty and expression.”",
+    "options": [
+     "Moritz",
+     "Ernest",
+     "Elizabeth",
+     "Felix"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “On hearing this word, Felix came up hastily to the lady, who, when she saw him, threw up her veil, and I beheld a countenance of angelic beauty and expression.”",
+    "evidence": "On hearing this word, Felix came up hastily to the lady, who, when she saw him, threw up her veil, and I beheld a countenance of angelic beauty and expression."
+   }
+  ],
+  "18": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Safie related that her mother was a Christian Arab, seized and made a slave by the Turks; recommended by her beauty, she had won the heart of the…",
+     "To you first entering on life, to whom care is new and agony unknown, how can you understand what I have felt and still feel?",
+     "But this discovery was so great and overwhelming that all the steps by which I had been progressively led to it were obliterated, and I beheld only…",
+     "The sun does not more certainly shine in the heavens than that which I now affirm is true."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Safie related that her mother was a Christian Arab, seized and made a slave by the Turks; recommended by her beauty, she had won the heart of the father of Safie, who married her.”",
+    "evidence": "Safie related that her mother was a Christian Arab, seized and made a slave by the Turks; recommended by her beauty, she had won the heart of the father of Safie, who married her."
+   },
+   {
+    "prompt": "Fill in the missing name: “When the news reached Leghorn that _____ was deprived of his wealth and rank, the merchant commanded his daughter to think no more of her lover, but to prepare to return to her native country.”",
+    "options": [
+     "Felix",
+     "Moritz",
+     "Elizabeth",
+     "Ernest"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “When the news reached Leghorn that Felix was deprived of his wealth and rank, the merchant commanded his daughter to think no more of her lover, but to prepare to return to her native country.”",
+    "evidence": "When the news reached Leghorn that Felix was deprived of his wealth and rank, the merchant commanded his daughter to think no more of her lover, but to prepare to return to her native country."
+   },
+   {
+    "prompt": "Fill in the missing name: “I have copies of these letters, for I found means, during my residence in the hovel, to procure the implements of writing; and the letters were often in the hands of Felix or _____.”",
+    "options": [
+     "Safie",
+     "Arabian",
+     "Agatha",
+     "Mont"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “I have copies of these letters, for I found means, during my residence in the hovel, to procure the implements of writing; and the letters were often in the hands of Felix or Agatha.”",
+    "evidence": "I have copies of these letters, for I found means, during my residence in the hovel, to procure the implements of writing; and the letters were often in the hands of Felix or Agatha."
+   }
+  ],
+  "19": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Besides, I found that my understanding improved so much with every day’s experience that I was unwilling to commence this undertaking until a few…",
+     "Reserve on such a point would be not only useless, but draw down treble misery on us all.",
+     "I walked with a quick pace, and we soon arrived at my college.",
+     "These events have affected me, God knows how deeply; but I am not so wretched as you are."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Besides, I found that my understanding improved so much with every day’s experience that I was unwilling to commence this undertaking until a few more months should have added to my sagacity.”",
+    "evidence": "Besides, I found that my understanding improved so much with every day’s experience that I was unwilling to commence this undertaking until a few more months should have added to my sagacity."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ darted forward, and with supernatural force tore me from his father, to whose knees I clung, in a transport of fury, he dashed me to the ground and struck me violently with a stick.”",
+    "options": [
+     "Moritz",
+     "Elizabeth",
+     "Felix",
+     "Ernest"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Felix darted forward, and with supernatural force tore me from his father, to whose knees I clung, in a transport of fury, he dashed me to the ground and struck me violently with a stick.”",
+    "evidence": "Felix darted forward, and with supernatural force tore me from his father, to whose knees I clung, in a transport of fury, he dashed me to the ground and struck me violently with a stick."
+   },
+   {
+    "prompt": "Fill in the missing name: “Like _____, I was apparently united by no link to any other being in existence; but his state was far different from mine in every other respect.”",
+    "options": [
+     "William",
+     "Adam",
+     "Frankenstein",
+     "Safie"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Like Adam, I was apparently united by no link to any other being in existence; but his state was far different from mine in every other respect.”",
+    "evidence": "Like Adam, I was apparently united by no link to any other being in existence; but his state was far different from mine in every other respect."
+   }
+  ],
+  "20": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "We left Oxford with regret and proceeded to Matlock, which was our next place of rest.",
+     "He walked on first, carrying a part of the fishing tackle, and his companions followed him at some distance.",
+     "I perceived that the words they spoke sometimes produced pleasure or pain, smiles or sadness, in the minds and countenances of the hearers.",
+     "Among the lessons that Felix had bestowed upon Safie, geography had not been omitted; I had learned from these the relative situations of the…"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Among the lessons that Felix had bestowed upon Safie, geography had not been omitted; I had learned from these the relative situations of the different countries of the earth.”",
+    "evidence": "Among the lessons that Felix had bestowed upon Safie, geography had not been omitted; I had learned from these the relative situations of the different countries of the earth."
+   },
+   {
+    "prompt": "Fill in the missing name: “When I thought of my friends, of the mild voice of De _____, the gentle eyes of Agatha, and the exquisite beauty of the Arabian, these thoughts vanished and a gush of tears somewhat soothed me.”",
+    "options": [
+     "Henry",
+     "Justine",
+     "Lacey",
+     "Geneva"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “When I thought of my friends, of the mild voice of De Lacey, the gentle eyes of Agatha, and the exquisite beauty of the Arabian, these thoughts vanished and a gush of tears somewhat soothed me.”",
+    "evidence": "When I thought of my friends, of the mild voice of De Lacey, the gentle eyes of Agatha, and the exquisite beauty of the Arabian, these thoughts vanished and a gush of tears somewhat soothed me."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ decayed around me, and the sun became heatless; rain and snow poured around me; mighty rivers were frozen; the surface of the earth was hard and chill, and bare, and I found no shelter.”",
+    "options": [
+     "Henry",
+     "Nature",
+     "Mont",
+     "Arabian"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Nature decayed around me, and the sun became heatless; rain and snow poured around me; mighty rivers were frozen; the surface of the earth was hard and chill, and bare, and I found no shelter.”",
+    "evidence": "Nature decayed around me, and the sun became heatless; rain and snow poured around me; mighty rivers were frozen; the surface of the earth was hard and chill, and bare, and I found no shelter."
+   }
+  ],
+  "21": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Whether he had died or still lingered in the dungeons of Austria was not known.",
+     "Your hours will pass in dread and misery, and soon the bolt will fall which must ravish from you your happiness for ever.",
+     "My creator, make me happy; let me feel gratitude towards you for one benefit!",
+     "After passing several hours, we returned hopeless, most of my companions believing it to have been a form conjured up by my fancy."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “My creator, make me happy; let me feel gratitude towards you for one benefit!”",
+    "evidence": "My creator, make me happy; let me feel gratitude towards you for one benefit!"
+   },
+   {
+    "prompt": "Fill in the missing name: “He saw my change of feeling and continued, “If you consent, neither you nor any other human being shall ever see us again; I will go to the vast wilds of South _____.”",
+    "options": [
+     "Mont",
+     "America",
+     "Frankenstein",
+     "Agatha"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “He saw my change of feeling and continued, “If you consent, neither you nor any other human being shall ever see us again; I will go to the vast wilds of South America.”",
+    "evidence": "He saw my change of feeling and continued, “If you consent, neither you nor any other human being shall ever see us again; I will go to the vast wilds of South America."
+   },
+   {
+    "prompt": "Fill in the missing name: “Morning dawned before I arrived at the village of _____; I took no rest, but returned immediately to Geneva.”",
+    "options": [
+     "England",
+     "Victor",
+     "Chamounix",
+     "Lacey"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Morning dawned before I arrived at the village of Chamounix; I took no rest, but returned immediately to Geneva.”",
+    "evidence": "Morning dawned before I arrived at the village of Chamounix; I took no rest, but returned immediately to Geneva."
+   }
+  ],
+  "22": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "His daughter attended him with the greatest tenderness, but she saw with despair that their little fund was rapidly decreasing and that there was no…",
+     "Such were my reflections as I commenced my journey; but as I proceeded, my spirits and hopes rose.",
+     "One paternal kind precaution he had taken to ensure my having a companion.",
+     "They made many signs which I did not comprehend, but I saw that her presence diffused gladness through the cottage, dispelling their sorrow as the…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “One paternal kind precaution he had taken to ensure my having a companion.”",
+    "evidence": "One paternal kind precaution he had taken to ensure my having a companion."
+   },
+   {
+    "prompt": "Fill in the missing name: “Pardon this gush of sorrow; these ineffectual words are but a slight tribute to the unexampled worth of _____, but they soothe my heart, overflowing with the anguish which his remembrance creates.”",
+    "options": [
+     "Henry",
+     "Lacey",
+     "Clerval",
+     "Switzerland"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Pardon this gush of sorrow; these ineffectual words are but a slight tribute to the unexampled worth of Henry, but they soothe my heart, overflowing with the anguish which his remembrance creates.”",
+    "evidence": "Pardon this gush of sorrow; these ineffectual words are but a slight tribute to the unexampled worth of Henry, but they soothe my heart, overflowing with the anguish which his remembrance creates."
+   },
+   {
+    "prompt": "Fill in the missing name: “Nay, you may have met with another whom you may love; and considering yourself as bound in honour to _____, this struggle may occasion the poignant misery which you appear to feel.”",
+    "options": [
+     "Ernest",
+     "Felix",
+     "Moritz",
+     "Elizabeth"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Nay, you may have met with another whom you may love; and considering yourself as bound in honour to Elizabeth, this struggle may occasion the poignant misery which you appear to feel.”",
+    "evidence": "Nay, you may have met with another whom you may love; and considering yourself as bound in honour to Elizabeth, this struggle may occasion the poignant misery which you appear to feel."
+   }
+  ],
+  "23": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Sometimes I tried to imitate the pleasant songs of the birds but was unable.",
+     "Our little voyages of discovery were often prolonged by the successive objects that presented themselves.",
+     "She had at first yielded to our entreaties, but when she heard that the life of her favourite was menaced, she could no longer control her anxiety.",
+     "When I mingled with other families I distinctly discerned how peculiarly fortunate my lot was, and gratitude assisted the development of filial love."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Our little voyages of discovery were often prolonged by the successive objects that presented themselves.”",
+    "evidence": "Our little voyages of discovery were often prolonged by the successive objects that presented themselves."
+   },
+   {
+    "prompt": "Fill in the missing name: “Company was irksome to me; when alone, I could fill my mind with the sights of heaven and earth; the voice of _____ soothed me, and I could thus cheat myself into a transitory peace.”",
+    "options": [
+     "Frankenstein",
+     "Mont",
+     "Ingolstadt",
+     "Henry"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Company was irksome to me; when alone, I could fill my mind with the sights of heaven and earth; the voice of Henry soothed me, and I could thus cheat myself into a transitory peace.”",
+    "evidence": "Company was irksome to me; when alone, I could fill my mind with the sights of heaven and earth; the voice of Henry soothed me, and I could thus cheat myself into a transitory peace."
+   },
+   {
+    "prompt": "Fill in the missing name: “He mentioned the beauties of his native country and asked us if those were not sufficient allurements to induce us to prolong our journey as far north as _____, where he resided.”",
+    "options": [
+     "Perth",
+     "Henry",
+     "Safie",
+     "England"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “He mentioned the beauties of his native country and asked us if those were not sufficient allurements to induce us to prolong our journey as far north as Perth, where he resided.”",
+    "evidence": "He mentioned the beauties of his native country and asked us if those were not sufficient allurements to induce us to prolong our journey as far north as Perth, where he resided."
+   }
+  ],
+  "24": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "It was, in fact, a sledge, like that we had seen before, which had drifted towards us in the night on a large fragment of ice.",
+     "The windows of the room had before been darkened, and I felt a kind of panic on seeing the pale yellow light of the moon illuminate the chamber.",
+     "After days and nights of incredible labour and fatigue, I succeeded in discovering the cause of generation and life; nay, more, I became myself…",
+     "You can blast my other passions, but revenge remains—revenge, henceforth dearer than light or food!"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “You can blast my other passions, but revenge remains—revenge, henceforth dearer than light or food!”",
+    "evidence": "You can blast my other passions, but revenge remains—revenge, henceforth dearer than light or food!"
+   },
+   {
+    "prompt": "Fill in the missing name: “I have endured toil and misery; I left _____ with you; I crept along the shores of the Rhine, among its willow islands and over the summits of its hills.”",
+    "options": [
+     "Agatha",
+     "Justine",
+     "Safie",
+     "Switzerland"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I have endured toil and misery; I left Switzerland with you; I crept along the shores of the Rhine, among its willow islands and over the summits of its hills.”",
+    "evidence": "I have endured toil and misery; I left Switzerland with you; I crept along the shores of the Rhine, among its willow islands and over the summits of its hills."
+   },
+   {
+    "prompt": "Fill in the missing name: “I thought of _____, of my father, and of Clerval—all left behind, on whom the monster might satisfy his sanguinary and merciless passions.”",
+    "options": [
+     "Felix",
+     "Ernest",
+     "Moritz",
+     "Elizabeth"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I thought of Elizabeth, of my father, and of Clerval—all left behind, on whom the monster might satisfy his sanguinary and merciless passions.”",
+    "evidence": "I thought of Elizabeth, of my father, and of Clerval—all left behind, on whom the monster might satisfy his sanguinary and merciless passions."
+   }
+  ],
+  "25": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I dared not ask the fatal question, but I was known, and the officer guessed the cause of my visit.",
+     "The deep grief which this scene had at first excited quickly gave way to rage and despair.",
+     "For that matter,” replied the old woman, “if you mean about the gentleman you murdered, I believe that it were better for you if you were dead, for…",
+     "All men hate the wretched; how, then, must I be hated, who am miserable beyond all living things!"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “For that matter,” replied the old woman, “if you mean about the gentleman you murdered, I believe that it were better for you if you were dead, for I fancy it will go hard with you!”",
+    "evidence": "For that matter,” replied the old woman, “if you mean about the gentleman you murdered, I believe that it were better for you if you were dead, for I fancy it will go hard with you!"
+   },
+   {
+    "prompt": "Fill in the missing name: “Yes, my father,” replied I; “some destiny of the most horrible kind hangs over me, and I must live to fulfil it, or surely I should have died on the coffin of _____.”",
+    "options": [
+     "Geneva",
+     "William",
+     "Henry",
+     "Clerval"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Yes, my father,” replied I; “some destiny of the most horrible kind hangs over me, and I must live to fulfil it, or surely I should have died on the coffin of Henry.”",
+    "evidence": "Yes, my father,” replied I; “some destiny of the most horrible kind hangs over me, and I must live to fulfil it, or surely I should have died on the coffin of Henry."
+   },
+   {
+    "prompt": "Fill in the missing name: “The examination, the presence of the magistrate and witnesses, passed like a dream from my memory when I saw the lifeless form of Henry _____ stretched before me.”",
+    "options": [
+     "Clerval",
+     "Safie",
+     "Mont",
+     "Frankenstein"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “The examination, the presence of the magistrate and witnesses, passed like a dream from my memory when I saw the lifeless form of Henry Clerval stretched before me.”",
+    "evidence": "The examination, the presence of the magistrate and witnesses, passed like a dream from my memory when I saw the lifeless form of Henry Clerval stretched before me."
+   }
+  ],
+  "26": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The sea, or rather the vast river of ice, wound among its dependent mountains, whose aerial summits hung over its recesses.",
+     "Answer me, I conjure you by our mutual happiness, with simple truth—Do you not love another?",
+     "You were attached to each other from your earliest infancy; you studied together, and appeared, in dispositions and tastes, entirely suited to one…",
+     "Several changes of day and night passed, and the orb of night had greatly lessened, when I began to distinguish my sensations from each other."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Answer me, I conjure you by our mutual happiness, with simple truth—Do you not love another?”",
+    "evidence": "Answer me, I conjure you by our mutual happiness, with simple truth—Do you not love another?"
+   },
+   {
+    "prompt": "Fill in the missing name: “But I concealed my feelings by an appearance of hilarity that brought smiles and joy to the countenance of my father, but hardly deceived the ever-watchful and nicer eye of _____.”",
+    "options": [
+     "Felix",
+     "Ernest",
+     "Elizabeth",
+     "Moritz"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “But I concealed my feelings by an appearance of hilarity that brought smiles and joy to the countenance of my father, but hardly deceived the ever-watchful and nicer eye of Elizabeth.”",
+    "evidence": "But I concealed my feelings by an appearance of hilarity that brought smiles and joy to the countenance of my father, but hardly deceived the ever-watchful and nicer eye of Elizabeth."
+   },
+   {
+    "prompt": "Fill in the missing name: “Be happy, my dear _____,” replied Elizabeth; “there is, I hope, nothing to distress you; and be assured that if a lively joy is not painted in my face, my heart is contented.”",
+    "options": [
+     "Safie",
+     "Victor",
+     "William",
+     "Frankenstein"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Be happy, my dear Victor,” replied Elizabeth; “there is, I hope, nothing to distress you; and be assured that if a lively joy is not painted in my face, my heart is contented.”",
+    "evidence": "Be happy, my dear Victor,” replied Elizabeth; “there is, I hope, nothing to distress you; and be assured that if a lively joy is not painted in my face, my heart is contented."
+   }
+  ],
+  "27": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "After having landed, they proceeded to search the country, parties going in different directions among the woods and vines.",
+     "I did not yet entirely know the fatal effects of this miserable deformity.",
+     "We accordingly rested on a seat until they should return.",
+     "He intended to leave his daughter under the care of a confidential servant, to follow at her leisure with the greater part of his property, which…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “After having landed, they proceeded to search the country, parties going in different directions among the woods and vines.”",
+    "evidence": "After having landed, they proceeded to search the country, parties going in different directions among the woods and vines."
+   },
+   {
+    "prompt": "Fill in the missing name: “I do not doubt that he hovers near the spot which I inhabit, and if he has indeed taken refuge in the _____, he may be hunted like the chamois and destroyed as a beast of prey.”",
+    "options": [
+     "England",
+     "Alps",
+     "Ingolstadt",
+     "Switzerland"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I do not doubt that he hovers near the spot which I inhabit, and if he has indeed taken refuge in the Alps, he may be hunted like the chamois and destroyed as a beast of prey.”",
+    "evidence": "I do not doubt that he hovers near the spot which I inhabit, and if he has indeed taken refuge in the Alps, he may be hunted like the chamois and destroyed as a beast of prey."
+   },
+   {
+    "prompt": "Fill in the missing name: “The rain had ceased for a moment, and I saw the fish play in the waters as they had done a few hours before; they had then been observed by _____.”",
+    "options": [
+     "Felix",
+     "Ernest",
+     "Elizabeth",
+     "Moritz"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “The rain had ceased for a moment, and I saw the fish play in the waters as they had done a few hours before; they had then been observed by Elizabeth.”",
+    "evidence": "The rain had ceased for a moment, and I saw the fish play in the waters as they had done a few hours before; they had then been observed by Elizabeth."
+   }
+  ],
+  "28": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Presently a breeze dissipated the cloud, and I descended upon the glacier.",
+     "I motioned him to take up the letter, while I walked up and down the room in the extremest agitation.",
+     "Since you have preserved my narration,” said he, “I would not that a mutilated one should go down to posterity.",
+     "My father loved Beaufort with the truest friendship and was deeply grieved by his retreat in these unfortunate circumstances."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Since you have preserved my narration,” said he, “I would not that a mutilated one should go down to posterity.”",
+    "evidence": "Since you have preserved my narration,” said he, “I would not that a mutilated one should go down to posterity."
+   },
+   {
+    "prompt": "Fill in the missing name: “Think not, _____, that in the last moments of my existence I feel that burning hatred and ardent desire of revenge I once expressed; but I feel myself justified in desiring the death of my adversary.”",
+    "options": [
+     "Walton",
+     "Mont",
+     "Ingolstadt",
+     "Frankenstein"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Think not, Walton, that in the last moments of my existence I feel that burning hatred and ardent desire of revenge I once expressed; but I feel myself justified in desiring the death of my adversary.”",
+    "evidence": "Think not, Walton, that in the last moments of my existence I feel that burning hatred and ardent desire of revenge I once expressed; but I feel myself justified in desiring the death of my adversary."
+   },
+   {
+    "prompt": "Fill in the missing name: “If you had listened to the voice of conscience and heeded the stings of remorse before you had urged your diabolical vengeance to this extremity, _____ would yet have lived.”",
+    "options": [
+     "Safie",
+     "Frankenstein",
+     "Justine",
+     "Arabian"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “If you had listened to the voice of conscience and heeded the stings of remorse before you had urged your diabolical vengeance to this extremity, Frankenstein would yet have lived.”",
+    "evidence": "If you had listened to the voice of conscience and heeded the stings of remorse before you had urged your diabolical vengeance to this extremity, Frankenstein would yet have lived."
+   }
+  ]
+ }
+}

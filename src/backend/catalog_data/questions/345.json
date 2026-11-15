@@ -1,0 +1,1033 @@
+{
+ "slug": "gutenberg:345",
+ "title": "Dracula",
+ "source": "text",
+ "chapters": {
+  "1": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I do not suppose there will be much of interest to other people; but it is not intended for them.",
+     "On the near side, the sea-wall makes an elbow crooked inversely, and its end too has a lighthouse.",
+     "She saw, I suppose, the doubt in my face, for she put the rosary round my neck, and said, “For your mother’s sake,” and went out of the room.",
+     "Keep them safe, for there is in them much of treasure."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “She saw, I suppose, the doubt in my face, for she put the rosary round my neck, and said, “For your mother’s sake,” and went out of the room.”",
+    "evidence": "She saw, I suppose, the doubt in my face, for she put the rosary round my neck, and said, “For your mother’s sake,” and went out of the room."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ Dracula had directed me to go to the Golden Krone Hotel, which I found, to my great delight, to be thoroughly old-fashioned, for of course I wanted to see all I could of the ways of the country.”",
+    "options": [
+     "Seward",
+     "Jonathan",
+     "Count",
+     "Arthur"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Count Dracula had directed me to go to the Golden Krone Hotel, which I found, to my great delight, to be thoroughly old-fashioned, for of course I wanted to see all I could of the ways of the country.”",
+    "evidence": "Count Dracula had directed me to go to the Golden Krone Hotel, which I found, to my great delight, to be thoroughly old-fashioned, for of course I wanted to see all I could of the ways of the country."
+   },
+   {
+    "prompt": "Fill in the missing name: “Ordog”--Satan, “pokol”--hell, “stregoica”--witch, “vrolok” and “vlkoslak”--both of which mean the same thing, one being _____ and the other Servian for something that is either were-wolf or vampire.”",
+    "options": [
+     "Exeter",
+     "Slovak",
+     "Slovaks",
+     "Carfax"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Ordog”--Satan, “pokol”--hell, “stregoica”--witch, “vrolok” and “vlkoslak”--both of which mean the same thing, one being Slovak and the other Servian for something that is either were-wolf or vampire.”",
+    "evidence": "Ordog”--Satan, “pokol”--hell, “stregoica”--witch, “vrolok” and “vlkoslak”--both of which mean the same thing, one being Slovak and the other Servian for something that is either were-wolf or vampire."
+   }
+  ],
+  "2": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "There seemed a strange stillness over everything; but as I listened I heard as if from down below in the valley the howling of many wolves.",
+     "He crumbled the wafer up fine and worked it into the mass between his hands.",
+     "The suffusion of the brain will increase quickly, so we must trephine at once or it may be too late.",
+     "At the edge of the West Cliff above the pier I looked across the harbour to the East Cliff, in the hope or fear--I don’t know which--of seeing Lucy…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “There seemed a strange stillness over everything; but as I listened I heard as if from down below in the valley the howling of many wolves.”",
+    "evidence": "There seemed a strange stillness over everything; but as I listened I heard as if from down below in the valley the howling of many wolves."
+   },
+   {
+    "prompt": "Fill in the missing name: “There were even such books of reference as the _____ Directory, the “Red” and “Blue” books, Whitaker’s Almanac, the Army and Navy Lists, and--it somehow gladdened my heart to see it--the Law List.”",
+    "options": [
+     "Journal",
+     "London",
+     "Slovaks",
+     "Exeter"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “There were even such books of reference as the London Directory, the “Red” and “Blue” books, Whitaker’s Almanac, the Army and Navy Lists, and--it somehow gladdened my heart to see it--the Law List.”",
+    "evidence": "There were even such books of reference as the London Directory, the “Red” and “Blue” books, Whitaker’s Almanac, the Army and Navy Lists, and--it somehow gladdened my heart to see it--the Law List."
+   },
+   {
+    "prompt": "Fill in the missing name: “The _____, evidently noticing it, drew back; and with a grim sort of smile, which showed more than he had yet done his protuberant teeth, sat himself down again on his own side of the fireplace.”",
+    "options": [
+     "Westenra",
+     "Count",
+     "Mina",
+     "Harker"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “The Count, evidently noticing it, drew back; and with a grim sort of smile, which showed more than he had yet done his protuberant teeth, sat himself down again on his own side of the fireplace.”",
+    "evidence": "The Count, evidently noticing it, drew back; and with a grim sort of smile, which showed more than he had yet done his protuberant teeth, sat himself down again on his own side of the fireplace."
+   }
+  ],
+  "3": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Joseph Smollet at home and in his shirtsleeves, taking a late tea out of a saucer.",
+     "Van Helsing seemed to throw his whole soul into the effort; at last, in obedience to his will she made reply:-- “All is dark.",
+     "I wonder why he was so anxious about these flowers.",
+     "Of course,” I replied; and “such is often done by men of business, who do not like the whole of their affairs to be known by any one person."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Of course,” I replied; and “such is often done by men of business, who do not like the whole of their affairs to be known by any one person.”",
+    "evidence": "Of course,” I replied; and “such is often done by men of business, who do not like the whole of their affairs to be known by any one person."
+   },
+   {
+    "prompt": "Fill in the missing name: “Ah, young sir, the Szekelys--and the _____ as their heart’s blood, their brains, and their swords--can boast a record that mushroom growths like the Hapsburgs and the Romanoffs can never reach.”",
+    "options": [
+     "Lucy",
+     "Renfield",
+     "Helsing",
+     "Dracula"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Ah, young sir, the Szekelys--and the Dracula as their heart’s blood, their brains, and their swords--can boast a record that mushroom growths like the Hapsburgs and the Romanoffs can never reach.”",
+    "evidence": "Ah, young sir, the Szekelys--and the Dracula as their heart’s blood, their brains, and their swords--can boast a record that mushroom growths like the Hapsburgs and the Romanoffs can never reach."
+   },
+   {
+    "prompt": "Fill in the missing name: “Is it a wonder that we were a conquering race; that we were proud; that when the _____, the Lombard, the Avar, the Bulgar, or the Turk poured his thousands on our frontiers, we drove them back?”",
+    "options": [
+     "Exeter",
+     "Magyar",
+     "Slovaks",
+     "Art"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Is it a wonder that we were a conquering race; that we were proud; that when the Magyar, the Lombard, the Avar, the Bulgar, or the Turk poured his thousands on our frontiers, we drove them back?”",
+    "evidence": "Is it a wonder that we were a conquering race; that we were proud; that when the Magyar, the Lombard, the Avar, the Bulgar, or the Turk poured his thousands on our frontiers, we drove them back?"
+   }
+  ],
+  "4": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "In the midst of my thought my eye fell on the red scar on my poor darling’s white forehead.",
+     "When a couple of hours had passed I heard something stirring in the Count’s room, something like a sharp wail quickly suppressed; and then there was…",
+     "Van Helsing will not blame me; I have had so much trouble and anxiety of late that I feel I cannot bear more just at present.",
+     "I opened that coffin, which was then sealed up, and we found it, as now, empty."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “When a couple of hours had passed I heard something stirring in the Count’s room, something like a sharp wail quickly suppressed; and then there was silence, deep, awful silence, which chilled me.”",
+    "evidence": "When a couple of hours had passed I heard something stirring in the Count’s room, something like a sharp wail quickly suppressed; and then there was silence, deep, awful silence, which chilled me."
+   },
+   {
+    "prompt": "Fill in the missing name: “When they were all unloaded and packed in a great heap in one corner of the yard, the _____ were given some money by the Szgany, and spitting on it for luck, lazily went each to his horse’s head.”",
+    "options": [
+     "Piccadilly",
+     "Diary",
+     "Slovaks",
+     "East"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “When they were all unloaded and packed in a great heap in one corner of the yard, the Slovaks were given some money by the Szgany, and spitting on it for luck, lazily went each to his horse’s head.”",
+    "evidence": "When they were all unloaded and packed in a great heap in one corner of the yard, the Slovaks were given some money by the Szgany, and spitting on it for luck, lazily went each to his horse’s head."
+   },
+   {
+    "prompt": "Fill in the missing name: “He sat down beside me, and said in his smoothest voice as he opened two letters:-- “The _____ has given me these, of which, though I know not whence they come, I shall, of course, take care.”",
+    "options": [
+     "Szgany",
+     "Galatz",
+     "Piccadilly",
+     "Journal"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “He sat down beside me, and said in his smoothest voice as he opened two letters:-- “The Szgany has given me these, of which, though I know not whence they come, I shall, of course, take care.”",
+    "evidence": "He sat down beside me, and said in his smoothest voice as he opened two letters:-- “The Szgany has given me these, of which, though I know not whence they come, I shall, of course, take care."
+   }
+  ],
+  "5": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "He was very cool outwardly, but was nervous all the same.",
+     "I waited here all the night till the sun rose, but I saw nothing.",
+     "I told him briefly, and added that we expected he would recover consciousness after the operation--for a short time, at all events.",
+     "As each boat achieved the safety of the port there was a shout of joy from the mass of people on shore, a shout which for a moment seemed to cleave…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “He was very cool outwardly, but was nervous all the same.”",
+    "evidence": "He was very cool outwardly, but was nervous all the same."
+   },
+   {
+    "prompt": "Fill in the missing name: “My dear _____,-- “We’ve told yarns by the camp-fire in the prairies; and dressed one another’s wounds after trying a landing at the Marquesas; and drunk healths on the shore of Titicaca.”",
+    "options": [
+     "Carfax",
+     "Szgany",
+     "Whitby",
+     "Art"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “My dear Art,-- “We’ve told yarns by the camp-fire in the prairies; and dressed one another’s wounds after trying a landing at the Marquesas; and drunk healths on the shore of Titicaca.”",
+    "evidence": "My dear Art,-- “We’ve told yarns by the camp-fire in the prairies; and dressed one another’s wounds after trying a landing at the Marquesas; and drunk healths on the shore of Titicaca."
+   },
+   {
+    "prompt": "Fill in the missing name: “He is such a nice fellow, an _____ from Texas, and he looks so young and so fresh that it seems almost impossible that he has been to so many places and has had such adventures.”",
+    "options": [
+     "Exeter",
+     "Transylvania",
+     "Diary",
+     "American"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He is such a nice fellow, an American from Texas, and he looks so young and so fresh that it seems almost impossible that he has been to so many places and has had such adventures.”",
+    "evidence": "He is such a nice fellow, an American from Texas, and he looks so young and so fresh that it seems almost impossible that he has been to so many places and has had such adventures."
+   }
+  ],
+  "6": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "This was evidently local pleasantry, for the old man cackled over it, and his cronies joined in with gusto.",
+     "Quincey Morris was phlegmatic in the way of a man who accepts all things, and accepts them in the spirit of cool bravery, with hazard of all he has…",
+     "Every window and door was fastened and locked, and I returned baffled to the porch.",
+     "We are to be married in an hour, or as soon after as Jonathan awakes."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “This was evidently local pleasantry, for the old man cackled over it, and his cronies joined in with gusto.”",
+    "evidence": "This was evidently local pleasantry, for the old man cackled over it, and his cronies joined in with gusto."
+   },
+   {
+    "prompt": "Fill in the missing name: “This is to my mind the nicest spot in _____, for it lies right over the town, and has a full view of the harbour and all up the bay to where the headland called Kettleness stretches out into the sea.”",
+    "options": [
+     "Whitby",
+     "Pass",
+     "Exeter",
+     "East"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “This is to my mind the nicest spot in Whitby, for it lies right over the town, and has a full view of the harbour and all up the bay to where the headland called Kettleness stretches out into the sea.”",
+    "evidence": "This is to my mind the nicest spot in Whitby, for it lies right over the town, and has a full view of the harbour and all up the bay to where the headland called Kettleness stretches out into the sea."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ Holmwood, only son of Lord Godalming--is coming up here very shortly--as soon as he can leave town, for his father is not very well, and I think dear Lucy is counting the moments till he comes.”",
+    "options": [
+     "Arthur",
+     "John",
+     "Count",
+     "Morris"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Arthur Holmwood, only son of Lord Godalming--is coming up here very shortly--as soon as he can leave town, for his father is not very well, and I think dear Lucy is counting the moments till he comes.”",
+    "evidence": "Arthur Holmwood, only son of Lord Godalming--is coming up here very shortly--as soon as he can leave town, for his father is not very well, and I think dear Lucy is counting the moments till he comes."
+   }
+  ],
+  "7": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "To-day is our day, and we must go sure, if slow, and lose no chance.",
+     "I may show it to Jonathan some day if there is in it anything worth sharing, but it is really an exercise book.",
+     ", which is very strong in Whitby, have tried to befriend the animal.",
+     "When we got to the porch the Professor opened his bag and took out a lot of things, which he laid on the step, sorting them into four little groups,…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “, which is very strong in Whitby, have tried to befriend the animal.”",
+    "evidence": ", which is very strong in Whitby, have tried to befriend the animal."
+   },
+   {
+    "prompt": "Fill in the missing name: “It so happened that there was no one at the moment on _____ Hill Pier, as all those whose houses are in close proximity were either in bed or were out on the heights above.”",
+    "options": [
+     "London",
+     "Tate",
+     "Whitby",
+     "Exeter"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “It so happened that there was no one at the moment on Tate Hill Pier, as all those whose houses are in close proximity were either in bed or were out on the heights above.”",
+    "evidence": "It so happened that there was no one at the moment on Tate Hill Pier, as all those whose houses are in close proximity were either in bed or were out on the heights above."
+   },
+   {
+    "prompt": "Fill in the missing name: “Early this morning a large dog, a half-bred mastiff belonging to a coal merchant close to Tate _____ Pier, was found dead in the roadway opposite to its master’s yard.”",
+    "options": [
+     "Hill",
+     "Carfax",
+     "Journal",
+     "Transylvania"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Early this morning a large dog, a half-bred mastiff belonging to a coal merchant close to Tate Hill Pier, was found dead in the roadway opposite to its master’s yard.”",
+    "evidence": "Early this morning a large dog, a half-bred mastiff belonging to a coal merchant close to Tate Hill Pier, was found dead in the roadway opposite to its master’s yard."
+   }
+  ],
+  "8": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "All I could do now was to be patient, and to wait the coming of the morning.",
+     "Present: Professor Van Helsing, Lord Godalming, Dr.",
+     "She seemed, even in her sleep, to be a little impatient at finding the door shut, and went back to bed under a sort of protest.",
+     "Van Helsing and I looked at each other with understanding."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “She seemed, even in her sleep, to be a little impatient at finding the door shut, and went back to bed under a sort of protest.”",
+    "evidence": "She seemed, even in her sleep, to be a little impatient at finding the door shut, and went back to bed under a sort of protest."
+   },
+   {
+    "prompt": "Fill in the missing name: “The setting sun, low down in the sky, was just dropping behind _____; the red light was thrown over on the East Cliff and the old abbey, and seemed to bathe everything in a beautiful rosy glow.”",
+    "options": [
+     "King",
+     "Galatz",
+     "Kettleness",
+     "Art"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “The setting sun, low down in the sky, was just dropping behind Kettleness; the red light was thrown over on the East Cliff and the old abbey, and seemed to bathe everything in a beautiful rosy glow.”",
+    "evidence": "The setting sun, low down in the sky, was just dropping behind Kettleness; the red light was thrown over on the East Cliff and the old abbey, and seemed to bathe everything in a beautiful rosy glow."
+   },
+   {
+    "prompt": "Fill in the missing name: “I seem to remember that once the _____ Lighthouse was right under me, and then there was a sort of agonising feeling, as if I were in an earthquake, and I came back and found you shaking my body.”",
+    "options": [
+     "King",
+     "Slovaks",
+     "Diary",
+     "West"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I seem to remember that once the West Lighthouse was right under me, and then there was a sort of agonising feeling, as if I were in an earthquake, and I came back and found you shaking my body.”",
+    "evidence": "I seem to remember that once the West Lighthouse was right under me, and then there was a sort of agonising feeling, as if I were in an earthquake, and I came back and found you shaking my body."
+   }
+  ],
+  "9": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "As the Count did not come in, I have written here.",
+     "If it should be, and he came to London, with his teeming millions.",
+     "The poor soul’s body will enjoy the relief even if his mind cannot appreciate it.",
+     "In some faculties of mind he has been, and is, only a child; but he is growing, and some things that were childish at the first are now of man’s…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “The poor soul’s body will enjoy the relief even if his mind cannot appreciate it.”",
+    "evidence": "The poor soul’s body will enjoy the relief even if his mind cannot appreciate it."
+   },
+   {
+    "prompt": "Fill in the missing name: “I know your idea of duty to your father, and you are right to stick to it; but, if need be, I shall send you word to come at once to _____; so do not be over-anxious unless you hear from me.”",
+    "options": [
+     "Helsing",
+     "Lucy",
+     "Seward",
+     "Arthur"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I know your idea of duty to your father, and you are right to stick to it; but, if need be, I shall send you word to come at once to Lucy; so do not be over-anxious unless you hear from me.”",
+    "evidence": "I know your idea of duty to your father, and you are right to stick to it; but, if need be, I shall send you word to come at once to Lucy; so do not be over-anxious unless you hear from me."
+   },
+   {
+    "prompt": "Fill in the missing name: “I feel that I can hardly recall anything of the journey, except that I knew I was coming to _____, and, that as I should have to do some nursing, I had better get all the sleep I could.”",
+    "options": [
+     "Seward",
+     "Westenra",
+     "Helsing",
+     "Jonathan"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I feel that I can hardly recall anything of the journey, except that I knew I was coming to Jonathan, and, that as I should have to do some nursing, I had better get all the sleep I could.”",
+    "evidence": "I feel that I can hardly recall anything of the journey, except that I knew I was coming to Jonathan, and, that as I should have to do some nursing, I had better get all the sleep I could."
+   }
+  ],
+  "10": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Seward for a moment, and told him where I was off to, promising to come back and tell the rest so soon as I should have found out anything.",
+     "I can fancy what a wonderful power he must have over his patients.",
+     "I hope I did right in not saying anything of it to Mrs.",
+     "Then he added: “You may take that one little kiss whiles I bring over the table."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Then he added: “You may take that one little kiss whiles I bring over the table.”",
+    "evidence": "Then he added: “You may take that one little kiss whiles I bring over the table."
+   },
+   {
+    "prompt": "Fill in the missing name: “After a time--it did not seem a short time either, for the draining away of one’s blood, no matter how willingly it be given, is a terrible feeling--Van _____ held up a warning finger.”",
+    "options": [
+     "Renfield",
+     "Count",
+     "Helsing",
+     "John"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “After a time--it did not seem a short time either, for the draining away of one’s blood, no matter how willingly it be given, is a terrible feeling--Van Helsing held up a warning finger.”",
+    "evidence": "After a time--it did not seem a short time either, for the draining away of one’s blood, no matter how willingly it be given, is a terrible feeling--Van Helsing held up a warning finger."
+   },
+   {
+    "prompt": "Fill in the missing name: “Come with me, friend _____, and you shall help me deck the room with my garlic, which is all the way from Haarlem, where my friend Vanderpool raise herb in his glass-houses all the year.”",
+    "options": [
+     "John",
+     "Westenra",
+     "Harker",
+     "Jonathan"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Come with me, friend John, and you shall help me deck the room with my garlic, which is all the way from Haarlem, where my friend Vanderpool raise herb in his glass-houses all the year.”",
+    "evidence": "Come with me, friend John, and you shall help me deck the room with my garlic, which is all the way from Haarlem, where my friend Vanderpool raise herb in his glass-houses all the year."
+   }
+  ],
+  "11": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "An’ when you said you’d report me for usin’ of obscene language that was ’ittin’ me over the ’ead; but the ’arf-quid made that all right.",
+     "There was a pause, broken by Jonathan Harker’s voice:-- “Now, God be thanked, we shall soon meet!",
+     "When I got almost to the top I could see the seat and the white figure, for I was now close enough to distinguish it even through the spells of…",
+     "I think I have not stirred out of my bed for a week, that is when I once got into it at night."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “An’ when you said you’d report me for usin’ of obscene language that was ’ittin’ me over the ’ead; but the ’arf-quid made that all right.”",
+    "evidence": "An’ when you said you’d report me for usin’ of obscene language that was ’ittin’ me over the ’ead; but the ’arf-quid made that all right."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ that she must not remove anything from Lucy’s room without consulting him; that the flowers were of medicinal value, and that the breathing of their odour was a part of the system of cure.”",
+    "options": [
+     "Dracula",
+     "Holmwood",
+     "Mina",
+     "Westenra"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Westenra that she must not remove anything from Lucy’s room without consulting him; that the flowers were of medicinal value, and that the breathing of their odour was a part of the system of cure.”",
+    "evidence": "Westenra that she must not remove anything from Lucy’s room without consulting him; that the flowers were of medicinal value, and that the breathing of their odour was a part of the system of cure."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ and his wife are hospitable folk, elderly, and without children, and if the specimen I enjoyed of their hospitality be of the average kind, their lives must be pretty comfortable.”",
+    "options": [
+     "Galatz",
+     "Thomas",
+     "Art",
+     "King"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Thomas and his wife are hospitable folk, elderly, and without children, and if the specimen I enjoyed of their hospitality be of the average kind, their lives must be pretty comfortable.”",
+    "evidence": "Thomas and his wife are hospitable folk, elderly, and without children, and if the specimen I enjoyed of their hospitality be of the average kind, their lives must be pretty comfortable."
+   }
+  ],
+  "12": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The Professor knows this well enough, and is doing his best to keep his mind active.",
+     "What else have we to hope for, except the pity of the good God?",
+     "You shall know and understand it all in good time; but it will be later.",
+     "We were all silent, for we knew instinctively that this was only a prelude."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “You shall know and understand it all in good time; but it will be later.”",
+    "evidence": "You shall know and understand it all in good time; but it will be later."
+   },
+   {
+    "prompt": "Fill in the missing name: “In a sort of sleep-waking, vague, unconscious way she opened her eyes, which were now dull and hard at once, and said in a soft, voluptuous voice, such as I had never heard from her lips:-- “_____!”",
+    "options": [
+     "Arthur",
+     "Godalming",
+     "John",
+     "Seward"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “In a sort of sleep-waking, vague, unconscious way she opened her eyes, which were now dull and hard at once, and said in a soft, voluptuous voice, such as I had never heard from her lips:-- “Arthur!”",
+    "evidence": "In a sort of sleep-waking, vague, unconscious way she opened her eyes, which were now dull and hard at once, and said in a soft, voluptuous voice, such as I had never heard from her lips:-- “Arthur!"
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had got a terrible shock and it told on her more than before, for though plenty of blood went into her veins, her body did not respond to the treatment as well as on the other occasions.”",
+    "options": [
+     "Lucy",
+     "Helsing",
+     "Jonathan",
+     "Morris"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Lucy had got a terrible shock and it told on her more than before, for though plenty of blood went into her veins, her body did not respond to the treatment as well as on the other occasions.”",
+    "evidence": "Lucy had got a terrible shock and it told on her more than before, for though plenty of blood went into her veins, her body did not respond to the treatment as well as on the other occasions."
+   }
+  ],
+  "13": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "At dawn Van Helsing hypnotised me; he says I answered “darkness, creaking wood and roaring water,” so the river is changing as they ascend.",
+     "I have had a great shock, and when I try to think of what it is I feel my head spin round, and I do not know if it was all real or the dreaming of a…",
+     "I looked into her room and saw her, but did not go in, lest I should disturb her.",
+     "Of course, we had then no alternative but to accept."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Of course, we had then no alternative but to accept.”",
+    "evidence": "Of course, we had then no alternative but to accept."
+   },
+   {
+    "prompt": "Fill in the missing name: “The police of the division have been instructed to keep a sharp look-out for straying children, especially when very young, in and around _____ Heath, and for any stray dog which may be about.”",
+    "options": [
+     "Whitby",
+     "Galatz",
+     "King",
+     "Hampstead"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The police of the division have been instructed to keep a sharp look-out for straying children, especially when very young, in and around Hampstead Heath, and for any stray dog which may be about.”",
+    "evidence": "The police of the division have been instructed to keep a sharp look-out for straying children, especially when very young, in and around Hampstead Heath, and for any stray dog which may be about."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ thought it would interest me to go into the Row for a while, so we sat down; but there were very few people there, and it was sad-looking and desolate to see so many empty chairs.”",
+    "options": [
+     "John",
+     "Morris",
+     "Jonathan",
+     "Arthur"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Jonathan thought it would interest me to go into the Row for a while, so we sat down; but there were very few people there, and it was sad-looking and desolate to see so many empty chairs.”",
+    "evidence": "Jonathan thought it would interest me to go into the Row for a while, so we sat down; but there were very few people there, and it was sad-looking and desolate to see so many empty chairs."
+   }
+  ],
+  "14": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Then we will comfort you and poor dear Madam Mina with new hope.",
+     "Oh, Madam Mina,” he said, “how can I say what I owe to you?",
+     "I cannot believe that to die in such a case, when there is hope before us and a bitter task to be done, is God’s will.",
+     "I shall post this at once, and, perhaps, write you very soon again."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Oh, Madam Mina,” he said, “how can I say what I owe to you?”",
+    "evidence": "Oh, Madam Mina,” he said, “how can I say what I owe to you?"
+   },
+   {
+    "prompt": "Fill in the missing name: “Perhaps it was reading the journal yesterday that upset me, and then _____ went away this morning to stay away from me a whole day and night, the first time we have been parted since our marriage.”",
+    "options": [
+     "Arthur",
+     "Jonathan",
+     "Van",
+     "Mina"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Perhaps it was reading the journal yesterday that upset me, and then Jonathan went away this morning to stay away from me a whole day and night, the first time we have been parted since our marriage.”",
+    "evidence": "Perhaps it was reading the journal yesterday that upset me, and then Jonathan went away this morning to stay away from me a whole day and night, the first time we have been parted since our marriage."
+   },
+   {
+    "prompt": "Fill in the missing name: “And you, sir--I have read all the letters to poor Miss _____, and some of them speak of you, so I know you since some days from the knowing of others; but I have seen your true self since last night.”",
+    "options": [
+     "Lucy",
+     "Godalming",
+     "Renfield",
+     "Arthur"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “And you, sir--I have read all the letters to poor Miss Lucy, and some of them speak of you, so I know you since some days from the knowing of others; but I have seen your true self since last night.”",
+    "evidence": "And you, sir--I have read all the letters to poor Miss Lucy, and some of them speak of you, so I know you since some days from the knowing of others; but I have seen your true self since last night."
+   }
+  ],
+  "15": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I must stop, for Jonathan is waking--I must attend to my husband!",
+     "I ran along the North Terrace, but could see no sign of the white figure which I expected.",
+     "The captain come, when told that he will be pay well; and though he swear much at the first he agree to term.",
+     "Taking the edge of the loose flange, he bent it back towards the foot of the coffin, and holding up the candle into the aperture, motioned to me to…"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Taking the edge of the loose flange, he bent it back towards the foot of the coffin, and holding up the candle into the aperture, motioned to me to look.”",
+    "evidence": "Taking the edge of the loose flange, he bent it back towards the foot of the coffin, and holding up the candle into the aperture, motioned to me to look."
+   },
+   {
+    "prompt": "Fill in the missing name: “This turned my blood cold, and it began to dawn upon me that I was accepting _____ Helsing’s theories; but if she were really dead, what was there of terror in the idea of killing her?”",
+    "options": [
+     "Godalming",
+     "Quincey",
+     "Count",
+     "Van"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “This turned my blood cold, and it began to dawn upon me that I was accepting Van Helsing’s theories; but if she were really dead, what was there of terror in the idea of killing her?”",
+    "evidence": "This turned my blood cold, and it began to dawn upon me that I was accepting Van Helsing’s theories; but if she were really dead, what was there of terror in the idea of killing her?"
+   },
+   {
+    "prompt": "Fill in the missing name: “At the edge of _____ Heath we heard a policeman’s heavy tramp, and laying the child on the pathway, we waited and watched until he saw it as he flashed his lantern to and fro.”",
+    "options": [
+     "London",
+     "Journal",
+     "East",
+     "Hampstead"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “At the edge of Hampstead Heath we heard a policeman’s heavy tramp, and laying the child on the pathway, we waited and watched until he saw it as he flashed his lantern to and fro.”",
+    "evidence": "At the edge of Hampstead Heath we heard a policeman’s heavy tramp, and laying the child on the pathway, we waited and watched until he saw it as he flashed his lantern to and fro."
+   }
+  ],
+  "16": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "We are hedged in with difficulties, all of us, my poor old fellow; but, please God, we shall come through them all right.",
+     "I don’t mean one of those two-pages-to-the-week-with-Sunday-squeezed-in-a-corner diaries, but a sort of journal which I can write in whenever I feel…",
+     "Arthur was next to me, and if I had not seized his arm and held him up, he would have fallen.",
+     "This was possible from the disordered state of things in the household."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Arthur was next to me, and if I had not seized his arm and held him up, he would have fallen.”",
+    "evidence": "Arthur was next to me, and if I had not seized his arm and held him up, he would have fallen."
+   },
+   {
+    "prompt": "Fill in the missing name: “When all was ready, _____ Helsing said:-- “Before we do anything, let me tell you this; it is out of the lore and experience of the ancients and of all those who have studied the powers of the Un-Dead.”",
+    "options": [
+     "John",
+     "Van",
+     "Count",
+     "Renfield"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “When all was ready, Van Helsing said:-- “Before we do anything, let me tell you this; it is out of the lore and experience of the ancients and of all those who have studied the powers of the Un-Dead.”",
+    "evidence": "When all was ready, Van Helsing said:-- “Before we do anything, let me tell you this; it is out of the lore and experience of the ancients and of all those who have studied the powers of the Un-Dead."
+   },
+   {
+    "prompt": "Fill in the missing name: “We could hear the click of the closing lantern as Van _____ held it down; coming close to the tomb, he began to remove from the chinks some of the sacred emblem which he had placed there.”",
+    "options": [
+     "Arthur",
+     "Count",
+     "Westenra",
+     "Helsing"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “We could hear the click of the closing lantern as Van Helsing held it down; coming close to the tomb, he began to remove from the chinks some of the sacred emblem which he had placed there.”",
+    "evidence": "We could hear the click of the closing lantern as Van Helsing held it down; coming close to the tomb, he began to remove from the chinks some of the sacred emblem which he had placed there."
+   }
+  ],
+  "17": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Each of us had done his work as well as he could; so far as thought, and endeavour, and opportunity go, we are prepared for the whole of our…",
+     "There are terrible things yet to learn of; but if you have so far travelled on the road to poor Lucy’s death, you will not be content, I know, to…",
+     "In the meantime I must find out all I can about Count Dracula, as it may help me to understand.",
+     "It is nice at high water; but when the tide is out it shoals away to nothing, and there is merely the stream of the Esk, running between banks of…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “There are terrible things yet to learn of; but if you have so far travelled on the road to poor Lucy’s death, you will not be content, I know, to remain in the dark.”",
+    "evidence": "There are terrible things yet to learn of; but if you have so far travelled on the road to poor Lucy’s death, you will not be content, I know, to remain in the dark."
+   },
+   {
+    "prompt": "Fill in the missing name: “By this time my mind was made up that the diary of a doctor who attended _____ might have something to add to the sum of our knowledge of that terrible Being, and I said boldly:-- “Then, Dr.”",
+    "options": [
+     "Mina",
+     "Arthur",
+     "Quincey",
+     "Lucy"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “By this time my mind was made up that the diary of a doctor who attended Lucy might have something to add to the sum of our knowledge of that terrible Being, and I said boldly:-- “Then, Dr.”",
+    "evidence": "By this time my mind was made up that the diary of a doctor who attended Lucy might have something to add to the sum of our knowledge of that terrible Being, and I said boldly:-- “Then, Dr."
+   },
+   {
+    "prompt": "Fill in the missing name: “I believe that, had I not had the chat with _____ and read the letters and the dates of his outbursts, I should have been prepared to sign for him after a brief time of observation.”",
+    "options": [
+     "Harker",
+     "Arthur",
+     "Count",
+     "Van"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “I believe that, had I not had the chat with Harker and read the letters and the dates of his outbursts, I should have been prepared to sign for him after a brief time of observation.”",
+    "evidence": "I believe that, had I not had the chat with Harker and read the letters and the dates of his outbursts, I should have been prepared to sign for him after a brief time of observation."
+   }
+  ],
+  "18": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "As the Count did not come in, I have written here.",
+     "Mind, I don’t say that they never was, but I do say that they wasn’t in my time.",
+     "There are such beings as vampires; some of us have evidence that they exist.",
+     "He is a young man, full of energy and talent in his own way, and of a very faithful disposition."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “There are such beings as vampires; some of us have evidence that they exist.”",
+    "evidence": "There are such beings as vampires; some of us have evidence that they exist."
+   },
+   {
+    "prompt": "Fill in the missing name: “We know from the inquiry of _____ that from the castle to Whitby came fifty boxes of earth, all of which were delivered at Carfax; we also know that at least some of these boxes have been removed.”",
+    "options": [
+     "Helsing",
+     "Quincey",
+     "Van",
+     "Jonathan"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “We know from the inquiry of Jonathan that from the castle to Whitby came fifty boxes of earth, all of which were delivered at Carfax; we also know that at least some of these boxes have been removed.”",
+    "evidence": "We know from the inquiry of Jonathan that from the castle to Whitby came fifty boxes of earth, all of which were delivered at Carfax; we also know that at least some of these boxes have been removed."
+   },
+   {
+    "prompt": "Fill in the missing name: “He shook hands with each of them, saying in turn:-- “Lord _____, I had the honour of seconding your father at the Windham; I grieve to know, by your holding the title, that he is no more.”",
+    "options": [
+     "Quincey",
+     "Godalming",
+     "Mina",
+     "Count"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “He shook hands with each of them, saying in turn:-- “Lord Godalming, I had the honour of seconding your father at the Windham; I grieve to know, by your holding the title, that he is no more.”",
+    "evidence": "He shook hands with each of them, saying in turn:-- “Lord Godalming, I had the honour of seconding your father at the Windham; I grieve to know, by your holding the title, that he is no more."
+   }
+  ],
+  "19": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "They are fearless and without religion, save superstition, and they talk only their own varieties of the Romany tongue.",
+     "After the involuntary shrinking consequent on the first nauseous whiff, we one and all set about our work as though that loathsome place were a…",
+     "Of one thing only am I certain; that it is no use making my ideas known to the Count.",
+     "Then he went on, and very gravely:-- “You were always a careful student, and your case-book was ever more full than the rest."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “After the involuntary shrinking consequent on the first nauseous whiff, we one and all set about our work as though that loathsome place were a garden of roses.”",
+    "evidence": "After the involuntary shrinking consequent on the first nauseous whiff, we one and all set about our work as though that loathsome place were a garden of roses."
+   },
+   {
+    "prompt": "Fill in the missing name: “It was only for a moment, for, as Lord _____ said, “I thought I saw a face, but it was only the shadows,” and resumed his inquiry, I turned my lamp in the direction, and stepped into the passage.”",
+    "options": [
+     "Renfield",
+     "Harker",
+     "John",
+     "Godalming"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “It was only for a moment, for, as Lord Godalming said, “I thought I saw a face, but it was only the shadows,” and resumed his inquiry, I turned my lamp in the direction, and stepped into the passage.”",
+    "evidence": "It was only for a moment, for, as Lord Godalming said, “I thought I saw a face, but it was only the shadows,” and resumed his inquiry, I turned my lamp in the direction, and stepped into the passage."
+   },
+   {
+    "prompt": "Fill in the missing name: “I kept thinking over everything that has been ever since _____ came to see me in London, and it all seems like a horrible tragedy, with fate pressing on relentlessly to some destined end.”",
+    "options": [
+     "Van",
+     "Dracula",
+     "Count",
+     "Jonathan"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I kept thinking over everything that has been ever since Jonathan came to see me in London, and it all seems like a horrible tragedy, with fate pressing on relentlessly to some destined end.”",
+    "evidence": "I kept thinking over everything that has been ever since Jonathan came to see me in London, and it all seems like a horrible tragedy, with fate pressing on relentlessly to some destined end."
+   }
+  ],
+  "20": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "It was not wide open, but the catch of the lock had not caught.",
+     "It is something like the way Dame Nature gathers round a foreign body an envelope of some insensitive tissue which can protect from evil that which…",
+     "Having once told me that the Piccadilly house--which throughout our interview he called a “mansion”--was sold, he considered my business as concluded.",
+     "Somehow, I do not dread being alone to-night, and I can go to sleep without fear."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Having once told me that the Piccadilly house--which throughout our interview he called a “mansion”--was sold, he considered my business as concluded.”",
+    "evidence": "Having once told me that the Piccadilly house--which throughout our interview he called a “mansion”--was sold, he considered my business as concluded."
+   },
+   {
+    "prompt": "Fill in the missing name: “One of these suggested that there was being erected at _____ Angel Street a new “cold storage” building; and as this suited the condition of a “new-fangled ware’us,” I at once drove to it.”",
+    "options": [
+     "Cross",
+     "Varna",
+     "King",
+     "Journal"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “One of these suggested that there was being erected at Cross Angel Street a new “cold storage” building; and as this suited the condition of a “new-fangled ware’us,” I at once drove to it.”",
+    "evidence": "One of these suggested that there was being erected at Cross Angel Street a new “cold storage” building; and as this suited the condition of a “new-fangled ware’us,” I at once drove to it."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ was looking tired and pale, but she made a gallant effort to be bright and cheerful, it wrung my heart to think that I had had to keep anything from her and so caused her inquietude.”",
+    "options": [
+     "Quincey",
+     "Godalming",
+     "Mina",
+     "Jonathan"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Mina was looking tired and pale, but she made a gallant effort to be bright and cheerful, it wrung my heart to think that I had had to keep anything from her and so caused her inquietude.”",
+    "evidence": "Mina was looking tired and pale, but she made a gallant effort to be bright and cheerful, it wrung my heart to think that I had had to keep anything from her and so caused her inquietude."
+   }
+  ],
+  "21": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Suddenly I became broad awake, and sat up, with a horrible sense of fear upon me, and of some feeling of emptiness around me.",
+     "Then the dogs howled, away beyond the dark trees in His house.",
+     "The experience was not lost on the painters, and doubtless some of the sketches of the “Prelude to the Great Storm” will grace the R.",
+     "Certainly,” he replied with alacrity, and stood up to put it in train for speaking."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Then the dogs howled, away beyond the dark trees in His house.”",
+    "evidence": "Then the dogs howled, away beyond the dark trees in His house."
+   },
+   {
+    "prompt": "Fill in the missing name: “’ And then a red cloud, like the colour of blood, seemed to close over my eyes; and before I knew what I was doing, I found myself opening the sash and saying to Him: ‘Come in, Lord and _____!”",
+    "options": [
+     "Exeter",
+     "East",
+     "Master",
+     "Carfax"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “’ And then a red cloud, like the colour of blood, seemed to close over my eyes; and before I knew what I was doing, I found myself opening the sash and saying to Him: ‘Come in, Lord and Master!”",
+    "evidence": "’ And then a red cloud, like the colour of blood, seemed to close over my eyes; and before I knew what I was doing, I found myself opening the sash and saying to Him: ‘Come in, Lord and Master!"
+   },
+   {
+    "prompt": "Fill in the missing name: “For a space of perhaps a couple of minutes there was silence, and I could fancy that I could hear the sound of our hearts beating; then _____ Helsing said, placing his hand very tenderly on Mrs.”",
+    "options": [
+     "Jonathan",
+     "Quincey",
+     "Van",
+     "Holmwood"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “For a space of perhaps a couple of minutes there was silence, and I could fancy that I could hear the sound of our hearts beating; then Van Helsing said, placing his hand very tenderly on Mrs.”",
+    "evidence": "For a space of perhaps a couple of minutes there was silence, and I could fancy that I could hear the sound of our hearts beating; then Van Helsing said, placing his hand very tenderly on Mrs."
+   }
+  ],
+  "22": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "So we take it easy, and have each a long rest in turn.",
+     "Forgive my long delay in writing, but I have been simply overwhelmed with work.",
+     "Then he have an auction in that house, and advertise it, and put up big notice; and when the day come he sell off by a great auctioneer all the…",
+     "To her I have explained my situation, but without the horrors which I may only surmise."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Then he have an auction in that house, and advertise it, and put up big notice; and when the day come he sell off by a great auctioneer all the goods of that other man who own them.”",
+    "evidence": "Then he have an auction in that house, and advertise it, and put up big notice; and when the day come he sell off by a great auctioneer all the goods of that other man who own them."
+   },
+   {
+    "prompt": "Fill in the missing name: “It may be that you may have to bear that mark till God himself see fit, as He most surely shall, on the _____ Day, to redress all wrongs of the earth and of His children that He has placed thereon.”",
+    "options": [
+     "Carfax",
+     "London",
+     "Diary",
+     "Judgment"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “It may be that you may have to bear that mark till God himself see fit, as He most surely shall, on the Judgment Day, to redress all wrongs of the earth and of His children that He has placed thereon.”",
+    "evidence": "It may be that you may have to bear that mark till God himself see fit, as He most surely shall, on the Judgment Day, to redress all wrongs of the earth and of His children that He has placed thereon."
+   },
+   {
+    "prompt": "Fill in the missing name: “We moved to explore the house, all keeping together in case of attack; for we knew we had a strong and wily enemy to deal with, and as yet we did not know whether the _____ might not be in the house.”",
+    "options": [
+     "Lucy",
+     "Arthur",
+     "Quincey",
+     "Count"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “We moved to explore the house, all keeping together in case of attack; for we knew we had a strong and wily enemy to deal with, and as yet we did not know whether the Count might not be in the house.”",
+    "evidence": "We moved to explore the house, all keeping together in case of attack; for we knew we had a strong and wily enemy to deal with, and as yet we did not know whether the Count might not be in the house."
+   }
+  ],
+  "23": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "When we reached the hall the maid had just opened the door, and Arthur was stepping quickly in.",
+     "Better he not know as yet; perhaps he shall never know.",
+     "It is two o’clock, and the doctor will be here soon now.",
+     "The slow, careful steps came along the hall; the Count was evidently prepared for some surprise--at least he feared it."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “The slow, careful steps came along the hall; the Count was evidently prepared for some surprise--at least he feared it.”",
+    "evidence": "The slow, careful steps came along the hall; the Count was evidently prepared for some surprise--at least he feared it."
+   },
+   {
+    "prompt": "Fill in the missing name: “When we came to the part where _____ had rushed at the Count so recklessly, she clung to her husband’s arm, and held it tight as though her clinging could protect him from any harm that might come.”",
+    "options": [
+     "Helsing",
+     "Quincey",
+     "Harker",
+     "Morris"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “When we came to the part where Harker had rushed at the Count so recklessly, she clung to her husband’s arm, and held it tight as though her clinging could protect him from any harm that might come.”",
+    "evidence": "When we came to the part where Harker had rushed at the Count so recklessly, she clung to her husband’s arm, and held it tight as though her clinging could protect him from any harm that might come."
+   },
+   {
+    "prompt": "Fill in the missing name: “He looked at her gravely for a minute and then said sorrowfully:-- “Because my dear, dear Madam _____, now more than ever must we find him even if we have to follow him to the jaws of Hell!”",
+    "options": [
+     "Dracula",
+     "Jonathan",
+     "Helsing",
+     "Mina"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He looked at her gravely for a minute and then said sorrowfully:-- “Because my dear, dear Madam Mina, now more than ever must we find him even if we have to follow him to the jaws of Hell!”",
+    "evidence": "He looked at her gravely for a minute and then said sorrowfully:-- “Because my dear, dear Madam Mina, now more than ever must we find him even if we have to follow him to the jaws of Hell!"
+   }
+  ],
+  "24": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "But the instant she had disappeared he pulled me, suddenly and forcibly, into the dining-room and closed the door.",
+     "It seemed to have in it a whole history of the country.",
+     "Having passed the wall, we took our way to the house, taking care to keep in the shadows of the trees on the lawn when the moonlight shone out.",
+     "The very place, where he have been alive, Un-Dead for all these centuries, is full of strangeness of the geologic and chemical world."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “The very place, where he have been alive, Un-Dead for all these centuries, is full of strangeness of the geologic and chemical world.”",
+    "evidence": "The very place, where he have been alive, Un-Dead for all these centuries, is full of strangeness of the geologic and chemical world."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had sent a message by her husband to say that she would not join us at present, as she thought it better that we should be free to discuss our movements without her presence to embarrass us.”",
+    "options": [
+     "Mina",
+     "Quincey",
+     "Harker",
+     "Dracula"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Harker had sent a message by her husband to say that she would not join us at present, as she thought it better that we should be free to discuss our movements without her presence to embarrass us.”",
+    "evidence": "Harker had sent a message by her husband to say that she would not join us at present, as she thought it better that we should be free to discuss our movements without her presence to embarrass us."
+   },
+   {
+    "prompt": "Fill in the missing name: “The box we seek is to be landed in _____, and to be given to an agent, one Ristics who will there present his credentials; and so our merchant friend will have done his part.”",
+    "options": [
+     "King",
+     "Carfax",
+     "London",
+     "Varna"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The box we seek is to be landed in Varna, and to be given to an agent, one Ristics who will there present his credentials; and so our merchant friend will have done his part.”",
+    "evidence": "The box we seek is to be landed in Varna, and to be given to an agent, one Ristics who will there present his credentials; and so our merchant friend will have done his part."
+   }
+  ],
+  "25": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "What mercy he shall get from us will not count for much.",
+     "I used my knowledge of this phase of spiritual pathology, and laid down a rule that she should not be present with Lucy or think of her illness more…",
+     "I answered at once; whereupon she held out her hand.",
+     "As she had spoken, I watched the Professor’s face, and saw it turn ashen grey."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “What mercy he shall get from us will not count for much.”",
+    "evidence": "What mercy he shall get from us will not count for much."
+   },
+   {
+    "prompt": "Fill in the missing name: “I thought that the Professor was going to break down and have hysterics, just as he had when _____ died, but with a great effort he controlled himself and was at perfect nervous poise when Mrs.”",
+    "options": [
+     "Jonathan",
+     "Count",
+     "Lucy",
+     "Dracula"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “I thought that the Professor was going to break down and have hysterics, just as he had when Lucy died, but with a great effort he controlled himself and was at perfect nervous poise when Mrs.”",
+    "evidence": "I thought that the Professor was going to break down and have hysterics, just as he had when Lucy died, but with a great effort he controlled himself and was at perfect nervous poise when Mrs."
+   },
+   {
+    "prompt": "Fill in the missing name: “The three younger men looked happier at the moment as they seemed to realise the significance of her words; but _____ Helsing and I, turning to each other, met each a grave and troubled glance.”",
+    "options": [
+     "Quincey",
+     "Westenra",
+     "Dracula",
+     "Van"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The three younger men looked happier at the moment as they seemed to realise the significance of her words; but Van Helsing and I, turning to each other, met each a grave and troubled glance.”",
+    "evidence": "The three younger men looked happier at the moment as they seemed to realise the significance of her words; but Van Helsing and I, turning to each other, met each a grave and troubled glance."
+   }
+  ],
+  "26": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Peter, and that the throat had been torn open as if by some wild animal.",
+     "At the end of it is a buoy with a bell, which swings in bad weather, and sends in a mournful sound on the wind.",
+     "Is there fate amongst us still, sent down from the pagan world of old, that such things must be, and in such way?",
+     "She was pleased with the prospect of anything to do--if “pleased” could be used in connection with so grim an interest."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Peter, and that the throat had been torn open as if by some wild animal.”",
+    "evidence": "Peter, and that the throat had been torn open as if by some wild animal."
+   },
+   {
+    "prompt": "Fill in the missing name: “It is not three hours since it was arranged what part each of us was to do; and now Lord _____ and Jonathan have a lovely steam launch, with steam up ready to start at a moment’s notice.”",
+    "options": [
+     "Godalming",
+     "Lucy",
+     "Van",
+     "Dracula"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “It is not three hours since it was arranged what part each of us was to do; and now Lord Godalming and Jonathan have a lovely steam launch, with steam up ready to start at a moment’s notice.”",
+    "evidence": "It is not three hours since it was arranged what part each of us was to do; and now Lord Godalming and Jonathan have a lovely steam launch, with steam up ready to start at a moment’s notice."
+   },
+   {
+    "prompt": "Fill in the missing name: “Each of us had done his work as well as he could; so far as thought, and endeavour, and opportunity go, we are prepared for the whole of our journey, and for our work when we get to _____.”",
+    "options": [
+     "Art",
+     "Galatz",
+     "Whitby",
+     "London"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Each of us had done his work as well as he could; so far as thought, and endeavour, and opportunity go, we are prepared for the whole of our journey, and for our work when we get to Galatz.”",
+    "evidence": "Each of us had done his work as well as he could; so far as thought, and endeavour, and opportunity go, we are prepared for the whole of our journey, and for our work when we get to Galatz."
+   }
+  ],
+  "27": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The Professor tried to keep our minds active by using them all the time.",
+     "He said to me:-- “I can do this, all that can be at the present.",
+     "But in any case I suppose you will not let it away for some days?",
+     "She shook her head, and, coming back, sat down in her place."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “She shook her head, and, coming back, sat down in her place.”",
+    "evidence": "She shook her head, and, coming back, sat down in her place."
+   },
+   {
+    "prompt": "Fill in the missing name: “But all was indeed changed; the frowning mountains seemed further away, and we were near the top of a steep-rising hill, on summit of which was such a castle as _____ tell of in his diary.”",
+    "options": [
+     "Helsing",
+     "Renfield",
+     "Jonathan",
+     "Count"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “But all was indeed changed; the frowning mountains seemed further away, and we were near the top of a steep-rising hill, on summit of which was such a castle as Jonathan tell of in his diary.”",
+    "evidence": "But all was indeed changed; the frowning mountains seemed further away, and we were near the top of a steep-rising hill, on summit of which was such a castle as Jonathan tell of in his diary."
+   },
+   {
+    "prompt": "Fill in the missing name: “So he delay, and delay, and delay, till the mere beauty and the fascination of the wanton Un-Dead have hypnotise him; and he remain on and on, till sunset come, and the _____ sleep be over.”",
+    "options": [
+     "Exeter",
+     "Galatz",
+     "Vampire",
+     "Carfax"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “So he delay, and delay, and delay, till the mere beauty and the fascination of the wanton Un-Dead have hypnotise him; and he remain on and on, till sunset come, and the Vampire sleep be over.”",
+    "evidence": "So he delay, and delay, and delay, till the mere beauty and the fascination of the wanton Un-Dead have hypnotise him; and he remain on and on, till sunset come, and the Vampire sleep be over."
+   }
+  ]
+ }
+}

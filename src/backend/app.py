@@ -17,6 +17,8 @@ import catalog
 import db
 import llm
 import notifications
+import question_writer
+import questions
 import summaries
 
 DEFAULT_DB = Path(__file__).parent / "data" / "toward_the_light.db"
@@ -60,6 +62,7 @@ def create_app(config: dict | None = None) -> Flask:
         catalog.ensure_curated(con)  # The Lord of the Rings, Dune
         if app.config.get("LOAD_BUNDLED_CATALOG", not testing):
             catalog.ensure_bundled(con)  # catalog_data/books.json: source-attributed classics
+            questions.ensure_bundled(con, Path(__file__).with_name("catalog_data") / "questions")
     finally:
         con.close()
     app.teardown_appcontext(db.close_db)
@@ -126,6 +129,11 @@ def run_notification_check(app: Flask, warm: bool = False) -> list[dict]:
         made = notifications.check_and_notify(con, sender=app.config["PUSH_SENDER"], writer=llm_writer(app))
         if warm:
             summaries.warm_recaps(con, app.config["LLM"], limit=app.config["LLM_WARM_PER_PASS"])
+            # Upgrade a few chapters' boss questions per pass, within the daily free-tier budget.
+            report = question_writer.run(con, app.config["LLM"],
+                                         max_requests=int(os.environ.get("QUESTION_REQUESTS_PER_PASS", 3)))
+            if report["upgraded"]:
+                app.logger.info("AI wrote boss questions for %d chapter(s)", len(report["upgraded"]))
         return made
     finally:
         con.close()
@@ -375,6 +383,32 @@ def register_routes(app: Flask) -> None:
             con.execute("UPDATE books SET catalog_slug = ? WHERE id = ?", (entry.get("slug"), cur.lastrowid))
         con.commit()
         return jsonify(book_json(own_book(cur.lastrowid))), 201
+
+    # ---- boss-battle questions
+    def book_slug(book) -> str | None:
+        """The catalogue entry a shelf book belongs to. Books added before slugs existed are matched once by
+        title and author, and the link is saved."""
+        if book["catalog_slug"]:
+            return book["catalog_slug"]
+        con = db.get_db()
+        row = con.execute("SELECT slug FROM catalog_books WHERE slug IS NOT NULL AND title_norm = ? AND lower(author) = ?",
+                          (catalog.normalize(book["title"]), (book["author"] or "").lower())).fetchone()
+        if row:
+            con.execute("UPDATE books SET catalog_slug = ? WHERE id = ?", (row["slug"], book["id"]))
+            con.commit()
+            return row["slug"]
+        return None
+
+    @app.get("/api/books/<int:book_id>/chapters/<int:n>/questions")
+    def chapter_questions(book_id, n):
+        """Three boss questions for chapter n, if the catalogue has them. `available: false` means the battle
+        falls back to the reader's own excerpt."""
+        book = own_book(book_id)
+        slug = book_slug(book)
+        found = questions.for_chapter(db.get_db(), slug, n) if slug else None
+        if not found:
+            return jsonify(available=False, questions=[], source=None)
+        return jsonify(available=True, **found)
 
     # ---- catalogue
     @app.get("/api/catalog/search")
@@ -634,6 +668,24 @@ def register_cli(app: Flask) -> None:
         if cur.rowcount == 0:
             raise click.ClickException(f"No book with id {book_id}")
         click.echo(f"Book {book_id} now looks last read {days:g} day(s) ago.")
+
+    @app.cli.command("questions")
+    @click.option("--requests", "max_requests", type=int, default=5, help="AI requests to spend (within today's budget).")
+    def questions_cmd(max_requests):
+        """Have the AI upgrade boss questions now (normally done a few at a time by the background scheduler)."""
+        con = db.connect(app.config["DATABASE"])
+        try:
+            if app.config["LLM"] is None:
+                raise click.ClickException("No OPENROUTER_API_KEY configured.")
+            report = question_writer.run(con, app.config["LLM"], max_requests=max_requests)
+            total = con.execute("SELECT source, COUNT(DISTINCT catalog_slug || ':' || chapter_number) FROM chapter_questions "
+                                "GROUP BY source").fetchall()
+            used = question_writer.used_today(con)
+        finally:
+            con.close()
+        click.echo(f"{report['requests']} request(s); upgraded {len(report['upgraded'])} chapter(s); "
+                   f"skipped {len(report['skipped'])}; AI requests used today: {used}/{question_writer.daily_budget()}")
+        click.echo("chapters by question source: " + ", ".join(f"{s}={c}" for s, c in total))
 
     @app.cli.command("notify")
     @click.option("--loop", "loop_minutes", type=float, default=0, help="Keep running, checking every N minutes.")

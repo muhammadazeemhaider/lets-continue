@@ -80,7 +80,10 @@ _SECTION = re.compile(r"^(?P<word>epilogue|prologue)\.?$", re.IGNORECASE)
 
 
 def _usable_title(t: str) -> bool:
-    return bool(t) and not t.startswith(("[", "(")) and any(c.isalpha() for c in t)
+    # Not '[Illustration]', not an opening line of dialogue ('"Can this be still a dream?"...'),
+    # not a numbered epigraph speaker ('1st Gent. Our deeds are fetters...').
+    return bool(t) and not t.startswith(("[", "(", "“", '"', "‘", "'", "—")) \
+        and not t[0].isdigit() and any(c.isalpha() for c in t)
 
 
 def parse_chapters(text: str, min_gap: int = 1200) -> list[str]:
@@ -90,11 +93,27 @@ def parse_chapters(text: str, min_gap: int = 1200) -> list[str]:
        'STAVE ONE', 'I. A SCANDAL IN BOHEMIA'. Table-of-contents entries are excluded by requiring real
        text between headings and by requiring parts/books to run in order.
     2. Otherwise the book's own Contents list, keeping only entries that really appear as headings later."""
+    return [name for name, _ in _chapter_starts(text, min_gap)]
+
+
+def chapter_texts(text: str, min_gap: int = 1200) -> list[tuple[str, str]]:
+    """[(chapter title, chapter text)] using exactly the same detection as parse_chapters, so the
+    titles always line up with the catalogue's chapter list. Each text runs to the next chapter."""
+    starts = _chapter_starts(text, min_gap)
+    body = "\n".join(_body(text).replace("\r\n", "\n").split("\n"))
+    out = []
+    for k, (name, start) in enumerate(starts):
+        end = starts[k + 1][1] if k + 1 < len(starts) else len(body)
+        out.append((name, body[start:end].strip()))
+    return out
+
+
+def _chapter_starts(text: str, min_gap: int = 1200) -> list[tuple[str, int]]:
     lines = _body(text).replace("\r\n", "\n").split("\n")
     return _from_headings(lines, len(text), min_gap) or _from_contents(lines)
 
 
-def _from_headings(lines: list[str], text_len: int, min_gap: int) -> list[str]:
+def _from_headings(lines: list[str], text_len: int, min_gap: int) -> list[tuple[str, int]]:
     pos, offsets = 0, []
     for ln in lines:
         offsets.append(pos)
@@ -215,7 +234,7 @@ def _from_headings(lines: list[str], text_len: int, min_gap: int) -> list[str]:
     out = []
     prologue = next((c for c in containers if c[3] is None and c[2] == "Prologue" and c[0] < kept[0][0]), None)
     if prologue:
-        out.append("Prologue")
+        out.append(("Prologue", prologue[0]))
     for f in kept:
         offset, _, label, num, title, _style = f
         prefix = ""
@@ -228,15 +247,15 @@ def _from_headings(lines: list[str], text_len: int, min_gap: int) -> list[str]:
             name = f"{label} {num}: {title}"
         else:
             name = title
-        out.append(prefix + name)
+        out.append((prefix + name, offset))
     # An unnumbered Epilogue after the last chapter is a reading unit of its own.
-    if any(c[3] is None and c[2] == "Epilogue" and c[0] > kept[-1][0] for c in containers) \
-            and not any(parent(f) and parent(f)[2] == "Epilogue" for f in kept):
-        out.append("Epilogue")
+    epilogue = next((c for c in containers if c[3] is None and c[2] == "Epilogue" and c[0] > kept[-1][0]), None)
+    if epilogue and not any(parent(f) and parent(f)[2] == "Epilogue" for f in kept):
+        out.append(("Epilogue", epilogue[0]))
     return out[:400]
 
 
-def _from_contents(lines: list[str]) -> list[str]:
+def _from_contents(lines: list[str]) -> list[tuple[str, int]]:
     """Use the book's own Contents list; keep entries that reappear later as standalone headings."""
     limit = max(200, len(lines) // 6)
     start = next((i for i, l in enumerate(lines[:limit]) if l.strip().lower().rstrip(".:") in
@@ -264,11 +283,15 @@ def _from_contents(lines: list[str]) -> list[str]:
         s = lines[j].strip()
         if s and len(s) <= 90 and (not lines[j - 1].strip()):
             standalone.setdefault(_norm(s), j)
+    offsets, pos = [], 0
+    for ln in lines:
+        offsets.append(pos)
+        pos += len(ln) + 1
     found, last = [], body_from
     for _, title in entries:
         j = standalone.get(_norm(title))
         if j is not None and j >= last:
-            found.append(_tidy_title(title))
+            found.append((_tidy_title(title), offsets[j]))
             last = j
     return found if len(found) >= 3 and len(found) >= 0.7 * len(entries) else []
 

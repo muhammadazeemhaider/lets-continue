@@ -1,0 +1,349 @@
+{
+ "slug": "gutenberg:64317",
+ "title": "The Great Gatsby",
+ "source": "text",
+ "chapters": {
+  "1": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Oh, I’ll stay in the East, don’t you worry,” he said, glancing at Daisy and then back at me, as if he were alert for something more.",
+     "So my first impression, that he was a person of some undefined consequence, had gradually faded and he had become simply the proprietor of an…",
+     "At eleven o’clock a man in a raincoat, dragging a lawn-mower, tapped at my front door and said that Mr.",
+     "It might have lasted indefinitely except for the fact that Ella Kaye came on board one night in Boston and a week later Dan Cody inhospitably died."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Oh, I’ll stay in the East, don’t you worry,” he said, glancing at Daisy and then back at me, as if he were alert for something more.”",
+    "evidence": "Oh, I’ll stay in the East, don’t you worry,” he said, glancing at Daisy and then back at me, as if he were alert for something more."
+   },
+   {
+    "prompt": "Fill in the missing name: “Then there was a boom as _____ Buchanan shut the rear windows and the caught wind died out about the room, and the curtains and the rugs and the two young women ballooned slowly to the floor.”",
+    "options": [
+     "Wilson",
+     "Klipspringer",
+     "Gatsby",
+     "Tom"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Then there was a boom as Tom Buchanan shut the rear windows and the caught wind died out about the room, and the curtains and the rugs and the two young women ballooned slowly to the floor.”",
+    "evidence": "Then there was a boom as Tom Buchanan shut the rear windows and the caught wind died out about the room, and the curtains and the rugs and the two young women ballooned slowly to the floor."
+   },
+   {
+    "prompt": "Fill in the missing name: “Tom and Miss _____ sat at either end of the long couch and she read aloud to him from the Saturday Evening Post—the words, murmurous and uninflected, running together in a soothing tune.”",
+    "options": [
+     "Baedeker",
+     "Baker",
+     "Klipspringer",
+     "Catherine"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Tom and Miss Baker sat at either end of the long couch and she read aloud to him from the Saturday Evening Post—the words, murmurous and uninflected, running together in a soothing tune.”",
+    "evidence": "Tom and Miss Baker sat at either end of the long couch and she read aloud to him from the Saturday Evening Post—the words, murmurous and uninflected, running together in a soothing tune."
+   }
+  ],
+  "2": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "As he left the room again she got up and went over to Gatsby and pulled his face down, kissing him on the mouth.",
+     "My commutation ticket came back to me with a dark stain from his hand.",
+     "At least—” He fumbled with a series of beginnings.",
+     "I’m going to have the McKees come up,” she announced as we rose in the elevator."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “I’m going to have the McKees come up,” she announced as we rose in the elevator.”",
+    "evidence": "I’m going to have the McKees come up,” she announced as we rose in the elevator."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had changed her costume some time before, and was now attired in an elaborate afternoon dress of cream-coloured chiffon, which gave out a continual rustle as she swept about the room.”",
+    "options": [
+     "Wolfshiem",
+     "Daisy",
+     "Jordan",
+     "Wilson"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Wilson had changed her costume some time before, and was now attired in an elaborate afternoon dress of cream-coloured chiffon, which gave out a continual rustle as she swept about the room.”",
+    "evidence": "Wilson had changed her costume some time before, and was now attired in an elaborate afternoon dress of cream-coloured chiffon, which gave out a continual rustle as she swept about the room."
+   },
+   {
+    "prompt": "Fill in the missing name: “I went up to New York with _____ on the train one afternoon, and when we stopped by the ash-heaps he jumped to his feet and, taking hold of my elbow, literally forced me from the car.”",
+    "options": [
+     "Buchanan",
+     "Myrtle",
+     "Wilson",
+     "Tom"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I went up to New York with Tom on the train one afternoon, and when we stopped by the ash-heaps he jumped to his feet and, taking hold of my elbow, literally forced me from the car.”",
+    "evidence": "I went up to New York with Tom on the train one afternoon, and when we stopped by the ash-heaps he jumped to his feet and, taking hold of my elbow, literally forced me from the car."
+   }
+  ],
+  "3": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "We were sitting at a table with a man of about my age and a rowdy little girl, who gave way upon the slightest provocation to uncontrollable laughter.",
+     "A few days later he took him to Duluth and bought him a blue coat, six pairs of white duck trousers, and a yachting cap.",
+     "He had casually conferred on me the freedom of the neighbourhood.",
+     "There was a long silence on the other end of the wire, followed by an exclamation … then a quick squawk as the connection was broken."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “We were sitting at a table with a man of about my age and a rowdy little girl, who gave way upon the slightest provocation to uncontrollable laughter.”",
+    "evidence": "We were sitting at a table with a man of about my age and a rowdy little girl, who gave way upon the slightest provocation to uncontrollable laughter."
+   },
+   {
+    "prompt": "Fill in the missing name: “I took dinner usually at the _____ Club—for some reason it was the gloomiest event of my day—and then I went upstairs to the library and studied investments and securities for a conscientious hour.”",
+    "options": [
+     "West",
+     "Yale",
+     "Michaelis",
+     "York"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I took dinner usually at the Yale Club—for some reason it was the gloomiest event of my day—and then I went upstairs to the library and studied investments and securities for a conscientious hour.”",
+    "evidence": "I took dinner usually at the Yale Club—for some reason it was the gloomiest event of my day—and then I went upstairs to the library and studied investments and securities for a conscientious hour."
+   },
+   {
+    "prompt": "Fill in the missing name: “The first supper—there would be another one after midnight—was now being served, and _____ invited me to join her own party, who were spread around a table on the other side of the garden.”",
+    "options": [
+     "Jordan",
+     "Myrtle",
+     "Daisy",
+     "Klipspringer"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “The first supper—there would be another one after midnight—was now being served, and Jordan invited me to join her own party, who were spread around a table on the other side of the garden.”",
+    "evidence": "The first supper—there would be another one after midnight—was now being served, and Jordan invited me to join her own party, who were spread around a table on the other side of the garden."
+   }
+  ],
+  "4": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "So Tom Buchanan and his girl and I went up together to New York—or not quite together, for Mrs.",
+     "The room, shadowed well with awnings, was dark and cool.",
+     "There was Gatsby, looking a little, not much, younger—with a cricket bat in his hand.",
+     "They were a party of three on horseback—Tom and a man named Sloane and a pretty woman in a brown riding-habit, who had been there previously."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “There was Gatsby, looking a little, not much, younger—with a cricket bat in his hand.”",
+    "evidence": "There was Gatsby, looking a little, not much, younger—with a cricket bat in his hand."
+   },
+   {
+    "prompt": "Fill in the missing name: “I remembered, of course, that the World’s _____ had been fixed in 1919, but if I had thought of it at all I would have thought of it as a thing that merely happened, the end of some inevitable chain.”",
+    "options": [
+     "Egg",
+     "East",
+     "Series",
+     "Nick"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “I remembered, of course, that the World’s Series had been fixed in 1919, but if I had thought of it at all I would have thought of it as a thing that merely happened, the end of some inevitable chain.”",
+    "evidence": "I remembered, of course, that the World’s Series had been fixed in 1919, but if I had thought of it at all I would have thought of it as a thing that merely happened, the end of some inevitable chain."
+   },
+   {
+    "prompt": "Fill in the missing name: “Suddenly I wasn’t thinking of _____ and Gatsby any more, but of this clean, hard, limited person, who dealt in universal scepticism, and who leaned back jauntily just within the circle of my arm.”",
+    "options": [
+     "Catherine",
+     "Myrtle",
+     "Daisy",
+     "Wolfshiem"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Suddenly I wasn’t thinking of Daisy and Gatsby any more, but of this clean, hard, limited person, who dealt in universal scepticism, and who leaned back jauntily just within the circle of my arm.”",
+    "evidence": "Suddenly I wasn’t thinking of Daisy and Gatsby any more, but of this clean, hard, limited person, who dealt in universal scepticism, and who leaned back jauntily just within the circle of my arm."
+   }
+  ],
+  "5": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "She doesn’t look like her father,” explained Daisy.",
+     "But what gave it an air of breathless intensity, was that Daisy lived there—it was as casual a thing to her as his tent out at camp was to him.",
+     "It was a few days before the Fourth of July, and a grey, scrawny Italian child was setting torpedoes in a row along the railroad track.",
+     "Tell your chauffeur to go far away and spend an hour."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Tell your chauffeur to go far away and spend an hour.”",
+    "evidence": "Tell your chauffeur to go far away and spend an hour."
+   },
+   {
+    "prompt": "Fill in the missing name: “This reminded me that I had forgotten to tell my _____ to come back, so I drove into West Egg Village to search for her among soggy whitewashed alleys and to buy some cups and lemons and flowers.”",
+    "options": [
+     "Chicago",
+     "Oxford",
+     "Finn",
+     "Michaelis"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “This reminded me that I had forgotten to tell my Finn to come back, so I drove into West Egg Village to search for her among soggy whitewashed alleys and to buy some cups and lemons and flowers.”",
+    "evidence": "This reminded me that I had forgotten to tell my Finn to come back, so I drove into West Egg Village to search for her among soggy whitewashed alleys and to buy some cups and lemons and flowers."
+   },
+   {
+    "prompt": "Fill in the missing name: “There must have been moments even that afternoon when _____ tumbled short of his dreams—not through her own fault, but because of the colossal vitality of his illusion.”",
+    "options": [
+     "Daisy",
+     "Tom",
+     "Myrtle",
+     "Baker"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “There must have been moments even that afternoon when Daisy tumbled short of his dreams—not through her own fault, but because of the colossal vitality of his illusion.”",
+    "evidence": "There must have been moments even that afternoon when Daisy tumbled short of his dreams—not through her own fault, but because of the colossal vitality of his illusion."
+   }
+  ],
+  "6": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Then she wet her lips, and without turning around spoke to her husband in a soft, coarse voice: “Get some chairs, why don’t you, so somebody can sit…",
+     "Moved by an irresistible impulse, Gatsby turned to Tom, who had accepted the introduction as a stranger.",
+     "I even hoped for a while that she’d throw me over, but she didn’t, because she was in love with me too.",
+     "It was Gatsby’s father, a solemn old man, very helpless and dismayed, bundled up in a long cheap ulster against the warm September day."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Moved by an irresistible impulse, Gatsby turned to Tom, who had accepted the introduction as a stranger.”",
+    "evidence": "Moved by an irresistible impulse, Gatsby turned to Tom, who had accepted the introduction as a stranger."
+   },
+   {
+    "prompt": "Fill in the missing name: “He had changed it at the age of seventeen and at the specific moment that witnessed the beginning of his career—when he saw _____ Cody’s yacht drop anchor over the most insidious flat on Lake Superior.”",
+    "options": [
+     "York",
+     "Jay",
+     "New",
+     "Dan"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He had changed it at the age of seventeen and at the specific moment that witnessed the beginning of his career—when he saw Dan Cody’s yacht drop anchor over the most insidious flat on Lake Superior.”",
+    "evidence": "He had changed it at the age of seventeen and at the specific moment that witnessed the beginning of his career—when he saw Dan Cody’s yacht drop anchor over the most insidious flat on Lake Superior."
+   },
+   {
+    "prompt": "Fill in the missing name: “… She looked around after a moment and told me the girl was “common but pretty,” and I knew that except for the half-hour she’d been alone with _____ she wasn’t having a good time.”",
+    "options": [
+     "Gatsby",
+     "Wolfshiem",
+     "Tom",
+     "Wilson"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “… She looked around after a moment and told me the girl was “common but pretty,” and I knew that except for the half-hour she’d been alone with Gatsby she wasn’t having a good time.”",
+    "evidence": "… She looked around after a moment and told me the girl was “common but pretty,” and I knew that except for the half-hour she’d been alone with Gatsby she wasn’t having a good time."
+   }
+  ],
+  "7": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "But, though they drew back the sheet and looked at Gatsby with shocked eyes, his protest continued in my brain: “Look here, old sport, you’ve got to…",
+     "Welcome or not, I found it necessary to attach myself to someone before I should begin to address cordial remarks to the passersby.",
+     "He had discovered that Myrtle had some sort of life apart from him in another world, and the shock had made him physically sick.",
+     "And if you feel that way about it, maybe I’d better sell it somewhere else after all."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “He had discovered that Myrtle had some sort of life apart from him in another world, and the shock had made him physically sick.”",
+    "evidence": "He had discovered that Myrtle had some sort of life apart from him in another world, and the shock had made him physically sick."
+   },
+   {
+    "prompt": "Fill in the missing name: “Some words of this conversation must have reached _____, swaying in the office door, for suddenly a new theme found voice among his grasping cries: “You don’t have to tell me what kind of car it was!”",
+    "options": [
+     "Gatz",
+     "Catherine",
+     "Daisy",
+     "Wilson"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Some words of this conversation must have reached Wilson, swaying in the office door, for suddenly a new theme found voice among his grasping cries: “You don’t have to tell me what kind of car it was!”",
+    "evidence": "Some words of this conversation must have reached Wilson, swaying in the office door, for suddenly a new theme found voice among his grasping cries: “You don’t have to tell me what kind of car it was!"
+   },
+   {
+    "prompt": "Fill in the missing name: “I can’t speak about what happened five years ago, because I didn’t know _____ then—and I’ll be damned if I see how you got within a mile of her unless you brought the groceries to the back door.”",
+    "options": [
+     "Daisy",
+     "Jordan",
+     "Wolfshiem",
+     "Baedeker"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “I can’t speak about what happened five years ago, because I didn’t know Daisy then—and I’ll be damned if I see how you got within a mile of her unless you brought the groceries to the back door.”",
+    "evidence": "I can’t speak about what happened five years ago, because I didn’t know Daisy then—and I’ll be damned if I see how you got within a mile of her unless you brought the groceries to the back door."
+   }
+  ],
+  "8": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Cody was fifty years old then, a product of the Nevada silver fields, of the Yukon, of every rush for metal since seventy-five.",
+     "He came back from France when Tom and Daisy were still on their wedding trip, and made a miserable but irresistible journey to Louisville on the…",
+     "I thought you might be here,” she responded absently as I came up.",
+     "Schraeders, and the Stonewall Jackson Abrams of Georgia, and the Fishguards and the Ripley Snells."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “He came back from France when Tom and Daisy were still on their wedding trip, and made a miserable but irresistible journey to Louisville on the last of his army pay.”",
+    "evidence": "He came back from France when Tom and Daisy were still on their wedding trip, and made a miserable but irresistible journey to Louisville on the last of his army pay."
+   },
+   {
+    "prompt": "Fill in the missing name: “The hard brown beetles kept thudding against the dull light, and whenever _____ heard a car go tearing along the road outside it sounded to him like the car that hadn’t stopped a few hours before.”",
+    "options": [
+     "Michaelis",
+     "Sound",
+     "Island",
+     "Long"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “The hard brown beetles kept thudding against the dull light, and whenever Michaelis heard a car go tearing along the road outside it sounded to him like the car that hadn’t stopped a few hours before.”",
+    "evidence": "The hard brown beetles kept thudding against the dull light, and whenever Michaelis heard a car go tearing along the road outside it sounded to him like the car that hadn’t stopped a few hours before."
+   },
+   {
+    "prompt": "Fill in the missing name: “However glorious might be his future as Jay _____, he was at present a penniless young man without a past, and at any moment the invisible cloak of his uniform might slip from his shoulders.”",
+    "options": [
+     "Tom",
+     "Wolfshiem",
+     "Myrtle",
+     "Gatsby"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “However glorious might be his future as Jay Gatsby, he was at present a penniless young man without a past, and at any moment the invisible cloak of his uniform might slip from his shoulders.”",
+    "evidence": "However glorious might be his future as Jay Gatsby, he was at present a penniless young man without a past, and at any moment the invisible cloak of his uniform might slip from his shoulders."
+   }
+  ],
+  "9": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "His brown, hardening body lived naturally through the half-fierce, half-lazy work of the bracing days.",
+     "They had spent a year in France for no particular reason, and then drifted here and there unrestfully wherever people played polo and were rich…",
+     "You young men think you can force your way in here any time,” she scolded.",
+     "It might have lasted indefinitely except for the fact that Ella Kaye came on board one night in Boston and a week later Dan Cody inhospitably died."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “You young men think you can force your way in here any time,” she scolded.”",
+    "evidence": "You young men think you can force your way in here any time,” she scolded."
+   },
+   {
+    "prompt": "Fill in the missing name: “------------------------------------------------------------------------ One of my most vivid memories is of coming back _____ from prep school and later from college at Christmas time.”",
+    "options": [
+     "York",
+     "Nick",
+     "West",
+     "Michaelis"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “------------------------------------------------------------------------ One of my most vivid memories is of coming back West from prep school and later from college at Christmas time.”",
+    "evidence": "------------------------------------------------------------------------ One of my most vivid memories is of coming back West from prep school and later from college at Christmas time."
+   },
+   {
+    "prompt": "Fill in the missing name: “I tried to think about _____ then for a moment, but he was already too far away, and I could only remember, without resentment, that Daisy hadn’t sent a message or a flower.”",
+    "options": [
+     "Gatsby",
+     "Baedeker",
+     "Wolfshiem",
+     "Catherine"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “I tried to think about Gatsby then for a moment, but he was already too far away, and I could only remember, without resentment, that Daisy hadn’t sent a message or a flower.”",
+    "evidence": "I tried to think about Gatsby then for a moment, but he was already too far away, and I could only remember, without resentment, that Daisy hadn’t sent a message or a flower."
+   }
+  ]
+ }
+}

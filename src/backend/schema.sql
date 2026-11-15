@@ -126,6 +126,15 @@ CREATE TABLE IF NOT EXISTS chapter_questions (
     UNIQUE (catalog_slug, chapter_number, position)
 );
 
+-- Chapters the AI question writer could not do (so they are not retried on every pass).
+CREATE TABLE IF NOT EXISTS question_attempts (
+    catalog_slug   TEXT    NOT NULL,
+    chapter_number INTEGER NOT NULL,
+    failures       INTEGER NOT NULL DEFAULT 0,
+    last_at        TEXT    NOT NULL,
+    PRIMARY KEY (catalog_slug, chapter_number)
+);
+
 -- Daily count of background AI requests (free tiers allow only so many per day).
 CREATE TABLE IF NOT EXISTS llm_usage (
     day      TEXT PRIMARY KEY,                          -- YYYY-MM-DD (UTC)

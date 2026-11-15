@@ -1,0 +1,2325 @@
+{
+ "slug": "gutenberg:1342",
+ "title": "Pride and Prejudice",
+ "source": "text",
+ "chapters": {
+  "1": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "They were, in fact, very fine ladies; not deficient in good-humour when they were pleased, nor in the power of being agreeable where they chose it;…",
+     "The very mention of anything concerning the match threw her into an agony of ill-humour, and wherever she went she was sure of hearing it talked of.",
+     "Forster, and the probability of her being yet more imprudent with such a companion at Brighton, where the temptations must be greater than at home.",
+     "You and the girls may go--or you may send them by themselves, which perhaps will be still better; for as you are as handsome as any of them, Mr."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “You and the girls may go--or you may send them by themselves, which perhaps will be still better; for as you are as handsome as any of them, Mr.”",
+    "evidence": "You and the girls may go--or you may send them by themselves, which perhaps will be still better; for as you are as handsome as any of them, Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ was so odd a mixture of quick parts, sarcastic humour, reserve, and caprice, that the experience of three-and-twenty years had been insufficient to make his wife understand his character.”",
+    "options": [
+     "Bennet",
+     "Forster",
+     "Wickham",
+     "Lizzy"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Bennet was so odd a mixture of quick parts, sarcastic humour, reserve, and caprice, that the experience of three-and-twenty years had been insufficient to make his wife understand his character.”",
+    "evidence": "Bennet was so odd a mixture of quick parts, sarcastic humour, reserve, and caprice, that the experience of three-and-twenty years had been insufficient to make his wife understand his character."
+   },
+   {
+    "prompt": "Fill in the missing name: “They have none of them much to recommend them,” replied he: “they are all silly and ignorant like other girls; but _____ has something more of quickness than her sisters.”",
+    "options": [
+     "Bennet",
+     "Darcy",
+     "Lydia",
+     "Lizzy"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “They have none of them much to recommend them,” replied he: “they are all silly and ignorant like other girls; but Lizzy has something more of quickness than her sisters.”",
+    "evidence": "They have none of them much to recommend them,” replied he: “they are all silly and ignorant like other girls; but Lizzy has something more of quickness than her sisters."
+   }
+  ],
+  "2": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Elizabeth noticed every sentence conveying the idea of uneasiness, with an attention which it had hardly received on the first perusal.",
+     "Bennet’s means, for his coming next morning to shoot with her husband.",
+     "Then, my dear, you may have the advantage of your friend, and introduce Mr.",
+     "Collins returned into Hertfordshire soon after it had been quitted by the Gardiners and Jane; but, as he took up his abode with the Lucases, his…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Then, my dear, you may have the advantage of your friend, and introduce Mr.”",
+    "evidence": "Then, my dear, you may have the advantage of your friend, and introduce Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ perhaps surpassing the rest; though when the first tumult of joy was over, she began to declare that it was what she had expected all the while.”",
+    "options": [
+     "Charlotte",
+     "Kitty",
+     "Bennet",
+     "Catherine"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Bennet perhaps surpassing the rest; though when the first tumult of joy was over, she began to declare that it was what she had expected all the while.”",
+    "evidence": "Bennet perhaps surpassing the rest; though when the first tumult of joy was over, she began to declare that it was what she had expected all the while."
+   },
+   {
+    "prompt": "Fill in the missing name: “But you forget, mamma,” said _____, “that we shall meet him at the assemblies, and that Mrs.”",
+    "options": [
+     "Elizabeth",
+     "Bennet",
+     "Bingley",
+     "Lizzy"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “But you forget, mamma,” said Elizabeth, “that we shall meet him at the assemblies, and that Mrs.”",
+    "evidence": "But you forget, mamma,” said Elizabeth, “that we shall meet him at the assemblies, and that Mrs."
+   }
+  ],
+  "3": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The gentlemen pronounced him to be a fine figure of a man, the ladies declared he was much handsomer than Mr.",
+     "His complexion became pale with anger, and the disturbance of his mind was visible in every feature.",
+     "I have been most highly gratified, indeed, my dear sir; such very superior dancing is not often seen.",
+     "Collins would undoubtedly have been much less in his own apartment had they sat in one equally lively; and she gave Charlotte credit for the…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “The gentlemen pronounced him to be a fine figure of a man, the ladies declared he was much handsomer than Mr.”",
+    "evidence": "The gentlemen pronounced him to be a fine figure of a man, the ladies declared he was much handsomer than Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “I was so vexed to see him stand up with her; but, however, he did not admire her at all; indeed, nobody can, you know; and he seemed quite struck with _____ as she was going down the dance.”",
+    "options": [
+     "Elizabeth",
+     "Jane",
+     "Wickham",
+     "Lydia"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I was so vexed to see him stand up with her; but, however, he did not admire her at all; indeed, nobody can, you know; and he seemed quite struck with Jane as she was going down the dance.”",
+    "evidence": "I was so vexed to see him stand up with her; but, however, he did not admire her at all; indeed, nobody can, you know; and he seemed quite struck with Jane as she was going down the dance."
+   },
+   {
+    "prompt": "Fill in the missing name: “Hurst and once with Miss _____, declined being introduced to any other lady, and spent the rest of the evening in walking about the room, speaking occasionally to one of his own party.”",
+    "options": [
+     "Eliza",
+     "Fitzwilliam",
+     "Bingley",
+     "Lizzy"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Hurst and once with Miss Bingley, declined being introduced to any other lady, and spent the rest of the evening in walking about the room, speaking occasionally to one of his own party.”",
+    "evidence": "Hurst and once with Miss Bingley, declined being introduced to any other lady, and spent the rest of the evening in walking about the room, speaking occasionally to one of his own party."
+   }
+  ],
+  "4": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Affectation of candour is common enough; one meets with it everywhere.",
+     "She talked to Elizabeth again and again; coaxed and threatened her by turns.",
+     "Pemberley was now Georgiana’s home; and the attachment of the sisters was exactly what Darcy had hoped to see.",
+     "Bingley, and a charming prospect over that gravel walk."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Affectation of candour is common enough; one meets with it everywhere.”",
+    "evidence": "Affectation of candour is common enough; one meets with it everywhere."
+   },
+   {
+    "prompt": "Fill in the missing name: “His sisters were very anxious for his having an estate of his own; but though he was now established only as a tenant, Miss _____ was by no means unwilling to preside at his table; nor was Mrs.”",
+    "options": [
+     "Darcy",
+     "Bingley",
+     "Lydia",
+     "Fitzwilliam"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “His sisters were very anxious for his having an estate of his own; but though he was now established only as a tenant, Miss Bingley was by no means unwilling to preside at his table; nor was Mrs.”",
+    "evidence": "His sisters were very anxious for his having an estate of his own; but though he was now established only as a tenant, Miss Bingley was by no means unwilling to preside at his table; nor was Mrs."
+   },
+   {
+    "prompt": "Fill in the missing name: “They were of a respectable family in the north of _____; a circumstance more deeply impressed on their memories than that their brother’s fortune and their own had been acquired by trade.”",
+    "options": [
+     "England",
+     "George",
+     "Hunsford",
+     "Netherfield"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “They were of a respectable family in the north of England; a circumstance more deeply impressed on their memories than that their brother’s fortune and their own had been acquired by trade.”",
+    "evidence": "They were of a respectable family in the north of England; a circumstance more deeply impressed on their memories than that their brother’s fortune and their own had been acquired by trade."
+   }
+  ],
+  "5": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Perhaps you mean what I overheard between him and Mr.",
+     "Their brother, indeed, was the only one of the party whom she could regard with any complacency.",
+     "He smiled, looked handsome, and said many pretty things.",
+     "Wickham and our poor Lydia would be, we are now anxious to be assured it has taken place, for there is but too much reason to fear they are not gone…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Perhaps you mean what I overheard between him and Mr.”",
+    "evidence": "Perhaps you mean what I overheard between him and Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “That the Miss _____ and the Miss Bennets should meet to talk over a ball was absolutely necessary; and the morning after the assembly brought the former to Longbourn to hear and to communicate.”",
+    "options": [
+     "Bingley",
+     "Kitty",
+     "Lucases",
+     "Lizzy"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “That the Miss Lucases and the Miss Bennets should meet to talk over a ball was absolutely necessary; and the morning after the assembly brought the former to Longbourn to hear and to communicate.”",
+    "evidence": "That the Miss Lucases and the Miss Bennets should meet to talk over a ball was absolutely necessary; and the morning after the assembly brought the former to Longbourn to hear and to communicate."
+   },
+   {
+    "prompt": "Fill in the missing name: “Sir _____ Lucas had been formerly in trade in Meryton, where he had made a tolerable fortune, and risen to the honour of knighthood by an address to the king during his mayoralty.”",
+    "options": [
+     "Kitty",
+     "William",
+     "Bennet",
+     "Wickham"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Sir William Lucas had been formerly in trade in Meryton, where he had made a tolerable fortune, and risen to the honour of knighthood by an address to the king during his mayoralty.”",
+    "evidence": "Sir William Lucas had been formerly in trade in Meryton, where he had made a tolerable fortune, and risen to the honour of knighthood by an address to the king during his mayoralty."
+   }
+  ],
+  "6": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "She was a little revived, however, by his bringing back his coffee-cup himself; and she seized the opportunity of saying,-- “Is your sister at…",
+     "To this discovery succeeded some others equally mortifying.",
+     "As the weather was fine, they had a pleasant walk of about half a mile across the park.",
+     "That they should marry, small as is their chance of happiness, and wretched as is his character, we are forced to rejoice!"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “To this discovery succeeded some others equally mortifying.”",
+    "evidence": "To this discovery succeeded some others equally mortifying."
+   },
+   {
+    "prompt": "Fill in the missing name: “Her resistance had not injured her with the gentleman, and he was thinking of her with some complacency, when thus accosted by Miss _____,-- “I can guess the subject of your reverie.”",
+    "options": [
+     "Bingley",
+     "William",
+     "Lizzy",
+     "Bennet"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Her resistance had not injured her with the gentleman, and he was thinking of her with some complacency, when thus accosted by Miss Bingley,-- “I can guess the subject of your reverie.”",
+    "evidence": "Her resistance had not injured her with the gentleman, and he was thinking of her with some complacency, when thus accosted by Miss Bingley,-- “I can guess the subject of your reverie."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, “There is a very fine old saying, which everybody here is of course familiar with--‘Keep your breath to cool your porridge,’--and I shall keep mine to swell my song.”",
+    "options": [
+     "Darcy",
+     "Bennet",
+     "Elizabeth",
+     "Forster"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Darcy, “There is a very fine old saying, which everybody here is of course familiar with--‘Keep your breath to cool your porridge,’--and I shall keep mine to swell my song.”",
+    "evidence": "Darcy, “There is a very fine old saying, which everybody here is of course familiar with--‘Keep your breath to cool your porridge,’--and I shall keep mine to swell my song."
+   }
+  ],
+  "7": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Both,” replied Elizabeth archly; “for I have always seen a great similarity in the turn of our minds.",
+     "Well, Jane, make haste and tell us; make haste, my love.",
+     "Bingley, and a charming prospect over that gravel walk.",
+     "There was one part, especially the opening of it, which I should dread your having the power of reading again."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Well, Jane, make haste and tell us; make haste, my love.”",
+    "evidence": "Well, Jane, make haste and tell us; make haste, my love."
+   },
+   {
+    "prompt": "Fill in the missing name: “I admire the activity of your benevolence,” observed _____, “but every impulse of feeling should be guided by reason; and, in my opinion, exertion should always be in proportion to what is required.”",
+    "options": [
+     "Bourgh",
+     "Mary",
+     "Hunsford",
+     "George"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I admire the activity of your benevolence,” observed Mary, “but every impulse of feeling should be guided by reason; and, in my opinion, exertion should always be in proportion to what is required.”",
+    "evidence": "I admire the activity of your benevolence,” observed Mary, “but every impulse of feeling should be guided by reason; and, in my opinion, exertion should always be in proportion to what is required."
+   },
+   {
+    "prompt": "Fill in the missing name: “She was not equal, however, to much conversation; and when Miss _____ left them together, could attempt little beside expressions of gratitude for the extraordinary kindness she was treated with.”",
+    "options": [
+     "Darcy",
+     "Charlotte",
+     "Bingley",
+     "Lizzy"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “She was not equal, however, to much conversation; and when Miss Bingley left them together, could attempt little beside expressions of gratitude for the extraordinary kindness she was treated with.”",
+    "evidence": "She was not equal, however, to much conversation; and when Miss Bingley left them together, could attempt little beside expressions of gratitude for the extraordinary kindness she was treated with."
+   }
+  ],
+  "8": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "added Elizabeth; “safe from a connection imprudent as to fortune.",
+     "Their brother is a pleasant, gentlemanlike man--he is a great friend of Darcy’s.",
+     "That is capital,” added her sister; and they both laughed heartily.",
+     "I should like balls infinitely better,” she replied, “if they were carried on in a different manner; but there is something insufferably tedious in…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “That is capital,” added her sister; and they both laughed heartily.”",
+    "evidence": "That is capital,” added her sister; and they both laughed heartily."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ was so much caught by what passed, as to leave her very little attention for her book; and, soon laying it wholly aside, she drew near the card-table, and stationed herself between Mr.”",
+    "options": [
+     "Darcy",
+     "Lucas",
+     "Elizabeth",
+     "Catherine"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Elizabeth was so much caught by what passed, as to leave her very little attention for her book; and, soon laying it wholly aside, she drew near the card-table, and stationed herself between Mr.”",
+    "evidence": "Elizabeth was so much caught by what passed, as to leave her very little attention for her book; and, soon laying it wholly aside, she drew near the card-table, and stationed herself between Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “His anxiety for _____ was evident, and his attentions to herself most pleasing; and they prevented her feeling herself so much an intruder as she believed she was considered by the others.”",
+    "options": [
+     "Wickham",
+     "Jane",
+     "Bingley",
+     "Kitty"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “His anxiety for Jane was evident, and his attentions to herself most pleasing; and they prevented her feeling herself so much an intruder as she believed she was considered by the others.”",
+    "evidence": "His anxiety for Jane was evident, and his attentions to herself most pleasing; and they prevented her feeling herself so much an intruder as she believed she was considered by the others."
+   }
+  ],
+  "9": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "It does not necessarily follow that a deep, intricate character is more or less estimable than such a one as yours.",
+     "She knew how little such a situation would give pleasure to either, or make either appear to advantage.",
+     "Hurst, merely looked the gentleman; but his friend Mr.",
+     "Of this she was perfectly unaware: to her he was only the man who made himself agreeable nowhere, and who had not thought her handsome enough to…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “It does not necessarily follow that a deep, intricate character is more or less estimable than such a one as yours.”",
+    "evidence": "It does not necessarily follow that a deep, intricate character is more or less estimable than such a one as yours."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ passed the chief of the night in her sister’s room, and in the morning had the pleasure of being able to send a tolerable answer to the inquiries which she very early received from Mr.”",
+    "options": [
+     "Bingley",
+     "Wickham",
+     "Elizabeth",
+     "Darcy"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Elizabeth passed the chief of the night in her sister’s room, and in the morning had the pleasure of being able to send a tolerable answer to the inquiries which she very early received from Mr.”",
+    "evidence": "Elizabeth passed the chief of the night in her sister’s room, and in the morning had the pleasure of being able to send a tolerable answer to the inquiries which she very early received from Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ was a stout, well-grown girl of fifteen, with a fine complexion and good-humoured countenance; a favourite with her mother, whose affection had brought her into public at an early age.”",
+    "options": [
+     "Bennet",
+     "Fitzwilliam",
+     "Eliza",
+     "Lydia"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Lydia was a stout, well-grown girl of fifteen, with a fine complexion and good-humoured countenance; a favourite with her mother, whose affection had brought her into public at an early age.”",
+    "evidence": "Lydia was a stout, well-grown girl of fifteen, with a fine complexion and good-humoured countenance; a favourite with her mother, whose affection had brought her into public at an early age."
+   }
+  ],
+  "10": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Darcy then consider the rashness of your original intention as atoned for by your obstinacy in adhering to it?",
+     "Bingley; “but I am sure it will be too much for Kitty.",
+     "Dear Sir, */ “I must trouble you once more for congratulations.",
+     "It will then be publicly seen, that on both sides we meet only as common and indifferent acquaintance."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Darcy then consider the rashness of your original intention as atoned for by your obstinacy in adhering to it?”",
+    "evidence": "Darcy then consider the rashness of your original intention as atoned for by your obstinacy in adhering to it?"
+   },
+   {
+    "prompt": "Fill in the missing name: “By all means,” cried _____; “let us hear all the particulars, not forgetting their comparative height and size, for that will have more weight in the argument, Miss Bennet, than you may be aware of.”",
+    "options": [
+     "Bingley",
+     "Fitzwilliam",
+     "Jane",
+     "Maria"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “By all means,” cried Bingley; “let us hear all the particulars, not forgetting their comparative height and size, for that will have more weight in the argument, Miss Bennet, than you may be aware of.”",
+    "evidence": "By all means,” cried Bingley; “let us hear all the particulars, not forgetting their comparative height and size, for that will have more weight in the argument, Miss Bennet, than you may be aware of."
+   },
+   {
+    "prompt": "Fill in the missing name: “Miss Bingley moved with alacrity to the pianoforte, and after a polite request that _____ would lead the way, which the other as politely and more earnestly negatived, she seated herself.”",
+    "options": [
+     "Charlotte",
+     "Kitty",
+     "Elizabeth",
+     "Bennet"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Miss Bingley moved with alacrity to the pianoforte, and after a polite request that Elizabeth would lead the way, which the other as politely and more earnestly negatived, she seated herself.”",
+    "evidence": "Miss Bingley moved with alacrity to the pianoforte, and after a polite request that Elizabeth would lead the way, which the other as politely and more earnestly negatived, she seated herself."
+   }
+  ],
+  "11": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Come, let me see the list of the pitiful fellows who have been kept aloof by Lydia’s folly.",
+     "How much sooner one tires of anything than of a book!",
+     "Everything, however, went on smoothly, and was finally settled according to Charlotte’s first sketch.",
+     "Who is to fight Wickham, and make him marry her, if he comes away?"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “How much sooner one tires of anything than of a book!”",
+    "evidence": "How much sooner one tires of anything than of a book!"
+   },
+   {
+    "prompt": "Fill in the missing name: “In the desperation of her feelings, she resolved on one effort more; and, turning to _____, said,-- “Miss Eliza Bennet, let me persuade you to follow my example, and take a turn about the room.”",
+    "options": [
+     "Elizabeth",
+     "Forster",
+     "Kitty",
+     "William"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “In the desperation of her feelings, she resolved on one effort more; and, turning to Elizabeth, said,-- “Miss Eliza Bennet, let me persuade you to follow my example, and take a turn about the room.”",
+    "evidence": "In the desperation of her feelings, she resolved on one effort more; and, turning to Elizabeth, said,-- “Miss Eliza Bennet, let me persuade you to follow my example, and take a turn about the room."
+   },
+   {
+    "prompt": "Fill in the missing name: “But when the gentlemen entered, _____ was no longer the first object; Miss Bingley’s eyes were instantly turned towards Darcy, and she had something to say to him before he had advanced many steps.”",
+    "options": [
+     "Wickham",
+     "Eliza",
+     "Jane",
+     "Lizzy"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “But when the gentlemen entered, Jane was no longer the first object; Miss Bingley’s eyes were instantly turned towards Darcy, and she had something to say to him before he had advanced many steps.”",
+    "evidence": "But when the gentlemen entered, Jane was no longer the first object; Miss Bingley’s eyes were instantly turned towards Darcy, and she had something to say to him before he had advanced many steps."
+   }
+  ],
+  "12": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "There was too much to be thought, and felt, and said, for attention to any other objects.",
+     "He meant to resign his commission immediately; and as to his future situation, he could conjecture very little about it.",
+     "Bingley’s carriage immediately, and at length it was settled that their original design of leaving Netherfield that morning should be mentioned, and…",
+     "Last Christmas you were afraid of his marrying me, because it would be imprudent; and now, because he is trying to get a girl with only ten thousand…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Bingley’s carriage immediately, and at length it was settled that their original design of leaving Netherfield that morning should be mentioned, and the request made.”",
+    "evidence": "Bingley’s carriage immediately, and at length it was settled that their original design of leaving Netherfield that morning should be mentioned, and the request made."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, who had calculated on her daughters remaining at Netherfield till the following Tuesday, which would exactly finish Jane’s week, could not bring herself to receive them with pleasure before.”",
+    "options": [
+     "Bennet",
+     "William",
+     "Lydia",
+     "Bingley"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Bennet, who had calculated on her daughters remaining at Netherfield till the following Tuesday, which would exactly finish Jane’s week, could not bring herself to receive them with pleasure before.”",
+    "evidence": "Bennet, who had calculated on her daughters remaining at Netherfield till the following Tuesday, which would exactly finish Jane’s week, could not bring herself to receive them with pleasure before."
+   },
+   {
+    "prompt": "Fill in the missing name: “The communication excited many professions of concern; and enough was said of wishing them to stay at least till the following day to work on _____; and till the morrow their going was deferred.”",
+    "options": [
+     "Elizabeth",
+     "Darcy",
+     "Eliza",
+     "Jane"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The communication excited many professions of concern; and enough was said of wishing them to stay at least till the following day to work on Jane; and till the morrow their going was deferred.”",
+    "evidence": "The communication excited many professions of concern; and enough was said of wishing them to stay at least till the following day to work on Jane; and till the morrow their going was deferred."
+   }
+  ],
+  "13": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Wickham, suspended, amongst several other miniatures, over the mantel-piece.",
+     "While thus engaged, Elizabeth had a fair opportunity of deciding whether she most feared or wished for the appearance of Mr.",
+     "Why, indeed, he does seem to have had some filial scruples on that head, as you will hear.",
+     "In talking over their route the evening before, Mrs."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Why, indeed, he does seem to have had some filial scruples on that head, as you will hear.”",
+    "evidence": "Why, indeed, he does seem to have had some filial scruples on that head, as you will hear."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, who quarrelled with no compliments, answered most readily,-- “You are very kind, sir, I am sure; and I wish with all my heart it may prove so; for else they will be destitute enough.”",
+    "options": [
+     "Darcy",
+     "Bennet",
+     "Kitty",
+     "Fitzwilliam"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Bennet, who quarrelled with no compliments, answered most readily,-- “You are very kind, sir, I am sure; and I wish with all my heart it may prove so; for else they will be destitute enough.”",
+    "evidence": "Bennet, who quarrelled with no compliments, answered most readily,-- “You are very kind, sir, I am sure; and I wish with all my heart it may prove so; for else they will be destitute enough."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ was chiefly struck with his extraordinary deference for Lady Catherine, and his kind intention of christening, marrying, and burying his parishioners whenever it were required.”",
+    "options": [
+     "William",
+     "Elizabeth",
+     "Bennet",
+     "Lydia"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Elizabeth was chiefly struck with his extraordinary deference for Lady Catherine, and his kind intention of christening, marrying, and burying his parishioners whenever it were required.”",
+    "evidence": "Elizabeth was chiefly struck with his extraordinary deference for Lady Catherine, and his kind intention of christening, marrying, and burying his parishioners whenever it were required."
+   }
+  ],
+  "14": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "They met several times, for there was much to be discussed.",
+     "She has one only daughter, the heiress of Rosings, and of very extensive property.",
+     "Darcy,” observed Miss Bingley, in a half whisper, “that this adventure has rather affected your admiration of her fine eyes.",
+     "He begins with congratulations on the approaching nuptials of my eldest daughter, of which, it seems, he has been told by some of the good-natured,…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “She has one only daughter, the heiress of Rosings, and of very extensive property.”",
+    "evidence": "She has one only daughter, the heiress of Rosings, and of very extensive property."
+   },
+   {
+    "prompt": "Fill in the missing name: “I have more than once observed to Lady _____, that her charming daughter seemed born to be a duchess; and that the most elevated rank, instead of giving her consequence, would be adorned by her.”",
+    "options": [
+     "Charlotte",
+     "Catherine",
+     "Elizabeth",
+     "Eliza"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I have more than once observed to Lady Catherine, that her charming daughter seemed born to be a duchess; and that the most elevated rank, instead of giving her consequence, would be adorned by her.”",
+    "evidence": "I have more than once observed to Lady Catherine, that her charming daughter seemed born to be a duchess; and that the most elevated rank, instead of giving her consequence, would be adorned by her."
+   },
+   {
+    "prompt": "Fill in the missing name: “Her _____ seemed pleased with the idea; and you may imagine that I am happy on every occasion to offer those little delicate compliments which are always acceptable to ladies.”",
+    "options": [
+     "Longbourn",
+     "Derbyshire",
+     "Ladyship",
+     "Kent"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Her Ladyship seemed pleased with the idea; and you may imagine that I am happy on every occasion to offer those little delicate compliments which are always acceptable to ladies.”",
+    "evidence": "Her Ladyship seemed pleased with the idea; and you may imagine that I am happy on every occasion to offer those little delicate compliments which are always acceptable to ladies."
+   }
+  ],
+  "15": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Every park has its beauty and its prospects; and Elizabeth saw much to be pleased with, though she could not be in such raptures as Mr.",
+     "Denny concerning whose return from London Lydia came to inquire, and he bowed as they passed.",
+     "Wickham’s adieus were much more affectionate than his wife’s.",
+     "Young ladies of her age are sometimes a little difficult to manage; and if she has the true Darcy spirit, she may like to have her own way."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Denny concerning whose return from London Lydia came to inquire, and he bowed as they passed.”",
+    "evidence": "Denny concerning whose return from London Lydia came to inquire, and he bowed as they passed."
+   },
+   {
+    "prompt": "Fill in the missing name: “Jones’s shopboy in the street, who had told her that they were not to send any more draughts to Netherfield, because the Miss _____ were come away, when her civility was claimed towards Mr.”",
+    "options": [
+     "Kitty",
+     "Bennets",
+     "Charlotte",
+     "Lucas"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Jones’s shopboy in the street, who had told her that they were not to send any more draughts to Netherfield, because the Miss Bennets were come away, when her civility was claimed towards Mr.”",
+    "evidence": "Jones’s shopboy in the street, who had told her that they were not to send any more draughts to Netherfield, because the Miss Bennets were come away, when her civility was claimed towards Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ treasured up the hint, and trusted that she might soon have two daughters married; and the man whom she could not bear to speak of the day before, was now high in her good graces.”",
+    "options": [
+     "Charlotte",
+     "Bennet",
+     "Fitzwilliam",
+     "Catherine"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Bennet treasured up the hint, and trusted that she might soon have two daughters married; and the man whom she could not bear to speak of the day before, was now high in her good graces.”",
+    "evidence": "Bennet treasured up the hint, and trusted that she might soon have two daughters married; and the man whom she could not bear to speak of the day before, was now high in her good graces."
+   }
+  ],
+  "16": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The feelings which you tell me have long prevented the acknowledgment of your regard can have little difficulty in overcoming it after this…",
+     "He sat down for a few moments, and then getting up walked about the room.",
+     "Bennet, whose dislike of his general behaviour was sharpened into particular resentment by his having slighted one of her daughters.",
+     "It was the prospect of constant society, and good society,” he added, “which was my chief inducement to enter the ----shire."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “It was the prospect of constant society, and good society,” he added, “which was my chief inducement to enter the ----shire.”",
+    "evidence": "It was the prospect of constant society, and good society,” he added, “which was my chief inducement to enter the ----shire."
+   },
+   {
+    "prompt": "Fill in the missing name: “I believe her to be both in a great degree,” replied _____; “I have not seen her for many years; but I very well remember that I never liked her, and that her manners were dictatorial and insolent.”",
+    "options": [
+     "Wickham",
+     "Lydia",
+     "Elizabeth",
+     "Eliza"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “I believe her to be both in a great degree,” replied Wickham; “I have not seen her for many years; but I very well remember that I never liked her, and that her manners were dictatorial and insolent.”",
+    "evidence": "I believe her to be both in a great degree,” replied Wickham; “I have not seen her for many years; but I very well remember that I never liked her, and that her manners were dictatorial and insolent."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ chose to doubt it--or to treat it as a merely conditional recommendation, and to assert that I had forfeited all claim to it by extravagance, imprudence, in short, anything or nothing.”",
+    "options": [
+     "Jane",
+     "Lucas",
+     "Lydia",
+     "Darcy"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Darcy chose to doubt it--or to treat it as a merely conditional recommendation, and to assert that I had forfeited all claim to it by extravagance, imprudence, in short, anything or nothing.”",
+    "evidence": "Darcy chose to doubt it--or to treat it as a merely conditional recommendation, and to assert that I had forfeited all claim to it by extravagance, imprudence, in short, anything or nothing."
+   }
+  ],
+  "17": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Bingley and his sisters came to give their personal invitation for the long expected ball at Netherfield, which was fixed for the following Tuesday.",
+     "Lizzy is not a bit better than the others: and I am sure she is not half so handsome as Jane, nor half so good-humoured as Lydia.",
+     "Collins would undoubtedly have been much less in his own apartment had they sat in one equally lively; and she gave Charlotte credit for the…",
+     "I should like to know how he behaves among strangers."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Bingley and his sisters came to give their personal invitation for the long expected ball at Netherfield, which was fixed for the following Tuesday.”",
+    "evidence": "Bingley and his sisters came to give their personal invitation for the long expected ball at Netherfield, which was fixed for the following Tuesday."
+   },
+   {
+    "prompt": "Fill in the missing name: “The happiness anticipated by _____ and Lydia depended less on any single event, or any particular person; for though they each, like Elizabeth, meant to dance half the evening with Mr.”",
+    "options": [
+     "Lucas",
+     "William",
+     "Lucases",
+     "Catherine"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The happiness anticipated by Catherine and Lydia depended less on any single event, or any particular person; for though they each, like Elizabeth, meant to dance half the evening with Mr.”",
+    "evidence": "The happiness anticipated by Catherine and Lydia depended less on any single event, or any particular person; for though they each, like Elizabeth, meant to dance half the evening with Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ pictured to herself a happy evening in the society of her two friends, and the attentions of their brother; and Elizabeth thought with pleasure of dancing a great deal with Mr.”",
+    "options": [
+     "Lucases",
+     "Catherine",
+     "Jane",
+     "Kitty"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Jane pictured to herself a happy evening in the society of her two friends, and the attentions of their brother; and Elizabeth thought with pleasure of dancing a great deal with Mr.”",
+    "evidence": "Jane pictured to herself a happy evening in the society of her two friends, and the attentions of their brother; and Elizabeth thought with pleasure of dancing a great deal with Mr."
+   }
+  ],
+  "18": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Charlotte did not stay much longer; and Elizabeth was then left to reflect on what she had heard.",
+     "My friend has an excellent understanding--though I am not certain that I consider her marrying Mr.",
+     "His coming into the country at all is a most insolent thing, indeed, and I wonder how he could presume to do it.",
+     "Collins’s addresses, by engaging them towards herself."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “His coming into the country at all is a most insolent thing, indeed, and I wonder how he could presume to do it.”",
+    "evidence": "His coming into the country at all is a most insolent thing, indeed, and I wonder how he could presume to do it."
+   },
+   {
+    "prompt": "Fill in the missing name: “They had not long separated when Miss _____ came towards her, and, with an expression of civil disdain, thus accosted her,-- “So, Miss Eliza, I hear you are quite delighted with George Wickham?”",
+    "options": [
+     "Maria",
+     "Elizabeth",
+     "Kitty",
+     "Bingley"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “They had not long separated when Miss Bingley came towards her, and, with an expression of civil disdain, thus accosted her,-- “So, Miss Eliza, I hear you are quite delighted with George Wickham?”",
+    "evidence": "They had not long separated when Miss Bingley came towards her, and, with an expression of civil disdain, thus accosted her,-- “So, Miss Eliza, I hear you are quite delighted with George Wickham?"
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had no more to say; and Lady Lucas, who had been long yawning at the repetition of delights which she saw no likelihood of sharing, was left to the comforts of cold ham and chicken.”",
+    "options": [
+     "Eliza",
+     "Bennet",
+     "Lydia",
+     "Jane"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Bennet had no more to say; and Lady Lucas, who had been long yawning at the repetition of delights which she saw no likelihood of sharing, was left to the comforts of cold ham and chicken.”",
+    "evidence": "Bennet had no more to say; and Lady Lucas, who had been long yawning at the repetition of delights which she saw no likelihood of sharing, was left to the comforts of cold ham and chicken."
+   }
+  ],
+  "19": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "These are conditions which, considering everything, I had no hesitation in complying with, as far as I thought myself privileged, for you.",
+     "Bennet, with little cessation, of his house and garden at Hunsford.",
+     "Gardiner and the children were to remain in Hertfordshire a few days longer, as the former thought her presence might be serviceable to her nieces.",
+     "Jenkinson was arranging Miss De Bourgh’s footstool,--that she said, ‘Mr."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Jenkinson was arranging Miss De Bourgh’s footstool,--that she said, ‘Mr.”",
+    "evidence": "Jenkinson was arranging Miss De Bourgh’s footstool,--that she said, ‘Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “In making me the offer, you must have satisfied the delicacy of your feelings with regard to my family, and may take possession of _____ estate whenever it falls, without any self-reproach.”",
+    "options": [
+     "Longbourn",
+     "Mary",
+     "Meryton",
+     "Bourgh"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “In making me the offer, you must have satisfied the delicacy of your feelings with regard to my family, and may take possession of Longbourn estate whenever it falls, without any self-reproach.”",
+    "evidence": "In making me the offer, you must have satisfied the delicacy of your feelings with regard to my family, and may take possession of Longbourn estate whenever it falls, without any self-reproach."
+   },
+   {
+    "prompt": "Fill in the missing name: “’ Allow me, by the way, to observe, my fair cousin, that I do not reckon the notice and kindness of Lady _____ de Bourgh as among the least of the advantages in my power to offer.”",
+    "options": [
+     "Elizabeth",
+     "Catherine",
+     "Forster",
+     "Eliza"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “’ Allow me, by the way, to observe, my fair cousin, that I do not reckon the notice and kindness of Lady Catherine de Bourgh as among the least of the advantages in my power to offer.”",
+    "evidence": "’ Allow me, by the way, to observe, my fair cousin, that I do not reckon the notice and kindness of Lady Catherine de Bourgh as among the least of the advantages in my power to offer."
+   }
+  ],
+  "20": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The evening conversation, when they were all assembled, had lost much of its animation, and almost all its sense, by the absence of Jane and…",
+     "My dear,” replied her husband, “I have two small favours to request.",
+     "Why, at that rate, you will have been here only six weeks.",
+     "She was confident of having performed her duty; and to fret over unavoidable evils, or augment them by anxiety, was no part of her disposition."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “My dear,” replied her husband, “I have two small favours to request.”",
+    "evidence": "My dear,” replied her husband, “I have two small favours to request."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____: she would have been glad to be equally satisfied that her daughter had meant to encourage him by protesting against his proposals, but she dared not believe it, and could not help saying so.”",
+    "options": [
+     "Bennet",
+     "Forster",
+     "Lydia",
+     "Catherine"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Bennet: she would have been glad to be equally satisfied that her daughter had meant to encourage him by protesting against his proposals, but she dared not believe it, and could not help saying so.”",
+    "evidence": "Bennet: she would have been glad to be equally satisfied that her daughter had meant to encourage him by protesting against his proposals, but she dared not believe it, and could not help saying so."
+   },
+   {
+    "prompt": "Fill in the missing name: “Bennet was alone, than she likewise began on the subject, calling on Miss _____ for her compassion, and entreating her to persuade her friend Lizzy to comply with the wishes of her family.”",
+    "options": [
+     "Lucas",
+     "Maria",
+     "Elizabeth",
+     "Bingley"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Bennet was alone, than she likewise began on the subject, calling on Miss Lucas for her compassion, and entreating her to persuade her friend Lizzy to comply with the wishes of her family.”",
+    "evidence": "Bennet was alone, than she likewise began on the subject, calling on Miss Lucas for her compassion, and entreating her to persuade her friend Lizzy to comply with the wishes of her family."
+   }
+  ],
+  "21": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The whole party have left Netherfield by this time, and are on their way to town; and without any intention of coming back again.",
+     "She wrote cheerfully, seemed surrounded with comforts, and mentioned nothing which she could not praise.",
+     "I have scarcely any hesitation in saying that she will include you and my sister Maria in every invitation with which she honours us during your…",
+     "Darcy has not authorized me to make his communication public."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “The whole party have left Netherfield by this time, and are on their way to town; and without any intention of coming back again.”",
+    "evidence": "The whole party have left Netherfield by this time, and are on their way to town; and without any intention of coming back again."
+   },
+   {
+    "prompt": "Fill in the missing name: “With all these circumstances to favour an attachment, and nothing to prevent it, am I wrong, my dearest _____, in indulging the hope of an event which will secure the happiness of so many?”",
+    "options": [
+     "Jane",
+     "Lizzy",
+     "William",
+     "Eliza"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “With all these circumstances to favour an attachment, and nothing to prevent it, am I wrong, my dearest Jane, in indulging the hope of an event which will secure the happiness of so many?”",
+    "evidence": "With all these circumstances to favour an attachment, and nothing to prevent it, am I wrong, my dearest Jane, in indulging the hope of an event which will secure the happiness of so many?"
+   },
+   {
+    "prompt": "Fill in the missing name: “_____;--that to be in the same room, the same party with him for so many hours together, might be more than I could bear, and that scenes might arise unpleasant to more than myself.”",
+    "options": [
+     "Bingley",
+     "Darcy",
+     "Charlotte",
+     "Kitty"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Darcy;--that to be in the same room, the same party with him for so many hours together, might be more than I could bear, and that scenes might arise unpleasant to more than myself.”",
+    "evidence": "Darcy;--that to be in the same room, the same party with him for so many hours together, might be more than I could bear, and that scenes might arise unpleasant to more than myself."
+   }
+  ],
+  "22": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Hurst and her sister allowed it to be so; but still they admired her and liked her, and pronounced her to be a sweet girl, and one whom they should…",
+     "She endeavoured to persuade herself that she did not regret it; but she could no longer be blind to Miss Bingley’s inattention.",
+     "She answered him in the usual way; and, after a moment’s pause, added,-- “My eldest sister has been in town these three months.",
+     "Collins should be in possession of the Longbourn estate, it would be highly expedient that both he and his wife should make their appearance at St."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Collins should be in possession of the Longbourn estate, it would be highly expedient that both he and his wife should make their appearance at St.”",
+    "evidence": "Collins should be in possession of the Longbourn estate, it would be highly expedient that both he and his wife should make their appearance at St."
+   },
+   {
+    "prompt": "Fill in the missing name: “Such was Miss Lucas’s scheme; and appearances were so favourable, that when they parted at night, she would have felt almost sure of success if he had not been to leave _____ so very soon.”",
+    "options": [
+     "Hertfordshire",
+     "Hunsford",
+     "Rosings",
+     "Brighton"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Such was Miss Lucas’s scheme; and appearances were so favourable, that when they parted at night, she would have felt almost sure of success if he had not been to leave Hertfordshire so very soon.”",
+    "evidence": "Such was Miss Lucas’s scheme; and appearances were so favourable, that when they parted at night, she would have felt almost sure of success if he had not been to leave Hertfordshire so very soon."
+   },
+   {
+    "prompt": "Fill in the missing name: “As for my fair cousins, though my absence may not be long enough to render it necessary, I shall now take the liberty of wishing them health and happiness, not excepting my cousin _____.”",
+    "options": [
+     "Charlotte",
+     "Elizabeth",
+     "Bingley",
+     "Jane"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “As for my fair cousins, though my absence may not be long enough to render it necessary, I shall now take the liberty of wishing them health and happiness, not excepting my cousin Elizabeth.”",
+    "evidence": "As for my fair cousins, though my absence may not be long enough to render it necessary, I shall now take the liberty of wishing them health and happiness, not excepting my cousin Elizabeth."
+   }
+  ],
+  "23": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Jane had sent Caroline an early answer to her letter, and was counting the days till she might reasonably hope to hear again.",
+     "Who that knows what his misfortunes have been can help feeling an interest in him?",
+     "We have not met since the 26th of November, when we were all dancing together at Netherfield.",
+     "Elizabeth had not before believed him quite equal to such assurance; but she sat down, resolving within herself to draw no limits in future to the…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Jane had sent Caroline an early answer to her letter, and was counting the days till she might reasonably hope to hear again.”",
+    "evidence": "Jane had sent Caroline an early answer to her letter, and was counting the days till she might reasonably hope to hear again."
+   },
+   {
+    "prompt": "Fill in the missing name: “Between Elizabeth and _____ there was a restraint which kept them mutually silent on the subject; and Elizabeth felt persuaded that no real confidence could ever subsist between them again.”",
+    "options": [
+     "Charlotte",
+     "Catherine",
+     "Darcy",
+     "William"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Between Elizabeth and Charlotte there was a restraint which kept them mutually silent on the subject; and Elizabeth felt persuaded that no real confidence could ever subsist between them again.”",
+    "evidence": "Between Elizabeth and Charlotte there was a restraint which kept them mutually silent on the subject; and Elizabeth felt persuaded that no real confidence could ever subsist between them again."
+   },
+   {
+    "prompt": "Fill in the missing name: “The chief of every day was spent by him at _____ Lodge, and he sometimes returned to Longbourn only in time to make an apology for his absence before the family went to bed.”",
+    "options": [
+     "Lucas",
+     "William",
+     "Darcy",
+     "Kitty"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “The chief of every day was spent by him at Lucas Lodge, and he sometimes returned to Longbourn only in time to make an apology for his absence before the family went to bed.”",
+    "evidence": "The chief of every day was spent by him at Lucas Lodge, and he sometimes returned to Longbourn only in time to make an apology for his absence before the family went to bed."
+   }
+  ],
+  "24": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Collins, who, when I am dead, may turn you all out of this house as soon as he pleases.",
+     "Do not be afraid of my running into any excess, of my encroaching on your privilege of universal good-will.",
+     "Miss Bennet,” replied her Ladyship, in an angry tone, “you ought to know that I am not to be trifled with.",
+     "Wickham among the cluster of red coats there assembled, a doubt of his being present had never occurred to her."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Do not be afraid of my running into any excess, of my encroaching on your privilege of universal good-will.”",
+    "evidence": "Do not be afraid of my running into any excess, of my encroaching on your privilege of universal good-will."
+   },
+   {
+    "prompt": "Fill in the missing name: “Bennet’s leaving them together, after a longer irritation than usual about _____ and its master, she could not help saying,-- “O that my dear mother had more command over herself!”",
+    "options": [
+     "Hertfordshire",
+     "Mary",
+     "Netherfield",
+     "Rosings"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Bennet’s leaving them together, after a longer irritation than usual about Netherfield and its master, she could not help saying,-- “O that my dear mother had more command over herself!”",
+    "evidence": "Bennet’s leaving them together, after a longer irritation than usual about Netherfield and its master, she could not help saying,-- “O that my dear mother had more command over herself!"
+   },
+   {
+    "prompt": "Fill in the missing name: “Hope was over, entirely over; and when _____ could attend to the rest of the letter, she found little, except the professed affection of the writer, that could give her any comfort.”",
+    "options": [
+     "Jane",
+     "Bennet",
+     "Fitzwilliam",
+     "Lydia"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Hope was over, entirely over; and when Jane could attend to the rest of the letter, she found little, except the professed affection of the writer, that could give her any comfort.”",
+    "evidence": "Hope was over, entirely over; and when Jane could attend to the rest of the letter, she found little, except the professed affection of the writer, that could give her any comfort."
+   }
+  ],
+  "25": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Collins’s wife by this time, had not it been for her own perverseness.",
+     "In making me the offer, you must have satisfied the delicacy of your feelings with regard to my family, and may take possession of Longbourn estate…",
+     "She blushed at the very idea; and thought it would be better to speak openly to her aunt, than to run such a risk.",
+     "I cannot comprehend the neglect of a family library in such days as these."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Collins’s wife by this time, had not it been for her own perverseness.”",
+    "evidence": "Collins’s wife by this time, had not it been for her own perverseness."
+   },
+   {
+    "prompt": "Fill in the missing name: “He took leave of his relations at _____ with as much solemnity as before; wished his fair cousins health and happiness again, and promised their father another letter of thanks.”",
+    "options": [
+     "Longbourn",
+     "Brighton",
+     "Allen",
+     "London"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “He took leave of his relations at Longbourn with as much solemnity as before; wished his fair cousins health and happiness again, and promised their father another letter of thanks.”",
+    "evidence": "He took leave of his relations at Longbourn with as much solemnity as before; wished his fair cousins health and happiness again, and promised their father another letter of thanks."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, so easily falls in love with a pretty girl for a few weeks, and, when accident separates them, so easily forgets her, that these sort of inconstancies are very frequent.”",
+    "options": [
+     "Eliza",
+     "Wickham",
+     "William",
+     "Bingley"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Bingley, so easily falls in love with a pretty girl for a few weeks, and, when accident separates them, so easily forgets her, that these sort of inconstancies are very frequent.”",
+    "evidence": "Bingley, so easily falls in love with a pretty girl for a few weeks, and, when accident separates them, so easily forgets her, that these sort of inconstancies are very frequent."
+   }
+  ],
+  "26": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "But, my dear Lydia, I don’t at all like your going such a way off.",
+     "Had I been in love, I could not have been more wretchedly blind.",
+     "Indeed, Eliza, you will be as welcome to me as either of them.",
+     "After lamenting it, however, at some length, she had the consolation of thinking that Mr."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Indeed, Eliza, you will be as welcome to me as either of them.”",
+    "evidence": "Indeed, Eliza, you will be as welcome to me as either of them."
+   },
+   {
+    "prompt": "Fill in the missing name: “Her aunt assured her that she was; and _____, having thanked her for the kindness of her hints, they parted,--a wonderful instance of advice being given on such a point without being resented.”",
+    "options": [
+     "Fitzwilliam",
+     "Jane",
+     "Kitty",
+     "Elizabeth"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Her aunt assured her that she was; and Elizabeth, having thanked her for the kindness of her hints, they parted,--a wonderful instance of advice being given on such a point without being resented.”",
+    "evidence": "Her aunt assured her that she was; and Elizabeth, having thanked her for the kindness of her hints, they parted,--a wonderful instance of advice being given on such a point without being resented."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had already written a few lines to her sister, to announce their safe arrival in London; and when she wrote again, Elizabeth hoped it would be in her power to say something of the Bingleys.”",
+    "options": [
+     "Bennet",
+     "Bennets",
+     "Forster",
+     "Jane"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Jane had already written a few lines to her sister, to announce their safe arrival in London; and when she wrote again, Elizabeth hoped it would be in her power to say something of the Bingleys.”",
+    "evidence": "Jane had already written a few lines to her sister, to announce their safe arrival in London; and when she wrote again, Elizabeth hoped it would be in her power to say something of the Bingleys."
+   }
+  ],
+  "27": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Well, Monday morning came, and I was in such a fuss!",
+     "Elizabeth loved absurdities, but she had known Sir William’s too long.",
+     "Lydia’s thoughtlessness first betrayed to me that you had been concerned in the matter; and, of course, I could not rest till I knew the particulars.",
+     "This is wholly unexpected; I had not an idea of it."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Elizabeth loved absurdities, but she had known Sir William’s too long.”",
+    "evidence": "Elizabeth loved absurdities, but she had known Sir William’s too long."
+   },
+   {
+    "prompt": "Fill in the missing name: “Last _____ you were afraid of his marrying me, because it would be imprudent; and now, because he is trying to get a girl with only ten thousand pounds, you want to find out that he is mercenary.”",
+    "options": [
+     "Christmas",
+     "Meryton",
+     "Hunsford",
+     "Hertfordshire"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Last Christmas you were afraid of his marrying me, because it would be imprudent; and now, because he is trying to get a girl with only ten thousand pounds, you want to find out that he is mercenary.”",
+    "evidence": "Last Christmas you were afraid of his marrying me, because it would be imprudent; and now, because he is trying to get a girl with only ten thousand pounds, you want to find out that he is mercenary."
+   },
+   {
+    "prompt": "Fill in the missing name: “With no greater events than these in the _____ family, and otherwise diversified by little beyond the walks to Meryton, sometimes dirty and sometimes cold, did January and February pass away.”",
+    "options": [
+     "Longbourn",
+     "Rosings",
+     "London",
+     "George"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “With no greater events than these in the Longbourn family, and otherwise diversified by little beyond the walks to Meryton, sometimes dirty and sometimes cold, did January and February pass away.”",
+    "evidence": "With no greater events than these in the Longbourn family, and otherwise diversified by little beyond the walks to Meryton, sometimes dirty and sometimes cold, did January and February pass away."
+   }
+  ],
+  "28": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I am sure Lizzy will be very happy--I am sure she can have no objection.",
+     "Collins invited them to take a stroll in the garden, which was large and well laid out, and to the cultivation of which he attended himself.",
+     "Not at all,” was her answer; “but, depend upon it, he means to be severe on us, and our surest way of disappointing him will be to ask nothing about…",
+     "came on into Hertfordshire, anxiously renewing them at all the turnpikes, and at the inns in Barnet and Hatfield, but without any success,--no such…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Collins invited them to take a stroll in the garden, which was large and well laid out, and to the cultivation of which he attended himself.”",
+    "evidence": "Collins invited them to take a stroll in the garden, which was large and well laid out, and to the cultivation of which he attended himself."
+   },
+   {
+    "prompt": "Fill in the missing name: “Collins joining in, observed,-- “Yes, Miss _____, you will have the honour of seeing Lady Catherine de Bourgh on the ensuing Sunday at church, and I need not say you will be delighted with her.”",
+    "options": [
+     "William",
+     "Kitty",
+     "Lucases",
+     "Elizabeth"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Collins joining in, observed,-- “Yes, Miss Elizabeth, you will have the honour of seeing Lady Catherine de Bourgh on the ensuing Sunday at church, and I need not say you will be delighted with her.”",
+    "evidence": "Collins joining in, observed,-- “Yes, Miss Elizabeth, you will have the honour of seeing Lady Catherine de Bourgh on the ensuing Sunday at church, and I need not say you will be delighted with her."
+   },
+   {
+    "prompt": "Fill in the missing name: “After sitting long enough to admire every article of furniture in the room, from the sideboard to the fender, to give an account of their journey, and of all that had happened in _____, Mr.”",
+    "options": [
+     "Hunsford",
+     "Derbyshire",
+     "Bourgh",
+     "London"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “After sitting long enough to admire every article of furniture in the room, from the sideboard to the fender, to give an account of their journey, and of all that had happened in London, Mr.”",
+    "evidence": "After sitting long enough to admire every article of furniture in the room, from the sideboard to the fender, to give an account of their journey, and of all that had happened in London, Mr."
+   }
+  ],
+  "29": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Jenkinson, in whose appearance there was nothing remarkable, and who was entirely engaged in listening to what she said, and placing a screen in the…",
+     "with him to Longbourn before many days had passed after Lady Catherine’s visit.",
+     "Perhaps you mean what I overheard between him and Mr.",
+     "The park was very large, and contained great variety of ground."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Jenkinson, in whose appearance there was nothing remarkable, and who was entirely engaged in listening to what she said, and placing a screen in the proper direction before her eyes.”",
+    "evidence": "Jenkinson, in whose appearance there was nothing remarkable, and who was entirely engaged in listening to what she said, and placing a screen in the proper direction before her eyes."
+   },
+   {
+    "prompt": "Fill in the missing name: “Lady _____ seemed quite astonished at not receiving a direct answer; and Elizabeth suspected herself to be the first creature who had ever dared to trifle with so much dignified impertinence.”",
+    "options": [
+     "Catherine",
+     "William",
+     "Fitzwilliam",
+     "Lucases"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Lady Catherine seemed quite astonished at not receiving a direct answer; and Elizabeth suspected herself to be the first creature who had ever dared to trifle with so much dignified impertinence.”",
+    "evidence": "Lady Catherine seemed quite astonished at not receiving a direct answer; and Elizabeth suspected herself to be the first creature who had ever dared to trifle with so much dignified impertinence."
+   },
+   {
+    "prompt": "Fill in the missing name: “I am the less surprised at what has happened,” replied Sir _____, “from that knowledge of what the manners of the great really are, which my situation in life has allowed me to acquire.”",
+    "options": [
+     "Fitzwilliam",
+     "Kitty",
+     "Forster",
+     "William"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I am the less surprised at what has happened,” replied Sir William, “from that knowledge of what the manners of the great really are, which my situation in life has allowed me to acquire.”",
+    "evidence": "I am the less surprised at what has happened,” replied Sir William, “from that knowledge of what the manners of the great really are, which my situation in life has allowed me to acquire."
+   }
+  ],
+  "30": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Easter was approaching, and the week preceding it was to bring an addition to the family at Rosings, which in so small a circle must be important.",
+     "Let me write for you,” said Jane, “if you dislike the trouble yourself.",
+     "Elizabeth loved absurdities, but she had known Sir William’s too long.",
+     "You dislike an argument, and want to silence this."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Easter was approaching, and the week preceding it was to bring an addition to the family at Rosings, which in so small a circle must be important.”",
+    "evidence": "Easter was approaching, and the week preceding it was to bring an addition to the family at Rosings, which in so small a circle must be important."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had scarcely time to disclaim all right to the compliment before their approach was announced by the door-bell, and shortly afterwards the three gentlemen entered the room.”",
+    "options": [
+     "Forster",
+     "Catherine",
+     "Elizabeth",
+     "Wickham"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Elizabeth had scarcely time to disclaim all right to the compliment before their approach was announced by the door-bell, and shortly afterwards the three gentlemen entered the room.”",
+    "evidence": "Elizabeth had scarcely time to disclaim all right to the compliment before their approach was announced by the door-bell, and shortly afterwards the three gentlemen entered the room."
+   },
+   {
+    "prompt": "Fill in the missing name: “Collins would undoubtedly have been much less in his own apartment had they sat in one equally lively; and she gave _____ credit for the arrangement.”",
+    "options": [
+     "Charlotte",
+     "Fitzwilliam",
+     "Elizabeth",
+     "Lucas"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Collins would undoubtedly have been much less in his own apartment had they sat in one equally lively; and she gave Charlotte credit for the arrangement.”",
+    "evidence": "Collins would undoubtedly have been much less in his own apartment had they sat in one equally lively; and she gave Charlotte credit for the arrangement."
+   }
+  ],
+  "31": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "A younger son, you know, must be inured to self-denial and dependence.",
+     "Bennet, as she stood at a window the next morning, “if that disagreeable Mr.",
+     "She would be in nobody’s way, you know, in that part of the house.",
+     "They can only wish his happiness; and if he is attached to me no other woman can secure it."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “She would be in nobody’s way, you know, in that part of the house.”",
+    "evidence": "She would be in nobody’s way, you know, in that part of the house."
+   },
+   {
+    "prompt": "Fill in the missing name: “Lady _____ approached, and, after listening for a few minutes, said to Darcy,-- “Miss Bennet would not play at all amiss if she practised more, and could have the advantage of a London master.”",
+    "options": [
+     "Lucases",
+     "Catherine",
+     "Forster",
+     "Fitzwilliam"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Lady Catherine approached, and, after listening for a few minutes, said to Darcy,-- “Miss Bennet would not play at all amiss if she practised more, and could have the advantage of a London master.”",
+    "evidence": "Lady Catherine approached, and, after listening for a few minutes, said to Darcy,-- “Miss Bennet would not play at all amiss if she practised more, and could have the advantage of a London master."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ received them with all the forbearance of civility; and at the request of the gentlemen remained at the instrument till her Ladyship’s carriage was ready to take them all home.”",
+    "options": [
+     "Lydia",
+     "William",
+     "Jane",
+     "Elizabeth"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Elizabeth received them with all the forbearance of civility; and at the request of the gentlemen remained at the instrument till her Ladyship’s carriage was ready to take them all home.”",
+    "evidence": "Elizabeth received them with all the forbearance of civility; and at the request of the gentlemen remained at the instrument till her Ladyship’s carriage was ready to take them all home."
+   }
+  ],
+  "32": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "She was afraid of talking longer of his friend; and, having nothing else to say, was now determined to leave the trouble of finding a subject to him.",
+     "Bennet’s visit, and determining when they should ask him to dinner.",
+     "The evening conversation, when they were all assembled, had lost much of its animation, and almost all its sense, by the absence of Jane and…",
+     "His accompanying them was a double advantage: she felt all the compliment it offered to herself; and it was most acceptable as an occasion of…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “She was afraid of talking longer of his friend; and, having nothing else to say, was now determined to leave the trouble of finding a subject to him.”",
+    "evidence": "She was afraid of talking longer of his friend; and, having nothing else to say, was now determined to leave the trouble of finding a subject to him."
+   },
+   {
+    "prompt": "Fill in the missing name: “A short dialogue on the subject of the country ensued, on either side calm and concise--and soon put an end to by the entrance of _____ and her sister, just returned from their walk.”",
+    "options": [
+     "Lizzy",
+     "Kitty",
+     "Jane",
+     "Charlotte"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “A short dialogue on the subject of the country ensued, on either side calm and concise--and soon put an end to by the entrance of Charlotte and her sister, just returned from their walk.”",
+    "evidence": "A short dialogue on the subject of the country ensued, on either side calm and concise--and soon put an end to by the entrance of Charlotte and her sister, just returned from their walk."
+   },
+   {
+    "prompt": "Fill in the missing name: “The gentleman experienced some change of feeling; he drew back his chair, took a newspaper from the table, and, glancing over it, said, in a colder voice,-- “Are you pleased with _____?”",
+    "options": [
+     "Kent",
+     "Pemberley",
+     "Mary",
+     "Brighton"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “The gentleman experienced some change of feeling; he drew back his chair, took a newspaper from the table, and, glancing over it, said, in a colder voice,-- “Are you pleased with Kent?”",
+    "evidence": "The gentleman experienced some change of feeling; he drew back his chair, took a newspaper from the table, and, glancing over it, said, in a colder voice,-- “Are you pleased with Kent?"
+   }
+  ],
+  "33": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "He answered her in the same style, and the subject dropped.",
+     "Calling back the servant, therefore, she commissioned him, though in so breathless an accent as made her almost unintelligible, to fetch his master…",
+     "It was the prospect of constant society, and good society,” he added, “which was my chief inducement to enter the ----shire.",
+     "They could describe an entertainment with accuracy, relate an anecdote with humour, and laugh at their acquaintance with spirit."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “He answered her in the same style, and the subject dropped.”",
+    "evidence": "He answered her in the same style, and the subject dropped."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had to decide on the propriety of his friend’s inclination; or why, upon his own judgment alone, he was to determine and direct in what manner that friend was to be happy.”",
+    "options": [
+     "Lucas",
+     "Wickham",
+     "Darcy",
+     "William"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Darcy had to decide on the propriety of his friend’s inclination; or why, upon his own judgment alone, he was to determine and direct in what manner that friend was to be happy.”",
+    "evidence": "Darcy had to decide on the propriety of his friend’s inclination; or why, upon his own judgment alone, he was to determine and direct in what manner that friend was to be happy."
+   },
+   {
+    "prompt": "Fill in the missing name: “Darcy, that she would not trust herself with an answer; and, therefore, abruptly changing the conversation, talked on indifferent matters till they reached the _____.”",
+    "options": [
+     "Ladyship",
+     "Parsonage",
+     "Hunsford",
+     "Brighton"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Darcy, that she would not trust herself with an answer; and, therefore, abruptly changing the conversation, talked on indifferent matters till they reached the Parsonage.”",
+    "evidence": "Darcy, that she would not trust herself with an answer; and, therefore, abruptly changing the conversation, talked on indifferent matters till they reached the Parsonage."
+   }
+  ],
+  "34": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "It taught me to hope,” said he, “as I had scarcely ever allowed myself to hope before.",
+     "Bennet followed her, saying,-- “I am quite sorry, Lizzy, that you should be forced to have that disagreeable man all to yourself; but I hope you…",
+     "Jones’s shopboy in the street, who had told her that they were not to send any more draughts to Netherfield, because the Miss Bennets were come…",
+     "It has been most unconsciously done, however, and I hope will be of short duration."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “It has been most unconsciously done, however, and I hope will be of short duration.”",
+    "evidence": "It has been most unconsciously done, however, and I hope will be of short duration."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ changed colour; but the emotion was short, and he listened without attempting to interrupt her while she continued,-- “I have every reason in the world to think ill of you.”",
+    "options": [
+     "Jane",
+     "Darcy",
+     "Eliza",
+     "Elizabeth"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Darcy changed colour; but the emotion was short, and he listened without attempting to interrupt her while she continued,-- “I have every reason in the world to think ill of you.”",
+    "evidence": "Darcy changed colour; but the emotion was short, and he listened without attempting to interrupt her while she continued,-- “I have every reason in the world to think ill of you."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, his cruelty towards whom he had not attempted to deny, soon overcame the pity which the consideration of his attachment had for a moment excited.”",
+    "options": [
+     "William",
+     "Kitty",
+     "Charlotte",
+     "Wickham"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Wickham, his cruelty towards whom he had not attempted to deny, soon overcame the pity which the consideration of his attachment had for a moment excited.”",
+    "evidence": "Wickham, his cruelty towards whom he had not attempted to deny, soon overcame the pity which the consideration of his attachment had for a moment excited."
+   }
+  ],
+  "35": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "On the following morning he hastened to Rosings to pay his respects.",
+     "If it be so, if I have been misled by such error to inflict pain on her, your resentment has not been unreasonable.",
+     "I flatter myself, at least, that you will be able to do so.",
+     "Upon my honour, I never met with so many pleasant girls in my life as I have this evening; and there are several of them, you see, uncommonly pretty."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “If it be so, if I have been misled by such error to inflict pain on her, your resentment has not been unreasonable.”",
+    "evidence": "If it be so, if I have been misled by such error to inflict pain on her, your resentment has not been unreasonable."
+   },
+   {
+    "prompt": "Fill in the missing name: “About a year ago, she was taken from school, and an establishment formed for her in _____; and last summer she went with the lady who presided over it to Ramsgate; and thither also went Mr.”",
+    "options": [
+     "Bourgh",
+     "London",
+     "Brighton",
+     "Rosings"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “About a year ago, she was taken from school, and an establishment formed for her in London; and last summer she went with the lady who presided over it to Ramsgate; and thither also went Mr.”",
+    "evidence": "About a year ago, she was taken from school, and an establishment formed for her in London; and last summer she went with the lady who presided over it to Ramsgate; and thither also went Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ from your sister,--and the other, that I had, in defiance of various claims, in defiance of honour and humanity, ruined the immediate prosperity and blasted the prospects of Mr.”",
+    "options": [
+     "Lizzy",
+     "Kitty",
+     "Darcy",
+     "Bingley"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Bingley from your sister,--and the other, that I had, in defiance of various claims, in defiance of honour and humanity, ruined the immediate prosperity and blasted the prospects of Mr.”",
+    "evidence": "Bingley from your sister,--and the other, that I had, in defiance of various claims, in defiance of honour and humanity, ruined the immediate prosperity and blasted the prospects of Mr."
+   }
+  ],
+  "36": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Bingley expressed great pleasure in the certainty of seeing Elizabeth again, having still a great deal to say to her, and many inquiries to make…",
+     "All Meryton seemed striving to blacken the man who, but three months before, had been almost an angel of light.",
+     "As to his real character, had information been in her power, she had never felt a wish of inquiring.",
+     "Her hopes were answered; Jane had not been gone long before it rained hard."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “As to his real character, had information been in her power, she had never felt a wish of inquiring.”",
+    "evidence": "As to his real character, had information been in her power, she had never felt a wish of inquiring."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____; or at least, by the predominance of virtue, atone for those casual errors, under which she would endeavour to class what Mr.”",
+    "options": [
+     "Jane",
+     "Darcy",
+     "Kitty",
+     "Lucas"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Darcy; or at least, by the predominance of virtue, atone for those casual errors, under which she would endeavour to class what Mr.”",
+    "evidence": "Darcy; or at least, by the predominance of virtue, atone for those casual errors, under which she would endeavour to class what Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “The account of his connection with the _____ family was exactly what he had related himself; and the kindness of the late Mr.”",
+    "options": [
+     "Netherfield",
+     "Meryton",
+     "Pemberley",
+     "Hunsford"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “The account of his connection with the Pemberley family was exactly what he had related himself; and the kindness of the late Mr.”",
+    "evidence": "The account of his connection with the Pemberley family was exactly what he had related himself; and the kindness of the late Mr."
+   }
+  ],
+  "37": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Your portion is unhappily so small, that it will in all likelihood undo the effects of your loveliness and amiable qualifications.",
+     "Beyond a doubt they do wish him to choose Miss Darcy,” replied Jane; “but this may be from better feelings than you are supposing.",
+     "She saw, with the creative eye of fancy, the streets of that gay bathing-place covered with officers.",
+     "Daughters are never of so much consequence to a father."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Daughters are never of so much consequence to a father.”",
+    "evidence": "Daughters are never of so much consequence to a father."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, weak-spirited, irritable, and completely under Lydia’s guidance, had been always affronted by their advice; and Lydia, self-willed and careless, would scarcely give them a hearing.”",
+    "options": [
+     "Fitzwilliam",
+     "Catherine",
+     "Jane",
+     "Elizabeth"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Catherine, weak-spirited, irritable, and completely under Lydia’s guidance, had been always affronted by their advice; and Lydia, self-willed and careless, would scarcely give them a hearing.”",
+    "evidence": "Catherine, weak-spirited, irritable, and completely under Lydia’s guidance, had been always affronted by their advice; and Lydia, self-willed and careless, would scarcely give them a hearing."
+   },
+   {
+    "prompt": "Fill in the missing name: “While there was an officer in Meryton, they would flirt with him; and while Meryton was within a walk of _____, they would be going there for ever.”",
+    "options": [
+     "Parsonage",
+     "Brighton",
+     "Rosings",
+     "Longbourn"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “While there was an officer in Meryton, they would flirt with him; and while Meryton was within a walk of Longbourn, they would be going there for ever.”",
+    "evidence": "While there was an officer in Meryton, they would flirt with him; and while Meryton was within a walk of Longbourn, they would be going there for ever."
+   }
+  ],
+  "38": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "With proper civilities, the ladies then withdrew; all of them equally surprised to find that he meditated a quick return.",
+     "And pray, what is the usual price of an earl’s younger son?",
+     "He left Netherfield for London on the day following, as you, I am certain, remember, with the design of soon returning.",
+     "Collins you have been a daily witness of; and altogether I trust it does not appear that your friend has drawn an unfortunate--but on this point it…"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Collins you have been a daily witness of; and altogether I trust it does not appear that your friend has drawn an unfortunate--but on this point it will be as well to be silent.”",
+    "evidence": "Collins you have been a daily witness of; and altogether I trust it does not appear that your friend has drawn an unfortunate--but on this point it will be as well to be silent."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ could safely say that it was a great happiness where that was the case, and with equal sincerity could add, that she firmly believed and rejoiced in his domestic comforts.”",
+    "options": [
+     "Elizabeth",
+     "Fitzwilliam",
+     "Jane",
+     "Lucas"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Elizabeth could safely say that it was a great happiness where that was the case, and with equal sincerity could add, that she firmly believed and rejoiced in his domestic comforts.”",
+    "evidence": "Elizabeth could safely say that it was a great happiness where that was the case, and with equal sincerity could add, that she firmly believed and rejoiced in his domestic comforts."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ looked well, and Elizabeth had little opportunity of studying her spirits, amidst the various engagements which the kindness of her aunt had reserved for them.”",
+    "options": [
+     "Bennet",
+     "Jane",
+     "Wickham",
+     "Darcy"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Jane looked well, and Elizabeth had little opportunity of studying her spirits, amidst the various engagements which the kindness of her aunt had reserved for them.”",
+    "evidence": "Jane looked well, and Elizabeth had little opportunity of studying her spirits, amidst the various engagements which the kindness of her aunt had reserved for them."
+   }
+  ],
+  "39": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "He addressed himself directly to Miss Bennet with a polite congratulation; Mr.",
+     "The joy which Miss Darcy expressed on receiving similar information was as sincere as her brother’s in sending it.",
+     "Another entreaty that she would be serious, however, produced the desired effect; and she soon satisfied Jane by her solemn assurances of attachment.",
+     "You thought the waiter must not hear, as if he cared!"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “You thought the waiter must not hear, as if he cared!”",
+    "evidence": "You thought the waiter must not hear, as if he cared!"
+   },
+   {
+    "prompt": "Fill in the missing name: “It was the second week in May, in which the three young ladies set out together from _____ Street for the town of ----, in Hertfordshire; and, as they drew near the appointed inn where Mr.”",
+    "options": [
+     "Pemberley",
+     "Meryton",
+     "Brighton",
+     "Gracechurch"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “It was the second week in May, in which the three young ladies set out together from Gracechurch Street for the town of ----, in Hertfordshire; and, as they drew near the appointed inn where Mr.”",
+    "evidence": "It was the second week in May, in which the three young ladies set out together from Gracechurch Street for the town of ----, in Hertfordshire; and, as they drew near the appointed inn where Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “She had not been many hours at home, before she found that the Brighton scheme, of which _____ had given them a hint at the inn, was under frequent discussion between her parents.”",
+    "options": [
+     "Charlotte",
+     "Elizabeth",
+     "Lizzy",
+     "Lydia"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “She had not been many hours at home, before she found that the Brighton scheme, of which Lydia had given them a hint at the inn, was under frequent discussion between her parents.”",
+    "evidence": "She had not been many hours at home, before she found that the Brighton scheme, of which Lydia had given them a hint at the inn, was under frequent discussion between her parents."
+   }
+  ],
+  "40": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Elizabeth said no more; but her mind could not acquiesce.",
+     "His wife represented to him how absolutely necessary such an attention would be from all the neighbouring gentlemen, on his returning to Netherfield.",
+     "Your profusion makes me saving; and if you lament over him much longer, my heart will be as light as a feather.",
+     "She was to accompany Sir William and his second daughter."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Your profusion makes me saving; and if you lament over him much longer, my heart will be as light as a feather.”",
+    "evidence": "Your profusion makes me saving; and if you lament over him much longer, my heart will be as light as a feather."
+   },
+   {
+    "prompt": "Fill in the missing name: “Miss Bennet’s astonishment was soon lessened by the strong sisterly partiality which made any admiration of _____ appear perfectly natural; and all surprise was shortly lost in other feelings.”",
+    "options": [
+     "Wickham",
+     "Elizabeth",
+     "Bingley",
+     "Lucases"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Miss Bennet’s astonishment was soon lessened by the strong sisterly partiality which made any admiration of Elizabeth appear perfectly natural; and all surprise was shortly lost in other feelings.”",
+    "evidence": "Miss Bennet’s astonishment was soon lessened by the strong sisterly partiality which made any admiration of Elizabeth appear perfectly natural; and all surprise was shortly lost in other feelings."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ should have delivered his sentiments in a manner so little suited to recommend them; but still more was she grieved for the unhappiness which her sister’s refusal must have given him.”",
+    "options": [
+     "Lydia",
+     "Kitty",
+     "Darcy",
+     "Bingley"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Darcy should have delivered his sentiments in a manner so little suited to recommend them; but still more was she grieved for the unhappiness which her sister’s refusal must have given him.”",
+    "evidence": "Darcy should have delivered his sentiments in a manner so little suited to recommend them; but still more was she grieved for the unhappiness which her sister’s refusal must have given him."
+   }
+  ],
+  "41": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I do not remember her name among the ladies at court.",
+     "Our importance, our respectability in the world, must be affected by the wild volatility, the assurance and disdain of all restraint which mark…",
+     "Bennet was among the earliest of those who waited on Mr.",
+     "When I am in company with him, I will not be wishing."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Our importance, our respectability in the world, must be affected by the wild volatility, the assurance and disdain of all restraint which mark Lydia’s character.”",
+    "evidence": "Our importance, our respectability in the world, must be affected by the wild volatility, the assurance and disdain of all restraint which mark Lydia’s character."
+   },
+   {
+    "prompt": "Fill in the missing name: “Very frequently were they reproached for this insensibility by _____ and Lydia, whose own misery was extreme, and who could not comprehend such hard-heartedness in any of the family.”",
+    "options": [
+     "Kitty",
+     "Elizabeth",
+     "Lizzy",
+     "Wickham"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Very frequently were they reproached for this insensibility by Kitty and Lydia, whose own misery was extreme, and who could not comprehend such hard-heartedness in any of the family.”",
+    "evidence": "Very frequently were they reproached for this insensibility by Kitty and Lydia, whose own misery was extreme, and who could not comprehend such hard-heartedness in any of the family."
+   },
+   {
+    "prompt": "Fill in the missing name: “Wherever you and _____ are known, you must be respected and valued; and you will not appear to less advantage for having a couple of--or I may say, three--very silly sisters.”",
+    "options": [
+     "Wickham",
+     "Jane",
+     "Elizabeth",
+     "Catherine"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Wherever you and Jane are known, you must be respected and valued; and you will not appear to less advantage for having a couple of--or I may say, three--very silly sisters.”",
+    "evidence": "Wherever you and Jane are known, you must be respected and valued; and you will not appear to less advantage for having a couple of--or I may say, three--very silly sisters."
+   }
+  ],
+  "42": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Lady Catherine, I believe, did a great deal to it when Mr.",
+     "Yes; and they have another, who lives somewhere near Cheapside.",
+     "The housekeeper at Netherfield had received orders to prepare for the arrival of her master, who was coming down in a day or two, to shoot there for…",
+     "Gardiner, which at once delayed its commencement and curtailed its extent."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Gardiner, which at once delayed its commencement and curtailed its extent.”",
+    "evidence": "Gardiner, which at once delayed its commencement and curtailed its extent."
+   },
+   {
+    "prompt": "Fill in the missing name: “When _____ went away she promised to write very often and very minutely to her mother and Kitty; but her letters were always long expected, and always very short.”",
+    "options": [
+     "Jane",
+     "Elizabeth",
+     "Catherine",
+     "Lydia"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “When Lydia went away she promised to write very often and very minutely to her mother and Kitty; but her letters were always long expected, and always very short.”",
+    "evidence": "When Lydia went away she promised to write very often and very minutely to her mother and Kitty; but her letters were always long expected, and always very short."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ was excessively disappointed: she had set her heart on seeing the Lakes; and still thought there might have been time enough.”",
+    "options": [
+     "Maria",
+     "Lizzy",
+     "Darcy",
+     "Elizabeth"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Elizabeth was excessively disappointed: she had set her heart on seeing the Lakes; and still thought there might have been time enough.”",
+    "evidence": "Elizabeth was excessively disappointed: she had set her heart on seeing the Lakes; and still thought there might have been time enough."
+   }
+  ],
+  "43": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "His sister was less delicate, and directed her eye towards Mr.",
+     "In the desperation of her feelings, she resolved on one effort more; and, turning to Elizabeth, said,-- “Miss Eliza Bennet, let me persuade you to…",
+     "Well, now let us be quite comfortable and snug, and talk and laugh all the way home.",
+     "Yes, ma’am, that he was indeed; and his son will be just like him--just as affable to the poor."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Yes, ma’am, that he was indeed; and his son will be just like him--just as affable to the poor.”",
+    "evidence": "Yes, ma’am, that he was indeed; and his son will be just like him--just as affable to the poor."
+   },
+   {
+    "prompt": "Fill in the missing name: “The occurrences of the day were too full of interest to leave _____ much attention for any of these new friends; and she could do nothing but think, and think with wonder, of Mr.”",
+    "options": [
+     "Catherine",
+     "Maria",
+     "Forster",
+     "Elizabeth"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The occurrences of the day were too full of interest to leave Elizabeth much attention for any of these new friends; and she could do nothing but think, and think with wonder, of Mr.”",
+    "evidence": "The occurrences of the day were too full of interest to leave Elizabeth much attention for any of these new friends; and she could do nothing but think, and think with wonder, of Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “Elizabeth excused herself as well as she could: said that she had liked him better when they met in _____ than before, and that she had never seen him so pleasant as this morning.”",
+    "options": [
+     "Mary",
+     "Netherfield",
+     "Meryton",
+     "Kent"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Elizabeth excused herself as well as she could: said that she had liked him better when they met in Kent than before, and that she had never seen him so pleasant as this morning.”",
+    "evidence": "Elizabeth excused herself as well as she could: said that she had liked him better when they met in Kent than before, and that she had never seen him so pleasant as this morning."
+   }
+  ],
+  "44": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Bennet; and, therefore, instead of making any answer, she went on as before.",
+     "Gardiner he was scarcely a less interesting personage than to herself.",
+     "But, my dear sister, can I be happy, even supposing the best, in accepting a man whose sisters and friends are all wishing him to marry elsewhere?",
+     "But if you will listen to his letter, you may, perhaps, be a little softened by his manner of expressing himself."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Gardiner he was scarcely a less interesting personage than to herself.”",
+    "evidence": "Gardiner he was scarcely a less interesting personage than to herself."
+   },
+   {
+    "prompt": "Fill in the missing name: “Eager to be alone, and fearful of inquiries or hints from her uncle and aunt, she stayed with them only long enough to hear their favourable opinion of _____, and then hurried away to dress.”",
+    "options": [
+     "Lucas",
+     "Bingley",
+     "Elizabeth",
+     "Eliza"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Eager to be alone, and fearful of inquiries or hints from her uncle and aunt, she stayed with them only long enough to hear their favourable opinion of Bingley, and then hurried away to dress.”",
+    "evidence": "Eager to be alone, and fearful of inquiries or hints from her uncle and aunt, she stayed with them only long enough to hear their favourable opinion of Bingley, and then hurried away to dress."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, immediately recognizing the livery, guessed what it meant, and imparted no small degree of surprise to her relations, by acquainting them with the honour which she expected.”",
+    "options": [
+     "Charlotte",
+     "Maria",
+     "Elizabeth",
+     "Lydia"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Elizabeth, immediately recognizing the livery, guessed what it meant, and imparted no small degree of surprise to her relations, by acquainting them with the honour which she expected.”",
+    "evidence": "Elizabeth, immediately recognizing the livery, guessed what it meant, and imparted no small degree of surprise to her relations, by acquainting them with the honour which she expected."
+   }
+  ],
+  "45": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Gardiner added, in his letter, that they might expect to see their father at home on the following day, which was Saturday.",
+     "Annesley to Miss Darcy had been given, to remind her of her post.",
+     "It ought to be so; it must be so, while he retains the use of his reason.",
+     "Darcy, he stopped, with a bow of superior courtesy, to compliment him on his dancing and his partner."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Annesley to Miss Darcy had been given, to remind her of her post.”",
+    "evidence": "Annesley to Miss Darcy had been given, to remind her of her post."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, who, with two or three other gentlemen from the house, was engaged by the river; and had left him only on learning that the ladies of the family intended a visit to Georgiana that morning.”",
+    "options": [
+     "Wickham",
+     "Bennet",
+     "Gardiner",
+     "Fitzwilliam"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Gardiner, who, with two or three other gentlemen from the house, was engaged by the river; and had left him only on learning that the ladies of the family intended a visit to Georgiana that morning.”",
+    "evidence": "Gardiner, who, with two or three other gentlemen from the house, was engaged by the river; and had left him only on learning that the ladies of the family intended a visit to Georgiana that morning."
+   },
+   {
+    "prompt": "Fill in the missing name: “While she spoke, an involuntary glance showed her _____ with a heightened complexion, earnestly looking at her, and his sister overcome with confusion, and unable to lift up her eyes.”",
+    "options": [
+     "Eliza",
+     "Darcy",
+     "Kitty",
+     "Forster"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “While she spoke, an involuntary glance showed her Darcy with a heightened complexion, earnestly looking at her, and his sister overcome with confusion, and unable to lift up her eyes.”",
+    "evidence": "While she spoke, an involuntary glance showed her Darcy with a heightened complexion, earnestly looking at her, and his sister overcome with confusion, and unable to lift up her eyes."
+   }
+  ],
+  "46": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Let me congratulate you on a very important conquest.",
+     "Lydia laughed, and said,-- “Ay, that is just like your formality and discretion.",
+     "From what I can collect, he left Derbyshire only one day after ourselves, and came to town with the resolution of hunting for them.",
+     "came on into Hertfordshire, anxiously renewing them at all the turnpikes, and at the inns in Barnet and Hatfield, but without any success,--no such…"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “came on into Hertfordshire, anxiously renewing them at all the turnpikes, and at the inns in Barnet and Hatfield, but without any success,--no such people had been seen to pass through.”",
+    "evidence": "came on into Hertfordshire, anxiously renewing them at all the turnpikes, and at the inns in Barnet and Hatfield, but without any success,--no such people had been seen to pass through."
+   },
+   {
+    "prompt": "Fill in the missing name: “An express came at twelve last night, just as we were all gone to bed, from Colonel _____, to inform us that she was gone off to Scotland with one of his officers; to own the truth, with Wickham!”",
+    "options": [
+     "Eliza",
+     "Forster",
+     "Darcy",
+     "Lizzy"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “An express came at twelve last night, just as we were all gone to bed, from Colonel Forster, to inform us that she was gone off to Scotland with one of his officers; to own the truth, with Wickham!”",
+    "evidence": "An express came at twelve last night, just as we were all gone to bed, from Colonel Forster, to inform us that she was gone off to Scotland with one of his officers; to own the truth, with Wickham!"
+   },
+   {
+    "prompt": "Fill in the missing name: “She had never perceived, while the regiment was in _____, that Lydia had any partiality for him; but she was convinced that Lydia had wanted only encouragement to attach herself to anybody.”",
+    "options": [
+     "Longbourn",
+     "Kent",
+     "Ladyship",
+     "Hertfordshire"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “She had never perceived, while the regiment was in Hertfordshire, that Lydia had any partiality for him; but she was convinced that Lydia had wanted only encouragement to attach herself to anybody.”",
+    "evidence": "She had never perceived, while the regiment was in Hertfordshire, that Lydia had any partiality for him; but she was convinced that Lydia had wanted only encouragement to attach herself to anybody."
+   }
+  ],
+  "47": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "It was a comfort to Elizabeth to consider that Jane could not have been wearied by long expectations.",
+     "Elizabeth Bennet had been obliged, by the scarcity of gentlemen, to sit down for two dances; and during part of that time, Mr.",
+     "My father and Maria are to come to me in March,” added Charlotte, “and I hope you will consent to be of the party.",
+     "We have not quite determined how far it shall carry us,” said Mrs."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “It was a comfort to Elizabeth to consider that Jane could not have been wearied by long expectations.”",
+    "evidence": "It was a comfort to Elizabeth to consider that Jane could not have been wearied by long expectations."
+   },
+   {
+    "prompt": "Fill in the missing name: “It had come with a fare from _____; and as he thought the circumstance of a gentleman and lady’s removing from one carriage into another might be remarked, he meant to make inquiries at Clapham.”",
+    "options": [
+     "Netherfield",
+     "Pemberley",
+     "Brighton",
+     "London"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “It had come with a fare from London; and as he thought the circumstance of a gentleman and lady’s removing from one carriage into another might be remarked, he meant to make inquiries at Clapham.”",
+    "evidence": "It had come with a fare from London; and as he thought the circumstance of a gentleman and lady’s removing from one carriage into another might be remarked, he meant to make inquiries at Clapham."
+   },
+   {
+    "prompt": "Fill in the missing name: “It is not likely that money should be very abundant on either side; and it might strike them that they could be more economically, though less expeditiously, married in London, than in _____.”",
+    "options": [
+     "Allen",
+     "Ladyship",
+     "Scotland",
+     "Bourgh"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “It is not likely that money should be very abundant on either side; and it might strike them that they could be more economically, though less expeditiously, married in London, than in Scotland.”",
+    "evidence": "It is not likely that money should be very abundant on either side; and it might strike them that they could be more economically, though less expeditiously, married in London, than in Scotland."
+   }
+  ],
+  "48": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "With the mention of Derbyshire, there were many ideas connected.",
+     "She had never seen a place for which nature had done more, or where natural beauty had been so little counteracted by an awkward taste.",
+     "Collins, and the convenient distance of Hunsford from London.",
+     "Gardiner, a letter arrived for their father, from a different quarter, from Mr."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Gardiner, a letter arrived for their father, from a different quarter, from Mr.”",
+    "evidence": "Gardiner, a letter arrived for their father, from a different quarter, from Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had been to Epsom and Clapham, before his arrival, but without gaining any satisfactory information; and that he was now determined to inquire at all the principal hotels in town, as Mr.”",
+    "options": [
+     "Bennet",
+     "Kitty",
+     "Fitzwilliam",
+     "Catherine"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Bennet had been to Epsom and Clapham, before his arrival, but without gaining any satisfactory information; and that he was now determined to inquire at all the principal hotels in town, as Mr.”",
+    "evidence": "Bennet had been to Epsom and Clapham, before his arrival, but without gaining any satisfactory information; and that he was now determined to inquire at all the principal hotels in town, as Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “Then, after a short silence, he continued, “_____, I bear you no ill-will for being justified in your advice to me last May, which, considering the event, shows some greatness of mind.”",
+    "options": [
+     "Bingley",
+     "Fitzwilliam",
+     "Lizzy",
+     "Wickham"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Then, after a short silence, he continued, “Lizzy, I bear you no ill-will for being justified in your advice to me last May, which, considering the event, shows some greatness of mind.”",
+    "evidence": "Then, after a short silence, he continued, “Lizzy, I bear you no ill-will for being justified in your advice to me last May, which, considering the event, shows some greatness of mind."
+   }
+  ],
+  "49": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "That is very true,” said Elizabeth; “though it had not occurred to me before.",
+     "And do not you think him a very handsome gentleman, ma’am?",
+     "Bennet; “and it is happy for you that you possess the talent of flattering with delicacy.",
+     "Forster, and Kitty and me, except my aunt, for we were forced to borrow one of her gowns; and you cannot imagine how well he looked!"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “That is very true,” said Elizabeth; “though it had not occurred to me before.”",
+    "evidence": "That is very true,” said Elizabeth; “though it had not occurred to me before."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, who was not so light, nor so much in the habit of running as Elizabeth, soon lagged behind, while her sister, panting for breath, came up with him, and eagerly cried out,-- “Oh, papa, what news?”",
+    "options": [
+     "Lucases",
+     "Maria",
+     "Catherine",
+     "Jane"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Jane, who was not so light, nor so much in the habit of running as Elizabeth, soon lagged behind, while her sister, panting for breath, came up with him, and eagerly cried out,-- “Oh, papa, what news?”",
+    "evidence": "Jane, who was not so light, nor so much in the habit of running as Elizabeth, soon lagged behind, while her sister, panting for breath, came up with him, and eagerly cried out,-- “Oh, papa, what news?"
+   },
+   {
+    "prompt": "Fill in the missing name: “If we are ever able to learn what Wickham’s debts have been,” said _____, “and how much is settled on his side on our sister, we shall exactly know what Mr.”",
+    "options": [
+     "Elizabeth",
+     "Kitty",
+     "Lucas",
+     "Bingley"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “If we are ever able to learn what Wickham’s debts have been,” said Elizabeth, “and how much is settled on his side on our sister, we shall exactly know what Mr.”",
+    "evidence": "If we are ever able to learn what Wickham’s debts have been,” said Elizabeth, “and how much is settled on his side on our sister, we shall exactly know what Mr."
+   }
+  ],
+  "50": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Darcy, to be treating his father’s favourite in such a manner,--one whom his father had promised to provide for.",
+     "I am sorry, exceedingly sorry,” replied Darcy, in a tone of surprise and emotion, “that you have ever been informed of what may, in a mistaken…",
+     "Her husband allowed her to talk on without interruption while the servants remained.",
+     "At that moment Sir William Lucas appeared close to them, meaning to pass through the set to the other side of the room; but, on perceiving Mr."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Her husband allowed her to talk on without interruption while the servants remained.”",
+    "evidence": "Her husband allowed her to talk on without interruption while the servants remained."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ was surprised, however, that Wickham should consent to such a scheme; and, had she consulted only her own inclination, any meeting with him would have been the last object of her wishes.”",
+    "options": [
+     "Lydia",
+     "Elizabeth",
+     "Catherine",
+     "Bingley"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Elizabeth was surprised, however, that Wickham should consent to such a scheme; and, had she consulted only her own inclination, any meeting with him would have been the last object of her wishes.”",
+    "evidence": "Elizabeth was surprised, however, that Wickham should consent to such a scheme; and, had she consulted only her own inclination, any meeting with him would have been the last object of her wishes."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ would connect himself with a family, where to every other objection would now be added an alliance and relationship of the nearest kind with the man whom he so justly scorned.”",
+    "options": [
+     "Lydia",
+     "Catherine",
+     "Darcy",
+     "Fitzwilliam"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Darcy would connect himself with a family, where to every other objection would now be added an alliance and relationship of the nearest kind with the man whom he so justly scorned.”",
+    "evidence": "Darcy would connect himself with a family, where to every other objection would now be added an alliance and relationship of the nearest kind with the man whom he so justly scorned."
+   }
+  ],
+  "51": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Elizabeth, who had expected to find in her as acute and unembarrassed an observer as ever Mr.",
+     "She got up and ran out of the room; and returned no more, till she heard them passing through the hall to the dining-parlour.",
+     "She seems a very pleasant young woman,” said Bingley.",
+     "He danced only four dances, though gentlemen were scarce; and, to my certain knowledge, more than one young lady was sitting down in want of a…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “She got up and ran out of the room; and returned no more, till she heard them passing through the hall to the dining-parlour.”",
+    "evidence": "She got up and ran out of the room; and returned no more, till she heard them passing through the hall to the dining-parlour."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had not before believed him quite equal to such assurance; but she sat down, resolving within herself to draw no limits in future to the impudence of an impudent man.”",
+    "options": [
+     "Elizabeth",
+     "Forster",
+     "Wickham",
+     "Charlotte"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Elizabeth had not before believed him quite equal to such assurance; but she sat down, resolving within herself to draw no limits in future to the impudence of an impudent man.”",
+    "evidence": "Elizabeth had not before believed him quite equal to such assurance; but she sat down, resolving within herself to draw no limits in future to the impudence of an impudent man."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ regretted that their stay would be so short; and she made the most of the time by visiting about with her daughter, and having very frequent parties at home.”",
+    "options": [
+     "Lucas",
+     "Jane",
+     "Elizabeth",
+     "Bennet"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Bennet regretted that their stay would be so short; and she made the most of the time by visiting about with her daughter, and having very frequent parties at home.”",
+    "evidence": "Bennet regretted that their stay would be so short; and she made the most of the time by visiting about with her daughter, and having very frequent parties at home."
+   }
+  ],
+  "52": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "This is not quite enough to make her understand his character.",
+     "When she came to that part of the letter in which her family were mentioned, in tones of such mortifying, yet merited, reproach, her sense of shame…",
+     "She was proceeding directly to her favourite walk, when the recollection of Mr.",
+     "Under such circumstances, however, he was not likely to be proof against the temptation of immediate relief."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Under such circumstances, however, he was not likely to be proof against the temptation of immediate relief.”",
+    "evidence": "Under such circumstances, however, he was not likely to be proof against the temptation of immediate relief."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, indeed, had gone to her on their first arrival in London; and had she been able to receive them into her house, they would have taken up their abode with her.”",
+    "options": [
+     "Elizabeth",
+     "Wickham",
+     "Lucas",
+     "Forster"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Wickham, indeed, had gone to her on their first arrival in London; and had she been able to receive them into her house, they would have taken up their abode with her.”",
+    "evidence": "Wickham, indeed, had gone to her on their first arrival in London; and had she been able to receive them into her house, they would have taken up their abode with her."
+   },
+   {
+    "prompt": "Fill in the missing name: “The contents of this letter threw _____ into a flutter of spirits, in which it was difficult to determine whether pleasure or pain bore the greatest share.”",
+    "options": [
+     "Lucas",
+     "Elizabeth",
+     "Bingley",
+     "Fitzwilliam"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “The contents of this letter threw Elizabeth into a flutter of spirits, in which it was difficult to determine whether pleasure or pain bore the greatest share.”",
+    "evidence": "The contents of this letter threw Elizabeth into a flutter of spirits, in which it was difficult to determine whether pleasure or pain bore the greatest share."
+   }
+  ],
+  "53": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "But that expression of ‘violently in love’ is so hackneyed, so doubtful, so indefinite, that it gives me very little idea.",
+     "She paused, and saw with no slight indignation that he was listening with an air which proved him wholly unmoved by any feeling of remorse.",
+     "But when the gentlemen entered, Jane was no longer the first object; Miss Bingley’s eyes were instantly turned towards Darcy, and she had something…",
+     "Consoled by this resolution, she was the better able to bear her husband’s incivility; though it was very mortifying to know that her neighbours…"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Consoled by this resolution, she was the better able to bear her husband’s incivility; though it was very mortifying to know that her neighbours might all see Mr.”",
+    "evidence": "Consoled by this resolution, she was the better able to bear her husband’s incivility; though it was very mortifying to know that her neighbours might all see Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “She knew but little of their meeting in _____, and therefore felt for the awkwardness which must attend her sister, in seeing him almost for the first time after receiving his explanatory letter.”",
+    "options": [
+     "Meryton",
+     "Longbourn",
+     "Derbyshire",
+     "Hertfordshire"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “She knew but little of their meeting in Derbyshire, and therefore felt for the awkwardness which must attend her sister, in seeing him almost for the first time after receiving his explanatory letter.”",
+    "evidence": "She knew but little of their meeting in Derbyshire, and therefore felt for the awkwardness which must attend her sister, in seeing him almost for the first time after receiving his explanatory letter."
+   },
+   {
+    "prompt": "Fill in the missing name: “It drew from her, however, the exertion of speaking, which nothing else had so effectually done before; and she asked _____ whether he meant to make any stay in the country at present.”",
+    "options": [
+     "Bennet",
+     "Lydia",
+     "Bingley",
+     "Eliza"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “It drew from her, however, the exertion of speaking, which nothing else had so effectually done before; and she asked Bingley whether he meant to make any stay in the country at present.”",
+    "evidence": "It drew from her, however, the exertion of speaking, which nothing else had so effectually done before; and she asked Bingley whether he meant to make any stay in the country at present."
+   }
+  ],
+  "54": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "He bore it with noble indifference; and she would have imagined that Bingley had received his sanction to be happy, had she not seen his eyes…",
+     "Bennet got rid of her two most deserving daughters.",
+     "The paling of Rosings park was their boundary on one side.",
+     "When she is secure of him, there will be leisure for falling in love as much as she chooses."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “He bore it with noble indifference; and she would have imagined that Bingley had received his sanction to be happy, had she not seen his eyes likewise turned towards Mr.”",
+    "evidence": "He bore it with noble indifference; and she would have imagined that Bingley had received his sanction to be happy, had she not seen his eyes likewise turned towards Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “Her resolution was for a short time involuntarily kept by the approach of her sister, who joined her with a cheerful look which showed her better satisfied with their visitors than _____.”",
+    "options": [
+     "Catherine",
+     "Jane",
+     "Elizabeth",
+     "Lizzy"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Her resolution was for a short time involuntarily kept by the approach of her sister, who joined her with a cheerful look which showed her better satisfied with their visitors than Elizabeth.”",
+    "evidence": "Her resolution was for a short time involuntarily kept by the approach of her sister, who joined her with a cheerful look which showed her better satisfied with their visitors than Elizabeth."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had designed to keep the two Netherfield gentlemen to supper; but their carriage was, unluckily, ordered before any of the others, and she had no opportunity of detaining them.”",
+    "options": [
+     "Bennet",
+     "Lizzy",
+     "Jane",
+     "Darcy"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Bennet had designed to keep the two Netherfield gentlemen to supper; but their carriage was, unluckily, ordered before any of the others, and she had no opportunity of detaining them.”",
+    "evidence": "Bennet had designed to keep the two Netherfield gentlemen to supper; but their carriage was, unluckily, ordered before any of the others, and she had no opportunity of detaining them."
+   }
+  ],
+  "55": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Miss Bingley succeeded no less in the real object of her civility: Mr.",
+     "In a hurried manner he immediately began an inquiry after her health, imputing his visit to a wish of hearing that she were better.",
+     "After this day, Jane said no more of her indifference.",
+     "On the contrary, she was as much disposed to complain of it as her husband."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “After this day, Jane said no more of her indifference.”",
+    "evidence": "After this day, Jane said no more of her indifference."
+   },
+   {
+    "prompt": "Fill in the missing name: “There was nothing of presumption or folly in _____ that could provoke his ridicule, or disgust him into silence; and he was more communicative, and less eccentric, than the other had ever seen him.”",
+    "options": [
+     "Eliza",
+     "Lizzy",
+     "Bingley",
+     "Forster"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “There was nothing of presumption or folly in Bingley that could provoke his ridicule, or disgust him into silence; and he was more communicative, and less eccentric, than the other had ever seen him.”",
+    "evidence": "There was nothing of presumption or folly in Bingley that could provoke his ridicule, or disgust him into silence; and he was more communicative, and less eccentric, than the other had ever seen him."
+   },
+   {
+    "prompt": "Fill in the missing name: “Not a word, however, passed his lips in allusion to it, till their visitor took his leave for the night; but as soon as he was gone, he turned to his daughter and said,-- “_____, I congratulate you.”",
+    "options": [
+     "Elizabeth",
+     "Lucas",
+     "Fitzwilliam",
+     "Jane"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Not a word, however, passed his lips in allusion to it, till their visitor took his leave for the night; but as soon as he was gone, he turned to his daughter and said,-- “Jane, I congratulate you.”",
+    "evidence": "Not a word, however, passed his lips in allusion to it, till their visitor took his leave for the night; but as soon as he was gone, he turned to his daughter and said,-- “Jane, I congratulate you."
+   }
+  ],
+  "56": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Their eyes were immediately wandering up the street in quest of the officers, and nothing less than a very smart bonnet, indeed, or a really new…",
+     "Now, seriously, what have you ever known of self-denial and dependence?",
+     "My character has ever been celebrated for its sincerity and frankness; and in a cause of such moment as this, I shall certainly not depart from it.",
+     "Now and then they were honoured with a call from her Ladyship, and nothing escaped her observation that was passing in the room during these visits."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “My character has ever been celebrated for its sincerity and frankness; and in a cause of such moment as this, I shall certainly not depart from it.”",
+    "evidence": "My character has ever been celebrated for its sincerity and frankness; and in a cause of such moment as this, I shall certainly not depart from it."
+   },
+   {
+    "prompt": "Fill in the missing name: “They proceeded in silence along the gravel walk that led to the copse; _____ was determined to make no effort for conversation with a woman who was now more than usually insolent and disagreeable.”",
+    "options": [
+     "Catherine",
+     "Fitzwilliam",
+     "Elizabeth",
+     "Kitty"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “They proceeded in silence along the gravel walk that led to the copse; Elizabeth was determined to make no effort for conversation with a woman who was now more than usually insolent and disagreeable.”",
+    "evidence": "They proceeded in silence along the gravel walk that led to the copse; Elizabeth was determined to make no effort for conversation with a woman who was now more than usually insolent and disagreeable."
+   },
+   {
+    "prompt": "Fill in the missing name: “As they passed through the hall, Lady _____ opened the doors into the dining-parlour and drawing-room, and pronouncing them, after a short survey, to be decent-looking rooms, walked on.”",
+    "options": [
+     "Elizabeth",
+     "Catherine",
+     "Charlotte",
+     "Wickham"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “As they passed through the hall, Lady Catherine opened the doors into the dining-parlour and drawing-room, and pronouncing them, after a short survey, to be decent-looking rooms, walked on.”",
+    "evidence": "As they passed through the hall, Lady Catherine opened the doors into the dining-parlour and drawing-room, and pronouncing them, after a short survey, to be decent-looking rooms, walked on."
+   }
+  ],
+  "57": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Bennet had seen her eldest daughter much admired by the Netherfield party.",
+     "Not at all,” he replied: “they were brightened by the exercise.",
+     "He was a tall, heavy-looking young man of five-and-twenty.",
+     "It suddenly struck her that it might be from Lady Catherine, and she anticipated with dismay all the consequent explanations."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “It suddenly struck her that it might be from Lady Catherine, and she anticipated with dismay all the consequent explanations.”",
+    "evidence": "It suddenly struck her that it might be from Lady Catherine, and she anticipated with dismay all the consequent explanations."
+   },
+   {
+    "prompt": "Fill in the missing name: “With his notions of dignity, he would probably feel that the arguments, which to _____ had appeared weak and ridiculous, contained much good sense and solid reasoning.”",
+    "options": [
+     "Lucas",
+     "Jane",
+     "Elizabeth",
+     "Maria"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “With his notions of dignity, he would probably feel that the arguments, which to Elizabeth had appeared weak and ridiculous, contained much good sense and solid reasoning.”",
+    "evidence": "With his notions of dignity, he would probably feel that the arguments, which to Elizabeth had appeared weak and ridiculous, contained much good sense and solid reasoning."
+   },
+   {
+    "prompt": "Fill in the missing name: “He begins with congratulations on the approaching nuptials of my eldest daughter, of which, it seems, he has been told by some of the good-natured, gossiping _____.”",
+    "options": [
+     "Darcy",
+     "William",
+     "Charlotte",
+     "Lucases"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He begins with congratulations on the approaching nuptials of my eldest daughter, of which, it seems, he has been told by some of the good-natured, gossiping Lucases.”",
+    "evidence": "He begins with congratulations on the approaching nuptials of my eldest daughter, of which, it seems, he has been told by some of the good-natured, gossiping Lucases."
+   }
+  ],
+  "58": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Her fellow-travellers the next day were not of a kind to make her think him less agreeable.",
+     "It is evident by this,” added Jane, “that he comes back no more this winter.",
+     "But on her returning to the drawing-room, when her letter was finished, she saw, to her infinite surprise, there was reason to fear that her mother…",
+     "It taught me to hope,” said he, “as I had scarcely ever allowed myself to hope before."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “It taught me to hope,” said he, “as I had scarcely ever allowed myself to hope before.”",
+    "evidence": "It taught me to hope,” said he, “as I had scarcely ever allowed myself to hope before."
+   },
+   {
+    "prompt": "Fill in the missing name: “They walked towards the Lucases’, because Kitty wished to call upon _____; and as Elizabeth saw no occasion for making it a general concern, when Kitty left them she went boldly on with him alone.”",
+    "options": [
+     "Forster",
+     "Maria",
+     "Charlotte",
+     "Bennets"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “They walked towards the Lucases’, because Kitty wished to call upon Maria; and as Elizabeth saw no occasion for making it a general concern, when Kitty left them she went boldly on with him alone.”",
+    "evidence": "They walked towards the Lucases’, because Kitty wished to call upon Maria; and as Elizabeth saw no occasion for making it a general concern, when Kitty left them she went boldly on with him alone."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had time to tell him of their having seen his aunt, of which her daughter sat in momentary dread, Bingley, who wanted to be alone with Jane, proposed their all walking out.”",
+    "options": [
+     "Elizabeth",
+     "Wickham",
+     "Bennet",
+     "Darcy"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Bennet had time to tell him of their having seen his aunt, of which her daughter sat in momentary dread, Bingley, who wanted to be alone with Jane, proposed their all walking out.”",
+    "evidence": "Bennet had time to tell him of their having seen his aunt, of which her daughter sat in momentary dread, Bingley, who wanted to be alone with Jane, proposed their all walking out."
+   }
+  ],
+  "59": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The favour of your company has been much felt, I assure you.",
+     "You are all kindness, madam; but I believe we must abide by our original plan.",
+     "How little did you tell me of what passed at Pemberley and Lambton!",
+     "Gardiner looked at her niece with a smile, but Elizabeth could not return it."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “How little did you tell me of what passed at Pemberley and Lambton!”",
+    "evidence": "How little did you tell me of what passed at Pemberley and Lambton!"
+   },
+   {
+    "prompt": "Fill in the missing name: “Collins’s letter; and after laughing at her some time, allowed her at last to go, saying, as she quitted the room, “If any young men come for Mary or _____, send them in, for I am quite at leisure.”",
+    "options": [
+     "Charlotte",
+     "Kitty",
+     "Bingley",
+     "Forster"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Collins’s letter; and after laughing at her some time, allowed her at last to go, saying, as she quitted the room, “If any young men come for Mary or Kitty, send them in, for I am quite at leisure.”",
+    "evidence": "Collins’s letter; and after laughing at her some time, allowed her at last to go, saying, as she quitted the room, “If any young men come for Mary or Kitty, send them in, for I am quite at leisure."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ luckily stood in such awe of her intended son-in-law, that she ventured not to speak to him, unless it was in her power to offer him any attention, or mark her deference for his opinion.”",
+    "options": [
+     "Bennet",
+     "Catherine",
+     "Eliza",
+     "Lydia"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Bennet luckily stood in such awe of her intended son-in-law, that she ventured not to speak to him, unless it was in her power to offer him any attention, or mark her deference for his opinion.”",
+    "evidence": "Bennet luckily stood in such awe of her intended son-in-law, that she ventured not to speak to him, unless it was in her power to offer him any attention, or mark her deference for his opinion."
+   }
+  ],
+  "60": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I am exceedingly gratified,” said Bingley, “by your converting what my friend says into a compliment on the sweetness of my temper.",
+     "My aunt’s intelligence had given me hope, and I was determined at once to know everything.",
+     "If my children are silly, I must hope to be always sensible of it.",
+     "I do not think it is very pretty; but I thought I might as well buy it as not."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “My aunt’s intelligence had given me hope, and I was determined at once to know everything.”",
+    "evidence": "My aunt’s intelligence had given me hope, and I was determined at once to know everything."
+   },
+   {
+    "prompt": "Fill in the missing name: “Lady _____ had been rendered so exceedingly angry by the contents of her nephew’s letter, that Charlotte, really rejoicing in the match, was anxious to get away till the storm was blown over.”",
+    "options": [
+     "Lizzy",
+     "Catherine",
+     "Maria",
+     "Lucas"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Lady Catherine had been rendered so exceedingly angry by the contents of her nephew’s letter, that Charlotte, really rejoicing in the match, was anxious to get away till the storm was blown over.”",
+    "evidence": "Lady Catherine had been rendered so exceedingly angry by the contents of her nephew’s letter, that Charlotte, really rejoicing in the match, was anxious to get away till the storm was blown over."
+   },
+   {
+    "prompt": "Fill in the missing name: “At such a moment, the arrival of her friend was a sincere pleasure to _____, though in the course of their meetings she must sometimes think the pleasure dearly bought, when she saw Mr.”",
+    "options": [
+     "Jane",
+     "Wickham",
+     "Catherine",
+     "Elizabeth"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “At such a moment, the arrival of her friend was a sincere pleasure to Elizabeth, though in the course of their meetings she must sometimes think the pleasure dearly bought, when she saw Mr.”",
+    "evidence": "At such a moment, the arrival of her friend was a sincere pleasure to Elizabeth, though in the course of their meetings she must sometimes think the pleasure dearly bought, when she saw Mr."
+   }
+  ],
+  "61": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The arrival of letters was the first grand object of every morning’s impatience.",
+     "Wickham frequently invited her to come and stay with her, with the promise of balls and young men, her father would never consent to her going.",
+     "Sir William could not have interrupted any two people in the room who had less to say for themselves.",
+     "Change of scene might be of service--and perhaps a little relief from home may be as useful as anything."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Wickham frequently invited her to come and stay with her, with the promise of balls and young men, her father would never consent to her going.”",
+    "evidence": "Wickham frequently invited her to come and stay with her, with the promise of balls and young men, her father would never consent to her going."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, as well as Elizabeth, really loved them; and they were both ever sensible of the warmest gratitude towards the persons who, by bringing her into Derbyshire, had been the means of uniting them.”",
+    "options": [
+     "Lydia",
+     "Darcy",
+     "Kitty",
+     "Bingley"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Darcy, as well as Elizabeth, really loved them; and they were both ever sensible of the warmest gratitude towards the persons who, by bringing her into Derbyshire, had been the means of uniting them.”",
+    "evidence": "Darcy, as well as Elizabeth, really loved them; and they were both ever sensible of the warmest gratitude towards the persons who, by bringing her into Derbyshire, had been the means of uniting them."
+   },
+   {
+    "prompt": "Fill in the missing name: “Georgiana had the highest opinion in the world of _____; though at first she often listened with an astonishment bordering on alarm at her lively, sportive manner of talking to her brother.”",
+    "options": [
+     "Jane",
+     "Bennet",
+     "Elizabeth",
+     "Wickham"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Georgiana had the highest opinion in the world of Elizabeth; though at first she often listened with an astonishment bordering on alarm at her lively, sportive manner of talking to her brother.”",
+    "evidence": "Georgiana had the highest opinion in the world of Elizabeth; though at first she often listened with an astonishment bordering on alarm at her lively, sportive manner of talking to her brother."
+   }
+  ]
+ }
+}
