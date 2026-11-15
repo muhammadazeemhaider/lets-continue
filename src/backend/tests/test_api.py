@@ -25,7 +25,7 @@ def make_book(client, **kw):
 
 
 def test_health(client):
-    assert client.get("/api/health").get_json() == {"status": "ok"}
+    assert client.get("/api/health").get_json() == {"status": "ok", "llm": {"enabled": False, "models": []}}
 
 
 def test_user_profile_defaults_and_update(client):

@@ -47,8 +47,11 @@ def compose(milestone: int, name: str, title: str, last_chapter: str | None, nex
 
 
 # --------------------------------------------------------------------------- generation
-def check_and_notify(con, now: datetime | None = None, sender=None) -> list[dict]:
-    """Create (and push) every reminder that is due. Safe to run as often as you like."""
+def check_and_notify(con, now: datetime | None = None, sender=None, writer=None) -> list[dict]:
+    """Create (and push) every reminder that is due. Safe to run as often as you like.
+
+    `writer(con, book_id, milestone)` may return (title, body, model) for LLM-written copy;
+    when it is missing or returns None the warm template from `compose` is used."""
     now = now or datetime.now(timezone.utc)
     created = []
     users = con.execute("SELECT * FROM users WHERE notifications_enabled = 1").fetchall()
@@ -77,7 +80,11 @@ def check_and_notify(con, now: datetime | None = None, sender=None) -> list[dict
             note = con.execute(
                 "SELECT text FROM notes WHERE book_id = ? ORDER BY created_at DESC, id DESC LIMIT 1", (b["id"],)
             ).fetchone()
-            title, body = compose(m, u["preferred_name"], b["title"], last, nxt, note["text"] if note else None)
+            written = writer(con, b["id"], m) if writer else None
+            if written:
+                title, body = written[0], written[1]
+            else:
+                title, body = compose(m, u["preferred_name"], b["title"], last, nxt, note["text"] if note else None)
             cur = con.execute(
                 "INSERT INTO notifications (user_id, book_id, milestone_days, activity_at, title, body, created_at)"
                 " VALUES (?,?,?,?,?,?,?)",

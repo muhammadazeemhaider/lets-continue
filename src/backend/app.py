@@ -14,7 +14,9 @@ import click
 from flask import Flask, abort, jsonify, request
 
 import db
+import llm
 import notifications
+import summaries
 
 DEFAULT_DB = Path(__file__).parent / "data" / "toward_the_light.db"
 
@@ -28,6 +30,9 @@ if os.name == "nt":
 
 
 def create_app(config: dict | None = None) -> Flask:
+    testing = bool(config and config.get("TESTING"))
+    if not testing:
+        llm.load_dotenv(Path(__file__).with_name(".env"))  # OPENROUTER_API_KEY etc.; never committed
     app = Flask(__name__)
     app.config["DATABASE"] = os.environ.get("DATABASE_PATH", str(DEFAULT_DB))
     app.config["CORS_ORIGIN"] = os.environ.get("CORS_ORIGIN", "*")  # tighten when deploying
@@ -42,6 +47,10 @@ def create_app(config: dict | None = None) -> Flask:
     app.config.setdefault("VAPID_KEYS_PATH", str(Path(app.config["DATABASE"]).parent / "vapid.json"))
     # The push sender is injectable so tests never touch the network.
     app.config.setdefault("PUSH_SENDER", notifications.make_web_push_sender(Path(app.config["VAPID_KEYS_PATH"])))
+    # LLM client (OpenRouter). None = template text only. Tests inject a fake and never hit the network.
+    if "LLM" not in app.config:
+        app.config["LLM"] = None if testing else llm.client_from_env()
+    app.config.setdefault("LLM_WARM_PER_PASS", int(os.environ.get("LLM_WARM_PER_PASS", 3)))
     app.teardown_appcontext(db.close_db)
 
     @app.after_request
@@ -62,11 +71,22 @@ def create_app(config: dict | None = None) -> Flask:
     return app
 
 
-def run_notification_check(app: Flask) -> list[dict]:
-    """One reminder pass outside a request (scheduler / CLI)."""
+def llm_writer(app: Flask):
+    """Notification copywriter backed by the LLM, or None for template copy."""
+    client = app.config["LLM"]
+    if client is None:
+        return None
+    return lambda con, book_id, milestone: summaries.notification_copy(con, book_id, milestone, client)
+
+
+def run_notification_check(app: Flask, warm: bool = False) -> list[dict]:
+    """One reminder pass outside a request (scheduler / CLI). `warm` also pre-writes recaps for waiting books."""
     con = db.connect(app.config["DATABASE"])
     try:
-        return notifications.check_and_notify(con, sender=app.config["PUSH_SENDER"])
+        made = notifications.check_and_notify(con, sender=app.config["PUSH_SENDER"], writer=llm_writer(app))
+        if warm:
+            summaries.warm_recaps(con, app.config["LLM"], limit=app.config["LLM_WARM_PER_PASS"])
+        return made
     finally:
         con.close()
 
@@ -84,7 +104,7 @@ def start_scheduler(app: Flask) -> None:
     def loop():
         while True:
             try:
-                made = run_notification_check(app)
+                made = run_notification_check(app, warm=True)
                 if made:
                     app.logger.info("Created %d reminder(s)", len(made))
             except Exception:  # never let the loop die
@@ -229,7 +249,8 @@ def as_int(value, field: str) -> int:
 def register_routes(app: Flask) -> None:
     @app.get("/api/health")
     def health():
-        return jsonify(status="ok")
+        client = app.config["LLM"]
+        return jsonify(status="ok", llm={"enabled": client is not None, "models": client.models if client else []})
 
     # ---- user profile
     @app.get("/api/user")
@@ -392,8 +413,10 @@ def register_routes(app: Flask) -> None:
 
     @app.get("/api/books/<int:book_id>/reminder")
     def reminder(book_id):
-        """Template-based today. This endpoint is the seam where an LLM-generated reminder plugs in."""
+        """Fast: template text plus the cached LLM recap if one exists. When `llmPending` is true the
+        client can POST /recap to have one written (slower) and swap it in."""
         book, u, con = own_book(book_id), current_user(), db.get_db()
+        story = summaries.cached_recap(con, book_id)
         chapters = con.execute("SELECT number, title FROM chapters WHERE book_id = ? ORDER BY number", (book_id,)).fetchall()
         done = book["completed"]
         last = chapters[done - 1]["title"] if 0 < done <= len(chapters) else None
@@ -407,12 +430,25 @@ def register_routes(app: Flask) -> None:
         return jsonify(
             headline=f"Your journey is waiting for you, {u['preferred_name']}.",
             lastLeft=(f"You last left {book['title']} around {last}." if last else f"You haven't begun {book['title']} yet."),
-            recap=book["recap"],
+            recap=story["recap"] if story else book["recap"],
             note={"text": note["text"], "chapter": note["chapter_number"]} if note else None,
-            nudge=f"Perhaps it is time to continue with {current}." if current else "Perhaps it is time to begin.",
+            nudge=(story and story.get("nudge"))
+            or (f"Perhaps it is time to continue with {current}." if current else "Perhaps it is time to begin."),
             daysAway=days_away,
             isPaused=done < len(chapters) and days_away >= u["paused_after_days"],
+            source="llm" if story else "template",
+            model=story["model"] if story else None,
+            llmPending=story is None and app.config["LLM"] is not None,
         )
+
+    @app.post("/api/books/<int:book_id>/recap")
+    def write_recap(book_id):
+        """Write (or fetch the cached) LLM recap. Falls back to `source: template` if every model fails."""
+        own_book(book_id)
+        story = summaries.get_recap(db.get_db(), book_id, app.config["LLM"])
+        if not story:
+            return jsonify(source="template", recap=None, nudge=None, model=None)
+        return jsonify(source="llm", recap=story["recap"], nudge=story.get("nudge"), model=story["model"])
 
     # ---- notifications inbox
     def notif_json(n) -> dict:
@@ -457,7 +493,7 @@ def register_routes(app: Flask) -> None:
     def check_now():
         """Run a reminder pass immediately (idempotent: only reminders that are due and unsent are created)."""
         con = db.get_db()
-        made = notifications.check_and_notify(con, sender=app.config["PUSH_SENDER"])
+        made = notifications.check_and_notify(con, sender=app.config["PUSH_SENDER"], writer=llm_writer(app))
         return jsonify(created=made)
 
     # ---- web push subscriptions

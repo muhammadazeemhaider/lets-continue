@@ -68,6 +68,19 @@ CREATE TABLE IF NOT EXISTS notifications (
 );
 CREATE INDEX IF NOT EXISTS idx_notifications_user ON notifications(user_id, created_at);
 
+-- LLM-written text (kind = 'recap' | 'notification'), cached per reading position: cache_key hashes
+-- everything the prompt used (chapters read, notes, name...), so new progress or notes regenerate it.
+CREATE TABLE IF NOT EXISTS llm_summaries (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    book_id    INTEGER NOT NULL REFERENCES books(id) ON DELETE CASCADE,
+    kind       TEXT    NOT NULL,
+    cache_key  TEXT    NOT NULL,
+    content    TEXT    NOT NULL,                        -- JSON
+    model      TEXT,
+    created_at TEXT    NOT NULL,
+    UNIQUE (book_id, kind, cache_key)
+);
+
 -- Web Push subscriptions (one per browser/device that opted in).
 CREATE TABLE IF NOT EXISTS push_subscriptions (
     id         INTEGER PRIMARY KEY AUTOINCREMENT,
