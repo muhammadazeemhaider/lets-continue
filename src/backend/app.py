@@ -3,7 +3,10 @@
 Run:  flask --app app run --debug --port 5000     (from src/backend)
 Seed: flask --app app seed
 """
+import hashlib
 import os
+import re
+import secrets
 import sys
 import threading
 import time
@@ -11,7 +14,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import click
-from flask import Flask, abort, jsonify, request
+from flask import Flask, abort, current_app, g, jsonify, request
 
 import catalog
 import db
@@ -41,6 +44,8 @@ def create_app(config: dict | None = None) -> Flask:
     app.config["DATABASE"] = (os.environ.get("DATABASE_URL") or os.environ.get("DATABASE_PATH") or str(DEFAULT_DB)).strip()
     app.config["CORS_ORIGIN"] = os.environ.get("CORS_ORIGIN", "*")  # tighten when deploying
     # Minutes between reminder checks. Auto-on only when serving (`flask run`); 0 disables.
+    # Accounts: every request needs the device key from sign-up. Off in tests (they opt in) or via AUTH_REQUIRED=0.
+    app.config["AUTH_REQUIRED"] = os.environ.get("AUTH_REQUIRED", "0" if testing else "1") not in ("0", "false", "no")
     app.config["NOTIFY_INTERVAL_MINUTES"] = float(
         os.environ.get("NOTIFY_INTERVAL_MINUTES", 30 if "run" in sys.argv else 0)
     )
@@ -72,12 +77,14 @@ def create_app(config: dict | None = None) -> Flask:
     @app.after_request
     def cors(resp):  # the frontend is served from a different port in dev
         resp.headers["Access-Control-Allow-Origin"] = app.config["CORS_ORIGIN"]
-        resp.headers["Access-Control-Allow-Headers"] = "Content-Type"
+        resp.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
         resp.headers["Access-Control-Allow-Methods"] = "GET,POST,PATCH,PUT,DELETE,OPTIONS"
         return resp
 
     @app.errorhandler(400)
+    @app.errorhandler(401)
     @app.errorhandler(404)
+    @app.errorhandler(409)
     def http_error(e):
         return jsonify(error=e.description), e.code
 
@@ -173,9 +180,28 @@ def body() -> dict:
     return data
 
 
+def token_hash(token: str) -> str:
+    """Only a hash of the device's private key is stored, so a leaked database can't be used to sign in."""
+    return hashlib.sha256(token.encode()).hexdigest()
+
+
 def current_user():
-    """Single-user for now. This is the seam for real authentication later."""
+    """The signed-in reader, from the `Authorization: Bearer <key>` header the app sends after sign-up.
+
+    With AUTH_REQUIRED off (tests, or a purely local single-user setup) a request without a key falls back
+    to the first user, like before accounts existed."""
+    if "user" in g:
+        return g.user
     con = db.get_db()
+    header = request.headers.get("Authorization", "")
+    if header.startswith("Bearer ") and header[7:].strip():
+        row = con.execute("SELECT * FROM users WHERE token_hash = ?", (token_hash(header[7:].strip()),)).fetchone()
+        if row is None:
+            abort(401, "This device isn't signed in any more. Please sign up again.")
+        g.user = row
+        return row
+    if current_app.config["AUTH_REQUIRED"]:
+        abort(401, "Please sign up to continue.")
     row = con.execute("SELECT * FROM users ORDER BY id LIMIT 1").fetchone()
     if row is None:
         now = db.utcnow()
@@ -196,6 +222,7 @@ def user_json(u) -> dict:
         "email": u["email"],
         "notificationsEnabled": bool(u["notifications_enabled"]),
         "pausedAfterDays": u["paused_after_days"],
+        "signedUp": bool(u["signed_up_at"]) if "signed_up_at" in u.keys() else False,
     }
 
 
@@ -303,6 +330,38 @@ def register_routes(app: Flask) -> None:
         return jsonify(status="ok", llm={"enabled": client is not None, "models": client.models if client else []})
 
     # ---- user profile
+    # ---- sign-up
+    @app.post("/api/signup")
+    def signup():
+        """Create the reader's profile and a private key for this device. The first sign-up takes over the
+        profile that existed before accounts (so earlier books and progress are kept)."""
+        data = body()
+        name = " ".join(str(data.get("name") or "").split())
+        preferred = " ".join(str(data.get("preferredName") or "").split()) or (name.split(" ")[0] if name else "")
+        email = str(data.get("email") or "").strip().lower() or None
+        if not 1 <= len(name) <= 80:
+            abort(400, "Please tell us your name.")
+        if not 1 <= len(preferred) <= 40:
+            abort(400, "What should we call you? Keep it under 40 characters.")
+        if email and not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", email):
+            abort(400, "That email doesn't look right.")
+        con = db.get_db()
+        if email and con.execute("SELECT 1 FROM users WHERE lower(email) = ?", (email,)).fetchone():
+            abort(409, "That email is already used by another reader.")
+        token, now = secrets.token_urlsafe(32), db.utcnow()
+        unclaimed = con.execute("SELECT id FROM users WHERE token_hash IS NULL AND signed_up_at IS NULL "
+                                "ORDER BY id LIMIT 1").fetchone()
+        if unclaimed:
+            con.execute("""UPDATE users SET name = ?, preferred_name = ?, email = ?, token_hash = ?, signed_up_at = ?
+                           WHERE id = ?""", (name, preferred, email, token_hash(token), now, unclaimed["id"]))
+            uid = unclaimed["id"]
+        else:
+            uid = con.execute("""INSERT INTO users (name, preferred_name, email, token_hash, signed_up_at, created_at)
+                                 VALUES (?,?,?,?,?,?)""", (name, preferred, email, token_hash(token), now, now)).lastrowid
+        con.commit()
+        user = con.execute("SELECT * FROM users WHERE id = ?", (uid,)).fetchone()
+        return jsonify(token=token, user=user_json(user)), 201
+
     @app.get("/api/user")
     def get_user():
         return jsonify(user_json(current_user()))
@@ -332,6 +391,7 @@ def register_routes(app: Flask) -> None:
                 con.commit()
             except Exception:
                 abort(400, "Could not update profile (is that email already used?)")
+            g.pop("user", None)  # the cached row is stale now
         return jsonify(user_json(current_user()))
 
     # ---- books
