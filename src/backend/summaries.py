@@ -16,7 +16,9 @@ log = logging.getLogger("summaries")
 RECAP_SYSTEM = (
     "You write short, warm recaps for a reading companion app. The reader paused a book and is coming back. "
     "Only describe events up to and including the last chapter they finished; never reveal or hint at anything after it. "
-    "Weave in what the reader wanted to remember from their notes. "
+    "Weave in what the reader wanted to remember from their story notes. "
+    "Notes marked 'about the reader' describe the reader's own life (who recommended the book, how they read it): "
+    "never attribute them to characters or treat them as plot. "
     "If you do not know this book well, rely only on the reader's notes and the blurb, and stay gentle and vague rather than invent plot. "
     "Never pressure or guilt the reader. "
     'Reply with JSON only: {"recap": "<2-3 sentences, max 60 words>", "nudge": "<one inviting sentence, max 20 words>"}'
@@ -24,7 +26,9 @@ RECAP_SYSTEM = (
 
 NOTIFY_SYSTEM = (
     "You write one push notification for a reading companion app, nudging a reader back to a paused book. "
-    "Be warm and brief, never guilt-tripping. Mention something concrete from where they stopped or from their note. "
+    "Be warm and brief, never guilt-tripping. Mention something concrete from where they stopped or from a story note. "
+    "Notes marked 'about the reader' are about the reader's own life, never about the plot. "
+    "Use the reader's name only if one is given. "
     "Only refer to events up to the last chapter they finished; no spoilers. "
     "The longer they have been away, the gentler and lower-pressure the tone. "
     'Reply with JSON only: {"title": "<max 40 characters>", "body": "<max 130 characters>"}'
@@ -74,8 +78,15 @@ def _prompt(ctx: dict) -> str:
         lines.append(f"Next chapter: '{ctx['next']}'.")
     if ctx["notes"]:
         lines.append("Reader's notes (most recent first):")
-        lines += [f"- ({'ch. ' + str(n['chapter']) if n['chapter'] else 'general'}) {n['text']}" for n in ctx["notes"]]
-    lines.append(f"Reader's name: {ctx['name']}.")
+        # Chapter notes are about the story; general notes are usually about the reader's own reading life.
+        lines += [
+            f"- (story note, ch. {n['chapter']}) {n['text']}" if n["chapter"] else f"- (about the reader) {n['text']}"
+            for n in ctx["notes"]
+        ]
+    if ctx["name"] and ctx["name"].strip().lower() != "reader":  # "Reader" is the default placeholder
+        lines.append(f"Reader's name: {ctx['name']}.")
+    else:
+        lines.append("The reader's name is unknown; do not address them by name.")
     return "\n".join(lines)
 
 
@@ -166,7 +177,7 @@ def notification_copy(con, book_id: int, milestone: int, llm) -> tuple[str, str,
     away = {2: "2 days", 7: "about a week", 14: "about two weeks", 30: "about a month", 180: "about six months"}
     prompt = _prompt(ctx) + f"\nThey have been away for {away.get(milestone, f'{milestone} days')}."
     try:
-        data, model = llm.complete_json(NOTIFY_SYSTEM, prompt, max_tokens=500)
+        data, model = llm.complete_json(NOTIFY_SYSTEM, prompt)
     except Exception as e:
         log.warning("Notification for book %s fell back to template: %s", book_id, e)
         return None

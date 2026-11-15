@@ -54,7 +54,9 @@ class OpenRouterClient:
         self.http = session or requests.Session()
         self._cooldown_until: dict[str, float] = {}
 
-    def complete_json(self, system: str, user: str, max_tokens: int = 700, temperature: float = 0.7) -> tuple[dict, str]:
+    def complete_json(self, system: str, user: str, max_tokens: int = 1500, temperature: float = 0.7) -> tuple[dict, str]:
+        # The budget is generous on purpose: free "thinking" models spend tokens before answering, and
+        # free models cost nothing per token. The prompts ask for a few short sentences.
         """Returns (parsed JSON object, model that answered). Raises LLMError if every model failed."""
         errors = []
         now = time.monotonic()
@@ -96,7 +98,11 @@ class OpenRouterClient:
             if err.get("code") == 429:
                 raise _RateLimited(str(err)[:200])
             raise LLMError(f"HTTP {resp.status_code}: {str(err.get('message') or data)[:160]}")
-        content = (data["choices"][0].get("message") or {}).get("content") or ""
+        choice = data["choices"][0]
+        content = (choice.get("message") or {}).get("content") or ""
+        if not content.strip():
+            # Usually a "thinking" model that spent the whole budget before answering (finish_reason=length).
+            raise LLMError(f"empty reply (finish_reason={choice.get('finish_reason')})")
         return parse_json_object(content)
 
 

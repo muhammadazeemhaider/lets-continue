@@ -71,6 +71,27 @@ def test_prompt_only_contains_chapters_already_read(make):
     assert "never reveal" in fake.calls[0]["system"]
 
 
+def test_personal_notes_are_labelled_and_placeholder_name_is_not_used(make):
+    fake = FakeLLM()
+    app, c = make(fake)
+    bid = add_book(c, completed=3)
+    c.post(f"/api/books/{bid}/notes", json={"text": "Recommended by Dad. Read it slowly."})  # general note
+    c.post(f"/api/books/{bid}/notes", json={"text": "no random acts", "chapter": 3})
+    c.post(f"/api/books/{bid}/recap")
+    prompt = fake.calls[-1]["user"]
+    assert "(about the reader) Recommended by Dad" in prompt and "(story note, ch. 3) no random acts" in prompt
+    assert "do not address them by name" in prompt  # default name "Reader" is a placeholder
+    c.put("/api/user", json={"preferredName": "Azeem"})
+    c.post(f"/api/books/{bid}/recap")  # name is part of the cache key -> regenerated
+    assert "Reader's name: Azeem." in fake.calls[-1]["user"]
+
+
+def test_empty_reply_reports_finish_reason():
+    s = FakeSession({"a:free": FakeResp(200, {"choices": [{"message": {"content": ""}, "finish_reason": "length"}]})})
+    with pytest.raises(llm.LLMError, match="finish_reason=length"):
+        llm.OpenRouterClient("sk-test", ["a:free"], session=s).complete_json("s", "u")
+
+
 # ------------------------------------------------------------------ recap endpoint + cache
 def test_reminder_is_fast_and_flags_pending_then_uses_cache(make):
     fake = FakeLLM()
