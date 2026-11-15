@@ -221,3 +221,16 @@ textarea { resize: vertical; min-height: 80px; font-family: var(--font-serif); }
 .ai-note { display: block; margin-top: 6px; font-size: .74rem; color: var(--muted); }
 .fade-in { animation: fadeUp .5s ease both; }
 .btn.glow { border-color: rgba(255, 200, 120, .55); box-shadow: 0 0 18px rgba(255, 170, 100, .2); }
+
+/* ---------- catalogue suggestions ---------- */
+.suggest { list-style: none; margin: -8px 0 12px; padding: 4px; border: 1px solid var(--line); border-radius: 12px; background: #0b1030; max-height: 300px; overflow: auto; }
+.suggest li { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 10px; cursor: pointer; min-height: 52px; }
+.suggest li:hover, .suggest li.active { background: rgba(255, 255, 255, .08); }
+.suggest img, .suggest .nocover { width: 30px; height: 44px; flex: none; border-radius: 4px; object-fit: cover; background: rgba(255, 255, 255, .06); display: grid; place-items: center; font-size: .9rem; }
+.suggest .meta { display: grid; min-width: 0; }
+.suggest .meta b { font-family: var(--font-serif); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.suggest .meta small { color: var(--muted); }
+.suggest .pill { margin-left: auto; flex: none; font-size: .72rem; color: var(--gold); border: 1px solid rgba(255, 217, 138, .4); border-radius: 999px; padding: 2px 8px; }
+.catalog-status { margin: -6px 0 12px; min-height: 1.2em; }
+.catalog-status.loading { animation: breathe 1.6s ease-in-out infinite; }
+.field .count { color: var(--gold); font-weight: 700; }

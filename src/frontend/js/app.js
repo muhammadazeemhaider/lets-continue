@@ -271,25 +271,123 @@
 
   function addBookSheet() {
     const scrim = openOverlay(`
-<form class="sheet" role="dialog" aria-modal="true" aria-label="Add a book">
+<form class="sheet" role="dialog" aria-modal="true" aria-label="Add a book" autocomplete="off">
   <h2>Add a book</h2>
-  <p class="sub">Each chapter becomes a point on its path toward the light.</p>
-  <label class="field">Title<input name="title" required maxlength="200"></label>
+  <p class="sub">Start typing the title. Pick it from the list and the rest fills itself in.</p>
+  <label class="field">Title
+    <input name="title" required maxlength="200" placeholder="e.g. The Hobbit" role="combobox"
+           aria-autocomplete="list" aria-controls="suggest" aria-expanded="false"></label>
+  <ul class="suggest" id="suggest" role="listbox" hidden></ul>
+  <p class="hint catalog-status" data-status aria-live="polite"></p>
   <label class="field">Author<input name="author" maxlength="200"></label>
-  <label class="field">Chapters
+  <label class="field">Chapters <span class="count" data-count></span>
     <textarea name="chapters" placeholder="Either a number (e.g. 24) or one chapter title per line"></textarea></label>
-  <label class="field">Short recap (optional)<textarea name="recap" placeholder="What is this book about? Used in your reminders."></textarea></label>
+  <label class="field">Summary (optional)<textarea name="recap" placeholder="What is this book about? Used in your recaps and reminders."></textarea></label>
   <div class="actions"><button type="button" class="btn" data-cancel>Cancel</button><button type="submit" class="btn primary">Add book</button></div>
 </form>`);
     const form = scrim.querySelector('form');
+    const list = form.querySelector('#suggest');
+    const status = form.querySelector('[data-status]');
+    const countEl = form.querySelector('[data-count]');
+    let picked = null; // {id, title} of the catalogue entry the reader chose
+    let items = [];
+    let active = -1;
+    let seq = 0;
+    let timer;
+
+    const updateCount = () => {
+      const raw = form.chapters.value.trim();
+      const n = /^\d+$/.test(raw) ? Number(raw) : raw.split(/\r?\n/).filter((l) => l.trim()).length;
+      countEl.textContent = n ? `· ${n}` : '';
+    };
+    const close = () => { list.hidden = true; form.title.setAttribute('aria-expanded', 'false'); active = -1; };
+    const render = () => {
+      if (!items.length) return close();
+      list.innerHTML = items.map((it, i) => `
+        <li role="option" id="opt-${i}" aria-selected="${i === active}" data-i="${i}" class="${i === active ? 'active' : ''}">
+          ${it.coverUrl ? `<img src="${esc(it.coverUrl)}" alt="" loading="lazy">` : '<span class="nocover">\u{1F4D6}</span>'}
+          <span class="meta"><b>${esc(it.title)}</b><small>${esc([it.author, it.year].filter(Boolean).join(' · '))}</small></span>
+          ${it.chapterCount ? `<span class="pill">${it.chapterCount} ch.</span>` : ''}
+        </li>`).join('');
+      list.hidden = false;
+      form.title.setAttribute('aria-expanded', 'true');
+    };
+
+    async function pick(it) {
+      close();
+      picked = { id: it.id, title: it.title };
+      form.title.value = it.title;
+      form.author.value = it.author || '';
+      status.className = 'hint catalog-status loading';
+      status.textContent = 'Filling in the summary and chapters…';
+      const mine = ++seq;
+      const entry = await Store.catalogEntry(it.id);
+      if (mine !== seq || !picked || picked.id !== it.id) return; // the reader moved on
+      status.classList.remove('loading');
+      if (!entry) {
+        status.textContent = 'Could not load the details right now. You can fill them in yourself.';
+        return;
+      }
+      form.author.value = entry.author || form.author.value;
+      if (entry.summary) form.recap.value = entry.summary;
+      if (entry.chapters.length) form.chapters.value = entry.chapters.join('\n');
+      updateCount();
+      status.textContent = {
+        curated: '✓ Chapters and summary from our catalogue.',
+        openlibrary: 'Chapters from Open Library. Check them against your copy.',
+        ai: '✨ AI-suggested chapters. Check them against your copy.',
+        none: 'No chapter list found. Enter the number of chapters (or their titles).',
+      }[entry.chapterSource] || '';
+      if (!entry.chapters.length) form.chapters.focus();
+    }
+
+    form.title.addEventListener('input', () => {
+      if (picked && form.title.value !== picked.title) { picked = null; status.textContent = ''; }
+      clearTimeout(timer);
+      const q = form.title.value.trim();
+      if (q.length < 2) { items = []; return close(); }
+      timer = setTimeout(async () => {
+        const mine = ++seq;
+        const found = await Store.searchCatalog(q);
+        if (mine !== seq) return; // a newer keystroke already searched
+        items = found;
+        active = -1;
+        render();
+      }, 300);
+    });
+    form.title.addEventListener('keydown', (e) => {
+      if (list.hidden) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        active = (active + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+        render();
+        form.title.setAttribute('aria-activedescendant', `opt-${active}`);
+      } else if (e.key === 'Enter' && active >= 0) {
+        e.preventDefault();
+        pick(items[active]);
+      } else if (e.key === 'Escape') {
+        e.stopPropagation();
+        close();
+      }
+    });
+    list.addEventListener('mousedown', (e) => e.preventDefault()); // keep focus in the input
+    list.addEventListener('click', (e) => {
+      const li = e.target.closest('[data-i]');
+      if (li) pick(items[Number(li.dataset.i)]);
+    });
+    form.title.addEventListener('blur', () => setTimeout(close, 150));
+    form.chapters.addEventListener('input', updateCount);
+
     form.querySelector('[data-cancel]').addEventListener('click', closeOverlay);
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       submitWith(form, async () => {
         const raw = form.chapters.value.trim();
         const payload = { title: form.title.value, author: form.author.value, recap: form.recap.value };
+        if (picked) payload.catalogId = picked.id;
         if (/^\d+$/.test(raw)) payload.chapterCount = Number(raw);
-        else payload.chapters = raw.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+        else if (raw) payload.chapters = raw.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+        else if (!picked) throw new Error('Add the number of chapters, or pick the book from the list.');
         const b = await Store.createBook(payload);
         closeOverlay();
         location.hash = `#/book/${b.id}`;

@@ -122,6 +122,11 @@
     return b;
   }
 
+  /* ---------- book catalogue ---------- */
+  const searchCatalog = (q) =>
+    api(`/api/catalog/search?q=${encodeURIComponent(q)}`).then((r) => r.items).catch(() => []);
+  const catalogEntry = (id) => api(`/api/catalog/${id}`).catch(() => null);
+
   async function updateUser(patch) {
     user = await api('/api/user', { method: 'PUT', body: patch });
     return user;
@@ -201,7 +206,7 @@
 
   global.Store = {
     init, loadBook, books, getBook, getUser, derive, bookStreak, readerStreak, relativeTime,
-    addNote, addCheckpoint, createBook, updateUser, fetchReminder, writeRecap,
+    addNote, addCheckpoint, createBook, updateUser, fetchReminder, writeRecap, searchCatalog, catalogEntry,
     notifications, refreshNotifications, markNotificationRead, markAllNotificationsRead,
     pushStatus, enablePush, disablePush, testPush,
   };

@@ -18,7 +18,7 @@ Two terminals (the frontend talks to the backend over HTTP, so both must be runn
 # 1) backend  ->  http://localhost:5000
 cd src/backend
 pip install -r requirements.txt
-python -m flask --app app seed        # first time only: sample books (optional)
+python -m flask --app app seed        # first time only: The Lord of the Rings and Dune (optional)
 python -m flask --app app run --port 5000
 
 # 2) frontend ->  http://localhost:5173
@@ -170,3 +170,18 @@ LLM_WARM_PER_PASS=3
 - **Fallback.** If every model fails or returns nothing usable, the template text is used.
 
 **Privacy.** Book titles, chapter titles and the reader's notes are sent to OpenRouter and the model provider. Free endpoints may log prompts. The UI labels AI recaps as AI-written.
+
+## Book catalogue
+
+Adding a book only needs its title. As you type, the app suggests matching books (cover, author, year). Pick one and the **author, summary and chapter list fill themselves in**. Everything stays editable.
+
+**Where the data comes from, in order:**
+
+1. **Built-in books** (`src/backend/catalog_seed.py`): The Lord of the Rings (62 chapters across its six books) and Dune (48 chapters in three books), with hand-written spoiler-free summaries. Always available, no network needed. `flask seed` puts these two on the shelf.
+2. **Our saved catalogue** (`catalog_books` table): every book anyone has searched for before. Instant.
+3. **Open Library** (free, public): asked only when we have too few matches. Results are saved, so the catalogue grows as people use it, a bit like Shazam's song catalogue. The first time a book is opened, its summary and chapters are looked up once and saved for everyone:
+   - **Summary:** the Open Library description, cleaned of links and markup.
+   - **Chapters:** the best table of contents across all its editions, with front and back matter (preface, maps, index…) removed.
+   - **Gaps:** if there is no table of contents (or no description), the AI fills it in, but only when it says it knows the book. The list is labelled "AI-suggested, check against your copy". Otherwise the reader enters the number of chapters.
+
+Popular picks rank higher in suggestions. API: `GET /api/catalog/search?q=`, `GET /api/catalog/<id>`, and `POST /api/books` with `{"catalogId": id}` (any field the reader typed overrides the catalogue).
