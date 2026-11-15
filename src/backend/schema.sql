@@ -93,9 +93,10 @@ CREATE TABLE IF NOT EXISTS catalog_books (
     pages          INTEGER,
     cover_url      TEXT,
     summary        TEXT    NOT NULL DEFAULT '',
-    summary_source TEXT    NOT NULL DEFAULT 'none',     -- curated | openlibrary | ai | none
+    summary_source TEXT    NOT NULL DEFAULT 'none',     -- curated | openlibrary | wikipedia | none
     chapters       TEXT    NOT NULL DEFAULT '[]',       -- JSON list of chapter titles
-    chapter_source TEXT    NOT NULL DEFAULT 'none',     -- curated | openlibrary | ai | none
+    chapter_source TEXT    NOT NULL DEFAULT 'none',     -- curated | openlibrary | gutenberg | none
+    sources        TEXT    NOT NULL DEFAULT '{}',       -- JSON: summary_url, chapters_url (attribution)
     times_used     INTEGER NOT NULL DEFAULT 0,          -- how often readers added it (ranks search)
     enriched_at    TEXT,                                -- when summary/chapters were looked up
     created_at     TEXT    NOT NULL

@@ -1,21 +1,29 @@
-"""Book catalogue: type a title, get author, summary and chapters filled in.
+"""Book catalogue: type a title, get author, summary and chapters filled in. Concrete sources only, no AI.
 
-How it grows (a bit like Shazam's song catalogue): search looks in our own `catalog_books` table first.
-If that has too few matches it asks Open Library, saves what it finds, and returns it. The first time a
-book is opened, its summary and table of contents are looked up once (Open Library work description and
-the best table of contents across its editions; an LLM fills gaps only when it says it knows the book)
-and saved, so every later reader gets it instantly. Hand-curated entries (catalog_seed.py) always win.
+Layers, in order of trust:
+  1. Hand-curated entries (catalog_seed.py): The Lord of the Rings, Dune.
+  2. The bundled catalogue (catalog_data/books.json, built by tools/build_catalog.py): 100+ books whose
+     chapters were read from their own text on Project Gutenberg and whose summaries come from Open Library
+     or Wikipedia, each with its source URL.
+  3. Grows on demand (a bit like Shazam's catalogue): search asks Open Library when we have too few matches
+     and saves what it finds. The first time a book is opened its summary and chapters are looked up once
+     (Open Library description / best table of contents; then Project Gutenberg's text and Wikipedia) and
+     saved for every later reader. If no concrete source has it, the field stays empty for the reader.
 """
 import json
 import logging
 import re
 import time
 import unicodedata
+from pathlib import Path
 
 import requests
 
+import sources
 from catalog_seed import CURATED
 from db import utcnow
+
+BUNDLED = Path(__file__).with_name("catalog_data") / "books.json"
 
 log = logging.getLogger("catalog")
 
@@ -122,6 +130,18 @@ class OpenLibrary:
     def editions(self, ol_key: str) -> list[dict]:
         return self.get(f"{ol_key}/editions.json", {"limit": 100}).get("entries", [])
 
+    # Concrete fallbacks when Open Library has no table of contents / description.
+    def gutenberg_chapters(self, title: str, author: str) -> tuple[list[str], str] | None:
+        """Chapters read from the book's own public-domain text, with the Gutenberg page as source."""
+        match = sources.find_on_gutenberg(title, author)
+        if not match:
+            return None
+        chapters = sources.parse_chapters(sources.gutenberg_text(match["id"]))
+        return (chapters, sources.GUTENBERG_PAGE.format(id=match["id"])) if len(chapters) >= 3 else None
+
+    def wikipedia_summary(self, title: str, author: str) -> tuple[str, str] | None:
+        return sources.wikipedia_summary(title, author)
+
 
 # --------------------------------------------------------------------------- storage
 def _row_json(r, full: bool = False) -> dict:
@@ -131,9 +151,49 @@ def _row_json(r, full: bool = False) -> dict:
         "coverUrl": r["cover_url"], "chapterCount": len(chapters), "curated": r["chapter_source"] == "curated",
     }
     if full:
+        src = json.loads(r["sources"] or "{}") if "sources" in r.keys() else {}
         out.update(summary=r["summary"], summarySource=r["summary_source"], chapters=chapters,
-                   chapterSource=r["chapter_source"])
+                   chapterSource=r["chapter_source"], summaryUrl=src.get("summary_url"),
+                   chaptersUrl=src.get("chapters_url"))
     return out
+
+
+def ensure_bundled(con, path: Path = BUNDLED) -> int:
+    """Load the bundled, source-attributed catalogue (idempotent). Never overrides curated entries.
+    Also removes any AI-written catalogue data saved by earlier versions, so it is looked up again."""
+    con.execute("""UPDATE catalog_books SET chapters = '[]', chapter_source = 'none', enriched_at = NULL
+                   WHERE chapter_source = 'ai'""")
+    con.execute("""UPDATE catalog_books SET summary = '', summary_source = 'none', enriched_at = NULL
+                   WHERE summary_source = 'ai'""")
+    if not path.exists():
+        con.commit()
+        return 0
+    books = json.loads(path.read_text(encoding="utf-8"))
+    now = utcnow()
+    for b in books:
+        src = json.dumps({"summary_url": b.get("summary_url"), "chapters_url": b.get("chapters_url")})
+        row = None
+        if b.get("ol_key"):
+            row = con.execute("SELECT id, chapter_source FROM catalog_books WHERE ol_key = ?", (b["ol_key"],)).fetchone()
+        if row is None:
+            row = con.execute("SELECT id, chapter_source FROM catalog_books WHERE title_norm = ? AND lower(author) = ?",
+                              (normalize(b["title"]), b["author"].lower())).fetchone()
+        if row is not None and row["chapter_source"] == "curated":
+            continue
+        values = (b["title"], normalize(b["title"]), b["author"], b.get("year"), b.get("pages"), b.get("cover_url"),
+                  b["summary"], b["summary_source"], json.dumps(b["chapters"]), b["chapter_source"], src, now)
+        if row is None:
+            con.execute(
+                """INSERT INTO catalog_books (title, title_norm, author, year, pages, cover_url, summary, summary_source,
+                       chapters, chapter_source, sources, enriched_at, created_at, ol_key)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", values + (now, b.get("ol_key")))
+        else:
+            con.execute(
+                """UPDATE catalog_books SET title = ?, title_norm = ?, author = ?, year = ?, pages = ?, cover_url = ?,
+                       summary = ?, summary_source = ?, chapters = ?, chapter_source = ?, sources = ?, enriched_at = ?
+                   WHERE id = ?""", values + (row["id"],))
+    con.commit()
+    return len(books)
 
 
 def ensure_curated(con) -> None:
@@ -225,75 +285,59 @@ def search(con, q: str, source: "OpenLibrary | None", limit: int = SEARCH_LIMIT)
     return [_row_json(r) for r in rows]
 
 
-CHAPTERS_SYSTEM = (
-    "You provide the table of contents of published books. Return JSON only: "
-    '{"known": true or false, "chapters": ["title", ...]}. '
-    "Set known to true only if you are confident of the book's actual chapter titles (or, for books with "
-    "untitled chapters, the correct number of chapters) in its standard edition. Untitled chapters are listed as "
-    "'Chapter 1', 'Chapter 2', and so on. List chapters only: no front matter, part headings or appendices. "
-    'If you are not confident, return {"known": false, "chapters": []}.'
-)
-SUMMARY_SYSTEM = (
-    "You write a spoiler-free, back-cover style summary of a published book: 2 to 4 sentences, at most 90 words, "
-    "describing only the premise and setup, never twists or the ending. Return JSON only: "
-    '{"known": true, "summary": "..."}. If you do not know this book, return {"known": false, "summary": ""}.'
-)
-
-
-def _book_line(r) -> str:
-    return f"Book: {r['title']}" + (f" by {r['author']}" if r["author"] else "") + (f" ({r['year']})" if r["year"] else "")
-
-
 def details(con, catalog_id: int, source: "OpenLibrary | None", llm=None) -> dict | None:
-    """Full entry. The first request for a book looks up its summary and chapters once, then saves them."""
+    """Full entry. The first request for a book looks up its summary and chapters once, then saves them.
+    Only concrete sources are used (`llm` is accepted for API compatibility and ignored)."""
     r = con.execute("SELECT * FROM catalog_books WHERE id = ?", (catalog_id,)).fetchone()
     if r is None:
         return None
     if r["enriched_at"] is None and r["ol_key"] and source is not None:
-        _enrich(con, r, source, llm)
+        _enrich(con, r, source)
         r = con.execute("SELECT * FROM catalog_books WHERE id = ?", (catalog_id,)).fetchone()
     return _row_json(r, full=True)
 
 
-def _enrich(con, r, source, llm) -> None:
+def _enrich(con, r, source) -> None:
     summary, summary_src = r["summary"], r["summary_source"]
     chapters, chapter_src = json.loads(r["chapters"] or "[]"), r["chapter_source"]
+    src = json.loads(r["sources"] or "{}") if "sources" in r.keys() else {}
     try:
         work = source.work(r["ol_key"])
         desc = work.get("description")
         desc = desc.get("value") if isinstance(desc, dict) else desc
         if desc and summary_src == "none":
             summary, summary_src = clean_description(desc), "openlibrary"
+            src["summary_url"] = f"https://openlibrary.org{r['ol_key']}"
         if chapter_src == "none":
             best = max((clean_toc(e.get("table_of_contents")) for e in source.editions(r["ol_key"])),
                        key=len, default=[])
             if len(best) >= 3:
                 chapters, chapter_src = best, "openlibrary"
+                src["chapters_url"] = f"https://openlibrary.org{r['ol_key']}"
     except Exception as e:
         log.warning("Open Library lookup failed for %s: %s", r["ol_key"], e)
         return  # leave enriched_at empty so the next request tries again
 
-    if llm is not None and chapter_src == "none":
+    # Concrete fallbacks: the book's own text on Project Gutenberg, and Wikipedia. Never an AI.
+    if chapter_src == "none":
         try:
-            data, _ = llm.complete_json(CHAPTERS_SYSTEM, _book_line(r), temperature=0.2)
-            got = [" ".join(str(c).split()) for c in data.get("chapters") or [] if str(c).strip()]
-            if data.get("known") is True and 2 <= len(got) <= 300:
-                chapters, chapter_src = got, "ai"
+            found = source.gutenberg_chapters(r["title"], r["author"])
+            if found:
+                chapters, chapter_src, src["chapters_url"] = found[0], "gutenberg", found[1]
         except Exception as e:
-            log.info("AI chapters unavailable for %s: %s", r["title"], e)
-    if llm is not None and summary_src == "none":
+            log.info("Gutenberg lookup failed for %s: %s", r["title"], e)
+    if summary_src == "none":
         try:
-            data, _ = llm.complete_json(SUMMARY_SYSTEM, _book_line(r), temperature=0.4)
-            text = " ".join(str(data.get("summary") or "").split())
-            if data.get("known") is True and text:
-                summary, summary_src = clean_description(text, 600), "ai"
+            found = source.wikipedia_summary(r["title"], r["author"])
+            if found:
+                summary, summary_src, src["summary_url"] = clean_description(found[0]), "wikipedia", found[1]
         except Exception as e:
-            log.info("AI summary unavailable for %s: %s", r["title"], e)
+            log.info("Wikipedia lookup failed for %s: %s", r["title"], e)
 
     con.execute(
-        """UPDATE catalog_books SET summary = ?, summary_source = ?, chapters = ?, chapter_source = ?,
+        """UPDATE catalog_books SET summary = ?, summary_source = ?, chapters = ?, chapter_source = ?, sources = ?,
                enriched_at = ? WHERE id = ?""",
-        (summary, summary_src, json.dumps(chapters), chapter_src, utcnow(), r["id"]),
+        (summary, summary_src, json.dumps(chapters), chapter_src, json.dumps(src), utcnow(), r["id"]),
     )
     con.commit()
 

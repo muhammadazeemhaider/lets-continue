@@ -58,6 +58,8 @@ def create_app(config: dict | None = None) -> Flask:
     con = db.connect(app.config["DATABASE"])
     try:
         catalog.ensure_curated(con)  # The Lord of the Rings, Dune
+        if app.config.get("LOAD_BUNDLED_CATALOG", not testing):
+            catalog.ensure_bundled(con)  # catalog_data/books.json: source-attributed classics
     finally:
         con.close()
     app.teardown_appcontext(db.close_db)

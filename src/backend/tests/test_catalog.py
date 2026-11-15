@@ -54,19 +54,25 @@ class FakeOpenLibrary:
         self.calls.append(("editions", key))
         return self.toc[key]
 
+    gutenberg = {"The Great Gatsby": ([f"Chapter {i}" for i in range(1, 10)], "https://www.gutenberg.org/ebooks/64317")}
+    wikipedia = {}
 
-class FakeLLM:
+    def gutenberg_chapters(self, title, author):
+        self.calls.append(("gutenberg", title))
+        return self.gutenberg.get(title)
+
+    def wikipedia_summary(self, title, author):
+        self.calls.append(("wikipedia", title))
+        return self.wikipedia.get(title)
+
+
+class ExplodingLLM:
+    """The catalogue must never ask an LLM for chapters or summaries."""
+
     models = ["fake:free"]
 
-    def __init__(self, known=True):
-        self.known, self.calls = known, []
-
-    def complete_json(self, system, user, max_tokens=1500, temperature=0.7):
-        self.calls.append((system, user))
-        if "table of contents" in system:
-            return ({"known": True, "chapters": [f"Chapter {i}" for i in range(1, 10)]} if self.known
-                    else {"known": False, "chapters": []}), "fake:free"
-        return {"known": self.known, "summary": "A premise without spoilers." if self.known else ""}, "fake:free"
+    def complete_json(self, *a, **kw):
+        raise AssertionError("catalogue asked the LLM")
 
 
 @pytest.fixture
@@ -132,20 +138,83 @@ def test_details_are_enriched_once_with_cleaned_summary_and_toc(make):
     assert len(ol.calls) == before  # saved: no second lookup
 
 
-def test_ai_fills_missing_chapters_only_when_it_knows_the_book(make):
+def test_missing_toc_is_read_from_the_books_own_text_never_an_llm(make):
     ol = FakeOpenLibrary()
-    app, c = make(ol, FakeLLM(known=True))
+    app, c = make(ol, ExplodingLLM())
     gatsby = next(i for i in c.get("/api/catalog/search?q=gatsby").get_json()["items"] if i["title"] == "The Great Gatsby")
     entry = c.get(f"/api/catalog/{gatsby['id']}").get_json()
-    assert entry["chapterSource"] == "ai" and len(entry["chapters"]) == 9
-    assert entry["summarySource"] == "openlibrary"  # had a description: no AI summary needed
+    assert entry["chapterSource"] == "gutenberg" and len(entry["chapters"]) == 9
+    assert entry["chaptersUrl"] == "https://www.gutenberg.org/ebooks/64317"
+    assert entry["summarySource"] == "openlibrary" and entry["summaryUrl"].endswith("/works/OL2W")
 
 
-def test_ai_that_does_not_know_leaves_chapters_empty(make, tmp_path):
-    app, c = make(FakeOpenLibrary(), FakeLLM(known=False))
+def test_no_concrete_source_leaves_fields_empty(make):
+    ol = FakeOpenLibrary()
+    ol.gutenberg = {}
+    ol.works["/works/OL2W"] = {}
+    ol.wikipedia = {}
+    app, c = make(ol, ExplodingLLM())
     gatsby = next(i for i in c.get("/api/catalog/search?q=gatsby").get_json()["items"] if i["title"] == "The Great Gatsby")
     entry = c.get(f"/api/catalog/{gatsby['id']}").get_json()
     assert entry["chapters"] == [] and entry["chapterSource"] == "none"
+    assert entry["summary"] == "" and entry["summarySource"] == "none"
+
+
+def test_wikipedia_summary_when_open_library_has_none(make):
+    ol = FakeOpenLibrary()
+    ol.works["/works/OL2W"] = {}
+    ol.wikipedia = {"The Great Gatsby": ("The Great Gatsby is a 1925 novel by F. Scott Fitzgerald.", "https://en.wikipedia.org/wiki/The_Great_Gatsby")}
+    app, c = make(ol)
+    gatsby = next(i for i in c.get("/api/catalog/search?q=gatsby").get_json()["items"] if i["title"] == "The Great Gatsby")
+    entry = c.get(f"/api/catalog/{gatsby['id']}").get_json()
+    assert entry["summarySource"] == "wikipedia" and entry["summaryUrl"].startswith("https://en.wikipedia.org/")
+
+
+# ------------------------------------------------------------------ bundled catalogue
+def test_bundled_catalogue_loads_with_sources_and_keeps_curated(tmp_path):
+    import json as _json
+    data = tmp_path / "books.json"
+    data.write_text(_json.dumps([
+        {"gutenberg_id": 1342, "ol_key": "/works/OL66554W", "title": "Pride and Prejudice", "author": "Jane Austen",
+         "year": 1813, "pages": 300, "cover_url": None, "summary": "Elizabeth Bennet meets Mr. Darcy.",
+         "summary_source": "openlibrary", "summary_url": "https://openlibrary.org/works/OL66554W",
+         "chapters": [f"Chapter {i}" for i in range(1, 62)], "chapter_source": "gutenberg",
+         "chapters_url": "https://www.gutenberg.org/ebooks/1342"},
+        {"gutenberg_id": 1, "ol_key": "/works/OL27448W", "title": "The Lord of the Rings", "author": "J.R.R. Tolkien",
+         "summary": "should not replace curated", "summary_source": "wikipedia", "summary_url": "",
+         "chapters": ["x", "y", "z"], "chapter_source": "gutenberg", "chapters_url": ""},
+    ]), encoding="utf-8")
+    app = create_app({"DATABASE": str(tmp_path / "b.db"), "TESTING": True, "CATALOG_SOURCE": None})
+    con = dbmod.connect(app.config["DATABASE"])
+    # an AI-written row saved by an older version is cleared so it gets looked up again
+    con.execute("""INSERT INTO catalog_books (ol_key, title, title_norm, author, chapters, chapter_source, summary,
+                   summary_source, enriched_at, created_at) VALUES ('/works/OLAI', 'Old', 'old', 'X', '["a"]', 'ai',
+                   'made up', 'ai', 'now', 'now')""")
+    con.commit()
+    assert catalog.ensure_bundled(con, data) == 2
+    assert catalog.ensure_bundled(con, data) == 2  # idempotent
+    c = app.test_client()
+    pp = c.get("/api/catalog/search?q=pride prejudice").get_json()["items"]
+    assert len(pp) == 1 and pp[0]["chapterCount"] == 61
+    entry = c.get(f"/api/catalog/{pp[0]['id']}").get_json()
+    assert entry["chapterSource"] == "gutenberg" and entry["chaptersUrl"].endswith("/1342")
+    lotr = c.get("/api/catalog/search?q=lord of the rings").get_json()["items"][0]
+    assert lotr["chapterCount"] == 62 and lotr["curated"]  # curated entry untouched
+    old = con.execute("SELECT chapter_source, summary_source, enriched_at FROM catalog_books WHERE ol_key='/works/OLAI'").fetchone()
+    assert tuple(old) == ("none", "none", None)
+
+
+def test_shipped_catalogue_file_is_concrete_only():
+    path = catalog.BUNDLED
+    if not path.exists():
+        pytest.skip("catalogue not built yet")
+    import json as _json
+    books = _json.loads(path.read_text(encoding="utf-8"))
+    assert books
+    for b in books:
+        assert b["chapter_source"] in ("gutenberg", "openlibrary") and len(b["chapters"]) >= 3, b["title"]
+        assert b["summary_source"] in ("openlibrary", "wikipedia") and b["summary"], b["title"]
+        assert b["chapters_url"].startswith("https://") and b["summary_url"].startswith("https://"), b["title"]
 
 
 def test_failed_lookup_is_retried_later(make):

@@ -332,12 +332,14 @@
       if (entry.summary) form.recap.value = entry.summary;
       if (entry.chapters.length) form.chapters.value = entry.chapters.join('\n');
       updateCount();
-      status.textContent = {
-        curated: '✓ Chapters and summary from our catalogue.',
-        openlibrary: 'Chapters from Open Library. Check them against your copy.',
-        ai: '✨ AI-suggested chapters. Check them against your copy.',
-        none: 'No chapter list found. Enter the number of chapters (or their titles).',
+      const chaptersFrom = {
+        curated: '✓ Chapters from our catalogue',
+        gutenberg: '✓ Chapters from the book’s text (Project Gutenberg)',
+        openlibrary: 'Chapters from Open Library (check against your copy)',
+        none: 'No chapter list found. Enter the number of chapters (or their titles)',
       }[entry.chapterSource] || '';
+      const summaryFrom = { openlibrary: 'summary from Open Library', wikipedia: 'summary from Wikipedia' }[entry.summarySource];
+      status.textContent = chaptersFrom + (summaryFrom && entry.chapterSource !== 'curated' ? ` · ${summaryFrom}` : '') + '.';
       if (!entry.chapters.length) form.chapters.focus();
     }
 
