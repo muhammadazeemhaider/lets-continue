@@ -22,7 +22,7 @@ def shelf_titles(con, user_id):
 
 def recommend(con, user_id, preferences, client):
     owned = shelf_titles(con, user_id)
-    rows = con.execute("SELECT * FROM catalog_books WHERE summary != '' AND chapters != '[]' ORDER BY times_used DESC, id LIMIT 200").fetchall()
+    rows = sorted((r for r in catalog.approved_rows(con) if r['summary'] and json.loads(r['chapters'] or '[]')),key=lambda r:(-r['times_used'],r['id']))
     candidates = [catalog._row_json(row, full=True) for row in rows if title_key(row['title']) not in owned][:80]
     if preferences.get('length') == 'short':
         candidates.sort(key=lambda b: (b['pages'] is None, b['pages'] or 9999))

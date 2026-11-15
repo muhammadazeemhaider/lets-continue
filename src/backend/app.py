@@ -42,6 +42,8 @@ def create_app(config: dict | None = None) -> Flask:
     if not testing:
         llm.load_dotenv(Path(__file__).with_name(".env"))  # Provider credentials; never committed
     app = Flask(__name__)
+    # Production creation/search are limited to shipped catalogue entries. Legacy unit fixtures can opt out.
+    app.config["CATALOG_ONLY"] = not testing
     # DATABASE_URL (postgres://...) = hosted Postgres such as Tiger Data; otherwise a local SQLite file.
     app.config["DATABASE"] = (os.environ.get("DATABASE_URL") or os.environ.get("DATABASE_PATH") or str(DEFAULT_DB)).strip()
     app.config["CORS_ORIGIN"] = os.environ.get("CORS_ORIGIN", "*")  # tighten when deploying
@@ -65,7 +67,7 @@ def create_app(config: dict | None = None) -> Flask:
     app.config.setdefault("LLM_WARM_PER_PASS", int(os.environ.get("LLM_WARM_PER_PASS", 3)))
     # Where unknown books are looked up (Open Library). None = curated/saved catalogue only (tests).
     if "CATALOG_SOURCE" not in app.config:
-        app.config["CATALOG_SOURCE"] = None if testing else catalog.OpenLibrary()
+        app.config["CATALOG_SOURCE"] = None if testing or app.config["CATALOG_ONLY"] else catalog.OpenLibrary()
     con = db.connect(app.config["DATABASE"])
     try:
         catalog.ensure_curated(con)  # The Lord of the Rings, Dune
@@ -417,12 +419,18 @@ def register_routes(app: Flask) -> None:
     def create_book():
         data = body()
         entry = None
+        strict_catalog = app.config['CATALOG_ONLY']
+        if strict_catalog and data.get('catalogId') is None:
+            abort(400, 'Choose a book from the Book Quest catalogue before adding it')
         if data.get("catalogId") is not None:
             # Fill anything the reader left out from the catalogue entry they picked.
             entry = catalog.details(db.get_db(), as_int(data["catalogId"], "catalogId"), app.config["CATALOG_SOURCE"],
-                                    app.config["LLM"])
+                                    app.config["LLM"], catalog_only=strict_catalog)
             if entry is None:
-                abort(400, "Unknown catalogId")
+                abort(400, "Choose a catalogue book with ready boss questions for every chapter" if strict_catalog else "Unknown catalogId")
+            if strict_catalog:
+                data = {'catalogId': entry['id'], 'title': entry['title'], 'author': entry['author'],
+                        'recap': entry['summary'], 'chapters': entry['chapters']}
             data.setdefault("title", entry["title"])
             data.setdefault("author", entry["author"])
             if not str(data.get("recap") or "").strip():
@@ -488,7 +496,7 @@ def register_routes(app: Flask) -> None:
     def catalog_search():
         """As-you-type suggestions: our saved catalogue first, then Open Library (saved for next time)."""
         q = request.args.get("q", "")[:120]
-        return jsonify(items=catalog.search(db.get_db(), q, app.config["CATALOG_SOURCE"]))
+        return jsonify(items=catalog.search(db.get_db(), q, app.config["CATALOG_SOURCE"], catalog_only=app.config["CATALOG_ONLY"]))
 
     @app.post("/api/catalog/recommendations")
     def catalog_recommendations():
@@ -523,7 +531,7 @@ def register_routes(app: Flask) -> None:
     @app.get("/api/catalog/<int:catalog_id>")
     def catalog_entry(catalog_id):
         """Full entry with summary and chapters (looked up and saved the first time; may take a few seconds)."""
-        entry = catalog.details(db.get_db(), catalog_id, app.config["CATALOG_SOURCE"], app.config["LLM"])
+        entry = catalog.details(db.get_db(), catalog_id, app.config["CATALOG_SOURCE"], app.config["LLM"], catalog_only=app.config["CATALOG_ONLY"])
         if entry is None:
             abort(404, "Not in the catalogue")
         return jsonify(entry)

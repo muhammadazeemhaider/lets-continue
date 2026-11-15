@@ -497,16 +497,16 @@
     const scrim = openOverlay(`
 <form class="sheet" role="dialog" aria-modal="true" aria-label="Add a book" autocomplete="off">
   <h2>Add a book</h2>
-  <p class="sub">Start typing the title. Pick it from the list and the rest fills itself in.</p>
+  <p class="sub">Choose a catalogue book with boss questions ready for every chapter. Its details are filled in for you.</p>
   <label class="field">Title
     <input name="title" required maxlength="200" placeholder="e.g. The Hobbit" role="combobox"
            aria-autocomplete="list" aria-controls="suggest" aria-expanded="false"></label>
   <ul class="suggest" id="suggest" role="listbox" hidden></ul>
   <p class="hint catalog-status" data-status aria-live="polite"></p>
-  <label class="field">Author<input name="author" maxlength="200"></label>
+  <label class="field">Author<input name="author" maxlength="200" readonly></label>
   <label class="field">Chapters <span class="count" data-count></span>
-    <textarea name="chapters" placeholder="Either a number (e.g. 24) or one chapter title per line"></textarea></label>
-  <label class="field">Summary (optional)<textarea name="recap" placeholder="What is this book about? Used in your recaps and reminders."></textarea></label>
+    <textarea name="chapters" readonly placeholder="Select a catalogue book to load its chapters"></textarea></label>
+  <label class="field">Summary (optional)<textarea name="recap" readonly placeholder="Select a catalogue book to load its summary."></textarea></label>
   <div class="actions"><button type="button" class="btn" data-cancel>Cancel</button><button type="submit" class="btn primary">Add book</button></div>
 </form>`);
     const form = scrim.querySelector('form');
@@ -577,6 +577,8 @@
         const found = await Store.searchCatalog(q);
         if (mine !== seq) return; // a newer keystroke already searched
         items = found;
+        if(!found.length)status.textContent='No matching book with complete boss questions yet. Try another title or author.';
+        else status.textContent='Choose a catalogue match below.';
         active = -1;
         render();
       }, 300);
@@ -608,12 +610,8 @@
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       submitWith(form, async () => {
-        const raw = form.chapters.value.trim();
-        const payload = { title: form.title.value, author: form.author.value, recap: form.recap.value };
-        if (picked) payload.catalogId = picked.id;
-        if (/^\d+$/.test(raw)) payload.chapterCount = Number(raw);
-        else if (raw) payload.chapters = raw.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
-        else if (!picked) throw new Error('Add the number of chapters, or pick the book from the list.');
+        if(!picked || form.title.value !== picked.title)throw new Error('Select a book from the catalogue suggestions first.');
+        const payload = {catalogId:picked.id};
         const b = await Store.createBook(payload);
         closeOverlay();
         location.hash = `#/book/${b.id}`;

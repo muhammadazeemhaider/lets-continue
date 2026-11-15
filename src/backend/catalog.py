@@ -234,14 +234,42 @@ def _save_search_results(con, results: list[dict]) -> None:
     con.commit()
 
 
-def _local(con, qn: str, limit: int) -> list:
+def approved_slugs() -> set[str]:
+    """Only entries shipped with Book Quest, never rows cached from external searches."""
+    slugs = {b['slug'] for b in CURATED}
+    if BUNDLED.exists():
+        slugs.update(f"gutenberg:{b['gutenberg_id']}" for b in json.loads(BUNDLED.read_text(encoding='utf-8')))
+    return slugs
+
+
+def approved_rows(con) -> list:
+    """Shipped books whose every chapter already has a complete three-question encounter."""
+    slugs = sorted(approved_slugs())
+    marks = ','.join('?' for _ in slugs)
+    rows = con.execute(f'SELECT * FROM catalog_books WHERE slug IN ({marks})', slugs).fetchall()
+    coverage = {}
+    for q in con.execute(f"""SELECT catalog_slug, chapter_number FROM chapter_questions
+                            WHERE catalog_slug IN ({marks}) GROUP BY catalog_slug, chapter_number HAVING COUNT(*) = 3""", slugs):
+        coverage.setdefault(q['catalog_slug'], set()).add(q['chapter_number'])
+    ready = []
+    for row in rows:
+        chapters = json.loads(row['chapters'] or '[]')
+        if chapters and all(n in coverage.get(row['slug'], set()) for n in range(1, len(chapters) + 1)):
+            ready.append(row)
+    return ready
+
+
+def _local(con, qn: str, limit: int, catalog_only: bool = False) -> list:
     words = qn.split()
     if not words:
         return []
     # A word may match the title, the author or the series ('lord of the rings' finds all three volumes).
     where = " AND ".join(["(title_norm LIKE ? OR lower(author) LIKE ? OR lower(coalesce(series, '')) LIKE ?)"] * len(words))
     params = [p for w in words for p in (f"%{w}%", f"%{w}%", f"%{w}%")]
-    rows = con.execute(f"SELECT * FROM catalog_books WHERE {where}", params).fetchall()
+    if catalog_only:
+        rows = [r for r in approved_rows(con) if all(word in r['title_norm'] or word in r['author'].lower() for word in words)]
+    else:
+        rows = con.execute(f"SELECT * FROM catalog_books WHERE {where}", params).fetchall()
 
     def rank(r):
         t = r["title_norm"]
@@ -272,12 +300,12 @@ def _cached_keys(con, qn: str):
 
 
 # --------------------------------------------------------------------------- public API
-def search(con, q: str, source: "OpenLibrary | None", limit: int = SEARCH_LIMIT) -> list[dict]:
+def search(con, q: str, source: "OpenLibrary | None", limit: int = SEARCH_LIMIT, catalog_only: bool = False) -> list[dict]:
     qn = normalize(q)
     if len(qn) < 2:
         return []
-    rows = _local(con, qn, limit)
-    if len(rows) < limit and len(qn) >= 3 and source is not None:
+    rows = _local(con, qn, limit, catalog_only)
+    if not catalog_only and len(rows) < limit and len(qn) >= 3 and source is not None:
         keys, remote = _cached_keys(con, qn)
         if keys is None:
             try:
@@ -297,13 +325,13 @@ def search(con, q: str, source: "OpenLibrary | None", limit: int = SEARCH_LIMIT)
     return [_row_json(r) for r in rows]
 
 
-def details(con, catalog_id: int, source: "OpenLibrary | None", llm=None) -> dict | None:
+def details(con, catalog_id: int, source: "OpenLibrary | None", llm=None, catalog_only: bool = False) -> dict | None:
     """Full entry. The first request for a book looks up its summary and chapters once, then saves them.
     Only concrete sources are used (`llm` is accepted for API compatibility and ignored)."""
     r = con.execute("SELECT * FROM catalog_books WHERE id = ?", (catalog_id,)).fetchone()
-    if r is None:
+    if r is None or (catalog_only and r['id'] not in {row['id'] for row in approved_rows(con)}):
         return None
-    if r["enriched_at"] is None and r["ol_key"] and source is not None:
+    if not catalog_only and r["enriched_at"] is None and r["ol_key"] and source is not None:
         _enrich(con, r, source)
         r = con.execute("SELECT * FROM catalog_books WHERE id = ?", (catalog_id,)).fetchone()
     return _row_json(r, full=True)
