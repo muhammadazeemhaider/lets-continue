@@ -79,8 +79,103 @@
   function streakChip(s) {
     if (!s.alive)
       return `<div class="streak idle"><span class="ember" aria-hidden="true">✶</span><span>Light a new streak today</span></div>`;
-    return `<div class="streak${s.activeToday ? ' lit' : ''}"><span class="ember" aria-hidden="true">🔥</span>
+    return `<div class="streak${s.activeToday ? ' lit' : ''}"><span class="ember" aria-hidden="true">${rewardIcon('flame')}</span>
       <span><b>${s.count}-day streak</b> · ${s.activeToday ? 'you read today' : 'read today to keep it glowing'}</span></div>`;
+  }
+
+  let shelfView = 'active';
+  function readerRewards(books) {
+    const chapters = books.reduce((sum, b) => sum + Math.max(b.completed, b.furthestCompleted || 0), 0);
+    const seals = books.reduce((sum, b) => sum + b.chapters.filter(c => BossBattle.load(b.id, c.n)?.defeated).length, 0);
+    const finished = books.filter(b => Store.derive(b).isComplete).length;
+    const xp = chapters * 25 + seals * 50 + finished * 100;
+    const badges = [
+      {id:'wanderer',icon:'compass',name:'Page Wanderer',description:'Begin your Book Quest adventure.',earned:true},
+      {id:'spark',icon:'flame',name:'First Spark',description:'Complete your first chapter.',earned:chapters>=1},
+      {id:'guardian',icon:'shield',name:'Guardian Friend',description:'Earn your first boss seal.',earned:seals>=1},
+      {id:'trailblazer',icon:'mountain',name:'Trailblazer',description:'Explore 10 chapters.',earned:chapters>=10},
+      {id:'starlight',icon:'star',name:'Story Keeper',description:'Finish your first book.',earned:finished>=1},
+      {id:'legend',icon:'crown',name:'Quest Legend',description:'Collect 10 guardian seals.',earned:seals>=10},
+    ];
+    const counts={wanderer:1,spark:chapters,guardian:seals,trailblazer:chapters,starlight:finished,legend:seals};
+    const targets={wanderer:1,spark:1,guardian:1,trailblazer:10,starlight:1,legend:10};
+    badges.forEach(b=>{b.current=Math.min(counts[b.id],targets[b.id]);b.target=targets[b.id];});
+    let equipped='wanderer';
+    try { equipped=localStorage.getItem('ttl.reader.title') || equipped; } catch {}
+    const title=badges.find(b=>b.id===equipped&&b.earned)||badges[0];
+    let favorites=[];
+    try {const saved=JSON.parse(localStorage.getItem('ttl.reader.showcase')||'null');if(Array.isArray(saved))favorites=saved.filter(id=>badges.some(b=>b.id===id&&b.earned)).slice(0,3);else favorites=badges.filter(b=>b.earned).slice(0,3).map(b=>b.id);}catch{}
+    const showcase=favorites.map(id=>badges.find(b=>b.id===id));
+    const nextBadge=badges.find(b=>!b.earned);
+    return {showcase,favorites,nextBadge,chapters,seals,finished,...ReaderLevels.progress(xp),badges,title};
+  }
+  function rewardIcon(kind) {
+    const paths={
+      bell:'M12 4h8v4h4v12h4v4H4v-4h4V8h4z M12 26h8v4h-8z',
+      gear:'M12 2h8v4h4v4h4v12h-4v4h-4v4h-8v-4H8v-4H4V10h4V6h4z M12 12v8h8v-8z',
+      compass:'M12 2h8v4h4v4h4v8h-4v4h-4v4h-8v-4H8v-4H4v-8h4V6h4z M18 8l-8 12 12-8z',
+      flame:'M16 2h4v8h4v4h4v8h-4v6H12v-4H8V12h4v6h4z',
+      shield:'M6 4h20v14h-4v6h-4v4h-4v-4h-4v-6H6z M12 12v4h4v-4h4v-4h-4v4z',
+      mountain:'M2 26l10-20 6 10 4-6 10 16z M8 20h8l-4-8z',
+      star:'M14 2h4v8h10v4h-4v4h-4v10h-4v-6h-4v6H8V18H4v-4H0v-4h14z',
+      crown:'M4 8h4v4h4V4h8v8h4V8h4v18H4z M8 20h16v2H8z',
+    };
+    return `<svg viewBox="0 0 32 32" aria-hidden="true" shape-rendering="crispEdges"><path d="${paths[kind]||paths.star}" fill="currentColor" fill-rule="evenodd"/></svg>`;
+  }
+  function badgeArt(id) {
+    const art={
+      wanderer:'<circle cx="16" cy="16" r="12" fill="#e9b766"/><circle cx="16" cy="16" r="9" fill="#286b89"/><path d="M16 5v4M16 23v4M5 16h4M23 16h4" stroke="#fff0b0" stroke-width="2"/><path d="M21 10l-3 9-8 3 3-9z" fill="#ffe6ae"/><path d="M21 10l-8 3 5 6z" fill="#ed827f"/><rect x="15" y="15" width="3" height="3" fill="#f7f0cb"/>',
+      spark:'<path d="M15 1h5v7h4v5h4v10h-4v6H9v-4H5V14h4v5h3V9h3z" fill="#e77845"/><path d="M17 8h3v8h4v8h-4v3h-8v-4H9v-6h4v3h3z" fill="#ffb84f"/><path d="M16 17h4v10h-7v-6h3z" fill="#fff2a4"/>',
+      guardian:'<path d="M5 3h22v15h-4v6h-4v5h-6v-5H9v-6H5z" fill="#d8e4ed"/><path d="M8 6h16v12h-4v5h-4v3l-4-4v-4H8z" fill="#32ac91"/><path d="M16 6h8v12h-4v5h-4z" fill="#197b79"/><path d="M10 13h4v4h3v-4h5V9h-8v4z" fill="#e7fbc8"/>',
+      trailblazer:'<path d="M2 4h28v24H2z" fill="#6855ad"/><path d="M2 26L12 7l6 11 5-8 9 18H2z" fill="#35a7b5"/><path d="M12 7l6 11h-5l-3-2-3 1z" fill="#e3f5ee"/><path d="M15 28l8-18 9 18z" fill="#218a9b"/><path d="M23 10l4 8h-4l-2-3z" fill="#c6e8ee"/><rect x="22" y="5" width="3" height="3" fill="#f6d986"/>',
+      starlight:'<path d="M3 11h11l2 3 2-3h11v17H18l-2 2-2-2H3z" fill="#3e82c0"/><path d="M5 12h9l2 3 2-3h9v12h-9l-2 3-2-3H5z" fill="#ffe6a1"/><path d="M16 15v12M8 16h5M19 16h5M8 20h5M19 20h5" stroke="#c39258" stroke-width="1"/><path d="M15 1h2v3h3v2h-3v3h-2V6h-3V4h3z" fill="#82d9fa"/>',
+      legend:'<path d="M3 8h5v5h5V3h6v10h5V8h5v21H3z" fill="#e9ae4d"/><path d="M6 15h5v4h10v-4h5v9H6z" fill="#9c6ae2"/><path d="M6 25h20v3H6z" fill="#ffe8a2"/><path d="M14 16h4v6h-4z" fill="#ed6786"/><rect x="14" y="2" width="4" height="4" fill="#fff0a8"/><rect x="3" y="7" width="4" height="4" fill="#f5d383"/><rect x="25" y="7" width="4" height="4" fill="#f5d383"/>',
+    };
+    return `<svg viewBox="0 0 32 32" aria-hidden="true" shape-rendering="crispEdges">${art[id]||art.wanderer}</svg>`;
+  }
+  function rankBadge(rank){
+    const shapes={
+      compass:'M16 6l7 10-7 10-7-10z M16 11v10M11 16h10',
+      feather:'M9 25l5-14 8-5 3 3-5 8-8 5 M14 18l6-6M9 25l-2 2',
+      map:'M5 9l7-3 8 3 7-3v17l-7 3-8-3-7 3z M12 6v17M20 9v17M8 14h2M22 17h3',
+      mountain:'M4 25L13 7l5 12 5-8 6 14z M9 16h8M21 17h5',
+      gem:'M10 7h12l5 8-11 13L5 15z M5 15h22M10 7l6 21 6-21',
+      rune:'M16 5v23M16 5l8 7-8 6M16 13l-8 6 8 6',
+      book:'M5 8h8l3 4 3-4h8v17h-8l-3 3-3-3H5z M16 12v16M8 13h3M21 13h3M8 18h3M21 18h3',
+      shield:'M6 6h20v12l-4 6-6 5-6-5-4-6z M11 15l4 4 7-8',
+      sun:'M9 23a8 8 0 0 1 14 0 M4 25h24M16 3v5M5 9l4 4M27 9l-4 4M3 18h5M24 18h5',
+      moon:'M21 5a11 11 0 1 0 6 17A12 12 0 0 1 21 5z M9 11h3M10 10v3',
+      crown:'M5 10l6 6 5-10 5 10 6-6-3 15H8z M9 21h14',
+      star:'M16 3l4 9 10 1-8 7 2 10-8-5-8 5 2-10-8-7 10-1z M16 11v10M12 16h8',
+    };
+    return `<svg viewBox="0 0 40 44" aria-hidden="true"><path d="M8 2h24l6 7v21l-18 12L2 30V9z" fill="#10172c" stroke="${rank.color}" stroke-width="1.5"/><path d="M10 5h20l5 5v18l-15 10L5 28V10z" fill="${rank.color}" opacity=".12"/><g transform="translate(4 3)" fill="none" stroke="${rank.color}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="square">${`<path d="${shapes[rank.icon]}"/>`}</g><rect x="14" y="31" width="12" height="9" rx="2" fill="${rank.color}"/><text x="20" y="37.5" text-anchor="middle" fill="#10172c" font-family="system-ui,sans-serif" font-size="7" font-weight="800">${rank.level}</text></svg>`;
+  }
+  function xpLevels(){
+    const rewards=readerRewards(Store.books());
+    const ranks=[...ReaderLevels.ranks];
+    if(rewards.level>=ranks.length)for(let level=Math.max(ranks.length+1,rewards.level-2);level<=rewards.level+1;level++)ranks.push(ReaderLevels.rank(level));
+    const scrim=openOverlay(`<section class="sheet xp-level-sheet" role="dialog" aria-modal="true" aria-label="XP levels"><span class="eyebrow">YOUR READER’S ASCENT</span><h2>Every chapter makes you stronger.</h2><div class="xp-current-rank" style="--rank-color:${rewards.current.color}"><span class="xp-rank-badge">${rankBadge(rewards.current)}</span><div><span class="eyebrow">LEVEL ${rewards.level} · CURRENT RANK</span><h3>${rewards.current.name}</h3><p><b>${rewards.xp.toLocaleString()}</b> total XP · ${rewards.remaining} XP to ${rewards.next.name}</p><progress aria-label="XP toward ${rewards.next.name}" max="250" value="${rewards.intoLevel}"></progress></div></div><p class="xp-level-explainer">A new rank and badge every 250 XP. Earn 25 XP per reached chapter, 50 per guardian seal, and 100 per finished book.</p><div class="xp-rank-list" aria-label="Reader ranks">${ranks.map(rank=>`<article class="xp-rank-row ${rank.level<rewards.level?'unlocked':rank.level===rewards.level?'current':'locked'}" data-rank="${rank.level}" style="--rank-color:${rank.color}" ${rank.level===rewards.level?'aria-current="step"':''}><span class="xp-rank-mini">${rankBadge(rank)}</span><div><span class="xp-rank-level">LEVEL ${rank.level}</span><h3>${rank.name}</h3><small>${rank.xp.toLocaleString()} XP</small></div><span class="xp-rank-status">${rank.level<rewards.level?'✓ EARNED':rank.level===rewards.level?'YOUR RANK':'LOCKED'}</span></article>`).join('')}</div><p class="reward-footnote">Ranks reflect your saved journeys. Replaying a boss does not award duplicate XP. Resetting or removing a book can lower your rank.</p><div class="actions"><button class="btn primary" data-close-levels>Back to your adventure</button></div></section>`);
+    scrim.querySelector('[data-close-levels]').onclick=closeOverlay;
+  }
+  function trophyJournal() {
+    const rewards=readerRewards(Store.books());
+    let seen=[];
+    try {seen=JSON.parse(localStorage.getItem('ttl.reader.badgesSeen')||'[]');if(!Array.isArray(seen))seen=[];}catch{}
+    const fresh=rewards.badges.filter(b=>b.earned&&!seen.includes(b.id)).map(b=>b.id);
+    try {localStorage.setItem('ttl.reader.badgesSeen',JSON.stringify(rewards.badges.filter(b=>b.earned).map(b=>b.id)));}catch{}
+    const scrim=openOverlay(`<section class="sheet trophy-journal" role="dialog" aria-modal="true" aria-label="Trophy journal"><span class="eyebrow">YOUR ADVENTURE, COLLECTED</span><h2>Trophy journal</h2><p class="sub">Earn colorful badges, wear their titles, and pin up to three favorites to your profile.</p><div class="trophy-grid">${rewards.badges.map(b=>`<article data-badge="${b.id}" class="trophy-item ${b.earned?'earned':'locked'} ${fresh.includes(b.id)?'badge-reveal':''}"><span class="badge-rarity">${b.id==='legend'?'LEGENDARY':b.id==='starlight'?'EPIC':'MILESTONE'}${fresh.includes(b.id)?' · NEW':''}</span><span class="trophy-icon">${badgeArt(b.id)}${!b.earned?'<span class="badge-lock" aria-label="Locked">▣</span>':''}</span><h3>${b.name}</h3><p>${b.description}</p><div class="badge-progress"><span>${b.earned?'Unlocked':`${b.current} / ${b.target}`}</span><progress aria-label="${b.name} progress" max="${b.target}" value="${b.current}"></progress></div><div class="badge-actions"><button class="btn quiet small" data-equip-title="${b.id}" ${!b.earned?'disabled':''}>${!b.earned?'Locked':rewards.title.id===b.id?'Equipped':'Equip title'}</button>${b.earned?`<button class="badge-pin" data-pin-badge="${b.id}" aria-pressed="${rewards.favorites.includes(b.id)}" aria-label="${rewards.favorites.includes(b.id)?'Unpin':'Pin'} ${b.name}">${rewards.favorites.includes(b.id)?'★ Pinned':'☆ Pin'}</button>`:''}</div></article>`).join('')}</div><p class="reward-footnote">25 XP per reached chapter · 50 per guardian seal · 100 per finished book.<br>Rewards reflect your journeys; replaying a battle adds no duplicate XP.</p><div class="actions"><button class="btn primary" data-journal-close>Back to your quest</button></div></section>`);
+    scrim.querySelectorAll('[data-pin-badge]').forEach(button=>button.onclick=()=>{
+      const id=button.dataset.pinBadge;
+      const next=rewards.favorites.includes(id)?rewards.favorites.filter(value=>value!==id):[...rewards.favorites,id];
+      if(next.length>3){toast('Unpin a badge first. Your showcase has three spaces.');return;}
+      try {localStorage.setItem('ttl.reader.showcase',JSON.stringify(next));}catch{toast('Your browser could not save this showcase.');return;}
+      closeOverlay();dashboard();trophyJournal();
+    });
+    scrim.querySelector('[data-journal-close]').onclick=closeOverlay;
+    scrim.querySelectorAll('[data-equip-title]').forEach(button=>button.onclick=()=>{
+      try {localStorage.setItem('ttl.reader.title',button.dataset.equipTitle);}catch{toast('Your browser could not save this title.');return;}
+      closeOverlay();dashboard();trophyJournal();
+    });
   }
 
   /* ---------- dashboard ---------- */
@@ -93,10 +188,18 @@
     const activeBook = books.find(book => !Store.derive(book).isComplete);
     const chaptersRead = books.reduce((total, book) => total + book.completed, 0);
     const finishedBooks = books.filter(book => Store.derive(book).isComplete).length;
+    const rewards=readerRewards(books);
+    const reader=Store.getUser();
+    const savedName=reader?.preferredName||reader?.name;
+    const readerName=!savedName||savedName==='Reader'?'Adventurer':savedName;
+    const portrait=activeBook ? Journey.characterForBook(activeBook) : 'lantern';
+    const visibleBooks=books.filter(book=>shelfView==='all'||(shelfView==='complete'?Store.derive(book).isComplete:!Store.derive(book).isComplete));
+    const readToday=Store.readerStreak().activeToday;
+    const heroProgress=activeBook ? Store.derive(activeBook).percent/100 : finishedBooks ? 1 : .18;
 
     $app.innerHTML = `
 <main class="page bookshelf-page">
-  <nav class="library-nav" aria-label="Bookshelf"><a href="#/" class="library-brand"><span class="quest-logo" aria-hidden="true">▥<i>✦</i></span><span>BOOK QUEST<small>ONE MORE CHAPTER. ONE MORE ADVENTURE.</small></span></a><div class="quest-nav-actions"><span class="library-note">YOUR NEXT ADVENTURE IS A PAGE AWAY</span><button class="bell" id="bell" aria-label="Reminders${Store.notifications().unread ? ` (${Store.notifications().unread} unread)` : ''}">🔔<span class="badge-dot" ${Store.notifications().unread ? '' : 'hidden'}>${Store.notifications().unread}</span></button><button class="gear" id="settings" aria-label="Profile and settings">⚙</button></div></nav>
+  <nav class="library-nav" aria-label="Bookshelf"><a href="#/" class="library-brand"><span class="quest-logo" aria-hidden="true">▥<i>✦</i></span><span>BOOK QUEST<small>ONE MORE CHAPTER. ONE MORE ADVENTURE.</small></span></a><div class="quest-nav-actions"><span class="library-note">YOUR NEXT ADVENTURE IS A PAGE AWAY</span><button class="bell" id="bell" aria-label="Reminders${Store.notifications().unread ? ` (${Store.notifications().unread} unread)` : ''}">${rewardIcon('bell')}<span class="badge-dot" ${Store.notifications().unread ? '' : 'hidden'}>${Store.notifications().unread}</span></button><button class="gear" id="settings" aria-label="Profile and settings">${rewardIcon('gear')}</button></div></nav>
   <header class="masthead quest-banner">
     <div class="quest-banner-copy">
       ${greetingLine(books.length > 0)}
@@ -108,7 +211,12 @@
     </div>
     <div class="quest-banner-art" aria-hidden="true"><div id="quest-banner-scene"></div><span class="quest-art-label">A NEW CHAPTER. A LITTLE MORE LIGHT.</span></div>
   </header>
-  <section class="quest-overview" aria-label="Your reading adventure"><div><span aria-hidden="true">▤</span><p><b>${chaptersRead}</b><small>chapters explored</small></p></div><div><span aria-hidden="true">✦</span><p><b>${finishedBooks}</b><small>quests completed</small></p></div><div class="quest-worlds"><span aria-hidden="true">◎</span><p><b>Three worlds. Your choice.</b><small>Fantasy · Sci-fi · Pirates</small></p></div></section>
+  <section class="quest-hub" aria-label="Your adventurer and current quest">
+    <article class="reader-profile"><div class="hub-label"><span>ADVENTURER</span><button class="reader-level" id="view-xp-levels" aria-haspopup="dialog" aria-label="View XP levels: level ${rewards.level}, ${rewards.current.name}" style="--rank-color:${rewards.current.color}">LV. ${rewards.level} ↗</button></div><div class="reader-identity"><div class="reader-portrait"><svg class="journey" viewBox="-16 -17 34 39" aria-hidden="true" shape-rendering="crispEdges"><g class="landscape-explorer" data-direction="down" data-frame="0">${Journey.characterSprite(portrait)}</g></svg></div><div><h2>${esc(readerName)}</h2><span class="reader-title">${rewards.title.name}</span></div></div><button class="reader-rank-link" id="view-reader-rank" aria-haspopup="dialog" style="--rank-color:${rewards.current.color}"><span>${rankBadge(rewards.current)}</span><b>${rewards.current.name}</b><small>View ranks →</small></button><div class="reader-xp-label"><span>Adventure XP</span><b>${rewards.intoLevel} / 250</b></div><div class="reader-xp" role="progressbar" aria-label="Progress to next reader level" aria-valuemin="0" aria-valuemax="250" aria-valuenow="${rewards.intoLevel}"><span style="width:${rewards.intoLevel/250*100}%"></span></div><p class="reader-next-rank">${rewards.remaining} XP to <b>${rewards.next.name}</b></p><div class="reader-milestones"><span><b>${rewards.chapters}</b> chapters</span><span><b>${rewards.seals}</b> guardian seals</span></div><button class="profile-showcase" id="profile-showcase" aria-label="Edit badge showcase"><span class="showcase-label">YOUR BADGES</span><span class="showcase-slots">${[0,1,2].map(i=>rewards.showcase[i]?`<span class="mini-medal earned" data-badge="${rewards.showcase[i].id}" title="${rewards.showcase[i].name}">${badgeArt(rewards.showcase[i].id)}</span>`:'<span class="mini-medal empty" aria-label="Empty badge slot">+</span>').join('')}</span></button></article>
+    <article class="daily-quest"><div class="hub-label"><span>TODAY’S QUEST</span><span class="quest-status ${readToday?'complete':''}">${readToday?'✓ READING COMPLETE':'A LITTLE ADVENTURE'}</span></div><div class="daily-quest-body"><span class="daily-quest-icon">${rewardIcon(readToday?'flame':'compass')}</span><div><h2>${readToday?'You kept the story glowing.':activeBook?'One chapter. A new horizon.':'Your first adventure awaits.'}</h2><p>${readToday?'Your reading activity is saved for today. Explore another chapter whenever you like.':activeBook?`Continue <em>${esc(activeBook.title)}</em> and discover what lies beyond the next checkpoint.`:'Choose a book, pick a world, and take your first step into the story.'}</p></div></div><div class="daily-quest-footer"><span class="quest-reward">${readToday?'✦ Every page counts':'+25 XP / new chapter'}</span>${activeBook?`<a class="btn primary small" href="#/book/${activeBook.id}">${readToday?'Keep exploring':'Accept the quest'} →</a>`:'<button class="btn primary small" data-quest-add>Choose a book →</button>'}</div></article>
+    <button class="journal-preview" id="open-trophies"><div class="hub-label"><span>TROPHY JOURNAL</span><span>${rewards.badges.filter(b=>b.earned).length} / ${rewards.badges.length}</span></div><div class="journal-medals">${rewards.badges.slice(0,3).map(b=>`<span data-badge="${b.id}" class="mini-medal ${b.earned?'earned':'locked'}">${badgeArt(b.id)}</span>`).join('')}</div><h2>Make a little history.</h2><p>${rewards.nextBadge?`Next: ${rewards.nextBadge.name} · ${rewards.nextBadge.current}/${rewards.nextBadge.target}`:'Every badge earned. What a journey.'}</p><span class="journal-link">Open your collection <span>↗</span></span></button>
+  </section>
+
 
   ${paused.length ? `
   <button class="waiting" data-remind="${paused[0].id}">
@@ -117,9 +225,10 @@
     <small>Remind me where I left off in “${esc(paused[0].title)}”</small></span>
   </button>` : ''}
 
-  <div class="shelf-heading" id="your-journeys"><h2>Your journeys</h2><span>${books.filter(b => !Store.derive(b).isComplete).length} in progress <i>·</i> ${books.filter(b => Store.derive(b).isComplete).length} sunrise reached</span></div>
+  <section class="discovery-invitation"><span class="discovery-icon" aria-hidden="true">${rewardIcon('compass')}</span><div><span class="eyebrow">LET CURIOSITY PICK THE PATH</span><h2>Not sure what to read next?</h2><p>Answer a few quick questions. Find an adventure from our catalogue.</p></div><button class="btn" id="find-next-quest">Find my next quest ✦</button></section>
+  <div class="shelf-heading" id="your-journeys"><div><span class="eyebrow">THE QUEST LOG</span><h2>Your journeys <span class="shelf-count">${books.length}</span></h2></div><div class="shelf-tabs" role="group" aria-label="Filter journeys">${[['active','In progress'],['complete','Completed'],['all','All books']].map(([key,label])=>`<button data-shelf-view="${key}" aria-pressed="${shelfView===key}">${label}</button>`).join('')}</div></div>
   <section class="grid">
-    ${books.map((book, index) => card(book, index === 0)).join('')}
+    ${visibleBooks.map((book, index) => card(book, index === 0)).join('') || `<div class="quest-empty"><span>${rewardIcon('compass')}</span><h3>${shelfView==='complete'?'Your legends are still being written.':'A new adventure is waiting.'}</h3><p>${shelfView==='complete'?'Finished books will find their home here.':'Add a book to begin a new quest, or revisit a completed journey.'}</p></div>`}
   </section>
 
   <div class="shelf-footer"><span aria-hidden="true">✧</span><p>There’s no rush. The sun rises one page at a time.</p></div>
@@ -127,10 +236,17 @@
   <div class="footer-actions"><button class="btn primary" id="add-book">+ Add a book</button></div>
 </main>`;
 
-    Journey.render($app.querySelector('#quest-banner-scene'), {total: 5, completed: 2, world: 'fantasy', label: 'A sunrise over your next adventure'});
+    Journey.render($app.querySelector('#quest-banner-scene'), {total: 100, completed: Math.round(heroProgress*100), world: 'fantasy', character: portrait, label: 'A sunrise over your next adventure'});
     $app.querySelector('[data-browse-journeys]').addEventListener('click', e => { e.preventDefault(); $app.querySelector('#your-journeys').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); });
     $app.querySelector('[data-add-book]')?.addEventListener('click', addBookSheet);
-    books.forEach((b) => {
+    $app.querySelector('#view-xp-levels').onclick=xpLevels;
+    $app.querySelector('#view-reader-rank').onclick=xpLevels;
+    $app.querySelector('#open-trophies').onclick=trophyJournal;
+    $app.querySelector('#find-next-quest').onclick=recommendationGuide;
+    $app.querySelector('#profile-showcase').onclick=trophyJournal;
+    $app.querySelector('[data-quest-add]')?.addEventListener('click',addBookSheet);
+    $app.querySelectorAll('[data-shelf-view]').forEach(button=>button.onclick=()=>{const scroll=window.scrollY;shelfView=button.dataset.shelfView;dashboard();window.scrollTo(0,scroll);$app.querySelector(`[data-shelf-view="${shelfView}"]`)?.focus({preventScroll:true});});
+    visibleBooks.forEach((b) => {
       const d = Store.derive(b);
       Journey.render($app.querySelector(`[data-scene="${b.id}"]`), {
         total: d.total,
@@ -141,6 +257,7 @@
     });
 
     $app.querySelector('[data-remind]')?.addEventListener('click', (e) => showReminder(e.currentTarget.dataset.remind));
+    $app.querySelectorAll('[data-remove-book]').forEach(button=>button.onclick=()=>removeBook(button.dataset.removeBook));
     $app.querySelector('#add-book').addEventListener('click', addBookSheet);
     $app.querySelector('#settings').addEventListener('click', settingsSheet);
     $app.querySelector('#bell').addEventListener('click', notificationsSheet);
@@ -332,7 +449,51 @@
     });
   }
 
-  function addBookSheet() {
+  function recommendationGuide() {
+    const answers={mood:'',genre:'',length:'',difficulty:'',favorites:'',avoid:''};
+    let step=0;
+    const questions=[
+      {key:'mood',title:'What kind of escape are you after?',hint:'Pick the feeling you want your next book to leave you with.',options:[['cozy','A cozy escape','Warm, gentle, and comforting'],['adventurous','A grand adventure','New worlds and a sense of wonder'],['thoughtful','Something thoughtful','Ideas and characters to sit with'],['mysterious','A little mystery','Secrets, suspense, and curiosity'],['surprise','Surprise me','I’m open to something different']]},
+      {key:'genre',title:'Which shelf draws you in?',hint:'Your reading genre can be different from your game world.',options:[['fantasy','Fantasy & folklore','Magic, myths, and imagined worlds'],['scifi','Science fiction','Future worlds and big possibilities'],['mystery','Mystery & suspense','Puzzles, secrets, and investigations'],['romance','Romance & relationships','Connection, love, and human stories'],['classics','Classics & literary fiction','Distinctive voices and enduring stories'],['any','Open to any genre','Find something that fits my mood']]},
+      {key:'length',title:'How big should this adventure be?',hint:'A quick journey or a world to settle into?',options:[['short','A shorter read','Prefer books with fewer pages'],['long','A longer journey','Happy to spend time in a bigger story'],['any','Either is good','Let the story decide']]},
+      {key:'difficulty',title:'How much of a challenge sounds fun?',hint:'Choose the reading experience you want right now.',options:[['easy','Easy to settle into','Accessible language and a clear story'],['moderate','A little depth','Some complexity, with room to reflect'],['challenging','Challenge me','Dense prose, layered ideas, or an intricate plot'],['any','No preference','I’m happy to try anything']]},
+      {key:'favorites',title:'What do you already love?',hint:'A favorite book or author helps your guide understand your taste. Optional.',label:'Books or authors you enjoy',placeholder:'I loved The Hobbit and Anne of Green Gables.'},
+      {key:'avoid',title:'Anything you’d rather leave out?',hint:'Tell us about themes or story elements you don’t enjoy. Optional. Matches are based on catalogue summaries, which may not list every theme.',label:'Things to avoid',placeholder:'For example: horror, graphic violence, or bleak endings.'},
+    ];
+    const scrim=openOverlay('<section class="sheet recommendation-guide" role="dialog" aria-modal="true" aria-label="Find my next quest"></section>');
+    const panel=scrim.firstElementChild;
+    function paint(){
+      const q=questions[step];
+      panel.innerHTML=`<span class="eyebrow">THE BOOK QUEST GUIDE · ${step+1} / ${questions.length}</span><div class="guide-steps" aria-hidden="true">${questions.map((_,i)=>`<span class="${i<=step?'filled':''}"></span>`).join('')}</div><h2>${q.title}</h2><p class="sub">${q.hint}</p><form><div class="guide-options">${q.options?q.options.map(([value,label,hint])=>`<label class="guide-option"><input type="radio" name="choice" value="${value}" ${answers[q.key]===value?'checked':''} required><span><b>${label}</b><small>${hint}</small></span></label>`).join(''):`<label class="field">${q.label}<textarea name="${q.key}" maxlength="500" placeholder="${q.placeholder}">${esc(answers[q.key])}</textarea></label>`}</div><p class="guide-privacy">Your answers are sent to the configured AI provider to match books in our catalogue.</p><div class="actions"><button type="button" class="btn quiet" data-guide-back>${step?'← Back':'Cancel'}</button><button class="btn primary" type="submit">${step===questions.length-1?'Find my next quest ✦':'Next →'}</button></div></form>`;
+      const form=panel.querySelector('form');
+      const remember=()=>{if(q.options)answers[q.key]=form.querySelector('input:checked')?.value||'';else answers[q.key]=form.querySelector('textarea').value;};
+      panel.querySelector('[data-guide-back]').onclick=()=>{remember();if(step){step--;paint();}else closeOverlay();};
+      form.onsubmit=async e=>{
+        e.preventDefault();remember();
+        if(step<questions.length-1){step++;paint();return;}
+        panel.innerHTML='<span class="eyebrow">SEARCHING THE CATALOGUE</span><h2>Finding your next adventure…</h2><p class="sub" role="status">Your guide is matching your answers with books on our shelves.</p><div class="guide-loading" aria-hidden="true">✦ · ✧ · ✦</div><div class="actions"><button class="btn quiet" data-guide-cancel>Cancel</button></div>';
+        panel.querySelector('[data-guide-cancel]').onclick=closeOverlay;
+        try {
+          const result=await Store.recommendBooks(answers);
+          if(!scrim.isConnected)return;
+          panel.innerHTML=`<span class="eyebrow">${result.personalized?'AI PICKS · FROM OUR CATALOGUE':'EXPLORE OUR CATALOGUE'}</span><h2>${result.items.length?'Your next chapter could be here.':'You’ve explored our current shelves.'}</h2><p class="sub">${result.personalized?'A few possible adventures, chosen around your answers. Books already on your shelf are excluded.':'Personalized matching is unavailable, or no unread catalogue books remain. These are catalogue suggestions, not AI matches.'}</p><div class="recommendation-results">${result.items.map((book,i)=>`<article class="recommendation-book"><span class="recommendation-cover">${book.coverUrl?`<img src="${esc(book.coverUrl)}" alt="" loading="lazy">`:rewardIcon('star')}</span><div><span class="recommendation-rank">PICK ${i+1} · ${book.chapterCount} CHAPTERS${book.pages?` · ${book.pages} PAGES`:''}</span><h3>${esc(book.title)}</h3><span class="recommendation-author">${esc(book.author)}</span><p>${esc(book.reason)}</p><button class="btn small" data-review-pick="${i}">Review & add →</button></div></article>`).join('')}</div><div class="actions"><button class="btn quiet" data-guide-retry>Refine my answers</button><button class="btn primary" data-guide-done>Back to bookshelf</button></div>`;
+          panel.querySelectorAll('[data-review-pick]').forEach(button=>button.onclick=()=>addBookSheet(result.items[Number(button.dataset.reviewPick)]));
+          panel.querySelector('[data-guide-retry]').onclick=()=>{step=0;paint();};
+          panel.querySelector('[data-guide-done]').onclick=closeOverlay;
+          panel.querySelector('button')?.focus();
+        }catch(err){
+          if(!scrim.isConnected)return;
+          panel.innerHTML=`<h2>Your guide couldn’t connect.</h2><p class="sub" role="alert">${esc(err.message)}</p><div class="actions"><button class="btn quiet" data-guide-dismiss>Close</button><button class="btn primary" data-guide-again>Try again</button></div>`;
+          panel.querySelector('[data-guide-dismiss]').onclick=closeOverlay;
+          panel.querySelector('[data-guide-again]').onclick=paint;
+        }
+      };
+      panel.querySelector('input,textarea,button')?.focus();
+    }
+    paint();
+  }
+
+  function addBookSheet(initialEntry) {
     const scrim = openOverlay(`
 <form class="sheet" role="dialog" aria-modal="true" aria-label="Add a book" autocomplete="off">
   <h2>Add a book</h2>
@@ -459,6 +620,15 @@
         toast('Book added');
       });
     });
+    if(initialEntry?.id){
+      picked={id:initialEntry.id,title:initialEntry.title};
+      form.title.value=initialEntry.title;
+      form.author.value=initialEntry.author||'';
+      form.chapters.value=(initialEntry.chapters||[]).join('\n');
+      form.recap.value=initialEntry.summary||'';
+      updateCount();
+      status.textContent='Catalogue details filled in. Review them before adding your book.';
+    }
     form.title.focus({ preventScroll: true });
   }
 
@@ -482,6 +652,7 @@
     </div>
     <div class="book-meter" role="progressbar" aria-label="Reading progress" aria-valuenow="${d.percent}" aria-valuemin="0" aria-valuemax="100"><span style="width:${d.percent}%"></span></div>
     <div class="foot"><span class="last">Last read ${Store.relativeTime(b.lastActivity)}</span><a class="btn ${d.isComplete ? 'quiet' : 'primary'}" href="#/book/${b.id}">${d.isComplete ? 'Revisit this journey' : 'Continue reading'} <span aria-hidden="true">→</span></a></div>
+    <button class="card-remove-book" data-remove-book="${b.id}" aria-label="Remove ${esc(b.title)} from bookshelf">Remove book</button>
   </div>
 </article>`;
   }
@@ -512,6 +683,25 @@
     scrim.querySelector('#chapter-boss').onclick=()=>{
       closeOverlay();BossBattle.open(book,chapter.n,{openOverlay,closeOverlay,replay:cleared,onVictory:()=>bookPage(id,index),onClose:()=>{if(location.hash===`#/book/${id}`)bookPage(id,index);}});
     };
+  }
+
+  function removeBook(id) {
+    const book=Store.getBook(id);
+    if(!book)return;
+    const scrim=openOverlay(`<form class="sheet remove-book-sheet" role="dialog" aria-modal="true" aria-label="Remove book"><span class="eyebrow">REMOVE FROM YOUR BOOKSHELF</span><h2>Leave this adventure?</h2><p class="sub">Remove <strong>${esc(book.title)}</strong> from your bookshelf? Its reading progress, notes, history, reminders, and saved boss battles will be deleted. This cannot be undone.</p><p class="remove-book-hint">The book stays in the catalogue, so you can add it again as a fresh journey.</p><div class="actions"><button class="btn quiet" type="button" data-keep-book>Keep this book</button><button class="btn danger" type="submit">Remove book</button></div></form>`);
+    const form=scrim.querySelector('form');
+    form.querySelector('[data-keep-book]').onclick=closeOverlay;
+    form.onsubmit=e=>{
+      e.preventDefault();
+      submitWith(form,async()=>{
+        await Store.deleteBook(id);
+        if(scrim.isConnected)closeOverlay();
+        if(location.hash===`#/book/${id}`)location.hash='#/';
+        else if(!location.hash||location.hash==='#/')dashboard();
+        toast('Book removed from your bookshelf.');
+      });
+    };
+    form.querySelector('[data-keep-book]').focus();
   }
 
   function resetBook(id){
@@ -550,7 +740,7 @@
 <main class="page">
   <div class="topbar">
     <a class="back" href="#/">← All books</a>
-    <button class="btn quiet small" id="reset-book">Reset book progress</button>
+    <div class="book-management"><button class="btn quiet small" id="reset-book">Reset book progress</button><button class="btn quiet small remove-book-link" data-remove-book="${id}">Remove book</button></div>
         ${!d.isComplete && d.done > 0 ? `<button class="btn small${d.isPaused ? ' glow' : ''}" id="remind">Where was I?</button>` : ''}
   </div>
   <header class="book-head"><h1>${esc(b.title)}</h1><p>${esc(b.author)}</p></header>
@@ -631,6 +821,7 @@
 
     $app.querySelector('#fight-boss').addEventListener('click',()=>BossBattle.open(b,sel.n,{openOverlay,closeOverlay,replay:bossDefeated,onVictory:()=>bookPage(id,selected),onClose:()=>{if(location.hash===`#/book/${id}`)bookPage(id,selected);}}));
     $app.querySelector('#reset-book').onclick=()=>resetBook(id);
+    $app.querySelector('[data-remove-book]').onclick=()=>removeBook(id);
     $app.querySelectorAll('[data-stretch]').forEach(button => button.onclick = () => {
       const scroll = window.scrollY;
       bookPage(id, Journey.stretchAt(d.total, Number(button.dataset.stretch)).start);

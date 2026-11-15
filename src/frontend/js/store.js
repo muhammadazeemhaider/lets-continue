@@ -335,6 +335,15 @@ if (!window.TTL_CONFIG) {
     return { was, now: res.completed, justFinished: res.justFinished, recapPending: !!res.recapPending };
   }
 
+  async function deleteBook(id) {
+    await api(`/api/books/${id}`, {method: 'DELETE'});
+    global.BossBattle?.resetBook(id);
+    byId.delete(String(id));
+    delete journeyState[id];
+    try { saveJourney(); } catch {}
+    await Promise.allSettled([refreshStreak(), refreshNotifications()]);
+  }
+
   async function createBook(payload) {
     const b = await api('/api/books', { method: 'POST', body: payload });
     upsert(b);
@@ -345,6 +354,7 @@ if (!window.TTL_CONFIG) {
   const searchCatalog = (q) =>
     api(`/api/catalog/search?q=${encodeURIComponent(q)}`).then((r) => r.items).catch(() => []);
   const catalogEntry = (id) => api(`/api/catalog/${id}`).catch(() => null);
+  const recommendBooks = preferences => api('/api/catalog/recommendations', {method:'POST', body:preferences});
 
   async function updateUser(patch) {
     user = await api('/api/user', { method: 'PUT', body: patch });
@@ -437,7 +447,7 @@ if (!window.TTL_CONFIG) {
   global.Store = {
     init, loadBook, books, getBook, getUser, derive, bookStreak, readerStreak, relativeTime,
     setBookWorld, setBookCompanion, canAccessChapter, canChallengeChapter, startFromChapter, resetBookProgress,
-    addNote, addCheckpoint, createBook, updateUser, fetchReminder, writeRecap, searchCatalog, catalogEntry,
+    addNote, addCheckpoint, createBook, deleteBook, updateUser, fetchReminder, writeRecap, searchCatalog, catalogEntry, recommendBooks,
     chapterQuestions, signUp, isSignedIn,
     notifications, refreshNotifications, markNotificationRead, markAllNotificationsRead,
     pushStatus, enablePush, disablePush, testPush,
