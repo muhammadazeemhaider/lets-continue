@@ -521,6 +521,11 @@
     document.body.dataset.world=Journey.getWorld();
     const d = Store.derive(b);
     if (selected == null) selected = Number.isFinite(previousCompleted) && d.done > previousCompleted ? d.done - 1 : d.currentIndex;
+    const stretch = Journey.chapterStretch(d.total, selected);
+    const oldHero = $app.querySelector('#hero');
+    const oldStretch = Number(oldHero?.dataset.stretch);
+    const slideMap = oldHero?.dataset.book === String(id) && oldStretch !== stretch.index && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const outgoingMap = slideMap ? oldHero.querySelector('svg.journey')?.cloneNode(true) : null;
     const sel = b.chapters[selected];
     const selState = selected < d.done ? 'done' : selected === d.currentIndex && !d.isComplete ? 'cur' : 'todo';
     const selLabel = { done: 'Completed', cur: 'Current chapter', todo: sel.n<=Math.max(b.completed,b.furthestCompleted||0)?'Previously reached':'Upcoming' }[selState];
@@ -542,7 +547,8 @@
   <header class="book-head"><h1>${esc(b.title)}</h1><p>${esc(b.author)}</p></header>
   ${worldPicker(b)}
   ${characterPicker()}
-  <div class="hero" id="hero"></div>
+  ${stretch.count > 1 ? `<nav class="journey-stretches" aria-label="Journey stretches"><div><span class="eyebrow">STRETCH ${stretch.index + 1} OF ${stretch.count}</span><p>Chapters <b>${stretch.start + 1}–${stretch.end}</b> <span>of ${d.total}</span></p></div><div class="stretch-actions"><button class="btn quiet small" data-stretch="${stretch.index - 1}" ${stretch.index === 0 ? 'disabled' : ''}>← Previous</button><button class="btn quiet small" id="current-stretch">Your position</button><button class="btn quiet small" data-stretch="${stretch.index + 1}" ${stretch.index === stretch.count - 1 ? 'disabled' : ''}>Next →</button></div></nav>` : ''}
+  <div class="hero" id="hero" data-book="${id}" data-stretch="${stretch.index}"></div>
   <div class="summary">
     <span><b>${d.done}</b> of <b>${d.total}</b> chapters</span>
     <span>${d.isComplete ? 'Finished' : `Now: <b>${esc(d.current.title)}</b>`}</span>
@@ -616,6 +622,18 @@
 
     $app.querySelector('#fight-boss').addEventListener('click',()=>BossBattle.open(b,sel.n,{openOverlay,closeOverlay,replay:bossDefeated,onVictory:()=>bookPage(id,selected),onClose:()=>{if(location.hash===`#/book/${id}`)bookPage(id,selected);}}));
     $app.querySelector('#reset-book').onclick=()=>resetBook(id);
+    $app.querySelectorAll('[data-stretch]').forEach(button => button.onclick = () => {
+      const scroll = window.scrollY;
+      bookPage(id, Journey.stretchAt(d.total, Number(button.dataset.stretch)).start);
+      window.scrollTo(0, scroll);
+      $app.querySelector(`[data-stretch="${button.dataset.stretch}"]`)?.focus({preventScroll:true});
+    });
+    $app.querySelector('#current-stretch')?.addEventListener('click', () => {
+      const scroll = window.scrollY;
+      bookPage(id);
+      window.scrollTo(0, scroll);
+      $app.querySelector('#current-stretch')?.focus({preventScroll:true});
+    });
     $app.querySelectorAll('[data-world-choice]').forEach(button=>button.onclick=()=>{
       const scroll=window.scrollY;Store.setBookWorld(id,button.dataset.worldChoice);bookPage(id,selected);window.scrollTo(0,scroll);
       $app.querySelector(`[data-world-choice="${button.dataset.worldChoice}"]`)?.focus({preventScroll:true});
@@ -634,6 +652,22 @@
         chapterActions(id,i);
       },
     });
+
+    if (outgoingMap) {
+      const hero = $app.querySelector('#hero');
+      const incomingMap = hero.firstElementChild;
+      const direction = stretch.index > oldStretch ? 1 : -1;
+      hero.querySelectorAll('.journey-outgoing').forEach(el => el.remove());
+      outgoingMap.classList.add('journey-outgoing');
+      outgoingMap.setAttribute('aria-hidden', 'true');
+      outgoingMap.querySelectorAll('[tabindex]').forEach(el => el.removeAttribute('tabindex'));
+      hero.append(outgoingMap);
+      const timing = {duration: 520, easing: 'cubic-bezier(.22,.75,.25,1)'};
+      incomingMap.animate([{transform: `translateX(${direction * 100}%)`}, {transform: 'translateX(0)'}], timing);
+      const exit = outgoingMap.animate([{transform: 'translateX(0)'}, {transform: `translateX(${-direction * 100}%)`}], timing);
+      exit.onfinish = () => outgoingMap.remove();
+      exit.oncancel = () => outgoingMap.remove();
+    }
 
     $app.querySelectorAll('[data-ch]').forEach((btn) =>
       btn.addEventListener('click', () => {

@@ -1,14 +1,14 @@
-"""Tiny OpenRouter client: JSON answers from free chat models, with fallback across models.
+"""Backend JSON clients for Gemini and legacy OpenRouter deployments.
 
-Free models come and go and are rate-limited upstream, so `complete_json` walks an ordered list,
-skips models that recently answered 429 for a cool-down period, and raises LLMError only when
-every model failed. Callers always have a template fallback.
+Both providers share model failover and rate-limit cooldowns. Callers keep their
+existing recap prompts, caching and template fallbacks.
 """
 import json
 import logging
 import os
 import re
 import time
+from urllib.parse import quote
 
 import requests
 
@@ -23,6 +23,8 @@ DEFAULT_MODELS = [
     "google/gemma-4-31b-it:free",              # good when not rate-limited
     "openrouter/free",                         # OpenRouter picks any free model
 ]
+DEFAULT_GEMINI_MODELS = ["gemini-3.5-flash-lite"]
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models"
 RATE_LIMIT_COOLDOWN = 120  # seconds to skip a model after it answered 429
 
 
@@ -110,13 +112,71 @@ class _RateLimited(Exception):
     pass
 
 
-def client_from_env() -> "OpenRouterClient | None":
-    """Build a client from OPENROUTER_API_KEY / LLM_MODELS, or None when no key is configured."""
-    key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+class GeminiClient(OpenRouterClient):
+    """Native Gemini generateContent adapter; reuses model failover and cooldowns."""
+
+    def __init__(self, api_key: str, models: list[str] | None = None, timeout: float = 20.0, session=None):
+        if not api_key:
+            raise ValueError("Gemini API key is required")
+        super().__init__(api_key, models or DEFAULT_GEMINI_MODELS, timeout, session)
+
+    def _ask(self, model, system, user, max_tokens, temperature) -> dict:
+        model_id = model.removeprefix("models/")
+        resp = self.http.post(
+            f"{GEMINI_URL}/{quote(model_id, safe='')}:generateContent",
+            headers={"x-goog-api-key": self.api_key},
+            json={
+                "systemInstruction": {"parts": [{"text": system}]},
+                "contents": [{"role": "user", "parts": [{"text": user}]}],
+                "generationConfig": {
+                    "responseMimeType": "application/json",
+                    "maxOutputTokens": max_tokens,
+                    "temperature": temperature,
+                },
+            },
+            timeout=self.timeout,
+        )
+        if resp.status_code == 429:
+            raise _RateLimited("Gemini rate limit reached")
+        try:
+            data = resp.json()
+        except ValueError:
+            raise LLMError(f"HTTP {resp.status_code}: non-JSON response")
+        if resp.status_code != 200 or not isinstance(data, dict):
+            # Do not log provider response bodies (they can contain input text).
+            raise LLMError(f"Gemini HTTP {resp.status_code}")
+        candidates = data.get("candidates") or []
+        if not candidates:
+            reason = (data.get("promptFeedback") or {}).get("blockReason", "no candidates")
+            raise LLMError(f"Gemini returned no answer ({reason})")
+        candidate = candidates[0]
+        finish = candidate.get("finishReason")
+        if finish and finish != "STOP":
+            raise LLMError(f"Gemini incomplete reply (finish_reason={finish})")
+        parts = (candidate.get("content") or {}).get("parts") or []
+        content = "".join(part.get("text", "") for part in parts if not part.get("thought"))
+        return parse_json_object(content)
+
+
+def client_from_env() -> "OpenRouterClient | GeminiClient | None":
+    """Prefer Gemini when configured; keep existing OpenRouter-only setups working.
+
+    An explicit provider never falls back to another provider's credentials.
+    """
+    gemini_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    router_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    provider = os.environ.get("LLM_PROVIDER", "").strip().lower()
+    if not provider:
+        provider = "gemini" if gemini_key or not router_key else "openrouter"
+    if provider not in {"gemini", "openrouter"}:
+        raise ValueError("LLM_PROVIDER must be gemini or openrouter")
+    key = gemini_key if provider == "gemini" else router_key
     if not key:
         return None
-    models = [m.strip() for m in os.environ.get("LLM_MODELS", "").split(",") if m.strip()] or None
-    return OpenRouterClient(key, models, timeout=float(os.environ.get("LLM_TIMEOUT_SECONDS", 20)))
+    model_env = "GEMINI_MODELS" if provider == "gemini" else "LLM_MODELS"
+    models = [m.strip() for m in os.environ.get(model_env, "").split(",") if m.strip()] or None
+    client_type = GeminiClient if provider == "gemini" else OpenRouterClient
+    return client_type(key, models, timeout=float(os.environ.get("LLM_TIMEOUT_SECONDS", 20)))
 
 
 def load_dotenv(path) -> None:

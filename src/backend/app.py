@@ -35,7 +35,7 @@ if os.name == "nt":
 def create_app(config: dict | None = None) -> Flask:
     testing = bool(config and config.get("TESTING"))
     if not testing:
-        llm.load_dotenv(Path(__file__).with_name(".env"))  # OPENROUTER_API_KEY etc.; never committed
+        llm.load_dotenv(Path(__file__).with_name(".env"))  # Provider credentials; never committed
     app = Flask(__name__)
     app.config["DATABASE"] = os.environ.get("DATABASE_PATH", str(DEFAULT_DB))
     app.config["CORS_ORIGIN"] = os.environ.get("CORS_ORIGIN", "*")  # tighten when deploying
@@ -50,7 +50,7 @@ def create_app(config: dict | None = None) -> Flask:
     app.config.setdefault("VAPID_KEYS_PATH", str(Path(app.config["DATABASE"]).parent / "vapid.json"))
     # The push sender is injectable so tests never touch the network.
     app.config.setdefault("PUSH_SENDER", notifications.make_web_push_sender(Path(app.config["VAPID_KEYS_PATH"])))
-    # LLM client (OpenRouter). None = template text only. Tests inject a fake and never hit the network.
+    # Configured LLM provider. None = template text only; tests inject a fake client.
     if "LLM" not in app.config:
         app.config["LLM"] = None if testing else llm.client_from_env()
     app.config.setdefault("LLM_WARM_PER_PASS", int(os.environ.get("LLM_WARM_PER_PASS", 3)))

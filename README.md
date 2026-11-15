@@ -194,23 +194,28 @@ If the page does not load, Windows Firewall may be blocking inbound port 5173 (a
 - **"Almost ready: ... try again in a minute".** Right after notifications are turned off and on again, Google's push service briefly reports the new subscription as expired. The server keeps it for 10 minutes instead of deleting it, and pushes work again within seconds.
 - **Run only one backend.** On Windows, two Flask servers could previously share port 5000 silently, splitting requests between them at random. A second `flask run` on a busy port now fails with "Port 5000 is in use by another program". Stop the old one first.
 
-## AI recaps and reminder copy (OpenRouter)
+## AI recaps and reminder copy (Gemini)
 
 When a reader comes back, "Where was I?" shows a short, spoiler-safe recap of the story so far, woven with their own notes. Reminder notifications are also written by the model. Without a key everything falls back to the template text.
 
 **Setup:** put your key in `src/backend/.env` (git-ignored, loaded automatically):
 
 ```
-OPENROUTER_API_KEY=sk-or-...
-# optional
-LLM_MODELS=baidu/ernie-5.5-flash-preview:free,nvidia/nemotron-3-ultra-550b-a55b:free
+LLM_PROVIDER=gemini
+GEMINI_API_KEY=your-google-ai-studio-key
+# optional: comma-separated Gemini models in fallback order
+GEMINI_MODELS=gemini-3.5-flash-lite
 LLM_TIMEOUT_SECONDS=20
 LLM_WARM_PER_PASS=3
 ```
 
 `GET /api/health` shows whether the LLM is enabled and which models it will try.
 
-**Models (free).** Picked by a bake-off on the real recap prompt: `baidu/ernie-5.5-flash-preview:free` (about 3 s), then `nvidia/nemotron-3-ultra-550b-a55b:free` (about 12 s), `google/gemma-4-31b-it:free`, and `openrouter/free`. Models are tried in order; one that answers 429 is skipped for 2 minutes. Free models change often, so if one disappears, edit `DEFAULT_MODELS` in `llm.py` or set `LLM_MODELS`.
+**Provider:** Gemini is called directly from the backend using Google's [generateContent API](https://ai.google.dev/api/generate-content). Obtain a key in [Google AI Studio](https://aistudio.google.com/apikey), put it in the backend `.env`, and restart Flask. No key goes into frontend files. The default model is `gemini-3.5-flash-lite`; change `GEMINI_MODELS` to models available to your account. Models are tried in order, with the existing 2-minute cooldown after rate limiting. Quotas and billing depend on your Google project.
+
+Existing deployments with only `OPENROUTER_API_KEY` continue to use OpenRouter. Set `LLM_PROVIDER=gemini` to explicitly switch; a missing Gemini key then uses template text rather than sending requests to OpenRouter. Legacy OpenRouter settings remain `LLM_PROVIDER=openrouter`, `OPENROUTER_API_KEY`, and `LLM_MODELS`. Gemini ignores the OpenRouter model list.
+
+Previously cached recaps remain unchanged; a new uncached chapter checkpoint uses the selected provider. Boss battle questions still use the local quiz generator and are independent of the recap provider.
 
 **How it behaves:**
 
@@ -221,7 +226,7 @@ LLM_WARM_PER_PASS=3
 - **Speed and no duplicates.** `GET /api/books/<id>/reminder` never waits for the model. If the recap is still being written (`llmPending`), the app calls `POST /api/books/<id>/recap`, which waits for the background job instead of sending a second request. The scheduler also backfills recaps for waiting books that have none (`LLM_WARM_PER_PASS` per pass). This matters on free tiers, which allow only a small number of requests per day.
 - **Fallback.** If every model fails or returns nothing usable, the template text is used.
 
-**Privacy.** Book titles, chapter titles and the reader's notes are sent to OpenRouter and the model provider. Free endpoints may log prompts. The UI labels AI recaps as AI-written.
+**Privacy.** Book titles, chapter titles and the reader's notes are sent to the configured provider (Google for Gemini, or OpenRouter for legacy deployments). Provider data handling depends on your account and service terms. The UI labels AI recaps as AI-written.
 
 ## Book catalogue
 
