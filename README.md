@@ -123,3 +123,14 @@ Open that URL on the phone. On iPhone, Share, then Add to Home Screen, and open 
 To watch a real reminder arrive: `python -m flask --app app backdate <book id> 8` (pretend it was last read 8 days ago), then `python -m flask --app app notify` (or wait for the scheduler).
 
 The URL is public and the app has no login yet: share it with nobody, use test data only, and stop `cloudflared` when finished. The URL changes every time it restarts, and a changed URL needs the app re-added/re-enabled on the phone.
+
+### Android on the same Wi-Fi (no tunnel)
+
+If a tunnel domain is blocked on your network, Android Chrome can treat your PC's LAN address as secure:
+
+1. Run backend and frontend as above (`npm start` listens on all interfaces; Flask stays on localhost and is reached through the proxy).
+2. Find the PC's IPv4 address (`ipconfig`), e.g. `10.0.0.244`.
+3. On the phone, open `chrome://flags/#unsafely-treat-insecure-origin-as-secure`, enable it, add `http://10.0.0.244:5173`, and tap Relaunch.
+4. Open `http://10.0.0.244:5173`, tap the gear, then "Enable on this device".
+
+If the page does not load, Windows Firewall may be blocking inbound port 5173 (allow Node.js on your network profile), or the router may isolate Wi-Fi clients from each other. iPhones cannot do this and need real HTTPS.
