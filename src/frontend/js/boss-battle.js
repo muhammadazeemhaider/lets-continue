@@ -59,31 +59,72 @@ return `<div class="battle-scene hero-${hero.id} battle-world-${boss.world}" sty
 const threats=['The mist gathers. Your lantern flickers.','Bellwing circles overhead, listening.','Stone plates shift. The river falls quiet.','Silver wings scatter a cloud of dust.','The dragon opens its wings against the dawn.'];
 const reactions=['The slime wobbles and reforms.','The owl tilts its head. Listen again.','The golem holds its ground. Look closer.','The moth drifts out of reach. Recall the details.','The dragon waits. Your light is still burning.'];
 const commandVerb=hero=>hero.world==='pirates'?(hero.id==='sea-witch'?'Invoke':hero.id==='navigator'?'Chart':'Use'):hero.world==='scifi'?(['sentinel','pilot'].includes(hero.id)?'Fire':hero.id==='android'?'Activate':'Deploy'):hero.id==='knight'?'Use':hero.id==='bard'?'Play':'Cast';
+const encounterScripts={
+fantasy:[
+ ['Mist rolls over the trail. Something small and luminous stirs beneath the moss.','One step further, reader… but what light have you brought with you?'],
+ ['The forest falls quiet. Above the path, a pair of silver wings opens against the moon.','I have heard every whisper in these woods. What do you remember?'],
+ ['The river slows to a hush. Ancient stones rise and turn toward your footsteps.','A strong bridge is built from little things. Show me the details you carry.'],
+ ['Dust lifts from forgotten shelves. A pale moth circles a page that turns itself.','Stories leave a trace. Let us see which ones stayed with you.'],
+ ['At the edge of dawn, a great shadow unfolds its wings. The summit is almost within reach.','You have carried your light this far. Let it shine once more.'],
+],
+scifi:[
+ ['Static flickers across the lunar relay. A survey drone turns its lens toward your signal.','Unidentified explorer. Memory verification required.'],
+ ['A buried reactor wakes beneath the wreckage. Four metal feet strike the dust.','Archive integrity check initiated. Reconstruct the last transmission.'],
+ ['Crystal shards lift into orbit. A narrow beam scans the path ahead.','Pattern detected. Demonstrate your understanding to proceed.'],
+ ['The stars bend around a drifting shape. A quiet transmission reaches your receiver.','Your memories are a signal. Let me hear them clearly.'],
+ ['The lunar crown opens above you. A colossal machine gathers the last light of the horizon.','Final sequence unlocked. Confirm the story you have carried.'],
+],
+pirates:[
+ ['Your boat brushes the shallows. Beneath the clear water, a pair of enormous claws begins to move.','Steady there, sailor. What treasures of the tale have ye kept?'],
+ ['A lantern swings above the rival cove. Across the deck, a captain raises a powder-stained hat.','A fine voyage so far. Now, let us test your bearings.'],
+ ['A melody drifts over the reef. The tide stills, and a figure rises from the foam.','Listen to the story beneath the waves. What did it tell you?'],
+ ['The wreck lights up beneath the water. An admiral steps out of a curtain of sea mist.','A captain remembers the course. Show me you remember yours.'],
+ ['The emerald sea darkens. Beyond the lighthouse, great tentacles curl around the horizon.','You have crossed every tide to reach me. Bring your story into the light.'],
+]};
+const heroReplies={sage:'Then let the words become a little magic.',bard:'Every good story deserves an encore.',knight:'I remember the path. I am ready.',lantern:'One small light is enough to begin.',sentinel:'Memory banks ready. Beginning verification.',technomancer:'There is a pattern here. Let us find it.',pilot:'Course locked. Ready for the next jump.',android:'These memories matter. I will show you why.',captain:'Aye. Let us see this voyage through.',navigator:'The stars brought us here. The story will guide us onward.',deckhand:'Steady hands, steady heart. Ready when you are.','sea-witch':'The tide remembers. So do I.'};
 function open(book,n,ui){
   if(!book||!Number.isInteger(n)||n<1||n>book.chapters.length||Math.max(book.completed,book.furthestCompleted||0)<n)return;
   Journey.useBook?.(book);
   let hero=Journey.getCharacterInfo(),attacks=hero.attacks;
   let attackVerb=commandVerb(hero);
   const boss=profile(n,book.world),demo=book.id==='lantern-road'?BossFixtures[n-1]:null;
-  let battle=load(book.id,n),wrong=new Set(),feedback='',busy=false,selected=null,move=attacks[0].id,sound=false,audio=null;
+  let battle=load(book.id,n),wrong=new Set(),feedback='',busy=false,selected=null,move=attacks[0].id,sound=false;
+  const showIntro=!battle;
+  const audio=root.AttackAudio?.create();
+  try{sound=localStorage.getItem('ttl.battle.sound')==='on';}catch{}
+  audio?.setEnabled(sound);
   // A saved seal is history, not the starting screen for a new encounter.
   if(battle?.defeated)battle={...BossEngine.create(battle.questions,battle.source,battle.kind),...(battle.catalogSource?{catalogSource:battle.catalogSource}:{})};
   let catalog; // undefined: not fetched yet · null: none for this chapter · {source, questions}: ready
   let sealCollected=Boolean(load(book.id,n)?.defeated);
   const esc=Services.esc;
-  const scrim=ui.openOverlay('<section class="sheet boss-sheet encounter-arrival" role="dialog" aria-modal="true" aria-label="Chapter boss battle"></section>','boss-overlay',()=>{try{audio?.close()?.catch(()=>{});}catch{}ui.onClose?.();});
+  const scrim=ui.openOverlay('<section class="sheet boss-sheet encounter-arrival" role="dialog" aria-modal="true" aria-label="Chapter boss battle"></section>','boss-overlay',()=>{audio?.close();ui.onClose?.();});
   const panel=scrim.querySelector('.boss-sheet');
   const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function tone(success){
-    if(!sound)return;
-    try{audio ||= new (root.AudioContext||root.webkitAudioContext)();audio.resume();const now=audio.currentTime;for(let i=0;i<3;i++){const oscillator=audio.createOscillator(),gain=audio.createGain();oscillator.type=hero.id==='bard'?'triangle':hero.id==='sage'?'sine':'square';oscillator.frequency.value=(success?[392,523,784]:[220,196,165])[i];gain.gain.setValueAtTime(.025,now+i*.075);gain.gain.exponentialRampToValueAtTime(.001,now+i*.075+.09);oscillator.connect(gain);gain.connect(audio.destination);oscillator.start(now+i*.075);oscillator.stop(now+i*.075+.1);}}catch{}
-  }
+  function tone(success){audio?.play(success?'enabled':'miss');}
   function persist(){if(!load(book.id,n)?.defeated)save(book.id,n,battle);}
   function focusQuestion(){panel.querySelector('#battle-question, #begin-battle, #boss-source, #battle-done')?.focus();}
   function shell(content){
     panel.innerHTML=`<div class="battle-top"><span>CHAPTER ${n} · GUARDIAN ENCOUNTER</span><div><button class="battle-sound" aria-pressed="${sound}">SOUND ${sound?'ON':'OFF'}</button><button class="battle-leave" aria-label="Leave boss battle">×</button></div></div><div class="enemy-name"><div><span class="boss-kicker">${esc(book.chapters[n-1].title)}</span><h2>${boss.name}</h2></div><span class="boss-seal">${battle?.defeated?'✦ CLEARED':'GUARDIAN '+String(n).padStart(2,'0')}</span></div><div class="enemy-health"><label for="boss-hp">BOSS HP</label><progress id="boss-hp" value="${90-(battle?.answered.length||0)*30}" max="90"></progress><span>${90-(battle?.answered.length||0)*30}/90</span></div>${scene(boss,n,hero)}${content}<p class="battle-disclosure">${battle?.kind==='catalog'?CATALOG_DISCLOSURE[battle.catalogSource]||'Questions from the book catalogue':battle?.kind==='excerpt'||!demo?'Recall from your chapter summary or excerpt':'Questions from the original demo chapter'} · 30 damage per correct answer · No reading penalty${storageWarning?' · Saved for this visit only':''}</p>`;
     panel.querySelector('.battle-leave').onclick=ui.closeOverlay;
-    panel.querySelector('.battle-sound').onclick=e=>{sound=!sound;e.currentTarget.textContent=`SOUND ${sound?'ON':'OFF'}`;e.currentTarget.setAttribute('aria-pressed',sound);if(sound)tone(true);};
+    panel.querySelector('.battle-sound').onclick=e=>{sound=!sound;e.currentTarget.textContent=`SOUND ${sound?'ON':'OFF'}`;e.currentTarget.setAttribute('aria-pressed',sound);audio?.setEnabled(sound);try{localStorage.setItem('ttl.battle.sound',sound?'on':'off');}catch{}if(sound)tone(true);};
+  }
+  function introScene(){
+    audio?.startMusic(boss.world,boss.type,'intro');
+    const lines=encounterScripts[boss.world][boss.type];
+    const frames=[{speaker:boss.place,line:lines[0],kind:'narrator'},{speaker:boss.name,line:lines[1],kind:'boss'},{speaker:hero.name,line:heroReplies[hero.id]||'Another chapter. Another step forward.',kind:'hero'}];
+    let frame=0;
+    panel.classList.add('encounter-cutscene');
+    function finish(){panel.classList.remove('encounter-cutscene','intro-arriving');paint();focusQuestion();}
+    function caption(){
+      const current=frames[frame];
+      if(frame===0)panel.classList.add('intro-arriving');else panel.classList.remove('intro-arriving');
+      shell(`<div class="battle-content cutscene-dialogue"><div class="cutscene-caption" aria-live="polite" aria-atomic="true"><div class="cutscene-portrait ${current.kind}">${current.kind==='boss'?preview(n,boss.world):current.kind==='hero'?`<svg class="journey" viewBox="-13 -14 28 32" aria-hidden="true" shape-rendering="crispEdges"><g class="landscape-explorer" data-direction="down" data-frame="0">${Journey.characterSprite(hero.id)}</g></svg>`:'<span aria-hidden="true">✦</span>'}</div><div><span class="cutscene-speaker">${esc(current.speaker)}</span><p>${esc(current.line)}</p></div></div><div class="cutscene-controls"><button class="btn quiet small" id="skip-intro">Skip intro</button><span class="cutscene-page" aria-label="Caption ${frame+1} of ${frames.length}">${frames.map((_,i)=>`<span class="${i===frame?'active':''}"></span>`).join('')}</span><button class="btn primary" id="next-caption">${frame===frames.length-1?'Face the guardian ⚔':'Next →'}</button></div></div>`);
+      panel.querySelector('#skip-intro').onclick=finish;
+      panel.querySelector('#next-caption').onclick=()=>{if(frame===frames.length-1){finish();return;}frame++;caption();panel.querySelector('#next-caption').focus({preventScroll:true});};
+    }
+    caption();
+    panel.querySelector('#next-caption').focus({preventScroll:true});
   }
   function sourcePanel(){
     // Catalogue books: fetch this chapter's three questions first (rule-based from the text, or AI-written).
@@ -108,24 +149,29 @@ function open(book,n,ui){
     else panel.querySelector('#source-form').onsubmit=e=>{e.preventDefault();const source=panel.querySelector('#boss-source').value;try{battle=BossEngine.create(BossEngine.questionsFromExcerpt(source),source,'excerpt');persist();paint();focusQuestion();}catch(error){panel.querySelector('#source-error').textContent=error.message;}};
   }
   function victory(celebrate=false){
+    audio?.startMusic(boss.world,boss.type,'victory');
     const emblem=boss.world==='pirates'?'⚓':boss.world==='scifi'?'⬡':'✦';
-    shell(`<div class="battle-content battle-victory">${celebrate?`<div class="victory-cinematic" aria-hidden="true"><span>VICTORY</span><small>CHAPTER ${n} · THE WAY IS OPEN</small></div>`:''}<span class="victory-kicker">CHAPTER ${n} COMPLETE</span><h3>VICTORY</h3><p class="victory-subtitle">${boss.name} lowers its guard.<br>The way is open!</p><button class="victory-seal ${sealCollected?'collected':''}" id="collect-seal" aria-label="${sealCollected?'Chapter seal already collected':'Collect chapter '+n+' seal'}" ${sealCollected?'disabled':''}><span>${emblem}</span><small>${sealCollected?'SEAL COLLECTED':'COLLECT YOUR SEAL'}</small></button><p id="seal-message" role="status">${sealCollected?'This chapter’s seal is safely in your collection.':'A little proof of the story you carried with you.'}</p><div class="victory-stats"><span>3 QUESTIONS MASTERED</span><span>90 DAMAGE DEALT</span></div><button class="btn primary" id="battle-done" ${sealCollected?'':'disabled'}>Continue the journey →</button><button class="btn quiet" id="battle-replay">Practice again</button></div>`);
+    shell(`<div class="battle-content battle-victory">${celebrate?`<div class="victory-cinematic" aria-hidden="true"><span>VICTORY</span><small>CHAPTER ${n} · THE WAY IS OPEN</small></div>`:''}<span class="victory-kicker">CHAPTER ${n} COMPLETE</span><h3>VICTORY</h3><p class="victory-subtitle">${boss.name} lowers its guard.<br>The way is open!</p><button class="victory-seal ${sealCollected?'collected':''}" id="collect-seal" aria-label="${sealCollected?'Chapter seal already collected':'Collect chapter '+n+' seal'}" ${sealCollected?'disabled':''}><span>${emblem}</span><small>${sealCollected?'SEAL COLLECTED':'COLLECT YOUR SEAL'}</small></button><p id="seal-message" role="status">${sealCollected?'This chapter’s seal is safely in your collection.':'A little proof of the story you carried with you.'}</p><div class="victory-stats"><span>3 QUESTIONS MASTERED</span><span>90 DAMAGE DEALT</span></div><button class="btn primary" id="battle-done">Continue the journey →</button><button class="btn quiet" id="battle-replay">Practice again</button></div>`);
     panel.classList.add('victory-presentation');
     panel.querySelector('.battle-scene').classList.add('guardian-cleared');
-    if(celebrate){scrim.classList?.add('victory-screen');tone(true);}
-    panel.querySelector('#collect-seal').onclick=e=>{
+    if(celebrate){scrim.classList?.add('victory-screen');audio?.play('victory');}
+    function collectSeal(focus=true){
       if(sealCollected)return;
-      sealCollected=true;e.currentTarget.disabled=true;e.currentTarget.classList.add('collected');e.currentTarget.querySelector('small').textContent='SEAL COLLECTED';
+      sealCollected=true;
+      const button=panel.querySelector('#collect-seal');
+      button.disabled=true;button.classList.add('collected');button.querySelector('small').textContent='SEAL COLLECTED';
       panel.querySelector('#seal-message').textContent=`Chapter ${n} seal collected. Your journey is saved.`;
-      panel.querySelector('#battle-done').disabled=false;panel.querySelector('#battle-done').focus({preventScroll:true});tone(true);
-    };
-    panel.querySelector('#battle-done').onclick=ui.closeOverlay;
+      if(focus){panel.querySelector('#battle-done').focus({preventScroll:true});tone(true);}
+    }
+    panel.querySelector('#collect-seal').onclick=()=>collectSeal();
+    panel.querySelector('#battle-done').onclick=()=>{collectSeal(false);ui.closeOverlay();};
     panel.querySelector('#battle-replay').onclick=()=>{battle=BossEngine.create(battle.questions,battle.source,battle.kind);wrong.clear();feedback='';selected=null;sealCollected=true;panel.classList.remove('victory-presentation');scrim.classList?.remove('victory-screen');paint();focusQuestion();};
   }
   function paint(){
     if(!panel.isConnected)return;
     if(!battle){sourcePanel();return;}
     if(battle.defeated){victory();return;}
+    audio?.startMusic(boss.world,boss.type);
     const index=battle.answered.length,q=battle.questions[index];
     const eliminated=battle.focusQuestion===index?q.options.map((_,i)=>i).filter(i=>i!==q.correctIndex).slice(0,2):[];
     const disabled=i=>wrong.has(i)||eliminated.includes(i);
@@ -158,7 +204,7 @@ function open(book,n,ui){
     panel.querySelectorAll('[data-answer], [data-move], #launch-attack, #battle-focus, #battle-character').forEach(b=>b.disabled=true);
     const log=panel.querySelector('.answer-feedback');
     if(result.correct){
-      battle=result.battle;persist();tone(true);
+      battle=result.battle;persist();audio?.play(move);
       panel.querySelector(`[data-answer="${selected}"]`).classList.add('answer-correct');
       log.textContent=`${attacks.find(a=>a.id===move).line} −30 HP! ${q.explanation}`;
       panel.querySelector('#boss-hp').value=90-battle.answered.length*30;
@@ -184,7 +230,7 @@ function open(book,n,ui){
       controls.querySelector('#next-turn').focus({preventScroll:true});
     },reduced()?0:1000);
   }
-  paint();
+  if(showIntro)introScene();else paint();
 }
 const preview=(n,world)=>`<svg viewBox="-28 -26 56 54" aria-hidden="true" shape-rendering="crispEdges">${art(profile(n,world).type,profile(n,world).color,world)}</svg>`;
 root.BossBattle={open,load,profile,preview,resetBook,reset};

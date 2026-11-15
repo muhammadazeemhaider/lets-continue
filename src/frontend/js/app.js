@@ -230,6 +230,7 @@
     });
 
     $app.querySelector('[data-remind]')?.addEventListener('click', (e) => showReminder(e.currentTarget.dataset.remind));
+    $app.querySelectorAll('[data-remove-book]').forEach(button=>button.onclick=()=>removeBook(button.dataset.removeBook));
     $app.querySelector('#add-book').addEventListener('click', addBookSheet);
     $app.querySelector('#settings').addEventListener('click', settingsSheet);
     $app.querySelector('#bell').addEventListener('click', notificationsSheet);
@@ -616,6 +617,7 @@
     </div>
     <div class="book-meter" role="progressbar" aria-label="Reading progress" aria-valuenow="${d.percent}" aria-valuemin="0" aria-valuemax="100"><span style="width:${d.percent}%"></span></div>
     <div class="foot"><span class="last">Last read ${Store.relativeTime(b.lastActivity)}</span><a class="btn ${d.isComplete ? 'quiet' : 'primary'}" href="#/book/${b.id}">${d.isComplete ? 'Revisit this journey' : 'Continue reading'} <span aria-hidden="true">→</span></a></div>
+    <button class="card-remove-book" data-remove-book="${b.id}" aria-label="Remove ${esc(b.title)} from bookshelf">Remove book</button>
   </div>
 </article>`;
   }
@@ -646,6 +648,25 @@
     scrim.querySelector('#chapter-boss').onclick=()=>{
       closeOverlay();BossBattle.open(book,chapter.n,{openOverlay,closeOverlay,replay:cleared,onVictory:()=>bookPage(id,index),onClose:()=>{if(location.hash===`#/book/${id}`)bookPage(id,index);}});
     };
+  }
+
+  function removeBook(id) {
+    const book=Store.getBook(id);
+    if(!book)return;
+    const scrim=openOverlay(`<form class="sheet remove-book-sheet" role="dialog" aria-modal="true" aria-label="Remove book"><span class="eyebrow">REMOVE FROM YOUR BOOKSHELF</span><h2>Leave this adventure?</h2><p class="sub">Remove <strong>${esc(book.title)}</strong> from your bookshelf? Its reading progress, notes, history, reminders, and saved boss battles will be deleted. This cannot be undone.</p><p class="remove-book-hint">The book stays in the catalogue, so you can add it again as a fresh journey.</p><div class="actions"><button class="btn quiet" type="button" data-keep-book>Keep this book</button><button class="btn danger" type="submit">Remove book</button></div></form>`);
+    const form=scrim.querySelector('form');
+    form.querySelector('[data-keep-book]').onclick=closeOverlay;
+    form.onsubmit=e=>{
+      e.preventDefault();
+      submitWith(form,async()=>{
+        await Store.deleteBook(id);
+        if(scrim.isConnected)closeOverlay();
+        if(location.hash===`#/book/${id}`)location.hash='#/';
+        else if(!location.hash||location.hash==='#/')dashboard();
+        toast('Book removed from your bookshelf.');
+      });
+    };
+    form.querySelector('[data-keep-book]').focus();
   }
 
   function resetBook(id){
@@ -684,7 +705,7 @@
 <main class="page">
   <div class="topbar">
     <a class="back" href="#/">← All books</a>
-    <button class="btn quiet small" id="reset-book">Reset book progress</button>
+    <div class="book-management"><button class="btn quiet small" id="reset-book">Reset book progress</button><button class="btn quiet small remove-book-link" data-remove-book="${id}">Remove book</button></div>
         ${!d.isComplete && d.done > 0 ? `<button class="btn small${d.isPaused ? ' glow' : ''}" id="remind">Where was I?</button>` : ''}
   </div>
   <header class="book-head"><h1>${esc(b.title)}</h1><p>${esc(b.author)}</p></header>
@@ -765,6 +786,7 @@
 
     $app.querySelector('#fight-boss').addEventListener('click',()=>BossBattle.open(b,sel.n,{openOverlay,closeOverlay,replay:bossDefeated,onVictory:()=>bookPage(id,selected),onClose:()=>{if(location.hash===`#/book/${id}`)bookPage(id,selected);}}));
     $app.querySelector('#reset-book').onclick=()=>resetBook(id);
+    $app.querySelector('[data-remove-book]').onclick=()=>removeBook(id);
     $app.querySelectorAll('[data-stretch]').forEach(button => button.onclick = () => {
       const scroll = window.scrollY;
       bookPage(id, Journey.stretchAt(d.total, Number(button.dataset.stretch)).start);

@@ -332,8 +332,8 @@
       if(world==='pirates') return '<g class="world-atmosphere sea-gulls" aria-hidden="true"><g class="gull-flock"><path d="M42 43h4v2h3v-2h4M64 35h4v2h3v-2h4M80 48h4v2h3v-2h4" fill="none" stroke="#e6e9d8" stroke-width="1.4"/></g></g>';
       return '<g class="world-atmosphere enchanted-sky" aria-hidden="true"><g class="fantasy-wisp"><path d="M59 58h2v2h2v2h-2v2h-2v-2h-2v-2h2z" fill="#d9c0fa"/><rect x="51" y="65" width="1" height="1" fill="#f2d4a6"/></g><g class="fantasy-wisp wisp-two"><path d="M270 66h2v2h2v2h-2v2h-2v-2h-2v-2h2z" fill="#aee4cb"/></g></g>';
     }
-    if(world==='pirates') return '<g class="world-atmosphere sea-shimmer" aria-hidden="true"><g class="sea-glints"><path d="M75 196h8M79 193v6M265 211h10M270 208v6M343 176h7M346 173v6" stroke="#c0f0e5" stroke-width="1"/></g><g class="sea-ripples"><path d="M50 224h12m3 0h4M204 232h17m3 0h4M307 203h13" stroke="#99d9d1" stroke-width="1.5" opacity=".4"/></g></g>';
-    if(world==='fantasy') return `<g class="world-atmosphere forest-magic" aria-hidden="true">${[[39,174],[149,146],[236,178],[336,141]].map(([x,y],i)=>`<g transform="translate(${x} ${y})"><g class="magic-mote" style="animation-delay:-${i*2}s"><rect width="2" height="2" fill="${i%2?'#d5b1f0':'#ffe1a2'}"/><rect x="-2" y="-2" width="6" height="6" fill="#e8caee" opacity=".08"/></g></g>`).join('')}</g>`;
+    if(world==='pirates') return `<g class="world-atmosphere sea-shimmer" aria-hidden="true"><g class="sea-glints"><path d="M75 196h8M79 193v6M265 211h10M270 208v6M343 176h7M346 173v6" stroke="#c0f0e5" stroke-width="1"/></g>${[[28,229],[105,200],[180,233],[268,222],[336,199],[45,169],[302,151],[366,230]].map(([x,y],i)=>`<g transform="translate(${x} ${y})"><g class="ocean-wave" style="--wave-duration:${4+i%3}s;animation-delay:-${i*.7}s"><path d="M-12 2h5V0h10v2h7" fill="none" stroke="#98d9d5" stroke-width="1.2" opacity=".55"/><path d="M-5 5h10" stroke="#70b8c8" stroke-width=".9" opacity=".35"/></g></g>`).join('')}</g>`;
+    if(world==='fantasy') return `<g class="world-atmosphere forest-magic" aria-hidden="true">${[[39,174],[95,195],[149,146],[204,181],[236,178],[281,154],[336,141],[363,195],[65,131],[177,218],[319,214],[120,169]].map(([x,y],i)=>`<g transform="translate(${x} ${y})"><g class="magic-mote" style="--fly-x:${i%2?18:-16}px;--fly-y:${-12-i%4*4}px;--fly-duration:${5+i%4}s;animation-delay:-${i*.8}s"><circle cx="1" cy="1" r="5" fill="${i%3?'#ffda84':'#caecad'}" opacity=".13"/><circle cx="1" cy="1" r="2.8" fill="#ffe4a2" opacity=".22"/><rect width="2" height="2" fill="${i%3?'#ffe8a4':'#d7f5b4'}"/></g></g>`).join('')}</g>`;
     return '<g class="world-atmosphere orbit-signal" aria-hidden="true"><circle class="signal-ring" cx="354" cy="63" r="6" fill="none" stroke="#87cee2" stroke-width=".7"/></g>';
   }
 
@@ -464,6 +464,48 @@
       walker.setAttribute('data-direction','down');
       walker.setAttribute('data-frame','0');
       if(opts.onArrival)requestAnimationFrame(()=>{if(svg.isConnected)opts.onArrival();});
+    }
+
+    if(!reduced){
+      let lastTouch=0;
+      const respond=e=>{
+        if(e.target.closest('.mk')||!svg.isConnected||global.matchMedia?.('(prefers-reduced-motion: reduce)').matches)return;
+        const now=performance.now();
+        if(e.type==='pointermove'&&now-lastTouch<180)return;
+        const matrix=svg.getScreenCTM();if(!matrix)return;
+        const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;
+        const at=pt.matrixTransform(matrix.inverse());
+        if(marks.some(mark=>Math.hypot(mark.x-at.x,mark.y-at.y)<13))return;
+        if(sceneWorld==='pirates'&&at.y<125)return;
+        lastTouch=now;
+        const click=e.type==='pointerdown';
+        let effect,layer;
+        if(sceneWorld==='pirates'){
+          effect=document.createElementNS('http://www.w3.org/2000/svg','ellipse');
+          effect.setAttribute('cx',at.x);effect.setAttribute('cy',at.y);effect.setAttribute('rx',click?'12':'7');effect.setAttribute('ry',click?'5':'3');effect.setAttribute('class','water-touch');
+          layer=svg.querySelector('.sea-shimmer');
+        }else{
+          effect=document.createElementNS('http://www.w3.org/2000/svg','g');
+          effect.setAttribute('transform',`translate(${at.x.toFixed(1)} ${at.y.toFixed(1)})`);
+          effect.setAttribute('class',`world-touch ${sceneWorld==='fantasy'?'fantasy-touch':'scifi-touch'}`);
+          if(sceneWorld==='fantasy'){
+            effect.innerHTML=Array.from({length:click?8:4},(_,i)=>{
+              const angle=i*Math.PI*2/(click?8:4),distance=click?22:15;
+              return `<g class="cursor-firefly" style="--dx:${(Math.cos(angle)*distance).toFixed(1)}px;--dy:${(Math.sin(angle)*distance).toFixed(1)}px;animation-delay:${i*.025}s"><circle r="4" fill="${i%2?'#d0f7b5':'#ffe69c'}" opacity=".15"/><circle r="1.2" fill="${i%2?'#e5ffc9':'#fff1b2'}"/></g>`;
+            }).join('');
+            layer=svg.querySelector('.forest-magic');
+          }else{
+            const radius=click?12:7;
+            effect.innerHTML=`<circle class="cursor-scan" r="${radius}" fill="none" stroke="#a1dcf3" stroke-width=".7"/><circle class="cursor-scan scan-echo" r="${radius*.6}" fill="none" stroke="#c1b4f1" stroke-width=".6"/><g class="cursor-stardust" fill="#d2edff"><path d="M-2 0h4M0-2v4" stroke="#e5f7ff" stroke-width=".8"/><rect x="-9" y="4" width="1.3" height="1.3"/><rect x="7" y="-6" width="1.3" height="1.3"/><rect x="11" y="6" width="1" height="1"/></g>`;
+            layer=svg.querySelector('.orbit-signal');
+          }
+        }
+        layer.append(effect);
+        effect.addEventListener('animationend',()=>effect.remove(),{once:true});
+        setTimeout(()=>effect.remove(),1800);
+      };
+      svg.addEventListener('pointermove',respond,{passive:true});
+      svg.addEventListener('pointerdown',respond,{passive:true});
     }
 
     if (opts.interactive && opts.onSelect) {
