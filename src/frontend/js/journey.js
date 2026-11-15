@@ -43,7 +43,13 @@
   }
 
   /* ---------- the curve ---------- */
-  const CONTROL = [[26, 204], [96, 178], [150, 124], [214, 150], [268, 104], [322, 126]];
+  // Three broad switchbacks give each chapter a proper stretch of trail
+  // without changing the landscape size or the reader's saved progress.
+  const CONTROL = [
+    [24, 208], [90, 190], [160, 204], [225, 183],
+    [164, 157], [80, 161], [54, 134],
+    [124, 114], [210, 128], [284, 104], [344, 120], [365, 94],
+  ];
 
   function catmullToBezier(pts) {
     const p = [pts[0], ...pts, pts[pts.length - 1]];
@@ -182,6 +188,144 @@
     return out;
   }
 
+  // Four-direction, three-frame sprite. The outer group owns position;
+  // the inner frames own limbs, so stepping never changes the world position.
+  function lanternSprite() {
+    let out='';
+    for(const direction of ['down','up','right','left'])for(let frame=0;frame<3;frame++){
+      const step=frame===1?-1:frame===2?1:0;
+      const side=direction==='left'||direction==='right';
+      out+=`<g class="explorer-frame" data-facing="${direction}" data-pose="${frame}"${direction==='left'?' transform="scale(-1 1)"':''}>`;
+      out+=`<path d="M-4 ${9+step}h3v4h-3zM1 ${9-step}h3v4H1z" fill="#665570"/><path d="M-5 ${12+step}h4v2h-4zM1 ${12-step}h4v2H1z" fill="#292840"/>`;
+      // A stepped cloak and oversized hood keep the silhouette readable at scene scale.
+      out+='<path d="M-3-1h6v3h2v5h2v3H-7V7h2V2h2z" fill="#415866"/><path d="M-3 0h6v3h2v5H-5V3h2z" fill="#88b7ac"/><path d="M-3-9h6v2h2v2h1v5H-6v-5h1v-2h2z" fill="#3b455e"/><path d="M-3-8h6v2h2v5H-5v-5h2z" fill="#a4c8b7"/>';
+      if(direction==='up'){
+        out+='<path d="M-2-6h4v6h-4z" fill="#7fa79f"/><path d="M-3 2h6v5h-6z" fill="#c5aa86"/><path d="M-2 2h4v1h-4z" fill="#e2c49d"/>';
+      }else if(side){
+        out+='<path d="M0-5h4v5H0zM3-3h2v2H3z" fill="#36364e"/><rect x="3" y="-4" width="1" height="2" fill="#ffe3a2"/><path d="M-4 0h8v2H-4zM-5 2h3v3h-3z" fill="#e4ab94"/><path d="M-1 3h3v3h-3z" fill="#b5d1bd"/>';
+      }else{
+        out+='<path d="M-3-5h6v5h-6z" fill="#36364e"/><path d="M-2-4h1v2h-1zM1-4h1v2H1z" fill="#ffe3a2"/><path d="M-4 0h8v2H-4zM-4 2h2v3h-2z" fill="#e4ab94"/><path d="M-3 3h2v4h-2z" fill="#ccba96"/>';
+      }
+      out+=`<g transform="translate(0 ${step})"><path d="M5 3h3v2H7V4H6v2H5z" fill="#e3d1a6"/><rect x="5" y="6" width="4" height="5" fill="#655063"/><rect x="6" y="7" width="2" height="3" fill="#ffe2a1"/><rect x="5" y="5" width="4" height="1" fill="#edc19a"/></g></g>`;
+    }
+    return out;
+  }
+
+  function fantasySprite(kind){
+    let out='';
+    const sage=kind==='sage',bard=kind==='bard';
+    const dark=sage?'#4c4269':bard?'#694559':'#4b566d';
+    const cloth=sage?'#aaa0cf':bard?'#b7778b':'#9cafc6';
+    for(const direction of ['down','up','right','left'])for(let frame=0;frame<3;frame++){
+      const step=frame===1?-1:frame===2?1:0,side=direction==='left'||direction==='right';
+      out+=`<g class="explorer-frame" data-facing="${direction}" data-pose="${frame}"${direction==='left'?' transform="scale(-1 1)"':''}>`;
+      out+=`<path d="M-4 ${8+step}h3v5h-3zM1 ${8-step}h3v5H1z" fill="${dark}"/><path d="M-5 ${12+step}h4v2h-4zM1 ${12-step}h4v2H1z" fill="#28283e"/>`;
+      out+=`<path d="M-3-1h6v2h2v5h1v4H-6V6h1V1h2z" fill="${dark}"/><path d="M-3 1h6v7h-6z" fill="${cloth}"/><path d="M-5 ${2+step}h2v4h-2zM3 ${2-step}h2v4H3z" fill="${sage||bard?'#efd0af':'#c4d0db'}"/>`;
+      if(direction!=='up')out+='<path d="M-3-6h6v6h-6z" fill="#efd0af"/>';
+      if(sage){
+        out+='<path d="M-2-11h3v3h2v3h2v2H-6v-2h2v-3h2z" fill="#776294"/><path d="M-6-4H6v2H-6z" fill="#b9a2ce"/>';
+        if(direction!=='up')out+=side?'<path d="M2-2h1v1H2zM1 0h3v4H1z" fill="#f4e7d0"/>':'<path d="M-2-2h1v1h-1zM1-2h1v1H1z" fill="#37344f"/><path d="M-3 0h6v2H2v2H0v1h-1V3h-2z" fill="#f4e7d0"/>';
+        out+=`<g transform="translate(0 ${step})"><path d="M7-5h2v18H7z" fill="#b7a088"/><path d="M6-9h4v2h1v3H5v-3h1z" fill="#bcb5ed"/><rect x="7" y="-8" width="2" height="3" fill="#f3e3bc"/></g>`;
+      }else if(bard){
+        out+='<path d="M-4-7h8v3H-4zM-6-4H6v2H-6z" fill="#8ba99d"/><path d="M2-9h3v2H3v3H1v-2h1z" fill="#f0c99c"/>';
+        if(direction!=='up')out+=side?'<rect x="2" y="-2" width="1" height="1" fill="#38304a"/>':'<path d="M-2-2h1v1h-1zM1-2h1v1H1z" fill="#38304a"/>';
+        out+='<path d="M-3 0h6v2h-6zM-4 2h2v3h-2z" fill="#ead0a3"/>';
+        out+=`<g transform="translate(0 ${step})"><path d="M7 1h2v5h1v4H4V6h3z" fill="#dcb082"/><rect x="6" y="7" width="2" height="2" fill="#624451"/><path d="M8 0h2v2H8z" fill="#f2ce9f"/></g>`;
+      }else{
+        out+='<path d="M-3-8h6v2h2v6H-5v-6h2z" fill="#9cafc6"/><path d="M-3-7h5v2h2v1h-7z" fill="#d5dde0"/>';
+        if(direction!=='up')out+=side?'<path d="M1-3h4v2H1z" fill="#30364d"/>':'<path d="M-3-3h6v2h-6z" fill="#30364d"/><path d="M-2-3v2M0-3v2M2-3v2" stroke="#b3b6c4" stroke-width="1"/>';
+        out+='<path d="M-1-10h3v3h-3zM1-10h3v1H1z" fill="#cf8e9a"/><path d="M-4 1h8v2h-8z" fill="#d4bea2"/>';
+        out+=`<g transform="translate(0 ${step})"><path d="M-8 3h5v6h-1v2h-3V9h-1z" fill="#586d8b"/><path d="M-7 4h3v4h-3z" fill="#e3cca0"/><path d="M7-4h2v10H7z" fill="#d9e2dc"/><path d="M5 5h6v2H5zM7 7h2v4H7z" fill="#e1bd8e"/></g>`;
+      }
+      if(direction==='up')out+=`<path d="M-3 0h6v8h-6z" fill="${dark}"/><path d="M-1 1h2v6h-2z" fill="${cloth}"/>`;
+      out+='</g>';
+    }
+    return out;
+  }
+
+  function spaceSprite(kind){
+    let out='';
+    for(const direction of ['down','up','right','left'])for(let frame=0;frame<3;frame++){
+      const step=frame===1?-1:frame===2?1:0,side=direction==='left'||direction==='right',back=direction==='up';
+      out+=`<g class="explorer-frame crew-${kind}" data-facing="${direction}" data-pose="${frame}"${direction==='left'?' transform="scale(-1 1)"':''}>`;
+      if(kind==='sentinel'){
+        out+=`<path d="M-6 ${7+step}h5v5h-5zM1 ${7-step}h5v5H1z" fill="#55718e"/><path d="M-7 ${12+step}h6v2h-6zM1 ${12-step}h6v2H1z" fill="#324561"/><path d="M-5-2H5V0h3v8H-8V0h3z" fill="#718eab"/><path d="M-9-1h5v5h-5zM4-1h5v5H4z" fill="#c8dbe3"/><path d="M-4-9h8v2h2v6H-6v-6h2z" fill="#a4bfce"/><path d="M-5-6H5v4H-5z" fill="#263e5b"/>`;
+        if(!back)out+=side?'<path d="M1-5h5v2H1z" fill="#f3c594"/>':'<path d="M-4-5h8v1h-8zM-1-4h2v3h-2z" fill="#f3c594"/><path d="M-4 2h8v3h-8z" fill="#b9d6db"/>';
+        else out+='<path d="M-4 0h8v6h-8z" fill="#354d6b"/><path d="M-3 1h6v1h-6zM-3 4h6v1h-6z" fill="#a6ccd4"/>';
+        out+=`<g transform="translate(0 ${step})"><path d="M5 4h7v4H5zM6 8h3v3H6z" fill="#3f5874"/><rect x="10" y="4" width="3" height="2" fill="#8ce3eb"/></g>`;
+      }else if(kind==='technomancer'){
+        out+=`<path d="M-3 ${8+step}h2v5h-2zM1 ${8-step}h2v5H1z" fill="#373c5e"/><path d="M-4 ${12+step}h3v2h-3zM1 ${12-step}h3v2H1z" fill="#c4b7e4"/><path d="M-3-2h6v3h2v7h2v4H2V5h-4v7h-5V8h2V1h2z" fill="#65567f"/><path d="M-2 0h4v8h-4z" fill="#a99acb"/><path d="M-4-8h7v7h-7z" fill="#e0c9d3"/><path d="M-5-8v-3h8v2h2v4H2v-3H0v3h-5z" fill="#c5b7ed"/>`;
+        if(!back)out+=side?'<path d="M2-5h2v1H2z" fill="#81e2e0"/>':'<path d="M-3-5h6v2h-6z" fill="#3c416b"/><rect x="-2" y="-5" width="2" height="1" fill="#92e2e5"/>';
+        else out+='<path d="M-4-7h7v5h-7z" fill="#9182b8"/><path d="M-2 0h4v6h-4z" fill="#423e65"/>';
+        out+=`<path d="M5 3h4v5H5z" fill="#8092b5"/><path d="M6 4h2v2H6z" fill="#b6f1eb"/><g transform="translate(0 ${step})"><path d="M8-9h2v2h2v2h-2v2H8v-2H6v-2h2z" fill="#b8e8eb"/><rect x="8" y="-7" width="2" height="2" fill="#f4e5b4"/></g>`;
+      }else if(kind==='pilot'){
+        out+=`<path d="M-4 ${7+step}h3v6h-3zM1 ${7-step}h3v6H1z" fill="#885368"/><path d="M-5 ${12+step}h4v2h-4zM1 ${12-step}h4v2H1z" fill="#ead0aa"/><path d="M-4-1h8v8h-8z" fill="#c8806c"/><path d="M-2 0h4v6h-4z" fill="#f2ca9e"/><path d="M-5-8h10v6H-5z" fill="#6e526e"/><path d="M-3-5h6v5h-6z" fill="#edc6a2"/><path d="M-5-8h9v2h-9zM-6-6h3v4h-3z" fill="#c1b9c8"/>`;
+        if(!back)out+=side?'<rect x="2" y="-4" width="1" height="1" fill="#30354f"/>':'<path d="M-3-5h6v2h-6z" fill="#516780"/><path d="M-2-5h2v1h-2z" fill="#b8e4e4"/>';
+        else out+='<path d="M-4-5h8v4h-8z" fill="#6e526e"/><path d="M-4 0h8v7h-8z" fill="#728da7"/>';
+        out+=`<path d="M-4 0h8v2h-8zM-5 1h-5v2h7v2h-2z" fill="#eee0b1"/><path d="M-7 2h3v6h-3z" fill="#69849d"/><path d="M-7 8h3v2h-3z" fill="#a9dcdf"/><g transform="translate(0 ${step})"><path d="M5 4h6v2H5zM6 6h2v3H6z" fill="#a0bbce"/></g>`;
+      }else{
+        out+=`<path d="M-3 ${8+step}h2v4h-2zM1 ${8-step}h2v4H1z" fill="#b9dbcf"/><path d="M-4 ${12+step}h3v2h-3zM1 ${12-step}h3v2H1z" fill="#78a59f"/><path d="M-3 1h6v7h-6z" fill="#c9e9df"/><path d="M-1 3h2v3h-2z" fill="#7ad8ce"/><path d="M-4-8h8v2h2v6H4v2h-8V0h-2v-6h2z" fill="#d9ebe4"/><path d="M-4-6h8v5h-8z" fill="#334c62"/><path d="M-5-12h2v5h-2zM3-11h2v4H3z" fill="#a0ccce"/>`;
+        if(!back)out+=side?'<path d="M2-5h2v2H2z" fill="#c5b9ef"/>':'<path d="M-3-5h2v2h-2zM1-5h2v2H1z" fill="#a6ece1"/><path d="M-1-2h2v1h-2z" fill="#a6ece1"/>';
+        else out+='<path d="M-3-5h6v3h-6z" fill="#8bb5ae"/><rect x="-1" y="-5" width="2" height="2" fill="#c8baef"/>';
+        out+=`<path d="M-5 ${3+step}h2v5h-2zM3 ${3-step}h2v5H3z" fill="#8bb9b2"/><path d="M-3 7h-5v-3h-2v5h7z" fill="#8cb7bb"/><rect x="-10" y="3" width="2" height="2" fill="#d5c0ef"/>`;
+      }
+      out+='</g>';
+    }
+    return out;
+  }
+  let fantasyCharacter='lantern',world='fantasy';
+  try{const saved=global.localStorage?.getItem('ttl.character');if(global.Characters.forWorld('fantasy').some(c=>c.id===saved))fantasyCharacter=saved;else if(saved==='reader')global.localStorage.setItem('ttl.character','lantern');}catch{}
+  let character=fantasyCharacter;
+  const bookWorld=book=>global.Characters.normalizeWorld(book?.world);
+  const characterForBook=book=>global.Characters.get(book?.companions?.[bookWorld(book)]||(bookWorld(book)==='fantasy'?fantasyCharacter:bookWorld(book)==='pirates'?'captain':'sentinel'),bookWorld(book)).id;
+  function useBook(book){world=bookWorld(book);character=characterForBook(book);}
+  const getWorld=()=>world;
+  const getCharacter=()=>character;
+  const getCharacters=(selectedWorld=world)=>global.Characters.forWorld(selectedWorld);
+  const getCharacterInfo=(value=character)=>global.Characters.get(value,world);
+  function setCharacter(value){
+    if(!global.Characters.forWorld(world).some(c=>c.id===value))return;
+    character=value;
+    if(world==='fantasy'){fantasyCharacter=value;try{global.localStorage?.setItem('ttl.character',value);}catch{}}
+  }
+  const characterSprite=value=>['captain','navigator','deckhand','sea-witch'].includes(value)?global.PirateWorld.sprite(value):['sentinel','technomancer','pilot','android'].includes(value)?spaceSprite(value):['sage','bard','knight'].includes(value)?fantasySprite(value):lanternSprite();
+
+  function walkingSteps(from, to) {
+    const first=pointAt(from), last=pointAt(to), points=[{x:first.x,y:first.y,direction:'down'}];
+    const count=Math.max(1,Math.ceil(Math.abs(to-from)*SAMPLES.length/6));
+    let x=first.x,y=first.y;
+    for(let i=1;i<=count;i++){
+      const pt=pointAt(from+(to-from)*i/count);
+      const targetX=i===count?last.x:Math.round(pt.x/4)*4;
+      const targetY=i===count?last.y:Math.round(pt.y/4)*4;
+      // Complete one axis before turning, like a classic tile-based overworld.
+      if(Math.abs(targetX-x)>.01){points.push({x:targetX,y,direction:targetX>x?'right':'left'});x=targetX;}
+      if(Math.abs(targetY-y)>.01){points.push({x,y:targetY,direction:targetY>y?'down':'up'});y=targetY;}
+    }
+    return points;
+  }
+  const walkDuration = (total,from,to) => (walkingSteps(from/total,to/total).length-1)*85;
+
+  function scenery(p, completed, marks, traveler) {
+    let out = '<g aria-hidden="true" class="landscape-details">';
+    // Distant clouds use the same square grid and palette as the original sky.
+    [[120,46,1],[278,30,.75]].forEach(([x,y,scale],i) => {
+      out += `<g class="drifting-cloud cloud-${i}" opacity="${.08+p*.12}" transform="translate(${x} ${y}) scale(${scale})"><path d="M0 8h8V4h12V0h16v4h12v4h8v8H0z" fill="#f7d1c2"/></g>`;
+    });
+    [[12,218,1],[71,227,.8],[116,204,.8],[197,218,1.1],[246,199,.7],[365,206,1.2],[388,225,.8]].forEach(([x,y,scale])=>{
+      out += `<g transform="translate(${x} ${y}) scale(${scale})"><path d="M-1 0h3v17h-3z" fill="${mix('#171630','#77535e',p*.65)}"/><path d="M-2-13h4v5h4v5h4v5h4v5h-28V2h4v-5h4v-5h4z" fill="${mix('#11152e','#4d5866',p*.8)}"/><path d="M-2-8h4v5h4v5h-12v-5h4z" fill="${mix('#202044','#7b7b77',p*.6)}"/></g>`;
+    });
+    marks.slice(0,completed).forEach((pt,i)=>{
+      const x=Math.round(pt.x/2)*2+7,y=Math.round(pt.y/2)*2+12;
+      out += `<g class="trail-flower" style="animation-delay:${i*.05}s"><path d="M${x} ${y}v6h2v-6z" fill="#91a795"/><path d="M${x-2} ${y-2}h6v2h-6zM${x} ${y-4}h2v6h-2z" fill="${i%2?'#c0b5ed':'#f2be9b'}"/><rect x="${x}" y="${y-2}" width="2" height="2" fill="#ffe3a0"/></g>`;
+    });
+    const campX=Math.min(355,traveler.x+22),campY=Math.min(226,traveler.y+22);
+    if(p<1)out += `<g class="little-camp" transform="translate(${campX.toFixed(1)} ${campY.toFixed(1)})"><path d="M-9 0v-4h3v-4h3v-4h6v4h3v4h3v4z" fill="#aa8395"/><path d="M-3 0v-4h2v-4h2v4h2v4z" fill="#26213c"/><path d="M-10 0h20v2h-20z" fill="#dab2a0"/><rect x="15" y="-2" width="6" height="2" fill="#826271"/><path class="camp-ember" d="M17-8h2v2h2v4h-6v-4h2z" fill="#ffcf89"/></g>`;
+    if(p<.85){for(let i=0;i<9;i++){const x=38+(i*47)%315,y=148+(i*19)%73;out+=`<rect class="firefly" style="animation-delay:${i*.43}s" x="${x}" y="${y}" width="1.5" height="1.5" fill="#ffe2a2"/>`;}}
+    if(p>=.8)out += '<g class="morning-birds" fill="none" stroke="#65516c" stroke-width="1.5"><path d="M230 54h3v2h3v-2h3M249 45h3v2h3v-2h3M265 58h3v2h3v-2h3"/></g>';
+    return out+'</g>';
+  }
+
   /* ---------- main render ---------- */
   function render(container, opts) {
     const total = Math.max(1, opts.total | 0);
@@ -189,12 +333,15 @@
     const done = completed >= total;
     const p = completed / total;
     const id = 'j' + ++uidCounter;
-    const { top, bottom } = sky(p);
-    const marks = markerPositions(total);
+    const sceneWorld=opts.world?global.Characters.normalizeWorld(opts.world):world;
+    const sceneSky=sceneWorld==='scifi'?global.SpaceWorld.palette:sceneWorld==='pirates'?global.PirateWorld.palette:sky;
+    const { top, bottom } = sceneSky(p);
+    const marks = Array.from({length:total}, (_,i) => pointAt((i+1)/total));
+    const traveler = pointAt(p);
     const curIdx = done ? total - 1 : completed;
-    const litPos = done ? 1 : total === 1 ? 0 : curIdx / (total - 1);
+    const litPos = p;
     const litLen = litPos * SAMPLES.length;
-    const radius = total > 40 ? 3 : total > 24 ? 3.6 : 4.6;
+    const radius = sceneWorld==='pirates'?2.4:total > 40 ? 3 : total > 24 ? 3.6 : 4.6;
 
     let m = '';
     marks.forEach((pt, i) => {
@@ -202,7 +349,7 @@
       const isCur = i === curIdx && !done;
       const sel = opts.selected === i;
       const cls = isCur ? 'mk cur' : isDone ? 'mk done' : 'mk todo';
-      const r = isCur ? radius + 2.6 : radius;
+      const r = isCur ? radius + (sceneWorld==='pirates'?1:2.6) : radius;
       m += `<g class="${cls}${sel ? ' sel' : ''}" data-i="${i}" transform="translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})">`;
       if (isDone || isCur) m += `<circle class="halo" r="${r + 5}"/>`;
       if (isCur) m += `<circle class="pulse" r="${r + 2}"/>`;
@@ -212,8 +359,9 @@
       m += '</g>';
     });
 
+    const focalMarkup=`<g data-sun>${sceneWorld==='scifi'?global.SpaceWorld.moon(p,opts.animateSun,done):sceneWorld==='pirates'?global.PirateWorld.horizon(p,opts.animateSun,done):sun(p,opts.animateSun,done).replace('url(#GL)',`url(#${id}G)`)}</g>`;
     container.innerHTML = `
-<svg class="journey${done ? ' is-complete' : ''}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img"
+<svg data-world="${sceneWorld}" class="journey${done ? ' is-complete' : ''}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="${opts.interactive ? 'group' : 'img'}"
      aria-label="${Services.esc(opts.label || `Progress: ${completed} of ${total} chapters`)}" shape-rendering="crispEdges">
   <defs>
     <linearGradient id="${id}S" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${top}"/><stop offset="1" stop-color="${bottom}"/></linearGradient>
@@ -221,24 +369,64 @@
     <linearGradient id="${id}P" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9aa6ff"/><stop offset=".55" stop-color="#ffb98a"/><stop offset="1" stop-color="#ffe08a"/></linearGradient>
   </defs>
   <rect width="${W}" height="${H}" fill="url(#${id}S)"/>
-  ${stars(p)}${moon(p)}
-  ${sun(p, opts.animateSun, done).replace('url(#GL)', `url(#${id}G)`)}
-  ${hills(p, bottom)}
+  ${stars(sceneWorld==='scifi'||sceneWorld==='pirates'?p*.25:p)}${sceneWorld==='scifi'?global.SpaceWorld.orbit():sceneWorld==='pirates'?global.PirateWorld.orbit():moon(p)}
+  ${sceneWorld==='pirates'?'':focalMarkup}
+  ${sceneWorld==='scifi'?global.SpaceWorld.terrain(p):sceneWorld==='pirates'?global.PirateWorld.terrain(p):hills(p, bottom)}
+  ${sceneWorld==='pirates'?focalMarkup:''}
   <g class="trail" shape-rendering="geometricPrecision" fill="none" stroke-linecap="round">
     <path d="${PATH_D}" class="trail-base" stroke-width="3"/>
     <path d="${PATH_D}" class="trail-lit-glow" stroke="url(#${id}P)" stroke-width="8" opacity=".22" pathLength="${SAMPLES.length.toFixed(2)}" stroke-dasharray="0 ${SAMPLES.length.toFixed(2)}" data-lit="${litLen.toFixed(2)}"/>
     <path d="${PATH_D}" class="trail-lit" stroke="url(#${id}P)" stroke-width="3" pathLength="${SAMPLES.length.toFixed(2)}" stroke-dasharray="0 ${SAMPLES.length.toFixed(2)}" data-lit="${litLen.toFixed(2)}"/>
   </g>
+  ${sceneWorld==='scifi'?global.SpaceWorld.scenery(p,completed,marks,traveler):sceneWorld==='pirates'?global.PirateWorld.scenery(p,completed,marks,traveler):scenery(p, completed, marks, traveler)}
   <g class="markers" shape-rendering="geometricPrecision">${m}</g>
+  <g class="landscape-explorer" data-direction="down" data-frame="0" style="pointer-events:none" transform="translate(${traveler.x.toFixed(1)} ${(traveler.y-15).toFixed(1)})" shape-rendering="crispEdges" aria-hidden="true">
+    ${sceneWorld==='pirates'?global.PirateWorld.boat(characterSprite(opts.character||character)):`<ellipse cx="0" cy="15" rx="5" ry="2" fill="#080b26" opacity=".5"/>${characterSprite(opts.character||character)}`}
+  </g>
 </svg>`;
 
     const svg = container.firstElementChild;
-    // Animate the lit portion of the trail growing to the reader's position.
-    requestAnimationFrame(() => {
-      svg.querySelectorAll('[data-lit]').forEach((el) => {
-        el.style.strokeDasharray = `${el.dataset.lit} ${SAMPLES.length.toFixed(2)}`;
-      });
-    });
+    const reduced = global.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const previous = Number.isFinite(opts.previousCompleted) ? Math.max(0, Math.min(total, opts.previousCompleted))/total : p;
+    const moving = previous !== p && !reduced;
+    const walker = svg.querySelector('.landscape-explorer');
+    const sunGroup = svg.querySelector('[data-sun]');
+    const skyStops = svg.querySelectorAll(`#${id}S stop`);
+    const sunY = value => sceneWorld==='pirates'?global.PirateWorld.focalY(value):232-120*(value*value*(3-2*value));
+    function paintProgress(value, position) {
+      const pt = position || pointAt(value), palette=sceneSky(value);
+      if(sceneWorld==='pirates')global.PirateWorld.setLight(svg,value);
+      walker.setAttribute('transform',`translate(${pt.x.toFixed(1)} ${(pt.y-15).toFixed(1)})`);
+      sunGroup.setAttribute('transform',`translate(0 ${(sunY(value)-sunY(p)).toFixed(1)})`);
+      skyStops[0].setAttribute('stop-color', palette.top);
+      skyStops[1].setAttribute('stop-color', palette.bottom);
+      svg.querySelectorAll('[data-lit]').forEach(el => {el.style.strokeDasharray=`${value*SAMPLES.length} ${SAMPLES.length}`;});
+    }
+    if(moving){
+      paintProgress(previous);
+      walker.classList.add('walking');
+      svg.classList.add('journey-moving');
+      const steps=walkingSteps(previous,p), duration=(steps.length-1)*85;
+      let started;
+      const frame = now => {
+        if(!svg.isConnected)return;
+        if(started===undefined)started=now;
+        const elapsed=now-started;
+        const index=Math.min(steps.length-1,Math.floor(elapsed/85));
+        const step=steps[index], t=duration?Math.min(1,elapsed/duration):1;
+        paintProgress(previous+(p-previous)*t,step);
+        walker.setAttribute('data-direction',t===1?'down':step.direction);
+        walker.setAttribute('data-frame',sceneWorld==='pirates'||t===1?'0':String(index%2+1));
+        if(t<1)requestAnimationFrame(frame);
+        else{walker.classList.remove('walking');svg.classList.remove('journey-moving');opts.onArrival?.();}
+      };
+      requestAnimationFrame(frame);
+    }else{
+      paintProgress(p);
+      walker.setAttribute('data-direction','down');
+      walker.setAttribute('data-frame','0');
+      if(opts.onArrival)requestAnimationFrame(()=>{if(svg.isConnected)opts.onArrival();});
+    }
 
     if (opts.interactive && opts.onSelect) {
       const pick = (el) => {
@@ -256,5 +444,5 @@
     return svg;
   }
 
-  global.Journey = { render, markerPositions, pointAt, PATH_D };
+  global.Journey = { render, markerPositions, pointAt, walkingSteps, walkDuration, useBook, getWorld, characterForBook, getCharacter, getCharacters, getCharacterInfo, setCharacter, characterSprite, PATH_D };
 })(window);

@@ -101,7 +101,13 @@
       history: history(27, 9, 9, 1),
     };
 
-    return [fivePeople, piranesi, dune, littlePrince];
+    const lanternRoad = {
+      id:'lantern-road', title:'The Lantern Road', author:'BookQuest Originals',
+      recap:'Mira carries a small ember through a sleeping world, learning that light is something to share.',
+      chapters:BossFixtures.map(c=>({n:c.n,title:c.title})), completed:0,
+      lastActivity:ago(0), notes:[], history:[],
+    };
+    return [lanternRoad, fivePeople, piranesi, dune, littlePrince];
   }
 
   global.Seed = { books };

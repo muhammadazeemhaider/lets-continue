@@ -1,0 +1,7 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');const C=require('../js/characters');
+test('fantasy roster has twelve unique identities and thirty-six distinct moves',()=>{assert.equal(C.roster.length,12);assert.equal(new Set(C.roster.map(c=>c.id)).size,12);const moves=C.roster.flatMap(c=>c.attacks);assert.equal(moves.length,36);assert.equal(new Set(moves.map(a=>a.id)).size,36);assert.equal(new Set(moves.map(a=>a.name)).size,36);assert.equal(new Set(moves.map(a=>a.effect)).size,36);for(const hero of C.roster){assert.equal(hero.attacks.length,3);assert.equal(new Set(hero.attacks.map(a=>a.effect)).size,3);assert.ok(hero.role&&hero.focus&&hero.accent);for(const attack of hero.attacks)assert.ok(attack.effect&&attack.line&&attack.symbol);}});
+test('unknown identities safely fall back to the existing lantern keeper',()=>{assert.equal(C.get('missing').id,'lantern');assert.equal(C.get(null).id,'lantern');});
+
+test("removed reader falls back to the lantern keeper",()=>{assert.ok(!C.roster.some(c=>c.id==='reader'));assert.equal(C.get('reader').id,'lantern');});
+
+test('each world has its own four-person roster and twelve unique attacks',()=>{for(const world of ['fantasy','scifi','pirates']){const crew=C.forWorld(world);assert.equal(crew.length,4);assert.ok(crew.every(c=>c.world===world));assert.equal(new Set(crew.flatMap(c=>c.attacks.map(a=>a.effect))).size,12);}assert.equal(C.get('sage','scifi').id,'sentinel');assert.equal(C.get('pilot','fantasy').id,'lantern');});

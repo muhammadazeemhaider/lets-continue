@@ -15,6 +15,8 @@
       /* storage unavailable: fall through to seed */
     }
     if (!state || !Array.isArray(state.books)) state = { books: Seed.books() };
+    if (!state.books.some(b=>b.id==='lantern-road')) state.books.push(Seed.books().find(b=>b.id==='lantern-road'));
+    state.books.forEach(b=>{b.furthestCompleted=Math.max(b.completed,Number.isInteger(b.furthestCompleted)?Math.min(b.chapters.length,Math.max(0,b.furthestCompleted)):0);});
     return state;
   }
 
@@ -104,6 +106,7 @@
     completed = Math.max(0, Math.min(total, Math.round(completed)));
     const at = new Date().toISOString();
     b.completed = completed;
+    b.furthestCompleted = Math.max(b.furthestCompleted || 0, was, completed);
     b.lastActivity = at;
     const text = (noteText || '').trim();
     b.history.push({ id: uid(), at, type: 'checkpoint', chapter: completed, completedAfter: completed, text });
@@ -112,10 +115,50 @@
     return { was, now: completed, justFinished: was < total && completed >= total };
   }
 
+  function setBookWorld(id,world){
+    const book=getBook(id);if(!book||!['fantasy','scifi','pirates'].includes(world))return false;
+    book.world=world;save();return true;
+  }
+  function setBookCompanion(id,character){
+    const book=getBook(id);if(!book)return false;
+    const world=['scifi','pirates'].includes(book.world)?book.world:'fantasy';
+    if(!global.Characters?.forWorld(world).some(c=>c.id===character))return false;
+    book.companions={...(book.companions||{}),[world]:character};save();return true;
+  }
+
+  function canAccessChapter(book,n){
+    return Boolean(book)&&Number.isInteger(n)&&n>=1&&n<=book.chapters.length&&n<=Math.max(book.completed,book.furthestCompleted||0)+1;
+  }
+  function canChallengeChapter(book,n){
+    return canAccessChapter(book,n)&&n<=Math.max(book.completed,book.furthestCompleted||0);
+  }
+  function startFromChapter(bookId,n){
+    const book=getBook(bookId);
+    if(!canAccessChapter(book,n))return null;
+    const result=addCheckpoint(bookId,n-1,'');
+    book.history[book.history.length-1].text=`Continuing from chapter ${n}.`;
+    save();
+    return result;
+  }
+  function resetBookProgress(bookId){
+    const book=getBook(bookId);
+    if(!book)return null;
+    const was=book.completed;
+    global.BossBattle?.resetBook(bookId);
+    book.completed=0;
+    book.furthestCompleted=0;
+    const at=new Date().toISOString();
+    book.history.push({id:uid(),at,type:'checkpoint',chapter:0,completedAfter:0,text:'Book progress reset.'});
+    book.lastActivity=at;
+    save();
+    return {was,now:0};
+  }
+
   function reset() {
+    global.BossBattle?.reset();
     state = { books: Seed.books() };
     save();
   }
 
-  global.Store = { books, getBook, derive, bookStreak, readerStreak, relativeTime, addNote, addCheckpoint, reset, PAUSED_AFTER_DAYS };
+  global.Store = { books, getBook, derive, bookStreak, readerStreak, relativeTime, addNote, addCheckpoint, setBookWorld, setBookCompanion, canAccessChapter, canChallengeChapter, startFromChapter, resetBookProgress, reset, PAUSED_AFTER_DAYS };
 })(window);
