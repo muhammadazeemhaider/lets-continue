@@ -8,7 +8,9 @@ CREATE TABLE IF NOT EXISTS users (
     email                 TEXT    UNIQUE,
     notifications_enabled INTEGER NOT NULL DEFAULT 1,  -- 0/1
     paused_after_days     INTEGER NOT NULL DEFAULT 14, -- when a book counts as "waiting"
-    created_at            TEXT    NOT NULL
+    created_at            TEXT    NOT NULL,
+    token_hash            TEXT,                        -- SHA-256 of the device's private key (sign-up)
+    signed_up_at          TEXT                         -- NULL until the reader completes sign-up
 );
 
 CREATE TABLE IF NOT EXISTS books (

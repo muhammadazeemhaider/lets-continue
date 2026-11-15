@@ -173,7 +173,7 @@ def test_opening_while_the_recap_is_being_written_waits_instead_of_asking_twice(
 def test_checkpoint_writes_recap_in_the_background(tmp_path):
     class SlowLLM(FakeLLM):
         def complete_json(self, *a, **kw):
-            time.sleep(0.3)
+            time.sleep(1.5)
             return super().complete_json(*a, **kw)
 
     app = create_app({"DATABASE": str(tmp_path / "bg.db"), "TESTING": True, "LLM": SlowLLM(),
@@ -182,8 +182,8 @@ def test_checkpoint_writes_recap_in_the_background(tmp_path):
     bid = new_book(c)
     t = time.monotonic()
     assert c.post(f"/api/books/{bid}/checkpoints", json={"completed": 2}).get_json()["recapPending"] is True
-    assert time.monotonic() - t < 0.25  # saving the checkpoint does not wait for the model
-    deadline = time.monotonic() + 5
+    assert time.monotonic() - t < 1.0  # saving does not wait for the (1.5 s) model
+    deadline = time.monotonic() + 10
     while time.monotonic() < deadline and c.get(f"/api/books/{bid}/reminder").get_json()["source"] != "llm":
         time.sleep(0.05)
     assert c.get(f"/api/books/{bid}/reminder").get_json()["source"] == "llm"

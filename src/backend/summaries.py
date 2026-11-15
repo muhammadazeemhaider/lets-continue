@@ -224,11 +224,13 @@ def warm_recaps(con, llm, limit: int = 3) -> int:
         return 0
     made = 0
     rows = con.execute(
-        """SELECT b.id FROM books b JOIN users u ON u.id = b.user_id
+        """SELECT b.id, b.last_activity FROM books b JOIN users u ON u.id = b.user_id
            WHERE b.completed < (SELECT COUNT(*) FROM chapters c WHERE c.book_id = b.id)
-             AND julianday('now') - julianday(b.last_activity) >= 2
            ORDER BY b.last_activity ASC"""
     ).fetchall()
+    now = datetime.now(timezone.utc)
+    # Waiting = no reading for 2+ days (computed here: SQLite and Postgres date functions differ).
+    rows = [r for r in rows if (now - datetime.fromisoformat(r["last_activity"])).total_seconds() >= 2 * 86400]
     for r in rows:
         if made >= limit:
             break

@@ -1,10 +1,10 @@
 """Starter data: The Fellowship of the Ring and Dune (Book One). Chapters and summaries come from
 the curated catalogue; everything else the reader adds through the catalogue search."""
-import sqlite3
+
 from datetime import datetime, timedelta, timezone
 
 from catalog_seed import CURATED
-from db import init_db
+from db import connect, init_db
 
 NOW = datetime.now(timezone.utc)
 _CATALOG = {b["slug"]: b for b in CURATED}
@@ -40,8 +40,7 @@ BOOKS = [
 
 def run(db_path: str, reset: bool = False) -> int:
     init_db(db_path)
-    con = sqlite3.connect(db_path)
-    con.execute("PRAGMA foreign_keys = ON")
+    con = connect(db_path)  # SQLite file or Postgres URL
     if reset:
         con.execute("DELETE FROM books")
     user = con.execute("SELECT id FROM users ORDER BY id LIMIT 1").fetchone()

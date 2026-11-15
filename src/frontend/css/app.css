@@ -238,3 +238,12 @@ textarea { resize: vertical; min-height: 80px; font-family: var(--font-serif); }
 .catalog-status { margin: -6px 0 12px; min-height: 1.2em; }
 .catalog-status.loading { animation: breathe 1.6s ease-in-out infinite; }
 .field .count { color: var(--gold); font-weight: 700; }
+
+/* ---------- sign-up ---------- */
+.signup-brand { justify-content: center; margin: 26px auto 18px; }
+.signup-card { position: static; margin: 8px auto 0; width: min(100%, 460px); border-radius: 22px; animation: none; }
+.signup-card h2 { margin-bottom: 4px; }
+.signup-card .field small.hint { font-weight: 400; margin: 2px 0 0; }
+.signup-card .actions .btn { width: 100%; }
+.quest-greeting { margin: 0 0 10px; font: italic 600 1.05rem var(--font-serif); color: #ffe2bd; }
+.quest-greeting b { color: var(--gold); font-style: normal; }

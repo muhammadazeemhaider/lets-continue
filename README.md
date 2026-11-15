@@ -344,3 +344,59 @@ Every chapter's boss fight uses **3 questions from the catalogue** automatically
 **The AI writer** runs in the background scheduler within a daily budget (`QUESTION_REQUESTS_PER_DAY`, default 35, leaving room for recaps and reminders on a free key; `QUESTION_REQUESTS_PER_PASS`, default 3). It works on the chapters readers are about to fight first. A chapter it fails twice is skipped. To run it by hand: `python -m flask --app app questions --requests 5`.
 
 Rebuilding the bundled questions: `python tools/build_questions.py`. It downloads each book's text once into the git-ignored `data/texts/` cache. API: `GET /api/books/<id>/chapters/<n>/questions` returns `{available, source, model, questions[]}`.
+
+## Hosted database (Tiger Data) and sign-up
+
+
+
+The backend runs on **SQLite** locally and on **PostgreSQL** in production. Tiger Data (Tiger Cloud, the company behind TimescaleDB) is hosted Postgres. Setting `DATABASE_URL` switches it over; no other change is needed.
+
+
+
+**Set up Tiger Data**
+
+
+
+1. Create a free service at https://console.cloud.timescale.com and copy its **Service URL**, which looks like `postgres://tsdbadmin:<password>@<id>.tsdb.cloud.timescale.com:<port>/tsdb?sslmode=require`.
+
+2. Put it in `src/backend/.env` (git-ignored): `DATABASE_URL=postgres://...`
+
+3. Install the driver: `pip install -r src/backend/requirements.txt` (adds `psycopg`).
+
+4. Move your existing local data across, keeping all ids and links:
+
+   ```
+
+   cd src/backend
+
+   python tools/migrate_to_postgres.py          # refuses if the target already has data; --replace to overwrite
+
+   ```
+
+5. Start the backend as usual. Tables, the catalogue and the boss questions are created automatically on first start.
+
+
+
+`db.py` keeps the app's SQL portable: `?` placeholders, `cur.lastrowid` (via `RETURNING id`) and `row["col"]` work on both engines. The whole test suite runs against Postgres with `TEST_POSTGRES_URL=postgresql://... python -m pytest`, and all tests pass on both engines.
+
+
+
+**Sign-up and accounts**
+
+
+
+- **First visit:** the app asks *What's your name?*, *What should we call you?* (filled in with your first name until you change it) and an optional email. These are saved to your profile and can be edited later under the gear icon.
+
+- **Greeting:** the dashboard greets returning readers by preferred name ("Welcome back, Azeem"), and so do "Where was I?" reminders and notifications.
+
+- **Device key:** sign-up gives the device a private key, sent as `Authorization: Bearer <key>`. Only its SHA-256 hash is stored. Every reader sees only their own books. The catalogue and health check are public.
+
+- **Existing data:** the first sign-up takes over the profile that existed before accounts, so existing books and progress are kept.
+
+- **Single-user mode:** `AUTH_REQUIRED=0` keeps the old single-user behaviour (handy for local experiments; tests use it by default).
+
+- **Not yet supported:** signing in on a second device. That needs email sign-in, which is planned. Until then, each device that signs up is a separate reader.
+
+
+
+API: `POST /api/signup {name, preferredName, email?}` returns `{token, user}`. `GET /api/user` now includes `signedUp`.
