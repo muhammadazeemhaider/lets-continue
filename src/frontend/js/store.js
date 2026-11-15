@@ -113,7 +113,7 @@
     const res = await api(`/api/books/${bookId}/checkpoints`, { method: 'POST', body: { completed, note: note || '' } });
     upsert(res);
     await refreshStreak();
-    return { was, now: res.completed, justFinished: res.justFinished };
+    return { was, now: res.completed, justFinished: res.justFinished, recapPending: !!res.recapPending };
   }
 
   async function createBook(payload) {

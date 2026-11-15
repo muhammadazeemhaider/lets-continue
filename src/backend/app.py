@@ -71,6 +71,35 @@ def create_app(config: dict | None = None) -> Flask:
     return app
 
 
+def schedule_recap(app: Flask, book_id: int) -> bool:
+    """Right after a checkpoint, write the "Where was I?" recap for the new position in the background,
+    so it is ready (and identical) whenever the reader comes back. Returns True if a job was started."""
+    client = app.config["LLM"]
+    if client is None:
+        return False
+    check = db.connect(app.config["DATABASE"])
+    try:
+        if not summaries.should_write_recap(check, book_id) or summaries.cached_recap(check, book_id):
+            return False
+    finally:
+        check.close()
+
+    def work():
+        con = db.connect(app.config["DATABASE"])
+        try:
+            summaries.get_recap(con, book_id, client)
+        except Exception:
+            app.logger.exception("Background recap for book %s failed", book_id)
+        finally:
+            con.close()
+
+    if app.config.get("LLM_ASYNC", True):
+        threading.Thread(target=work, name=f"recap-{book_id}", daemon=True).start()
+    else:  # tests: run inline so results are deterministic
+        work()
+    return True
+
+
 def llm_writer(app: Flask):
     """Notification copywriter backed by the LLM, or None for template copy."""
     client = app.config["LLM"]
@@ -365,6 +394,7 @@ def register_routes(app: Flask) -> None:
         con.commit()
         result = book_json(own_book(book_id))
         result["justFinished"] = book["completed"] < total and completed >= total
+        result["recapPending"] = schedule_recap(app, book_id)
         return jsonify(result), 201
 
     # ---- notes
@@ -413,8 +443,9 @@ def register_routes(app: Flask) -> None:
 
     @app.get("/api/books/<int:book_id>/reminder")
     def reminder(book_id):
-        """Fast: template text plus the cached LLM recap if one exists. When `llmPending` is true the
-        client can POST /recap to have one written (slower) and swap it in."""
+        """Fast: the recap saved for the reader's current position (written when they saved the checkpoint),
+        or template text. When `llmPending` is true the client can POST /recap, which waits for the
+        background job (or writes the recap itself) and returns the saved text."""
         book, u, con = own_book(book_id), current_user(), db.get_db()
         story = summaries.cached_recap(con, book_id)
         chapters = con.execute("SELECT number, title FROM chapters WHERE book_id = ? ORDER BY number", (book_id,)).fetchall()
@@ -442,7 +473,7 @@ def register_routes(app: Flask) -> None:
             isPaused=done < len(chapters) and days_away >= u["paused_after_days"],
             source="llm" if story else "template",
             model=story["model"] if story else None,
-            llmPending=story is None and app.config["LLM"] is not None,
+            llmPending=story is None and app.config["LLM"] is not None and done > 0,
         )
 
     @app.post("/api/books/<int:book_id>/recap")

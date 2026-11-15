@@ -1,6 +1,8 @@
 """LLM recaps and notification copy: spoiler-safe prompts, caching, fallbacks, and the OpenRouter client."""
 import json
 import sys
+import threading
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -38,16 +40,21 @@ class FakeLLM:
 def make(tmp_path):
     def _make(fake=None):
         app = create_app({"DATABASE": str(tmp_path / "l.db"), "TESTING": True, "LLM": fake,
+                          "LLM_ASYNC": False,  # write checkpoint recaps inline so tests are deterministic
                           "PUSH_SENDER": lambda info, payload: "sent"})
         return app, app.test_client()
     return _make
 
 
+def new_book(c):
+    return c.post("/api/books", json={"title": "The Five People You Meet in Heaven", "author": "Mitch Albom",
+                                      "chapters": CHAPTERS}).get_json()["id"]
+
+
 def add_book(c, completed=3, note=None):
-    b = c.post("/api/books", json={"title": "The Five People You Meet in Heaven", "author": "Mitch Albom",
-                                   "chapters": CHAPTERS}).get_json()
-    c.post(f"/api/books/{b['id']}/checkpoints", json={"completed": completed, "note": note or ""})
-    return b["id"]
+    bid = new_book(c)
+    c.post(f"/api/books/{bid}/checkpoints", json={"completed": completed, "note": note or ""})
+    return bid
 
 
 def age(app, book_id, days):
@@ -74,15 +81,15 @@ def test_prompt_only_contains_chapters_already_read(make):
 def test_personal_notes_are_labelled_and_placeholder_name_is_not_used(make):
     fake = FakeLLM()
     app, c = make(fake)
-    bid = add_book(c, completed=3)
+    bid = new_book(c)
     c.post(f"/api/books/{bid}/notes", json={"text": "Recommended by Dad. Read it slowly."})  # general note
     c.post(f"/api/books/{bid}/notes", json={"text": "no random acts", "chapter": 3})
-    c.post(f"/api/books/{bid}/recap")
+    c.post(f"/api/books/{bid}/checkpoints", json={"completed": 3})
     prompt = fake.calls[-1]["user"]
     assert "(about the reader) Recommended by Dad" in prompt and "(story note, ch. 3) no random acts" in prompt
     assert "do not address them by name" in prompt  # default name "Reader" is a placeholder
     c.put("/api/user", json={"preferredName": "Azeem"})
-    c.post(f"/api/books/{bid}/recap")  # name is part of the cache key -> regenerated
+    c.post(f"/api/books/{bid}/checkpoints", json={"completed": 4})  # the next chapter's recap uses the name
     assert "Reader's name: Azeem." in fake.calls[-1]["user"]
 
 
@@ -101,29 +108,85 @@ def test_empty_reply_reports_finish_reason():
 
 
 # ------------------------------------------------------------------ recap endpoint + cache
-def test_reminder_is_fast_and_flags_pending_then_uses_cache(make):
+def test_recap_is_written_at_checkpoint_and_shown_the_same_every_time(make):
     fake = FakeLLM()
     app, c = make(fake)
-    bid = add_book(c)
-    r = c.get(f"/api/books/{bid}/reminder").get_json()
-    assert r["source"] == "template" and r["llmPending"] is True and fake.calls == []  # GET never calls the LLM
-    w = c.post(f"/api/books/{bid}/recap").get_json()
-    assert w == {"source": "llm", "recap": fake.reply["recap"], "nudge": fake.reply["nudge"], "model": "fake/model:free"}
-    r = c.get(f"/api/books/{bid}/reminder").get_json()
-    assert r["source"] == "llm" and r["recap"] == fake.reply["recap"] and r["llmPending"] is False
-    c.post(f"/api/books/{bid}/recap")
-    assert len(fake.calls) == 1  # cached: no second request
+    bid = new_book(c)
+    r = c.post(f"/api/books/{bid}/checkpoints", json={"completed": 3}).get_json()
+    assert r["recapPending"] is True and len(fake.calls) == 1  # written when the chapter is marked done
+    expected = {"source": "llm", "recap": fake.reply["recap"], "nudge": fake.reply["nudge"], "model": "fake/model:free"}
+    for _ in range(3):  # every visit shows the same saved recap, without new requests
+        g = c.get(f"/api/books/{bid}/reminder").get_json()
+        assert g["source"] == "llm" and g["recap"] == fake.reply["recap"] and g["llmPending"] is False
+        assert c.post(f"/api/books/{bid}/recap").get_json() == expected
+    assert len(fake.calls) == 1
 
 
-def test_new_progress_or_notes_invalidate_the_recap(make):
+def test_notes_keep_the_saved_recap_and_the_next_checkpoint_writes_a_new_one(make):
     fake = FakeLLM()
     app, c = make(fake)
-    bid = add_book(c)
-    c.post(f"/api/books/{bid}/recap")
+    bid = add_book(c, completed=3)
     c.post(f"/api/books/{bid}/notes", json={"text": "Ruby built the pier", "chapter": 3})
-    assert c.get(f"/api/books/{bid}/reminder").get_json()["llmPending"] is True
-    c.post(f"/api/books/{bid}/recap")
-    assert len(fake.calls) == 2 and "Ruby built the pier" in fake.calls[1]["user"]
+    c.put("/api/user", json={"preferredName": "Azeem"})
+    g = c.get(f"/api/books/{bid}/reminder").get_json()
+    assert g["source"] == "llm" and g["llmPending"] is False and len(fake.calls) == 1  # unchanged
+    c.post(f"/api/books/{bid}/checkpoints", json={"completed": 4})
+    assert len(fake.calls) == 2 and "Ruby built the pier" in fake.calls[1]["user"]  # note carried into the next one
+    c.post(f"/api/books/{bid}/checkpoints", json={"completed": 3})  # going back: chapter 3's recap is reused
+    assert len(fake.calls) == 2
+
+
+def test_no_recap_for_nothing_read_or_finished_books(make):
+    fake = FakeLLM()
+    app, c = make(fake)
+    bid = new_book(c)
+    assert c.post(f"/api/books/{bid}/checkpoints", json={"completed": 0}).get_json()["recapPending"] is False
+    assert c.get(f"/api/books/{bid}/reminder").get_json()["llmPending"] is False
+    done = c.post(f"/api/books/{bid}/checkpoints", json={"completed": len(CHAPTERS)}).get_json()
+    assert done["recapPending"] is False and done["justFinished"] is True and fake.calls == []
+
+
+def test_opening_while_the_recap_is_being_written_waits_instead_of_asking_twice(make):
+    class SlowLLM(FakeLLM):
+        def complete_json(self, *a, **kw):
+            time.sleep(0.3)
+            return super().complete_json(*a, **kw)
+
+    slow = SlowLLM()
+    app, c = make(None)  # create the book without generating anything
+    bid = add_book(c, completed=3)
+    results = []
+
+    def ask():
+        con = dbmod.connect(app.config["DATABASE"])
+        results.append(summaries.get_recap(con, bid, slow))
+        con.close()
+
+    threads = [threading.Thread(target=ask) for _ in range(3)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    assert len(slow.calls) == 1 and all(r and r["recap"] == slow.reply["recap"] for r in results)
+
+
+def test_checkpoint_writes_recap_in_the_background(tmp_path):
+    class SlowLLM(FakeLLM):
+        def complete_json(self, *a, **kw):
+            time.sleep(0.3)
+            return super().complete_json(*a, **kw)
+
+    app = create_app({"DATABASE": str(tmp_path / "bg.db"), "TESTING": True, "LLM": SlowLLM(),
+                      "PUSH_SENDER": lambda i, p: "sent"})  # LLM_ASYNC defaults to True
+    c = app.test_client()
+    bid = new_book(c)
+    t = time.monotonic()
+    assert c.post(f"/api/books/{bid}/checkpoints", json={"completed": 2}).get_json()["recapPending"] is True
+    assert time.monotonic() - t < 0.25  # saving the checkpoint does not wait for the model
+    deadline = time.monotonic() + 5
+    while time.monotonic() < deadline and c.get(f"/api/books/{bid}/reminder").get_json()["source"] != "llm":
+        time.sleep(0.05)
+    assert c.get(f"/api/books/{bid}/reminder").get_json()["source"] == "llm"
 
 
 def test_llm_failure_falls_back_to_template(make):
@@ -174,7 +237,8 @@ def test_due_reminder_uses_llm_copy(make):
     age(app, bid, 8)
     made = c.post("/api/notifications/check").get_json()["created"]
     assert made[0]["title"] == fake.reply["title"] and made[0]["body"] == fake.reply["body"]
-    assert "about a week" in fake.calls[0]["user"] and "push notification" in fake.calls[0]["system"]
+    notify = [call for call in fake.calls if "push notification" in call["system"]]
+    assert len(notify) == 1 and "about a week" in notify[0]["user"] and "no random acts" in notify[0]["user"]
 
 
 def test_reminder_falls_back_to_template_when_llm_fails(make):
@@ -186,8 +250,9 @@ def test_reminder_falls_back_to_template_when_llm_fails(make):
 
 
 def test_warm_recaps_prewrites_for_waiting_books_only(make):
+    """Backfill for books whose recap was never written (e.g. older data or the model was down at checkpoint)."""
     fake = FakeLLM()
-    app, c = make(fake)
+    app, c = make(None)  # checkpoints without an LLM: no recaps yet
     waiting, fresh = add_book(c), add_book(c)
     age(app, waiting, 5)
     con = dbmod.connect(app.config["DATABASE"])

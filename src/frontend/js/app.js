@@ -498,7 +498,8 @@
         if (res.justFinished) finale(id);
         else {
           const s = Store.readerStreak();
-          toast(s.count >= 2 ? `Checkpoint saved · ${s.count}-day streak` : 'Checkpoint saved. The sky brightens.');
+          const saved = s.count >= 2 ? `Checkpoint saved · ${s.count}-day streak` : 'Checkpoint saved. The sky brightens.';
+          toast(res.recapPending ? `${saved} Your “Where was I?” recap is being written.` : saved);
         }
       });
     });

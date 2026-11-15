@@ -164,8 +164,9 @@ LLM_WARM_PER_PASS=3
 
 - **Spoiler safety.** The prompt only includes chapter titles the reader has finished (plus the next title, which the app already shows), and tells the model never to go past them.
 - **Notes.** Chapter notes are passed as story notes. General notes are labelled "about the reader" so things like "Recommended by Dad" are never turned into plot.
-- **Caching.** Results are stored in `llm_summaries` keyed by everything the prompt used (position, notes, name). A recap is written once and only rewritten after new progress or notes. This matters on free tiers, which allow only a small number of requests per day.
-- **Speed.** `GET /api/books/<id>/reminder` never waits for the model. It returns the cached recap or the template plus `llmPending`, and the app then calls `POST /api/books/<id>/recap` and swaps the recap in. The background scheduler also pre-writes recaps for waiting books (`LLM_WARM_PER_PASS` per pass).
+- **Written when a chapter is finished.** Saving a checkpoint starts a background job that writes the "Where was I?" recap for the new position. Saving stays instant, and the recap is usually ready a few seconds later.
+- **The same every time.** The recap is stored per reading position (`llm_summaries`) and shown unchanged on every visit until the next checkpoint. Notes added in between go into the next chapter's recap. Going back to an earlier chapter reuses that chapter's recap. Nothing is written for 0 chapters or for finished books.
+- **Speed and no duplicates.** `GET /api/books/<id>/reminder` never waits for the model. If the recap is still being written (`llmPending`), the app calls `POST /api/books/<id>/recap`, which waits for the background job instead of sending a second request. The scheduler also backfills recaps for waiting books that have none (`LLM_WARM_PER_PASS` per pass). This matters on free tiers, which allow only a small number of requests per day.
 - **Fallback.** If every model fails or returns nothing usable, the template text is used.
 
 **Privacy.** Book titles, chapter titles and the reader's notes are sent to OpenRouter and the model provider. Free endpoints may log prompts. The UI labels AI recaps as AI-written.

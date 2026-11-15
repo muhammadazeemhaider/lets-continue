@@ -7,6 +7,7 @@ Everything degrades to template text when no LLM is configured or every model fa
 import hashlib
 import json
 import logging
+import threading
 from datetime import datetime, timezone
 
 from db import utcnow
@@ -134,32 +135,60 @@ def _store(con, book_id: int, kind: str, key: str, content: dict, model: str) ->
 
 
 # --------------------------------------------------------------------------- recap
+# One recap per reading position: it is written when the reader saves a checkpoint and then shown
+# unchanged every time until the next checkpoint. Notes added in between go into the next recap.
+_locks: dict[tuple[int, str], threading.Lock] = {}
+_locks_guard = threading.Lock()
+
+
+def _recap_key(ctx: dict) -> str:
+    return f"pos-{ctx['done']}-of-{ctx['total']}"
+
+
+def _lock_for(book_id: int, key: str) -> threading.Lock:
+    with _locks_guard:
+        return _locks.setdefault((book_id, key), threading.Lock())
+
+
 def cached_recap(con, book_id: int) -> dict | None:
     ctx = book_context(con, book_id)
-    return _cached(con, book_id, "recap", _cache_key(ctx)) if ctx else None
+    return _cached(con, book_id, "recap", _recap_key(ctx)) if ctx else None
 
 
 def get_recap(con, book_id: int, llm) -> dict | None:
-    """{"recap", "nudge", "model"} from cache or a fresh LLM call; None if no LLM or every model failed."""
+    """{"recap", "nudge", "model"} for the reader's current position: the saved one, or a fresh LLM call.
+    None if nothing has been read yet, no LLM is configured, or every model failed."""
     ctx = book_context(con, book_id)
     if ctx is None:
         return None
-    key = _cache_key(ctx)
+    key = _recap_key(ctx)
     hit = _cached(con, book_id, "recap", key)
-    if hit or llm is None:
+    if hit or llm is None or ctx["done"] == 0:
         return hit
-    try:
-        data, model = llm.complete_json(RECAP_SYSTEM, _prompt(ctx))
-    except Exception as e:
-        log.warning("Recap for book %s fell back to template: %s", book_id, e)
-        return None
-    recap, nudge = _clean(data.get("recap"), 420), _clean(data.get("nudge"), 160)
-    if not recap:
-        log.warning("Recap for book %s: model %s returned no recap", book_id, model)
-        return None
-    content = {"recap": recap, "nudge": nudge}
-    _store(con, book_id, "recap", key, content, model)
-    return {**content, "model": model}
+    # If the checkpoint's background job is already writing this recap, wait for it instead of
+    # sending a second request; then it is simply read from the cache.
+    with _lock_for(book_id, key):
+        hit = _cached(con, book_id, "recap", key)
+        if hit:
+            return hit
+        try:
+            data, model = llm.complete_json(RECAP_SYSTEM, _prompt(ctx))
+        except Exception as e:
+            log.warning("Recap for book %s fell back to template: %s", book_id, e)
+            return None
+        recap, nudge = _clean(data.get("recap"), 420), _clean(data.get("nudge"), 160)
+        if not recap:
+            log.warning("Recap for book %s: model %s returned no recap", book_id, model)
+            return None
+        content = {"recap": recap, "nudge": nudge}
+        _store(con, book_id, "recap", key, content, model)
+        return {**content, "model": model}
+
+
+def should_write_recap(con, book_id: int) -> bool:
+    """A recap is worth writing after a checkpoint when something has been read and the book isn't finished."""
+    ctx = book_context(con, book_id)
+    return bool(ctx) and 0 < ctx["done"] < ctx["total"]
 
 
 # --------------------------------------------------------------------------- notifications
