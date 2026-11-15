@@ -336,8 +336,8 @@ def register_routes(app: Flask) -> None:
     # ---- sign-up
     @app.post("/api/signup")
     def signup():
-        """Create the reader's profile and a private key for this device. The first sign-up takes over the
-        profile that existed before accounts (so earlier books and progress are kept)."""
+        """Create a new reader with an empty shelf and a private key for this device. A sign-up never
+        inherits anyone else's data (including profiles from before accounts existed)."""
         data = body()
         name = " ".join(str(data.get("name") or "").split())
         preferred = " ".join(str(data.get("preferredName") or "").split()) or (name.split(" ")[0] if name else "")
@@ -352,15 +352,8 @@ def register_routes(app: Flask) -> None:
         if email and con.execute("SELECT 1 FROM users WHERE lower(email) = ?", (email,)).fetchone():
             abort(409, "That email is already used by another reader.")
         token, now = secrets.token_urlsafe(32), db.utcnow()
-        unclaimed = con.execute("SELECT id FROM users WHERE token_hash IS NULL AND signed_up_at IS NULL "
-                                "ORDER BY id LIMIT 1").fetchone()
-        if unclaimed:
-            con.execute("""UPDATE users SET name = ?, preferred_name = ?, email = ?, token_hash = ?, signed_up_at = ?
-                           WHERE id = ?""", (name, preferred, email, token_hash(token), now, unclaimed["id"]))
-            uid = unclaimed["id"]
-        else:
-            uid = con.execute("""INSERT INTO users (name, preferred_name, email, token_hash, signed_up_at, created_at)
-                                 VALUES (?,?,?,?,?,?)""", (name, preferred, email, token_hash(token), now, now)).lastrowid
+        uid = con.execute("""INSERT INTO users (name, preferred_name, email, token_hash, signed_up_at, created_at)
+                             VALUES (?,?,?,?,?,?)""", (name, preferred, email, token_hash(token), now, now)).lastrowid
         con.commit()
         user = con.execute("SELECT * FROM users WHERE id = ?", (uid,)).fetchone()
         return jsonify(token=token, user=user_json(user)), 201
@@ -746,6 +739,74 @@ def register_cli(app: Flask) -> None:
         if cur.rowcount == 0:
             raise click.ClickException(f"No book with id {book_id}")
         click.echo(f"Book {book_id} now looks last read {days:g} day(s) ago.")
+
+    accounts = click.Group("accounts", help="Inspect and tidy reader accounts (shows what it would do unless --yes).")
+    app.cli.add_command(accounts)
+
+    def _account_rows(con, where: str = "", params=()):
+        return con.execute(f"""SELECT u.id, u.name, u.preferred_name, u.email, u.signed_up_at,
+                                      (SELECT COUNT(*) FROM books b WHERE b.user_id = u.id) AS books
+                               FROM users u {where} ORDER BY u.id""", params).fetchall()
+
+    def _show(rows):
+        for r in rows:
+            state = "signed up" if r["signed_up_at"] else "never signed up"
+            click.echo(f"  #{r['id']:<4} {r['preferred_name']!r:<14} {state:<16} {r['books']} book(s)"
+                       + (f"  {r['email']}" if r["email"] else ""))
+
+    @accounts.command("list")
+    def accounts_list():
+        """Every reader, whether they signed up, and how many books they have."""
+        con = db.connect(app.config["DATABASE"])
+        try:
+            click.echo(f"Readers in {db.describe(app.config['DATABASE'])}:")
+            _show(_account_rows(con))
+        finally:
+            con.close()
+
+    @accounts.command("purge-unclaimed")
+    @click.option("--yes", is_flag=True, help="Actually delete (otherwise only shows what would go).")
+    def accounts_purge_unclaimed(yes):
+        """Delete profiles nobody ever signed up for (left over from before accounts), with their books."""
+        con = db.connect(app.config["DATABASE"])
+        try:
+            rows = _account_rows(con, "WHERE u.signed_up_at IS NULL AND u.token_hash IS NULL")
+            if not rows:
+                click.echo("No unclaimed profiles.")
+                return
+            click.echo(("Deleting" if yes else "Would delete") + f" {len(rows)} unclaimed profile(s):")
+            _show(rows)
+            if yes:
+                con.execute("DELETE FROM users WHERE signed_up_at IS NULL AND token_hash IS NULL")
+                con.commit()
+                click.echo("Done.")
+            else:
+                click.echo("Nothing changed. Run again with --yes to delete.")
+        finally:
+            con.close()
+
+    @accounts.command("clear-shelf")
+    @click.argument("user_id", type=int)
+    @click.option("--yes", is_flag=True, help="Actually delete (otherwise only shows what would go).")
+    def accounts_clear_shelf(user_id, yes):
+        """Remove every book (with its chapters, notes, checkpoints and reminders) from one reader's shelf.
+        The account itself, and its sign-in on its devices, stay."""
+        con = db.connect(app.config["DATABASE"])
+        try:
+            rows = _account_rows(con, "WHERE u.id = ?", (user_id,))
+            if not rows:
+                raise click.ClickException(f"No reader #{user_id}")
+            titles = [r[0] for r in con.execute("SELECT title FROM books WHERE user_id = ? ORDER BY id", (user_id,))]
+            _show(rows)
+            click.echo(("Removing" if yes else "Would remove") + f" {len(titles)} book(s): {titles}")
+            if yes:
+                con.execute("DELETE FROM books WHERE user_id = ?", (user_id,))
+                con.commit()
+                click.echo("Done.")
+            else:
+                click.echo("Nothing changed. Run again with --yes to remove them.")
+        finally:
+            con.close()
 
     @app.cli.command("questions")
     @click.option("--requests", "max_requests", type=int, default=5, help="AI requests to spend (within today's budget).")

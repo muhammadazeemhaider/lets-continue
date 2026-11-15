@@ -58,16 +58,59 @@ def test_preferred_name_defaults_to_first_name_and_validation(app):
     assert c.post("/api/signup", json={"name": "X", "email": "not-an-email"}).status_code == 400
 
 
-def test_first_sign_up_takes_over_the_existing_profile_and_books(app):
-    seed.run(app.config["DATABASE"])  # an existing single-user setup: 'Reader' with two books
+def test_sign_up_always_starts_with_an_empty_shelf(app):
+    seed.run(app.config["DATABASE"])  # data from before accounts: a 'Reader' profile with two books
+    c = app.test_client()
+    first = signup(c).get_json()
+    token = first["token"]
+    assert first["user"]["id"] != 1  # a brand-new account, not the old profile
+    assert c.get("/api/books", headers=auth(token)).get_json() == []
+    second = c.post("/api/signup", json={"name": "Sara Khan"}).get_json()["token"]
+    assert c.get("/api/books", headers=auth(second)).get_json() == []
+    con = dbmod.connect(app.config["DATABASE"])
+    assert con.execute("SELECT COUNT(*) FROM books WHERE user_id = 1").fetchone()[0] == 2  # untouched, unreachable
+
+
+def test_reminder_greets_the_reader_by_preferred_name(app):
     c = app.test_client()
     token = signup(c).get_json()["token"]
-    books = c.get("/api/books", headers=auth(token)).get_json()
-    assert {b["title"] for b in books} == {"The Fellowship of the Ring", "Dune — Book One: Dune"}
-    assert c.get("/api/user", headers=auth(token)).get_json()["preferredName"] == "Azeem"
-    # the reminder greets the reader by preferred name
-    r = c.get(f"/api/books/{books[0]['id']}/reminder", headers=auth(token)).get_json()
+    lotr = c.get("/api/catalog/search?q=fellowship").get_json()["items"][0]
+    book = c.post("/api/books", json={"catalogId": lotr["id"]}, headers=auth(token)).get_json()
+    r = c.get(f"/api/books/{book['id']}/reminder", headers=auth(token)).get_json()
     assert r["headline"] == "Your journey is waiting for you, Azeem."
+
+
+def test_seed_never_touches_signed_up_readers(app):
+    c = app.test_client()
+    token = signup(c).get_json()["token"]
+    c.post("/api/books", json={"title": "My own book", "chapterCount": 3}, headers=auth(token))
+    seed.run(app.config["DATABASE"])
+    seed.run(app.config["DATABASE"], reset=True)
+    assert [b["title"] for b in c.get("/api/books", headers=auth(token)).get_json()] == ["My own book"]
+
+
+def test_account_cleanup_commands(app):
+    seed.run(app.config["DATABASE"])  # unclaimed profile #1 with 2 books
+    c = app.test_client()
+    me = signup(c).get_json()
+    c.post("/api/books", json={"title": "Old test book", "chapterCount": 2}, headers=auth(me["token"]))
+    runner = app.test_cli_runner()
+    listing = runner.invoke(args=["accounts", "list"]).output
+    assert "never signed up" in listing and "signed up" in listing
+    dry = runner.invoke(args=["accounts", "purge-unclaimed"])
+    assert "Would delete 1" in dry.output and "Nothing changed" in dry.output
+    con = dbmod.connect(app.config["DATABASE"])
+    assert con.execute("SELECT COUNT(*) FROM users").fetchone()[0] == 2
+    assert "Done." in runner.invoke(args=["accounts", "purge-unclaimed", "--yes"]).output
+    assert con.execute("SELECT COUNT(*) FROM users").fetchone()[0] == 1
+    assert con.execute("SELECT COUNT(*) FROM chapters").fetchone()[0] == 2  # the sample books' chapters went too
+    dry = runner.invoke(args=["accounts", "clear-shelf", str(me["user"]["id"])])
+    assert "Would remove 1 book(s): ['Old test book']" in dry.output
+    runner.invoke(args=["accounts", "clear-shelf", str(me["user"]["id"]), "--yes"])
+    assert c.get("/api/books", headers=auth(me["token"])).get_json() == []
+    assert c.get("/api/user", headers=auth(me["token"])).get_json()["preferredName"] == "Azeem"  # still signed in
+    assert con.execute("SELECT COUNT(*) FROM chapters").fetchone()[0] == 0
+    assert runner.invoke(args=["accounts", "clear-shelf", "999"]).exit_code != 0
 
 
 def test_readers_are_kept_apart(app):

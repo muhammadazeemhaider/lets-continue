@@ -41,9 +41,12 @@ BOOKS = [
 def run(db_path: str, reset: bool = False) -> int:
     init_db(db_path)
     con = connect(db_path)  # SQLite file or Postgres URL
-    if reset:
-        con.execute("DELETE FROM books")
-    user = con.execute("SELECT id FROM users ORDER BY id LIMIT 1").fetchone()
+    # Only ever touch a profile nobody signed up for (the local single-user profile / a sample reader):
+    # on a shared database, real readers' shelves must never receive sample books or be reset.
+    user = con.execute("SELECT id FROM users WHERE signed_up_at IS NULL AND token_hash IS NULL "
+                       "ORDER BY id LIMIT 1").fetchone()
+    if user is not None and reset:
+        con.execute("DELETE FROM books WHERE user_id = ?", (user[0],))
     if user is None:
         user = (con.execute(
             "INSERT INTO users (name, preferred_name, created_at) VALUES (?,?,?)",
