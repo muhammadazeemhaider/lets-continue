@@ -153,7 +153,7 @@
 
   function pushSupport() {
     if (!window.isSecureContext)
-      return { ok: false, reason: 'Phone notifications need a secure (HTTPS) address. They work on localhost, but not on a plain http:// network address.' };
+      return { ok: false, reason: `Phone notifications need a secure (HTTPS) address. On Android Chrome you can allow this exact address in chrome://flags/#unsafely-treat-insecure-origin-as-secure: ${location.origin} (then Relaunch Chrome).` };
     if (isIOS && !isStandalone())
       return { ok: false, reason: 'On iPhone and iPad, first add this app to your Home Screen (Share → Add to Home Screen), then open it from there to turn on notifications.' };
     if (!('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window))
