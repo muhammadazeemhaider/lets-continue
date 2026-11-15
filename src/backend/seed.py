@@ -1,52 +1,40 @@
-"""Sample data for local development (same books as the frontend demo)."""
+"""Starter data: the two built-in books (The Lord of the Rings, Dune). Chapters and summaries come from
+the curated catalogue; everything else the reader adds through the catalogue search."""
 import sqlite3
 from datetime import datetime, timedelta, timezone
 
+from catalog_seed import CURATED
 from db import init_db
 
 NOW = datetime.now(timezone.utc)
+_CATALOG = {b["title"]: b for b in CURATED}
 
 
 def ago(days: float) -> str:
     return (NOW - timedelta(days=days)).isoformat(timespec="seconds")
 
 
-def numbered(count: int, prefix: str = "Chapter") -> list[str]:
-    return [f"{prefix} {i}" for i in range(1, count + 1)]
+def _from_catalog(title: str, **progress) -> dict:
+    entry = _CATALOG[title]
+    return {"title": entry["title"], "author": entry["author"], "recap": entry["summary"],
+            "chapters": entry["chapters"], **progress}
 
 
 BOOKS = [
-    {
-        "title": "The Five People You Meet in Heaven", "author": "Mitch Albom",
-        "recap": "Eddie, an old maintenance man at a seaside amusement park, dies trying to save a child. In the afterlife he meets five people who each explain a piece of his life.",
-        "chapters": ["The End", "The Beginning", "Eddie's Birthday", "The Blue Man", "Ruby", "The Pier",
-                     "The Captain", "Marguerite", "The War", "Tala", "The Last Lesson", "Home"],
-        "completed": 4, "last": 23, "checkpoint_days": [29, 26, 23], "checkpoint_chapters": [1, 2, 4],
-        "notes": [(4, 23, "The Blue Man's explanation of how our lives are interconnected - \"there are no random acts.\" I want to keep this in mind when Ruby shows up."),
-                  (None, 30, "Recommended by Dad. Read it slowly, one chapter at night.")],
-    },
-    {
-        "title": "Piranesi", "author": "Susanna Clarke",
-        "recap": "Piranesi lives in a House of endless halls, tides and statues. He keeps careful journals - until signs appear that someone else is in the House.",
-        "chapters": numbered(14, "Entry"), "completed": 9, "last": 1,
-        "checkpoint_days": list(range(9, 0, -1)), "checkpoint_chapters": list(range(1, 10)),  # daily -> live streak
-        "notes": [(5, 2, "The Other is not as kind as he seems. Note the dates in the journals."),
-                  (9, 1, "Who is 16? The numbering doesn't add up.")],
-    },
-    {
-        "title": "Dune", "author": "Frank Herbert",
-        "recap": "Young Paul Atreides arrives on the desert planet Arrakis, the only source of the spice - and the House Atreides is about to be betrayed.",
-        "chapters": numbered(22, "Part"), "completed": 3, "last": 61,
-        "checkpoint_days": [66, 63, 61], "checkpoint_chapters": [1, 2, 3],
-        "notes": [(3, 61, "The gom jabbar test. Fear is the mind-killer - re-read the litany.")],
-    },
-    {
-        "title": "The Little Prince", "author": "Antoine de Saint-Exupery",
-        "recap": "A pilot stranded in the desert meets a small prince who has travelled from planet to planet.",
-        "chapters": numbered(27), "completed": 27, "last": 9,
-        "checkpoint_days": [11, 10, 9], "checkpoint_chapters": [9, 18, 27],
-        "notes": [(21, 9, "\"What is essential is invisible to the eye.\" The fox chapter. Gift this to Sara.")],
-    },
+    # In progress, read daily for the last five days -> a live streak.
+    _from_catalog(
+        "The Lord of the Rings", completed=14, last=1,
+        checkpoint_days=[5, 4, 3, 2, 1], checkpoint_chapters=[10, 11, 12, 13, 14],
+        notes=[(2, 6, "Gandalf: \"All we have to decide is what to do with the time that is given us.\""),
+               (10, 4, "Strider is not what he seems. Keep an eye on him."),
+               (None, 7, "Reading it again after the films; taking it slowly.")],
+    ),
+    # Paused for three weeks -> shows up as waiting, with reminders and a "Where was I?" recap.
+    _from_catalog(
+        "Dune", completed=3, last=20,
+        checkpoint_days=[26, 23, 20], checkpoint_chapters=[1, 2, 3],
+        notes=[(1, 26, "The gom jabbar test. Fear is the mind-killer - re-read the litany.")],
+    ),
 ]
 
 

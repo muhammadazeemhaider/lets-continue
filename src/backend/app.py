@@ -13,6 +13,7 @@ from pathlib import Path
 import click
 from flask import Flask, abort, jsonify, request
 
+import catalog
 import db
 import llm
 import notifications
@@ -51,6 +52,14 @@ def create_app(config: dict | None = None) -> Flask:
     if "LLM" not in app.config:
         app.config["LLM"] = None if testing else llm.client_from_env()
     app.config.setdefault("LLM_WARM_PER_PASS", int(os.environ.get("LLM_WARM_PER_PASS", 3)))
+    # Where unknown books are looked up (Open Library). None = curated/saved catalogue only (tests).
+    if "CATALOG_SOURCE" not in app.config:
+        app.config["CATALOG_SOURCE"] = None if testing else catalog.OpenLibrary()
+    con = db.connect(app.config["DATABASE"])
+    try:
+        catalog.ensure_curated(con)  # The Lord of the Rings, Dune
+    finally:
+        con.close()
     app.teardown_appcontext(db.close_db)
 
     @app.after_request
@@ -324,6 +333,19 @@ def register_routes(app: Flask) -> None:
     @app.post("/api/books")
     def create_book():
         data = body()
+        entry = None
+        if data.get("catalogId") is not None:
+            # Fill anything the reader left out from the catalogue entry they picked.
+            entry = catalog.details(db.get_db(), as_int(data["catalogId"], "catalogId"), app.config["CATALOG_SOURCE"],
+                                    app.config["LLM"])
+            if entry is None:
+                abort(400, "Unknown catalogId")
+            data.setdefault("title", entry["title"])
+            data.setdefault("author", entry["author"])
+            if not str(data.get("recap") or "").strip():
+                data["recap"] = entry["summary"]
+            if data.get("chapters") is None and data.get("chapterCount") is None and entry["chapters"]:
+                data["chapters"] = entry["chapters"]
         title = data.get("title")
         if not isinstance(title, str) or not title.strip():
             abort(400, "title is required")
@@ -346,8 +368,25 @@ def register_routes(app: Flask) -> None:
             "INSERT INTO chapters (book_id, number, title) VALUES (?,?,?)",
             [(cur.lastrowid, i, t.strip()) for i, t in enumerate(titles, 1)],
         )
+        if entry is not None:
+            catalog.mark_used(con, entry["id"])  # popular books rank higher in search
         con.commit()
         return jsonify(book_json(own_book(cur.lastrowid))), 201
+
+    # ---- catalogue
+    @app.get("/api/catalog/search")
+    def catalog_search():
+        """As-you-type suggestions: our saved catalogue first, then Open Library (saved for next time)."""
+        q = request.args.get("q", "")[:120]
+        return jsonify(items=catalog.search(db.get_db(), q, app.config["CATALOG_SOURCE"]))
+
+    @app.get("/api/catalog/<int:catalog_id>")
+    def catalog_entry(catalog_id):
+        """Full entry with summary and chapters (looked up and saved the first time; may take a few seconds)."""
+        entry = catalog.details(db.get_db(), catalog_id, app.config["CATALOG_SOURCE"], app.config["LLM"])
+        if entry is None:
+            abort(404, "Not in the catalogue")
+        return jsonify(entry)
 
     @app.get("/api/books/<int:book_id>")
     def get_book(book_id):

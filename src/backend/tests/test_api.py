@@ -131,14 +131,17 @@ def test_reminder_uses_preferred_name_and_nearby_note(client):
 def test_seed_and_paused_detection(tmp_path):
     path = str(tmp_path / "s.db")
     app = create_app({"DATABASE": path, "TESTING": True})
-    assert seed.run(path) == 4
+    assert seed.run(path) == 2
     c = app.test_client()
     books = {b["title"]: b for b in c.get("/api/books").get_json()}
-    assert books["Piranesi"]["streak"]["count"] >= 9
-    dune = books["Dune"]
+    assert set(books) == {"The Lord of the Rings", "Dune"}
+    lotr, dune = books["The Lord of the Rings"], books["Dune"]
+    assert lotr["totalChapters"] == 62 and lotr["chapters"][0]["title"] == "A Long-expected Party"
+    assert lotr["author"] == "J.R.R. Tolkien" and "Frodo" in lotr["recap"] and lotr["streak"]["count"] >= 5
+    assert dune["totalChapters"] == 48 and dune["chapters"][22]["title"] == "Book Two: Muad'Dib · 1"
     assert c.get(f"/api/books/{dune['id']}/reminder").get_json()["isPaused"] is True
-    assert c.get(f"/api/books/{books['The Little Prince']['id']}/reminder").get_json()["isPaused"] is False
-    assert seed.run(path, reset=True) == 4 and len(c.get("/api/books").get_json()) == 4
+    assert c.get(f"/api/books/{lotr['id']}/reminder").get_json()["isPaused"] is False
+    assert seed.run(path, reset=True) == 2 and len(c.get("/api/books").get_json()) == 2
 
 
 def test_cors_headers(client):

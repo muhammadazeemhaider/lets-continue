@@ -81,6 +81,27 @@ CREATE TABLE IF NOT EXISTS llm_summaries (
     UNIQUE (book_id, kind, cache_key)
 );
 
+-- Shared book catalogue. Starts with hand-curated entries and grows as readers search: results from
+-- Open Library are saved here, then enriched once (summary, chapters) and reused by everyone after.
+CREATE TABLE IF NOT EXISTS catalog_books (
+    id             INTEGER PRIMARY KEY AUTOINCREMENT,
+    ol_key         TEXT    UNIQUE,                      -- Open Library work key, e.g. /works/OL27448W
+    title          TEXT    NOT NULL,
+    title_norm     TEXT    NOT NULL,                    -- lower-case, accents/punctuation stripped, for search
+    author         TEXT    NOT NULL DEFAULT '',
+    year           INTEGER,
+    pages          INTEGER,
+    cover_url      TEXT,
+    summary        TEXT    NOT NULL DEFAULT '',
+    summary_source TEXT    NOT NULL DEFAULT 'none',     -- curated | openlibrary | ai | none
+    chapters       TEXT    NOT NULL DEFAULT '[]',       -- JSON list of chapter titles
+    chapter_source TEXT    NOT NULL DEFAULT 'none',     -- curated | openlibrary | ai | none
+    times_used     INTEGER NOT NULL DEFAULT 0,          -- how often readers added it (ranks search)
+    enriched_at    TEXT,                                -- when summary/chapters were looked up
+    created_at     TEXT    NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_catalog_title ON catalog_books(title_norm);
+
 -- Web Push subscriptions (one per browser/device that opted in).
 CREATE TABLE IF NOT EXISTS push_subscriptions (
     id         INTEGER PRIMARY KEY AUTOINCREMENT,
