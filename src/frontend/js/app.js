@@ -99,6 +99,7 @@
   <nav class="library-nav" aria-label="Bookshelf"><a href="#/" class="library-brand"><span class="quest-logo" aria-hidden="true">▥<i>✦</i></span><span>BOOK QUEST<small>ONE MORE CHAPTER. ONE MORE ADVENTURE.</small></span></a><div class="quest-nav-actions"><span class="library-note">YOUR NEXT ADVENTURE IS A PAGE AWAY</span><button class="bell" id="bell" aria-label="Reminders${Store.notifications().unread ? ` (${Store.notifications().unread} unread)` : ''}">🔔<span class="badge-dot" ${Store.notifications().unread ? '' : 'hidden'}>${Store.notifications().unread}</span></button><button class="gear" id="settings" aria-label="Profile and settings">⚙</button></div></nav>
   <header class="masthead quest-banner">
     <div class="quest-banner-copy">
+      ${greetingLine(books.length > 0)}
       <div class="eyebrow">YOUR BOOK. YOUR WORLD. YOUR QUEST.</div>
       <h1>Great adventures<br>begin with a page.</h1>
       <p>Read a chapter. Walk a little further. Face its guardian.<br>Turn your reading list into a world worth returning to.</p>
@@ -247,6 +248,14 @@
       if (r.status === 'pending') return `Almost ready: ${reason}`;
       return `Test not delivered${reason ? `: ${reason}` : ` (${r.status})`}`;
     });
+  }
+
+  /** 'Welcome back, Azeem' for returning readers (by the name they asked to be called). */
+  function greetingLine(returning) {
+    const u = Store.getUser();
+    const name = u && u.preferredName && u.preferredName.trim().toLowerCase() !== 'reader' ? u.preferredName : '';
+    if (!name) return '';
+    return `<p class="quest-greeting">${returning ? 'Welcome back' : 'Welcome'}, <b>${esc(name)}</b>.</p>`;
   }
 
   function greeting() {
@@ -864,6 +873,7 @@
       }
     } catch (err) {
       if (seq !== routeSeq) return;
+      if (err.auth) { signupScreen(); return; } // signed out on this device
       if (m && !err.network) { location.hash = '#/'; return; } // unknown book
       fatal(err);
       return;
@@ -871,17 +881,62 @@
     window.scrollTo(0, 0);
   }
 
+  /* ---------- sign-up: name, what to call you, optional email ---------- */
+  function signupScreen() {
+    closeOverlay();
+    $app.innerHTML = `
+<main class="page signup-page">
+  <header class="signup-brand library-brand"><span class="quest-logo" aria-hidden="true">▥<i>✦</i></span><span>BOOK QUEST<small>ONE MORE CHAPTER. ONE MORE ADVENTURE.</small></span></header>
+  <form class="sheet signup-card" id="signup" autocomplete="on" novalidate>
+    <h2>Welcome, traveller</h2>
+    <p class="sub">A few quick questions before your journey begins.</p>
+    <label class="field">What’s your name?
+      <input name="name" autocomplete="name" required maxlength="80" placeholder="e.g. Azeem Haider"></label>
+    <label class="field">What should we call you?
+      <input name="preferredName" autocomplete="nickname" required maxlength="40" placeholder="e.g. Azeem">
+      <small class="hint">This is how the app greets you, like “Welcome back, Azeem”.</small></label>
+    <label class="field">Email (optional)
+      <input name="email" type="email" autocomplete="email" maxlength="200" placeholder="you@example.com"></label>
+    <div class="actions"><button type="submit" class="btn primary">Begin my journey →</button></div>
+  </form>
+</main>`;
+    const form = document.getElementById('signup');
+    let preferredTouched = false;
+    form.preferredName.addEventListener('input', () => { preferredTouched = true; });
+    form.name.addEventListener('input', () => {
+      if (!preferredTouched) form.preferredName.value = form.name.value.trim().split(/\s+/)[0] || '';
+    });
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!form.name.value.trim()) { errorBox(form).textContent = 'Please tell us your name.'; form.name.focus(); return; }
+      if (!form.preferredName.value.trim()) { errorBox(form).textContent = 'What should we call you?'; form.preferredName.focus(); return; }
+      submitWith(form, async () => {
+        const user = await Store.signUp({
+          name: form.name.value.trim(), preferredName: form.preferredName.value.trim(), email: form.email.value.trim(),
+        });
+        await boot();
+        toast(`Welcome, ${user.preferredName}!`);
+      });
+    });
+    form.name.focus({ preventScroll: true });
+  }
+
+  let started = false;
   async function boot() {
+    if (!Store.isSignedIn()) return signupScreen();
     $app.innerHTML = '<main class="page"><p class="loading">Waking the sunrise…</p></main>';
     try {
       await Store.init();
     } catch (err) {
-      return fatal(err);
+      return err.auth ? signupScreen() : fatal(err);
     }
-    window.addEventListener('hashchange', route);
+    if (!started) {
+      started = true;
+      window.addEventListener('hashchange', route);
+      setupServiceWorker();
+    }
     await route();
     maybeWelcomeBack();
-    setupServiceWorker();
   }
 
   /* Service worker: required for push. Tapping a notification while the app is open lands here. */

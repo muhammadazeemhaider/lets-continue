@@ -20,3 +20,33 @@ test('API checkpoints retain worlds and unlocked bosses, reset clears seals afte
  fail=false;await S.resetBookProgress(1);await S.loadBook(1);
  assert.equal(resets,1);assert.equal(S.canChallengeChapter(S.getBook(1),1),false);assert.equal(S.getBook(1).world,'pirates');
 });
+
+test('sign-up stores the device key, sends it on every request, and forgets it when the server rejects it', async () => {
+  const values = {}, calls = [];
+  let reject = false;
+  const context = {
+    console, Date, URLSearchParams, location: { search: '', hostname: 'localhost', protocol: 'http:', origin: 'http://localhost' },
+    localStorage: { getItem: (k) => values[k] ?? null, setItem: (k, v) => { values[k] = String(v); }, removeItem: (k) => { delete values[k]; } },
+    navigator: { userAgent: 'test', platform: 'test', maxTouchPoints: 0 },
+    matchMedia: () => ({ matches: false }),
+    fetch: async (url, options = {}) => {
+      calls.push({ url, auth: (options.headers || {}).Authorization });
+      if (url.endsWith('/api/signup')) return { ok: true, status: 201, json: async () => ({ token: 'secret-key', user: { preferredName: 'Azeem' } }) };
+      if (reject) return { ok: false, status: 401, json: async () => ({ error: 'Please sign up to continue.' }) };
+      return { ok: true, status: 200, json: async () => ({ preferredName: 'Azeem' }) };
+    },
+  };
+  context.window = context;
+  context.TTL_CONFIG = { apiBase: '' };
+  for (const file of ['characters', 'store']) vm.runInNewContext(fs.readFileSync(require.resolve(`../js/${file}.js`), 'utf8'), context);
+  const Store = context.Store;
+  assert.equal(Store.isSignedIn(), false);
+  const user = await Store.signUp({ name: 'Azeem Haider', preferredName: 'Azeem', email: '' });
+  assert.equal(user.preferredName, 'Azeem');
+  assert.equal(Store.isSignedIn(), true);
+  await Store.updateUser({ preferredName: 'Azeem' });
+  assert.equal(calls.at(-1).auth, 'Bearer secret-key');
+  reject = true;
+  await assert.rejects(Store.updateUser({ preferredName: 'X' }), (err) => err.auth === true);
+  assert.equal(Store.isSignedIn(), false);
+});

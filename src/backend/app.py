@@ -769,7 +769,7 @@ def register_cli(app: Flask) -> None:
         import seed
 
         n = seed.run(app.config["DATABASE"], reset=reset)
-        click.echo(f"Seeded {n} books into {app.config['DATABASE']}")
+        click.echo(f"Seeded {n} books into {db.describe(app.config['DATABASE'])}")
 
 
 if __name__ == "__main__":

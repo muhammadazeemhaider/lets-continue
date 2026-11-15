@@ -178,12 +178,22 @@ if (!window.TTL_CONFIG) {
   const tz = () => -new Date().getTimezoneOffset(); // minutes east of UTC
 
   /* ---------- HTTP ---------- */
+  /* ---------- this device's private key (from sign-up) ---------- */
+  const KEY_STORE = 'ttl.deviceKey';
+  const getDeviceKey = () => { try { return localStorage.getItem(KEY_STORE) || ''; } catch (e) { return ''; } };
+  const setDeviceKey = (key) => { try { key ? localStorage.setItem(KEY_STORE, key) : localStorage.removeItem(KEY_STORE); } catch (e) { /* private mode */ } };
+  const isSignedIn = () => Boolean(getDeviceKey());
+
   async function api(path, { method = 'GET', body } = {}) {
     let res;
     try {
+      const headers = {};
+      if (body !== undefined) headers['Content-Type'] = 'application/json';
+      const key = getDeviceKey();
+      if (key) headers.Authorization = `Bearer ${key}`;
       res = await fetch(BASE + path, {
         method,
-        headers: body !== undefined ? { 'Content-Type': 'application/json' } : undefined,
+        headers,
         body: body !== undefined ? JSON.stringify(body) : undefined,
       });
     } catch (e) {
@@ -195,6 +205,7 @@ if (!window.TTL_CONFIG) {
     const data = await res.json().catch(() => null);
     if (!res.ok) {
       const err = new Error((data && data.error) || `Request failed (${res.status})`);
+      if (res.status === 401) { err.auth = true; setDeviceKey(''); } // not (or no longer) signed in on this device
       if (res.status === 502 || res.status === 504) err.network = true; // dev proxy could not reach Flask
       throw err;
     }
@@ -411,6 +422,14 @@ if (!window.TTL_CONFIG) {
   const fetchReminder = (bookId) => api(`/api/books/${bookId}/reminder`).catch(() => null);
   /** Have the backend write an LLM recap (slow on free models). Resolves {source, recap, nudge, model} or null. */
   const writeRecap = (bookId) => api(`/api/books/${bookId}/recap`, { method: 'POST' }).catch(() => null);
+  /** Sign up: saves the profile and this device's private key. Resolves the user. */
+  async function signUp({ name, preferredName, email }) {
+    const res = await api('/api/signup', { method: 'POST', body: { name, preferredName, email: email || null } });
+    setDeviceKey(res.token);
+    user = res.user;
+    return user;
+  }
+
   /** The catalogue's three boss questions for a chapter: {available, source, questions[]}; null when offline. */
   const chapterQuestions = (bookId, n) =>
     api(`/api/books/${bookId}/chapters/${n}/questions`).catch(() => null);
@@ -419,7 +438,7 @@ if (!window.TTL_CONFIG) {
     init, loadBook, books, getBook, getUser, derive, bookStreak, readerStreak, relativeTime,
     setBookWorld, setBookCompanion, canAccessChapter, canChallengeChapter, startFromChapter, resetBookProgress,
     addNote, addCheckpoint, createBook, updateUser, fetchReminder, writeRecap, searchCatalog, catalogEntry,
-    chapterQuestions,
+    chapterQuestions, signUp, isSignedIn,
     notifications, refreshNotifications, markNotificationRead, markAllNotificationsRead,
     pushStatus, enablePush, disablePush, testPush,
   };
