@@ -2,10 +2,10 @@ const {test}=require('node:test');const assert=require('node:assert/strict');con
 function setup(reduced=false,storage){const frames=[];const context={window:{localStorage:storage,matchMedia:()=>({matches:reduced})},Services:{esc:s=>s},requestAnimationFrame:cb=>frames.push(cb)};vm.runInNewContext(fs.readFileSync(require.resolve('../js/characters.js'),'utf8'),context);vm.runInNewContext(fs.readFileSync(require.resolve('../js/pirate-world.js'),'utf8'),context);vm.runInNewContext(fs.readFileSync(require.resolve('../js/space-world.js'),'utf8'),context);vm.runInNewContext(fs.readFileSync(require.resolve('../js/journey.js'),'utf8'),context);return {Journey:context.window.Journey,frames};}
 function element(){return {attrs:{},style:{},classList:{add(){},remove(){}},setAttribute(k,v){this.attrs[k]=v;}};}
 function container(){const walker=element(),sun=element(),stops=[element(),element()],trail=[element(),element()];const svg={...element(),isConnected:true,querySelector:q=>q==='.landscape-explorer'?walker:sun,querySelectorAll:q=>q==='[data-lit]'?trail:stops,addEventListener(){}};return {innerHTML:'',firstElementChild:svg,walker,sun,stops,trail};}
-test('original landscapes render safely from zero to final chapter',()=>{const {Journey}=setup(true);for(const total of [1,5,14,27])for(const completed of [0,1,total]){const c=container();Journey.render(c,{total,completed});assert.ok(!c.innerHTML.includes('NaN'));assert.ok(c.innerHTML.includes('landscape-explorer'));assert.ok(c.innerHTML.includes('landscape-details'));assert.ok(c.innerHTML.includes('linearGradient'));assert.equal((c.innerHTML.match(/class="mk /g)||[]).length,total);}});
+test('original landscapes render safely from zero to final chapter',()=>{const {Journey}=setup(true);for(const total of [1,5,14,27])for(const completed of [0,1,total]){const c=container();Journey.render(c,{total,completed});assert.ok(!c.innerHTML.includes('NaN'));assert.ok(c.innerHTML.includes('landscape-explorer'));assert.ok(c.innerHTML.includes('landscape-details'));assert.ok(c.innerHTML.includes('linearGradient'));assert.equal((c.innerHTML.match(/class="mk /g)||[]).length,Math.min(total,10));}});
 test('checkpoint movement follows the curve and ends at the saved progress',()=>{const {Journey,frames}=setup(),c=container();Journey.render(c,{total:5,completed:3,previousCompleted:1});const before=Journey.pointAt(.2),after=Journey.pointAt(.6);assert.equal(c.walker.attrs.transform,`translate(${before.x.toFixed(1)} ${(before.y-15).toFixed(1)})`);assert.equal(frames.length,1);frames.shift()(0);frames.shift()(Journey.walkDuration(5,1,3)/2);const middle=c.walker.attrs.transform;assert.notEqual(middle,`translate(${before.x.toFixed(1)} ${(before.y-15).toFixed(1)})`);frames.shift()(Journey.walkDuration(5,1,3));assert.equal(c.walker.attrs.transform,`translate(${after.x.toFixed(1)} ${(after.y-15).toFixed(1)})`);assert.equal(c.sun.attrs.transform,'translate(0 0.0)');});
 test('reduced motion immediately displays durable progress without queuing animation',()=>{const {Journey,frames}=setup(true),c=container();Journey.render(c,{total:5,completed:5,previousCompleted:4});const last=Journey.pointAt(1);assert.equal(frames.length,0);assert.equal(c.walker.attrs.transform,`translate(${last.x.toFixed(1)} ${(last.y-15).toFixed(1)})`);assert.ok(c.innerHTML.includes('morning-birds'));assert.ok(!c.innerHTML.includes('little-camp'));});
-test('checkpoint flowers and campsite reflect completed reading',()=>{const {Journey}=setup(true),c=container();Journey.render(c,{total:14,completed:9});assert.equal((c.innerHTML.match(/class="trail-flower"/g)||[]).length,9);assert.ok(c.innerHTML.includes('little-camp'));});
+test('checkpoint flowers and campsite reflect completed reading',()=>{const {Journey}=setup(true),c=container();Journey.render(c,{total:14,completed:9});assert.equal((c.innerHTML.match(/class="trail-flower"/g)||[]).length,6);assert.ok(c.innerHTML.includes('little-camp'));});
 
 test('handheld movement uses cardinal steps, supports reverse travel, and lands exactly',()=>{const {Journey}=setup();for(const [from,to] of [[0,.5],[.2,.8],[.8,.2],[0,1]]){const steps=Journey.walkingSteps(from,to);for(let i=1;i<steps.length;i++){const prev=steps[i-1],next=steps[i];assert.ok(Math.abs(next.x-prev.x)<.001||Math.abs(next.y-prev.y)<.001,'one axis moves at a time');assert.ok(['up','down','left','right'].includes(next.direction));}const last=Journey.pointAt(to);assert.ok(Math.abs(steps.at(-1).x-last.x)<.001);assert.ok(Math.abs(steps.at(-1).y-last.y)<.001);}});
 test('sprite has four facing directions and three poses, then stands on arrival',()=>{const {Journey,frames}=setup(),c=container();Journey.render(c,{total:14,completed:10,previousCompleted:9});for(const dir of ['up','down','left','right'])for(let pose=0;pose<3;pose++)assert.ok(c.innerHTML.includes(`data-facing="${dir}" data-pose="${pose}"`));frames.shift()(0);frames.shift()(170);assert.ok(['1','2'].includes(c.walker.attrs['data-frame']));assert.ok(['up','down','left','right'].includes(c.walker.attrs['data-direction']));frames.shift()(Journey.walkDuration(14,9,10));assert.equal(c.walker.attrs['data-frame'],'0');assert.equal(c.walker.attrs['data-direction'],'down');});
@@ -35,3 +35,46 @@ test('pirate world shows a lighthouse, boat and distinct four-person crew',()=>{
 test('pirate islands follow chapter stops and selected crew sails in a boat',()=>{const {Journey}=setup(true),c=container();Journey.useBook({world:'pirates',companions:{pirates:'captain'}});Journey.render(c,{total:5,completed:2,world:'pirates'});assert.equal((c.innerHTML.match(/class="checkpoint-island"/g)||[]).length,5);assert.ok(c.innerHTML.includes('starting-harbor'));assert.ok(c.innerHTML.includes('boat-rider'));assert.ok(c.innerHTML.includes('boat-hull'));assert.ok(c.innerHTML.includes('pirate-captain'));assert.ok(!c.innerHTML.includes('ghost-ship'));});
 test('lighthouse beam and glow grow with progress while the tower stays still',()=>{const context={window:{}};vm.runInNewContext(fs.readFileSync(require.resolve('../js/pirate-world.js'),'utf8'),context);const P=context.window.PirateWorld;let previous=-1;for(const p of [0,.25,.5,.75,1]){const html=P.horizon(p);const opacity=Number(html.match(/data-lighthouse-beam[^>]*opacity="([\d.]+)"/)[1]);assert.ok(opacity>previous);previous=opacity;assert.equal(P.focalY(p),0);assert.ok(html.includes('transform="translate(28 37)"'));}});
 test('pirate movement keeps the rider in a seated pose during sailing and faces front on arrival',()=>{const {Journey,frames}=setup(),c=container();Journey.useBook({world:'pirates'});Journey.render(c,{total:5,completed:2,previousCompleted:1,world:'pirates'});frames.shift()(0);frames.shift()(170);assert.equal(c.walker.attrs['data-frame'],'0');frames.shift()(Journey.walkDuration(5,1,2));assert.equal(c.walker.attrs['data-direction'],'down');assert.equal(c.walker.attrs['data-frame'],'0');});
+
+test('long books keep all chapter markers accessible in roomy stretches with global chapter numbers',()=>{
+ const {Journey}=setup(true);
+ for(const total of [9,27,62,100]){
+  const found=[];
+  for(let page=0;page<Journey.chapterStretch(total,0).count;page++){
+   const start=Journey.stretchAt(total,page).start;
+   const c=container();Journey.render(c,{total,completed:20,selected:start,interactive:true});
+   const indices=[...c.innerHTML.matchAll(/data-i="(\d+)"/g)].map(m=>Number(m[1]));
+   assert.ok(indices.length<=8);found.push(...indices);
+   assert.ok(c.innerHTML.includes(`aria-label="Chapter ${start+1},`));
+   const positions=[...c.innerHTML.matchAll(/data-i="\d+" transform="translate\(([\d.]+) ([\d.]+)\)"/g)].map(m=>[Number(m[1]),Number(m[2])]);
+   for(let i=1;i<positions.length;i++)assert.ok(Math.hypot(positions[i][0]-positions[i-1][0],positions[i][1]-positions[i-1][1])>26);
+  }
+  assert.deepEqual(found,Array.from({length:total},(_,i)=>i));
+ }
+});
+test('sliding interpolates between tile positions and invokes arrival once facing the reader',()=>{
+ const {Journey,frames}=setup(),c=container();let arrivals=0;
+ Journey.render(c,{total:62,completed:9,previousCompleted:8,selected:8,interactive:true,onArrival:()=>arrivals++});
+ frames.shift()(0);const start=c.walker.attrs.transform;
+ frames.shift()(30);const first=c.walker.attrs.transform;
+ frames.shift()(60);assert.notEqual(c.walker.attrs.transform,first);assert.notEqual(first,start);
+ frames.shift()(100000);assert.equal(arrivals,1);assert.equal(c.walker.attrs['data-direction'],'down');assert.equal(c.walker.attrs['data-frame'],'0');
+ const end=Journey.pointAt(1/8);assert.equal(c.walker.attrs.transform,`translate(${end.x.toFixed(1)} ${(end.y-15).toFixed(1)})`);
+});
+
+test('stretches distribute short remainders evenly without losing chapter mapping',()=>{
+ const {Journey}=setup(true);
+ assert.equal(Journey.stretchAt(11,0).end,6);
+ assert.equal(Journey.stretchAt(11,1).start,6);
+ for(const total of [9,11,17,25,62,100]){
+  const count=Journey.chapterStretch(total,0).count,sizes=[];
+  let next=0;
+  for(let page=0;page<count;page++){
+   const region=Journey.stretchAt(total,page);sizes.push(region.end-region.start);
+   assert.equal(region.start,next);
+   for(let chapter=region.start;chapter<region.end;chapter++)assert.equal(Journey.chapterStretch(total,chapter).index,page);
+   next=region.end;
+  }
+  assert.equal(next,total);assert.ok(Math.max(...sizes)<=8);assert.ok(Math.max(...sizes)-Math.min(...sizes)<=1);
+ }
+});
