@@ -321,12 +321,6 @@ Correct-answer auto-advance is shared by all worlds: the attack animation finish
 
 `css/readability.css` keeps the original pixel headings and artwork while using a clear system font with aligned digits for percentages, chapter counts, checkpoint values, boss HP, question counters and damage numbers. Numeric labels are slightly larger and have stronger contrast. This stylesheet loads last so older decorative font rules cannot override the data labels.
 
-## Find my next quest
-
-The bookshelf's discovery guide asks six questions about mood, genre, preferred length, reading difficulty, favorite books, and themes to avoid. The last two questions are optional. `POST /api/catalog/recommendations` uses the configured LLM to choose up to three IDs from saved catalogue entries with summaries and chapters, excluding titles already on the reader's shelf. Titles, authors, chapter lists, and covers always come from the catalogue; recommendations do not modify catalogue metadata. Unknown and duplicate IDs are discarded. If generation fails or no provider is configured, the results are explicitly labelled catalogue suggestions rather than personalized matches.
-
-Readers review an editable, prefilled Add Book form before saving a recommendation. The questionnaire answers are sent to the configured AI provider; they are not stored in the database. Matching is limited to the saved catalogue and may not find a close fit for every preference.
-
 ## Boss questions from the catalogue
 
 Every chapter's boss fight uses **3 questions from the catalogue** automatically. Pasting your own summary or excerpt remains available ("Use my own summary instead") and is the fallback when a chapter has none yet.
@@ -347,56 +341,41 @@ Rebuilding the bundled questions: `python tools/build_questions.py`. It download
 
 ## Hosted database (Tiger Data) and sign-up
 
-
-
 The backend runs on **SQLite** locally and on **PostgreSQL** in production. Tiger Data (Tiger Cloud, the company behind TimescaleDB) is hosted Postgres. Setting `DATABASE_URL` switches it over; no other change is needed.
-
-
 
 **Set up Tiger Data**
 
-
-
 1. Create a free service at https://console.cloud.timescale.com and copy its **Service URL**, which looks like `postgres://tsdbadmin:<password>@<id>.tsdb.cloud.timescale.com:<port>/tsdb?sslmode=require`.
-
 2. Put it in `src/backend/.env` (git-ignored): `DATABASE_URL=postgres://...`
-
 3. Install the driver: `pip install -r src/backend/requirements.txt` (adds `psycopg`).
-
 4. Move your existing local data across, keeping all ids and links:
-
    ```
-
    cd src/backend
-
    python tools/migrate_to_postgres.py          # refuses if the target already has data; --replace to overwrite
-
    ```
-
 5. Start the backend as usual. Tables, the catalogue and the boss questions are created automatically on first start.
-
-
 
 `db.py` keeps the app's SQL portable: `?` placeholders, `cur.lastrowid` (via `RETURNING id`) and `row["col"]` work on both engines. The whole test suite runs against Postgres with `TEST_POSTGRES_URL=postgresql://... python -m pytest`, and all tests pass on both engines.
 
-
-
 **Sign-up and accounts**
 
-
-
 - **First visit:** the app asks *What's your name?*, *What should we call you?* (filled in with your first name until you change it) and an optional email. These are saved to your profile and can be edited later under the gear icon.
-
 - **Greeting:** the dashboard greets returning readers by preferred name ("Welcome back, Azeem"), and so do "Where was I?" reminders and notifications.
-
 - **Device key:** sign-up gives the device a private key, sent as `Authorization: Bearer <key>`. Only its SHA-256 hash is stored. Every reader sees only their own books. The catalogue and health check are public.
-
-- **Existing data:** the first sign-up takes over the profile that existed before accounts, so existing books and progress are kept.
-
+- **New accounts start empty:** every sign-up creates a new reader with an empty shelf. It never inherits anyone else's data, including profiles from before accounts existed. `flask seed` only ever adds sample books to a profile nobody has signed up for, and `--reset` only clears that profile.
+- **Account housekeeping** (each command shows what it would do; add `--yes` to apply):
+  ```
+  python -m flask --app app accounts list                    # readers, signed up or not, and their book counts
+  python -m flask --app app accounts purge-unclaimed         # delete profiles nobody signed up for, with their books
+  python -m flask --app app accounts clear-shelf <id>        # empty one reader's shelf; the account stays signed in
+  ```
 - **Single-user mode:** `AUTH_REQUIRED=0` keeps the old single-user behaviour (handy for local experiments; tests use it by default).
-
 - **Not yet supported:** signing in on a second device. That needs email sign-in, which is planned. Until then, each device that signs up is a separate reader.
 
-
-
 API: `POST /api/signup {name, preferredName, email?}` returns `{token, user}`. `GET /api/user` now includes `signedUp`.
+
+## Find my next quest
+
+The bookshelf's discovery guide asks six questions about mood, genre, preferred length, reading difficulty, favorite books, and themes to avoid. The last two questions are optional. `POST /api/catalog/recommendations` uses the configured LLM to choose up to three IDs from saved catalogue entries with summaries and chapters, excluding titles already on the reader's shelf. Titles, authors, chapter lists, and covers always come from the catalogue; recommendations do not modify catalogue metadata. Unknown and duplicate IDs are discarded. If generation fails or no provider is configured, the results are explicitly labelled catalogue suggestions rather than personalized matches.
+
+Readers review an editable, prefilled Add Book form before saving a recommendation. The questionnaire answers are sent to the configured AI provider; they are not stored in the database. Matching is limited to the saved catalogue and may not find a close fit for every preference.
