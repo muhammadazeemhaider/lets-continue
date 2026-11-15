@@ -92,12 +92,15 @@ class PgCursor:
 
 
 class PgConnection:
-    """psycopg connection with the small sqlite3 surface this app uses."""
+    """psycopg connection with the small sqlite3 surface this app uses. Either opens its own connection
+    (`url`) or wraps one borrowed from a pool (`conn` + `release`, which hands it back on close)."""
 
-    def __init__(self, url: str):
-        import psycopg
+    def __init__(self, url: str | None = None, conn=None, release=None):
+        if conn is None:
+            import psycopg
 
-        self._con = psycopg.connect(url, row_factory=_row_factory, connect_timeout=15)
+            conn = psycopg.connect(url, row_factory=_row_factory, connect_timeout=15)
+        self._con, self._release = conn, release
 
     def execute(self, sql: str, params=()):
         sql, wants_id = _translate(sql, bool(params))
@@ -135,7 +138,41 @@ class PgConnection:
         self._con.rollback()
 
     def close(self):
+        if self._release is not None:
+            try:
+                self._con.rollback()  # never hand back a connection mid-transaction
+            finally:
+                self._release()
+                self._release = None
+            return
         self._con.close()
+
+
+# One small pool per database URL: a hosted database is far away, and opening a new encrypted connection for
+# every request costs several hundred milliseconds.
+_pools: dict = {}
+
+
+def _pool(url: str):
+    if url not in _pools:
+        import os
+
+        from psycopg_pool import ConnectionPool
+
+        _pools[url] = ConnectionPool(
+            url, min_size=1, max_size=int(os.environ.get("DB_POOL_SIZE", 5)),
+            kwargs={"row_factory": _row_factory, "connect_timeout": 15},
+            # Retire connections idle for 5 minutes, before the server would drop them; this avoids a
+            # health-check round trip on every request.
+            max_idle=300, reconnect_timeout=30, open=True, name="toward-the-light",
+        )
+    return _pools[url]
+
+
+def close_pools() -> None:
+    """Close every pool (tests, shutdown)."""
+    while _pools:
+        _pools.popitem()[1].close()
 
 
 # --------------------------------------------------------------------------- connections
@@ -150,8 +187,15 @@ def connect(target: str):
 
 
 def get_db():
+    """The request's connection. On Postgres it is borrowed from the pool and returned at the end of the request."""
     if "db" not in g:
-        g.db = connect(current_app.config["DATABASE"])
+        target = current_app.config["DATABASE"]
+        if is_postgres(target) and current_app.config.get("DB_POOL", True):
+            pool = _pool(target)
+            conn = pool.getconn()
+            g.db = PgConnection(conn=conn, release=lambda: pool.putconn(conn))
+        else:
+            g.db = connect(target)
     return g.db
 
 

@@ -270,11 +270,14 @@ def activity_times(book_id: int) -> list[str]:
     return [r[0] for r in rows]
 
 
-def book_json(row, detail: bool = True) -> dict:
+def book_json(row, detail: bool = True, chapters=None, activity=None) -> dict:
+    """`chapters` / `activity` can be passed in when many books are listed at once (fewer round trips to
+    a hosted database); otherwise they are looked up here."""
     con = db.get_db()
-    chapters = con.execute(
-        "SELECT number, title FROM chapters WHERE book_id = ? ORDER BY number", (row["id"],)
-    ).fetchall()
+    if chapters is None:
+        chapters = con.execute(
+            "SELECT number, title FROM chapters WHERE book_id = ? ORDER BY number", (row["id"],)
+        ).fetchall()
     out = {
         "id": row["id"],
         "title": row["title"],
@@ -284,7 +287,7 @@ def book_json(row, detail: bool = True) -> dict:
         "totalChapters": len(chapters),
         "lastActivity": row["last_activity"],
         "createdAt": row["created_at"],
-        "streak": streak_from(activity_times(row["id"]), tz_offset()),
+        "streak": streak_from(activity if activity is not None else activity_times(row["id"]), tz_offset()),
         "chapters": [{"n": c["number"], "title": c["title"]} for c in chapters],
     }
     if detail:
@@ -397,10 +400,23 @@ def register_routes(app: Flask) -> None:
     # ---- books
     @app.get("/api/books")
     def list_books():
-        rows = db.get_db().execute(
+        con = db.get_db()
+        rows = con.execute(
             "SELECT * FROM books WHERE user_id = ? ORDER BY last_activity DESC", (current_user()["id"],)
         ).fetchall()
-        return jsonify([book_json(r, detail=False) for r in rows])
+        # Three queries for the whole shelf instead of two per book (each query is a round trip to the database).
+        chapters, activity = {}, {}
+        if rows:
+            ids = [r["id"] for r in rows]
+            marks = ", ".join("?" * len(ids))
+            for c in con.execute(f"SELECT book_id, number, title FROM chapters WHERE book_id IN ({marks}) "
+                                 "ORDER BY book_id, number", ids):
+                chapters.setdefault(c["book_id"], []).append(c)
+            for a in con.execute(f"SELECT book_id, created_at FROM checkpoints WHERE book_id IN ({marks}) "
+                                 f"UNION ALL SELECT book_id, created_at FROM notes WHERE book_id IN ({marks})", ids + ids):
+                activity.setdefault(a["book_id"], []).append(a["created_at"])
+        return jsonify([book_json(r, detail=False, chapters=chapters.get(r["id"], []), activity=activity.get(r["id"], []))
+                        for r in rows])
 
     @app.post("/api/books")
     def create_book():

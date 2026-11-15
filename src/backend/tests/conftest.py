@@ -46,6 +46,9 @@ def _postgres(monkeypatch):
         config = dict(config or {})
         if config.get("DATABASE") and not str(config["DATABASE"]).startswith("postgres"):
             config["DATABASE"] = _pg_for(str(config["DATABASE"]))
+            # Each test has its own throwaway database; a pool per database would exhaust the server's
+            # connections. The pool itself is covered by test_db_pool.py.
+            config.setdefault("DB_POOL", False)
         return real_create(config)
 
     def seed_run(path, reset=False):
