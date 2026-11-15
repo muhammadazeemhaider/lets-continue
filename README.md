@@ -333,7 +333,7 @@ Every chapter's boss fight uses **3 questions from the catalogue** automatically
 | --- | --- | --- |
 | `text` | Made by rules from the chapter's own public-domain text, with no AI: "Which of these moments happens in this chapter?" (a real line from it against lines from other chapters) and fill-in-the-missing-name (people against people, places against places). Every answer is in the chapter. | 3,342 questions, 1,114 of 1,119 chapters of the 20 classics (`catalog_data/questions/`) |
 | `ai-text` | Written by a free AI model from that chapter's text only. Each answer must come with an exact quote from the chapter, otherwise it is discarded. Replaces `text` questions over time. | grows daily |
-| `ai-knowledge` | Dune and The Lord of the Rings have no public text, so the AI writes from its knowledge of the book, only when it says it knows that chapter. Labelled "may contain mistakes". | grows daily (110 chapters) |
+| `ai-knowledge` | Dune and The Lord of the Rings have no public text, so the AI writes from its knowledge of the book, only when it says it knows that chapter. Labelled "AI questions from the book". | grows daily (110 chapters) |
 
 **The AI writer** runs in the background scheduler within a daily budget (`QUESTION_REQUESTS_PER_DAY`, default 35, leaving room for recaps and reminders on a free key; `QUESTION_REQUESTS_PER_PASS`, default 3). It works on the chapters readers are about to fight first. A chapter it fails twice is skipped. To run it by hand: `python -m flask --app app questions --requests 5`.
 

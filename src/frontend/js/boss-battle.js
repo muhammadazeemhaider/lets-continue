@@ -24,8 +24,8 @@ const memory={};let storageWarning=false;
 const CATALOG_NOTE={
   'text':'These questions were made from this chapter’s own text. Every answer is in the chapter.',
   'ai-text':'These questions were written by AI from this chapter’s text, and every answer was checked against a quote from it.',
-  'ai-knowledge':'These questions were written by AI from what it knows about this book. They may contain mistakes.'};
-const CATALOG_DISCLOSURE={'text':'Questions from the chapter’s text','ai-text':'AI questions checked against the chapter','ai-knowledge':'AI questions from the book · may contain mistakes'};
+  'ai-knowledge':'These questions were written by AI from what it knows about this book.'};
+const CATALOG_DISCLOSURE={'text':'Questions from the chapter’s text','ai-text':'AI questions checked against the chapter','ai-knowledge':'AI questions from the book'};
 const key=(id,n)=>`ttl.boss.v1:${id}:${n}`;
 function load(id,n){const k=key(id,n);try{const raw=localStorage.getItem(k);if(raw)return BossEngine.validate(JSON.parse(raw));}catch{}return BossEngine.validate(memory[k]);}
 function save(id,n,b){memory[key(id,n)]=b;try{localStorage.setItem(key(id,n),JSON.stringify(b));}catch{storageWarning=true;}}
