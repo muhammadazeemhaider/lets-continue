@@ -326,6 +326,17 @@
     return out+'</g>';
   }
 
+  function atmosphere(world, layer, id) {
+    if(layer==='sky') {
+      if(world==='scifi') return `<g class="world-atmosphere space-meteors" aria-hidden="true" shape-rendering="geometricPrecision"><defs><linearGradient id="${id}-meteor" gradientUnits="userSpaceOnUse" x1="-20" y1="-10" x2="0" y2="0"><stop offset="0" stop-color="#abd7f2" stop-opacity="0"/><stop offset=".7" stop-color="#c4e9fa" stop-opacity=".35"/><stop offset="1" stop-color="#effaff" stop-opacity=".85"/></linearGradient></defs>${[[65,22,0],[225,30,11]].map(([x,y,delay])=>`<g transform="translate(${x} ${y})"><g class="shooting-star" style="animation-delay:-${delay}s"><path d="M-20-10L0 0" stroke="url(#${id}-meteor)" stroke-width=".85" stroke-linecap="round"/><circle r=".9" fill="#f1fbff"/></g></g>`).join('')}</g>`;
+      if(world==='pirates') return '<g class="world-atmosphere sea-gulls" aria-hidden="true"><g class="gull-flock"><path d="M42 43h4v2h3v-2h4M64 35h4v2h3v-2h4M80 48h4v2h3v-2h4" fill="none" stroke="#e6e9d8" stroke-width="1.4"/></g></g>';
+      return '<g class="world-atmosphere enchanted-sky" aria-hidden="true"><g class="fantasy-wisp"><path d="M59 58h2v2h2v2h-2v2h-2v-2h-2v-2h2z" fill="#d9c0fa"/><rect x="51" y="65" width="1" height="1" fill="#f2d4a6"/></g><g class="fantasy-wisp wisp-two"><path d="M270 66h2v2h2v2h-2v2h-2v-2h-2v-2h2z" fill="#aee4cb"/></g></g>';
+    }
+    if(world==='pirates') return '<g class="world-atmosphere sea-shimmer" aria-hidden="true"><g class="sea-glints"><path d="M75 196h8M79 193v6M265 211h10M270 208v6M343 176h7M346 173v6" stroke="#c0f0e5" stroke-width="1"/></g><g class="sea-ripples"><path d="M50 224h12m3 0h4M204 232h17m3 0h4M307 203h13" stroke="#99d9d1" stroke-width="1.5" opacity=".4"/></g></g>';
+    if(world==='fantasy') return `<g class="world-atmosphere forest-magic" aria-hidden="true">${[[39,174],[149,146],[236,178],[336,141]].map(([x,y],i)=>`<g transform="translate(${x} ${y})"><g class="magic-mote" style="animation-delay:-${i*2}s"><rect width="2" height="2" fill="${i%2?'#d5b1f0':'#ffe1a2'}"/><rect x="-2" y="-2" width="6" height="6" fill="#e8caee" opacity=".08"/></g></g>`).join('')}</g>`;
+    return '<g class="world-atmosphere orbit-signal" aria-hidden="true"><circle class="signal-ring" cx="354" cy="63" r="6" fill="none" stroke="#87cee2" stroke-width=".7"/></g>';
+  }
+
   const CHAPTERS_PER_STRETCH = 8;
   function stretchAt(total, requestedIndex) {
     const count = Math.max(1, Math.ceil(total / CHAPTERS_PER_STRETCH));
@@ -392,6 +403,7 @@
   </defs>
   <rect width="${W}" height="${H}" fill="url(#${id}S)"/>
   ${stars(sceneWorld==='scifi'||sceneWorld==='pirates'?p*.25:p)}${sceneWorld==='scifi'?global.SpaceWorld.orbit():sceneWorld==='pirates'?global.PirateWorld.orbit():moon(p)}
+  ${atmosphere(sceneWorld,'sky',id)}
   ${sceneWorld==='pirates'?'':focalMarkup}
   ${sceneWorld==='scifi'?global.SpaceWorld.terrain(p):sceneWorld==='pirates'?global.PirateWorld.terrain(p):hills(p, bottom)}
   ${sceneWorld==='pirates'?focalMarkup:''}
@@ -401,6 +413,7 @@
     <path d="${PATH_D}" class="trail-lit" stroke="url(#${id}P)" stroke-width="3" pathLength="${SAMPLES.length.toFixed(2)}" stroke-dasharray="0 ${SAMPLES.length.toFixed(2)}" data-lit="${litLen.toFixed(2)}"/>
   </g>
   ${sceneWorld==='scifi'?global.SpaceWorld.scenery(p,visibleCompleted,marks,traveler):sceneWorld==='pirates'?global.PirateWorld.scenery(p,visibleCompleted,marks,traveler):scenery(p, visibleCompleted, marks, traveler)}
+  ${atmosphere(sceneWorld,'ground',id)}
   <g class="markers" shape-rendering="geometricPrecision">${m}</g>
   <g class="landscape-explorer" data-direction="down" data-frame="0" style="pointer-events:none" transform="translate(${traveler.x.toFixed(1)} ${(traveler.y-15).toFixed(1)})" shape-rendering="crispEdges" aria-hidden="true">
     ${sceneWorld==='pirates'?global.PirateWorld.boat(characterSprite(opts.character||character)):`<ellipse cx="0" cy="15" rx="5" ry="2" fill="#080b26" opacity=".5"/>${characterSprite(opts.character||character)}`}

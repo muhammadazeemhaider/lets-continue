@@ -17,6 +17,7 @@ import catalog
 import db
 import llm
 import notifications
+import recommendations
 import summaries
 
 DEFAULT_DB = Path(__file__).parent / "data" / "toward_the_light.db"
@@ -381,6 +382,36 @@ def register_routes(app: Flask) -> None:
         """As-you-type suggestions: our saved catalogue first, then Open Library (saved for next time)."""
         q = request.args.get("q", "")[:120]
         return jsonify(items=catalog.search(db.get_db(), q, app.config["CATALOG_SOURCE"]))
+
+    @app.post("/api/catalog/recommendations")
+    def catalog_recommendations():
+        data = body()
+        preferences = {}
+        allowed = {
+            'mood': {'cozy', 'adventurous', 'thoughtful', 'mysterious', 'surprise'},
+            'length': {'short', 'long', 'any'},
+        }
+        for key, choices in allowed.items():
+            value = data.get(key)
+            if not isinstance(value, str) or value not in choices:
+                abort(400, f"Choose a valid {key}")
+            preferences[key] = value
+        for key, choices in {
+            'genre': {'fantasy', 'scifi', 'mystery', 'romance', 'classics', 'any'},
+            'difficulty': {'easy', 'moderate', 'challenging', 'any'},
+        }.items():
+            if key in data:
+                if not isinstance(data[key], str) or data[key] not in choices:
+                    abort(400, f"Choose a valid {key}")
+                preferences[key] = data[key]
+        for key in ('favorites', 'avoid'):
+            if key == 'avoid' and key not in data:
+                continue
+            value = data.get(key, '')
+            if not isinstance(value, str) or len(value) > 500:
+                abort(400, f"{key} must be text of at most 500 characters")
+            preferences[key] = value.strip()
+        return jsonify(recommendations.recommend(db.get_db(), current_user()['id'], preferences, app.config['LLM']))
 
     @app.get("/api/catalog/<int:catalog_id>")
     def catalog_entry(catalog_id):

@@ -320,3 +320,9 @@ Correct-answer auto-advance is shared by all worlds: the attack animation finish
 ## Readable numbers
 
 `css/readability.css` keeps the original pixel headings and artwork while using a clear system font with aligned digits for percentages, chapter counts, checkpoint values, boss HP, question counters and damage numbers. Numeric labels are slightly larger and have stronger contrast. This stylesheet loads last so older decorative font rules cannot override the data labels.
+
+## Find my next quest
+
+The bookshelf's discovery guide asks six questions about mood, genre, preferred length, reading difficulty, favorite books, and themes to avoid. The last two questions are optional. `POST /api/catalog/recommendations` uses the configured LLM to choose up to three IDs from saved catalogue entries with summaries and chapters, excluding titles already on the reader's shelf. Titles, authors, chapter lists, and covers always come from the catalogue; recommendations do not modify catalogue metadata. Unknown and duplicate IDs are discarded. If generation fails or no provider is configured, the results are explicitly labelled catalogue suggestions rather than personalized matches.
+
+Readers review an editable, prefilled Add Book form before saving a recommendation. The questionnaire answers are sent to the configured AI provider; they are not stored in the database. Matching is limited to the saved catalogue and may not find a close fit for every preference.
