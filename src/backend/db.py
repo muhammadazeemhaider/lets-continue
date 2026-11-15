@@ -36,6 +36,14 @@ def close_db(_exc=None) -> None:
 # does not change existing tables, so these are added in place on older databases.
 MIGRATIONS = [
     ("catalog_books", "sources", "TEXT NOT NULL DEFAULT '{}'"),  # {"summary_url": ..., "chapters_url": ...}
+    ("catalog_books", "slug", "TEXT"),                            # stable id: curated:dune-1, gutenberg:1342
+    ("catalog_books", "series", "TEXT"),                          # e.g. 'Dune' for its three parts
+    ("catalog_books", "part", "INTEGER"),
+    ("books", "catalog_slug", "TEXT"),                            # which catalogue entry a shelf book came from
+]
+# Indexes on migrated columns can only be created after the columns exist.
+POST_MIGRATION = [
+    "CREATE UNIQUE INDEX IF NOT EXISTS idx_catalog_slug ON catalog_books(slug)",
 ]
 
 
@@ -47,5 +55,7 @@ def init_db(path: str) -> None:
         existing = {r[1] for r in con.execute(f"PRAGMA table_info({table})")}
         if existing and column not in existing:
             con.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
+    for statement in POST_MIGRATION:
+        con.execute(statement)
     con.commit()
     con.close()

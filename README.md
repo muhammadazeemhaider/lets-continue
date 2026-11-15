@@ -326,3 +326,21 @@ Correct-answer auto-advance is shared by all worlds: the attack animation finish
 The bookshelf's discovery guide asks six questions about mood, genre, preferred length, reading difficulty, favorite books, and themes to avoid. The last two questions are optional. `POST /api/catalog/recommendations` uses the configured LLM to choose up to three IDs from saved catalogue entries with summaries and chapters, excluding titles already on the reader's shelf. Titles, authors, chapter lists, and covers always come from the catalogue; recommendations do not modify catalogue metadata. Unknown and duplicate IDs are discarded. If generation fails or no provider is configured, the results are explicitly labelled catalogue suggestions rather than personalized matches.
 
 Readers review an editable, prefilled Add Book form before saving a recommendation. The questionnaire answers are sent to the configured AI provider; they are not stored in the database. Matching is limited to the saved catalogue and may not find a close fit for every preference.
+
+## Boss questions from the catalogue
+
+Every chapter's boss fight uses **3 questions from the catalogue** automatically. Pasting your own summary or excerpt remains available ("Use my own summary instead") and is the fallback when a chapter has none yet.
+
+**Multi-part books are separate entries.** Dune is split into Book One: Dune (22 chapters), Book Two: Muad'Dib (15) and Book Three: The Prophet (11). The Lord of the Rings is split into The Fellowship of the Ring (22), The Two Towers (21) and The Return of the King (19). Searching "dune" or "lord of the rings" lists the parts in order. `flask seed` puts The Fellowship of the Ring and Dune Book One on the shelf.
+
+**Where the questions come from (labelled in the battle):**
+
+| Source | What it is | Coverage today |
+| --- | --- | --- |
+| `text` | Made by rules from the chapter's own public-domain text, with no AI: "Which of these moments happens in this chapter?" (a real line from it against lines from other chapters) and fill-in-the-missing-name (people against people, places against places). Every answer is in the chapter. | 3,342 questions, 1,114 of 1,119 chapters of the 20 classics (`catalog_data/questions/`) |
+| `ai-text` | Written by a free AI model from that chapter's text only. Each answer must come with an exact quote from the chapter, otherwise it is discarded. Replaces `text` questions over time. | grows daily |
+| `ai-knowledge` | Dune and The Lord of the Rings have no public text, so the AI writes from its knowledge of the book, only when it says it knows that chapter. Labelled "AI questions from the book". | grows daily (110 chapters) |
+
+**The AI writer** runs in the background scheduler within a daily budget (`QUESTION_REQUESTS_PER_DAY`, default 35, leaving room for recaps and reminders on a free key; `QUESTION_REQUESTS_PER_PASS`, default 3). It works on the chapters readers are about to fight first. A chapter it fails twice is skipped. To run it by hand: `python -m flask --app app questions --requests 5`.
+
+Rebuilding the bundled questions: `python tools/build_questions.py`. It downloads each book's text once into the git-ignored `data/texts/` cache. API: `GET /api/books/<id>/chapters/<n>/questions` returns `{available, source, model, questions[]}`.

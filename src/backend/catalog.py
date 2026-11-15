@@ -149,6 +149,9 @@ def _row_json(r, full: bool = False) -> dict:
     out = {
         "id": r["id"], "title": r["title"], "author": r["author"], "year": r["year"], "pages": r["pages"],
         "coverUrl": r["cover_url"], "chapterCount": len(chapters), "curated": r["chapter_source"] == "curated",
+        "slug": r["slug"] if "slug" in r.keys() else None,
+        "series": r["series"] if "series" in r.keys() else None,
+        "part": r["part"] if "part" in r.keys() else None,
     }
     if full:
         src = json.loads(r["sources"] or "{}") if "sources" in r.keys() else {}
@@ -171,46 +174,52 @@ def ensure_bundled(con, path: Path = BUNDLED) -> int:
     books = json.loads(path.read_text(encoding="utf-8"))
     now = utcnow()
     for b in books:
-        src = json.dumps({"summary_url": b.get("summary_url"), "chapters_url": b.get("chapters_url")})
-        row = None
-        if b.get("ol_key"):
-            row = con.execute("SELECT id, chapter_source FROM catalog_books WHERE ol_key = ?", (b["ol_key"],)).fetchone()
-        if row is None:
-            row = con.execute("SELECT id, chapter_source FROM catalog_books WHERE title_norm = ? AND lower(author) = ?",
-                              (normalize(b["title"]), b["author"].lower())).fetchone()
-        if row is not None and row["chapter_source"] == "curated":
+        slug = f"gutenberg:{b['gutenberg_id']}"
+        existing = con.execute("SELECT chapter_source FROM catalog_books WHERE slug = ? OR (ol_key IS NOT NULL AND ol_key = ?)",
+                               (slug, b.get("ol_key"))).fetchone()
+        if existing is not None and existing["chapter_source"] == "curated":
             continue
-        values = (b["title"], normalize(b["title"]), b["author"], b.get("year"), b.get("pages"), b.get("cover_url"),
-                  b["summary"], b["summary_source"], json.dumps(b["chapters"]), b["chapter_source"], src, now)
-        if row is None:
-            con.execute(
-                """INSERT INTO catalog_books (title, title_norm, author, year, pages, cover_url, summary, summary_source,
-                       chapters, chapter_source, sources, enriched_at, created_at, ol_key)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", values + (now, b.get("ol_key")))
-        else:
-            con.execute(
-                """UPDATE catalog_books SET title = ?, title_norm = ?, author = ?, year = ?, pages = ?, cover_url = ?,
-                       summary = ?, summary_source = ?, chapters = ?, chapter_source = ?, sources = ?, enriched_at = ?
-                   WHERE id = ?""", values + (row["id"],))
+        _upsert(con, slug, b.get("ol_key"), {
+            "title": b["title"], "author": b["author"], "year": b.get("year"), "pages": b.get("pages"),
+            "cover_url": b.get("cover_url"), "summary": b["summary"], "summary_source": b["summary_source"],
+            "chapters": json.dumps(b["chapters"]), "chapter_source": b["chapter_source"],
+            "sources": json.dumps({"summary_url": b.get("summary_url"), "chapters_url": b.get("chapters_url")}),
+            "enriched_at": now,
+        })
     con.commit()
     return len(books)
 
 
+def _upsert(con, slug: str, ol_key: str | None, fields: dict) -> None:
+    """Insert or update a catalogue row found by slug, else by Open Library key (rows saved by searches)."""
+    row = con.execute("SELECT id FROM catalog_books WHERE slug = ?", (slug,)).fetchone()
+    if row is None and ol_key:
+        row = con.execute("SELECT id FROM catalog_books WHERE ol_key = ?", (ol_key,)).fetchone()
+    cols = {**fields, "slug": slug, "ol_key": ol_key, "title_norm": normalize(fields["title"])}
+    if row is None:
+        cols["created_at"] = utcnow()
+        con.execute(f"INSERT INTO catalog_books ({', '.join(cols)}) VALUES ({', '.join('?' * len(cols))})",
+                    list(cols.values()))
+    else:
+        con.execute(f"UPDATE catalog_books SET {', '.join(f'{k} = ?' for k in cols)} WHERE id = ?",
+                    [*cols.values(), row["id"]])
+
+
 def ensure_curated(con) -> None:
-    """Make sure the hand-curated books exist and carry their curated data (idempotent)."""
+    """Make sure the hand-curated books exist and carry their curated data (idempotent).
+    Multi-part books are separate entries (Dune 1-3, The Lord of the Rings 1-3)."""
     now = utcnow()
+    slugs = [b["slug"] for b in CURATED]
+    # Retire curated rows from before the split (the single-volume 'The Lord of the Rings' and 'Dune').
+    con.execute(f"""DELETE FROM catalog_books WHERE chapter_source = 'curated'
+                    AND (slug IS NULL OR slug NOT IN ({', '.join('?' * len(slugs))}))""", slugs)
     for b in CURATED:
-        con.execute(
-            """INSERT INTO catalog_books (ol_key, title, title_norm, author, year, pages, cover_url, summary,
-                   summary_source, chapters, chapter_source, enriched_at, created_at)
-               VALUES (?,?,?,?,?,?,?,?, 'curated', ?, 'curated', ?, ?)
-               ON CONFLICT(ol_key) DO UPDATE SET title = excluded.title, title_norm = excluded.title_norm,
-                   author = excluded.author, year = excluded.year, pages = excluded.pages,
-                   cover_url = excluded.cover_url, summary = excluded.summary, summary_source = 'curated',
-                   chapters = excluded.chapters, chapter_source = 'curated', enriched_at = excluded.enriched_at""",
-            (b["ol_key"], b["title"], normalize(b["title"]), b["author"], b["year"], b["pages"], b["cover_url"],
-             b["summary"], json.dumps(b["chapters"]), now, now),
-        )
+        _upsert(con, b["slug"], b["ol_key"], {
+            "title": b["title"], "author": b["author"], "year": b["year"], "pages": b["pages"],
+            "cover_url": b["cover_url"], "summary": b["summary"], "summary_source": "curated",
+            "chapters": json.dumps(b["chapters"]), "chapter_source": "curated", "enriched_at": now,
+            "series": b["series"], "part": b["part"],
+        })
     con.commit()
 
 
@@ -229,8 +238,9 @@ def _local(con, qn: str, limit: int) -> list:
     words = qn.split()
     if not words:
         return []
-    where = " AND ".join(["(title_norm LIKE ? OR lower(author) LIKE ?)"] * len(words))
-    params = [p for w in words for p in (f"%{w}%", f"%{w}%")]
+    # A word may match the title, the author or the series ('lord of the rings' finds all three volumes).
+    where = " AND ".join(["(title_norm LIKE ? OR lower(author) LIKE ? OR lower(coalesce(series, '')) LIKE ?)"] * len(words))
+    params = [p for w in words for p in (f"%{w}%", f"%{w}%", f"%{w}%")]
     rows = con.execute(f"SELECT * FROM catalog_books WHERE {where}", params).fetchall()
 
     def rank(r):
@@ -238,6 +248,8 @@ def _local(con, qn: str, limit: int) -> list:
         return (
             0 if t == qn or t == f"the {qn}" else 1 if t.startswith(qn) or t.startswith(f"the {qn}") else 2,
             0 if r["chapter_source"] == "curated" else 1,
+            r["series"] or "",            # keep the parts of a series together...
+            r["part"] or 0,               # ...and in reading order
             -r["times_used"],
             len(t),
         )

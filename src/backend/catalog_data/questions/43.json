@@ -1,0 +1,387 @@
+{
+ "slug": "gutenberg:43",
+ "title": "The Strange Case of Dr. Jekyll and Mr. Hyde",
+ "source": "text",
+ "chapters": {
+  "1": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "It wasn’t like a man; it was like some damned Juggernaut.",
+     "Enfield, that their way lay once again through the by-street; and that when they came in front of the door, both stopped to gaze on it.",
+     "But Poole was positive nothing had come except by post; “and only circulars by that,” he added.",
+     "And yet when I looked upon that ugly idol in the glass, I was conscious of no repugnance, rather of a leap of welcome."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “It wasn’t like a man; it was like some damned Juggernaut.”",
+    "evidence": "It wasn’t like a man; it was like some damned Juggernaut."
+   },
+   {
+    "prompt": "Fill in the missing name: “I never saw a circle of such hateful faces; and there was the man in the middle, with a kind of black sneering coolness—frightened too, I could see that—but carrying it off, sir, really like _____.”",
+    "options": [
+     "London",
+     "Cavendish",
+     "Edward",
+     "Satan"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I never saw a circle of such hateful faces; and there was the man in the middle, with a kind of black sneering coolness—frightened too, I could see that—but carrying it off, sir, really like Satan.”",
+    "evidence": "I never saw a circle of such hateful faces; and there was the man in the middle, with a kind of black sneering coolness—frightened too, I could see that—but carrying it off, sir, really like Satan."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ and the lawyer were on the other side of the by-street; but when they came abreast of the entry, the former lifted up his cane and pointed.”",
+    "options": [
+     "Enfield",
+     "Jekyll",
+     "Henry",
+     "Lanyon"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Enfield and the lawyer were on the other side of the by-street; but when they came abreast of the entry, the former lifted up his cane and pointed.”",
+    "evidence": "Enfield and the lawyer were on the other side of the by-street; but when they came abreast of the entry, the former lifted up his cane and pointed."
+   }
+  ],
+  "2": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Evil besides (which I must still believe to be the lethal side of man) had left on that body an imprint of deformity and decay.",
+     "In silence, too, they traversed the by-street; and it was not until they had come into a neighbouring thoroughfare, where even upon a Sunday there…",
+     "And he covered his face for a moment with his hands.",
+     "They have only differed on some point of science,” he thought; and being a man of no scientific passions (except in the matter of conveyancing), he…"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “They have only differed on some point of science,” he thought; and being a man of no scientific passions (except in the matter of conveyancing), he even added: “It is nothing worse than that!”",
+    "evidence": "They have only differed on some point of science,” he thought; and being a man of no scientific passions (except in the matter of conveyancing), he even added: “It is nothing worse than that!"
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ though he took charge of it now that it was made, had refused to lend the least assistance in the making of it; it provided not only that, in case of the decease of Henry Jekyll, M.”",
+    "options": [
+     "Hyde",
+     "Lanyon",
+     "Guest",
+     "Utterson"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Utterson though he took charge of it now that it was made, had refused to lend the least assistance in the making of it; it provided not only that, in case of the decease of Henry Jekyll, M.”",
+    "evidence": "Utterson though he took charge of it now that it was made, had refused to lend the least assistance in the making of it; it provided not only that, in case of the decease of Henry Jekyll, M."
+   },
+   {
+    "prompt": "Fill in the missing name: “This Master _____, if he were studied,” thought he, “must have secrets of his own; black secrets, by the look of him; secrets compared to which poor Jekyll’s worst would be like sunshine.”",
+    "options": [
+     "Guest",
+     "Lanyon",
+     "Henry",
+     "Hyde"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “This Master Hyde, if he were studied,” thought he, “must have secrets of his own; black secrets, by the look of him; secrets compared to which poor Jekyll’s worst would be like sunshine.”",
+    "evidence": "This Master Hyde, if he were studied,” thought he, “must have secrets of his own; black secrets, by the look of him; secrets compared to which poor Jekyll’s worst would be like sunshine."
+   }
+  ],
+  "3": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I say two, because the state of my own knowledge does not pass beyond that point.",
+     "My poor Utterson,” said he, “you are unfortunate in such a client.",
+     "I have had a shock,” he said, “and I shall never recover.",
+     "All this, though it whetted my curiosity, told me little that was definite."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “My poor Utterson,” said he, “you are unfortunate in such a client.”",
+    "evidence": "My poor Utterson,” said he, “you are unfortunate in such a client."
+   },
+   {
+    "prompt": "Fill in the missing name: “But I do sincerely take a great, a very great interest in that young man; and if I am taken away, _____, I wish you to promise me that you will bear with him and get his rights for him.”",
+    "options": [
+     "Enfield",
+     "Utterson",
+     "Lanyon",
+     "Poole"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “But I do sincerely take a great, a very great interest in that young man; and if I am taken away, Utterson, I wish you to promise me that you will bear with him and get his rights for him.”",
+    "evidence": "But I do sincerely take a great, a very great interest in that young man; and if I am taken away, Utterson, I wish you to promise me that you will bear with him and get his rights for him."
+   },
+   {
+    "prompt": "Fill in the missing name: “I don’t ask that,” pleaded _____, laying his hand upon the other’s arm; “I only ask for justice; I only ask you to help him for my sake, when I am no longer here.”",
+    "options": [
+     "Lanyon",
+     "Hyde",
+     "Jekyll",
+     "Utterson"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “I don’t ask that,” pleaded Jekyll, laying his hand upon the other’s arm; “I only ask for justice; I only ask you to help him for my sake, when I am no longer here.”",
+    "evidence": "I don’t ask that,” pleaded Jekyll, laying his hand upon the other’s arm; “I only ask for justice; I only ask you to help him for my sake, when I am no longer here."
+   }
+  ],
+  "4": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The less I understood of this farrago, the less I was in a position to judge of its importance; and an appeal so worded could not be set aside…",
+     "I daren’t say, sir,” was the answer; “but will you come along with me and see for yourself?",
+     "The old gentleman took a step back, with the air of one very much surprised and a trifle hurt; and at that Mr.",
+     "This was a hearty, healthy, dapper, red-faced gentleman, with a shock of hair prematurely white, and a boisterous and decided manner."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “The old gentleman took a step back, with the air of one very much surprised and a trifle hurt; and at that Mr.”",
+    "evidence": "The old gentleman took a step back, with the air of one very much surprised and a trifle hurt; and at that Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “Nearly a year later, in the month of October, 18—, _____ was startled by a crime of singular ferocity and rendered all the more notable by the high position of the victim.”",
+    "options": [
+     "London",
+     "Harry",
+     "Cavendish",
+     "Bradshaw"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Nearly a year later, in the month of October, 18—, London was startled by a crime of singular ferocity and rendered all the more notable by the high position of the victim.”",
+    "evidence": "Nearly a year later, in the month of October, 18—, London was startled by a crime of singular ferocity and rendered all the more notable by the high position of the victim."
+   },
+   {
+    "prompt": "Fill in the missing name: “This was the home of _____ Jekyll’s favourite; of a man who was heir to a quarter of a million sterling.”",
+    "options": [
+     "Lanyon",
+     "Henry",
+     "Utterson",
+     "Poole"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “This was the home of Henry Jekyll’s favourite; of a man who was heir to a quarter of a million sterling.”",
+    "evidence": "This was the home of Henry Jekyll’s favourite; of a man who was heir to a quarter of a million sterling."
+   }
+  ],
+  "5": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Utterson ruminated awhile; he was surprised at his friend’s selfishness, and yet relieved by it.",
+     "Twelve o’clock had scarce rung out over London, ere the knocker sounded very gently on the door.",
+     "Utterson began to haunt the door in the by-street of shops.",
+     "The next thing was to get the money; and where do you think he carried us but to that place with the door?"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Utterson ruminated awhile; he was surprised at his friend’s selfishness, and yet relieved by it.”",
+    "evidence": "Utterson ruminated awhile; he was surprised at his friend’s selfishness, and yet relieved by it."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, whom he had long so unworthily repaid for a thousand generosities, need labour under no alarm for his safety, as he had means of escape on which he placed a sure dependence.”",
+    "options": [
+     "Jekyll",
+     "Enfield",
+     "Lanyon",
+     "Henry"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Jekyll, whom he had long so unworthily repaid for a thousand generosities, need labour under no alarm for his safety, as he had means of escape on which he placed a sure dependence.”",
+    "evidence": "Jekyll, whom he had long so unworthily repaid for a thousand generosities, need labour under no alarm for his safety, as he had means of escape on which he placed a sure dependence."
+   },
+   {
+    "prompt": "Fill in the missing name: “The letter was written in an odd, upright hand and signed “Edward _____”: and it signified, briefly enough, that the writer’s benefactor, Dr.”",
+    "options": [
+     "Poole",
+     "Hyde",
+     "Enfield",
+     "Danvers"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “The letter was written in an odd, upright hand and signed “Edward Hyde”: and it signified, briefly enough, that the writer’s benefactor, Dr.”",
+    "evidence": "The letter was written in an odd, upright hand and signed “Edward Hyde”: and it signified, briefly enough, that the writer’s benefactor, Dr."
+   }
+  ],
+  "6": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "On the 15th, he tried again, and was again refused; and having now been used for the last two months to see his friend almost daily, he found this…",
+     "Utterson,” said the man, “there is something wrong.",
+     "I want you to hear, and I don’t want you to be heard.",
+     "My good Utterson,” said the doctor, “this is very good of you, this is downright good of you, and I cannot find words to thank you in."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “On the 15th, he tried again, and was again refused; and having now been used for the last two months to see his friend almost daily, he found this return of solitude to weigh upon his spirits.”",
+    "evidence": "On the 15th, he tried again, and was again refused; and having now been used for the last two months to see his friend almost daily, he found this return of solitude to weigh upon his spirits."
+   },
+   {
+    "prompt": "Fill in the missing name: “I could not think that this earth contained a place for sufferings and terrors so unmanning; and you can do but one thing, _____, to lighten this destiny, and that is to respect my silence.”",
+    "options": [
+     "Poole",
+     "Jekyll",
+     "Guest",
+     "Utterson"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I could not think that this earth contained a place for sufferings and terrors so unmanning; and you can do but one thing, Utterson, to lighten this destiny, and that is to respect my silence.”",
+    "evidence": "I could not think that this earth contained a place for sufferings and terrors so unmanning; and you can do but one thing, Utterson, to lighten this destiny, and that is to respect my silence."
+   },
+   {
+    "prompt": "Fill in the missing name: “Yes, it was disappearance; here again, as in the mad will which he had long ago restored to its author, here again were the idea of a disappearance and the name of _____ Jekyll bracketed.”",
+    "options": [
+     "Hyde",
+     "Utterson",
+     "Henry",
+     "Poole"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Yes, it was disappearance; here again, as in the mad will which he had long ago restored to its author, here again were the idea of a disappearance and the name of Henry Jekyll bracketed.”",
+    "evidence": "Yes, it was disappearance; here again, as in the mad will which he had long ago restored to its author, here again were the idea of a disappearance and the name of Henry Jekyll bracketed."
+   }
+  ],
+  "7": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "At that time my virtue slumbered; my evil, kept awake by ambition, was alert and swift to seize the occasion; and the thing that was projected was…",
+     "The court was very cool and a little damp, and full of premature twilight, although the sky, high up overhead, was still bright with sunset.",
+     "I next drew up that will to which you so much objected; so that if anything befell me in the person of Dr.",
+     "The evil side of my nature, to which I had now transferred the stamping efficacy, was less robust and less developed than the good which I had just…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “The court was very cool and a little damp, and full of premature twilight, although the sky, high up overhead, was still bright with sunset.”",
+    "evidence": "The court was very cool and a little damp, and full of premature twilight, although the sky, high up overhead, was still bright with sunset."
+   },
+   {
+    "prompt": "Fill in the missing name: “The middle one of the three windows was half-way open; and sitting close beside it, taking the air with an infinite sadness of mien, like some disconsolate prisoner, _____ saw Dr.”",
+    "options": [
+     "Jekyll",
+     "Guest",
+     "Hyde",
+     "Utterson"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The middle one of the three windows was half-way open; and sitting close beside it, taking the air with an infinite sadness of mien, like some disconsolate prisoner, Utterson saw Dr.”",
+    "evidence": "The middle one of the three windows was half-way open; and sitting close beside it, taking the air with an infinite sadness of mien, like some disconsolate prisoner, Utterson saw Dr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, that their way lay once again through the by-street; and that when they came in front of the door, both stopped to gaze on it.”",
+    "options": [
+     "Utterson",
+     "Hyde",
+     "Guest",
+     "Enfield"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Enfield, that their way lay once again through the by-street; and that when they came in front of the door, both stopped to gaze on it.”",
+    "evidence": "Enfield, that their way lay once again through the by-street; and that when they came in front of the door, both stopped to gaze on it."
+   }
+  ],
+  "8": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Hyde, who had once visited her master and for whom she had conceived a dislike.",
+     "So far the letter had run composedly enough, but here with a sudden splutter of the pen, the writer’s emotion had broken loose.",
+     "And he covered his face for a moment with his hands.",
+     "Nearly a year later, in the month of October, 18—, London was startled by a crime of singular ferocity and rendered all the more notable by the high…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “So far the letter had run composedly enough, but here with a sudden splutter of the pen, the writer’s emotion had broken loose.”",
+    "evidence": "So far the letter had run composedly enough, but here with a sudden splutter of the pen, the writer’s emotion had broken loose."
+   },
+   {
+    "prompt": "Fill in the missing name: “There is my explanation; it is sad enough, _____, ay, and appalling to consider; but it is plain and natural, hangs well together, and delivers us from all exorbitant alarms.”",
+    "options": [
+     "Enfield",
+     "Guest",
+     "Poole",
+     "Utterson"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “There is my explanation; it is sad enough, Poole, ay, and appalling to consider; but it is plain and natural, hangs well together, and delivers us from all exorbitant alarms.”",
+    "evidence": "There is my explanation; it is sad enough, Poole, ay, and appalling to consider; but it is plain and natural, hangs well together, and delivers us from all exorbitant alarms."
+   },
+   {
+    "prompt": "Fill in the missing name: “Ay truly, I believe you; I believe poor _____ is killed; and I believe his murderer (for what purpose, God alone can tell) is still lurking in his victim’s room.”",
+    "options": [
+     "Soho",
+     "Satan",
+     "Edward",
+     "Harry"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Ay truly, I believe you; I believe poor Harry is killed; and I believe his murderer (for what purpose, God alone can tell) is still lurking in his victim’s room.”",
+    "evidence": "Ay truly, I believe you; I believe poor Harry is killed; and I believe his murderer (for what purpose, God alone can tell) is still lurking in his victim’s room."
+   }
+  ],
+  "9": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The tradesmen came while we were yet speaking; and we moved in a body to old Dr.",
+     "I mean from henceforth to lead a life of extreme seclusion; you must not be surprised, nor must you doubt my friendship, if my door is often shut…",
+     "And all the time, as we were pitching it in red hot, we were keeping the women off him as best we could for they were as wild as harpies.",
+     "I think you would, if you knew all; and it would be a weight off my mind if you would promise."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “The tradesmen came while we were yet speaking; and we moved in a body to old Dr.”",
+    "evidence": "The tradesmen came while we were yet speaking; and we moved in a body to old Dr."
+   },
+   {
+    "prompt": "Fill in the missing name: “Dear _____,—You are one of my oldest friends; and although we may have differed at times on scientific questions, I cannot remember, at least on my side, any break in our affection.”",
+    "options": [
+     "Lanyon",
+     "Utterson",
+     "Danvers",
+     "Jekyll"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Dear Lanyon,—You are one of my oldest friends; and although we may have differed at times on scientific questions, I cannot remember, at least on my side, any break in our affection.”",
+    "evidence": "Dear Lanyon,—You are one of my oldest friends; and although we may have differed at times on scientific questions, I cannot remember, at least on my side, any break in our affection."
+   },
+   {
+    "prompt": "Fill in the missing name: “The creature who crept into my house that night was, on Jekyll’s own confession, known by the name of _____ and hunted for in every corner of the land as the murderer of Carew.”",
+    "options": [
+     "Hyde",
+     "Poole",
+     "Henry",
+     "Utterson"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “The creature who crept into my house that night was, on Jekyll’s own confession, known by the name of Hyde and hunted for in every corner of the land as the murderer of Carew.”",
+    "evidence": "The creature who crept into my house that night was, on Jekyll’s own confession, known by the name of Hyde and hunted for in every corner of the land as the murderer of Carew."
+   }
+  ],
+  "10": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "It was Hyde, after all, and Hyde alone, that was guilty.",
+     "It was partly your own fault that I found it out, even when I did.",
+     "Utterson’s dwelling, and still he was digging at the problem.",
+     "Time ran on; thousands of pounds were offered in reward, for the death of Sir Danvers was resented as a public injury; but Mr."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “It was Hyde, after all, and Hyde alone, that was guilty.”",
+    "evidence": "It was Hyde, after all, and Hyde alone, that was guilty."
+   },
+   {
+    "prompt": "Fill in the missing name: “In short, from that day forth it seemed only by a great effort as of gymnastics, and only under the immediate stimulation of the drug, that I was able to wear the countenance of _____.”",
+    "options": [
+     "Poole",
+     "Jekyll",
+     "Lanyon",
+     "Guest"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “In short, from that day forth it seemed only by a great effort as of gymnastics, and only under the immediate stimulation of the drug, that I was able to wear the countenance of Jekyll.”",
+    "evidence": "In short, from that day forth it seemed only by a great effort as of gymnastics, and only under the immediate stimulation of the drug, that I was able to wear the countenance of Jekyll."
+   },
+   {
+    "prompt": "Fill in the missing name: “The pangs of transformation had not done tearing him, before _____ Jekyll, with streaming tears of gratitude and remorse, had fallen upon his knees and lifted his clasped hands to God.”",
+    "options": [
+     "Lanyon",
+     "Henry",
+     "Hyde",
+     "Utterson"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “The pangs of transformation had not done tearing him, before Henry Jekyll, with streaming tears of gratitude and remorse, had fallen upon his knees and lifted his clasped hands to God.”",
+    "evidence": "The pangs of transformation had not done tearing him, before Henry Jekyll, with streaming tears of gratitude and remorse, had fallen upon his knees and lifted his clasped hands to God."
+   }
+  ]
+ }
+}

@@ -1,0 +1,197 @@
+{
+ "slug": "gutenberg:46",
+ "title": "A Christmas Carol",
+ "source": "text",
+ "chapters": {
+  "1": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "There's the window where I saw the wandering Spirits!",
+     "I don't know how long I've been among the Spirits.",
+     "Bob had but fifteen \"Bob\" a-week himself; he pocketed on Saturdays but fifteen copies of his Christian name; and yet the Ghost of Christmas Present…",
+     "Scrooge resumed his labours with an improved opinion of himself, and in a more facetious temper than was usual with him."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Scrooge resumed his labours with an improved opinion of himself, and in a more facetious temper than was usual with him.”",
+    "evidence": "Scrooge resumed his labours with an improved opinion of himself, and in a more facetious temper than was usual with him."
+   },
+   {
+    "prompt": "Fill in the missing name: “But he couldn't replenish it, for _____ kept the coal-box in his own room; and so surely as the clerk came in with the shovel, the master predicted that it would be necessary for them to part.”",
+    "options": [
+     "Fezziwig",
+     "Cratchit",
+     "Scrooge",
+     "Ghost"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “But he couldn't replenish it, for Scrooge kept the coal-box in his own room; and so surely as the clerk came in with the shovel, the master predicted that it would be necessary for them to part.”",
+    "evidence": "But he couldn't replenish it, for Scrooge kept the coal-box in his own room; and so surely as the clerk came in with the shovel, the master predicted that it would be necessary for them to part."
+   },
+   {
+    "prompt": "Fill in the missing name: “Scrooge,\" said the gentleman, taking up a pen, \"it is more than usually desirable that we should make some slight provision for the _____ and destitute, who suffer greatly at the present time.”",
+    "options": [
+     "Present",
+     "Tank",
+     "Poor",
+     "Day"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Scrooge,\" said the gentleman, taking up a pen, \"it is more than usually desirable that we should make some slight provision for the Poor and destitute, who suffer greatly at the present time.”",
+    "evidence": "Scrooge,\" said the gentleman, taking up a pen, \"it is more than usually desirable that we should make some slight provision for the Poor and destitute, who suffer greatly at the present time."
+   }
+  ],
+  "2": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I don't know how long I've been among the Spirits.",
+     "A solitary child, neglected by his friends, is left there still.",
+     "Scrooge knew the men, and looked towards the Spirit for an explanation.",
+     "Shaving was not an easy task, for his hand continued to shake very much; and shaving requires attention, even when you don't dance while you are at…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “A solitary child, neglected by his friends, is left there still.”",
+    "evidence": "A solitary child, neglected by his friends, is left there still."
+   },
+   {
+    "prompt": "Fill in the missing name: “The panels shrunk, the windows cracked; fragments of plaster fell out of the ceiling, and the naked laths were shown instead; but how all this was brought about, _____ knew no more than you do.”",
+    "options": [
+     "Fred",
+     "Fezziwig",
+     "Bob",
+     "Scrooge"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The panels shrunk, the windows cracked; fragments of plaster fell out of the ceiling, and the naked laths were shown instead; but how all this was brought about, Scrooge knew no more than you do.”",
+    "evidence": "The panels shrunk, the windows cracked; fragments of plaster fell out of the ceiling, and the naked laths were shown instead; but how all this was brought about, Scrooge knew no more than you do."
+   },
+   {
+    "prompt": "Fill in the missing name: “He was not alone, but sat by the side of a fair young girl in a mourning-dress: in whose eyes there were tears, which sparkled in the light that shone out of the _____ of Christmas Past.”",
+    "options": [
+     "Spirit",
+     "Cratchit",
+     "Fezziwig",
+     "Ghost"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He was not alone, but sat by the side of a fair young girl in a mourning-dress: in whose eyes there were tears, which sparkled in the light that shone out of the Ghost of Christmas Past.”",
+    "evidence": "He was not alone, but sat by the side of a fair young girl in a mourning-dress: in whose eyes there were tears, which sparkled in the light that shone out of the Ghost of Christmas Past."
+   }
+  ],
+  "3": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "keep Christmas in your own way, and let me keep it in mine.",
+     "But he couldn't replenish it, for Scrooge kept the coal-box in his own room; and so surely as the clerk came in with the shovel, the master…",
+     "Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs.",
+     "To edge his way along the crowded paths of life, warning all human sympathy to keep its distance, was what the knowing ones call \"nuts\" to Scrooge."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs.”",
+    "evidence": "Bob Cratchit said, and calmly too, that he regarded it as the greatest success achieved by Mrs."
+   },
+   {
+    "prompt": "Fill in the missing name: “Likewise at the game of How, When, and Where, she was very great, and to the secret joy of Scrooge's nephew, beat her sisters hollow: though they were sharp girls too, as _____ could have told you.”",
+    "options": [
+     "Present",
+     "Spirits",
+     "Topper",
+     "Dick"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Likewise at the game of How, When, and Where, she was very great, and to the secret joy of Scrooge's nephew, beat her sisters hollow: though they were sharp girls too, as Topper could have told you.”",
+    "evidence": "Likewise at the game of How, When, and Where, she was very great, and to the secret joy of Scrooge's nephew, beat her sisters hollow: though they were sharp girls too, as Topper could have told you."
+   },
+   {
+    "prompt": "Fill in the missing name: “The _____ stood beside sick beds, and they were cheerful; on foreign lands, and they were close at home; by struggling men, and they were patient in their greater hope; by poverty, and it was rich.”",
+    "options": [
+     "Belinda",
+     "Spirit",
+     "Bob",
+     "Fezziwig"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “The Spirit stood beside sick beds, and they were cheerful; on foreign lands, and they were close at home; by struggling men, and they were patient in their greater hope; by poverty, and it was rich.”",
+    "evidence": "The Spirit stood beside sick beds, and they were cheerful; on foreign lands, and they were close at home; by struggling men, and they were patient in their greater hope; by poverty, and it was rich."
+   }
+  ],
+  "4": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Scrooge lay in this state until the chime had gone three quarters more, when he remembered, on a sudden, that the Ghost had warned him of a…",
+     "Scrooge and he were partners for I don't know how many years.",
+     "Who's the worse for the loss of a few things like these?",
+     "said Scrooge, clasping his hands together, as he looked about him."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Who's the worse for the loss of a few things like these?”",
+    "evidence": "Who's the worse for the loss of a few things like these?"
+   },
+   {
+    "prompt": "Fill in the missing name: “Although well used to ghostly company by this time, _____ feared the silent shape so much that his legs trembled beneath him, and he found that he could hardly stand when he prepared to follow it.”",
+    "options": [
+     "Marley",
+     "Belinda",
+     "Scrooge",
+     "Bob"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Although well used to ghostly company by this time, Scrooge feared the silent shape so much that his legs trembled beneath him, and he found that he could hardly stand when he prepared to follow it.”",
+    "evidence": "Although well used to ghostly company by this time, Scrooge feared the silent shape so much that his legs trembled beneath him, and he found that he could hardly stand when he prepared to follow it."
+   },
+   {
+    "prompt": "Fill in the missing name: “The _____ conducted him through several streets familiar to his feet; and as they went along, Scrooge looked here and there to find himself, but nowhere was he to be seen.”",
+    "options": [
+     "Marley",
+     "Bob",
+     "Peter",
+     "Ghost"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The Ghost conducted him through several streets familiar to his feet; and as they went along, Scrooge looked here and there to find himself, but nowhere was he to be seen.”",
+    "evidence": "The Ghost conducted him through several streets familiar to his feet; and as they went along, Scrooge looked here and there to find himself, but nowhere was he to be seen."
+   }
+  ],
+  "5": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Let me hear another sound from you,\" said Scrooge, \"and you'll keep your Christmas by losing your situation!",
+     "He was not the dogged Scrooge he had been; and though the Spirit's eyes were clear and kind, he did not like to meet them.",
+     "Go and buy it, and tell 'em to bring it here, that I may give them the direction where to take it.",
+     "Scrooge reverently disclaimed all intention to offend or any knowledge of having wilfully \"bonneted\" the Spirit at any period of his life."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Go and buy it, and tell 'em to bring it here, that I may give them the direction where to take it.”",
+    "evidence": "Go and buy it, and tell 'em to bring it here, that I may give them the direction where to take it."
+   },
+   {
+    "prompt": "Fill in the missing name: “The people were by this time pouring forth, as he had seen them with the _____ of Christmas Present; and walking with his hands behind him, Scrooge regarded every one with a delighted smile.”",
+    "options": [
+     "Ghost",
+     "Bob",
+     "Marley",
+     "Cratchit"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “The people were by this time pouring forth, as he had seen them with the Ghost of Christmas Present; and walking with his hands behind him, Scrooge regarded every one with a delighted smile.”",
+    "evidence": "The people were by this time pouring forth, as he had seen them with the Ghost of Christmas Present; and walking with his hands behind him, Scrooge regarded every one with a delighted smile."
+   },
+   {
+    "prompt": "Fill in the missing name: “And therefore,\" he continued, leaping from his stool, and giving _____ such a dig in the waistcoat that he staggered back into the Tank again; \"and therefore I am about to raise your salary!”",
+    "options": [
+     "Bob",
+     "Joe",
+     "Cratchit",
+     "Peter"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “And therefore,\" he continued, leaping from his stool, and giving Bob such a dig in the waistcoat that he staggered back into the Tank again; \"and therefore I am about to raise your salary!”",
+    "evidence": "And therefore,\" he continued, leaping from his stool, and giving Bob such a dig in the waistcoat that he staggered back into the Tank again; \"and therefore I am about to raise your salary!"
+   }
+  ]
+ }
+}

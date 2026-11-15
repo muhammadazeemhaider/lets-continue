@@ -20,6 +20,12 @@ const pirateThemes=[
 {name:'The Ink-Crowned Kraken',place:'The Emerald Abyss',color:'#9a91ba',sky:'#303c5e',ground:'#386d79',hint:'Bring the whole chapter into the light.'}];
 const prefixes=['','Quiet','Ancient','Wandering','Moonlit','Silver','Hollow','Mossbound','Starlit','Velvet','Hidden','Twilight','Amber','Frost','Cloud','Echo','Wild','Copper','Dreaming','Opal','Distant','Ivory','Violet','Bramble','Golden','Last','Elder'];
 const memory={};let storageWarning=false;
+// Where catalogue questions came from (see backend questions.py). Shown before and during the fight.
+const CATALOG_NOTE={
+  'text':'These questions were made from this chapter’s own text. Every answer is in the chapter.',
+  'ai-text':'These questions were written by AI from this chapter’s text, and every answer was checked against a quote from it.',
+  'ai-knowledge':'These questions were written by AI from what it knows about this book.'};
+const CATALOG_DISCLOSURE={'text':'Questions from the chapter’s text','ai-text':'AI questions checked against the chapter','ai-knowledge':'AI questions from the book'};
 const key=(id,n)=>`ttl.boss.v1:${id}:${n}`;
 function load(id,n){const k=key(id,n);try{const raw=localStorage.getItem(k);if(raw)return BossEngine.validate(JSON.parse(raw));}catch{}return BossEngine.validate(memory[k]);}
 function save(id,n,b){memory[key(id,n)]=b;try{localStorage.setItem(key(id,n),JSON.stringify(b));}catch{storageWarning=true;}}
@@ -61,7 +67,8 @@ function open(book,n,ui){
   const boss=profile(n,book.world),demo=book.id==='lantern-road'?BossFixtures[n-1]:null;
   let battle=load(book.id,n),wrong=new Set(),feedback='',busy=false,selected=null,move=attacks[0].id,sound=false,audio=null;
   // A saved seal is history, not the starting screen for a new encounter.
-  if(battle?.defeated)battle=BossEngine.create(battle.questions,battle.source,battle.kind);
+  if(battle?.defeated)battle={...BossEngine.create(battle.questions,battle.source,battle.kind),...(battle.catalogSource?{catalogSource:battle.catalogSource}:{})};
+  let catalog; // undefined: not fetched yet · null: none for this chapter · {source, questions}: ready
   let sealCollected=Boolean(load(book.id,n)?.defeated);
   const esc=Services.esc;
   const scrim=ui.openOverlay('<section class="sheet boss-sheet encounter-arrival" role="dialog" aria-modal="true" aria-label="Chapter boss battle"></section>','boss-overlay',()=>{try{audio?.close()?.catch(()=>{});}catch{}ui.onClose?.();});
@@ -74,14 +81,30 @@ function open(book,n,ui){
   function persist(){if(!load(book.id,n)?.defeated)save(book.id,n,battle);}
   function focusQuestion(){panel.querySelector('#battle-question, #begin-battle, #boss-source, #battle-done')?.focus();}
   function shell(content){
-    panel.innerHTML=`<div class="battle-top"><span>CHAPTER ${n} · GUARDIAN ENCOUNTER</span><div><button class="battle-sound" aria-pressed="${sound}">SOUND ${sound?'ON':'OFF'}</button><button class="battle-leave" aria-label="Leave boss battle">×</button></div></div><div class="enemy-name"><div><span class="boss-kicker">${esc(book.chapters[n-1].title)}</span><h2>${boss.name}</h2></div><span class="boss-seal">${battle?.defeated?'✦ CLEARED':'GUARDIAN '+String(n).padStart(2,'0')}</span></div><div class="enemy-health"><label for="boss-hp">BOSS HP</label><progress id="boss-hp" value="${90-(battle?.answered.length||0)*30}" max="90"></progress><span>${90-(battle?.answered.length||0)*30}/90</span></div>${scene(boss,n,hero)}${content}<p class="battle-disclosure">${battle?.kind==='excerpt'||!demo?'Recall from your chapter summary or excerpt':'Questions from the original demo chapter'} · 30 damage per correct answer · No reading penalty${storageWarning?' · Saved for this visit only':''}</p>`;
+    panel.innerHTML=`<div class="battle-top"><span>CHAPTER ${n} · GUARDIAN ENCOUNTER</span><div><button class="battle-sound" aria-pressed="${sound}">SOUND ${sound?'ON':'OFF'}</button><button class="battle-leave" aria-label="Leave boss battle">×</button></div></div><div class="enemy-name"><div><span class="boss-kicker">${esc(book.chapters[n-1].title)}</span><h2>${boss.name}</h2></div><span class="boss-seal">${battle?.defeated?'✦ CLEARED':'GUARDIAN '+String(n).padStart(2,'0')}</span></div><div class="enemy-health"><label for="boss-hp">BOSS HP</label><progress id="boss-hp" value="${90-(battle?.answered.length||0)*30}" max="90"></progress><span>${90-(battle?.answered.length||0)*30}/90</span></div>${scene(boss,n,hero)}${content}<p class="battle-disclosure">${battle?.kind==='catalog'?CATALOG_DISCLOSURE[battle.catalogSource]||'Questions from the book catalogue':battle?.kind==='excerpt'||!demo?'Recall from your chapter summary or excerpt':'Questions from the original demo chapter'} · 30 damage per correct answer · No reading penalty${storageWarning?' · Saved for this visit only':''}</p>`;
     panel.querySelector('.battle-leave').onclick=ui.closeOverlay;
     panel.querySelector('.battle-sound').onclick=e=>{sound=!sound;e.currentTarget.textContent=`SOUND ${sound?'ON':'OFF'}`;e.currentTarget.setAttribute('aria-pressed',sound);if(sound)tone(true);};
   }
   function sourcePanel(){
-    shell(`<div class="battle-content"><div class="encounter-announcement"><span>!</span><div><h3>A guardian blocks the trail!</h3><p>${boss.world==='scifi'?['A scanner sweeps the sector. Target acquired.','The walker’s reactor hums. Systems online.','The prism core spins. A new pattern appears.','A transmission echoes from the orbital archive.','The titan unfolds its solar panels. Moonrise approaches.'][boss.type]:threats[boss.type]}</p></div></div><p class="encounter-instructions">Choose an attack, select your answer, then strike. Three correct answers bring this guardian into the light.</p>${demo?`<details class="battle-source"><summary>Review the chapter before the encounter</summary><p>${esc(demo.text)}</p></details><div class="encounter-actions"><button class="btn quiet" id="battle-later">Maybe later</button><button class="btn primary" id="begin-battle">Enter the encounter ⚔</button></div>`:`<form id="source-form"><label for="boss-source">Add your summary or an excerpt from chapter ${n}</label><textarea id="boss-source" maxlength="20000" placeholder="What happened in this chapter? A short summary is welcome…" required></textarea><p class="source-note">Use your own summary or paste a chapter excerpt. There’s no minimum word count; questions are based only on what you provide.</p><p role="alert" id="source-error"></p><div class="encounter-actions"><button type="button" class="btn quiet" id="battle-later">Maybe later</button><button class="btn primary" type="submit">Prepare the encounter →</button></div></form>`}</div>`);
+    // Catalogue books: fetch this chapter's three questions first (rule-based from the text, or AI-written).
+    if(!demo&&catalog===undefined&&Store.chapterQuestions){
+      shell('<div class="battle-content"><p class="encounter-instructions">The guardian is gathering its questions…</p></div>');
+      panel.querySelector('.battle-leave').onclick=ui.closeOverlay;
+      Store.chapterQuestions(book.id,n).then(r=>{catalog=r&&r.available&&BossEngine.validQuestions(r.questions)?r:null;if(scrim.isConnected&&!battle)sourcePanel();});
+      return;
+    }
+    const ready=demo||catalog;
+    shell(`<div class="battle-content"><div class="encounter-announcement"><span>!</span><div><h3>A guardian blocks the trail!</h3><p>${boss.world==='scifi'?['A scanner sweeps the sector. Target acquired.','The walker’s reactor hums. Systems online.','The prism core spins. A new pattern appears.','A transmission echoes from the orbital archive.','The titan unfolds its solar panels. Moonrise approaches.'][boss.type]:threats[boss.type]}</p></div></div><p class="encounter-instructions">Choose an attack, select your answer, then strike. Three correct answers bring this guardian into the light.</p>${ready?`${demo?`<details class="battle-source"><summary>Review the chapter before the encounter</summary><p>${esc(demo.text)}</p></details>`:`<p class="source-note">${esc(CATALOG_NOTE[catalog.source]||'')} <button type="button" class="btn quiet small" id="use-own-summary">Use my own summary instead</button></p>`}<div class="encounter-actions"><button class="btn quiet" id="battle-later">Maybe later</button><button class="btn primary" id="begin-battle">Enter the encounter ⚔</button></div>`:`<form id="source-form"><label for="boss-source">Add your summary or an excerpt from chapter ${n}</label><textarea id="boss-source" maxlength="20000" placeholder="What happened in this chapter? A short summary is welcome…" required></textarea><p class="source-note">Use your own summary or paste a chapter excerpt. There’s no minimum word count; questions are based only on what you provide.</p><p role="alert" id="source-error"></p><div class="encounter-actions"><button type="button" class="btn quiet" id="battle-later">Maybe later</button><button class="btn primary" type="submit">Prepare the encounter →</button></div></form>`}</div>`);
     panel.querySelector('#battle-later').onclick=ui.closeOverlay;
     if(demo)panel.querySelector('#begin-battle').onclick=()=>{battle=BossEngine.create(demo.questions,demo.text,'demo');persist();paint();focusQuestion();};
+    else if(catalog){
+      panel.querySelector('#use-own-summary').onclick=()=>{catalog=null;sourcePanel();};
+      panel.querySelector('#begin-battle').onclick=()=>{
+        const qs=catalog.questions.map(q=>({id:q.id,prompt:q.prompt,options:q.options,correctIndex:q.correctIndex,explanation:q.explanation||''}));
+        battle={...BossEngine.create(qs,CATALOG_NOTE[catalog.source]||'Questions from the book catalogue.','catalog'),catalogSource:catalog.source};
+        persist();paint();focusQuestion();
+      };
+    }
     else panel.querySelector('#source-form').onsubmit=e=>{e.preventDefault();const source=panel.querySelector('#boss-source').value;try{battle=BossEngine.create(BossEngine.questionsFromExcerpt(source),source,'excerpt');persist();paint();focusQuestion();}catch(error){panel.querySelector('#source-error').textContent=error.message;}};
   }
   function victory(celebrate=false){

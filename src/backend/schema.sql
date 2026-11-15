@@ -97,11 +97,49 @@ CREATE TABLE IF NOT EXISTS catalog_books (
     chapters       TEXT    NOT NULL DEFAULT '[]',       -- JSON list of chapter titles
     chapter_source TEXT    NOT NULL DEFAULT 'none',     -- curated | openlibrary | gutenberg | none
     sources        TEXT    NOT NULL DEFAULT '{}',       -- JSON: summary_url, chapters_url (attribution)
+    slug           TEXT,                                -- stable id: curated:dune-1, gutenberg:1342 (unique index in db.py)
+    series         TEXT,                                -- multi-part books: 'Dune', 'The Lord of the Rings'
+    part           INTEGER,
     times_used     INTEGER NOT NULL DEFAULT 0,          -- how often readers added it (ranks search)
     enriched_at    TEXT,                                -- when summary/chapters were looked up
     created_at     TEXT    NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_catalog_title ON catalog_books(title_norm);
+
+-- Boss-battle questions: three per chapter of a catalogue book.
+--   source 'text'         : made by rules from the chapter's own text (no AI); every answer is in the text
+--   source 'ai-text'      : written by an AI from the chapter's text only; `evidence` is a verified quote from it
+--   source 'ai-knowledge' : written by an AI from its knowledge of the book (no public text, e.g. Dune)
+CREATE TABLE IF NOT EXISTS chapter_questions (
+    id             INTEGER PRIMARY KEY AUTOINCREMENT,
+    catalog_slug   TEXT    NOT NULL,
+    chapter_number INTEGER NOT NULL,
+    position       INTEGER NOT NULL,                    -- 0, 1, 2
+    prompt         TEXT    NOT NULL,
+    options        TEXT    NOT NULL,                    -- JSON list of 4 strings
+    correct_index  INTEGER NOT NULL,
+    explanation    TEXT    NOT NULL DEFAULT '',
+    evidence       TEXT    NOT NULL DEFAULT '',
+    source         TEXT    NOT NULL,
+    model          TEXT,
+    created_at     TEXT    NOT NULL,
+    UNIQUE (catalog_slug, chapter_number, position)
+);
+
+-- Chapters the AI question writer could not do (so they are not retried on every pass).
+CREATE TABLE IF NOT EXISTS question_attempts (
+    catalog_slug   TEXT    NOT NULL,
+    chapter_number INTEGER NOT NULL,
+    failures       INTEGER NOT NULL DEFAULT 0,
+    last_at        TEXT    NOT NULL,
+    PRIMARY KEY (catalog_slug, chapter_number)
+);
+
+-- Daily count of background AI requests (free tiers allow only so many per day).
+CREATE TABLE IF NOT EXISTS llm_usage (
+    day      TEXT PRIMARY KEY,                          -- YYYY-MM-DD (UTC)
+    requests INTEGER NOT NULL DEFAULT 0
+);
 
 -- Web Push subscriptions (one per browser/device that opted in).
 CREATE TABLE IF NOT EXISTS push_subscriptions (

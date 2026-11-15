@@ -1,0 +1,463 @@
+{
+ "slug": "gutenberg:1661",
+ "title": "The Adventures of Sherlock Holmes",
+ "source": "text",
+ "chapters": {
+  "1": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "They may rest here on the hook and will be dry presently.",
+     "She would like advice, but is not sure that the matter is not too delicate for communication.",
+     "If this young person should produce her letters for blackmailing or other purposes, how is she to prove their authenticity?",
+     "I shall call at half-past ten to-morrow if I do not inconvenience you."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “If this young person should produce her letters for blackmailing or other purposes, how is she to prove their authenticity?”",
+    "evidence": "If this young person should produce her letters for blackmailing or other purposes, how is she to prove their authenticity?"
+   },
+   {
+    "prompt": "Fill in the missing name: “Our visitor glanced with some apparent surprise at the languid, lounging figure of the man who had been no doubt depicted to him as the most incisive reasoner and most energetic agent in _____.”",
+    "options": [
+     "Boscombe",
+     "England",
+     "King",
+     "Europe"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Our visitor glanced with some apparent surprise at the languid, lounging figure of the man who had been no doubt depicted to him as the most incisive reasoner and most energetic agent in Europe.”",
+    "evidence": "Our visitor glanced with some apparent surprise at the languid, lounging figure of the man who had been no doubt depicted to him as the most incisive reasoner and most energetic agent in Europe."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ Adler, as I will still call her, had hurried up the steps; but she stood at the top with her superb figure outlined against the lights of the hall, looking back into the street.”",
+    "options": [
+     "Holmes",
+     "Irene",
+     "Angel",
+     "Mary"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Irene Adler, as I will still call her, had hurried up the steps; but she stood at the top with her superb figure outlined against the lights of the hall, looking back into the street.”",
+    "evidence": "Irene Adler, as I will still call her, had hurried up the steps; but she stood at the top with her superb figure outlined against the lights of the hall, looking back into the street."
+   }
+  ],
+  "2": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "He sank his face onto his arms and began to sob in a high treble key.",
+     "Her features and figure were those of a woman of thirty, but her hair was shot with premature grey, and her expression was weary and haggard.",
+     "The fund was, of course, for the propagation and spread of the red-heads as well as for their maintenance.",
+     "It may turn out to be of more interest than you think."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “The fund was, of course, for the propagation and spread of the red-heads as well as for their maintenance.”",
+    "evidence": "The fund was, of course, for the propagation and spread of the red-heads as well as for their maintenance."
+   },
+   {
+    "prompt": "Fill in the missing name: “Merryweather is the chairman of directors, and he will explain to you that there are reasons why the more daring criminals of _____ should take a considerable interest in this cellar at present.”",
+    "options": [
+     "Adler",
+     "Moran",
+     "England",
+     "London"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Merryweather is the chairman of directors, and he will explain to you that there are reasons why the more daring criminals of London should take a considerable interest in this cellar at present.”",
+    "evidence": "Merryweather is the chairman of directors, and he will explain to you that there are reasons why the more daring criminals of London should take a considerable interest in this cellar at present."
+   },
+   {
+    "prompt": "Fill in the missing name: “There is Mortimer’s, the tobacconist, the little newspaper shop, the _____ branch of the City and Suburban Bank, the Vegetarian Restaurant, and McFarlane’s carriage-building depot.”",
+    "options": [
+     "Adler",
+     "German",
+     "Lascar",
+     "Coburg"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “There is Mortimer’s, the tobacconist, the little newspaper shop, the Coburg branch of the City and Suburban Bank, the Vegetarian Restaurant, and McFarlane’s carriage-building depot.”",
+    "evidence": "There is Mortimer’s, the tobacconist, the little newspaper shop, the Coburg branch of the City and Suburban Bank, the Vegetarian Restaurant, and McFarlane’s carriage-building depot."
+   }
+  ],
+  "3": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "It arrived upon Christmas morning, in company with a good fat goose, which is, I have no doubt, roasting at this moment in front of Peterson’s fire.",
+     "but I have had a very strange experience, and as I have no parents or relations of any sort from whom I could ask advice, I thought that perhaps you…",
+     "We were engaged after the first walk that we took.",
+     "Obviously they have been caused by someone who has very carelessly scraped round the edges of the sole in order to remove crusted mud from it."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “We were engaged after the first walk that we took.”",
+    "evidence": "We were engaged after the first walk that we took."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ Angel must have some strong object for his curious conduct, and it was equally clear that the only man who really profited by the incident, as far as we could see, was the stepfather.”",
+    "options": [
+     "Openshaw",
+     "Hosmer",
+     "Watson",
+     "George"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Hosmer Angel must have some strong object for his curious conduct, and it was equally clear that the only man who really profited by the incident, as far as we could see, was the stepfather.”",
+    "evidence": "Hosmer Angel must have some strong object for his curious conduct, and it was equally clear that the only man who really profited by the incident, as far as we could see, was the stepfather."
+   },
+   {
+    "prompt": "Fill in the missing name: “My dear fellow,” said _____ Holmes as we sat on either side of the fire in his lodgings at Baker Street, “life is infinitely stranger than anything which the mind of man could invent.”",
+    "options": [
+     "Bradstreet",
+     "Sherlock",
+     "Irene",
+     "Hatherley"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “My dear fellow,” said Sherlock Holmes as we sat on either side of the fire in his lodgings at Baker Street, “life is infinitely stranger than anything which the mind of man could invent.”",
+    "evidence": "My dear fellow,” said Sherlock Holmes as we sat on either side of the fire in his lodgings at Baker Street, “life is infinitely stranger than anything which the mind of man could invent."
+   }
+  ],
+  "4": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "How could she, a young and timid woman, make her way into such a place and pluck her husband out from among the ruffians who surrounded him?",
+     "The family was at one time among the richest in England, and the estates extended over the borders into Berkshire in the north, and Hampshire in the…",
+     "Holmes laughed softly to himself and stretched himself out upon the cushioned seat.",
+     "George’s, Hanover Square, that only half a dozen intimate friends would be invited, and that the party would return to the furnished house at…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Holmes laughed softly to himself and stretched himself out upon the cushioned seat.”",
+    "evidence": "Holmes laughed softly to himself and stretched himself out upon the cushioned seat."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ and I have always loved each other as brother and sister; but of course he is young and has seen very little of life yet, and—and—well, he naturally did not wish to do anything like that yet.”",
+    "options": [
+     "Holmes",
+     "James",
+     "Hatherley",
+     "Irene"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “James and I have always loved each other as brother and sister; but of course he is young and has seen very little of life yet, and—and—well, he naturally did not wish to do anything like that yet.”",
+    "evidence": "James and I have always loved each other as brother and sister; but of course he is young and has seen very little of life yet, and—and—well, he naturally did not wish to do anything like that yet."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ showed us the exact spot at which the body had been found, and, indeed, so moist was the ground, that I could plainly see the traces which had been left by the fall of the stricken man.”",
+    "options": [
+     "Sutherland",
+     "Lestrade",
+     "Watson",
+     "Angel"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Lestrade showed us the exact spot at which the body had been found, and, indeed, so moist was the ground, that I could plainly see the traces which had been left by the fall of the stricken man.”",
+    "evidence": "Lestrade showed us the exact spot at which the body had been found, and, indeed, so moist was the ground, that I could plainly see the traces which had been left by the fall of the stricken man."
+   }
+  ],
+  "5": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "For a while he could not get his words out, but swayed his body and plucked at his hair like one who has been driven to the extreme limits of his…",
+     "The left arm of your jacket is spattered with mud in no less than seven places.",
+     "When my father took over the Horsham property, he, at my request, made a careful examination of the attic, which had been always locked up.",
+     "Therefore it is upon the logic rather than upon the crime that you should dwell."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “When my father took over the Horsham property, he, at my request, made a careful examination of the attic, which had been always locked up.”",
+    "evidence": "When my father took over the Horsham property, he, at my request, made a careful examination of the attic, which had been always locked up."
+   },
+   {
+    "prompt": "Fill in the missing name: “He had made a very considerable fortune in the _____, and his reason for leaving them was his aversion to the negroes, and his dislike of the Republican policy in extending the franchise to them.”",
+    "options": [
+     "Adler",
+     "Ross",
+     "City",
+     "States"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He had made a very considerable fortune in the States, and his reason for leaving them was his aversion to the negroes, and his dislike of the Republican policy in extending the franchise to them.”",
+    "evidence": "He had made a very considerable fortune in the States, and his reason for leaving them was his aversion to the negroes, and his dislike of the Republican policy in extending the franchise to them."
+   },
+   {
+    "prompt": "Fill in the missing name: “I have spent the whole day,” said he, “over Lloyd’s registers and files of the old papers, following the future career of every vessel which touched at _____ in January and February in ’83.”",
+    "options": [
+     "City",
+     "League",
+     "Lascar",
+     "Pondicherry"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “I have spent the whole day,” said he, “over Lloyd’s registers and files of the old papers, following the future career of every vessel which touched at Pondicherry in January and February in ’83.”",
+    "evidence": "I have spent the whole day,” said he, “over Lloyd’s registers and files of the old papers, following the future career of every vessel which touched at Pondicherry in January and February in ’83."
+   }
+  ],
+  "6": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Between the wharf and the bedroom window is a narrow strip, which is dry at low tide but is covered at high tide with at least four and a half feet…",
+     "He thought no more of the matter until he heard in the evening of the tragedy that had occurred.",
+     "I could not help laughing at the ease with which he explained his process of deduction.",
+     "Turner was apparently the richer man, so McCarthy became his tenant but still remained, it seems, upon terms of perfect equality, as they were…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Between the wharf and the bedroom window is a narrow strip, which is dry at low tide but is covered at high tide with at least four and a half feet of water.”",
+    "evidence": "Between the wharf and the bedroom window is a narrow strip, which is dry at low tide but is covered at high tide with at least four and a half feet of water."
+   },
+   {
+    "prompt": "Fill in the missing name: “He was the keeper of a low den in which I used to lodge in _____ Lane, where I could every morning emerge as a squalid beggar and in the evenings transform myself into a well-dressed man about town.”",
+    "options": [
+     "German",
+     "Arthur",
+     "Boscombe",
+     "Swandam"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He was the keeper of a low den in which I used to lodge in Swandam Lane, where I could every morning emerge as a squalid beggar and in the evenings transform myself into a well-dressed man about town.”",
+    "evidence": "He was the keeper of a low den in which I used to lodge in Swandam Lane, where I could every morning emerge as a squalid beggar and in the evenings transform myself into a well-dressed man about town."
+   },
+   {
+    "prompt": "Fill in the missing name: “I suppose, _____,” said he, “that you imagine that I have added opium-smoking to cocaine injections, and all the other little weaknesses on which you have favoured me with your medical views.”",
+    "options": [
+     "Watson",
+     "Sutherland",
+     "John",
+     "Baker"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “I suppose, Watson,” said he, “that you imagine that I have added opium-smoking to cocaine injections, and all the other little weaknesses on which you have favoured me with your medical views.”",
+    "evidence": "I suppose, Watson,” said he, “that you imagine that I have added opium-smoking to cocaine injections, and all the other little weaknesses on which you have favoured me with your medical views."
+   }
+  ],
+  "7": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Sherlock Holmes was pacing up and down the platform, his tall, gaunt figure made even gaunter and taller by his long grey travelling-cloak and…",
+     "The man who entered was young, some two-and-twenty at the outside, well-groomed and trimly clad, with something of refinement and delicacy in his…",
+     "Here you are, Peterson, run down to the advertising agency and have this put in the evening papers.",
+     "Ah, here it is: ‘There will soon be a call for protection in the marriage market, for the present free-trade principle appears to tell heavily…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Here you are, Peterson, run down to the advertising agency and have this put in the evening papers.”",
+    "evidence": "Here you are, Peterson, run down to the advertising agency and have this put in the evening papers."
+   },
+   {
+    "prompt": "Fill in the missing name: “It is, I think, much more likely that _____ Baker is an absolutely innocent man, who had no idea that the bird which he was carrying was of considerably more value than if it were made of solid gold.”",
+    "options": [
+     "Turner",
+     "Holmes",
+     "Lestrade",
+     "Henry"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “It is, I think, much more likely that Henry Baker is an absolutely innocent man, who had no idea that the bird which he was carrying was of considerably more value than if it were made of solid gold.”",
+    "evidence": "It is, I think, much more likely that Henry Baker is an absolutely innocent man, who had no idea that the bird which he was carrying was of considerably more value than if it were made of solid gold."
+   },
+   {
+    "prompt": "Fill in the missing name: “All the way there every man I met seemed to me to be a policeman or a detective; and, for all that it was a cold night, the sweat was pouring down my face before I came to the _____ Road.”",
+    "options": [
+     "Brixton",
+     "London",
+     "King",
+     "Horner"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “All the way there every man I met seemed to me to be a policeman or a detective; and, for all that it was a cold night, the sweat was pouring down my face before I came to the Brixton Road.”",
+    "evidence": "All the way there every man I met seemed to me to be a policeman or a detective; and, for all that it was a cold night, the sweat was pouring down my face before I came to the Brixton Road."
+   }
+  ],
+  "8": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I did not gain very much, however, by my inspection.",
+     "He was a singular man, fierce and quick-tempered, very foul-mouthed when he was angry, and of a most retiring disposition.",
+     "What do you think that this unfortunate lady died of, then?",
+     "About 1869 or 1870 he came back to Europe and took a small estate in Sussex, near Horsham."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “What do you think that this unfortunate lady died of, then?”",
+    "evidence": "What do you think that this unfortunate lady died of, then?"
+   },
+   {
+    "prompt": "Fill in the missing name: “And now, _____, this is too serious for dawdling, especially as the old man is aware that we are interesting ourselves in his affairs; so if you are ready, we shall call a cab and drive to Waterloo.”",
+    "options": [
+     "Irene",
+     "Watson",
+     "Stoner",
+     "Mary"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “And now, Watson, this is too serious for dawdling, especially as the old man is aware that we are interesting ourselves in his affairs; so if you are ready, we shall call a cab and drive to Waterloo.”",
+    "evidence": "And now, Watson, this is too serious for dawdling, especially as the old man is aware that we are interesting ourselves in his affairs; so if you are ready, we shall call a cab and drive to Waterloo."
+   },
+   {
+    "prompt": "Fill in the missing name: “My name is Helen _____, and I am living with my stepfather, who is the last survivor of one of the oldest Saxon families in England, the Roylotts of Stoke Moran, on the western border of Surrey.”",
+    "options": [
+     "Angel",
+     "Stoner",
+     "Sutherland",
+     "Watson"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “My name is Helen Stoner, and I am living with my stepfather, who is the last survivor of one of the oldest Saxon families in England, the Roylotts of Stoke Moran, on the western border of Surrey.”",
+    "evidence": "My name is Helen Stoner, and I am living with my stepfather, who is the last survivor of one of the oldest Saxon families in England, the Roylotts of Stoke Moran, on the western border of Surrey."
+   }
+  ],
+  "9": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "You are probably aware that fuller’s-earth is a valuable product, and that it is only found in one or two places in England?",
+     "Look at the band of ribbed silk and the excellent lining.",
+     "Westaway was the name of the founder of the business, but it is really managed by Miss Stoper.",
+     "You allude to my attempt to recover the Irene Adler papers, to the singular case of Miss Mary Sutherland, and to the adventure of the man with the…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “You are probably aware that fuller’s-earth is a valuable product, and that it is only found in one or two places in England?”",
+    "evidence": "You are probably aware that fuller’s-earth is a valuable product, and that it is only found in one or two places in England?"
+   },
+   {
+    "prompt": "Fill in the missing name: “On the whole, it was most probable that the silent _____, being less bold or less murderous than his companion, had assisted the woman to bear the unconscious man out of the way of danger.”",
+    "options": [
+     "Englishman",
+     "London",
+     "Adler",
+     "Briony"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “On the whole, it was most probable that the silent Englishman, being less bold or less murderous than his companion, had assisted the woman to bear the unconscious man out of the way of danger.”",
+    "evidence": "On the whole, it was most probable that the silent Englishman, being less bold or less murderous than his companion, had assisted the woman to bear the unconscious man out of the way of danger."
+   },
+   {
+    "prompt": "Fill in the missing name: “Colonel _____ Stark had said that it was only seven miles, but I should think, from the rate that we seemed to go, and from the time that we took, that it must have been nearer twelve.”",
+    "options": [
+     "Irene",
+     "Mary",
+     "Openshaw",
+     "Lysander"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Colonel Lysander Stark had said that it was only seven miles, but I should think, from the rate that we seemed to go, and from the time that we took, that it must have been nearer twelve.”",
+    "evidence": "Colonel Lysander Stark had said that it was only seven miles, but I should think, from the rate that we seemed to go, and from the time that we took, that it must have been nearer twelve."
+   }
+  ],
+  "10": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The young lady came to London, then, and you renewed your acquaintance?",
+     "Your right hand is quite a size larger than your left.",
+     "I have just been looking through all the recent papers in order to master the particulars.",
+     "There will call upon you to-night, at a quarter to eight o’clock,” it said, “a gentleman who desires to consult you upon a matter of the very…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “The young lady came to London, then, and you renewed your acquaintance?”",
+    "evidence": "The young lady came to London, then, and you renewed your acquaintance?"
+   },
+   {
+    "prompt": "Fill in the missing name: “Ah, _____,” said Holmes, smiling, “perhaps you would not be very gracious either, if, after all the trouble of wooing and wedding, you found yourself deprived in an instant of wife and of fortune.”",
+    "options": [
+     "Baker",
+     "Lestrade",
+     "Watson",
+     "Irene"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Ah, Watson,” said Holmes, smiling, “perhaps you would not be very gracious either, if, after all the trouble of wooing and wedding, you found yourself deprived in an instant of wife and of fortune.”",
+    "evidence": "Ah, Watson,” said Holmes, smiling, “perhaps you would not be very gracious either, if, after all the trouble of wooing and wedding, you found yourself deprived in an instant of wife and of fortune."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, of Scotland Yard, is acting already in the matter, but he assures me that he sees no objection to your co-operation, and that he even thinks that it might be of some assistance.”",
+    "options": [
+     "Watson",
+     "Baker",
+     "Lestrade",
+     "Sherlock"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Lestrade, of Scotland Yard, is acting already in the matter, but he assures me that he sees no objection to your co-operation, and that he even thinks that it might be of some assistance.”",
+    "evidence": "Lestrade, of Scotland Yard, is acting already in the matter, but he assures me that he sees no objection to your co-operation, and that he even thinks that it might be of some assistance."
+   }
+  ],
+  "11": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "A frayed top-hat and a faded brown overcoat with a wrinkled velvet collar lay upon a chair beside him.",
+     "’ I kissed her and went up to my bedroom again, where I was soon asleep.",
+     "He was quietly dressed in a suit of heather tweed with a soft cloth cap which he had laid down upon my books.",
+     "What can you gather yourself as to the individuality of the man who has worn this article?"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “’ I kissed her and went up to my bedroom again, where I was soon asleep.”",
+    "evidence": "’ I kissed her and went up to my bedroom again, where I was soon asleep."
+   },
+   {
+    "prompt": "Fill in the missing name: “Down the centre of _____ Street it had been ploughed into a brown crumbly band by the traffic, but at either side and on the heaped-up edges of the footpaths it still lay as white as when it fell.”",
+    "options": [
+     "Sherlock",
+     "John",
+     "Baker",
+     "Irene"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Down the centre of Baker Street it had been ploughed into a brown crumbly band by the traffic, but at either side and on the heaped-up edges of the footpaths it still lay as white as when it fell.”",
+    "evidence": "Down the centre of Baker Street it had been ploughed into a brown crumbly band by the traffic, but at either side and on the heaped-up edges of the footpaths it still lay as white as when it fell."
+   },
+   {
+    "prompt": "Fill in the missing name: “He tried more than once to break away from the dangerous company which he was keeping, but each time the influence of his friend, Sir _____ Burnwell, was enough to draw him back again.”",
+    "options": [
+     "Mary",
+     "Watson",
+     "Hatherley",
+     "George"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He tried more than once to break away from the dangerous company which he was keeping, but each time the influence of his friend, Sir George Burnwell, was enough to draw him back again.”",
+    "evidence": "He tried more than once to break away from the dangerous company which he was keeping, but each time the influence of his friend, Sir George Burnwell, was enough to draw him back again."
+   }
+  ],
+  "12": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The man who entered was young, some two-and-twenty at the outside, well-groomed and trimly clad, with something of refinement and delicacy in his…",
+     "Who would associate crime with these dear old homesteads?",
+     "I rapidly threw on my clothes and was ready in a few minutes to accompany my friend down to the sitting-room.",
+     "I think that the change would do you good, and you are always so interested in Mr."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Who would associate crime with these dear old homesteads?”",
+    "evidence": "Who would associate crime with these dear old homesteads?"
+   },
+   {
+    "prompt": "Fill in the missing name: “It is my belief, _____, founded upon my experience, that the lowest and vilest alleys in London do not present a more dreadful record of sin than does the smiling and beautiful countryside.”",
+    "options": [
+     "Stoner",
+     "Watson",
+     "Lestrade",
+     "Sherlock"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “It is my belief, Watson, founded upon my experience, that the lowest and vilest alleys in London do not present a more dreadful record of sin than does the smiling and beautiful countryside.”",
+    "evidence": "It is my belief, Watson, founded upon my experience, that the lowest and vilest alleys in London do not present a more dreadful record of sin than does the smiling and beautiful countryside."
+   },
+   {
+    "prompt": "Fill in the missing name: “As to _____, I observed that he sat frequently for half an hour on end, with knitted brows and an abstracted air, but he swept the matter away with a wave of his hand when I mentioned it.”",
+    "options": [
+     "Baker",
+     "Holmes",
+     "Stoner",
+     "Hatherley"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “As to Holmes, I observed that he sat frequently for half an hour on end, with knitted brows and an abstracted air, but he swept the matter away with a wave of his hand when I mentioned it.”",
+    "evidence": "As to Holmes, I observed that he sat frequently for half an hour on end, with knitted brows and an abstracted air, but he swept the matter away with a wave of his hand when I mentioned it."
+   }
+  ]
+ }
+}

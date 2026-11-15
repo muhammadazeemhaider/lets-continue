@@ -1,0 +1,1451 @@
+{
+ "slug": "gutenberg:1260",
+ "title": "Jane Eyre",
+ "source": "text",
+ "chapters": {
+  "1": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The fiend pinning down the thief’s pack behind him, I passed over quickly: it was an object of terror.",
+     "The car stopped at the front door; it was opened by a maid-servant; I alighted and went in.",
+     "ere long he inquired wistfully—wondering, I suppose, at my continued silence and tameness, the result rather of weakness than of will.",
+     "My spirit,” I answered mentally, “is willing to do what is right; and my flesh, I hope, is strong enough to accomplish the will of Heaven, when once…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “The fiend pinning down the thief’s pack behind him, I passed over quickly: it was an object of terror.”",
+    "evidence": "The fiend pinning down the thief’s pack behind him, I passed over quickly: it was an object of terror."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ was blind and deaf on the subject: she never saw him strike or heard him abuse me, though he did both now and then in her very presence, more frequently, however, behind her back.”",
+    "options": [
+     "Grace",
+     "John",
+     "Burns",
+     "Reed"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Reed was blind and deaf on the subject: she never saw him strike or heard him abuse me, though he did both now and then in her very presence, more frequently, however, behind her back.”",
+    "evidence": "Reed was blind and deaf on the subject: she never saw him strike or heard him abuse me, though he did both now and then in her very presence, more frequently, however, behind her back."
+   },
+   {
+    "prompt": "Fill in the missing name: “Accustomed to _____ Reed’s abuse, I never had an idea of replying to it; my care was how to endure the blow which would certainly follow the insult.”",
+    "options": [
+     "Jane",
+     "Burns",
+     "John",
+     "Diana"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Accustomed to John Reed’s abuse, I never had an idea of replying to it; my care was how to endure the blow which would certainly follow the insult.”",
+    "evidence": "Accustomed to John Reed’s abuse, I never had an idea of replying to it; my care was how to endure the blow which would certainly follow the insult."
+   }
+  ],
+  "2": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "—But where am I wandering, and what am I saying, and above all, feeling?",
+     "Fairfax in the interim of my absence: the party at the hall was dispersed; Mr.",
+     "They went, shutting the door, and locking it behind them.",
+     "Still she had her merits; and I was disposed to appreciate all that was good in her to the utmost."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “They went, shutting the door, and locking it behind them.”",
+    "evidence": "They went, shutting the door, and locking it behind them."
+   },
+   {
+    "prompt": "Fill in the missing name: “All _____ Reed’s violent tyrannies, all his sisters’ proud indifference, all his mother’s aversion, all the servants’ partiality, turned up in my disturbed mind like a dark deposit in a turbid well.”",
+    "options": [
+     "Jane",
+     "Mason",
+     "Ingram",
+     "John"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “All John Reed’s violent tyrannies, all his sisters’ proud indifference, all his mother’s aversion, all the servants’ partiality, turned up in my disturbed mind like a dark deposit in a turbid well.”",
+    "evidence": "All John Reed’s violent tyrannies, all his sisters’ proud indifference, all his mother’s aversion, all the servants’ partiality, turned up in my disturbed mind like a dark deposit in a turbid well."
+   },
+   {
+    "prompt": "Fill in the missing name: “Say your prayers, Miss _____, when you are by yourself; for if you don’t repent, something bad might be permitted to come down the chimney and fetch you away.”",
+    "options": [
+     "Mason",
+     "Jane",
+     "Eyre",
+     "Ingram"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Say your prayers, Miss Eyre, when you are by yourself; for if you don’t repent, something bad might be permitted to come down the chimney and fetch you away.”",
+    "evidence": "Say your prayers, Miss Eyre, when you are by yourself; for if you don’t repent, something bad might be permitted to come down the chimney and fetch you away."
+   }
+  ],
+  "3": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Most bitterly he smiled—most decidedly he withdrew his hand from mine.",
+     "It is not likely; and now it is time for you to come in; you’ll catch the fever if you stop out when the dew is falling.",
+     "Yet, I thought, I ought to have been happy, for none of the Reeds were there, they were all gone out in the carriage with their mama.",
+     "However, it is not my business, and so it suits you, I don’t much care."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Yet, I thought, I ought to have been happy, for none of the Reeds were there, they were all gone out in the carriage with their mama.”",
+    "evidence": "Yet, I thought, I ought to have been happy, for none of the Reeds were there, they were all gone out in the carriage with their mama."
+   },
+   {
+    "prompt": "Fill in the missing name: “I felt an inexpressible relief, a soothing conviction of protection and security, when I knew that there was a stranger in the room, an individual not belonging to _____, and not related to Mrs.”",
+    "options": [
+     "London",
+     "Gateshead",
+     "Sophie",
+     "Thornfield"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I felt an inexpressible relief, a soothing conviction of protection and security, when I knew that there was a stranger in the room, an individual not belonging to Gateshead, and not related to Mrs.”",
+    "evidence": "I felt an inexpressible relief, a soothing conviction of protection and security, when I knew that there was a stranger in the room, an individual not belonging to Gateshead, and not related to Mrs."
+   },
+   {
+    "prompt": "Fill in the missing name: “Ev’n should I fall o’er the broken bridge passing, Or stray in the marshes, by false lights beguiled, Still will my _____, with promise and blessing, Take to His bosom the poor orphan child.”",
+    "options": [
+     "Father",
+     "Hay",
+     "Millcote",
+     "Pilot"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Ev’n should I fall o’er the broken bridge passing, Or stray in the marshes, by false lights beguiled, Still will my Father, with promise and blessing, Take to His bosom the poor orphan child.”",
+    "evidence": "Ev’n should I fall o’er the broken bridge passing, Or stray in the marshes, by false lights beguiled, Still will my Father, with promise and blessing, Take to His bosom the poor orphan child."
+   }
+  ],
+  "4": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Reed my benefactress; if so, a benefactress is a disagreeable thing.",
+     "Barbara,” said she, “can you not bring a little more bread and butter?",
+     "Rochester’s face was to feel that not a second of delay would be tolerated for any purpose.",
+     "How all my brain was in tumult, and all my heart in insurrection!"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Reed my benefactress; if so, a benefactress is a disagreeable thing.”",
+    "evidence": "Reed my benefactress; if so, a benefactress is a disagreeable thing."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ sat on a high stool, dressing her hair at the glass, and interweaving her curls with artificial flowers and faded feathers, of which she had found a store in a drawer in the attic.”",
+    "options": [
+     "Temple",
+     "Mary",
+     "Georgiana",
+     "Diana"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Georgiana sat on a high stool, dressing her hair at the glass, and interweaving her curls with artificial flowers and faded feathers, of which she had found a store in a drawer in the attic.”",
+    "evidence": "Georgiana sat on a high stool, dressing her hair at the glass, and interweaving her curls with artificial flowers and faded feathers, of which she had found a store in a drawer in the attic."
+   },
+   {
+    "prompt": "Fill in the missing name: “I have a little boy, younger than you, who knows six _____ by heart: and when you ask him which he would rather have, a gingerbread-nut to eat or a verse of a Psalm to learn, he says: ‘Oh!”",
+    "options": [
+     "London",
+     "Psalms",
+     "Millcote",
+     "Pilot"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I have a little boy, younger than you, who knows six Psalms by heart: and when you ask him which he would rather have, a gingerbread-nut to eat or a verse of a Psalm to learn, he says: ‘Oh!”",
+    "evidence": "I have a little boy, younger than you, who knows six Psalms by heart: and when you ask him which he would rather have, a gingerbread-nut to eat or a verse of a Psalm to learn, he says: ‘Oh!"
+   }
+  ],
+  "5": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Wondering, and of my wonder finding no end, I complied.",
+     "A pause of some seconds succeeded, filled up by the low, vague hum of numbers; Miss Miller walked from class to class, hushing this indefinite sound.",
+     "Now I wept: Helen Burns was not here; nothing sustained me; left to myself I abandoned myself, and my tears watered the boards.",
+     "It is always dangerous to keep a candle lit at night."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “A pause of some seconds succeeded, filled up by the low, vague hum of numbers; Miss Miller walked from class to class, hushing this indefinite sound.”",
+    "evidence": "A pause of some seconds succeeded, filled up by the low, vague hum of numbers; Miss Miller walked from class to class, hushing this indefinite sound."
+   },
+   {
+    "prompt": "Fill in the missing name: “Business now began: the day’s Collect was repeated, then certain texts of _____ were said, and to these succeeded a protracted reading of chapters in the Bible, which lasted an hour.”",
+    "options": [
+     "Scripture",
+     "Hay",
+     "Thornfield",
+     "Christian"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Business now began: the day’s Collect was repeated, then certain texts of Scripture were said, and to these succeeded a protracted reading of chapters in the Bible, which lasted an hour.”",
+    "evidence": "Business now began: the day’s Collect was repeated, then certain texts of Scripture were said, and to these succeeded a protracted reading of chapters in the Bible, which lasted an hour."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ pronounced by some lips; at which Miss Miller shook her head disapprovingly; but she made no great effort to check the general wrath; doubtless she shared in it.”",
+    "options": [
+     "Brocklehurst",
+     "Hannah",
+     "Scatcherd",
+     "Ingram"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Brocklehurst pronounced by some lips; at which Miss Miller shook her head disapprovingly; but she made no great effort to check the general wrath; doubtless she shared in it.”",
+    "evidence": "Brocklehurst pronounced by some lips; at which Miss Miller shook her head disapprovingly; but she made no great effort to check the general wrath; doubtless she shared in it."
+   }
+  ],
+  "6": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I like to observe all the faces and all the figures.",
+     "They will have a great deal of money, and you will have none: it is your place to be humble, and to try to make yourself agreeable to them.",
+     "This, spoken in a cool, tranquil tone, was mortifying and baffling enough.",
+     "This is all very provoking to Miss Scatcherd, who is naturally neat, punctual, and particular."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “This is all very provoking to Miss Scatcherd, who is naturally neat, punctual, and particular.”",
+    "evidence": "This is all very provoking to Miss Scatcherd, who is naturally neat, punctual, and particular."
+   },
+   {
+    "prompt": "Fill in the missing name: “Now, mine continually rove away; when I should be listening to Miss _____, and collecting all she says with assiduity, often I lose the very sound of her voice; I fall into a sort of dream.”",
+    "options": [
+     "Scatcherd",
+     "Ingram",
+     "Burns",
+     "Mary"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Now, mine continually rove away; when I should be listening to Miss Scatcherd, and collecting all she says with assiduity, often I lose the very sound of her voice; I fall into a sort of dream.”",
+    "evidence": "Now, mine continually rove away; when I should be listening to Miss Scatcherd, and collecting all she says with assiduity, often I lose the very sound of her voice; I fall into a sort of dream."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ obeyed: I looked at her narrowly as she emerged from the book-closet; she was just putting back her handkerchief into her pocket, and the trace of a tear glistened on her thin cheek.”",
+    "options": [
+     "Miller",
+     "Burns",
+     "Georgiana",
+     "Bessie"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Burns obeyed: I looked at her narrowly as she emerged from the book-closet; she was just putting back her handkerchief into her pocket, and the trace of a tear glistened on her thin cheek.”",
+    "evidence": "Burns obeyed: I looked at her narrowly as she emerged from the book-closet; she was just putting back her handkerchief into her pocket, and the trace of a tear glistened on her thin cheek."
+   }
+  ],
+  "7": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Fairfax turned out to be what she appeared, a placid-tempered, kind-natured woman, of competent education and average intelligence.",
+     "Not liking to sit in the cold and darkness, I thought I would lie down on my bed, dressed as I was.",
+     "Agnes and Catherine Johnstone were invited to take tea with some friends at Lowton last Thursday, and I gave them leave to put on clean tuckers for…",
+     "How much of the fall of the avalanche is in their anger?"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Agnes and Catherine Johnstone were invited to take tea with some friends at Lowton last Thursday, and I gave them leave to put on clean tuckers for the occasion.”",
+    "evidence": "Agnes and Catherine Johnstone were invited to take tea with some friends at Lowton last Thursday, and I gave them leave to put on clean tuckers for the occasion."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ could not see them too; he would perhaps have felt that, whatever he might do with the outside of the cup and platter, the inside was further beyond his interference than he imagined.”",
+    "options": [
+     "Ingram",
+     "Temple",
+     "Brocklehurst",
+     "Jane"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Brocklehurst could not see them too; he would perhaps have felt that, whatever he might do with the outside of the cup and platter, the inside was further beyond his interference than he imagined.”",
+    "evidence": "Brocklehurst could not see them too; he would perhaps have felt that, whatever he might do with the outside of the cup and platter, the inside was further beyond his interference than he imagined."
+   },
+   {
+    "prompt": "Fill in the missing name: “A long stride measured the schoolroom, and presently beside Miss _____, who herself had risen, stood the same black column which had frowned on me so ominously from the hearthrug of Gateshead.”",
+    "options": [
+     "Mason",
+     "Diana",
+     "Temple",
+     "Ingram"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “A long stride measured the schoolroom, and presently beside Miss Temple, who herself had risen, stood the same black column which had frowned on me so ominously from the hearthrug of Gateshead.”",
+    "evidence": "A long stride measured the schoolroom, and presently beside Miss Temple, who herself had risen, stood the same black column which had frowned on me so ominously from the hearthrug of Gateshead."
+   }
+  ],
+  "8": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "There were no groomsmen, no bridesmaids, no relatives to wait for or marshal: none but Mr.",
+     ", and the Millcote town clock is now just striking eight.",
+     "We had not sat long thus, when another person came in.",
+     "She conducted me to her own chair, and then began to remove my shawl and untie my bonnet-strings; I begged she would not give herself so much trouble."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “We had not sat long thus, when another person came in.”",
+    "evidence": "We had not sat long thus, when another person came in."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____; for I read a sincere nature in your ardent eyes and on your clear front), and God waits only the separation of spirit from flesh to crown us with a full reward.”",
+    "options": [
+     "Georgiana",
+     "Reed",
+     "Temple",
+     "Mason"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Reed; for I read a sincere nature in your ardent eyes and on your clear front), and God waits only the separation of spirit from flesh to crown us with a full reward.”",
+    "evidence": "Reed; for I read a sincere nature in your ardent eyes and on your clear front), and God waits only the separation of spirit from flesh to crown us with a full reward."
+   },
+   {
+    "prompt": "Fill in the missing name: “No; I know I should think well of myself; but that is not enough: if others don’t love me I would rather die than live—I cannot bear to be solitary and hated, _____.”",
+    "options": [
+     "Helen",
+     "Pilot",
+     "Thornfield",
+     "Gateshead"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “No; I know I should think well of myself; but that is not enough: if others don’t love me I would rather die than live—I cannot bear to be solitary and hated, Helen.”",
+    "evidence": "No; I know I should think well of myself; but that is not enough: if others don’t love me I would rather die than live—I cannot bear to be solitary and hated, Helen."
+   }
+  ],
+  "9": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "But then it seems disgraceful to be flogged, and to be sent to stand in the middle of a room full of people; and you are such a great girl: I am far…",
+     "These affirmed that it was pleasure enough to have the privilege of again looking on Mr.",
+     "How could it be otherwise, when Helen, at all times and under all circumstances, evinced for me a quiet and faithful friendship, which ill-humour…",
+     "It was the first of June; yet the morning was overcast and chilly: rain beat fast on my casement."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “How could it be otherwise, when Helen, at all times and under all circumstances, evinced for me a quiet and faithful friendship, which ill-humour never soured, nor irritation never troubled?”",
+    "evidence": "How could it be otherwise, when Helen, at all times and under all circumstances, evinced for me a quiet and faithful friendship, which ill-humour never soured, nor irritation never troubled?"
+   },
+   {
+    "prompt": "Fill in the missing name: “The nurse closed the front door; I went in by the side entrance which led to the schoolroom: I was just in time; it was nine o’clock, and Miss _____ was calling the pupils to go to bed.”",
+    "options": [
+     "Scatcherd",
+     "Grace",
+     "Miller",
+     "Burns"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “The nurse closed the front door; I went in by the side entrance which led to the schoolroom: I was just in time; it was nine o’clock, and Miss Miller was calling the pupils to go to bed.”",
+    "evidence": "The nurse closed the front door; I went in by the side entrance which led to the schoolroom: I was just in time; it was nine o’clock, and Miss Miller was calling the pupils to go to bed."
+   },
+   {
+    "prompt": "Fill in the missing name: “It opened clear on my comprehension that Helen _____ was numbering her last days in this world, and that she was going to be taken to the region of spirits, if such region there were.”",
+    "options": [
+     "Mary",
+     "Reed",
+     "John",
+     "Burns"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “It opened clear on my comprehension that Helen Burns was numbering her last days in this world, and that she was going to be taken to the region of spirits, if such region there were.”",
+    "evidence": "It opened clear on my comprehension that Helen Burns was numbering her last days in this world, and that she was going to be taken to the region of spirits, if such region there were."
+   }
+  ],
+  "10": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Jane, you look blooming, and smiling, and pretty,” said he: “truly pretty this morning.",
+     "Lloyd; I shall write to him; if his reply agrees with your statement, you shall be publicly cleared from every imputation; to me, Jane, you are…",
+     "(I thought that as I was barely eighteen, it would not do to undertake the guidance of pupils nearer my own age).",
+     "The house-maid alone came here on Saturdays, to wipe from the mirrors and the furniture a week’s quiet dust: and Mrs."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “(I thought that as I was barely eighteen, it would not do to undertake the guidance of pupils nearer my own age).”",
+    "evidence": "(I thought that as I was barely eighteen, it would not do to undertake the guidance of pupils nearer my own age)."
+   },
+   {
+    "prompt": "Fill in the missing name: “The succeeding week seemed long: it came to an end at last, however, like all sublunary things, and once more, towards the close of a pleasant autumn day, I found myself afoot on the road to _____.”",
+    "options": [
+     "Lowton",
+     "London",
+     "Gateshead",
+     "India"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “The succeeding week seemed long: it came to an end at last, however, like all sublunary things, and once more, towards the close of a pleasant autumn day, I found myself afoot on the road to Lowton.”",
+    "evidence": "The succeeding week seemed long: it came to an end at last, however, like all sublunary things, and once more, towards the close of a pleasant autumn day, I found myself afoot on the road to Lowton."
+   },
+   {
+    "prompt": "Fill in the missing name: “Well, you know _____ always said they were poor and quite despicable: and they may be poor; but I believe they are as much gentry as the Reeds are; for one day, nearly seven years ago, a Mr.”",
+    "options": [
+     "Sophie",
+     "Missis",
+     "England",
+     "London"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Well, you know Missis always said they were poor and quite despicable: and they may be poor; but I believe they are as much gentry as the Reeds are; for one day, nearly seven years ago, a Mr.”",
+    "evidence": "Well, you know Missis always said they were poor and quite despicable: and they may be poor; but I believe they are as much gentry as the Reeds are; for one day, nearly seven years ago, a Mr."
+   }
+  ],
+  "11": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I left Gateshead yesterday: and if you can get ready, Miss, I should like to take you back with me early to-morrow morning.",
+     "The hall-door, which was half of glass, stood open; I stepped over the threshold.",
+     "Men are hard-hearted, and kind angels only Watch o’er the steps of a poor orphan child.",
+     "He and his aids now withdrew behind the curtain: the other party, which was headed by Colonel Dent, sat down on the crescent of chairs."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “The hall-door, which was half of glass, stood open; I stepped over the threshold.”",
+    "evidence": "The hall-door, which was half of glass, stood open; I stepped over the threshold."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ carried me in his arms over a plank to the land, and Sophie came after, and we all got into a coach, which took us to a beautiful large house, larger than this and finer, called an hotel.”",
+    "options": [
+     "John",
+     "Bessie",
+     "Burns",
+     "Rochester"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Rochester carried me in his arms over a plank to the land, and Sophie came after, and we all got into a coach, which took us to a beautiful large house, larger than this and finer, called an hotel.”",
+    "evidence": "Rochester carried me in his arms over a plank to the land, and Sophie came after, and we all got into a coach, which took us to a beautiful large house, larger than this and finer, called an hotel."
+   },
+   {
+    "prompt": "Fill in the missing name: “She returned; with her own hands cleared her knitting apparatus and a book or two from the table, to make room for the tray which _____ now brought, and then herself handed me the refreshments.”",
+    "options": [
+     "Miller",
+     "Mary",
+     "Leah",
+     "Hannah"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “She returned; with her own hands cleared her knitting apparatus and a book or two from the table, to make room for the tray which Leah now brought, and then herself handed me the refreshments.”",
+    "evidence": "She returned; with her own hands cleared her knitting apparatus and a book or two from the table, to make room for the tray which Leah now brought, and then herself handed me the refreshments."
+   }
+  ],
+  "12": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Agnes and Catherine Johnstone were invited to take tea with some friends at Lowton last Thursday, and I gave them leave to put on clean tuckers for…",
+     "That evening calm betrayed alike the tinkle of the nearest streams, the sough of the most remote.",
+     "They generally run on the same theme—courtship; and promise to end in the same catastrophe—marriage.",
+     "It is always dangerous to keep a candle lit at night."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “That evening calm betrayed alike the tinkle of the nearest streams, the sough of the most remote.”",
+    "evidence": "That evening calm betrayed alike the tinkle of the nearest streams, the sough of the most remote."
+   },
+   {
+    "prompt": "Fill in the missing name: “Nothing ever rode the _____: it was always alone; and goblins, to my notions, though they might tenant the dumb carcasses of beasts, could scarce covet shelter in the commonplace human form.”",
+    "options": [
+     "Helen",
+     "Hay",
+     "Gytrash",
+     "Lowood"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Nothing ever rode the Gytrash: it was always alone; and goblins, to my notions, though they might tenant the dumb carcasses of beasts, could scarce covet shelter in the commonplace human form.”",
+    "evidence": "Nothing ever rode the Gytrash: it was always alone; and goblins, to my notions, though they might tenant the dumb carcasses of beasts, could scarce covet shelter in the commonplace human form."
+   },
+   {
+    "prompt": "Fill in the missing name: “From just below; and I am not at all afraid of being out late when it is moonlight: I will run over to _____ for you with pleasure, if you wish it: indeed, I am going there to post a letter.”",
+    "options": [
+     "Gateshead",
+     "Hay",
+     "Morton",
+     "Blanche"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “From just below; and I am not at all afraid of being out late when it is moonlight: I will run over to Hay for you with pleasure, if you wish it: indeed, I am going there to post a letter.”",
+    "evidence": "From just below; and I am not at all afraid of being out late when it is moonlight: I will run over to Hay for you with pleasure, if you wish it: indeed, I am going there to post a letter."
+   }
+  ],
+  "13": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Miss Eyre, you are not so unsophisticated as Adèle: she demands a ‘cadeau,’ clamorously, the moment she sees me: you beat about the bush.",
+     "They speak with the broadest accent of the district.",
+     "And then you won’t know me, sir; and I shall not be your Jane Eyre any longer, but an ape in a harlequin’s jacket—a jay in borrowed plumes.",
+     "A considerable interval elapsed before it again rose."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Miss Eyre, you are not so unsophisticated as Adèle: she demands a ‘cadeau,’ clamorously, the moment she sees me: you beat about the bush.”",
+    "evidence": "Miss Eyre, you are not so unsophisticated as Adèle: she demands a ‘cadeau,’ clamorously, the moment she sees me: you beat about the bush."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ would be glad if you and your pupil would take tea with him in the drawing-room this evening,” said she: “he has been so much engaged all day that he could not ask to see you before.”",
+    "options": [
+     "Rochester",
+     "Bessie",
+     "Jane",
+     "Mason"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Rochester would be glad if you and your pupil would take tea with him in the drawing-room this evening,” said she: “he has been so much engaged all day that he could not ask to see you before.”",
+    "evidence": "Rochester would be glad if you and your pupil would take tea with him in the drawing-room this evening,” said she: “he has been so much engaged all day that he could not ask to see you before."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had settled into a corner with her knitting; while Adèle was leading me by the hand round the room, showing me the beautiful books and ornaments on the consoles and chiffonnières.”",
+    "options": [
+     "Fairfax",
+     "Eyre",
+     "Grace",
+     "Temple"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Fairfax had settled into a corner with her knitting; while Adèle was leading me by the hand round the room, showing me the beautiful books and ornaments on the consoles and chiffonnières.”",
+    "evidence": "Fairfax had settled into a corner with her knitting; while Adèle was leading me by the hand round the room, showing me the beautiful books and ornaments on the consoles and chiffonnières."
+   }
+  ],
+  "14": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Her purple riding-habit almost swept the ground, her veil streamed long on the breeze; mingling with its transparent folds, and gleaming through…",
+     "It would please me now to draw you out—to learn more of you—therefore speak.",
+     "I once, indeed, overheard part of a dialogue between Leah and one of the charwomen, of which Grace formed the subject.",
+     "That evening calm betrayed alike the tinkle of the nearest streams, the sough of the most remote."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “It would please me now to draw you out—to learn more of you—therefore speak.”",
+    "evidence": "It would please me now to draw you out—to learn more of you—therefore speak."
+   },
+   {
+    "prompt": "Fill in the missing name: “One day he had had company to dinner, and had sent for my portfolio; in order, doubtless, to exhibit its contents: the gentlemen went away early, to attend a public meeting at _____, as Mrs.”",
+    "options": [
+     "Morton",
+     "England",
+     "Helen",
+     "Millcote"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “One day he had had company to dinner, and had sent for my portfolio; in order, doubtless, to exhibit its contents: the gentlemen went away early, to attend a public meeting at Millcote, as Mrs.”",
+    "evidence": "One day he had had company to dinner, and had sent for my portfolio; in order, doubtless, to exhibit its contents: the gentlemen went away early, to attend a public meeting at Millcote, as Mrs."
+   },
+   {
+    "prompt": "Fill in the missing name: “Miss _____, draw your chair still a little farther forward: you are yet too far back; I cannot see you without disturbing my position in this comfortable chair, which I have no mind to do.”",
+    "options": [
+     "Eyre",
+     "Scatcherd",
+     "Mary",
+     "Diana"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Miss Eyre, draw your chair still a little farther forward: you are yet too far back; I cannot see you without disturbing my position in this comfortable chair, which I have no mind to do.”",
+    "evidence": "Miss Eyre, draw your chair still a little farther forward: you are yet too far back; I cannot see you without disturbing my position in this comfortable chair, which I have no mind to do."
+   }
+  ],
+  "15": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "His whole face was colourless rock: his eye was both spark and flint.",
+     "Diana announced that she would just give me time to get over the honeymoon, and then she would come and see me.",
+     "I lingered; the moon shut herself wholly within her chamber, and drew close her curtain of dense cloud: the night grew dark; rain came driving fast…",
+     "Some years after I had broken with the mother, she abandoned her child, and ran away to Italy with a musician or singer."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Some years after I had broken with the mother, she abandoned her child, and ran away to Italy with a musician or singer.”",
+    "evidence": "Some years after I had broken with the mother, she abandoned her child, and ran away to Italy with a musician or singer."
+   },
+   {
+    "prompt": "Fill in the missing name: “Nothing else that has being would have been tolerable to me in the character of creditor for such an obligation: but you: it is different;—I feel your benefits no burden, _____.”",
+    "options": [
+     "Mary",
+     "Jane",
+     "Ingram",
+     "Georgiana"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Nothing else that has being would have been tolerable to me in the character of creditor for such an obligation: but you: it is different;—I feel your benefits no burden, Jane.”",
+    "evidence": "Nothing else that has being would have been tolerable to me in the character of creditor for such an obligation: but you: it is different;—I feel your benefits no burden, Jane."
+   },
+   {
+    "prompt": "Fill in the missing name: “All at once I remembered that it might be _____, who, when the kitchen-door chanced to be left open, not unfrequently found his way up to the threshold of Mr.”",
+    "options": [
+     "Sophie",
+     "Pilot",
+     "Helen",
+     "Gateshead"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “All at once I remembered that it might be Pilot, who, when the kitchen-door chanced to be left open, not unfrequently found his way up to the threshold of Mr.”",
+    "evidence": "All at once I remembered that it might be Pilot, who, when the kitchen-door chanced to be left open, not unfrequently found his way up to the threshold of Mr."
+   }
+  ],
+  "16": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I bethought myself to talk about the school and my scholars.",
+     "Rochester in her behalf; but, hard-favoured and matronly as she was, the idea could not be admitted.",
+     "And when Miss Temple teaches you, do your thoughts wander then?",
+     "Ex-act-ly—pre-cise-ly: with your usual acuteness, you have hit the nail straight on the head."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Rochester in her behalf; but, hard-favoured and matronly as she was, the idea could not be admitted.”",
+    "evidence": "Rochester in her behalf; but, hard-favoured and matronly as she was, the idea could not be admitted."
+   },
+   {
+    "prompt": "Fill in the missing name: “I never saw a more splendid scene: the ladies were magnificently dressed; most of them—at least most of the younger ones—looked handsome; but Miss _____ was certainly the queen.”",
+    "options": [
+     "Diana",
+     "Ingram",
+     "Mason",
+     "John"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I never saw a more splendid scene: the ladies were magnificently dressed; most of them—at least most of the younger ones—looked handsome; but Miss Ingram was certainly the queen.”",
+    "evidence": "I never saw a more splendid scene: the ladies were magnificently dressed; most of them—at least most of the younger ones—looked handsome; but Miss Ingram was certainly the queen."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ might probably win that noble lady’s love, if he chose to strive for it; is it likely he would waste a serious thought on this indigent and insignificant plebeian?”",
+    "options": [
+     "Rochester",
+     "Bessie",
+     "Temple",
+     "Burns"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Rochester might probably win that noble lady’s love, if he chose to strive for it; is it likely he would waste a serious thought on this indigent and insignificant plebeian?”",
+    "evidence": "Rochester might probably win that noble lady’s love, if he chose to strive for it; is it likely he would waste a serious thought on this indigent and insignificant plebeian?"
+   }
+  ],
+  "17": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Thanks being returned for what we had not got, and a second hymn chanted, the refectory was evacuated for the schoolroom.",
+     "He saw me; for the moon had opened a blue field in the sky, and rode in it watery bright: he took his hat off, and waved it round his head.",
+     "Rochester evidently prefers her to any of the other ladies.",
+     "We shall not want it to go to church; but it must be ready the moment we return: all the boxes and luggage arranged and strapped on, and the…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Rochester evidently prefers her to any of the other ladies.”",
+    "evidence": "Rochester evidently prefers her to any of the other ladies."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ possessed a fine voice: he did—a mellow, powerful bass, into which he threw his own feeling, his own force; finding a way through the ear to the heart, and there waking sensation strangely.”",
+    "options": [
+     "Rochester",
+     "Diana",
+     "Hannah",
+     "Mason"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Rochester possessed a fine voice: he did—a mellow, powerful bass, into which he threw his own feeling, his own force; finding a way through the ear to the heart, and there waking sensation strangely.”",
+    "evidence": "Rochester possessed a fine voice: he did—a mellow, powerful bass, into which he threw his own feeling, his own force; finding a way through the ear to the heart, and there waking sensation strangely."
+   },
+   {
+    "prompt": "Fill in the missing name: “Sir _____—whom, by-the-bye, I have forgotten to describe,—a very big, and very fresh-looking country gentleman, stands before their sofa, coffee-cup in hand, and occasionally puts in a word.”",
+    "options": [
+     "Miller",
+     "Temple",
+     "George",
+     "John"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Sir George—whom, by-the-bye, I have forgotten to describe,—a very big, and very fresh-looking country gentleman, stands before their sofa, coffee-cup in hand, and occasionally puts in a word.”",
+    "evidence": "Sir George—whom, by-the-bye, I have forgotten to describe,—a very big, and very fresh-looking country gentleman, stands before their sofa, coffee-cup in hand, and occasionally puts in a word."
+   }
+  ],
+  "18": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "On the contrary, I think in time I shall get on with my scholars very well.",
+     "She was not good; she was not original: she used to repeat sounding phrases from books: she never offered, nor had, an opinion of her own.",
+     "He put wine to my lips; I tasted it and revived; then I ate something he offered me, and was soon myself.",
+     "Who would be hurt by my once more tasting the life his glance can give me?"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “She was not good; she was not original: she used to repeat sounding phrases from books: she never offered, nor had, an opinion of her own.”",
+    "evidence": "She was not good; she was not original: she used to repeat sounding phrases from books: she never offered, nor had, an opinion of her own."
+   },
+   {
+    "prompt": "Fill in the missing name: “, of the parties, the less I felt justified in judging and blaming either him or Miss _____ for acting in conformity to ideas and principles instilled into them, doubtless, from their childhood.”",
+    "options": [
+     "Eyre",
+     "Mary",
+     "Scatcherd",
+     "Ingram"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “, of the parties, the less I felt justified in judging and blaming either him or Miss Ingram for acting in conformity to ideas and principles instilled into them, doubtless, from their childhood.”",
+    "evidence": ", of the parties, the less I felt justified in judging and blaming either him or Miss Ingram for acting in conformity to ideas and principles instilled into them, doubtless, from their childhood."
+   },
+   {
+    "prompt": "Fill in the missing name: “What charade Colonel _____ and his party played, what word they chose, how they acquitted themselves, I no longer remember; but I still see the consultation which followed each scene: I see Mr.”",
+    "options": [
+     "Dent",
+     "John",
+     "Ingram",
+     "Diana"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “What charade Colonel Dent and his party played, what word they chose, how they acquitted themselves, I no longer remember; but I still see the consultation which followed each scene: I see Mr.”",
+    "evidence": "What charade Colonel Dent and his party played, what word they chose, how they acquitted themselves, I no longer remember; but I still see the consultation which followed each scene: I see Mr."
+   }
+  ],
+  "19": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "So was the black horned thing seated aloof on a rock, surveying a distant crowd surrounding a gallows.",
+     "You have not exchanged a syllable with one of them?",
+     "Looking up, I, with tear-dimmed eyes, saw the mighty Milky-way.",
+     "I filled the interval in walking softly about my room, and pondering the visitation which had given my plans their present bent."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “You have not exchanged a syllable with one of them?”",
+    "evidence": "You have not exchanged a syllable with one of them?"
+   },
+   {
+    "prompt": "Fill in the missing name: “He went to _____ this morning, and will be back here to-night or to-morrow: does that circumstance exclude him from the list of your acquaintance—blot him, as it were, out of existence?”",
+    "options": [
+     "London",
+     "Helen",
+     "India",
+     "Millcote"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He went to Millcote this morning, and will be back here to-night or to-morrow: does that circumstance exclude him from the list of your acquaintance—blot him, as it were, out of existence?”",
+    "evidence": "He went to Millcote this morning, and will be back here to-night or to-morrow: does that circumstance exclude him from the list of your acquaintance—blot him, as it were, out of existence?"
+   },
+   {
+    "prompt": "Fill in the missing name: “I filled a wine-glass (I saw Miss _____ watch me frowningly as I did so: she thought I was taking a liberty, I daresay), and I returned to the library.”",
+    "options": [
+     "Mary",
+     "Ingram",
+     "Reed",
+     "Scatcherd"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I filled a wine-glass (I saw Miss Ingram watch me frowningly as I did so: she thought I was taking a liberty, I daresay), and I returned to the library.”",
+    "evidence": "I filled a wine-glass (I saw Miss Ingram watch me frowningly as I did so: she thought I was taking a liberty, I daresay), and I returned to the library."
+   }
+  ],
+  "20": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The traces of the bog were removed from it; the creases left by the wet smoothed out: it was quite decent.",
+     "She looked up, while I still gazed at her: no start, no increase or failure of colour betrayed emotion, consciousness of guilt, or fear of detection.",
+     "Again the poor man groaned; he looked as if he dared not move; fear, either of death or of something else, appeared almost to paralyse him.",
+     "No,” I heard her say: “she looks too stupid for any game of the sort."
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Again the poor man groaned; he looked as if he dared not move; fear, either of death or of something else, appeared almost to paralyse him.”",
+    "evidence": "Again the poor man groaned; he looked as if he dared not move; fear, either of death or of something else, appeared almost to paralyse him."
+   },
+   {
+    "prompt": "Fill in the missing name: “Men and women die; philosophers falter in wisdom, and _____ in goodness: if any one you know has suffered and erred, let him look higher than his equals for strength to amend and solace to heal.”",
+    "options": [
+     "Morton",
+     "Sophie",
+     "Janet",
+     "Christians"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Men and women die; philosophers falter in wisdom, and Christians in goodness: if any one you know has suffered and erred, let him look higher than his equals for strength to amend and solace to heal.”",
+    "evidence": "Men and women die; philosophers falter in wisdom, and Christians in goodness: if any one you know has suffered and erred, let him look higher than his equals for strength to amend and solace to heal."
+   },
+   {
+    "prompt": "Fill in the missing name: “I could not forget how the arm had trembled which he rested on my shoulder: and it was no light matter which could thus bow the resolute spirit and thrill the vigorous frame of _____ Rochester.”",
+    "options": [
+     "Reed",
+     "Fairfax",
+     "Temple",
+     "Burns"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “I could not forget how the arm had trembled which he rested on my shoulder: and it was no light matter which could thus bow the resolute spirit and thrill the vigorous frame of Fairfax Rochester.”",
+    "evidence": "I could not forget how the arm had trembled which he rested on my shoulder: and it was no light matter which could thus bow the resolute spirit and thrill the vigorous frame of Fairfax Rochester."
+   }
+  ],
+  "21": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "The dinner-bell rang, and suddenly away he bolted, without another syllable: I saw him no more during the day, and was off before he had risen in…",
+     "But I’ll not keep you sitting up late to-night,” said she; “it is on the stroke of twelve now, and you have been travelling all day: you must feel…",
+     "I was wrong ever to bring you to Thornfield Hall, knowing as I did how it was haunted.",
+     "It is all very well for the present,” said he; “but seriously, I trust that when the first flush of vivacity is over, you will look a little higher…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “The dinner-bell rang, and suddenly away he bolted, without another syllable: I saw him no more during the day, and was off before he had risen in the morning.”",
+    "evidence": "The dinner-bell rang, and suddenly away he bolted, without another syllable: I saw him no more during the day, and was off before he had risen in the morning."
+   },
+   {
+    "prompt": "Fill in the missing name: “She wanted to know if I was happy at _____ Hall, and what sort of a person the mistress was; and when I told her there was only a master, whether he was a nice gentleman, and if I liked him.”",
+    "options": [
+     "Thornfield",
+     "London",
+     "Helen",
+     "Hay"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “She wanted to know if I was happy at Thornfield Hall, and what sort of a person the mistress was; and when I told her there was only a master, whether he was a nice gentleman, and if I liked him.”",
+    "evidence": "She wanted to know if I was happy at Thornfield Hall, and what sort of a person the mistress was; and when I told her there was only a master, whether he was a nice gentleman, and if I liked him."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ has blessed my endeavours to secure a competency; and as I am unmarried and childless, I wish to adopt her during my life, and bequeath her at my death whatever I may have to leave.”",
+    "options": [
+     "Gateshead",
+     "Providence",
+     "Millcote",
+     "Lowood"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Providence has blessed my endeavours to secure a competency; and as I am unmarried and childless, I wish to adopt her during my life, and bequeath her at my death whatever I may have to leave.”",
+    "evidence": "Providence has blessed my endeavours to secure a competency; and as I am unmarried and childless, I wish to adopt her during my life, and bequeath her at my death whatever I may have to leave."
+   }
+  ],
+  "22": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Rochester looked on with his arms folded—smiling sardonically, as it seemed, at both her and me.",
+     "A long stride measured the schoolroom, and presently beside Miss Temple, who herself had risen, stood the same black column which had frowned on me…",
+     "Her call at the school was generally made in the course of her morning ride.",
+     "Jewels for Jane Eyre sounds unnatural and strange: I would rather not have them."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Rochester looked on with his arms folded—smiling sardonically, as it seemed, at both her and me.”",
+    "evidence": "Rochester looked on with his arms folded—smiling sardonically, as it seemed, at both her and me."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ (so at least I thought) such a wealth of the power of communicating happiness, that to taste but of the crumbs he scattered to stray and stranger birds like me, was to feast genially.”",
+    "options": [
+     "Temple",
+     "Rochester",
+     "Mary",
+     "John"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Rochester (so at least I thought) such a wealth of the power of communicating happiness, that to taste but of the crumbs he scattered to stray and stranger birds like me, was to feast genially.”",
+    "evidence": "Rochester (so at least I thought) such a wealth of the power of communicating happiness, that to taste but of the crumbs he scattered to stray and stranger birds like me, was to feast genially."
+   },
+   {
+    "prompt": "Fill in the missing name: “They are making hay, too, in _____ meadows: or rather, the labourers are just quitting their work, and returning home with their rakes on their shoulders, now, at the hour I arrive.”",
+    "options": [
+     "Christian",
+     "Gateshead",
+     "Thornfield",
+     "Pilot"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “They are making hay, too, in Thornfield meadows: or rather, the labourers are just quitting their work, and returning home with their rakes on their shoulders, now, at the hour I arrive.”",
+    "evidence": "They are making hay, too, in Thornfield meadows: or rather, the labourers are just quitting their work, and returning home with their rakes on their shoulders, now, at the hour I arrive."
+   }
+  ],
+  "23": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Thank you, sir; I am sorry to give—” “Oh, no need to apologise!",
+     "Yes,” I said; “but I could not go on for ever so: I want to enjoy my own faculties as well as to cultivate those of other people.",
+     "There was a reviving pleasure in this intercourse, of a kind now tasted by me for the first time—the pleasure arising from perfect congeniality of…",
+     "No, ma’am; she was sorry to have to do it: but my uncle, as I have often heard the servants say, got her to promise before he died that she would…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Thank you, sir; I am sorry to give—” “Oh, no need to apologise!”",
+    "evidence": "Thank you, sir; I am sorry to give—” “Oh, no need to apologise!"
+   },
+   {
+    "prompt": "Fill in the missing name: “_____,” he recommenced, as we entered the laurel walk, and slowly strayed down in the direction of the sunk fence and the horse-chestnut, “Thornfield is a pleasant place in summer, is it not?”",
+    "options": [
+     "Grace",
+     "Jane",
+     "Reed",
+     "Temple"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Jane,” he recommenced, as we entered the laurel walk, and slowly strayed down in the direction of the sunk fence and the horse-chestnut, “Thornfield is a pleasant place in summer, is it not?”",
+    "evidence": "Jane,” he recommenced, as we entered the laurel walk, and slowly strayed down in the direction of the sunk fence and the horse-chestnut, “Thornfield is a pleasant place in summer, is it not?"
+   },
+   {
+    "prompt": "Fill in the missing name: “And though I don’t comprehend how it is, I perceive you have acquired a degree of regard for that foolish little child Adèle, too; and even for simple dame _____?”",
+    "options": [
+     "Fairfax",
+     "Grace",
+     "Georgiana",
+     "Ingram"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “And though I don’t comprehend how it is, I perceive you have acquired a degree of regard for that foolish little child Adèle, too; and even for simple dame Fairfax?”",
+    "evidence": "And though I don’t comprehend how it is, I perceive you have acquired a degree of regard for that foolish little child Adèle, too; and even for simple dame Fairfax?"
+   }
+  ],
+  "24": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Reed to buy of his young lady all the products of her parterre she wished to sell: and Eliza would have sold the hair off her head if she could have…",
+     "That evening calm betrayed alike the tinkle of the nearest streams, the sough of the most remote.",
+     "Rochester: it is in no way interesting to you to know that.",
+     "Fairfax had settled into a corner with her knitting; while Adèle was leading me by the hand round the room, showing me the beautiful books and…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Rochester: it is in no way interesting to you to know that.”",
+    "evidence": "Rochester: it is in no way interesting to you to know that."
+   },
+   {
+    "prompt": "Fill in the missing name: “That you may, my good little girl: there is not another being in the world has the same pure love for me as yourself—for I lay that pleasant unction to my soul, _____, a belief in your affection.”",
+    "options": [
+     "Jane",
+     "Grace",
+     "Temple",
+     "Mason"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “That you may, my good little girl: there is not another being in the world has the same pure love for me as yourself—for I lay that pleasant unction to my soul, Jane, a belief in your affection.”",
+    "evidence": "That you may, my good little girl: there is not another being in the world has the same pure love for me as yourself—for I lay that pleasant unction to my soul, Jane, a belief in your affection."
+   },
+   {
+    "prompt": "Fill in the missing name: “As we re-entered the carriage, and I sat back feverish and fagged, I remembered what, in the hurry of events, dark and bright, I had wholly forgotten—the letter of my uncle, _____ Eyre, to Mrs.”",
+    "options": [
+     "Hannah",
+     "John",
+     "Georgiana",
+     "Ingram"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “As we re-entered the carriage, and I sat back feverish and fagged, I remembered what, in the hurry of events, dark and bright, I had wholly forgotten—the letter of my uncle, John Eyre, to Mrs.”",
+    "evidence": "As we re-entered the carriage, and I sat back feverish and fagged, I remembered what, in the hurry of events, dark and bright, I had wholly forgotten—the letter of my uncle, John Eyre, to Mrs."
+   }
+  ],
+  "25": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "and he searched my face with eyes that I saw were dark, irate, and piercing.",
+     "Is it the thoughts of going to London that takes away your appetite?",
+     "The party were expected to arrive on Thursday afternoon, in time for dinner at six.",
+     "Her appearance always acted as a damper to the curiosity raised by her oral oddities: hard-featured and staid, she had no point to which interest…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “Is it the thoughts of going to London that takes away your appetite?”",
+    "evidence": "Is it the thoughts of going to London that takes away your appetite?"
+   },
+   {
+    "prompt": "Fill in the missing name: “Look wicked, _____: as you know well how to look: coin one of your wild, shy, provoking smiles; tell me you hate me—tease me, vex me; do anything but move me: I would rather be incensed than saddened.”",
+    "options": [
+     "Ingram",
+     "Grace",
+     "Mason",
+     "Jane"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Look wicked, Jane: as you know well how to look: coin one of your wild, shy, provoking smiles; tell me you hate me—tease me, vex me; do anything but move me: I would rather be incensed than saddened.”",
+    "evidence": "Look wicked, Jane: as you know well how to look: coin one of your wild, shy, provoking smiles; tell me you hate me—tease me, vex me; do anything but move me: I would rather be incensed than saddened."
+   },
+   {
+    "prompt": "Fill in the missing name: “No, no, sir; besides the delicacy and richness of the fabric, I found nothing save _____ Rochester’s pride; and that did not scare me, because I am used to the sight of the demon.”",
+    "options": [
+     "Fairfax",
+     "Miller",
+     "Georgiana",
+     "Ingram"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “No, no, sir; besides the delicacy and richness of the fabric, I found nothing save Fairfax Rochester’s pride; and that did not scare me, because I am used to the sight of the demon.”",
+    "evidence": "No, no, sir; besides the delicacy and richness of the fabric, I found nothing save Fairfax Rochester’s pride; and that did not scare me, because I am used to the sight of the demon."
+   }
+  ],
+  "26": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I saw a room I remembered to have seen before, the day Mrs.",
+     "The devil is in it if you cannot answer distinctly.",
+     "Why did I not spend these sweet days of liberty with her?",
+     "Rain, wind, and darkness filled the air; nevertheless, I dimly discerned a wall before me and a door open in it; through this door I passed with my…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “The devil is in it if you cannot answer distinctly.”",
+    "evidence": "The devil is in it if you cannot answer distinctly."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____; answers, explanations given, evidence adduced; an open admission of the truth had been uttered by my master; then the living proof had been seen; the intruders were gone, and all was over.”",
+    "options": [
+     "Georgiana",
+     "Eyre",
+     "Bessie",
+     "Rochester"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Rochester; answers, explanations given, evidence adduced; an open admission of the truth had been uttered by my master; then the living proof had been seen; the intruders were gone, and all was over.”",
+    "evidence": "Rochester; answers, explanations given, evidence adduced; an open admission of the truth had been uttered by my master; then the living proof had been seen; the intruders were gone, and all was over."
+   },
+   {
+    "prompt": "Fill in the missing name: “Rochester at the house up yonder, _____; but I daresay you have many a time inclined your ear to gossip about the mysterious lunatic kept there under watch and ward.”",
+    "options": [
+     "Miller",
+     "Diana",
+     "Wood",
+     "Hannah"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Rochester at the house up yonder, Wood; but I daresay you have many a time inclined your ear to gossip about the mysterious lunatic kept there under watch and ward.”",
+    "evidence": "Rochester at the house up yonder, Wood; but I daresay you have many a time inclined your ear to gossip about the mysterious lunatic kept there under watch and ward."
+   }
+  ],
+  "27": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I had put on some clothes, though horror shook all my limbs; I issued from my apartment.",
+     "Well, perhaps I have: to speak truth, I have an acquaintance with one of them, Mrs.",
+     "My father and my brother Rowland knew all this; but they thought only of the thirty thousand pounds, and joined in the plot against me.",
+     "The traveller now, stooping, felt his foot and leg, as if trying whether they were sound; apparently something ailed them, for he halted to the…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “My father and my brother Rowland knew all this; but they thought only of the thirty thousand pounds, and joined in the plot against me.”",
+    "evidence": "My father and my brother Rowland knew all this; but they thought only of the thirty thousand pounds, and joined in the plot against me."
+   },
+   {
+    "prompt": "Fill in the missing name: “—no professed harlot ever had a fouler vocabulary than she: though two rooms off, I heard every word—the thin partitions of the _____ India house opposing but slight obstruction to her wolfish cries.”",
+    "options": [
+     "West",
+     "Blanche",
+     "Eliza",
+     "Helen"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “—no professed harlot ever had a fouler vocabulary than she: though two rooms off, I heard every word—the thin partitions of the West India house opposing but slight obstruction to her wolfish cries.”",
+    "evidence": "—no professed harlot ever had a fouler vocabulary than she: though two rooms off, I heard every word—the thin partitions of the West India house opposing but slight obstruction to her wolfish cries."
+   },
+   {
+    "prompt": "Fill in the missing name: “Glad was I when I at last got her to _____, and saw her safely lodged in that third-storey room, of whose secret inner cabinet she has now for ten years made a wild beast’s den—a goblin’s cell.”",
+    "options": [
+     "Thornfield",
+     "Hay",
+     "Sophie",
+     "Gateshead"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Glad was I when I at last got her to Thornfield, and saw her safely lodged in that third-storey room, of whose secret inner cabinet she has now for ten years made a wild beast’s den—a goblin’s cell.”",
+    "evidence": "Glad was I when I at last got her to Thornfield, and saw her safely lodged in that third-storey room, of whose secret inner cabinet she has now for ten years made a wild beast’s den—a goblin’s cell."
+   }
+  ],
+  "28": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "This world is pleasant—it would be dreary to be called from it, and to have to go who knows where?",
+     "Miss Temple was not to be seen: I knew afterwards that she had been called to a delirious patient in the fever-room.",
+     "It is the clergyman’s function to help—at least with advice—those who wished to help themselves.",
+     "Why, you see, Miss Eyre, it is not a common mishap: his life has been very wild: these last three years he gave himself up to strange ways, and his…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “It is the clergyman’s function to help—at least with advice—those who wished to help themselves.”",
+    "evidence": "It is the clergyman’s function to help—at least with advice—those who wished to help themselves."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ seemed to me benign and good; I thought she loved me, outcast as I was; and I, who from man could anticipate only mistrust, rejection, insult, clung to her with filial fondness.”",
+    "options": [
+     "India",
+     "Hay",
+     "England",
+     "Nature"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Nature seemed to me benign and good; I thought she loved me, outcast as I was; and I, who from man could anticipate only mistrust, rejection, insult, clung to her with filial fondness.”",
+    "evidence": "Nature seemed to me benign and good; I thought she loved me, outcast as I was; and I, who from man could anticipate only mistrust, rejection, insult, clung to her with filial fondness."
+   },
+   {
+    "prompt": "Fill in the missing name: “Listen, _____,” said one of the absorbed students; “Franz and old Daniel are together in the night-time, and Franz is telling a dream from which he has awakened in terror—listen!”",
+    "options": [
+     "Diana",
+     "Temple",
+     "John",
+     "Ingram"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Listen, Diana,” said one of the absorbed students; “Franz and old Daniel are together in the night-time, and Franz is telling a dream from which he has awakened in terror—listen!”",
+    "evidence": "Listen, Diana,” said one of the absorbed students; “Franz and old Daniel are together in the night-time, and Franz is telling a dream from which he has awakened in terror—listen!"
+   }
+  ],
+  "29": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "You will not be summoned to leave England sooner than you expected?",
+     "The want of house or brass (by which I suppose you mean money) does not make a beggar in your sense of the word.",
+     "I suspected she might be right and I wrong; but I would not ponder the matter deeply; like Felix, I put it off to a more convenient season.",
+     "I felt an inexpressible relief, a soothing conviction of protection and security, when I knew that there was a stranger in the room, an individual…"
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “The want of house or brass (by which I suppose you mean money) does not make a beggar in your sense of the word.”",
+    "evidence": "The want of house or brass (by which I suppose you mean money) does not make a beggar in your sense of the word."
+   },
+   {
+    "prompt": "Fill in the missing name: “I will even tell you the name of the establishment, where I passed six years as a pupil, and two as a teacher—_____ Orphan Asylum, ——shire: you will have heard of it, Mr.”",
+    "options": [
+     "Lowood",
+     "England",
+     "Janet",
+     "Pilot"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “I will even tell you the name of the establishment, where I passed six years as a pupil, and two as a teacher—Lowood Orphan Asylum, ——shire: you will have heard of it, Mr.”",
+    "evidence": "I will even tell you the name of the establishment, where I passed six years as a pupil, and two as a teacher—Lowood Orphan Asylum, ——shire: you will have heard of it, Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____—sitting as still as one of the dusty pictures on the walls, keeping his eyes fixed on the page he perused, and his lips mutely sealed—was easy enough to examine.”",
+    "options": [
+     "Georgiana",
+     "Bessie",
+     "John",
+     "Scatcherd"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “John—sitting as still as one of the dusty pictures on the walls, keeping his eyes fixed on the page he perused, and his lips mutely sealed—was easy enough to examine.”",
+    "evidence": "John—sitting as still as one of the dusty pictures on the walls, keeping his eyes fixed on the page he perused, and his lips mutely sealed—was easy enough to examine."
+   }
+  ],
+  "30": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "And take Adèle with you, sir,” I interrupted; “she will be a companion for you.",
+     "And while she broke the seal and perused the document, I went on taking my coffee (we were at breakfast): it was hot, and I attributed to that…",
+     "There were the two wings of the building; there was the garden; there were the skirts of Lowood; there was the hilly horizon.",
+     "Yes; I wish to know whether you have heard of any service I can offer myself to undertake?"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Yes; I wish to know whether you have heard of any service I can offer myself to undertake?”",
+    "evidence": "Yes; I wish to know whether you have heard of any service I can offer myself to undertake?"
+   },
+   {
+    "prompt": "Fill in the missing name: “Her salary will be thirty pounds a year: her house is already furnished, very simply, but sufficiently, by the kindness of a lady, Miss _____; the only daughter of the sole rich man in my parish—Mr.”",
+    "options": [
+     "Mary",
+     "Reed",
+     "Oliver",
+     "Burns"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Her salary will be thirty pounds a year: her house is already furnished, very simply, but sufficiently, by the kindness of a lady, Miss Oliver; the only daughter of the sole rich man in my parish—Mr.”",
+    "evidence": "Her salary will be thirty pounds a year: her house is already furnished, very simply, but sufficiently, by the kindness of a lady, Miss Oliver; the only daughter of the sole rich man in my parish—Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “I hold that the more arid and unreclaimed the soil where the _____ labourer’s task of tillage is appointed him—the scantier the meed his toil brings—the higher the honour.”",
+    "options": [
+     "Christian",
+     "Eliza",
+     "Millcote",
+     "Thornfield"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “I hold that the more arid and unreclaimed the soil where the Christian labourer’s task of tillage is appointed him—the scantier the meed his toil brings—the higher the honour.”",
+    "evidence": "I hold that the more arid and unreclaimed the soil where the Christian labourer’s task of tillage is appointed him—the scantier the meed his toil brings—the higher the honour."
+   }
+  ],
+  "31": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I will spare you the trouble of much talking; I will answer for you—Because I have a wife already, you would reply.",
+     "It is all very well for the present,” said he; “but seriously, I trust that when the first flush of vivacity is over, you will look a little higher…",
+     "Jane, you are mistaken: probably not one in the school either despises or dislikes you: many, I am sure, pity you much.",
+     "Have you found your first day’s work harder than you expected?"
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “Have you found your first day’s work harder than you expected?”",
+    "evidence": "Have you found your first day’s work harder than you expected?"
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ had surely formed her in a partial mood; and, forgetting her usual stinted step-mother dole of gifts, had endowed this, her darling, with a grand-dame’s bounty.”",
+    "options": [
+     "Nature",
+     "Christian",
+     "Pilot",
+     "India"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Nature had surely formed her in a partial mood; and, forgetting her usual stinted step-mother dole of gifts, had endowed this, her darling, with a grand-dame’s bounty.”",
+    "evidence": "Nature had surely formed her in a partial mood; and, forgetting her usual stinted step-mother dole of gifts, had endowed this, her darling, with a grand-dame’s bounty."
+   },
+   {
+    "prompt": "Fill in the missing name: “(This then, I thought, is Miss _____, the heiress; favoured, it seems, in the gifts of fortune, as well as in those of nature!”",
+    "options": [
+     "Reed",
+     "Mary",
+     "Bessie",
+     "Oliver"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “(This then, I thought, is Miss Oliver, the heiress; favoured, it seems, in the gifts of fortune, as well as in those of nature!”",
+    "evidence": "(This then, I thought, is Miss Oliver, the heiress; favoured, it seems, in the gifts of fortune, as well as in those of nature!"
+   }
+  ],
+  "32": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Had he treated you as an especial favourite, you would have found enemies, declared or covert, all around you; as it is, the greater number would…",
+     "I rose; I dressed myself with care: obliged to be plain—for I had no article of attire that was not made with extreme simplicity—I was still by…",
+     "Rosamond was full of glee and pleasure all the time I stayed.",
+     "Poole,” said she, addressing Grace, “the servants’ dinner will soon be ready: will you come down?"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Rosamond was full of glee and pleasure all the time I stayed.”",
+    "evidence": "Rosamond was full of glee and pleasure all the time I stayed."
+   },
+   {
+    "prompt": "Fill in the missing name: “The translation of a few pages of German occupied an hour; then I got my palette and pencils, and fell to the more soothing, because easier occupation, of completing _____ Oliver’s miniature.”",
+    "options": [
+     "Rosamond",
+     "Reed",
+     "Hannah",
+     "Ingram"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “The translation of a few pages of German occupied an hour; then I got my palette and pencils, and fell to the more soothing, because easier occupation, of completing Rosamond Oliver’s miniature.”",
+    "evidence": "The translation of a few pages of German occupied an hour; then I got my palette and pencils, and fell to the more soothing, because easier occupation, of completing Rosamond Oliver’s miniature."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ himself accompanied her next evening—a tall, massive-featured, middle-aged, and grey-headed man, at whose side his lovely daughter looked like a bright flower near a hoary turret.”",
+    "options": [
+     "Eyre",
+     "Mary",
+     "Oliver",
+     "Hannah"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “Oliver himself accompanied her next evening—a tall, massive-featured, middle-aged, and grey-headed man, at whose side his lovely daughter looked like a bright flower near a hoary turret.”",
+    "evidence": "Oliver himself accompanied her next evening—a tall, massive-featured, middle-aged, and grey-headed man, at whose side his lovely daughter looked like a bright flower near a hoary turret."
+   }
+  ],
+  "33": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Eyre of Madeira, is dead; that he has left you all his property, and that you are now rich—merely that—nothing more.",
+     "With what feelings I welcomed single trees I knew, and familiar glimpses of meadow and hill between them!",
+     "I know what it is to live entirely for and with what I love best on earth.",
+     "Now I never had, as the reader knows, either given any formal promise or entered into any engagement; and this language was all much too hard and…"
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “Eyre of Madeira, is dead; that he has left you all his property, and that you are now rich—merely that—nothing more.”",
+    "evidence": "Eyre of Madeira, is dead; that he has left you all his property, and that you are now rich—merely that—nothing more."
+   },
+   {
+    "prompt": "Fill in the missing name: “She had left _____ Hall in the night; every research after her course had been vain: the country had been scoured far and wide; no vestige of information could be gathered respecting her.”",
+    "options": [
+     "Gateshead",
+     "Millcote",
+     "England",
+     "Thornfield"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “She had left Thornfield Hall in the night; every research after her course had been vain: the country had been scoured far and wide; no vestige of information could be gathered respecting her.”",
+    "evidence": "She had left Thornfield Hall in the night; every research after her course had been vain: the country had been scoured far and wide; no vestige of information could be gathered respecting her."
+   },
+   {
+    "prompt": "Fill in the missing name: “I felt cold and dismayed: my worst fears then were probably true: he had in all probability left _____ and rushed in reckless desperation to some former haunt on the Continent.”",
+    "options": [
+     "Christian",
+     "London",
+     "England",
+     "Sophie"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “I felt cold and dismayed: my worst fears then were probably true: he had in all probability left England and rushed in reckless desperation to some former haunt on the Continent.”",
+    "evidence": "I felt cold and dismayed: my worst fears then were probably true: he had in all probability left England and rushed in reckless desperation to some former haunt on the Continent."
+   }
+  ],
+  "34": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "John stayed more at home: he sat with us in the same room, sometimes for hours together.",
+     "She comes from the other world—from the abode of people who are dead; and tells me so when she meets me alone here in the gloaming!",
+     "Fairfax the exact day of my return; for I did not wish either car or carriage to meet me at Millcote.",
+     "I did not wait to be ordered back to mine, but retreated unnoticed, as unnoticed I had left it."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “John stayed more at home: he sat with us in the same room, sometimes for hours together.”",
+    "evidence": "John stayed more at home: he sat with us in the same room, sometimes for hours together."
+   },
+   {
+    "prompt": "Fill in the missing name: “The air of the moors, the freedom of home, the dawn of prosperity, acted on _____ and Mary’s spirits like some life-giving elixir: they were gay from morning till noon, and from noon till night.”",
+    "options": [
+     "Diana",
+     "Burns",
+     "Bessie",
+     "Ingram"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “The air of the moors, the freedom of home, the dawn of prosperity, acted on Diana and Mary’s spirits like some life-giving elixir: they were gay from morning till noon, and from noon till night.”",
+    "evidence": "The air of the moors, the freedom of home, the dawn of prosperity, acted on Diana and Mary’s spirits like some life-giving elixir: they were gay from morning till noon, and from noon till night."
+   },
+   {
+    "prompt": "Fill in the missing name: “Simplify your complicated interests, feelings, thoughts, wishes, aims; merge all considerations in one purpose: that of fulfilling with effect—with power—the mission of your great _____.”",
+    "options": [
+     "Master",
+     "England",
+     "Janet",
+     "Sophie"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Simplify your complicated interests, feelings, thoughts, wishes, aims; merge all considerations in one purpose: that of fulfilling with effect—with power—the mission of your great Master.”",
+    "evidence": "Simplify your complicated interests, feelings, thoughts, wishes, aims; merge all considerations in one purpose: that of fulfilling with effect—with power—the mission of your great Master."
+   }
+  ],
+  "35": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I am glad I ordered dinner an hour after the time Mr.",
+     "Sometimes, when the day was very unfavourable, his sisters would expostulate.",
+     "I tottered, and on regaining my equilibrium retired back a step or two from his chair.",
+     "God did not give me my life to throw away; and to do as you wish me would, I begin to think, be almost equivalent to committing suicide."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “God did not give me my life to throw away; and to do as you wish me would, I begin to think, be almost equivalent to committing suicide.”",
+    "evidence": "God did not give me my life to throw away; and to do as you wish me would, I begin to think, be almost equivalent to committing suicide."
+   },
+   {
+    "prompt": "Fill in the missing name: “What struggle there was in him between Nature and _____ in this interval, I cannot tell: only singular gleams scintillated in his eyes, and strange shadows passed over his face.”",
+    "options": [
+     "Ingram",
+     "Temple",
+     "Hannah",
+     "Grace"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “What struggle there was in him between Nature and Grace in this interval, I cannot tell: only singular gleams scintillated in his eyes, and strange shadows passed over his face.”",
+    "evidence": "What struggle there was in him between Nature and Grace in this interval, I cannot tell: only singular gleams scintillated in his eyes, and strange shadows passed over his face."
+   },
+   {
+    "prompt": "Fill in the missing name: “And it was the voice of a human being—a known, loved, well-remembered voice—that of _____ Fairfax Rochester; and it spoke in pain and woe, wildly, eerily, urgently.”",
+    "options": [
+     "Edward",
+     "Mason",
+     "Burns",
+     "Hannah"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “And it was the voice of a human being—a known, loved, well-remembered voice—that of Edward Fairfax Rochester; and it spoke in pain and woe, wildly, eerily, urgently.”",
+    "evidence": "And it was the voice of a human being—a known, loved, well-remembered voice—that of Edward Fairfax Rochester; and it spoke in pain and woe, wildly, eerily, urgently."
+   }
+  ],
+  "36": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "I devoured the books they lent me: then it was full satisfaction to discuss with them in the evening what I had perused during the day.",
+     "They must have considered I was very careful and timid at first, and that gradually I grew very bold and reckless.",
+     "Never did I weary of reading to him; never did I weary of conducting him where he wished to go: of doing for him what he wished to be done.",
+     "Some years after I had broken with the mother, she abandoned her child, and ran away to Italy with a musician or singer."
+    ],
+    "correct_index": 1,
+    "explanation": "This line is from this chapter: “They must have considered I was very careful and timid at first, and that gradually I grew very bold and reckless.”",
+    "evidence": "They must have considered I was very careful and timid at first, and that gradually I grew very bold and reckless."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____, the housekeeper, away to her friends at a distance; but he did it handsomely, for he settled an annuity on her for life: and she deserved it—she was a very good woman.”",
+    "options": [
+     "Fairfax",
+     "Jane",
+     "Burns",
+     "Mason"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “Fairfax, the housekeeper, away to her friends at a distance; but he did it handsomely, for he settled an annuity on her for life: and she deserved it—she was a very good woman.”",
+    "evidence": "Fairfax, the housekeeper, away to her friends at a distance; but he did it handsomely, for he settled an annuity on her for life: and she deserved it—she was a very good woman."
+   },
+   {
+    "prompt": "Fill in the missing name: “I suppose you are a stranger in these parts, or you would have heard what happened last autumn,—_____ Hall is quite a ruin: it was burnt down just about harvest-time.”",
+    "options": [
+     "Thornfield",
+     "England",
+     "Gateshead",
+     "Millcote"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “I suppose you are a stranger in these parts, or you would have heard what happened last autumn,—Thornfield Hall is quite a ruin: it was burnt down just about harvest-time.”",
+    "evidence": "I suppose you are a stranger in these parts, or you would have heard what happened last autumn,—Thornfield Hall is quite a ruin: it was burnt down just about harvest-time."
+   }
+  ],
+  "37": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "It is time some one undertook to rehumanise you,” said I, parting his thick and long uncut locks; “for I see you are being metamorphosed into a…",
+     "The feeling, the announcement sent through me, was something stronger than was consistent with joy—something that smote and stunned: it was, I…",
+     "The rooks cawed, and blither birds sang; but nothing was so merry or so musical as my own rejoicing heart.",
+     ", and the Millcote town clock is now just striking eight."
+    ],
+    "correct_index": 0,
+    "explanation": "This line is from this chapter: “It is time some one undertook to rehumanise you,” said I, parting his thick and long uncut locks; “for I see you are being metamorphosed into a lion, or something of that sort.”",
+    "evidence": "It is time some one undertook to rehumanise you,” said I, parting his thick and long uncut locks; “for I see you are being metamorphosed into a lion, or something of that sort."
+   },
+   {
+    "prompt": "Fill in the missing name: “That I merited all I endured, I acknowledged—that I could scarcely endure more, I pleaded; and the alpha and omega of my heart’s wishes broke involuntarily from my lips in the words—‘_____!”",
+    "options": [
+     "Scatcherd",
+     "Ingram",
+     "Jane",
+     "John"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “That I merited all I endured, I acknowledged—that I could scarcely endure more, I pleaded; and the alpha and omega of my heart’s wishes broke involuntarily from my lips in the words—‘Jane!”",
+    "evidence": "That I merited all I endured, I acknowledged—that I could scarcely endure more, I pleaded; and the alpha and omega of my heart’s wishes broke involuntarily from my lips in the words—‘Jane!"
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ then remained uninhabited and unfurnished, with the exception of some two or three rooms fitted up for the accommodation of the squire when he went there in the season to shoot.”",
+    "options": [
+     "Gateshead",
+     "Ferndean",
+     "Pilot",
+     "London"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Ferndean then remained uninhabited and unfurnished, with the exception of some two or three rooms fitted up for the accommodation of the squire when he went there in the season to shoot.”",
+    "evidence": "Ferndean then remained uninhabited and unfurnished, with the exception of some two or three rooms fitted up for the accommodation of the squire when he went there in the season to shoot."
+   }
+  ],
+  "38": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "It aroused him; he uncrossed his legs, sat erect, turned to me.",
+     "I doubted I had taken a step which sank instead of raising me in the scale of social existence.",
+     "She appeared to be cross-questioning me, attempting to draw from me information unawares.",
+     "So I sought out a school conducted on a more indulgent system, and near enough to permit of my visiting her often, and bringing her home sometimes."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “So I sought out a school conducted on a more indulgent system, and near enough to permit of my visiting her often, and bringing her home sometimes.”",
+    "evidence": "So I sought out a school conducted on a more indulgent system, and near enough to permit of my visiting her often, and bringing her home sometimes."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____ received the news, I don’t know: he never answered the letter in which I communicated it: yet six months after he wrote to me, without, however, mentioning Mr.”",
+    "options": [
+     "John",
+     "Reed",
+     "Mary",
+     "Hannah"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “John received the news, I don’t know: he never answered the letter in which I communicated it: yet six months after he wrote to me, without, however, mentioning Mr.”",
+    "evidence": "John received the news, I don’t know: he never answered the letter in which I communicated it: yet six months after he wrote to me, without, however, mentioning Mr."
+   },
+   {
+    "prompt": "Fill in the missing name: “_____” (John was an old servant, and had known his master when he was the cadet of the house, therefore, he often gave him his Christian name)—“I knew what Mr.”",
+    "options": [
+     "Eyre",
+     "Reed",
+     "Mason",
+     "Edward"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “Edward” (John was an old servant, and had known his master when he was the cadet of the house, therefore, he often gave him his Christian name)—“I knew what Mr.”",
+    "evidence": "Edward” (John was an old servant, and had known his master when he was the cadet of the house, therefore, he often gave him his Christian name)—“I knew what Mr."
+   }
+  ]
+ }
+}

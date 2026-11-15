@@ -134,11 +134,12 @@ def test_seed_and_paused_detection(tmp_path):
     assert seed.run(path) == 2
     c = app.test_client()
     books = {b["title"]: b for b in c.get("/api/books").get_json()}
-    assert set(books) == {"The Lord of the Rings", "Dune"}
-    lotr, dune = books["The Lord of the Rings"], books["Dune"]
-    assert lotr["totalChapters"] == 62 and lotr["chapters"][0]["title"] == "A Long-expected Party"
+    assert set(books) == {"The Fellowship of the Ring", "Dune — Book One: Dune"}
+    lotr, dune = books["The Fellowship of the Ring"], books["Dune — Book One: Dune"]
+    assert lotr["totalChapters"] == 22 and lotr["chapters"][0]["title"] == "A Long-expected Party"
+    assert lotr["chapters"][-1]["title"] == "The Breaking of the Fellowship"
     assert lotr["author"] == "J.R.R. Tolkien" and "Frodo" in lotr["recap"] and lotr["streak"]["count"] >= 5
-    assert dune["totalChapters"] == 48 and dune["chapters"][22]["title"] == "Book Two: Muad'Dib · 1"
+    assert dune["totalChapters"] == 22 and dune["chapters"][0]["title"] == "Chapter 1"
     assert c.get(f"/api/books/{dune['id']}/reminder").get_json()["isPaused"] is True
     assert c.get(f"/api/books/{lotr['id']}/reminder").get_json()["isPaused"] is False
     assert seed.run(path, reset=True) == 2 and len(c.get("/api/books").get_json()) == 2

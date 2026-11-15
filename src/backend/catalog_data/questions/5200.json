@@ -1,0 +1,121 @@
+{
+ "slug": "gutenberg:5200",
+ "title": "Metamorphosis",
+ "source": "text",
+ "chapters": {
+  "1": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "Who, in this tired and overworked family, would have had time to give more attention to Gregor than was absolutely necessary?",
+     "Gregor, on the other hand, ought not to be neglected.",
+     "Why did Gregor have to be the only one condemned to work for a company where they immediately became highly suspicious at the slightest shortcoming?",
+     "This elderly widow, with a robust bone structure that made her able to withstand the hardest of things in her long life, wasn’t really repelled by…"
+    ],
+    "correct_index": 2,
+    "explanation": "This line is from this chapter: “Why did Gregor have to be the only one condemned to work for a company where they immediately became highly suspicious at the slightest shortcoming?”",
+    "evidence": "Why did Gregor have to be the only one condemned to work for a company where they immediately became highly suspicious at the slightest shortcoming?"
+   },
+   {
+    "prompt": "Fill in the missing word: “The _____ was hardly able to cover it and seemed ready to slide off any moment.”",
+    "options": [
+     "conversations",
+     "bedding",
+     "crawled",
+     "through"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “The bedding was hardly able to cover it and seemed ready to slide off any moment.”",
+    "evidence": "The bedding was hardly able to cover it and seemed ready to slide off any moment."
+   },
+   {
+    "prompt": "Fill in the missing word: “His many legs, pitifully thin compared with the size of the rest of him, waved about _____ as he looked.”",
+    "options": [
+     "helplessly",
+     "covering",
+     "conversation",
+     "started"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.”",
+    "evidence": "His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked."
+   }
+  ],
+  "2": [
+   {
+    "prompt": "Fill in the missing word: “He would have woken soon _____ anyway even if he hadn’t been disturbed, as he had had enough sleep and felt fully rested.”",
+    "options": [
+     "expecting",
+     "swallow",
+     "earlier",
+     "afterwards"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “He would have woken soon afterwards anyway even if he hadn’t been disturbed, as he had had enough sleep and felt fully rested.”",
+    "evidence": "He would have woken soon afterwards anyway even if he hadn’t been disturbed, as he had had enough sleep and felt fully rested."
+   },
+   {
+    "prompt": "Fill in the missing word: “But he had the _____ that some hurried steps and the sound of the door leading into the front room being carefully shut had woken him.”",
+    "options": [
+     "impression",
+     "uncomfortable",
+     "disappointment",
+     "wouldn’t"
+    ],
+    "correct_index": 0,
+    "explanation": "The line reads: “But he had the impression that some hurried steps and the sound of the door leading into the front room being carefully shut had woken him.”",
+    "evidence": "But he had the impression that some hurried steps and the sound of the door leading into the front room being carefully shut had woken him."
+   },
+   {
+    "prompt": "Fill in the missing word: “The light from the electric street lamps shone palely here and there onto the ceiling and tops of the _____, but down below, where Gregor was, it was dark.”",
+    "options": [
+     "reached",
+     "business",
+     "quickly",
+     "furniture"
+    ],
+    "correct_index": 3,
+    "explanation": "The line reads: “The light from the electric street lamps shone palely here and there onto the ceiling and tops of the furniture, but down below, where Gregor was, it was dark.”",
+    "evidence": "The light from the electric street lamps shone palely here and there onto the ceiling and tops of the furniture, but down below, where Gregor was, it was dark."
+   }
+  ],
+  "3": [
+   {
+    "prompt": "Which of these moments happens in this chapter?",
+    "options": [
+     "So then he tried to get the top part of his body out of the bed first, carefully turning his head to the side.",
+     "Gregor did in fact, apart from excessive sleepiness after sleeping for so long, feel completely well and even felt much hungrier than usual.",
+     "Oh, God”, he thought, “what a strenuous career it is that I’ve chosen!",
+     "It seemed to him that he was being shown the way to the unknown nourishment he had been yearning for."
+    ],
+    "correct_index": 3,
+    "explanation": "This line is from this chapter: “It seemed to him that he was being shown the way to the unknown nourishment he had been yearning for.”",
+    "evidence": "It seemed to him that he was being shown the way to the unknown nourishment he had been yearning for."
+   },
+   {
+    "prompt": "Fill in the missing word: “On the contrary, as a family there was a duty to swallow any _____ for him and to be patient, just to be patient.”",
+    "options": [
+     "picture",
+     "sleeping",
+     "revulsion",
+     "through"
+    ],
+    "correct_index": 2,
+    "explanation": "The line reads: “On the contrary, as a family there was a duty to swallow any revulsion for him and to be patient, just to be patient.”",
+    "evidence": "On the contrary, as a family there was a duty to swallow any revulsion for him and to be patient, just to be patient."
+   },
+   {
+    "prompt": "Fill in the missing word: “Because of his injuries, Gregor had lost much of his mobility—probably _____.”",
+    "options": [
+     "divided",
+     "permanently",
+     "contrary",
+     "drawers"
+    ],
+    "correct_index": 1,
+    "explanation": "The line reads: “Because of his injuries, Gregor had lost much of his mobility—probably permanently.”",
+    "evidence": "Because of his injuries, Gregor had lost much of his mobility—probably permanently."
+   }
+  ]
+ }
+}

@@ -87,13 +87,17 @@ def make(tmp_path):
 # ------------------------------------------------------------------ curated
 def test_curated_books_are_always_in_the_catalogue(make):
     app, c = make()  # no network at all
-    items = c.get("/api/catalog/search?q=lord of the").get_json()["items"]
-    assert items[0]["title"] == "The Lord of the Rings" and items[0]["curated"] and items[0]["chapterCount"] == 62
+    items = c.get("/api/catalog/search?q=lord of the rings").get_json()["items"]
+    assert [i["title"] for i in items[:3]] == ["The Fellowship of the Ring", "The Two Towers", "The Return of the King"]
+    assert [i["chapterCount"] for i in items[:3]] == [22, 21, 19] and all(i["curated"] for i in items[:3])
+    assert [(i["series"], i["part"]) for i in items[:3]] == [("The Lord of the Rings", n) for n in (1, 2, 3)]
     entry = c.get(f"/api/catalog/{items[0]['id']}").get_json()
     assert entry["chapterSource"] == "curated" and entry["chapters"][8] == "At the Sign of the Prancing Pony"
     assert entry["author"] == "J.R.R. Tolkien" and "Frodo" in entry["summary"]
-    dune = c.get("/api/catalog/search?q=dune herbert").get_json()["items"][0]
-    assert dune["title"] == "Dune" and dune["chapterCount"] == 48
+    dune = c.get("/api/catalog/search?q=dune herbert").get_json()["items"]
+    assert [d["title"] for d in dune[:3]] == ["Dune — Book One: Dune", "Dune — Book Two: Muad'Dib",
+                                             "Dune — Book Three: The Prophet"]
+    assert [d["chapterCount"] for d in dune[:3]] == [22, 15, 11]
 
 
 def test_search_ignores_case_accents_and_word_order(make):
@@ -180,7 +184,7 @@ def test_bundled_catalogue_loads_with_sources_and_keeps_curated(tmp_path):
          "summary_source": "openlibrary", "summary_url": "https://openlibrary.org/works/OL66554W",
          "chapters": [f"Chapter {i}" for i in range(1, 62)], "chapter_source": "gutenberg",
          "chapters_url": "https://www.gutenberg.org/ebooks/1342"},
-        {"gutenberg_id": 1, "ol_key": "/works/OL27448W", "title": "The Lord of the Rings", "author": "J.R.R. Tolkien",
+        {"gutenberg_id": 1, "ol_key": "/works/OL27513W", "title": "The Fellowship of the Ring", "author": "J.R.R. Tolkien",
          "summary": "should not replace curated", "summary_source": "wikipedia", "summary_url": "",
          "chapters": ["x", "y", "z"], "chapter_source": "gutenberg", "chapters_url": ""},
     ]), encoding="utf-8")
@@ -198,8 +202,8 @@ def test_bundled_catalogue_loads_with_sources_and_keeps_curated(tmp_path):
     assert len(pp) == 1 and pp[0]["chapterCount"] == 61
     entry = c.get(f"/api/catalog/{pp[0]['id']}").get_json()
     assert entry["chapterSource"] == "gutenberg" and entry["chaptersUrl"].endswith("/1342")
-    lotr = c.get("/api/catalog/search?q=lord of the rings").get_json()["items"][0]
-    assert lotr["chapterCount"] == 62 and lotr["curated"]  # curated entry untouched
+    lotr = c.get("/api/catalog/search?q=fellowship").get_json()["items"][0]
+    assert lotr["chapterCount"] == 22 and lotr["curated"]  # curated entry untouched
     old = con.execute("SELECT chapter_source, summary_source, enriched_at FROM catalog_books WHERE ol_key='/works/OLAI'").fetchone()
     assert tuple(old) == ("none", "none", None)
 
@@ -232,8 +236,8 @@ def test_create_book_from_catalogue_fills_everything(make):
     app, c = make()
     lotr = c.get("/api/catalog/search?q=lord of the rings").get_json()["items"][0]
     b = c.post("/api/books", json={"catalogId": lotr["id"]}).get_json()
-    assert b["title"] == "The Lord of the Rings" and b["author"] == "J.R.R. Tolkien"
-    assert b["totalChapters"] == 62 and "Frodo" in b["recap"]
+    assert b["title"] == "The Fellowship of the Ring" and b["author"] == "J.R.R. Tolkien"
+    assert b["totalChapters"] == 22 and "Frodo" in b["recap"]
     edited = c.post("/api/books", json={"catalogId": lotr["id"], "title": "LOTR (my copy)", "chapterCount": 3}).get_json()
     assert edited["title"] == "LOTR (my copy)" and edited["totalChapters"] == 3  # reader's edits win
     assert c.post("/api/books", json={"catalogId": 9999}).status_code == 400
@@ -248,7 +252,7 @@ def test_popular_books_rank_higher(make):
     hobbit = next(i for i in c.get("/api/catalog/search?q=tolkien").get_json()["items"] if i["title"] == "The Hobbit")
     for _ in range(2):
         c.post("/api/books", json={"catalogId": hobbit["id"], "chapterCount": 3})
-    assert c.get("/api/catalog/search?q=tolkien").get_json()["items"][1]["title"] == "The Hobbit"  # after curated LOTR
+    assert c.get("/api/catalog/search?q=tolkien").get_json()["items"][3]["title"] == "The Hobbit"  # after the 3 curated volumes
 
 
 # ------------------------------------------------------------------ helpers
