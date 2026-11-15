@@ -428,7 +428,11 @@ def register_routes(app: Flask) -> None:
         note = near or (notes[0] if notes else None)
         days_away = (datetime.now(timezone.utc) - parse_iso(book["last_activity"])).days
         return jsonify(
-            headline=f"Your journey is waiting for you, {u['preferred_name']}.",
+            headline=(
+                "Your journey is waiting for you."
+                if u["preferred_name"].strip().lower() == "reader"  # the default placeholder, not a real name
+                else f"Your journey is waiting for you, {u['preferred_name']}."
+            ),
             lastLeft=(f"You last left {book['title']} around {last}." if last else f"You haven't begun {book['title']} yet."),
             recap=story["recap"] if story else book["recap"],
             note={"text": note["text"], "chapter": note["chapter_number"]} if note else None,

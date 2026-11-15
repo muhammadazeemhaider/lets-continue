@@ -196,10 +196,12 @@
 
   /** Re-engagement text from the backend (the LLM seam); null if unavailable. */
   const fetchReminder = (bookId) => api(`/api/books/${bookId}/reminder`).catch(() => null);
+  /** Have the backend write an LLM recap (slow on free models). Resolves {source, recap, nudge, model} or null. */
+  const writeRecap = (bookId) => api(`/api/books/${bookId}/recap`, { method: 'POST' }).catch(() => null);
 
   global.Store = {
     init, loadBook, books, getBook, getUser, derive, bookStreak, readerStreak, relativeTime,
-    addNote, addCheckpoint, createBook, updateUser, fetchReminder,
+    addNote, addCheckpoint, createBook, updateUser, fetchReminder, writeRecap,
     notifications, refreshNotifications, markNotificationRead, markAllNotificationsRead,
     pushStatus, enablePush, disablePush, testPush,
   };

@@ -348,7 +348,7 @@
 <main class="page">
   <div class="topbar">
     <a class="back" href="#/">← All books</a>
-    ${d.isPaused ? `<button class="btn small" id="remind">Where was I?</button>` : ''}
+    ${!d.isComplete && d.done > 0 ? `<button class="btn small${d.isPaused ? ' glow' : ''}" id="remind">Where was I?</button>` : ''}
   </div>
   <header class="book-head"><h1>${esc(b.title)}</h1><p>${esc(b.author)}</p></header>
   <div class="hero" id="hero"></div>
@@ -511,15 +511,20 @@
     const d = Store.derive(b);
     if (!b.history.length) await Store.loadBook(id).catch(() => {}); // fallback needs notes
     const r = (await Store.fetchReminder(id)) || Services.reminder(b);
+    const story = (text, fromLLM) =>
+      !text ? '' : `<p class="recap${fromLLM ? ' ai' : ''}">${esc(text)}</p>` +
+        (fromLLM ? '<small class="ai-note">✨ Recap written by AI from your progress and notes · may be imperfect</small>' : '');
     const scrim = openOverlay(`
 <div class="sheet" role="dialog" aria-modal="true" aria-label="Your journey is waiting">
   <div class="scene" id="rscene"></div>
   <div class="content">
     <h2>${esc(r.headline)}</h2>
     <p>${esc(r.lastLeft)}</p>
-    ${r.recap ? `<p class="recap">${esc(r.recap)}</p>` : ''}
+    <div class="story" data-story aria-live="polite">${
+      r.llmPending ? '<p class="recap loading">Remembering your story…</p>' : story(r.recap, r.source === 'llm')
+    }</div>
     ${r.note ? `<div class="quote"><small>Your note${r.note.chapter ? ` · Chapter ${r.note.chapter}` : ''}</small>${esc(r.note.text)}</div>` : ''}
-    <p>${esc(r.nudge)}</p>
+    <p data-nudge>${esc(r.nudge)}</p>
     <div class="actions">
       <button class="btn quiet" data-later>Not right now</button>
       <button class="btn primary" data-go>Continue Reading</button>
@@ -531,6 +536,16 @@
       completed: d.done,
       label: `Your current position in ${b.title}`,
     });
+    if (r.llmPending) {
+      // Ask the backend to write a recap (a few seconds on free models), then swap it in if still open.
+      Store.writeRecap(id).then((w) => {
+        if (!scrim.isConnected) return;
+        const box = scrim.querySelector('[data-story]');
+        box.innerHTML = w && w.source === 'llm' ? story(w.recap, true) : story(r.recap, false);
+        box.classList.add('fade-in');
+        if (w && w.nudge) scrim.querySelector('[data-nudge]').textContent = w.nudge;
+      });
+    }
     scrim.querySelector('[data-later]').addEventListener('click', closeOverlay);
     scrim.querySelector('[data-go]').addEventListener('click', () => {
       closeOverlay();

@@ -86,6 +86,14 @@ def test_personal_notes_are_labelled_and_placeholder_name_is_not_used(make):
     assert "Reader's name: Azeem." in fake.calls[-1]["user"]
 
 
+def test_headline_skips_placeholder_name(make):
+    app, c = make(None)
+    bid = add_book(c)
+    assert c.get(f"/api/books/{bid}/reminder").get_json()["headline"] == "Your journey is waiting for you."
+    c.put("/api/user", json={"preferredName": "Azeem"})
+    assert c.get(f"/api/books/{bid}/reminder").get_json()["headline"] == "Your journey is waiting for you, Azeem."
+
+
 def test_empty_reply_reports_finish_reason():
     s = FakeSession({"a:free": FakeResp(200, {"choices": [{"message": {"content": ""}, "finish_reason": "length"}]})})
     with pytest.raises(llm.LLMError, match="finish_reason=length"):

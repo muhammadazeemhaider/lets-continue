@@ -7,7 +7,8 @@
     const notes = [...(book.notes || [])].sort((a, b) => new Date(b.at) - new Date(a.at));
     const near = notes.find((n) => n.chapter && n.chapter >= d.done - 1 && n.chapter <= d.done + 1);
     const note = near || notes[0] || null;
-    const who = (Store.getUser() || {}).preferredName;
+    const name = (Store.getUser() || {}).preferredName;
+    const who = name && name.trim().toLowerCase() !== 'reader' ? name : ''; // "Reader" is the placeholder
     return {
       headline: `Your journey is waiting for you${who ? ', ' + who : ''}.`,
       lastLeft: lastRead ? `You last left ${book.title} around ${lastRead.title}.` : `You haven't begun ${book.title} yet.`,

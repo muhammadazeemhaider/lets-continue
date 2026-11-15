@@ -141,3 +141,31 @@ If the page does not load, Windows Firewall may be blocking inbound port 5173 (a
 - **"Notifications are blocked for this site".** Chrome is set to block notifications (or you once clicked Block), so it will not ask. Open `chrome://settings/content/siteDetails?site=http%3A%2F%2Flocalhost%3A5173` and set Notifications to Allow. The settings sheet has a button that copies this address.
 - **"Almost ready: ... try again in a minute".** Right after notifications are turned off and on again, Google's push service briefly reports the new subscription as expired. The server keeps it for 10 minutes instead of deleting it, and pushes work again within seconds.
 - **Run only one backend.** On Windows, two Flask servers could previously share port 5000 silently, splitting requests between them at random. A second `flask run` on a busy port now fails with "Port 5000 is in use by another program". Stop the old one first.
+
+## AI recaps and reminder copy (OpenRouter)
+
+When a reader comes back, "Where was I?" shows a short, spoiler-safe recap of the story so far, woven with their own notes. Reminder notifications are also written by the model. Without a key everything falls back to the template text.
+
+**Setup:** put your key in `src/backend/.env` (git-ignored, loaded automatically):
+
+```
+OPENROUTER_API_KEY=sk-or-...
+# optional
+LLM_MODELS=baidu/ernie-5.5-flash-preview:free,nvidia/nemotron-3-ultra-550b-a55b:free
+LLM_TIMEOUT_SECONDS=20
+LLM_WARM_PER_PASS=3
+```
+
+`GET /api/health` shows whether the LLM is enabled and which models it will try.
+
+**Models (free).** Picked by a bake-off on the real recap prompt: `baidu/ernie-5.5-flash-preview:free` (about 3 s), then `nvidia/nemotron-3-ultra-550b-a55b:free` (about 12 s), `google/gemma-4-31b-it:free`, and `openrouter/free`. Models are tried in order; one that answers 429 is skipped for 2 minutes. Free models change often, so if one disappears, edit `DEFAULT_MODELS` in `llm.py` or set `LLM_MODELS`.
+
+**How it behaves:**
+
+- **Spoiler safety.** The prompt only includes chapter titles the reader has finished (plus the next title, which the app already shows), and tells the model never to go past them.
+- **Notes.** Chapter notes are passed as story notes. General notes are labelled "about the reader" so things like "Recommended by Dad" are never turned into plot.
+- **Caching.** Results are stored in `llm_summaries` keyed by everything the prompt used (position, notes, name). A recap is written once and only rewritten after new progress or notes. This matters on free tiers, which allow only a small number of requests per day.
+- **Speed.** `GET /api/books/<id>/reminder` never waits for the model. It returns the cached recap or the template plus `llmPending`, and the app then calls `POST /api/books/<id>/recap` and swaps the recap in. The background scheduler also pre-writes recaps for waiting books (`LLM_WARM_PER_PASS` per pass).
+- **Fallback.** If every model fails or returns nothing usable, the template text is used.
+
+**Privacy.** Book titles, chapter titles and the reader's notes are sent to OpenRouter and the model provider. Free endpoints may log prompts. The UI labels AI recaps as AI-written.
