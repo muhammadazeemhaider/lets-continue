@@ -30,3 +30,35 @@
 @media (prefers-reduced-motion: reduce) {
   .journey *, .journey { animation: none !important; transition: none !important; }
 }
+
+/* Life in the original landscape stays on its square pixel grid. */
+.journey .landscape-details { pointer-events: none; }
+.journey .firefly { animation: firefly 4s ease-in-out infinite; }
+.journey .camp-ember { animation: ember-glow 2s steps(2, end) infinite; }
+.journey .drifting-cloud { animation: cloud-drift 24s ease-in-out infinite alternate; }
+.journey .cloud-1 { animation-delay: -11s; }
+
+.journey.journey-moving .trail-lit, .journey.journey-moving .trail-lit-glow { transition: none; }
+@keyframes firefly { 0%, 100% { opacity: .1; } 45% { opacity: .9; } 70% { opacity: .3; } }
+@keyframes ember-glow { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
+@keyframes cloud-drift { from { translate: -3px 0; } to { translate: 5px 0; } }
+
+@media (prefers-reduced-motion: reduce) { .journey .walking, .journey .drifting-cloud, .journey .firefly, .journey .camp-ember { animation: none !important; } }
+
+/* Directional sprite poses replace whole-character bouncing. */
+.journey .explorer-frame { display: none; }
+.journey .landscape-explorer[data-direction="down"][data-frame="0"] .explorer-frame[data-facing="down"][data-pose="0"] { display: inline; }
+.journey .landscape-explorer[data-direction="down"][data-frame="1"] .explorer-frame[data-facing="down"][data-pose="1"] { display: inline; }
+.journey .landscape-explorer[data-direction="down"][data-frame="2"] .explorer-frame[data-facing="down"][data-pose="2"] { display: inline; }
+.journey .landscape-explorer[data-direction="up"][data-frame="0"] .explorer-frame[data-facing="up"][data-pose="0"] { display: inline; }
+.journey .landscape-explorer[data-direction="up"][data-frame="1"] .explorer-frame[data-facing="up"][data-pose="1"] { display: inline; }
+.journey .landscape-explorer[data-direction="up"][data-frame="2"] .explorer-frame[data-facing="up"][data-pose="2"] { display: inline; }
+.journey .landscape-explorer[data-direction="right"][data-frame="0"] .explorer-frame[data-facing="right"][data-pose="0"] { display: inline; }
+.journey .landscape-explorer[data-direction="right"][data-frame="1"] .explorer-frame[data-facing="right"][data-pose="1"] { display: inline; }
+.journey .landscape-explorer[data-direction="right"][data-frame="2"] .explorer-frame[data-facing="right"][data-pose="2"] { display: inline; }
+.journey .landscape-explorer[data-direction="left"][data-frame="0"] .explorer-frame[data-facing="left"][data-pose="0"] { display: inline; }
+.journey .landscape-explorer[data-direction="left"][data-frame="1"] .explorer-frame[data-facing="left"][data-pose="1"] { display: inline; }
+.journey .landscape-explorer[data-direction="left"][data-frame="2"] .explorer-frame[data-facing="left"][data-pose="2"] { display: inline; }
+
+.journey .moon-rise { animation: sunrise 2.2s cubic-bezier(.2,.8,.2,1) both; }
+@media(prefers-reduced-motion:reduce){.journey .moon-rise{animation:none!important}}

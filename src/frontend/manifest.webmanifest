@@ -1,6 +1,6 @@
 {
-  "name": "Toward the Light",
-  "short_name": "Toward the Light",
+  "name": "Book Quest",
+  "short_name": "Book Quest",
   "description": "A reading companion: every chapter brings the sunrise closer.",
   "start_url": "/#/",
   "scope": "/",
