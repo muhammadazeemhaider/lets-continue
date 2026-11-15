@@ -90,17 +90,24 @@
     const books = [...Store.books()].sort((a, b) => new Date(b.lastActivity) - new Date(a.lastActivity));
     const paused = books.filter((b) => Store.derive(b).isPaused).sort((a, b) => new Date(a.lastActivity) - new Date(b.lastActivity));
 
+    const activeBook = books.find(book => !Store.derive(book).isComplete);
+    const chaptersRead = books.reduce((total, book) => total + book.completed, 0);
+    const finishedBooks = books.filter(book => Store.derive(book).isComplete).length;
+
     $app.innerHTML = `
 <main class="page bookshelf-page">
-  <nav class="library-nav" aria-label="Bookshelf"><a href="#/" class="library-brand"><span aria-hidden="true">✦</span> toward the light</a><span class="library-note">A LITTLE READING. A LITTLE LIGHT.</span></nav>
-  <header class="masthead">
-    <button class="bell" id="bell" aria-label="Reminders${Store.notifications().unread ? ` (${Store.notifications().unread} unread)` : ''}">🔔<span class="badge-dot" ${Store.notifications().unread ? '' : 'hidden'}>${Store.notifications().unread}</span></button>
-    <button class="gear" id="settings" aria-label="Profile and settings">⚙</button>
-    <div class="eyebrow">YOUR OWN LITTLE WORLDS</div>
-    <h1>Every story has a sunrise.</h1>
-    <p>Pick up where you left off. The light is waiting.</p>
-    ${streakChip(Store.readerStreak())}
+  <nav class="library-nav" aria-label="Bookshelf"><a href="#/" class="library-brand"><span class="quest-logo" aria-hidden="true">▥<i>✦</i></span><span>BOOK QUEST<small>ONE MORE CHAPTER. ONE MORE ADVENTURE.</small></span></a><div class="quest-nav-actions"><span class="library-note">YOUR NEXT ADVENTURE IS A PAGE AWAY</span><button class="bell" id="bell" aria-label="Reminders${Store.notifications().unread ? ` (${Store.notifications().unread} unread)` : ''}">🔔<span class="badge-dot" ${Store.notifications().unread ? '' : 'hidden'}>${Store.notifications().unread}</span></button><button class="gear" id="settings" aria-label="Profile and settings">⚙</button></div></nav>
+  <header class="masthead quest-banner">
+    <div class="quest-banner-copy">
+      <div class="eyebrow">YOUR BOOK. YOUR WORLD. YOUR QUEST.</div>
+      <h1>Great adventures<br>begin with a page.</h1>
+      <p>Read a chapter. Walk a little further. Face its guardian.<br>Turn your reading list into a world worth returning to.</p>
+      <div class="quest-banner-actions">${activeBook ? `<a class="btn primary" href="#/book/${activeBook.id}">Continue your quest <span aria-hidden="true">→</span></a>` : '<button class="btn primary" data-add-book>Start your first quest <span aria-hidden="true">→</span></button>'}<a class="quest-shelf-link" href="#your-journeys" data-browse-journeys>Explore your bookshelf ↓</a></div>
+      ${streakChip(Store.readerStreak())}
+    </div>
+    <div class="quest-banner-art" aria-hidden="true"><div id="quest-banner-scene"></div><span class="quest-art-label">A NEW CHAPTER. A LITTLE MORE LIGHT.</span></div>
   </header>
+  <section class="quest-overview" aria-label="Your reading adventure"><div><span aria-hidden="true">▤</span><p><b>${chaptersRead}</b><small>chapters explored</small></p></div><div><span aria-hidden="true">✦</span><p><b>${finishedBooks}</b><small>quests completed</small></p></div><div class="quest-worlds"><span aria-hidden="true">◎</span><p><b>Three worlds. Your choice.</b><small>Fantasy · Sci-fi · Pirates</small></p></div></section>
 
   ${paused.length ? `
   <button class="waiting" data-remind="${paused[0].id}">
@@ -109,7 +116,7 @@
     <small>Remind me where I left off in “${esc(paused[0].title)}”</small></span>
   </button>` : ''}
 
-  <div class="shelf-heading"><h2>Your journeys</h2><span>${books.filter(b => !Store.derive(b).isComplete).length} in progress <i>·</i> ${books.filter(b => Store.derive(b).isComplete).length} sunrise reached</span></div>
+  <div class="shelf-heading" id="your-journeys"><h2>Your journeys</h2><span>${books.filter(b => !Store.derive(b).isComplete).length} in progress <i>·</i> ${books.filter(b => Store.derive(b).isComplete).length} sunrise reached</span></div>
   <section class="grid">
     ${books.map((book, index) => card(book, index === 0)).join('')}
   </section>
@@ -119,6 +126,9 @@
   <div class="footer-actions"><button class="btn primary" id="add-book">+ Add a book</button></div>
 </main>`;
 
+    Journey.render($app.querySelector('#quest-banner-scene'), {total: 5, completed: 2, world: 'fantasy', label: 'A sunrise over your next adventure'});
+    $app.querySelector('[data-browse-journeys]').addEventListener('click', e => { e.preventDefault(); $app.querySelector('#your-journeys').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); });
+    $app.querySelector('[data-add-book]')?.addEventListener('click', addBookSheet);
     books.forEach((b) => {
       const d = Store.derive(b);
       Journey.render($app.querySelector(`[data-scene="${b.id}"]`), {
