@@ -326,6 +326,17 @@
     return out+'</g>';
   }
 
+  const CHAPTERS_PER_STRETCH = 8;
+  function stretchAt(total, requestedIndex) {
+    const count = Math.max(1, Math.ceil(total / CHAPTERS_PER_STRETCH));
+    const index = Math.max(0, Math.min(count - 1, requestedIndex));
+    return {index, count, start: Math.ceil(index * total / count), end: Math.ceil((index + 1) * total / count)};
+  }
+  function chapterStretch(total, selected) {
+    const count = Math.max(1, Math.ceil(total / CHAPTERS_PER_STRETCH));
+    return stretchAt(total, Math.floor(Math.max(0, Math.min(total - 1, selected)) * count / total));
+  }
+
   /* ---------- main render ---------- */
   function render(container, opts) {
     const total = Math.max(1, opts.total | 0);
@@ -336,15 +347,26 @@
     const sceneWorld=opts.world?global.Characters.normalizeWorld(opts.world):world;
     const sceneSky=sceneWorld==='scifi'?global.SpaceWorld.palette:sceneWorld==='pirates'?global.PirateWorld.palette:sky;
     const { top, bottom } = sceneSky(p);
-    const marks = Array.from({length:total}, (_,i) => pointAt((i+1)/total));
-    const traveler = pointAt(p);
+    const stretch = opts.interactive && total > CHAPTERS_PER_STRETCH
+      ? chapterStretch(total, opts.selected ?? Math.min(completed, total - 1))
+      : {start: 0, end: total};
+    const span = stretch.end - stretch.start;
+    const trailProgress = value => Math.max(0, Math.min(1, (value * total - stretch.start) / span));
+    // Small bookshelf previews show representative stops rather than stacking every chapter.
+    const markerCount = Math.min(span, opts.interactive ? span : 10);
+    const indices = Array.from({length: markerCount}, (_, i) =>
+      stretch.start + Math.ceil((i + 1) * span / markerCount) - 1);
+    const marks = indices.map(i => pointAt((i + 1 - stretch.start) / span));
+    const visibleCompleted = indices.filter(i => i < completed).length;
+    const traveler = pointAt(trailProgress(p));
     const curIdx = done ? total - 1 : completed;
-    const litPos = p;
+    const litPos = trailProgress(p);
     const litLen = litPos * SAMPLES.length;
-    const radius = sceneWorld==='pirates'?2.4:total > 40 ? 3 : total > 24 ? 3.6 : 4.6;
+    const radius = sceneWorld==='pirates'?2.4:4.6;
 
     let m = '';
-    marks.forEach((pt, i) => {
+    marks.forEach((pt, localIndex) => {
+      const i = indices[localIndex];
       const isDone = i < completed;
       const isCur = i === curIdx && !done;
       const sel = opts.selected === i;
@@ -378,7 +400,7 @@
     <path d="${PATH_D}" class="trail-lit-glow" stroke="url(#${id}P)" stroke-width="8" opacity=".22" pathLength="${SAMPLES.length.toFixed(2)}" stroke-dasharray="0 ${SAMPLES.length.toFixed(2)}" data-lit="${litLen.toFixed(2)}"/>
     <path d="${PATH_D}" class="trail-lit" stroke="url(#${id}P)" stroke-width="3" pathLength="${SAMPLES.length.toFixed(2)}" stroke-dasharray="0 ${SAMPLES.length.toFixed(2)}" data-lit="${litLen.toFixed(2)}"/>
   </g>
-  ${sceneWorld==='scifi'?global.SpaceWorld.scenery(p,completed,marks,traveler):sceneWorld==='pirates'?global.PirateWorld.scenery(p,completed,marks,traveler):scenery(p, completed, marks, traveler)}
+  ${sceneWorld==='scifi'?global.SpaceWorld.scenery(p,visibleCompleted,marks,traveler):sceneWorld==='pirates'?global.PirateWorld.scenery(p,visibleCompleted,marks,traveler):scenery(p, visibleCompleted, marks, traveler)}
   <g class="markers" shape-rendering="geometricPrecision">${m}</g>
   <g class="landscape-explorer" data-direction="down" data-frame="0" style="pointer-events:none" transform="translate(${traveler.x.toFixed(1)} ${(traveler.y-15).toFixed(1)})" shape-rendering="crispEdges" aria-hidden="true">
     ${sceneWorld==='pirates'?global.PirateWorld.boat(characterSprite(opts.character||character)):`<ellipse cx="0" cy="15" rx="5" ry="2" fill="#080b26" opacity=".5"/>${characterSprite(opts.character||character)}`}
@@ -394,27 +416,30 @@
     const skyStops = svg.querySelectorAll(`#${id}S stop`);
     const sunY = value => sceneWorld==='pirates'?global.PirateWorld.focalY(value):232-120*(value*value*(3-2*value));
     function paintProgress(value, position) {
-      const pt = position || pointAt(value), palette=sceneSky(value);
+      const pt = position || pointAt(trailProgress(value)), palette=sceneSky(value);
       if(sceneWorld==='pirates')global.PirateWorld.setLight(svg,value);
       walker.setAttribute('transform',`translate(${pt.x.toFixed(1)} ${(pt.y-15).toFixed(1)})`);
       sunGroup.setAttribute('transform',`translate(0 ${(sunY(value)-sunY(p)).toFixed(1)})`);
       skyStops[0].setAttribute('stop-color', palette.top);
       skyStops[1].setAttribute('stop-color', palette.bottom);
-      svg.querySelectorAll('[data-lit]').forEach(el => {el.style.strokeDasharray=`${value*SAMPLES.length} ${SAMPLES.length}`;});
+      svg.querySelectorAll('[data-lit]').forEach(el => {el.style.strokeDasharray=`${trailProgress(value)*SAMPLES.length} ${SAMPLES.length}`;});
     }
     if(moving){
       paintProgress(previous);
       walker.classList.add('walking');
       svg.classList.add('journey-moving');
-      const steps=walkingSteps(previous,p), duration=(steps.length-1)*85;
+      const steps=walkingSteps(trailProgress(previous),trailProgress(p)), duration=(steps.length-1)*85;
       let started;
       const frame = now => {
         if(!svg.isConnected)return;
         if(started===undefined)started=now;
         const elapsed=now-started;
+        const t=duration?Math.min(1,elapsed/duration):1;
         const index=Math.min(steps.length-1,Math.floor(elapsed/85));
-        const step=steps[index], t=duration?Math.min(1,elapsed/duration):1;
-        paintProgress(previous+(p-previous)*t,step);
+        const from=steps[index], step=steps[Math.min(index+1,steps.length-1)];
+        const blend=t===1?1:(elapsed/85-index);
+        const position={x:from.x+(step.x-from.x)*blend,y:from.y+(step.y-from.y)*blend};
+        paintProgress(previous+(p-previous)*t,position);
         walker.setAttribute('data-direction',t===1?'down':step.direction);
         walker.setAttribute('data-frame',sceneWorld==='pirates'||t===1?'0':String(index%2+1));
         if(t<1)requestAnimationFrame(frame);
@@ -444,5 +469,5 @@
     return svg;
   }
 
-  global.Journey = { render, markerPositions, pointAt, walkingSteps, walkDuration, useBook, getWorld, characterForBook, getCharacter, getCharacters, getCharacterInfo, setCharacter, characterSprite, PATH_D };
+  global.Journey = { render, chapterStretch, stretchAt, CHAPTERS_PER_STRETCH, markerPositions, pointAt, walkingSteps, walkDuration, useBook, getWorld, characterForBook, getCharacter, getCharacters, getCharacterInfo, setCharacter, characterSprite, PATH_D };
 })(window);
