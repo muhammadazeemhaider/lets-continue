@@ -107,7 +107,7 @@
     try {const saved=JSON.parse(localStorage.getItem('ttl.reader.showcase')||'null');if(Array.isArray(saved))favorites=saved.filter(id=>badges.some(b=>b.id===id&&b.earned)).slice(0,3);else favorites=badges.filter(b=>b.earned).slice(0,3).map(b=>b.id);}catch{}
     const showcase=favorites.map(id=>badges.find(b=>b.id===id));
     const nextBadge=badges.find(b=>!b.earned);
-    return {showcase,favorites,nextBadge,chapters,seals,finished,xp,level:Math.floor(xp/250)+1,intoLevel:xp%250,badges,title};
+    return {showcase,favorites,nextBadge,chapters,seals,finished,...ReaderLevels.progress(xp),badges,title};
   }
   function rewardIcon(kind) {
     const paths={
@@ -132,6 +132,30 @@
       legend:'<path d="M3 8h5v5h5V3h6v10h5V8h5v21H3z" fill="#e9ae4d"/><path d="M6 15h5v4h10v-4h5v9H6z" fill="#9c6ae2"/><path d="M6 25h20v3H6z" fill="#ffe8a2"/><path d="M14 16h4v6h-4z" fill="#ed6786"/><rect x="14" y="2" width="4" height="4" fill="#fff0a8"/><rect x="3" y="7" width="4" height="4" fill="#f5d383"/><rect x="25" y="7" width="4" height="4" fill="#f5d383"/>',
     };
     return `<svg viewBox="0 0 32 32" aria-hidden="true" shape-rendering="crispEdges">${art[id]||art.wanderer}</svg>`;
+  }
+  function rankBadge(rank){
+    const shapes={
+      compass:'M16 6l7 10-7 10-7-10z M16 11v10M11 16h10',
+      feather:'M9 25l5-14 8-5 3 3-5 8-8 5 M14 18l6-6M9 25l-2 2',
+      map:'M5 9l7-3 8 3 7-3v17l-7 3-8-3-7 3z M12 6v17M20 9v17M8 14h2M22 17h3',
+      mountain:'M4 25L13 7l5 12 5-8 6 14z M9 16h8M21 17h5',
+      gem:'M10 7h12l5 8-11 13L5 15z M5 15h22M10 7l6 21 6-21',
+      rune:'M16 5v23M16 5l8 7-8 6M16 13l-8 6 8 6',
+      book:'M5 8h8l3 4 3-4h8v17h-8l-3 3-3-3H5z M16 12v16M8 13h3M21 13h3M8 18h3M21 18h3',
+      shield:'M6 6h20v12l-4 6-6 5-6-5-4-6z M11 15l4 4 7-8',
+      sun:'M9 23a8 8 0 0 1 14 0 M4 25h24M16 3v5M5 9l4 4M27 9l-4 4M3 18h5M24 18h5',
+      moon:'M21 5a11 11 0 1 0 6 17A12 12 0 0 1 21 5z M9 11h3M10 10v3',
+      crown:'M5 10l6 6 5-10 5 10 6-6-3 15H8z M9 21h14',
+      star:'M16 3l4 9 10 1-8 7 2 10-8-5-8 5 2-10-8-7 10-1z M16 11v10M12 16h8',
+    };
+    return `<svg viewBox="0 0 40 44" aria-hidden="true"><path d="M8 2h24l6 7v21l-18 12L2 30V9z" fill="#10172c" stroke="${rank.color}" stroke-width="1.5"/><path d="M10 5h20l5 5v18l-15 10L5 28V10z" fill="${rank.color}" opacity=".12"/><g transform="translate(4 3)" fill="none" stroke="${rank.color}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="square">${`<path d="${shapes[rank.icon]}"/>`}</g><rect x="14" y="31" width="12" height="9" rx="2" fill="${rank.color}"/><text x="20" y="37.5" text-anchor="middle" fill="#10172c" font-family="system-ui,sans-serif" font-size="7" font-weight="800">${rank.level}</text></svg>`;
+  }
+  function xpLevels(){
+    const rewards=readerRewards(Store.books());
+    const ranks=[...ReaderLevels.ranks];
+    if(rewards.level>=ranks.length)for(let level=Math.max(ranks.length+1,rewards.level-2);level<=rewards.level+1;level++)ranks.push(ReaderLevels.rank(level));
+    const scrim=openOverlay(`<section class="sheet xp-level-sheet" role="dialog" aria-modal="true" aria-label="XP levels"><span class="eyebrow">YOUR READER’S ASCENT</span><h2>Every chapter makes you stronger.</h2><div class="xp-current-rank" style="--rank-color:${rewards.current.color}"><span class="xp-rank-badge">${rankBadge(rewards.current)}</span><div><span class="eyebrow">LEVEL ${rewards.level} · CURRENT RANK</span><h3>${rewards.current.name}</h3><p><b>${rewards.xp.toLocaleString()}</b> total XP · ${rewards.remaining} XP to ${rewards.next.name}</p><progress aria-label="XP toward ${rewards.next.name}" max="250" value="${rewards.intoLevel}"></progress></div></div><p class="xp-level-explainer">A new rank and badge every 250 XP. Earn 25 XP per reached chapter, 50 per guardian seal, and 100 per finished book.</p><div class="xp-rank-list" aria-label="Reader ranks">${ranks.map(rank=>`<article class="xp-rank-row ${rank.level<rewards.level?'unlocked':rank.level===rewards.level?'current':'locked'}" data-rank="${rank.level}" style="--rank-color:${rank.color}" ${rank.level===rewards.level?'aria-current="step"':''}><span class="xp-rank-mini">${rankBadge(rank)}</span><div><span class="xp-rank-level">LEVEL ${rank.level}</span><h3>${rank.name}</h3><small>${rank.xp.toLocaleString()} XP</small></div><span class="xp-rank-status">${rank.level<rewards.level?'✓ EARNED':rank.level===rewards.level?'YOUR RANK':'LOCKED'}</span></article>`).join('')}</div><p class="reward-footnote">Ranks reflect your saved journeys. Replaying a boss does not award duplicate XP. Resetting or removing a book can lower your rank.</p><div class="actions"><button class="btn primary" data-close-levels>Back to your adventure</button></div></section>`);
+    scrim.querySelector('[data-close-levels]').onclick=closeOverlay;
   }
   function trophyJournal() {
     const rewards=readerRewards(Store.books());
@@ -188,7 +212,7 @@
     <div class="quest-banner-art" aria-hidden="true"><div id="quest-banner-scene"></div><span class="quest-art-label">A NEW CHAPTER. A LITTLE MORE LIGHT.</span></div>
   </header>
   <section class="quest-hub" aria-label="Your adventurer and current quest">
-    <article class="reader-profile"><div class="hub-label"><span>ADVENTURER</span><span class="reader-level">LV. ${rewards.level}</span></div><div class="reader-identity"><div class="reader-portrait"><svg class="journey" viewBox="-16 -17 34 39" aria-hidden="true" shape-rendering="crispEdges"><g class="landscape-explorer" data-direction="down" data-frame="0">${Journey.characterSprite(portrait)}</g></svg></div><div><h2>${esc(readerName)}</h2><span class="reader-title">${rewards.title.name}</span></div></div><div class="reader-xp-label"><span>Adventure XP</span><b>${rewards.intoLevel} / 250</b></div><div class="reader-xp" role="progressbar" aria-label="Progress to next reader level" aria-valuemin="0" aria-valuemax="250" aria-valuenow="${rewards.intoLevel}"><span style="width:${rewards.intoLevel/250*100}%"></span></div><div class="reader-milestones"><span><b>${rewards.chapters}</b> chapters</span><span><b>${rewards.seals}</b> guardian seals</span></div><button class="profile-showcase" id="profile-showcase" aria-label="Edit badge showcase"><span class="showcase-label">YOUR BADGES</span><span class="showcase-slots">${[0,1,2].map(i=>rewards.showcase[i]?`<span class="mini-medal earned" data-badge="${rewards.showcase[i].id}" title="${rewards.showcase[i].name}">${badgeArt(rewards.showcase[i].id)}</span>`:'<span class="mini-medal empty" aria-label="Empty badge slot">+</span>').join('')}</span></button></article>
+    <article class="reader-profile"><div class="hub-label"><span>ADVENTURER</span><button class="reader-level" id="view-xp-levels" aria-haspopup="dialog" aria-label="View XP levels: level ${rewards.level}, ${rewards.current.name}" style="--rank-color:${rewards.current.color}">LV. ${rewards.level} ↗</button></div><div class="reader-identity"><div class="reader-portrait"><svg class="journey" viewBox="-16 -17 34 39" aria-hidden="true" shape-rendering="crispEdges"><g class="landscape-explorer" data-direction="down" data-frame="0">${Journey.characterSprite(portrait)}</g></svg></div><div><h2>${esc(readerName)}</h2><span class="reader-title">${rewards.title.name}</span></div></div><button class="reader-rank-link" id="view-reader-rank" aria-haspopup="dialog" style="--rank-color:${rewards.current.color}"><span>${rankBadge(rewards.current)}</span><b>${rewards.current.name}</b><small>View ranks →</small></button><div class="reader-xp-label"><span>Adventure XP</span><b>${rewards.intoLevel} / 250</b></div><div class="reader-xp" role="progressbar" aria-label="Progress to next reader level" aria-valuemin="0" aria-valuemax="250" aria-valuenow="${rewards.intoLevel}"><span style="width:${rewards.intoLevel/250*100}%"></span></div><p class="reader-next-rank">${rewards.remaining} XP to <b>${rewards.next.name}</b></p><div class="reader-milestones"><span><b>${rewards.chapters}</b> chapters</span><span><b>${rewards.seals}</b> guardian seals</span></div><button class="profile-showcase" id="profile-showcase" aria-label="Edit badge showcase"><span class="showcase-label">YOUR BADGES</span><span class="showcase-slots">${[0,1,2].map(i=>rewards.showcase[i]?`<span class="mini-medal earned" data-badge="${rewards.showcase[i].id}" title="${rewards.showcase[i].name}">${badgeArt(rewards.showcase[i].id)}</span>`:'<span class="mini-medal empty" aria-label="Empty badge slot">+</span>').join('')}</span></button></article>
     <article class="daily-quest"><div class="hub-label"><span>TODAY’S QUEST</span><span class="quest-status ${readToday?'complete':''}">${readToday?'✓ READING COMPLETE':'A LITTLE ADVENTURE'}</span></div><div class="daily-quest-body"><span class="daily-quest-icon">${rewardIcon(readToday?'flame':'compass')}</span><div><h2>${readToday?'You kept the story glowing.':activeBook?'One chapter. A new horizon.':'Your first adventure awaits.'}</h2><p>${readToday?'Your reading activity is saved for today. Explore another chapter whenever you like.':activeBook?`Continue <em>${esc(activeBook.title)}</em> and discover what lies beyond the next checkpoint.`:'Choose a book, pick a world, and take your first step into the story.'}</p></div></div><div class="daily-quest-footer"><span class="quest-reward">${readToday?'✦ Every page counts':'+25 XP / new chapter'}</span>${activeBook?`<a class="btn primary small" href="#/book/${activeBook.id}">${readToday?'Keep exploring':'Accept the quest'} →</a>`:'<button class="btn primary small" data-quest-add>Choose a book →</button>'}</div></article>
     <button class="journal-preview" id="open-trophies"><div class="hub-label"><span>TROPHY JOURNAL</span><span>${rewards.badges.filter(b=>b.earned).length} / ${rewards.badges.length}</span></div><div class="journal-medals">${rewards.badges.slice(0,3).map(b=>`<span data-badge="${b.id}" class="mini-medal ${b.earned?'earned':'locked'}">${badgeArt(b.id)}</span>`).join('')}</div><h2>Make a little history.</h2><p>${rewards.nextBadge?`Next: ${rewards.nextBadge.name} · ${rewards.nextBadge.current}/${rewards.nextBadge.target}`:'Every badge earned. What a journey.'}</p><span class="journal-link">Open your collection <span>↗</span></span></button>
   </section>
@@ -215,6 +239,8 @@
     Journey.render($app.querySelector('#quest-banner-scene'), {total: 100, completed: Math.round(heroProgress*100), world: 'fantasy', character: portrait, label: 'A sunrise over your next adventure'});
     $app.querySelector('[data-browse-journeys]').addEventListener('click', e => { e.preventDefault(); $app.querySelector('#your-journeys').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); });
     $app.querySelector('[data-add-book]')?.addEventListener('click', addBookSheet);
+    $app.querySelector('#view-xp-levels').onclick=xpLevels;
+    $app.querySelector('#view-reader-rank').onclick=xpLevels;
     $app.querySelector('#open-trophies').onclick=trophyJournal;
     $app.querySelector('#find-next-quest').onclick=recommendationGuide;
     $app.querySelector('#profile-showcase').onclick=trophyJournal;
